@@ -1,0 +1,6 @@
+source_repository,source_package,relationship,target_package,constraint
+msys,bash,runtime-depends-on,msys2-runtime,
+msys,bash,runtime-depends-on,readline,
+msys,readline,runtime-depends-on,msys2-runtime,
+ucrt64,mingw-w64-ucrt-x86_64-gcc,runtime-depends-on,mingw-w64-ucrt-x86_64-crt,
+ucrt64,mingw-w64-ucrt-x86_64-gcc,optional-depends-on,mingw-w64-ucrt-x86_64-gdb,

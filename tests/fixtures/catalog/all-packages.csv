@@ -1,0 +1,5 @@
+repository,name,version,installed,installed_version,architecture,classification,description,groups,licenses,project_url,required_dependencies,optional_dependencies,provides,conflicts,replaces,download_size,installed_size,build_date
+msys,bash,5.2.037-2,True,5.2.037-2,x86_64,system-package,The GNU Bourne Again shell,base,GPL3,https://www.gnu.org/software/bash/,msys2-runtime;readline,,,sh,,,10 MiB,20 MiB,Mon 01 Jun 2026
+msys,msys2-runtime,3.6.4-1,True,3.6.4-1,x86_64,system-package,MSYS2 runtime,base,GPL3,https://www.msys2.org/,,,,,,,2 MiB,7 MiB,Mon 01 Jun 2026
+msys,readline,8.3.001-1,True,8.3.001-1,x86_64,msys-package,GNU readline library,,GPL3,https://tiswww.case.edu/php/chet/readline/rltop.html,msys2-runtime,,,,,1 MiB,3 MiB,Mon 01 Jun 2026
+ucrt64,mingw-w64-ucrt-x86_64-gcc,15.1.0-4,False,,x86_64,mingw-package,GNU Compiler Collection,mingw-w64-ucrt-x86_64-toolchain,GPL3,https://gcc.gnu.org/,mingw-w64-ucrt-x86_64-crt,mingw-w64-ucrt-x86_64-gdb,,,,40 MiB,300 MiB,Mon 01 Jun 2026

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-07-28T20:00:00Z",
+  "collector": "fixture",
+  "msys2_root": "C:\\msys64",
+  "pacman_version": "Pacman v7",
+  "repositories": [
+    "msys",
+    "ucrt64"
+  ],
+  "package_count": 4,
+  "installed_count": 3,
+  "dependency_edge_count": 5,
+  "sha256": {
+    "all-packages.csv": "27e82254fe6a5b558f2ad9fd0a1187312bb6f5907cdd542c8632caa1318ea837",
+    "dependency-edges.csv": "be8fb8228e01195c70d519d1d3484de7330e5dd517546dac91965eebeb54ab6c"
+  }
+}

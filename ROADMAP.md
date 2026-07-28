@@ -36,7 +36,7 @@
 
 ## Increment 2 — Ecosystem baseline
 
-- [ ] L0 ecosystem context
+- [x] L0 ecosystem context
 - [ ] L1 eight-layer architecture
 - [ ] L2 domain decomposition
 - [ ] Terminology and boundary decisions

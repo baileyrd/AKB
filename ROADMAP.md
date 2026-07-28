@@ -12,7 +12,7 @@
 - [x] Source registry
 - [x] Validation and index generation
 - [x] Architecture Decision Record template
-- [ ] Claim-level evidence implementation
+- [x] Claim-level evidence implementation
 - [ ] Coverage metrics and quality gates
 
 ## Increment 1 — Evidence and inventory pipeline

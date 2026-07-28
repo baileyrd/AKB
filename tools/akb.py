@@ -164,14 +164,36 @@ def generate() -> list[Path]:
             )
         )
 
+    claim_lines = [
+        "# Generated Claim Evidence Index",
+        "",
+        "> Generated from the composed model; do not edit manually.",
+        "",
+        "| Claim | Subject | Classification | Confidence | Evidence |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for claim in sorted(graph["claims"], key=lambda item: item["id"]):
+        claim_lines.append(
+            "| {id} | {subject} | {classification} | {confidence} | {evidence} |".format(
+                id=escape_cell(claim["id"]), subject=escape_cell(claim["subject"]),
+                classification=escape_cell(claim["classification"]),
+                confidence=escape_cell(claim["confidence"]),
+                evidence=escape_cell(", ".join(claim.get("evidence_refs", []))),
+            )
+        )
+    if not graph["claims"]:
+        claim_lines.append("| _No claims recorded_ |  |  |  |  |")
+
     outputs = [
         GENERATED / "entity-index.md",
         GENERATED / "relationship-index.md",
+        GENERATED / "claim-evidence-index.md",
     ]
     outputs[0].write_text("\n".join(entity_lines) + "\n", encoding="utf-8")
     outputs[1].write_text(
         "\n".join(relationship_lines) + "\n", encoding="utf-8"
     )
+    outputs[2].write_text("\n".join(claim_lines) + "\n", encoding="utf-8")
     return outputs
 
 

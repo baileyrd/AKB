@@ -38,7 +38,7 @@
 
 - [x] L0 ecosystem context
 - [x] L1 eight-layer architecture
-- [ ] L2 domain decomposition
+- [x] L2 domain decomposition
 - [ ] Terminology and boundary decisions
 - [ ] MSYS2 versus MinGW-w64 role model
 - [x] Bounded runtime observation and current-environment report

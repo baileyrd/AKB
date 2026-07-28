@@ -46,7 +46,7 @@
 
 ## Increment 3 — Runtime and package management
 
-- [ ] MSYS runtime initialization
+- [x] MSYS runtime initialization
 - [ ] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
 - [ ] pacman architecture and transaction sequences
 - [ ] repository, mirror, signing, key, cache, hook, and database models

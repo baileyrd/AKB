@@ -37,7 +37,7 @@
 ## Increment 2 — Ecosystem baseline
 
 - [x] L0 ecosystem context
-- [ ] L1 eight-layer architecture
+- [x] L1 eight-layer architecture
 - [ ] L2 domain decomposition
 - [ ] Terminology and boundary decisions
 - [ ] MSYS2 versus MinGW-w64 role model

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture.example/schema/msys2-akb/runtime-observation.schema.json",
+  "title": "MSYS2 AKB Runtime Observation Contract",
+  "description": "A bounded, non-secret observation captured from one MSYS2 runtime environment.",
+  "type": "object",
+  "required": ["schema_version", "collector_version", "observed_at", "environment", "host", "environment_variables", "tools"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "collector_version": {"type": "string"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "environment": {"enum": ["msys", "ucrt64", "clang64", "clangarm64", "mingw64", "mingw32"]},
+    "host": {"type": "object", "required": ["system", "machine", "release"], "additionalProperties": false,
+      "properties": {"system": {"type": "string"}, "machine": {"type": "string"}, "release": {"type": "string"}}},
+    "environment_variables": {"type": "object", "additionalProperties": {"type": "string"}},
+    "tools": {"type": "object", "additionalProperties": {"type": "object", "required": ["found"], "properties": {"found": {"type": "boolean"}, "path": {"type": "string"}, "version": {"type": "string"}}}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  }
+}

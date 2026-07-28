@@ -4,6 +4,9 @@ param(
     [string]$Python = "python",
     [switch]$SkipDatabaseRefresh,
     [switch]$SkipDeepInventory,
+    [switch]$SkipRuntimeObservation,
+    [ValidateSet("msys", "ucrt64", "clang64", "clangarm64", "mingw64", "mingw32")]
+    [string]$RuntimeEnvironment = "msys",
     [ValidateSet("installed", "repositories")]
     [string]$InventoryScope = "installed",
     [string]$RecipeRoot = ""
@@ -40,6 +43,17 @@ if (-not $SkipDeepInventory) {
 
     & $Python (Join-Path $PSScriptRoot "import_deep_inventory.py") $inventoryDirectory
     if ($LASTEXITCODE -ne 0) { throw "Deep inventory import failed." }
+}
+
+if (-not $SkipRuntimeObservation) {
+    $runtimeObservation = Join-Path $root "work\runtime-observation.json"
+    & $Python (Join-Path $PSScriptRoot "collect_runtime_observation.py") `
+        --environment $RuntimeEnvironment `
+        --output $runtimeObservation
+    if ($LASTEXITCODE -ne 0) { throw "Runtime observation collection failed." }
+
+    & $Python (Join-Path $PSScriptRoot "import_runtime_observation.py") $runtimeObservation
+    if ($LASTEXITCODE -ne 0) { throw "Runtime observation import failed." }
 }
 
 & $Python (Join-Path $PSScriptRoot "akb.py") all

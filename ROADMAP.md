@@ -42,7 +42,7 @@
 - [ ] Terminology and boundary decisions
 - [ ] MSYS2 versus MinGW-w64 role model
 - [x] Bounded runtime observation and current-environment report
-- [ ] Environment comparison and migration matrix
+- [x] Environment comparison and migration matrix
 
 ## Increment 3 — Runtime and package management
 

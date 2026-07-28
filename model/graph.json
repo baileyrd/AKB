@@ -39,8 +39,8 @@
       "kind": "runtime",
       "name": "msys-2.0.dll",
       "summary": "MSYS2 POSIX compatibility runtime.",
-      "status": "planned",
-      "confidence": "high",
+      "status": "partial",
+      "confidence": "verified",
       "authority": "MSYS2",
       "aliases": [],
       "tags": ["runtime", "posix-compatibility"],
@@ -58,73 +58,73 @@
       "aliases": [],
       "tags": ["environment"],
       "applicability": {},
-      "properties": {"role": "POSIX-oriented system and package-management environment"},
-      "evidence_refs": []
+      "properties": {"role": "POSIX-oriented system and package-management environment", "prefix": "/usr", "architecture": "x86_64", "crt": "cygwin", "compiler_family": "GCC", "cxx_library": "libstdc++"},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     },
     {
       "id": "environment:msys2:ucrt64",
       "kind": "environment",
       "name": "UCRT64",
-      "status": "planned",
-      "confidence": "high",
+      "status": "partial",
+      "confidence": "verified",
       "authority": "MSYS2",
       "aliases": [],
       "tags": ["environment", "native"],
       "applicability": {},
-      "properties": {"architecture": "x86_64", "crt": "UCRT", "compiler_family": "GCC"},
-      "evidence_refs": []
+      "properties": {"prefix": "/ucrt64", "architecture": "x86_64", "crt": "UCRT", "compiler_family": "GCC", "cxx_library": "libstdc++", "recommendation": "default"},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     },
     {
       "id": "environment:msys2:clang64",
       "kind": "environment",
       "name": "CLANG64",
-      "status": "planned",
-      "confidence": "high",
+      "status": "partial",
+      "confidence": "verified",
       "authority": "MSYS2",
       "aliases": [],
       "tags": ["environment", "native"],
       "applicability": {},
-      "properties": {"architecture": "x86_64", "crt": "UCRT", "compiler_family": "Clang"},
-      "evidence_refs": []
+      "properties": {"prefix": "/clang64", "architecture": "x86_64", "crt": "UCRT", "compiler_family": "LLVM/Clang", "cxx_library": "libc++"},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     },
     {
       "id": "environment:msys2:clangarm64",
       "kind": "environment",
       "name": "CLANGARM64",
-      "status": "planned",
-      "confidence": "high",
+      "status": "partial",
+      "confidence": "verified",
       "authority": "MSYS2",
       "aliases": [],
       "tags": ["environment", "native"],
       "applicability": {},
-      "properties": {"architecture": "aarch64", "crt": "UCRT", "compiler_family": "Clang"},
-      "evidence_refs": []
+      "properties": {"prefix": "/clangarm64", "architecture": "aarch64", "crt": "UCRT", "compiler_family": "LLVM/Clang", "cxx_library": "libc++"},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     },
     {
       "id": "environment:msys2:mingw64",
       "kind": "environment",
       "name": "MINGW64",
-      "status": "planned",
-      "confidence": "high",
+      "status": "deprecated",
+      "confidence": "verified",
       "authority": "MSYS2",
       "aliases": [],
       "tags": ["environment", "native"],
       "applicability": {},
-      "properties": {"architecture": "x86_64", "crt": "MSVCRT", "compiler_family": "GCC"},
-      "evidence_refs": []
+      "properties": {"prefix": "/mingw64", "architecture": "x86_64", "crt": "MSVCRT", "compiler_family": "GCC", "cxx_library": "libstdc++", "lifecycle": "deprecated-2026-03-15"},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     },
     {
       "id": "environment:msys2:mingw32",
       "kind": "environment",
       "name": "MINGW32",
-      "status": "planned",
-      "confidence": "high",
+      "status": "deprecated",
+      "confidence": "verified",
       "authority": "MSYS2",
       "aliases": [],
       "tags": ["environment", "native"],
       "applicability": {},
-      "properties": {"architecture": "i686", "crt": "MSVCRT", "compiler_family": "GCC"},
-      "evidence_refs": []
+      "properties": {"prefix": "/mingw32", "architecture": "i686", "crt": "MSVCRT", "compiler_family": "GCC", "cxx_library": "libstdc++", "lifecycle": "phase-out"},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     }
   ],
   "relationships": [
@@ -226,6 +226,17 @@
     }
   ],
   "claims": [],
-  "evidence": []
+  "evidence": [
+    {
+      "id": "evidence:msys2:environments-2026-07-28",
+      "class": "primary",
+      "title": "MSYS2 Environments",
+      "locator": "https://www.msys2.org/docs/environments/",
+      "retrieved_at": "2026-07-28T22:40:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official environment matrix and lifecycle guidance retrieved for Bootstrap 0.5."
+    }
+  ]
 }
 

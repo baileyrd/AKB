@@ -17,6 +17,7 @@ records belong in the machine-readable evidence collection.
 | Binary package contents | Files, PE metadata, DLL imports/exports, archives, headers, and configuration | Reproducible extraction |
 | Controlled runtime observations | Startup, environment, mounts, processes, path conversion, and performance | Scripted experiment |
 | Local pacman synchronization databases | Enabled repository package metadata, installation state, dependencies, groups, conflicts, replacements, and sizes | On-demand or scheduled `catalog-msys2-packages.ps1` snapshot |
+| Local MSYS2 package filesystem | Package ownership, artifact hashes, PE imports and exports, archive members, headers, and development metadata | On-demand or scheduled `deep_inventory.py` snapshot |
 
 ## Acceptance rules
 

@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://architecture.example/schema/msys2-akb/deep-inventory.schema.json",
+  "title": "MSYS2 AKB Deep Inventory Contract",
+  "description": "Logical schemas for the manifest and JSONL record streams emitted by tools/deep_inventory.py.",
+  "$defs": {
+    "manifest": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "collector_version",
+        "generated_at",
+        "collector",
+        "scope",
+        "counts",
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "1.0.0"},
+        "collector_version": {"type": "string"},
+        "generated_at": {"type": "string", "format": "date-time"},
+        "collector": {"type": "string"},
+        "msys2_root": {"type": "string"},
+        "scope": {"enum": ["installed", "repositories"]},
+        "counts": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0}
+        },
+        "sha256": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["package", "path", "kind", "present"],
+      "properties": {
+        "package": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "pattern": "^/"},
+        "kind": {
+          "enum": [
+            "executable",
+            "dll",
+            "static-library",
+            "import-library",
+            "header",
+            "pkg-config-module",
+            "cmake-module",
+            "file"
+          ]
+        },
+        "present": {"type": "boolean"},
+        "size": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "pe": {"type": "object"}
+      }
+    },
+    "pe-import": {
+      "type": "object",
+      "required": ["package", "path", "dll", "symbols", "ordinals"],
+      "properties": {
+        "package": {"type": "string"},
+        "path": {"type": "string"},
+        "dll": {"type": "string"},
+        "symbols": {"type": "array", "items": {"type": "string"}},
+        "ordinals": {"type": "array", "items": {"type": "integer"}}
+      }
+    },
+    "pe-export": {
+      "type": "object",
+      "required": ["package", "path", "name", "ordinal"],
+      "properties": {
+        "package": {"type": "string"},
+        "path": {"type": "string"},
+        "name": {"type": "string"},
+        "ordinal": {"type": "integer", "minimum": 0}
+      }
+    },
+    "archive-member": {
+      "type": "object",
+      "required": ["package", "path", "name", "size", "offset"],
+      "properties": {
+        "package": {"type": "string"},
+        "path": {"type": "string"},
+        "name": {"type": "string"},
+        "size": {"type": "integer", "minimum": 0},
+        "offset": {"type": "integer", "minimum": 0}
+      }
+    },
+    "development-metadata": {
+      "type": "object",
+      "required": ["package", "path", "format"],
+      "properties": {
+        "package": {"type": "string"},
+        "path": {"type": "string"},
+        "format": {"enum": ["pkg-config", "cmake"]}
+      },
+      "additionalProperties": true
+    },
+    "recipe": {
+      "type": "object",
+      "required": ["path", "pkgname"],
+      "properties": {
+        "path": {"type": "string"},
+        "pkgbase": {"type": "string"},
+        "pkgname": {"type": "array", "items": {"type": "string"}},
+        "depends": {"type": "array", "items": {"type": "string"}},
+        "makedepends": {"type": "array", "items": {"type": "string"}},
+        "checkdepends": {"type": "array", "items": {"type": "string"}},
+        "source": {"type": "array", "items": {"type": "string"}},
+        "dynamic_fields": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "warning": {
+      "type": "object",
+      "required": ["path", "message"],
+      "properties": {
+        "path": {"type": "string"},
+        "message": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

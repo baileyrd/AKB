@@ -78,22 +78,25 @@ Generated files are written beneath `generated/`.
 
 ## Continuous refresh
 
-The package and dependency catalog can be refreshed directly from an MSYS2
-installation:
+The package catalog and deep artifact inventory can be refreshed directly from
+an MSYS2 installation:
 
 ```powershell
 pwsh ./tools/Update-Akb.ps1 -Msys2Root C:\msys64
 ```
 
 The refresh captures immutable evidence snapshots, verifies hashes and record
-counts, updates the generated catalog projection, reports additions, removals,
-and version changes, and regenerates AKB views. See
+counts, updates the generated package and artifact projections, reports
+additions, removals, version changes, artifact changes, DLL relationships, and
+regenerates AKB views. See
 [`docs/SELF-UPDATING-KNOWLEDGE-BASE.md`](docs/SELF-UPDATING-KNOWLEDGE-BASE.md).
+The collector/importer boundary is specified in
+[`docs/DEEP-INVENTORY-CONTRACT.md`](docs/DEEP-INVENTORY-CONTRACT.md).
 
 ## Current maturity
 
-This foundation is **AKB Bootstrap 0.2**. It defines the governing charter,
+This foundation is **AKB Bootstrap 0.3**. It defines the governing charter,
 information architecture, machine-readable metamodel, starter graph, evidence
-rules, regeneration entry point, and first self-updating evidence pipeline.
-Detailed ecosystem research and the interactive explorer are subsequent
-controlled increments.
+rules, regeneration entry point, self-updating package catalog, and deep
+package-artifact evidence pipeline. Runtime observation and the interactive
+explorer are subsequent controlled increments.

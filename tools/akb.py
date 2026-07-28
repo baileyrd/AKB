@@ -184,16 +184,31 @@ def generate() -> list[Path]:
     if not graph["claims"]:
         claim_lines.append("| _No claims recorded_ |  |  |  |  |")
 
+    status_counts = Counter(item["status"] for item in graph["entities"])
+    evidenced_entities = sum(bool(item.get("evidence_refs")) for item in graph["entities"])
+    coverage_lines = [
+        "# Generated Coverage Report", "",
+        "> Generated from the composed model; do not edit manually.", "",
+        f"- Entities: **{len(graph['entities'])}**",
+        f"- Entities with evidence: **{evidenced_entities}**",
+        f"- Claims: **{len(graph['claims'])}**",
+        f"- Evidence records: **{len(graph['evidence'])}**", "",
+        "| Entity status | Count |", "| --- | ---: |",
+    ]
+    coverage_lines.extend(f"| {status} | {count} |" for status, count in sorted(status_counts.items()))
+
     outputs = [
         GENERATED / "entity-index.md",
         GENERATED / "relationship-index.md",
         GENERATED / "claim-evidence-index.md",
+        GENERATED / "coverage-report.md",
     ]
     outputs[0].write_text("\n".join(entity_lines) + "\n", encoding="utf-8")
     outputs[1].write_text(
         "\n".join(relationship_lines) + "\n", encoding="utf-8"
     )
     outputs[2].write_text("\n".join(claim_lines) + "\n", encoding="utf-8")
+    outputs[3].write_text("\n".join(coverage_lines) + "\n", encoding="utf-8")
     return outputs
 
 

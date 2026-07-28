@@ -48,7 +48,7 @@
 
 - [x] MSYS runtime initialization
 - [x] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
-- [ ] pacman architecture and transaction sequences
+- [x] pacman architecture and transaction sequences
 - [ ] repository, mirror, signing, key, cache, hook, and database models
 
 ## Increment 4 — Toolchains and userland

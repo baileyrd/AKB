@@ -1,0 +1,3 @@
+# Catalog fixtures are integrity-test inputs. Their manifests hash exact bytes,
+# so line-ending conversion must never alter them on checkout.
+tests/fixtures/catalog/*.csv -text

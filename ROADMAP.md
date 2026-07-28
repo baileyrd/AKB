@@ -17,7 +17,7 @@
 
 ## Increment 1 — Evidence and inventory pipeline
 
-- [ ] Register official upstream sources
+- [x] Register official upstream sources
 - [x] Discover and ingest enabled repository package metadata through pacman
 - [x] Preserve content-addressed catalog snapshots and integrity manifests
 - [x] Generate package dependency and reverse-navigation relationships

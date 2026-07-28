@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {"id": "source:msys2:website", "authority": "MSYS2", "class": "primary", "locator": "https://www.msys2.org/", "refresh": "scheduled-content-snapshot"},
+    {"id": "source:msys2:packages", "authority": "MSYS2", "class": "primary", "locator": "https://packages.msys2.org/", "refresh": "package-catalog-snapshot"},
+    {"id": "source:msys2:msys2-packages", "authority": "MSYS2", "class": "primary", "locator": "https://github.com/msys2/MSYS2-packages", "refresh": "commit-addressed"},
+    {"id": "source:msys2:mingw-packages", "authority": "MSYS2", "class": "primary", "locator": "https://github.com/msys2/MINGW-packages", "refresh": "commit-addressed"},
+    {"id": "source:msys2:runtime", "authority": "MSYS2", "class": "primary", "locator": "https://github.com/msys2/msys2-runtime", "refresh": "commit-addressed"},
+    {"id": "source:mingw-w64:upstream", "authority": "MinGW-w64", "class": "primary", "locator": "https://github.com/mingw-w64/mingw-w64", "refresh": "release-or-commit"},
+    {"id": "source:microsoft:windows-docs", "authority": "Microsoft", "class": "primary", "locator": "https://learn.microsoft.com/windows/", "refresh": "date-qualified-snapshot"},
+    {"id": "source:llvm:project", "authority": "LLVM", "class": "primary", "locator": "https://github.com/llvm/llvm-project", "refresh": "release-or-commit"},
+    {"id": "source:git-for-windows:git", "authority": "Git for Windows", "class": "primary", "locator": "https://github.com/git-for-windows/git", "refresh": "release-or-commit"}
+  ]
+}

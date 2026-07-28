@@ -21,6 +21,8 @@ flowchart TD
     L --> M["Artifact graph projection"]
     F --> G["Difference analysis"]
     M --> G
+    R["Bounded runtime observation"] --> S["Runtime projection"]
+    S --> G
     G --> H["Indexes and reports"]
     F --> I["Explorer and volume views"]
     M --> I
@@ -33,6 +35,7 @@ flowchart TD
 | `model/graph.json` | Authored | Stable architectural knowledge and reviewed claims |
 | `model/catalog/current.json` | Generated | Current package and dependency projection |
 | `model/inventory/current.json` | Generated | Current file, binary, library, metadata, and recipe projection |
+| `model/runtime/current.json` | Generated | Current bounded runtime-environment projection |
 | `evidence/snapshots/<id>/` | Append-only | Collector outputs, hashes, graph projection, changes |
 | `evidence/inventory-snapshots/<id>/` | Append-only | Deep artifact observations and reconciliation results |
 | `generated/` | Replaceable | Catalog, change, unresolved-reference, and navigation views |
@@ -174,7 +177,7 @@ The same collector/importer contract will next be extended for:
 1. extraction of uninstalled package-archive payloads;
 2. source and patch retrieval with verified recipe checksums;
 3. symbol/version and ABI comparison across snapshots;
-4. runtime probes and performance/security observations;
+4. richer runtime probes and performance/security observations;
 5. official documentation and source-repository change detection.
 
 Every source adapter must emit a manifest with schema version, observation

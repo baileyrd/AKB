@@ -90,6 +90,10 @@ counts, updates the generated package and artifact projections, reports
 additions, removals, version changes, artifact changes, DLL relationships, and
 regenerates AKB views. See
 [`docs/SELF-UPDATING-KNOWLEDGE-BASE.md`](docs/SELF-UPDATING-KNOWLEDGE-BASE.md).
+
+The refresh also captures a bounded, non-secret runtime observation for the
+selected MSYS2 environment. See
+[`docs/RUNTIME-OBSERVATION-CONTRACT.md`](docs/RUNTIME-OBSERVATION-CONTRACT.md).
 The collector/importer boundary is specified in
 [`docs/DEEP-INVENTORY-CONTRACT.md`](docs/DEEP-INVENTORY-CONTRACT.md).
 

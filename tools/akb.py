@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "model" / "graph.json"
 CATALOG = ROOT / "model" / "catalog" / "current.json"
 INVENTORY = ROOT / "model" / "inventory" / "current.json"
+RUNTIME = ROOT / "model" / "runtime" / "current.json"
 KINDS = ROOT / "model" / "vocabularies" / "entity-kinds.json"
 REL_TYPES = ROOT / "model" / "vocabularies" / "relationship-types.json"
 GENERATED = ROOT / "generated"
@@ -38,7 +39,7 @@ def load_composed_graph() -> dict[str, Any]:
         "claims": list(graph.get("claims", [])),
         "evidence": list(graph.get("evidence", [])),
     }
-    for projection_path in (CATALOG, INVENTORY):
+    for projection_path in (CATALOG, INVENTORY, RUNTIME):
         if projection_path.is_file():
             projection = load_json(projection_path)
             for key in composed:

@@ -11,7 +11,7 @@
 - [x] Bootstrap graph
 - [x] Source registry
 - [x] Validation and index generation
-- [ ] Architecture Decision Record template
+- [x] Architecture Decision Record template
 - [ ] Claim-level evidence implementation
 - [ ] Coverage metrics and quality gates
 

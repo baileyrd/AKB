@@ -1,0 +1,28 @@
+name: Validate AKB
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Python
+        run: python -m compileall -q tools tests
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate composed model
+        run: python tools/akb.py validate
+      - name: Verify generated indexes are reproducible
+        run: |
+          python tools/akb.py generate
+          git diff --exit-code

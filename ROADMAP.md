@@ -24,13 +24,15 @@
 - [x] Produce package addition, removal, and version-change reports
 - [x] Support on-demand and Windows Scheduled Task refresh
 - [ ] Ingest repository database archives directly
-- [ ] Ingest package recipes
-- [ ] Extract package archives and file manifests
-- [ ] Extract PE imports, exports, subsystem, architecture, and debug metadata
-- [ ] Extract static/import archive members
-- [ ] Index headers, pkg-config files, and CMake metadata
-- [ ] Record checksums, versions, retrieval dates, and licenses
-- [ ] Produce reproducible snapshot manifest
+- [x] Statically ingest package recipes without executing PKGBUILDs
+- [x] Extract installed and repository package-file manifests
+- [x] Extract PE imports, exports, subsystem, architecture, and debug metadata
+- [x] Extract static/import archive members
+- [x] Index headers, pkg-config files, and CMake metadata
+- [x] Record artifact checksums, versions, retrieval dates, and licenses
+- [x] Produce reproducible deep-inventory snapshot manifest
+- [ ] Extract and analyze uninstalled binary payloads from package archives
+- [ ] Resolve recipe source checksums against downloaded upstream payloads
 
 ## Increment 2 — Ecosystem baseline
 

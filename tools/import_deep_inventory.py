@@ -345,7 +345,11 @@ def build_projection(
     for row in records["recipes.jsonl"]:
         names = row.get("pkgname", [])
         canonical = row.get("pkgbase") or (names[0] if names else row.get("path", "unknown"))
-        identifier = recipe_id(canonical)
+        # Recipe package names routinely contain makepkg variables (notably
+        # MINGW_PACKAGE_PREFIX). The source-relative PKGBUILD path is the
+        # stable observed identity; using a dynamic pkgbase would collapse
+        # unrelated recipes into one entity.
+        identifier = recipe_id(str(row.get("path") or canonical))
         entities[identifier] = _entity(
             identifier, "build-recipe", canonical,
             {key: value for key, value in row.items() if key not in {"pkgname"}},

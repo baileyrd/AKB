@@ -25,6 +25,23 @@ class ClaimEvidenceTests(unittest.TestCase):
             AKB.GENERATED = original
         self.assertIn("No claims recorded", report)
 
+    def test_generate_dossiers_cover_every_composed_entity(self) -> None:
+        original = AKB.GENERATED
+        try:
+            with tempfile.TemporaryDirectory() as directory:
+                AKB.GENERATED = Path(directory)
+                AKB.generate()
+                dossiers = (AKB.GENERATED / "object-dossiers.md").read_text()
+                graph = AKB.load_composed_graph()
+        finally:
+            AKB.GENERATED = original
+        self.assertIn("# Generated Object Dossiers", dossiers)
+        for entity in graph["entities"]:
+            self.assertIn(f"## `{entity['id']}`", dossiers)
+        self.assertIn("- Evidence:", dossiers)
+        self.assertIn("- Outgoing relationships:", dossiers)
+        self.assertIn("- Incoming relationships:", dossiers)
+
 
 if __name__ == "__main__":
     unittest.main()

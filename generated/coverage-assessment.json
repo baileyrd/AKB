@@ -1,0 +1,19 @@
+{
+  "snapshot": "20260729T113151Z-a2c48f8738b1",
+  "entities": 15717,
+  "relationships": 76105,
+  "entity_kinds": {
+    "package": 15711,
+    "repository": 6
+  },
+  "entity_status": {
+    "verified": 15717
+  },
+  "authored_documents": 46,
+  "diagram_files": 1,
+  "gaps": [
+    "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",
+    "Package-name library candidates are not logical library identities or ABI evidence.",
+    "Per-object documentation and Level 1\u20137 linked diagrams remain incomplete."
+  ]
+}

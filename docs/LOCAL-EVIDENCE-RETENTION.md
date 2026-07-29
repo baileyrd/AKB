@@ -27,6 +27,11 @@ zero parser warnings. It is source-provenance evidence only: it does not prove
 that a package archive was built from that source or that its bytes match a
 published artifact.
 
+A companion shallow official `MSYS2/MSYS2-packages` checkout is retained at
+commit `68febe1146dc5c92b54cb30f941a2e593b7b43a8`. Its 2026-07-29 snapshot
+contains 606 declaratively parsed and SHA-256-hashed `PKGBUILD` records with
+zero parser warnings and has the same source-provenance-only scope.
+
 ## Scope and interpretation
 
 The retained records establish package ownership of paths from signed
@@ -46,6 +51,8 @@ snapshot-qualified provenance. The helper is documented in
 Do not stage `model/inventory/current.json`, the corresponding local
 `evidence/inventory-snapshots/` directories, or derived large reports from this
 retention mode. This also includes the local `work/mingw-packages-source/`
-checkout and `work/mingw-recipes/` collector output. Publish only reproducible tooling, documentation, compact
+checkout and `work/mingw-recipes/` collector output, plus the companion
+`work/msys2-packages-source/` checkout and `work/msys2-recipes/` output.
+Publish only reproducible tooling, documentation, compact
 coverage summaries explicitly marked local-only, or externally hosted raw
 artifacts after a separate storage decision.

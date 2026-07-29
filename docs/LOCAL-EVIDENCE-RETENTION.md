@@ -32,6 +32,13 @@ commit `68febe1146dc5c92b54cb30f941a2e593b7b43a8`. Its 2026-07-29 snapshot
 contains 606 declaratively parsed and SHA-256-hashed `PKGBUILD` records with
 zero parser warnings and has the same source-provenance-only scope.
 
+An isolated MSYS2 runtime installation is also retained locally. A bounded
+installed-package collection on 2026-07-29 recorded 22,279 owned paths,
+3,055 PE import records, 70,008 PE export records, 179,552 archive members,
+and 19 development-metadata records. The collection is byte-level evidence
+only for that installed state; it does not establish behavior for unobserved
+environments, package revisions, or loader/runtime execution.
+
 ## Scope and interpretation
 
 The retained records establish package ownership of paths from signed
@@ -53,6 +60,8 @@ Do not stage `model/inventory/current.json`, the corresponding local
 retention mode. This also includes the local `work/mingw-packages-source/`
 checkout and `work/mingw-recipes/` collector output, plus the companion
 `work/msys2-packages-source/` checkout and `work/msys2-recipes/` output.
+It further includes `work/isolated-runtime-inventory/`, the isolated MSYS2
+installation, and local `model/runtime/` projections.
 Publish only reproducible tooling, documentation, compact
 coverage summaries explicitly marked local-only, or externally hosted raw
 artifacts after a separate storage decision.

@@ -26,10 +26,12 @@ active MSYS2 environment
   -> environment report and composed graph
 ```
 
-The projection creates a generated `configuration` entity linked to its
-authored `environment` entity. It never changes authored environment facts.
-Each import replaces only the current runtime projection; historical raw
-observations can be retained by the caller alongside other evidence snapshots.
+The projection creates one generated `configuration` entity per observed
+environment, linked to its authored `environment` entity. It never changes
+authored environment facts. A new import replaces the current observation for
+that environment while retaining current observations for other environments.
+Historical raw observations can be retained by the caller alongside other
+evidence snapshots.
 
 ## Use
 

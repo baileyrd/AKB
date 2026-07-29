@@ -225,7 +225,68 @@
       "evidence_refs": []
     }
   ],
-  "claims": [],
+  "claims": [
+    {
+      "id": "claim:environment:msys:role",
+      "subject": "environment:msys2:msys",
+      "statement": "MSYS is the POSIX-oriented system and package-management environment.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-28",
+      "valid_to": null,
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "claim:environment:ucrt64:default",
+      "subject": "environment:msys2:ucrt64",
+      "statement": "UCRT64 is the recommended default native MSYS2 environment.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-28",
+      "valid_to": null,
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "claim:environment:clang64:toolchain",
+      "subject": "environment:msys2:clang64",
+      "statement": "CLANG64 uses the UCRT with the LLVM/Clang compiler family and libc++.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-28",
+      "valid_to": null,
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "claim:environment:clangarm64:toolchain",
+      "subject": "environment:msys2:clangarm64",
+      "statement": "CLANGARM64 uses the UCRT with the LLVM/Clang compiler family and libc++ on AArch64.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-28",
+      "valid_to": null,
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "claim:environment:mingw64:lifecycle",
+      "subject": "environment:msys2:mingw64",
+      "statement": "MINGW64 is deprecated as of 2026-03-15.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-03-15",
+      "valid_to": null,
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "claim:environment:mingw32:lifecycle",
+      "subject": "environment:msys2:mingw32",
+      "statement": "MINGW32 is in phase-out lifecycle status.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-28",
+      "valid_to": null,
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    }
+  ],
   "evidence": [
     {
       "id": "evidence:msys2:environments-2026-07-28",

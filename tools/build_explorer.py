@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import math
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -86,7 +87,47 @@ addEventListener('hashchange', render); render();
 <body><main><h1>Architecture Explorer</h1><p>Use stable object links or the textual index.</p><ul>{rows}</ul></main><script>{script}</script></body></html>"""
     index = output / "index.html"
     index.write_text(page, encoding="utf-8")
-    return [index]
+    visible = entities[:80]
+    positions = {
+        item["id"]: (70 + (number % 8) * 100, 70 + (number // 8) * 80)
+        for number, item in enumerate(visible)
+    }
+    height = max(140, 100 + math.ceil(len(visible) / 8) * 80)
+    svg_lines = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="860" height="{height}" viewBox="0 0 860 {height}" role="img" aria-labelledby="title description">',
+        '<title id="title">AKB architecture graph overview</title>',
+        '<desc id="description">A bounded overview of the composed architecture graph. Each labeled node is a keyboard-focusable link to its object detail. Use overview.txt for a complete textual relationship list.</desc>',
+        '<style>.edge{stroke:#667085;stroke-width:1}.node{fill:#eef4ff;stroke:#0645ad}.label{font:11px system-ui,sans-serif;fill:#111}</style>',
+    ]
+    for edge in graph["relationships"]:
+        if edge["source"] in positions and edge["target"] in positions:
+            x1, y1 = positions[edge["source"]]
+            x2, y2 = positions[edge["target"]]
+            svg_lines.append(f'<line class="edge" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}"><title>{html.escape(edge["type"])}</title></line>')
+    for item in visible:
+        x, y = positions[item["id"]]
+        label = html.escape(item["name"])
+        identifier = html.escape(item["id"])
+        svg_lines.extend([
+            f'<a href="index.html{route_for(item["id"])}" aria-label="{label} ({identifier})">',
+            f'<rect class="node" x="{x - 42}" y="{y - 16}" width="84" height="32" rx="4" tabindex="0"><title>{label}: {identifier}</title></rect>',
+            f'<text class="label" x="{x}" y="{y + 4}" text-anchor="middle">{label[:13]}</text>',
+            '</a>',
+        ])
+    svg_lines.append('</svg>')
+    svg = output / "overview.svg"
+    svg.write_text("\n".join(svg_lines) + "\n", encoding="utf-8")
+    text = output / "overview.txt"
+    text.write_text(
+        "AKB architecture graph overview\n\nObjects\n" + "\n".join(
+            f"- {item['id']} ({item['kind']}): {item['name']}" for item in entities
+        ) + "\n\nRelationships\n" + "\n".join(
+            f"- {edge['source']} --{edge['type']}--> {edge['target']}"
+            for edge in graph["relationships"]
+        ) + "\n",
+        encoding="utf-8",
+    )
+    return [index, svg, text]
 
 
 if __name__ == "__main__":

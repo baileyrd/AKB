@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "collector_version": "0.4.0",
+  "generated_at": "2026-07-29T12:26:56.963436+00:00",
+  "collector": "tools/analyze_package_archive.py",
+  "scope": "package-archive",
+  "package": "curl",
+  "source_archive": {
+    "name": "curl.pkg.tar.zst",
+    "sha256": "85df4cba7342fcc2a2c8763e603a28721d8095004adf7bc1eae5f85fc0e3a706"
+  },
+  "counts": {
+    "artifacts.jsonl": 532,
+    "pe-imports.jsonl": 4,
+    "pe-exports.jsonl": 0,
+    "archive-members.jsonl": 0,
+    "development-metadata.jsonl": 0,
+    "recipes.jsonl": 0,
+    "warnings.jsonl": 0
+  },
+  "sha256": {
+    "artifacts.jsonl": "469d4ae66649ab5f5eea39c53a027cc1a3b776c11cc7d577f7be3d623ac5b31c",
+    "pe-imports.jsonl": "338dbfd1856c7d2aa1a2dc0e408c85950a143d6dff3f56dd151bd71799b09e5a",
+    "pe-exports.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-members.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "development-metadata.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "recipes.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "warnings.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

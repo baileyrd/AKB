@@ -4,9 +4,16 @@
 
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
-| dll:msys2:/usr/bin/msys-z.dll | dll | /usr/bin/msys-z.dll | verified | 2 | 1 |
+| dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
+| dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-heap-l1-1-0.dll | dll | api-ms-win-crt-heap-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-locale-l1-1-0.dll | dll | api-ms-win-crt-locale-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-private-l1-1-0.dll | dll | api-ms-win-crt-private-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-runtime-l1-1-0.dll | dll | api-ms-win-crt-runtime-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-stdio-l1-1-0.dll | dll | api-ms-win-crt-stdio-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-string-l1-1-0.dll | dll | api-ms-win-crt-string-l1-1-0.dll | verified | 0 | 1 |
+| dll:windows:api-ms-win-crt-utility-l1-1-0.dll | dll | api-ms-win-crt-utility-l1-1-0.dll | verified | 0 | 1 |
 | dll:windows:kernel32.dll | dll | kernel32.dll | verified | 0 | 1 |
-| dll:windows:msys-2.0.dll | dll | msys-2.0.dll | verified | 0 | 1 |
 | ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
 | environment:msys2:clang64 | environment | CLANG64 | partial | 0 | 3823 |
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
@@ -17,8 +24,11 @@
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 1 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 1 |
 | filesystem-path:msys2:/.pkginfo | filesystem-path | /.PKGINFO | verified | 0 | 1 |
-| filesystem-path:msys2:/usr/share/licenses/zlib/license | filesystem-path | /usr/share/licenses/zlib/LICENSE | verified | 0 | 1 |
-| filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz | filesystem-path | /usr/share/man/man3/zlib.3.gz | verified | 0 | 1 |
+| filesystem-path:msys2:/ucrt64/share/licenses/zlib/license | filesystem-path | /ucrt64/share/licenses/zlib/LICENSE | verified | 0 | 1 |
+| filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz | filesystem-path | /ucrt64/share/man/man3/zlib.3.gz | verified | 0 | 1 |
+| header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
+| header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
+| import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -12227,7 +12237,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-zint-qt | package | mingw-w64-ucrt-x86_64-zint-qt | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zix | package | mingw-w64-ucrt-x86_64-zix | verified | 2 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-zizmor | package | mingw-w64-ucrt-x86_64-zizmor | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-zlib | package | mingw-w64-ucrt-x86_64-zlib | verified | 2 | 299 |
+| package:msys2:mingw-w64-ucrt-x86_64-zlib | package | mingw-w64-ucrt-x86_64-zlib | verified | 13 | 299 |
 | package:msys2:mingw-w64-ucrt-x86_64-zlib-ng | package | mingw-w64-ucrt-x86_64-zlib-ng | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-zlib-ng-compat | package | mingw-w64-ucrt-x86_64-zlib-ng-compat | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zoitechat | package | mingw-w64-ucrt-x86_64-zoitechat | verified | 16 | 0 |
@@ -15724,12 +15734,13 @@
 | package:msys2:yelp-xsl | package | yelp-xsl | verified | 2 | 1 |
 | package:msys2:yodl | package | yodl | verified | 3 | 0 |
 | package:msys2:zip | package | zip | verified | 3 | 13 |
-| package:msys2:zlib | package | zlib | verified | 9 | 60 |
+| package:msys2:zlib | package | zlib | verified | 3 | 60 |
 | package:msys2:zlib-devel | package | zlib-devel | verified | 3 | 9 |
 | package:msys2:znc | package | znc | verified | 8 | 0 |
 | package:msys2:zsh | package | zsh | verified | 6 | 1 |
 | package:msys2:zsh-doc | package | zsh-doc | verified | 2 | 0 |
 | package:msys2:zstd | package | zstd | verified | 4 | 4 |
+| pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc | pkg-config-module | /ucrt64/lib/pkgconfig/zlib.pc | verified | 0 | 1 |
 | platform:microsoft:windows | platform | Microsoft Windows | partial | 0 | 1 |
 | repository:msys2:clang64 | repository | clang64 | verified | 0 | 3822 |
 | repository:msys2:clangarm64 | repository | clangarm64 | verified | 0 | 3779 |
@@ -15738,3 +15749,4 @@
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
 | runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 1 |
+| static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

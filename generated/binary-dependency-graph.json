@@ -1,41 +1,26 @@
 {
-  "snapshot": "20260729T115414Z-93c5b258a95b",
+  "snapshot": "20260729T122657Z-eac21b0c1bb8",
   "edges": [
     {
-      "id": "relationship:inventory:imports-dll-e7b05cdd4e919a5ceace",
+      "id": "relationship:inventory:imports-dll-189721d86432b0e07eee",
       "type": "imports-dll",
-      "source": "dll:msys2:/usr/bin/msys-z.dll",
-      "target": "dll:windows:msys-2.0.dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-stdio-l1-1-0.dll",
       "status": "verified",
       "confidence": "verified",
       "scope": "deep-inventory",
       "condition": "",
       "properties": {
         "symbols": [
-          "__errno",
-          "_impure_ptr",
-          "calloc",
-          "close",
-          "cygwin_internal",
-          "dll_dllcrt0",
-          "fcntl",
-          "free",
-          "lseek",
-          "malloc",
-          "memchr",
-          "memcpy",
-          "memmove",
-          "memset",
-          "msys_detach_dll",
-          "open",
-          "posix_memalign",
-          "read",
-          "realloc",
-          "snprintf",
-          "strerror",
-          "strlen",
-          "vsnprintf",
-          "write"
+          "__acrt_iob_func",
+          "__stdio_common_vfprintf",
+          "_close",
+          "_lseeki64",
+          "_open",
+          "_read",
+          "_wopen",
+          "_write",
+          "fputc"
         ],
         "ordinals": []
       },
@@ -44,9 +29,100 @@
       ]
     },
     {
-      "id": "relationship:inventory:imports-dll-fbe3f5e854658b58f04e",
+      "id": "relationship:inventory:imports-dll-2e01ef161166f723c43e",
       "type": "imports-dll",
-      "source": "dll:msys2:/usr/bin/msys-z.dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-convert-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "mbrtowc",
+          "wcrtomb",
+          "wcstombs"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-479f0a8c2f6da5499e0a",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-utility-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "rand_s"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-69b60a3a069c61b63da3",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-string-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "memset",
+          "strlen",
+          "strncmp",
+          "strnlen",
+          "wcslen",
+          "wcsnlen"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-77b19c35d6e879af3d1d",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-runtime-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "_errno",
+          "_execute_onexit_table",
+          "_exit",
+          "_initialize_onexit_table",
+          "_initterm",
+          "_initterm_e",
+          "_register_onexit_function",
+          "abort",
+          "strerror"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-a3173901406e7f94152b",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
       "target": "dll:windows:kernel32.dll",
       "status": "verified",
       "confidence": "verified",
@@ -54,7 +130,79 @@
       "condition": "",
       "properties": {
         "symbols": [
-          "GetModuleHandleA"
+          "DeleteCriticalSection",
+          "EnterCriticalSection",
+          "GetCurrentProcess",
+          "GetLastError",
+          "InitializeCriticalSection",
+          "IsProcessorFeaturePresent",
+          "LeaveCriticalSection",
+          "Sleep",
+          "TerminateProcess",
+          "TlsGetValue",
+          "VirtualProtect",
+          "VirtualQuery"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-a351e1ff58501f6aa1d9",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-heap-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "calloc",
+          "free",
+          "malloc"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-aaa0e5b406e9659bf446",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-private-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "memchr",
+          "memcpy",
+          "memmove"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-e08dcc21b5ac9980c4ed",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-locale-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "localeconv"
         ],
         "ordinals": []
       },
@@ -64,7 +212,14 @@
     }
   ],
   "reverse_importer_counts": {
-    "dll:windows:kernel32.dll": 1,
-    "dll:windows:msys-2.0.dll": 1
+    "dll:windows:api-ms-win-crt-convert-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-heap-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-locale-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-private-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-runtime-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-stdio-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-string-l1-1-0.dll": 1,
+    "dll:windows:api-ms-win-crt-utility-l1-1-0.dll": 1,
+    "dll:windows:kernel32.dll": 1
   }
 }

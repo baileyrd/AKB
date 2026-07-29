@@ -1,9 +1,16 @@
 AKB architecture graph overview
 
 Objects
-- dll:msys2:/usr/bin/msys-z.dll (dll): /usr/bin/msys-z.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
+- dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
+- dll:windows:api-ms-win-crt-heap-l1-1-0.dll (dll): api-ms-win-crt-heap-l1-1-0.dll
+- dll:windows:api-ms-win-crt-locale-l1-1-0.dll (dll): api-ms-win-crt-locale-l1-1-0.dll
+- dll:windows:api-ms-win-crt-private-l1-1-0.dll (dll): api-ms-win-crt-private-l1-1-0.dll
+- dll:windows:api-ms-win-crt-runtime-l1-1-0.dll (dll): api-ms-win-crt-runtime-l1-1-0.dll
+- dll:windows:api-ms-win-crt-stdio-l1-1-0.dll (dll): api-ms-win-crt-stdio-l1-1-0.dll
+- dll:windows:api-ms-win-crt-string-l1-1-0.dll (dll): api-ms-win-crt-string-l1-1-0.dll
+- dll:windows:api-ms-win-crt-utility-l1-1-0.dll (dll): api-ms-win-crt-utility-l1-1-0.dll
 - dll:windows:kernel32.dll (dll): kernel32.dll
-- dll:windows:msys-2.0.dll (dll): msys-2.0.dll
 - ecosystem:msys2:msys2 (ecosystem): MSYS2
 - environment:msys2:clang64 (environment): CLANG64
 - environment:msys2:clangarm64 (environment): CLANGARM64
@@ -14,8 +21,11 @@ Objects
 - filesystem-path:msys2:/.buildinfo (filesystem-path): /.BUILDINFO
 - filesystem-path:msys2:/.mtree (filesystem-path): /.MTREE
 - filesystem-path:msys2:/.pkginfo (filesystem-path): /.PKGINFO
-- filesystem-path:msys2:/usr/share/licenses/zlib/license (filesystem-path): /usr/share/licenses/zlib/LICENSE
-- filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz (filesystem-path): /usr/share/man/man3/zlib.3.gz
+- filesystem-path:msys2:/ucrt64/share/licenses/zlib/license (filesystem-path): /ucrt64/share/licenses/zlib/LICENSE
+- filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz (filesystem-path): /ucrt64/share/man/man3/zlib.3.gz
+- header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
+- header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
+- import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -15727,6 +15737,7 @@ Objects
 - package:msys2:zsh (package): zsh
 - package:msys2:zsh-doc (package): zsh-doc
 - package:msys2:zstd (package): zstd
+- pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc (pkg-config-module): /ucrt64/lib/pkgconfig/zlib.pc
 - platform:microsoft:windows (platform): Microsoft Windows
 - repository:msys2:clang64 (repository): clang64
 - repository:msys2:clangarm64 (repository): clangarm64
@@ -15735,6 +15746,7 @@ Objects
 - repository:msys2:msys (repository): msys
 - repository:msys2:ucrt64 (repository): ucrt64
 - runtime:msys2:msys-2.0.dll (runtime): msys-2.0.dll
+- static-library:msys2:/ucrt64/lib/libz.a (static-library): /ucrt64/lib/libz.a
 
 Relationships
 - ecosystem:msys2:msys2 --requires--> platform:microsoft:windows
@@ -91850,11 +91862,23 @@ Relationships
 - package:msys2:mingw-w64-i686-zvbi --runtime-depends-on--> package:msys2:mingw-w64-i686-libiconv
 - package:msys2:mingw-w64-i686-zvbi --runtime-depends-on--> package:msys2:mingw-w64-i686-libpng
 - package:msys2:mingw-w64-i686-zvbi --runtime-depends-on--> package:msys2:mingw-w64-i686-libwinpthread
-- dll:msys2:/usr/bin/msys-z.dll --imports-dll--> dll:windows:msys-2.0.dll
-- dll:msys2:/usr/bin/msys-z.dll --imports-dll--> dll:windows:kernel32.dll
-- package:msys2:zlib --installs--> filesystem-path:msys2:/usr/share/licenses/zlib/license
-- package:msys2:zlib --installs--> filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz
-- package:msys2:zlib --installs--> filesystem-path:msys2:/.pkginfo
-- package:msys2:zlib --installs--> dll:msys2:/usr/bin/msys-z.dll
-- package:msys2:zlib --installs--> filesystem-path:msys2:/.mtree
-- package:msys2:zlib --installs--> filesystem-path:msys2:/.buildinfo
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-stdio-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-convert-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-utility-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-string-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-runtime-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:kernel32.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-heap-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-private-l1-1-0.dll
+- dll:msys2:/ucrt64/bin/zlib1.dll --imports-dll--> dll:windows:api-ms-win-crt-locale-l1-1-0.dll
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> static-library:msys2:/ucrt64/lib/libz.a
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> filesystem-path:msys2:/.mtree
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> header:msys2:/ucrt64/include/zlib.h
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> dll:msys2:/ucrt64/bin/zlib1.dll
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> filesystem-path:msys2:/ucrt64/share/licenses/zlib/license
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> filesystem-path:msys2:/.pkginfo
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> filesystem-path:msys2:/.buildinfo
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> import-library:msys2:/ucrt64/lib/libz.dll.a
+- package:msys2:mingw-w64-ucrt-x86_64-zlib --installs--> header:msys2:/ucrt64/include/zconf.h

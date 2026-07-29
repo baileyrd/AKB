@@ -517,7 +517,19 @@ def write_reports(
     write_json(GENERATED / "deep-inventory-warnings.json", warnings)
 
 
-def import_inventory(directory: Path) -> dict[str, Any]:
+def merge_projection(previous: dict[str, Any] | None, current: dict[str, Any]) -> dict[str, Any]:
+    """Accumulate independently verified inventory snapshots by stable IDs."""
+    if not previous:
+        return current
+    for key in ("entities", "relationships", "evidence"):
+        merged = {item["id"]: item for item in previous.get(key, [])}
+        merged.update({item["id"]: item for item in current.get(key, [])})
+        current[key] = sorted(merged.values(), key=lambda item: item["id"])
+    current["claims"] = []
+    return current
+
+
+def import_inventory(directory: Path, accumulate: bool = False) -> dict[str, Any]:
     manifest, records = verify_input(directory)
     generated_at = datetime.fromisoformat(
         manifest["generated_at"].replace("Z", "+00:00")
@@ -525,6 +537,8 @@ def import_inventory(directory: Path) -> dict[str, Any]:
     snapshot_id = generated_at.strftime("%Y%m%dT%H%M%SZ") + "-" + sha_manifest(manifest)[:12]
     previous = read_json(CURRENT) if CURRENT.is_file() else None
     projection, unresolved = build_projection(manifest, records, snapshot_id)
+    if accumulate:
+        projection = merge_projection(previous, projection)
     changes = make_changes(previous, projection)
     snapshot_dir = SNAPSHOTS / snapshot_id
     snapshot_dir.mkdir(parents=True, exist_ok=True)
@@ -548,9 +562,10 @@ def import_inventory(directory: Path) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("inventory_directory", type=Path)
+    parser.add_argument("--accumulate", action="store_true", help="retain prior verified inventory observations")
     args = parser.parse_args()
     try:
-        result = import_inventory(args.inventory_directory.resolve())
+        result = import_inventory(args.inventory_directory.resolve(), args.accumulate)
     except (InventoryImportError, OSError, ValueError, KeyError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1

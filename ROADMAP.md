@@ -82,7 +82,7 @@
 - [x] Forward and reverse dependency navigation
 - [x] Layer, package, library, runtime, toolchain, and repository views
 - [x] Accessible SVG and textual fallbacks
-- [ ] Large-graph performance tests
+- [x] Large-graph performance tests
 
 ## Increment 8 — Assurance and operations
 

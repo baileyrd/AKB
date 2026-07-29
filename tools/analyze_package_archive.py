@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import posixpath
 import subprocess
 import sys
 import tarfile
@@ -41,6 +42,20 @@ def safe_member_path(member: tarfile.TarInfo) -> str:
     if value.startswith("/") or ".." in path.parts or not value:
         raise PackageArchiveError(f"unsafe archive member: {member.name}")
     return "/" + path.as_posix()
+
+
+def safe_link_target(member: tarfile.TarInfo) -> str:
+    """Return a normalized package-root target for a symbolic or hard link."""
+    target = member.linkname.replace("\\", "/")
+    if not target:
+        raise PackageArchiveError(f"link has no target: {member.name}")
+    member_path = PurePosixPath(member.name.replace("\\", "/"))
+    if target.startswith("/"):
+        raise PackageArchiveError(f"unsafe archive link target: {member.linkname}")
+    normalized = posixpath.normpath(str(member_path.parent / PurePosixPath(target)))
+    if normalized in {"", "."} or normalized == ".." or normalized.startswith("../"):
+        raise PackageArchiveError(f"unsafe archive link target: {member.linkname}")
+    return "/" + normalized
 
 
 def safe_external_member_path(value: str) -> None:
@@ -98,8 +113,17 @@ def analyze(archive: Path, package: str | None, output: Path, source_archive: Pa
             bundle = Path(directory) / "payload.tar"
             with tarfile.open(bundle, "w") as target:
                 for path in extracted.rglob("*"):
-                    if path.is_file() and path.resolve().is_relative_to(extracted.resolve()):
-                        target.add(path, arcname=path.relative_to(extracted).as_posix())
+                    if not (path.is_file() or path.is_symlink()):
+                        continue
+                    try:
+                        path.resolve().relative_to(extracted.resolve())
+                    except ValueError as exc:
+                        raise PackageArchiveError(
+                            f"extracted archive link escapes package root: {path}"
+                        ) from exc
+                    target.add(
+                        path, arcname=path.relative_to(extracted).as_posix(), recursive=False
+                    )
             return analyze(bundle, package, output, source_archive)
     output.mkdir(parents=True, exist_ok=True)
     artifacts: list[dict[str, Any]] = []
@@ -113,6 +137,14 @@ def analyze(archive: Path, package: str | None, output: Path, source_archive: Pa
             package = package or package_name_from_pkginfo(bundle)
             scratch_path = Path(scratch)
             for index, item in enumerate(sorted(bundle.getmembers(), key=lambda value: value.name)):
+                if item.issym() or item.islnk():
+                    path = safe_member_path(item)
+                    artifacts.append({
+                        "package": package, "path": path, "kind": "symlink", "present": True,
+                        "link_type": "symbolic" if item.issym() else "hard",
+                        "target": safe_link_target(item), "archive": source_archive.name,
+                    })
+                    continue
                 if not item.isfile():
                     continue
                 path = safe_member_path(item)

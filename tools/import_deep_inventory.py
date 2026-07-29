@@ -36,6 +36,7 @@ KIND_MAP = {
     "header": "header",
     "pkg-config-module": "pkg-config-module",
     "cmake-module": "cmake-module",
+    "symlink": "filesystem-path",
     "file": "filesystem-path",
 }
 
@@ -234,6 +235,21 @@ def build_projection(
                     "reason": "package-not-in-catalog",
                 }
             )
+
+    for row in records["artifacts.jsonl"]:
+        if row.get("kind") != "symlink":
+            continue
+        source = path_ids.get(row["path"])
+        target_path = row.get("target")
+        target = path_ids.get(target_path) if isinstance(target_path, str) else None
+        if not source or not target:
+            unresolved.append({
+                "category": "symlink", "record": row,
+                "reason": "missing-source-or-target",
+            })
+            continue
+        edge = _edge("links-to", source, target, evidence, link_type=row.get("link_type", ""))
+        relationships[edge["id"]] = edge
 
     for row in records["pe-imports.jsonl"]:
         source = path_ids.get(row.get("path", ""))

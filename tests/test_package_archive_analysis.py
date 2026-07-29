@@ -8,7 +8,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.analyze_package_archive import PackageArchiveError, analyze, safe_external_member_path
+from tools.analyze_package_archive import (
+    PackageArchiveError, analyze, safe_external_member_path, safe_link_target,
+)
 
 
 def minimal_pe() -> bytes:
@@ -65,6 +67,26 @@ class PackageArchiveAnalysisTests(unittest.TestCase):
     def test_rejects_unsafe_external_tar_name(self):
         with self.assertRaisesRegex(PackageArchiveError, "unsafe archive member"):
             safe_external_member_path("../outside.dll")
+
+    def test_records_safe_symbolic_link_target(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            archive, output = root / "sample.pkg.tar", root / "output"
+            with tarfile.open(archive, "w") as bundle:
+                add_file(bundle, "usr/lib/libsample.dll", b"payload")
+                link = tarfile.TarInfo("usr/lib/libsample-current.dll")
+                link.type, link.linkname = tarfile.SYMTYPE, "libsample.dll"
+                bundle.addfile(link)
+            analyze(archive, "sample", output)
+            artifacts = [json.loads(line) for line in (output / "artifacts.jsonl").read_text().splitlines()]
+            link_record = next(item for item in artifacts if item["kind"] == "symlink")
+            self.assertEqual(link_record["target"], "/usr/lib/libsample.dll")
+
+    def test_rejects_escape_link_target(self):
+        link = tarfile.TarInfo("usr/lib/sample.dll")
+        link.linkname = "../../../outside.dll"
+        with self.assertRaisesRegex(PackageArchiveError, "unsafe archive link target"):
+            safe_link_target(link)
 
 
 if __name__ == "__main__":

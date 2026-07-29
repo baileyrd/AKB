@@ -223,6 +223,29 @@ class ImporterTests(unittest.TestCase):
             all(evidence_id in item["evidence_refs"] for item in projection["entities"])
         )
 
+    def test_projects_archive_link_to_observed_target(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_fixture(root)
+            manifest, records = IMPORTER.verify_input(root)
+            records["artifacts.jsonl"].append(
+                {
+                    "package": "sample",
+                    "path": "/ucrt64/bin/sample-current.dll",
+                    "kind": "symlink",
+                    "present": True,
+                    "link_type": "symbolic",
+                    "target": "/ucrt64/bin/sample.dll",
+                }
+            )
+            projection, unresolved = IMPORTER.build_projection(
+                manifest, records, "fixture", {"package:msys2:sample"}
+            )
+        self.assertEqual(unresolved, [])
+        links = [item for item in projection["relationships"] if item["type"] == "links-to"]
+        self.assertEqual(len(links), 1)
+        self.assertTrue(links[0]["target"].endswith("/ucrt64/bin/sample.dll"))
+
     def test_inventory_change_detection(self) -> None:
         previous = {
             "snapshot": {"id": "old"},

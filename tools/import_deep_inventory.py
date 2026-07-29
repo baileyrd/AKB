@@ -269,10 +269,20 @@ def build_projection(
                 _entity(target, "dll", dll_name, {"external": True}, evidence),
             )
         elif len(candidates) > 1:
-            unresolved.append(
-                {"category": "pe-import", "record": row, "reason": "ambiguous-dll", "candidates": candidates}
-            )
-            continue
+            candidate_hashes = {
+                str(entities[candidate].get("properties", {}).get("sha256", ""))
+                for candidate in candidates
+            }
+            if len(candidate_hashes) == 1 and "" not in candidate_hashes:
+                # Duplicate installed paths sometimes carry byte-identical
+                # DLLs.  The hash proves equivalence for this snapshot, so a
+                # stable path target is preferable to discarding the import.
+                target = sorted(candidates)[0]
+            else:
+                unresolved.append(
+                    {"category": "pe-import", "record": row, "reason": "ambiguous-dll", "candidates": candidates}
+                )
+                continue
         edge = _edge(
             "imports-dll", source, target, evidence,
             symbols=row.get("symbols", []), ordinals=row.get("ordinals", []),

@@ -345,7 +345,10 @@ def parse_pkg_config(path: Path) -> dict[str, Any]:
     expanded = {key: expand(value) for key, value in fields.items()}
     requires: list[dict[str, str]] = []
     for field in ("Requires", "Requires.private"):
-        for token in re.split(r"\s*,\s*|\s+(?=[A-Za-z0-9_.+-]+\s*(?:[<>=]|$))", expanded.get(field, "")):
+        # pkg-config separates requirements with commas.  A constraint may
+        # contain whitespace (for example, ``mpfr >= 4.1.0``), so splitting on
+        # whitespace would incorrectly turn its version into a second module.
+        for token in re.split(r"\s*,\s*", expanded.get(field, "")):
             match = re.match(r"^([A-Za-z0-9_.+-]+)\s*(.*)$", token.strip())
             if match:
                 requires.append(

@@ -1,10 +1,13 @@
 # Repository Database Archive Import
 
 `tools/import_repository_db.py` reads pacman repository database archives
-directly without extracting files to the filesystem. It accepts tar formats
-handled by Python's standard library and parses only regular `*/desc` records.
-It rejects traversal-shaped member names, missing package identity, duplicate
-package names, malformed descriptions, and archives with no package records.
+directly and parses only regular `*/desc` records. It uses Python's standard
+library for supported tar formats. For Zstandard-compressed archives on a
+Python runtime without Zstandard support, it uses Windows `bsdtar` in an
+isolated temporary directory, validates member paths before extraction, and
+removes that directory after parsing. It rejects traversal-shaped member names,
+missing package identity, duplicate package names, malformed descriptions, and
+archives with no package records.
 
 Convert one or more downloaded databases into the existing catalog-import
 contract. Repeat `--repository` once for each archive in matching order:

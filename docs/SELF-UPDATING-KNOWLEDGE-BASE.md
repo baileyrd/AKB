@@ -107,6 +107,13 @@ recipe sources and compare them to aligned SHA-256 declarations without
 executing or extracting payloads; see
 [`RECIPE-SOURCE-VERIFICATION.md`](RECIPE-SOURCE-VERIFICATION.md).
 
+For a source checkout without a local MSYS2 installation,
+`tools/collect_recipe_tree.py` produces the same manifest-and-JSONL contract
+from every `PKGBUILD`. It records the source revision when available, a hash
+for each parsed recipe, and parse warnings without sourcing or executing shell
+content. Its `recipe-source-tree` scope remains distinct from package-archive
+and installed-file observations.
+
 Two collection scopes are supported:
 
 - `installed` uses `pacman -Ql`, records installed ownership, and deeply

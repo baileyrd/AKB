@@ -38,6 +38,7 @@ class RuntimeObservationTests(unittest.TestCase):
         self.assertEqual(result["environment"], "ucrt64")
         self.assertNotIn("PATH", result["environment_variables"])
         self.assertEqual(set(result["tools"]), set(COLLECTOR.TOOLS))
+        self.assertEqual(set(result["probes"]), set(COLLECTOR.PROBES))
 
     def test_projection_preserves_environment_as_target(self) -> None:
         result = IMPORTER.projection(self.fixture())

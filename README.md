@@ -64,7 +64,7 @@ flowchart TD
     V --> R["Indexes and reports"]
 ```
 
-## Initial commands
+## Validate and explore
 
 Requires Python 3.11 or later and uses only the standard library:
 
@@ -72,9 +72,29 @@ Requires Python 3.11 or later and uses only the standard library:
 python tools/akb.py validate
 python tools/akb.py generate
 python tools/akb.py all
+python tools/build_explorer.py
 ```
 
-Generated files are written beneath `generated/`.
+Generated files are written beneath `generated/`; open
+`generated/explorer/index.html` for the static, deep-linkable architecture
+explorer.
+
+### Start the Explorer
+
+Generate the Explorer, then open the HTML file in a browser. No package
+installation, build server, or database service is required:
+
+```powershell
+py -3 tools/build_explorer.py
+Start-Process .\generated\explorer\index.html
+```
+
+For a local HTTP origin instead, serve the generated directory and browse to
+the printed address:
+
+```powershell
+py -3 -m http.server 8000 --directory generated\explorer
+```
 
 ## Continuous refresh
 
@@ -97,9 +117,53 @@ selected MSYS2 environment. See
 The collector/importer boundary is specified in
 [`docs/DEEP-INVENTORY-CONTRACT.md`](docs/DEEP-INVENTORY-CONTRACT.md).
 
+### Offline and archive-based evidence
+
+The same evidence pipeline can ingest package metadata and payloads without
+installing them:
+
+```powershell
+py -3 tools/import_repository_db.py C:\cache\msys.db `
+    --repository msys --output work\catalog-from-db
+py -3 tools/import_package_catalog.py work\catalog-from-db
+
+py -3 tools/analyze_package_archive.py C:\cache\sample.pkg.tar `
+    --package sample --output work\sample-archive
+py -3 tools/import_deep_inventory.py work\sample-archive
+```
+
+Repository databases are read in-stream and package payloads are statically
+analyzed without installation or execution. See
+[`docs/REPOSITORY-DATABASE-IMPORT.md`](docs/REPOSITORY-DATABASE-IMPORT.md) and
+[`docs/PACKAGE-ARCHIVE-ANALYSIS.md`](docs/PACKAGE-ARCHIVE-ANALYSIS.md).
+
+For statically discovered PKGBUILD sources, verify downloaded HTTP(S) payloads
+against aligned SHA-256 declarations without executing or extracting them:
+
+```powershell
+py -3 tools/verify_recipe_sources.py work\inventory\recipes.jsonl `
+    --output work\recipe-source-verification
+```
+
+See [`docs/RECIPE-SOURCE-VERIFICATION.md`](docs/RECIPE-SOURCE-VERIFICATION.md)
+for outcomes and download bounds.
+
+### Operations policy
+
+The source registry and machine-readable refresh policy define per-source
+cadence, retention, and alert thresholds. Validate policy changes with:
+
+```bash
+python tools/validate_refresh_policy.py
+```
+
+See [`docs/MULTI-SOURCE-REFRESH-POLICY.md`](docs/MULTI-SOURCE-REFRESH-POLICY.md).
+
 ## Current maturity
 
-This repository is an evolving, evidence-backed architecture knowledge base.
-It includes the governing metamodel, catalog/deep-inventory/runtime pipelines,
-generated indexes, a static interactive explorer, and operational workflows.
-See the [roadmap](ROADMAP.md) for completed and remaining increments.
+This repository is an evidence-backed architecture knowledge base with its
+foundation, inventory pipeline, ecosystem model, runtime/package-management,
+toolchain, Git for Windows, Explorer, and operations increments complete. It
+includes the governing metamodel, reproducible projections, static explorer,
+continuous refresh policy, and operational workflows. See the
+[roadmap](ROADMAP.md) for the completed scope.

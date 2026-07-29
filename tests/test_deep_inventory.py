@@ -112,6 +112,17 @@ class AnalyzerTests(unittest.TestCase):
         self.assertEqual(recipe_result["makedepends"], ["cmake", "ninja"])
         self.assertIn("build", recipe_result["functions"])
 
+    def test_parse_recipe_allows_empty_arrays(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            recipe = Path(directory) / "PKGBUILD"
+            recipe.write_text(
+                "pkgname=sample\npkgver=1\npkgrel=1\ndepends=()\nsource=()\n",
+                encoding="utf-8",
+            )
+            result = ANALYZER.parse_pkgbuild(recipe)
+        self.assertEqual(result["depends"], [])
+        self.assertEqual(result["source"], [])
+
 
 class ImporterTests(unittest.TestCase):
     def make_fixture(self, root: Path) -> dict:

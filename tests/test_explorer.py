@@ -31,6 +31,9 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn('Dependencies', rendered)
         self.assertIn('Dependents', rendered)
         self.assertIn('isDependency', rendered)
+        self.assertIn("const viewRoute", rendered)
+        for name in ("layers", "packages", "libraries", "runtimes", "toolchains", "repositories"):
+            self.assertIn(f"{name}:", rendered)
 
 
 if __name__ == "__main__":

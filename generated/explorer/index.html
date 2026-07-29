@@ -15,19 +15,25 @@ const byId = Object.fromEntries(data.entities.map(item => [item.id, item]));
 const esc = value => String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const route = id => '#/object/' + encodeURIComponent(id);
 const isDependency = edge => edge.type.includes('depends-on') || edge.type === 'requires' || edge.type === 'imports-dll';
+const views = {layers:['layer'], packages:['package','package-artifact'], libraries:['library','dll','import-library','static-library'], runtimes:['runtime','environment','crt','abi'], toolchains:['toolchain','compiler','linker','debugger','build-system'], repositories:['repository','mirror','source-repository']};
+const viewRoute = name => '#/view/' + name;
+const viewLinks = () => `<nav aria-label="Explorer views"><strong>Views:</strong> ${Object.keys(views).map(name => `<a href="${viewRoute(name)}">${esc(name)}</a>`).join(' · ')}</nav>`;
 const index = () => {
   const kinds = [...new Set(data.entities.map(item => item.kind))].sort();
   const statuses = [...new Set(data.entities.map(item => item.status))].sort();
-  return `<h1>Architecture Explorer</h1><p>Search the composed graph or narrow the textual index.</p><label>Search <input id="search" type="search" autofocus></label> <label>Kind <select id="kind"><option value="">All</option>${kinds.map(x=>`<option>${esc(x)}</option>`).join('')}</select></label> <label>Status <select id="status"><option value="">All</option>${statuses.map(x=>`<option>${esc(x)}</option>`).join('')}</select></label><p id="count"></p><ul id="results"></ul>`;
+  return `${viewLinks()}<h1>Architecture Explorer</h1><p>Search the composed graph or narrow the textual index.</p><label>Search <input id="search" type="search" autofocus></label> <label>Kind <select id="kind"><option value="">All</option>${kinds.map(x=>`<option>${esc(x)}</option>`).join('')}</select></label> <label>Status <select id="status"><option value="">All</option>${statuses.map(x=>`<option>${esc(x)}</option>`).join('')}</select></label><p id="count"></p><ul id="results"></ul>`;
 };
 function bindIndex() {
   const search = document.querySelector('#search'), kind = document.querySelector('#kind'), status = document.querySelector('#status'), results = document.querySelector('#results'), count = document.querySelector('#count');
   const update = () => { const term = search.value.toLowerCase(); const found = data.entities.filter(item => (!term || [item.id,item.name,...(item.aliases||[]),...(item.tags||[])].join(' ').toLowerCase().includes(term)) && (!kind.value || item.kind === kind.value) && (!status.value || item.status === status.value)); count.textContent = `${found.length} objects`; results.innerHTML = found.map(item => `<li><a href="${route(item.id)}">${esc(item.name)}</a> <code>${esc(item.id)}</code> — ${esc(item.kind)}, ${esc(item.status)}</li>`).join(''); }; [search,kind,status].forEach(control => control.addEventListener('input', update)); update();
 }
 function render() {
-  const id = decodeURIComponent(location.hash.replace(/^#\/object\//, ''));
+  const hash = location.hash || '#/';
+  const view = decodeURIComponent(hash.replace(/^#\/view\//, ''));
+  const id = decodeURIComponent(hash.replace(/^#\/object\//, ''));
   const item = byId[id];
   const root = document.querySelector('main');
+  if (hash.startsWith('#/view/')) { const kinds = views[view]; if (!kinds) { root.innerHTML = `${viewLinks()}<h1>Unknown view</h1><p><a href="#/">Return to the explorer index.</a></p>`; return; } const members = data.entities.filter(entry => kinds.includes(entry.kind)); root.innerHTML = `${viewLinks()}<nav aria-label="Breadcrumb"><a href="#/">Explorer</a> / <span aria-current="page">${esc(view)}</span></nav><h1>${esc(view)} view</h1><p>${members.length} typed objects.</p><ul>${members.map(entry => `<li><a href="${route(entry.id)}">${esc(entry.name)}</a> <code>${esc(entry.kind)}</code></li>`).join('') || '<li>No objects in the current projection.</li>'}</ul>`; return; }
   if (!item) { root.innerHTML = index(); bindIndex(); return; }
   const out = data.relationships.filter(edge => edge.source === id);
   const inc = data.relationships.filter(edge => edge.target === id);

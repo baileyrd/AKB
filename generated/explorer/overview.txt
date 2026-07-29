@@ -1,0 +1,22 @@
+AKB architecture graph overview
+
+Objects
+- ecosystem:msys2:msys2 (ecosystem): MSYS2
+- environment:msys2:clang64 (environment): CLANG64
+- environment:msys2:clangarm64 (environment): CLANGARM64
+- environment:msys2:mingw32 (environment): MINGW32
+- environment:msys2:mingw64 (environment): MINGW64
+- environment:msys2:msys (environment): MSYS
+- environment:msys2:ucrt64 (environment): UCRT64
+- platform:microsoft:windows (platform): Microsoft Windows
+- runtime:msys2:msys-2.0.dll (runtime): msys-2.0.dll
+
+Relationships
+- ecosystem:msys2:msys2 --requires--> platform:microsoft:windows
+- environment:msys2:msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- ecosystem:msys2:msys2 --contains--> environment:msys2:msys
+- ecosystem:msys2:msys2 --contains--> environment:msys2:ucrt64
+- ecosystem:msys2:msys2 --contains--> environment:msys2:clang64
+- ecosystem:msys2:msys2 --contains--> environment:msys2:clangarm64
+- ecosystem:msys2:msys2 --contains--> environment:msys2:mingw64
+- ecosystem:msys2:msys2 --contains--> environment:msys2:mingw32

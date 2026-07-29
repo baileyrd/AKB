@@ -20,10 +20,13 @@ class ExplorerTests(unittest.TestCase):
     def test_build_includes_all_entity_routes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             graph = EXPLORER.load_graph()
-            [path] = EXPLORER.build(graph, Path(directory))
-            rendered = path.read_text(encoding="utf-8")
+            index, svg, text = EXPLORER.build(graph, Path(directory))
+            rendered = index.read_text(encoding="utf-8")
+            rendered_svg = svg.read_text(encoding="utf-8")
+            rendered_text = text.read_text(encoding="utf-8")
         for item in graph["entities"]:
             self.assertIn(EXPLORER.route_for(item["id"]), rendered)
+            self.assertIn(item["id"], rendered_text)
         self.assertIn('id="search"', rendered)
         self.assertIn('aria-label="Breadcrumb"', rendered)
         self.assertIn('class="expand"', rendered)
@@ -34,6 +37,9 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn("const viewRoute", rendered)
         for name in ("layers", "packages", "libraries", "runtimes", "toolchains", "repositories"):
             self.assertIn(f"{name}:", rendered)
+        self.assertIn('role="img"', rendered_svg)
+        self.assertIn('<desc id="description">', rendered_svg)
+        self.assertIn('tabindex="0"', rendered_svg)
 
 
 if __name__ == "__main__":

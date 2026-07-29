@@ -16,6 +16,14 @@ py -3 tools/analyze_package_archive.py C:\cache\sample.pkg.tar `
 py -3 tools/import_deep_inventory.py work\sample-archive
 ```
 
+For a directory of downloaded package archives, the batch importer reads each
+archive's `.PKGINFO` package name, analyzes it independently, and accumulates
+only verified snapshots:
+
+```powershell
+py -3 tools/import_package_archives.py C:\cache\msys2-packages
+```
+
 The generated JSONL and manifest use the established deep-inventory importer
 contract. The manifest records the source package archive hash and labels its
 scope `package-archive`, preserving the distinction from files installed in a

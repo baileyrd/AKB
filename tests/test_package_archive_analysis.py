@@ -52,6 +52,16 @@ class PackageArchiveAnalysisTests(unittest.TestCase):
             with self.assertRaisesRegex(PackageArchiveError, "unsafe archive member"):
                 analyze(archive, "sample", Path(directory) / "output")
 
+    def test_derives_package_name_from_pkginfo(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            archive, output = root / "sample.pkg.tar", root / "output"
+            with tarfile.open(archive, "w") as bundle:
+                add_file(bundle, ".PKGINFO", b"pkgname = derived-sample\n")
+                add_file(bundle, "usr/bin/sample.exe", minimal_pe())
+            manifest = analyze(archive, None, output)
+        self.assertEqual(manifest["package"], "derived-sample")
+
     def test_rejects_unsafe_external_tar_name(self):
         with self.assertRaisesRegex(PackageArchiveError, "unsafe archive member"):
             safe_external_member_path("../outside.dll")

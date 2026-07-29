@@ -69,10 +69,25 @@ def unpack_zstandard_archive(archive: Path, extracted: Path) -> None:
         raise PackageArchiveError(f"cannot extract Zstandard package archive: {result.stderr.strip()}")
 
 
-def analyze(archive: Path, package: str, output: Path, source_archive: Path | None = None) -> dict[str, Any]:
+def package_name_from_pkginfo(bundle: tarfile.TarFile) -> str:
+    """Read the canonical pacman package name without executing archive content."""
+    for item in bundle.getmembers():
+        if item.isfile() and item.name.replace("\\", "/") == ".PKGINFO":
+            stream = bundle.extractfile(item)
+            if stream is None:
+                break
+            for line in stream.read().decode("utf-8", errors="replace").splitlines():
+                key, separator, value = line.partition(" = ")
+                if separator and key == "pkgname" and value and not any(char.isspace() for char in value):
+                    return value
+            break
+    raise PackageArchiveError("package is required when archive has no valid .PKGINFO pkgname")
+
+
+def analyze(archive: Path, package: str | None, output: Path, source_archive: Path | None = None) -> dict[str, Any]:
     if not archive.is_file():
         raise PackageArchiveError(f"archive is missing: {archive}")
-    if not package or any(char.isspace() for char in package):
+    if package is not None and (not package or any(char.isspace() for char in package)):
         raise PackageArchiveError("package must be a non-empty pacman package name")
     source_archive = source_archive or archive
     if archive.suffix == ".zst":
@@ -95,6 +110,7 @@ def analyze(archive: Path, package: str, output: Path, source_archive: Path | No
     warnings: list[dict[str, str]] = []
     try:
         with tarfile.open(archive, "r:*") as bundle, tempfile.TemporaryDirectory() as scratch:
+            package = package or package_name_from_pkginfo(bundle)
             scratch_path = Path(scratch)
             for index, item in enumerate(sorted(bundle.getmembers(), key=lambda value: value.name)):
                 if not item.isfile():
@@ -146,7 +162,7 @@ def analyze(archive: Path, package: str, output: Path, source_archive: Path | No
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("archive", type=Path)
-    parser.add_argument("--package", required=True)
+    parser.add_argument("--package", help="override package name; otherwise read .PKGINFO")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     try:

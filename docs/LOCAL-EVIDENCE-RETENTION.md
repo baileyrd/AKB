@@ -19,6 +19,14 @@ The local import completed on 2026-07-29 with 5,318,126 inventory entities,
 5,369,585 relationships, and zero unresolved references. It covers 15,678 of
 15,711 catalog packages (99.79%) as package-to-file ownership observations.
 
+The same workstation also retains a normalized source-recipe snapshot from a
+shallow official `MSYS2/MINGW-packages` checkout at commit
+`89036253520d039d5f7165c18ff2f06c7e296b55`. Collected on 2026-07-29, it
+contains 3,336 declaratively parsed and SHA-256-hashed `PKGBUILD` records with
+zero parser warnings. It is source-provenance evidence only: it does not prove
+that a package archive was built from that source or that its bytes match a
+published artifact.
+
 ## Scope and interpretation
 
 The retained records establish package ownership of paths from signed
@@ -37,6 +45,7 @@ snapshot-qualified provenance. The helper is documented in
 
 Do not stage `model/inventory/current.json`, the corresponding local
 `evidence/inventory-snapshots/` directories, or derived large reports from this
-retention mode. Publish only reproducible tooling, documentation, compact
+retention mode. This also includes the local `work/mingw-packages-source/`
+checkout and `work/mingw-recipes/` collector output. Publish only reproducible tooling, documentation, compact
 coverage summaries explicitly marked local-only, or externally hosted raw
 artifacts after a separate storage decision.

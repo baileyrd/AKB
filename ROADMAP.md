@@ -87,7 +87,7 @@
 ## Increment 8 — Assurance and operations
 
 - [x] Threat model and supply-chain analysis
-- [ ] Performance experiments and hot-path analysis
+- [x] Performance experiments and hot-path analysis
 - [ ] Upgrade, rollback, repair, and migration guides
 - [ ] Developer and operator workflows
 - [x] Initial continuous refresh, difference reports, and historical snapshots

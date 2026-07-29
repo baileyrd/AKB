@@ -108,9 +108,14 @@ Two collection scopes are supported:
   analyzes files present beneath the MSYS2 root;
 - `repositories` refreshes the pacman file databases (`pacman -Fy`) and uses
   `pacman -Fl` to build a complete repository file manifest. Files not locally
-  present are recorded but cannot be binary-analyzed until their package is
-  installed or its archive is extracted. `-SkipDatabaseRefresh` suppresses
-  both package- and file-database synchronization.
+present are recorded but cannot be binary-analyzed until their package is
+installed or its archive is extracted. `-SkipDatabaseRefresh` suppresses
+both package- and file-database synchronization.
+
+Uninstalled package archives can instead be analyzed statically with
+`tools/analyze_package_archive.py`; its evidence is explicitly scoped to the
+archive rather than a local MSYS2 installation. See
+[`PACKAGE-ARCHIVE-ANALYSIS.md`](PACKAGE-ARCHIVE-ANALYSIS.md).
 
 `tools/import_deep_inventory.py` validates every JSONL hash and count, creates
 typed artifact and recipe entities, resolves package ownership and DLL imports,

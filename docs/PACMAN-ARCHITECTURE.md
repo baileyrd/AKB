@@ -11,6 +11,9 @@ last_verified: 2026-07-28
 
 # Pacman Architecture and Transaction Model
 
+The linked [Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
+separates the repository and payload evidence path from runtime behavior.
+
 ```mermaid
 flowchart LR
     C["pacman command"] --> D["local configuration and sync databases"]

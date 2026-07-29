@@ -79,6 +79,23 @@ Generated files are written beneath `generated/`; open
 `generated/explorer/index.html` for the static, deep-linkable architecture
 explorer.
 
+### Start the Explorer
+
+Generate the Explorer, then open the HTML file in a browser. No package
+installation, build server, or database service is required:
+
+```powershell
+py -3 tools/build_explorer.py
+Start-Process .\generated\explorer\index.html
+```
+
+For a local HTTP origin instead, serve the generated directory and browse to
+the printed address:
+
+```powershell
+py -3 -m http.server 8000 --directory generated\explorer
+```
+
 ## Continuous refresh
 
 The package catalog and deep artifact inventory can be refreshed directly from

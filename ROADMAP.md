@@ -65,7 +65,7 @@
 - [x] Binary-to-DLL dependency graph
 - [x] Header and metadata indexes
 - [x] Library family classification
-- [ ] Reverse dependency and impact analysis
+- [x] Reverse dependency and impact analysis
 
 ## Increment 6 — Git for Windows
 

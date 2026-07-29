@@ -102,6 +102,11 @@ For locally present artifacts it also performs bounded static analysis:
 PKGBUILDs are parsed as text and are never sourced or executed. Shell-expanded
 values are retained as dynamic observations rather than guessed.
 
+`tools/verify_recipe_sources.py` can subsequently download explicit HTTP(S)
+recipe sources and compare them to aligned SHA-256 declarations without
+executing or extracting payloads; see
+[`RECIPE-SOURCE-VERIFICATION.md`](RECIPE-SOURCE-VERIFICATION.md).
+
 Two collection scopes are supported:
 
 - `installed` uses `pacman -Ql`, records installed ownership, and deeply

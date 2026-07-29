@@ -32,7 +32,7 @@
 - [x] Record artifact checksums, versions, retrieval dates, and licenses
 - [x] Produce reproducible deep-inventory snapshot manifest
 - [x] Extract and analyze uninstalled binary payloads from package archives
-- [ ] Resolve recipe source checksums against downloaded upstream payloads
+- [x] Resolve recipe source checksums against downloaded upstream payloads
 
 ## Increment 2 — Ecosystem baseline
 

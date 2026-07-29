@@ -14,7 +14,7 @@ spec.loader.exec_module(AKB)
 
 
 class ClaimEvidenceTests(unittest.TestCase):
-    def test_generate_includes_empty_claim_index(self) -> None:
+    def test_generate_includes_evidenced_claim_index(self) -> None:
         original = AKB.GENERATED
         try:
             with tempfile.TemporaryDirectory() as directory:
@@ -23,7 +23,8 @@ class ClaimEvidenceTests(unittest.TestCase):
                 report = (AKB.GENERATED / "claim-evidence-index.md").read_text()
         finally:
             AKB.GENERATED = original
-        self.assertIn("No claims recorded", report)
+        self.assertIn("claim:environment:ucrt64:default", report)
+        self.assertIn("evidence:msys2:environments-2026-07-28", report)
 
     def test_generate_dossiers_cover_every_composed_entity(self) -> None:
         original = AKB.GENERATED

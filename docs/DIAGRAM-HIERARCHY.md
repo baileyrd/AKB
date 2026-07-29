@@ -21,5 +21,7 @@ node links to a stable object route or an explicitly snapshot-qualified view.
 
 ![MSYS2 Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
 
+![MSYS2 Level 3 MSYS runtime boundary](../diagrams/level-3-msys-runtime-boundary.svg)
+
 The diagram is conceptual. Package and dependency counts are not encoded in
 the diagram itself; consult the generated catalog views for snapshot evidence.

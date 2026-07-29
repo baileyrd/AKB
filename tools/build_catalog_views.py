@@ -45,6 +45,21 @@ def build(catalog_path: Path = CATALOG, output: Path = GENERATED) -> dict[str, i
     lines = ["# Generated Library Package Candidates", "", "> Snapshot-bound package-name candidates. They are not proof of DLLs, headers, or logical API identity.", "", f"- Snapshot: `{catalog['snapshot']['id']}`", f"- Candidates: **{len(candidates)}**", "", "| Package | Repository | Version | Declared runtime dependents |", "| --- | --- | --- | ---: |"]
     lines.extend(f"| `{item['name']}` | {item['repository']} | {item['version']} | {item['declared_runtime_dependents']} |" for item in candidates)
     (output / "library-candidates.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    names = {package["id"]: package["name"] for package in packages}
+    consumers: dict[str, list[str]] = defaultdict(list)
+    for edge in catalog["relationships"]:
+        if edge.get("type") == "runtime-depends-on" and edge.get("source") and edge.get("target"):
+            source = edge["source"]
+            consumers[edge["target"]].append(names.get(source, source))
+    impact = [
+        {"id": target, "name": names.get(target, target), "declared_consumers": sorted(values), "count": len(values)}
+        for target, values in consumers.items()
+    ]
+    impact.sort(key=lambda item: (-item["count"], item["name"]))
+    (output / "reverse-dependency-impact.json").write_text(json.dumps({"snapshot": catalog["snapshot"]["id"], "scope": "declared runtime package dependencies only", "packages": impact}, indent=2) + "\n", encoding="utf-8")
+    impact_lines = ["# Generated Reverse Dependency Impact", "", "> Declared package dependencies, not binary/DLL loader evidence.", "", f"- Snapshot: `{catalog['snapshot']['id']}`", "", "| Package | Declared consumers |", "| --- | ---: |"]
+    impact_lines.extend(f"| `{item['name']}` | {item['count']} |" for item in impact)
+    (output / "reverse-dependency-impact.md").write_text("\n".join(impact_lines) + "\n", encoding="utf-8")
     return {"packages": len(packages), "candidates": len(candidates), "repositories": len(by_repository)}
 
 

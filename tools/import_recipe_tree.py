@@ -2,6 +2,7 @@
 """Project a verified local recipe-source collection without loading artifact inventory."""
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 import shutil
 import sys
@@ -20,6 +21,7 @@ except ModuleNotFoundError:  # Permit direct execution from tools/.
 ROOT = Path(__file__).resolve().parents[1]
 CURRENT = ROOT / "model" / "recipes" / "current.json"
 SNAPSHOTS = ROOT / "evidence" / "recipe-snapshots"
+PROJECTION_VERSION = "0.1.0"
 
 
 def write(path: Path, value: Any) -> None:
@@ -31,7 +33,8 @@ def import_recipe_tree(source: Path, accumulate: bool = True) -> dict[str, int |
     manifest, records = verify_input(source)
     if manifest.get("scope") != "recipe-source-tree":
         raise InventoryImportError("recipe importer requires recipe-source-tree scope")
-    snapshot_id = manifest["generated_at"].replace(":", "").replace("-", "").replace("+00:00", "Z")[:16] + "-" + sha_manifest(manifest)[:12]
+    semantic_key = sha_manifest(manifest) + ":" + PROJECTION_VERSION
+    snapshot_id = manifest["generated_at"].replace(":", "").replace("-", "").replace("+00:00", "Z")[:16] + "-" + hashlib.sha256(semantic_key.encode()).hexdigest()[:12]
     projection, unresolved = build_projection(manifest, records, snapshot_id)
     projection["snapshot"]["description"] = "Generated MSYS2 recipe-source projection."
     projection["evidence"][0]["notes"] = "Collected by tools/collect_recipe_tree.py."

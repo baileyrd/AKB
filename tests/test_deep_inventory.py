@@ -234,6 +234,21 @@ class ImporterTests(unittest.TestCase):
             all(evidence_id in item["evidence_refs"] for item in projection["entities"])
         )
 
+    def test_recipe_paths_prevent_dynamic_package_name_collisions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_fixture(root)
+            manifest, records = IMPORTER.verify_input(root)
+            first = records["recipes.jsonl"][0]
+            second = {**first, "path": "other/PKGBUILD", "pkgbase": "${MINGW_PACKAGE_PREFIX}-sample"}
+            first["pkgbase"] = "${MINGW_PACKAGE_PREFIX}-sample"
+            records["recipes.jsonl"].append(second)
+            projection, _ = IMPORTER.build_projection(
+                manifest, records, "fixture", {"package:msys2:sample"}
+            )
+        recipes = [item for item in projection["entities"] if item["kind"] == "build-recipe"]
+        self.assertEqual(len(recipes), 2)
+
     def test_projects_archive_link_to_observed_target(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

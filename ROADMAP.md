@@ -91,4 +91,4 @@
 - [x] Upgrade, rollback, repair, and migration guides
 - [x] Developer and operator workflows
 - [x] Initial continuous refresh, difference reports, and historical snapshots
-- [ ] Multi-source refresh orchestration, retention policy, and alerting
+- [x] Multi-source refresh orchestration, retention policy, and alerting

@@ -199,7 +199,10 @@ def build_projection(
     snapshot_id: str,
     packages: set[str] | None = None,
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    evidence = "evidence:inventory:current"
+    # Snapshot-qualified evidence remains distinct when projections accumulate.
+    # A generic "current" identifier would make retained entities appear to be
+    # supported by the latest import rather than their observed archive.
+    evidence = f"evidence:inventory:{snapshot_id}"
     package_ids = known_package_ids() if packages is None else packages
     entities: dict[str, dict[str, Any]] = {}
     relationships: dict[str, dict[str, Any]] = {}

@@ -209,6 +209,20 @@ class ImporterTests(unittest.TestCase):
         dll = next(item for item in projection["entities"] if item["kind"] == "dll")
         self.assertEqual(dll["properties"]["exports"][0]["name"], "sample_start")
 
+    def test_projection_uses_snapshot_qualified_evidence(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_fixture(root)
+            manifest, records = IMPORTER.verify_input(root)
+            projection, _ = IMPORTER.build_projection(
+                manifest, records, "fixture", {"package:msys2:sample"}
+            )
+        evidence_id = "evidence:inventory:fixture"
+        self.assertEqual(projection["evidence"][0]["id"], evidence_id)
+        self.assertTrue(
+            all(evidence_id in item["evidence_refs"] for item in projection["entities"])
+        )
+
     def test_inventory_change_detection(self) -> None:
         previous = {
             "snapshot": {"id": "old"},

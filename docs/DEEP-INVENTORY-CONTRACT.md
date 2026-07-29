@@ -35,7 +35,8 @@ its standard-library-only runtime.
 5. Analyzer failures become warning records and do not fabricate metadata.
 6. PKGBUILDs are never executed by the collector.
 7. Every graph fact derived from the inventory references its snapshot
-   evidence object.
+   evidence object. Evidence IDs are snapshot-qualified, so accumulated
+   projections preserve the observation that supports each retained fact.
 8. Unknown or ambiguous targets remain unresolved records.
 9. The current projection changes only after complete input verification.
 10. Raw snapshots are immutable and current views are reproducible.

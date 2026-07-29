@@ -1,0 +1,17 @@
+{
+  "previous_snapshot": null,
+  "current_snapshot": "20260729T115414Z-93c5b258a95b",
+  "added": [
+    "dll:msys2:/usr/bin/msys-z.dll",
+    "dll:windows:kernel32.dll",
+    "dll:windows:msys-2.0.dll",
+    "filesystem-path:msys2:/.buildinfo",
+    "filesystem-path:msys2:/.mtree",
+    "filesystem-path:msys2:/.pkginfo",
+    "filesystem-path:msys2:/usr/share/licenses/zlib/license",
+    "filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz"
+  ],
+  "removed": [],
+  "changed": [],
+  "unchanged_count": 0
+}

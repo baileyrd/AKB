@@ -15,5 +15,8 @@ py -3 tools/import_deep_inventory.py work\sample-archive
 The generated JSONL and manifest use the established deep-inventory importer
 contract. The manifest records the source package archive hash and labels its
 scope `package-archive`, preserving the distinction from files installed in a
-local MSYS2 root. Use an archive format supported by the installed Python
-standard library; decompression never executes package payloads.
+local MSYS2 root. Standard archive formats are read directly by Python. For
+the `.zst` packages published by MSYS2, the tool first lists and validates
+every path, then expands the archive with the host `tar` implementation into a
+temporary directory before reading only regular files. Decompression and
+analysis never execute package payloads.

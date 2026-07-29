@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 import sys
 import tarfile
 import tempfile
@@ -42,11 +43,49 @@ def safe_member_path(member: tarfile.TarInfo) -> str:
     return "/" + path.as_posix()
 
 
-def analyze(archive: Path, package: str, output: Path) -> dict[str, Any]:
+def safe_external_member_path(value: str) -> None:
+    """Reject names that would be unsafe for the platform tar extractor."""
+    normalized = value.replace("\\", "/")
+    path = PurePosixPath(normalized)
+    if normalized.startswith("/") or ".." in path.parts or not normalized:
+        raise PackageArchiveError(f"unsafe archive member: {value}")
+
+
+def unpack_zstandard_archive(archive: Path, extracted: Path) -> None:
+    """Safely expand a `.tar.zst` using the host tar implementation."""
+    listing = subprocess.run(
+        ["tar", "-tf", str(archive)], text=True, stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE, check=False,
+    )
+    if listing.returncode:
+        raise PackageArchiveError(f"cannot list Zstandard package archive: {listing.stderr.strip()}")
+    for name in listing.stdout.splitlines():
+        safe_external_member_path(name)
+    result = subprocess.run(
+        ["tar", "-xf", str(archive), "-C", str(extracted)], text=True,
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
+    )
+    if result.returncode:
+        raise PackageArchiveError(f"cannot extract Zstandard package archive: {result.stderr.strip()}")
+
+
+def analyze(archive: Path, package: str, output: Path, source_archive: Path | None = None) -> dict[str, Any]:
     if not archive.is_file():
         raise PackageArchiveError(f"archive is missing: {archive}")
     if not package or any(char.isspace() for char in package):
         raise PackageArchiveError("package must be a non-empty pacman package name")
+    source_archive = source_archive or archive
+    if archive.suffix == ".zst":
+        with tempfile.TemporaryDirectory() as directory:
+            extracted = Path(directory) / "extracted"
+            extracted.mkdir()
+            unpack_zstandard_archive(archive, extracted)
+            bundle = Path(directory) / "payload.tar"
+            with tarfile.open(bundle, "w") as target:
+                for path in extracted.rglob("*"):
+                    if path.is_file() and path.resolve().is_relative_to(extracted.resolve()):
+                        target.add(path, arcname=path.relative_to(extracted).as_posix())
+            return analyze(bundle, package, output, source_archive)
     output.mkdir(parents=True, exist_ok=True)
     artifacts: list[dict[str, Any]] = []
     imports: list[dict[str, Any]] = []
@@ -66,7 +105,7 @@ def analyze(archive: Path, package: str, output: Path) -> dict[str, Any]:
                 if stream is None:
                     raise PackageArchiveError(f"cannot read archive member: {item.name}")
                 payload = stream.read()
-                record: dict[str, Any] = {"package": package, "path": path, "kind": kind, "present": True, "size": len(payload), "sha256": hashlib.sha256(payload).hexdigest(), "archive": archive.name}
+                record: dict[str, Any] = {"package": package, "path": path, "kind": kind, "present": True, "size": len(payload), "sha256": hashlib.sha256(payload).hexdigest(), "archive": source_archive.name}
                 temporary = scratch_path / f"member-{index}{Path(path).suffix}"
                 temporary.write_bytes(payload)
                 try:
@@ -97,7 +136,7 @@ def analyze(archive: Path, package: str, output: Path) -> dict[str, Any]:
         "schema_version": "1.0.0", "collector_version": "0.4.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "collector": "tools/analyze_package_archive.py", "scope": "package-archive",
-        "package": package, "source_archive": {"name": archive.name, "sha256": sha256(archive)},
+        "package": package, "source_archive": {"name": source_archive.name, "sha256": sha256(source_archive)},
         "counts": counts, "sha256": {name: sha256(output / name) for name in files},
     }
     (output / "inventory-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

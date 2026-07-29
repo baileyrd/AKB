@@ -76117,3 +76117,11 @@
 | relationship:catalog:runtime-depends-on-fff81bda1a84d1484148 | runtime-depends-on | package:msys2:mingw-w64-clang-x86_64-collada-dom | package:msys2:mingw-w64-clang-x86_64-boost-libs | verified |
 | relationship:catalog:runtime-depends-on-fff90c28bfbb544d6bcd | runtime-depends-on | package:msys2:mingw-w64-x86_64-python-scikit-image | package:msys2:mingw-w64-x86_64-python-lazy-loader | verified |
 | relationship:catalog:runtime-depends-on-fff9285443bae57a82da | runtime-depends-on | package:msys2:mingw-w64-x86_64-goxel | package:msys2:mingw-w64-x86_64-libwinpthread | verified |
+| relationship:inventory:imports-dll-e7b05cdd4e919a5ceace | imports-dll | dll:msys2:/usr/bin/msys-z.dll | dll:windows:msys-2.0.dll | verified |
+| relationship:inventory:imports-dll-fbe3f5e854658b58f04e | imports-dll | dll:msys2:/usr/bin/msys-z.dll | dll:windows:kernel32.dll | verified |
+| relationship:inventory:installs-2325eaaa5e7ef8e36cd5 | installs | package:msys2:zlib | filesystem-path:msys2:/usr/share/licenses/zlib/license | verified |
+| relationship:inventory:installs-48c85dfcc14beb679bd5 | installs | package:msys2:zlib | filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz | verified |
+| relationship:inventory:installs-69f681df0a80e1ddfacd | installs | package:msys2:zlib | filesystem-path:msys2:/.pkginfo | verified |
+| relationship:inventory:installs-d1bcc87b19d9f9e78e4c | installs | package:msys2:zlib | dll:msys2:/usr/bin/msys-z.dll | verified |
+| relationship:inventory:installs-dab3a71905611effacd1 | installs | package:msys2:zlib | filesystem-path:msys2:/.mtree | verified |
+| relationship:inventory:installs-fd4aa9e2dd44ad99c71d | installs | package:msys2:zlib | filesystem-path:msys2:/.buildinfo | verified |

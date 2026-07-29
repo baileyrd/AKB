@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.analyze_package_archive import PackageArchiveError, analyze
+from tools.analyze_package_archive import PackageArchiveError, analyze, safe_external_member_path
 
 
 def minimal_pe() -> bytes:
@@ -51,6 +51,10 @@ class PackageArchiveAnalysisTests(unittest.TestCase):
                 add_file(bundle, "../outside.dll", b"x")
             with self.assertRaisesRegex(PackageArchiveError, "unsafe archive member"):
                 analyze(archive, "sample", Path(directory) / "output")
+
+    def test_rejects_unsafe_external_tar_name(self):
+        with self.assertRaisesRegex(PackageArchiveError, "unsafe archive member"):
+            safe_external_member_path("../outside.dll")
 
 
 if __name__ == "__main__":

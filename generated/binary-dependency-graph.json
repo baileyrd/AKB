@@ -1,0 +1,70 @@
+{
+  "snapshot": "20260729T115414Z-93c5b258a95b",
+  "edges": [
+    {
+      "id": "relationship:inventory:imports-dll-e7b05cdd4e919a5ceace",
+      "type": "imports-dll",
+      "source": "dll:msys2:/usr/bin/msys-z.dll",
+      "target": "dll:windows:msys-2.0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "__errno",
+          "_impure_ptr",
+          "calloc",
+          "close",
+          "cygwin_internal",
+          "dll_dllcrt0",
+          "fcntl",
+          "free",
+          "lseek",
+          "malloc",
+          "memchr",
+          "memcpy",
+          "memmove",
+          "memset",
+          "msys_detach_dll",
+          "open",
+          "posix_memalign",
+          "read",
+          "realloc",
+          "snprintf",
+          "strerror",
+          "strlen",
+          "vsnprintf",
+          "write"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-fbe3f5e854658b58f04e",
+      "type": "imports-dll",
+      "source": "dll:msys2:/usr/bin/msys-z.dll",
+      "target": "dll:windows:kernel32.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "GetModuleHandleA"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    }
+  ],
+  "reverse_importer_counts": {
+    "dll:windows:kernel32.dll": 1,
+    "dll:windows:msys-2.0.dll": 1
+  }
+}

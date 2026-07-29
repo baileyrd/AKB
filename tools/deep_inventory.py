@@ -398,7 +398,11 @@ def parse_pkgbuild(path: Path) -> dict[str, Any]:
 
     def values(name: str) -> list[str]:
         raw = _shell_array(text, name)
-        return [next(value for value in item if value) if isinstance(item, tuple) else item for item in raw]
+        parsed = [
+            next((value for value in item if value), "") if isinstance(item, tuple) else item
+            for item in raw
+        ]
+        return [value for value in parsed if value]
 
     def scalar(name: str) -> str:
         match = re.search(

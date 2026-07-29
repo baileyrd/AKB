@@ -61,7 +61,7 @@
 ## Increment 5 — Package and library catalog
 
 - [x] Repository-to-package inventory
-- [ ] Package-to-file inventory
+- [x] Package-to-file inventory
 - [ ] Binary-to-DLL dependency graph
 - [ ] Header and metadata indexes
 - [ ] Library family classification

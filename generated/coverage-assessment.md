@@ -6,6 +6,12 @@
 - Authored documents: **47**
 - Linked SVG diagrams: **8**
 
+## Package payload coverage
+
+- Catalog packages: **15711**
+- Packages with retained payload observations: **2**
+- Observed package coverage: **0.013%**
+
 ## Explicit gaps
 
 - Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.

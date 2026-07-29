@@ -96,7 +96,7 @@ class AnalyzerTests(unittest.TestCase):
             pc = root / "sample.pc"
             pc.write_text(
                 "prefix=/ucrt64\nlibdir=${prefix}/lib\n"
-                "Name: Sample\nVersion: 1.2\nRequires: zlib >= 1.3\n"
+                "Name: Sample\nVersion: 1.2\nRequires: zlib >= 1.3, libpng >= 1.6\n"
                 "Libs: -L${libdir} -lsample\nCflags: -I${prefix}/include\n",
                 encoding="utf-8",
             )
@@ -113,6 +113,8 @@ class AnalyzerTests(unittest.TestCase):
             recipe_result = ANALYZER.parse_pkgbuild(recipe)
         self.assertEqual(pc_result["version"], "1.2")
         self.assertEqual(pc_result["requires"][0]["name"], "zlib")
+        self.assertEqual(pc_result["requires"][0]["constraint"], ">= 1.3")
+        self.assertEqual(pc_result["requires"][1]["name"], "libpng")
         self.assertIn("-L/ucrt64/lib", pc_result["libs"])
         self.assertEqual(recipe_result["pkgname"], ["sample", "sample-tools"])
         self.assertEqual(recipe_result["makedepends"], ["cmake", "ninja"])
@@ -239,6 +241,24 @@ class ImporterTests(unittest.TestCase):
         self.assertTrue(
             all(evidence_id in item["evidence_refs"] for item in projection["entities"])
         )
+
+    def test_identical_dll_candidates_are_resolved_by_hash(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_fixture(root)
+            artifacts = [json.loads(line) for line in (root / "artifacts.jsonl").read_text(encoding="utf-8").splitlines()]
+            duplicate = dict(artifacts[1])
+            duplicate["path"] = "/ucrt64/lib/sample.dll"
+            artifacts.append(duplicate)
+            write_jsonl(root / "artifacts.jsonl", artifacts)
+            manifest = json.loads((root / "inventory-manifest.json").read_text(encoding="utf-8"))
+            manifest["counts"]["artifacts.jsonl"] = len(artifacts)
+            manifest["sha256"]["artifacts.jsonl"] = hashlib.sha256((root / "artifacts.jsonl").read_bytes()).hexdigest()
+            (root / "inventory-manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+            manifest, records = IMPORTER.verify_input(root)
+            projection, unresolved = IMPORTER.build_projection(manifest, records, "fixture", {"package:msys2:sample"})
+        self.assertEqual(unresolved, [])
+        self.assertEqual(len([edge for edge in projection["relationships"] if edge["type"] == "imports-dll"]), 1)
 
     def test_recipe_paths_prevent_dynamic_package_name_collisions(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

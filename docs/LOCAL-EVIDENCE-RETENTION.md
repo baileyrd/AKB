@@ -38,6 +38,9 @@ installed-package collection on 2026-07-29 recorded 22,279 owned paths,
 and 19 development-metadata records. The collection is byte-level evidence
 only for that installed state; it does not establish behavior for unobserved
 environments, package revisions, or loader/runtime execution.
+Its integrated projection has five unresolved metadata dependencies because
+their provider artifacts were not part of that bounded installation; they are
+retained as unresolved rather than inferred.
 
 ## Scope and interpretation
 

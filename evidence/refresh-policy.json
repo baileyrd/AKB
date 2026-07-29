@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "retention": {
+    "successful_snapshots": {"minimum_count": 30, "minimum_days": 90},
+    "failed_runs": {"minimum_count": 10, "minimum_days": 30}
+  },
+  "alerts": {
+    "source_failure_consecutive": 3,
+    "snapshot_validation_failure_consecutive": 1,
+    "unresolved_dependency_growth_percent": 10
+  },
+  "sources": [
+    {"source_id": "source:msys2:website", "cadence": "daily", "adapter": "content-snapshot", "priority": "normal"},
+    {"source_id": "source:msys2:packages", "cadence": "daily", "adapter": "package-catalog", "priority": "high"},
+    {"source_id": "source:msys2:msys2-packages", "cadence": "daily", "adapter": "commit-snapshot", "priority": "high"},
+    {"source_id": "source:msys2:mingw-packages", "cadence": "daily", "adapter": "commit-snapshot", "priority": "high"},
+    {"source_id": "source:msys2:runtime", "cadence": "weekly", "adapter": "commit-snapshot", "priority": "normal"},
+    {"source_id": "source:mingw-w64:upstream", "cadence": "weekly", "adapter": "release-or-commit", "priority": "normal"},
+    {"source_id": "source:microsoft:windows-docs", "cadence": "weekly", "adapter": "date-qualified-snapshot", "priority": "normal"},
+    {"source_id": "source:llvm:project", "cadence": "weekly", "adapter": "release-or-commit", "priority": "normal"},
+    {"source_id": "source:git-for-windows:git", "cadence": "weekly", "adapter": "release-or-commit", "priority": "normal"},
+    {"source_id": "source:git-for-windows:build-extra", "cadence": "weekly", "adapter": "commit-snapshot", "priority": "normal"},
+    {"source_id": "source:git-for-windows:git-sdk-64", "cadence": "weekly", "adapter": "date-qualified-snapshot", "priority": "normal"}
+  ]
+}

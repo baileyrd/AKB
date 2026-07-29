@@ -183,3 +183,7 @@ The same collector/importer contract will next be extended for:
 Every source adapter must emit a manifest with schema version, observation
 time, source identity, source version, hashes, record counts, and collector
 version.
+
+Multi-source cadence, retention, and alert thresholds are defined in
+[`MULTI-SOURCE-REFRESH-POLICY.md`](MULTI-SOURCE-REFRESH-POLICY.md) and validated
+against the source registry before orchestration.

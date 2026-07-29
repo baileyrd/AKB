@@ -15,6 +15,9 @@ produce observed outputs without collapsing distinct stages into one
 ``built-from`` assertion. The canonical graph keeps the recipe, package
 artifact, and installed artifact separate.
 
+The [Level 6 toolchain flow](../diagrams/level-6-toolchain-build-flow.svg)
+links this model to toolchain, artifact, and evidence Explorer views.
+
 ```mermaid
 flowchart LR
     S["source revision"] --> C["configuration inputs"]

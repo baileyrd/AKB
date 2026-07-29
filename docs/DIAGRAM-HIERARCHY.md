@@ -27,5 +27,7 @@ node links to a stable object route or an explicitly snapshot-qualified view.
 
 ![MSYS2 Level 5 package-to-artifact evidence](../diagrams/level-5-package-artifact-evidence.svg)
 
+![MSYS2 Level 6 toolchain and build-output flow](../diagrams/level-6-toolchain-build-flow.svg)
+
 The diagram is conceptual. Package and dependency counts are not encoded in
 the diagram itself; consult the generated catalog views for snapshot evidence.

@@ -19,11 +19,11 @@ template alone is not sufficient.
 | Machine-readable architecture model | Partial | Typed graph plus official package snapshot | Model runtime, source, binary, and file objects at observed scale |
 | Full package catalog | Partial | 15,711 snapshot-bound package records | Refresh cadence, all configured repos, and signed-source provenance |
 | Package, library, binary, headers, metadata relationships | Partial | Package and declared dependency views; candidate library view | Collect package payloads/file manifests and project artifacts |
-| MSYS runtime and environment architecture | Partial | Runtime/environment role models and Level 0/1 links | Subsystem objects, flows, and tested evidence for each behavior |
+| MSYS runtime and environment architecture | Partial | Runtime/environment role models and Level 0/1 links; six verified, evidence-qualified environment claims in the [claim/evidence index](../generated/claim-evidence-index.md) | Subsystem objects, flows, and tested evidence for each behavior |
 | GNU, toolchain, pacman, Git for Windows documentation | Partial | Dedicated role and boundary documents | Per-component pages with interfaces, dependencies, and primary evidence |
 | Interactive Explorer | Partial | Stable routes, search, filters, dependency navigation | Zoomable graphical exploration and complete populated object categories |
 | Level 0–7 linked diagram hierarchy | Partial | Eight linked, route-tested SVGs spanning Levels 0–7 and generated dossiers for every composed object | Diagrams and dossiers are navigation aids; substantive per-object evidence-qualified drill-down coverage remains incomplete |
-| Every major claim traceable to evidence | Partial | Source registry and snapshot manifest | Claim coverage for authored narrative and per-object citations |
+| Every major claim traceable to evidence | Partial | Source registry, snapshot manifest, and [generated claim/evidence index](../generated/claim-evidence-index.md) for six bounded environment facts | Claim coverage for authored narrative and per-object citations |
 | Security, performance, upgrade, and operations | Partial | Dedicated authored documents and refresh policy | Measured operational history and requirement-specific evidence |
 
 ## Acceptance rule

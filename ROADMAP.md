@@ -56,7 +56,7 @@
 - [x] GCC, LLVM, Binutils, Clang, LLD, GDB, and LLDB
 - [x] CMake, Meson, Autotools, Make, Ninja, and pkg-config
 - [x] GNU userland component deep dives
-- [ ] generated-artifact and build-flow mappings
+- [x] generated-artifact and build-flow mappings
 
 ## Increment 5 — Package and library catalog
 

@@ -4,6 +4,9 @@
 
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
+| dll:msys2:/usr/bin/msys-z.dll | dll | /usr/bin/msys-z.dll | verified | 2 | 1 |
+| dll:windows:kernel32.dll | dll | kernel32.dll | verified | 0 | 1 |
+| dll:windows:msys-2.0.dll | dll | msys-2.0.dll | verified | 0 | 1 |
 | ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
 | environment:msys2:clang64 | environment | CLANG64 | partial | 0 | 3823 |
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
@@ -11,6 +14,11 @@
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 1 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
+| filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 1 |
+| filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 1 |
+| filesystem-path:msys2:/.pkginfo | filesystem-path | /.PKGINFO | verified | 0 | 1 |
+| filesystem-path:msys2:/usr/share/licenses/zlib/license | filesystem-path | /usr/share/licenses/zlib/LICENSE | verified | 0 | 1 |
+| filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz | filesystem-path | /usr/share/man/man3/zlib.3.gz | verified | 0 | 1 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -15716,7 +15724,7 @@
 | package:msys2:yelp-xsl | package | yelp-xsl | verified | 2 | 1 |
 | package:msys2:yodl | package | yodl | verified | 3 | 0 |
 | package:msys2:zip | package | zip | verified | 3 | 13 |
-| package:msys2:zlib | package | zlib | verified | 3 | 60 |
+| package:msys2:zlib | package | zlib | verified | 9 | 60 |
 | package:msys2:zlib-devel | package | zlib-devel | verified | 3 | 9 |
 | package:msys2:znc | package | znc | verified | 8 | 0 |
 | package:msys2:zsh | package | zsh | verified | 6 | 1 |

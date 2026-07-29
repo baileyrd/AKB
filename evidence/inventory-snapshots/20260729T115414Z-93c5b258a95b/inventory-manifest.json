@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "collector_version": "0.4.0",
+  "generated_at": "2026-07-29T11:54:14.956988+00:00",
+  "collector": "tools/analyze_package_archive.py",
+  "scope": "package-archive",
+  "package": "zlib",
+  "source_archive": {
+    "name": "zlib.pkg.tar.zst",
+    "sha256": "a04aa79996c57f0db936be66cf94326d7e67e9cd8dbffe4cf6e97693d0a1d9ef"
+  },
+  "counts": {
+    "artifacts.jsonl": 6,
+    "pe-imports.jsonl": 2,
+    "pe-exports.jsonl": 95,
+    "archive-members.jsonl": 0,
+    "development-metadata.jsonl": 0,
+    "recipes.jsonl": 0,
+    "warnings.jsonl": 0
+  },
+  "sha256": {
+    "artifacts.jsonl": "7289f039d7cba248d737c3bacd5ae3a42c68e4782a9b5a094f8d2b2e751e1e9d",
+    "pe-imports.jsonl": "98081c0f0bdd65ab60e03672ac46812fba3c43806b447b137b29b53758876440",
+    "pe-exports.jsonl": "e22b736fa44dab0fb731f82ac74420920b507ac2572db34fd649eadb15e64ceb",
+    "archive-members.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "development-metadata.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "recipes.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "warnings.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

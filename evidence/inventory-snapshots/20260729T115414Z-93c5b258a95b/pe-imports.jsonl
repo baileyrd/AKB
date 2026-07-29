@@ -1,0 +1,2 @@
+{"dll": "kernel32.dll", "ordinals": [], "package": "zlib", "path": "/usr/bin/msys-z.dll", "symbols": ["GetModuleHandleA"]}
+{"dll": "msys-2.0.dll", "ordinals": [], "package": "zlib", "path": "/usr/bin/msys-z.dll", "symbols": ["__errno", "_impure_ptr", "calloc", "close", "cygwin_internal", "dll_dllcrt0", "fcntl", "free", "lseek", "malloc", "memchr", "memcpy", "memmove", "memset", "msys_detach_dll", "open", "posix_memalign", "read", "realloc", "snprintf", "strerror", "strlen", "vsnprintf", "write"]}

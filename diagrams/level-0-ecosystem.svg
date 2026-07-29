@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-labelledby="title description">
+  <title id="title">MSYS2 ecosystem Level 0 architecture</title>
+  <desc id="description">Linked overview from Windows through the MSYS2 runtime, environments, package catalog, toolchains, and applications.</desc>
+  <style>text{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;fill:#111827}.label{font-size:15px;font-weight:600}.sub{font-size:12px;fill:#6b7280}.layer{stroke:#d1d5db;stroke-width:1.5;rx:8}.link:hover .layer{stroke:#2563eb;stroke-width:3}</style>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker></defs>
+  <rect width="960" height="600" fill="#fff"/>
+  <text x="40" y="38" font-size="22" font-weight="600">MSYS2 Architecture Knowledge Base — Level 0</text>
+  <text x="40" y="62" class="sub">Click a layer to open its canonical Explorer object or package view.</text>
+  <path d="M480 145V170 M480 235V260 M480 325V350 M480 415V440 M480 505V530" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <a class="link" href="../generated/explorer/index.html#/object/platform%3Amicrosoft%3Awindows"><rect class="layer" x="190" y="90" width="580" height="55" fill="#eff6ff"/><text class="label" x="220" y="115">Windows platform</text><text class="sub" x="220" y="135">Kernel, Win32, console, filesystem, loader</text></a>
+  <a class="link" href="../generated/explorer/index.html#/object/runtime%3Amsys2%3Amsys-2.0.dll"><rect class="layer" x="190" y="180" width="580" height="55" fill="#f0fdf4"/><text class="label" x="220" y="205">MSYS2 compatibility runtime</text><text class="sub" x="220" y="225">POSIX adaptation, paths, processes, signals, PTYs</text></a>
+  <a class="link" href="../generated/explorer/index.html#/view/runtimes"><rect class="layer" x="190" y="270" width="580" height="55" fill="#faf5ff"/><text class="label" x="220" y="295">Runtime environments</text><text class="sub" x="220" y="315">MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, MINGW32</text></a>
+  <a class="link" href="../generated/explorer/index.html#/view/packages"><rect class="layer" x="190" y="360" width="580" height="55" fill="#fff7ed"/><text class="label" x="220" y="385">Package catalog and libraries</text><text class="sub" x="220" y="405">Six repositories; snapshot-bound package and dependency evidence</text></a>
+  <a class="link" href="../generated/explorer/index.html#/view/toolchains"><rect class="layer" x="190" y="450" width="580" height="55" fill="#fef2f2"/><text class="label" x="220" y="475">Toolchains and userland</text><text class="sub" x="220" y="495">GCC, LLVM, build systems, GNU tools, Git for Windows</text></a>
+  <text x="40" y="570" class="sub">Blue arrows: architectural dependency direction. Catalog details are snapshot-qualified.</text>
+</svg>

@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.import_repository_db import RepositoryDatabaseError, convert
+from tools.import_repository_db import RepositoryDatabaseError, convert, convert_many
 
 
 def add_desc(bundle: tarfile.TarFile, name: str, content: str) -> None:
@@ -42,6 +42,22 @@ class RepositoryDatabaseImportTests(unittest.TestCase):
                 bundle.addfile(entry, io.BytesIO())
             with self.assertRaisesRegex(RepositoryDatabaseError, "no package desc"):
                 convert(archive, "msys", Path(directory) / "output")
+
+    def test_combines_multiple_repositories(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            archives = []
+            for repository in ("msys", "ucrt64"):
+                archive = root / f"{repository}.db"
+                with tarfile.open(archive, "w") as bundle:
+                    add_desc(bundle, f"{repository}-sample-1", f"%NAME%\n{repository}-sample\n\n%VERSION%\n1-1\n\n")
+                archives.append(archive)
+            output = root / "output"
+            result = convert_many(archives, ["msys", "ucrt64"], output)
+            manifest = json.loads((output / "catalog-manifest.json").read_text())
+            self.assertEqual(result["packages"], 2)
+            self.assertEqual(manifest["repositories"], ["msys", "ucrt64"])
+            self.assertEqual(len(manifest["source_archives"]), 2)
 
 
 if __name__ == "__main__":

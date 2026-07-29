@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-07-29T11:31:51.775599Z",
+  "collector": "tools/import_repository_db.py",
+  "pacman_version": "",
+  "repositories": [
+    "clang64",
+    "clangarm64",
+    "mingw32",
+    "mingw64",
+    "msys",
+    "ucrt64"
+  ],
+  "package_count": 15711,
+  "installed_count": 0,
+  "dependency_edge_count": 48348,
+  "source_archives": [
+    {
+      "repository": "msys",
+      "name": "msys.db",
+      "sha256": "1cda176c50ab1253859b630a44f83e545c48df2ce661683d5b64ff40e66d5478"
+    },
+    {
+      "repository": "ucrt64",
+      "name": "ucrt64.db",
+      "sha256": "86260cd6b6f4d05db3acfdc7f6716067aec6e338eaa32f1be38bfecb6d27a24b"
+    },
+    {
+      "repository": "clang64",
+      "name": "clang64.db",
+      "sha256": "849a70f65450eeae231d15d4af5e10fb72dd6c47ff5df721b887ec510b405dfa"
+    },
+    {
+      "repository": "clangarm64",
+      "name": "clangarm64.db",
+      "sha256": "a32ceb26e1e830227d4e982bc9a004c5168814b37cb9a602574f0c92dbf192f1"
+    },
+    {
+      "repository": "mingw64",
+      "name": "mingw64.db",
+      "sha256": "7fe1b02d07f5eaacb1b55f30499743bba0874e9f87bab4099859118c3d0c1fc6"
+    },
+    {
+      "repository": "mingw32",
+      "name": "mingw32.db",
+      "sha256": "d3c6973c3304f2b82275d276f6a366092714445026b05396a16e9973cb722744"
+    }
+  ],
+  "sha256": {
+    "all-packages.csv": "1f9477e41da5a5fa6f604ff796e45ce144a51021a7785207376ff388657bb145",
+    "dependency-edges.csv": "77da150352746d5e1ec44cb91f383ad18b96c8c8acaaff64a646a843e8dfd1ff"
+  }
+}

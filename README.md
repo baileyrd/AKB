@@ -79,6 +79,11 @@ Generated files are written beneath `generated/`; open
 `generated/explorer/index.html` for the static, deep-linkable architecture
 explorer.
 
+The checked-in official catalog snapshot includes package, library-candidate,
+and reverse-dependency-impact views in `generated/`. Start with the linked
+[Level 0 and Level 1 diagrams](docs/DIAGRAM-HIERARCHY.md), then drill into the
+Explorer or snapshot-qualified reports.
+
 ### Start the Explorer
 
 Generate the Explorer, then open the HTML file in a browser. No package

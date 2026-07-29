@@ -1,0 +1,33 @@
+---
+id: doc:volume-20:requirements-traceability
+title: Handoff Requirement Traceability
+volume: 20
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-07-29
+---
+
+# Handoff Requirement Traceability
+
+This matrix evaluates the original project handoff against current evidence.
+`Complete` means the stated scope has direct repository evidence; a tool or
+template alone is not sufficient.
+
+| Requirement | State | Current evidence | Remaining proof/work |
+| --- | --- | --- | --- |
+| Machine-readable architecture model | Partial | Typed graph plus official package snapshot | Model runtime, source, binary, and file objects at observed scale |
+| Full package catalog | Partial | 15,711 snapshot-bound package records | Refresh cadence, all configured repos, and signed-source provenance |
+| Package, library, binary, headers, metadata relationships | Partial | Package and declared dependency views; candidate library view | Collect package payloads/file manifests and project artifacts |
+| MSYS runtime and environment architecture | Partial | Runtime/environment role models and Level 0/1 links | Subsystem objects, flows, and tested evidence for each behavior |
+| GNU, toolchain, pacman, Git for Windows documentation | Partial | Dedicated role and boundary documents | Per-component pages with interfaces, dependencies, and primary evidence |
+| Interactive Explorer | Partial | Stable routes, search, filters, dependency navigation | Zoomable graphical exploration and complete populated object categories |
+| Level 0–7 linked diagram hierarchy | Partial | Linked Level 0 and Level 1 SVGs | Levels 2–7, rendered PNGs, and evidence-qualified drill-down nodes |
+| Every major claim traceable to evidence | Partial | Source registry and snapshot manifest | Claim coverage for authored narrative and per-object citations |
+| Security, performance, upgrade, and operations | Partial | Dedicated authored documents and refresh policy | Measured operational history and requirement-specific evidence |
+
+## Acceptance rule
+
+Do not change a state to `Complete` until the linked evidence covers the full
+stated scope and the generation/validation path is reproducible from the
+repository.

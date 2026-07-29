@@ -63,7 +63,7 @@
 - [x] Repository-to-package inventory
 - [x] Package-to-file inventory
 - [x] Binary-to-DLL dependency graph
-- [ ] Header and metadata indexes
+- [x] Header and metadata indexes
 - [ ] Library family classification
 - [ ] Reverse dependency and impact analysis
 

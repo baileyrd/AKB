@@ -89,6 +89,6 @@
 - [x] Threat model and supply-chain analysis
 - [x] Performance experiments and hot-path analysis
 - [x] Upgrade, rollback, repair, and migration guides
-- [ ] Developer and operator workflows
+- [x] Developer and operator workflows
 - [x] Initial continuous refresh, difference reports, and historical snapshots
 - [ ] Multi-source refresh orchestration, retention policy, and alerting

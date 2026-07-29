@@ -99,8 +99,7 @@ The collector/importer boundary is specified in
 
 ## Current maturity
 
-This foundation is **AKB Bootstrap 0.3**. It defines the governing charter,
-information architecture, machine-readable metamodel, starter graph, evidence
-rules, regeneration entry point, self-updating package catalog, and deep
-package-artifact evidence pipeline. Runtime observation and the interactive
-explorer are subsequent controlled increments.
+This repository is an evolving, evidence-backed architecture knowledge base.
+It includes the governing metamodel, catalog/deep-inventory/runtime pipelines,
+generated indexes, a static interactive explorer, and operational workflows.
+See the [roadmap](ROADMAP.md) for completed and remaining increments.

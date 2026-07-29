@@ -1,1 +1,24 @@
-﻿{   "snapshot": "20260729T113151Z-a2c48f8738b1",   "entities": 15717,   "relationships": 76105,   "entity_kinds": {     "package": 15711,     "repository": 6   },   "entity_status": {     "verified": 15717   },   "authored_documents": 48,   "diagram_files": 8,   "package_payload_coverage": {     "catalog_packages": 15711,     "observed_packages": 2,     "percent": 0.013   },   "gaps": [     "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",     "Package-name library candidates are not logical library identities or ABI evidence.",     "The Level 0\u20137 linked SVG hierarchy and generated per-object dossiers are navigable, but they do not replace substantive per-object evidence."   ] } 
+﻿{
+  "snapshot": "20260729T113151Z-a2c48f8738b1",
+  "entities": 15717,
+  "relationships": 76105,
+  "entity_kinds": {
+    "package": 15711,
+    "repository": 6
+  },
+  "entity_status": {
+    "verified": 15717
+  },
+  "authored_documents": 48,
+  "diagram_files": 8,
+  "package_payload_coverage": {
+    "catalog_packages": 15711,
+    "observed_packages": 2,
+    "percent": 0.013
+  },
+  "gaps": [
+    "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",
+    "Package-name library candidates are not logical library identities or ABI evidence.",
+    "The Level 0\u20137 linked SVG hierarchy and generated per-object dossiers are navigable, but they do not replace substantive per-object evidence."
+  ]
+}

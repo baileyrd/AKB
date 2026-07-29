@@ -54,7 +54,7 @@
 ## Increment 4 — Toolchains and userland
 
 - [x] GCC, LLVM, Binutils, Clang, LLD, GDB, and LLDB
-- [ ] CMake, Meson, Autotools, Make, Ninja, and pkg-config
+- [x] CMake, Meson, Autotools, Make, Ninja, and pkg-config
 - [ ] GNU userland component deep dives
 - [ ] generated-artifact and build-flow mappings
 

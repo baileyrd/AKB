@@ -70,7 +70,7 @@
 ## Increment 6 — Git for Windows
 
 - [x] Distribution boundary and divergence
-- [ ] Launcher, Git Bash, Mintty, and shell startup
+- [x] Launcher, Git Bash, Mintty, and shell startup
 - [ ] Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading
 - [ ] Package and source mappings
 

@@ -57,6 +57,17 @@ flowchart LR
 5. Atomically replace the current projection only after complete validation,
    retaining raw snapshots for reproducibility and diffing.
 
+For broad, byte-free package-file coverage, import official pacman `.files`
+databases and then run the deep-inventory importer. These records establish
+package ownership only; their `present` property remains `false` and they do
+not imply binary, export, or ABI observations.
+
+```powershell
+py -3 tools/import_repository_file_db.py C:\cache\msys.files `
+    --repository msys --output work\files-inventory
+py -3 tools/import_deep_inventory.py work\files-inventory --accumulate
+```
+
 ## Related Views
 
 - [Repository-to-package inventory](REPOSITORY-PACKAGE-INVENTORY.md)

@@ -1,4 +1,4 @@
-﻿# Generated AKB Coverage Assessment
+# Generated AKB Coverage Assessment
 
 - Snapshot: `20260729T113151Z-a2c48f8738b1`
 - Entities: **15717**

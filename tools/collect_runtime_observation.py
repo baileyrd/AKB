@@ -16,6 +16,12 @@ from pathlib import Path
 ENVIRONMENTS = ("msys", "ucrt64", "clang64", "clangarm64", "mingw64", "mingw32")
 SAFE_VARIABLES = ("MSYSTEM", "MSYSTEM_PREFIX", "MSYS2_PATH_TYPE", "CHERE_INVOKING", "OSTYPE")
 TOOLS = ("sh", "bash", "gcc", "clang", "ld", "cmake", "make", "ninja", "pacman")
+PROBES = {
+    "uname": ("uname", "-srm"),
+    "posix_to_windows_path": ("cygpath", "-w", "/usr/bin"),
+    "windows_to_posix_path": ("cygpath", "-u", "C:/Windows"),
+    "mount_table": ("mount",),
+}
 
 
 def tool_observation(name: str) -> dict[str, object]:
@@ -36,6 +42,27 @@ def tool_observation(name: str) -> dict[str, object]:
     return result
 
 
+def probe_observation(command: tuple[str, ...]) -> dict[str, object]:
+    """Capture a short, read-only shell/runtime probe without environment data."""
+    executable = shutil.which(command[0])
+    if not executable:
+        return {"found": False}
+    try:
+        completed = subprocess.run(
+            [executable, *command[1:]], capture_output=True, text=True,
+            timeout=3, check=False,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return {"found": True, "executed": False}
+    output = (completed.stdout or completed.stderr).strip()
+    return {
+        "found": True,
+        "executed": True,
+        "returncode": completed.returncode,
+        "output": output[:8000],
+    }
+
+
 def collect(environment: str) -> dict[str, object]:
     """Capture only explicit allow-listed variables and tool identity metadata."""
     return {
@@ -46,7 +73,11 @@ def collect(environment: str) -> dict[str, object]:
         "host": {"system": platform.system(), "machine": platform.machine(), "release": platform.release()},
         "environment_variables": {key: os.environ[key] for key in SAFE_VARIABLES if key in os.environ},
         "tools": {name: tool_observation(name) for name in TOOLS},
-        "notes": ["PATH and all variables outside the explicit allow-list are intentionally excluded."],
+        "probes": {name: probe_observation(command) for name, command in PROBES.items()},
+        "notes": [
+            "PATH and all variables outside the explicit allow-list are intentionally excluded.",
+            "Path and mount probes describe the MSYS shell/runtime that executed the collector; they do not establish native tool runtime behavior.",
+        ],
     }
 
 

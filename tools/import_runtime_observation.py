@@ -51,9 +51,25 @@ def render_report(observation: dict[str, Any]) -> str:
     return "\n".join(rows) + "\n"
 
 
+def merge_projection(previous: dict[str, Any], current: dict[str, Any]) -> dict[str, Any]:
+    """Retain the latest bounded observation independently for each environment."""
+    environment = current["entities"][0]["applicability"]["environment_ids"][0]
+    entity_id = current["entities"][0]["id"]
+    entities = [item for item in previous.get("entities", []) if item.get("id") != entity_id]
+    relationships = [
+        item for item in previous.get("relationships", [])
+        if item.get("source") != entity_id
+    ]
+    entities.extend(current["entities"])
+    relationships.extend(current["relationships"])
+    return {"snapshot": current["snapshot"], "entities": sorted(entities, key=lambda item: item["id"]), "relationships": sorted(relationships, key=lambda item: item["id"]), "claims": [], "evidence": []}
+
+
 def import_observation(path: Path) -> dict[str, Any]:
     observation = load_observation(path)
     value = projection(observation)
+    if CURRENT.is_file():
+        value = merge_projection(json.loads(CURRENT.read_text(encoding="utf-8")), value)
     CURRENT.parent.mkdir(parents=True, exist_ok=True)
     CURRENT.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     GENERATED.mkdir(parents=True, exist_ok=True)

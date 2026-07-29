@@ -6,6 +6,10 @@ archive members in-stream, rejects traversal-shaped paths, records checksums,
 and applies the same PE, archive-member, pkg-config, and CMake metadata
 parsers used for installed inventory.
 
+The [Level 5 evidence flow](../diagrams/level-5-package-artifact-evidence.svg)
+shows the deliberate boundary between declared repository metadata and
+observed package-payload artifacts.
+
 ```powershell
 py -3 tools/analyze_package_archive.py C:\cache\sample.pkg.tar `
     --package sample --output work\sample-archive

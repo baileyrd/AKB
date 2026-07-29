@@ -25,5 +25,7 @@ node links to a stable object route or an explicitly snapshot-qualified view.
 
 ![MSYS2 Level 4 environment matrix](../diagrams/level-4-environment-matrix.svg)
 
+![MSYS2 Level 5 package-to-artifact evidence](../diagrams/level-5-package-artifact-evidence.svg)
+
 The diagram is conceptual. Package and dependency counts are not encoded in
 the diagram itself; consult the generated catalog views for snapshot evidence.

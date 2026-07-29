@@ -49,15 +49,24 @@ const data = __DATA__;
 const byId = Object.fromEntries(data.entities.map(item => [item.id, item]));
 const esc = value => String(value).replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
 const route = id => '#/object/' + encodeURIComponent(id);
+const index = () => {
+  const kinds = [...new Set(data.entities.map(item => item.kind))].sort();
+  const statuses = [...new Set(data.entities.map(item => item.status))].sort();
+  return `<h1>Architecture Explorer</h1><p>Search the composed graph or narrow the textual index.</p><label>Search <input id="search" type="search" autofocus></label> <label>Kind <select id="kind"><option value="">All</option>${kinds.map(x=>`<option>${esc(x)}</option>`).join('')}</select></label> <label>Status <select id="status"><option value="">All</option>${statuses.map(x=>`<option>${esc(x)}</option>`).join('')}</select></label><p id="count"></p><ul id="results"></ul>`;
+};
+function bindIndex() {
+  const search = document.querySelector('#search'), kind = document.querySelector('#kind'), status = document.querySelector('#status'), results = document.querySelector('#results'), count = document.querySelector('#count');
+  const update = () => { const term = search.value.toLowerCase(); const found = data.entities.filter(item => (!term || [item.id,item.name,...(item.aliases||[]),...(item.tags||[])].join(' ').toLowerCase().includes(term)) && (!kind.value || item.kind === kind.value) && (!status.value || item.status === status.value)); count.textContent = `${found.length} objects`; results.innerHTML = found.map(item => `<li><a href="${route(item.id)}">${esc(item.name)}</a> <code>${esc(item.id)}</code> — ${esc(item.kind)}, ${esc(item.status)}</li>`).join(''); }; [search,kind,status].forEach(control => control.addEventListener('input', update)); update();
+}
 function render() {
   const id = decodeURIComponent(location.hash.replace(/^#\\/object\\//, ''));
   const item = byId[id];
   const root = document.querySelector('main');
-  if (!item) { root.innerHTML = '<h1>Architecture Explorer</h1><p>Select an object from the <a href="#/">text index</a>.</p>'; return; }
+  if (!item) { root.innerHTML = index(); bindIndex(); return; }
   const out = data.relationships.filter(edge => edge.source === id);
   const inc = data.relationships.filter(edge => edge.target === id);
   const links = edges => edges.length ? '<ul>' + edges.map(edge => { const other = edge.source === id ? edge.target : edge.source; return `<li><code>${esc(edge.type)}</code> <a href="${route(other)}">${esc(byId[other]?.name || other)}</a></li>`; }).join('') + '</ul>' : '<p>None.</p>';
-  root.innerHTML = `<p><a href="#/">Text index</a></p><h1>${esc(item.name)}</h1><dl><dt>ID</dt><dd><code>${esc(item.id)}</code></dd><dt>Kind</dt><dd>${esc(item.kind)}</dd><dt>Status</dt><dd>${esc(item.status)}</dd></dl>${item.summary ? `<p>${esc(item.summary)}</p>` : ''}<h2>Outgoing relationships</h2>${links(out)}<h2>Incoming relationships</h2>${links(inc)}`;
+  root.innerHTML = `<nav aria-label="Breadcrumb"><a href="#/">Explorer</a> / <span>${esc(item.kind)}</span> / <span aria-current="page">${esc(item.name)}</span></nav><h1>${esc(item.name)}</h1><dl><dt>ID</dt><dd><code>${esc(item.id)}</code></dd><dt>Kind</dt><dd>${esc(item.kind)}</dd><dt>Status</dt><dd>${esc(item.status)}</dd></dl>${item.summary ? `<p>${esc(item.summary)}</p>` : ''}<h2>Outgoing relationships</h2>${links(out)}<h2>Incoming relationships</h2>${links(inc)}`;
 }
 addEventListener('hashchange', render); render();
 """.replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))

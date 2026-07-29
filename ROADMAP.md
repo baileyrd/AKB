@@ -77,7 +77,7 @@
 ## Increment 7 — Explorer
 
 - [x] Stable object routes and deep links
-- [ ] Search, filters, breadcrumbs, and cross-references
+- [x] Search, filters, breadcrumbs, and cross-references
 - [ ] Progressive graph expansion and collapse
 - [ ] Forward and reverse dependency navigation
 - [ ] Layer, package, library, runtime, toolchain, and repository views

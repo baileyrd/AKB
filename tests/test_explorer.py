@@ -24,6 +24,8 @@ class ExplorerTests(unittest.TestCase):
             rendered = path.read_text(encoding="utf-8")
         for item in graph["entities"]:
             self.assertIn(EXPLORER.route_for(item["id"]), rendered)
+        self.assertIn('id="search"', rendered)
+        self.assertIn('aria-label="Breadcrumb"', rendered)
 
 
 if __name__ == "__main__":

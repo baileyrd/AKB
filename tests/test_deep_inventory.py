@@ -225,6 +225,24 @@ class ImporterTests(unittest.TestCase):
         self.assertEqual(changes["added"], ["dll:msys2:/b.dll"])
         self.assertEqual(changes["changed"], ["dll:msys2:/a.dll"])
 
+    def test_accumulated_projection_retains_prior_observations(self) -> None:
+        previous = {
+            "entities": [{"id": "dll:msys2:/curl.dll", "name": "curl.dll"}],
+            "relationships": [{"id": "relationship:inventory:curl", "type": "installs"}],
+            "evidence": [{"id": "evidence:inventory:curl"}],
+        }
+        current = {
+            "entities": [{"id": "dll:msys2:/zlib1.dll", "name": "zlib1.dll"}],
+            "relationships": [{"id": "relationship:inventory:zlib", "type": "installs"}],
+            "evidence": [{"id": "evidence:inventory:zlib"}],
+            "claims": ["discarded"],
+        }
+        merged = IMPORTER.merge_projection(previous, current)
+        self.assertEqual([item["id"] for item in merged["entities"]], ["dll:msys2:/curl.dll", "dll:msys2:/zlib1.dll"])
+        self.assertEqual(len(merged["relationships"]), 2)
+        self.assertEqual(len(merged["evidence"]), 2)
+        self.assertEqual(merged["claims"], [])
+
     def test_end_to_end_import_writes_snapshot_and_reports(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

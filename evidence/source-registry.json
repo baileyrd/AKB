@@ -9,6 +9,8 @@
     {"id": "source:mingw-w64:upstream", "authority": "MinGW-w64", "class": "primary", "locator": "https://github.com/mingw-w64/mingw-w64", "refresh": "release-or-commit"},
     {"id": "source:microsoft:windows-docs", "authority": "Microsoft", "class": "primary", "locator": "https://learn.microsoft.com/windows/", "refresh": "date-qualified-snapshot"},
     {"id": "source:llvm:project", "authority": "LLVM", "class": "primary", "locator": "https://github.com/llvm/llvm-project", "refresh": "release-or-commit"},
-    {"id": "source:git-for-windows:git", "authority": "Git for Windows", "class": "primary", "locator": "https://github.com/git-for-windows/git", "refresh": "release-or-commit"}
+    {"id": "source:git-for-windows:git", "authority": "Git for Windows", "class": "primary", "locator": "https://github.com/git-for-windows/git", "refresh": "release-or-commit"},
+    {"id": "source:git-for-windows:build-extra", "authority": "Git for Windows", "class": "primary", "locator": "https://github.com/git-for-windows/build-extra", "refresh": "commit-addressed"},
+    {"id": "source:git-for-windows:git-sdk-64", "authority": "Git for Windows", "class": "primary", "locator": "https://github.com/git-for-windows/git-sdk-64", "refresh": "date-qualified-snapshot"}
   ]
 }

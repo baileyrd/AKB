@@ -72,7 +72,7 @@
 - [x] Distribution boundary and divergence
 - [x] Launcher, Git Bash, Mintty, and shell startup
 - [x] Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading
-- [ ] Package and source mappings
+- [x] Package and source mappings
 
 ## Increment 7 — Explorer
 

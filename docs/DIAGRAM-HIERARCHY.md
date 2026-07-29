@@ -29,5 +29,7 @@ node links to a stable object route or an explicitly snapshot-qualified view.
 
 ![MSYS2 Level 6 toolchain and build-output flow](../diagrams/level-6-toolchain-build-flow.svg)
 
+![MSYS2 Level 7 userland and applications](../diagrams/level-7-userland-applications.svg)
+
 The diagram is conceptual. Package and dependency counts are not encoded in
 the diagram itself; consult the generated catalog views for snapshot evidence.

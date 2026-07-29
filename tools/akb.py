@@ -197,11 +197,28 @@ def generate() -> list[Path]:
     ]
     coverage_lines.extend(f"| {status} | {count} |" for status, count in sorted(status_counts.items()))
 
+    dossier_lines = [
+        "# Generated Object Dossiers", "",
+        "> Generated from the composed model; each heading is a stable object documentation anchor.",
+    ]
+    for entity in sorted(graph["entities"], key=lambda item: item["id"]):
+        identifier = entity["id"]
+        dossier_lines.extend([
+            "", f"## `{identifier}`", "",
+            f"- Name: {escape_cell(entity['name'])}",
+            f"- Kind: `{escape_cell(entity['kind'])}`",
+            f"- Status: `{escape_cell(entity['status'])}`",
+            f"- Evidence: {escape_cell(', '.join(entity.get('evidence_refs', [])) or 'none recorded')}",
+            f"- Outgoing relationships: {len(by_source[identifier])}",
+            f"- Incoming relationships: {len(by_target[identifier])}",
+        ])
+
     outputs = [
         GENERATED / "entity-index.md",
         GENERATED / "relationship-index.md",
         GENERATED / "claim-evidence-index.md",
         GENERATED / "coverage-report.md",
+        GENERATED / "object-dossiers.md",
     ]
     outputs[0].write_text("\n".join(entity_lines) + "\n", encoding="utf-8")
     outputs[1].write_text(
@@ -209,6 +226,7 @@ def generate() -> list[Path]:
     )
     outputs[2].write_text("\n".join(claim_lines) + "\n", encoding="utf-8")
     outputs[3].write_text("\n".join(coverage_lines) + "\n", encoding="utf-8")
+    outputs[4].write_text("\n".join(dossier_lines) + "\n", encoding="utf-8")
     return outputs
 
 

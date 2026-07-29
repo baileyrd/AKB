@@ -1,7 +1,7 @@
 ---
-id: doc:volume-18:explorer-accessible-fallbacks
+id: doc:volume-10:explorer-accessible-fallbacks
 title: Explorer Accessible SVG and Textual Fallbacks
-volume: 18
+volume: 10
 status: partial
 model_refs: []
 evidence_refs: []

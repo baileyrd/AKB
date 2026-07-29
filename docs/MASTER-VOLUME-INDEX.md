@@ -55,3 +55,9 @@ Each volume uses applicable portions of this structure:
 - Generated object pages may appear in multiple navigation paths without
   duplicating canonical model data.
 
+## Delivery audit
+
+The [Twenty-Volume Coverage Ledger](VOLUME-COVERAGE-LEDGER.md) records the
+canonical material, evidence boundary, and remaining completion work for each
+volume.
+

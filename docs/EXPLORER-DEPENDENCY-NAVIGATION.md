@@ -1,7 +1,7 @@
 ---
-id: doc:volume-18:explorer-dependency-navigation
+id: doc:volume-10:explorer-dependency-navigation
 title: Explorer Dependency Navigation
-volume: 18
+volume: 10
 status: partial
 model_refs: []
 evidence_refs: []

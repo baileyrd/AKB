@@ -1,7 +1,7 @@
 ---
-id: doc:volume-20:threat-model-and-supply-chain
+id: doc:volume-16:threat-model-and-supply-chain
 title: AKB Threat Model and Supply-Chain Analysis
-volume: 20
+volume: 16
 status: partial
 model_refs: []
 evidence_refs: []

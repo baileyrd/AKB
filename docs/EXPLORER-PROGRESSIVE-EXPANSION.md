@@ -1,7 +1,7 @@
 ---
-id: doc:volume-18:explorer-progressive-expansion
+id: doc:volume-10:explorer-progressive-expansion
 title: Explorer Progressive Graph Expansion
-volume: 18
+volume: 10
 status: partial
 model_refs: []
 evidence_refs: []

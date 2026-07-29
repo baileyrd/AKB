@@ -11,6 +11,11 @@ last_verified: 2026-07-28
 
 # MSYS Runtime Behavior Architecture Map
 
+The [Level 3 runtime-boundary diagram](../diagrams/level-3-msys-runtime-boundary.svg)
+is the navigation companion to this map. It distinguishes MSYS-dependent
+execution from native environment execution before drilling into individual
+adaptation concerns.
+
 | Concern | MSYS runtime responsibility | Windows-facing boundary | Required deep evidence |
 | --- | --- | --- | --- |
 | Process creation | Present POSIX process semantics where supported | Windows process creation and handles | Runtime source and controlled probes |

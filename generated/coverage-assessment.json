@@ -10,7 +10,7 @@
     "verified": 15717
   },
   "authored_documents": 47,
-  "diagram_files": 3,
+  "diagram_files": 4,
   "gaps": [
     "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",
     "Package-name library candidates are not logical library identities or ABI evidence.",

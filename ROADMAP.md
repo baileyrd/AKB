@@ -78,7 +78,7 @@
 
 - [x] Stable object routes and deep links
 - [x] Search, filters, breadcrumbs, and cross-references
-- [ ] Progressive graph expansion and collapse
+- [x] Progressive graph expansion and collapse
 - [ ] Forward and reverse dependency navigation
 - [ ] Layer, package, library, runtime, toolchain, and repository views
 - [ ] Accessible SVG and textual fallbacks

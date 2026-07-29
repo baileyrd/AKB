@@ -26,6 +26,8 @@ class ExplorerTests(unittest.TestCase):
             self.assertIn(EXPLORER.route_for(item["id"]), rendered)
         self.assertIn('id="search"', rendered)
         self.assertIn('aria-label="Breadcrumb"', rendered)
+        self.assertIn('class="expand"', rendered)
+        self.assertIn('Collapse relationships', rendered)
 
 
 if __name__ == "__main__":

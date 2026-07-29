@@ -68,6 +68,14 @@ class RuntimeObservationTests(unittest.TestCase):
             with self.assertRaises(IMPORTER.RuntimeObservationError):
                 IMPORTER.load_observation(path)
 
+    def test_merge_retains_distinct_environment_observations(self) -> None:
+        first = IMPORTER.projection(self.fixture())
+        second_value = self.fixture(); second_value["environment"] = "msys"
+        second = IMPORTER.projection(second_value)
+        merged = IMPORTER.merge_projection(first, second)
+        self.assertEqual(len(merged["entities"]), 2)
+        self.assertEqual(len(merged["relationships"]), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -11,7 +11,7 @@ XLINK = "{http://www.w3.org/1999/xlink}href"
 class DiagramTests(unittest.TestCase):
     def test_linked_diagrams_are_well_formed_and_have_explorer_routes(self):
         diagrams = sorted((ROOT / "diagrams").glob("*.svg"))
-        self.assertGreaterEqual(len(diagrams), 6)
+        self.assertGreaterEqual(len(diagrams), 7)
         for path in diagrams:
             root = ET.parse(path).getroot()
             self.assertEqual(root.tag, SVG + "svg")
@@ -39,6 +39,11 @@ class DiagramTests(unittest.TestCase):
     def test_level_five_diagram_links_evidence_and_artifact_views(self):
         diagram = (ROOT / "diagrams" / "level-5-package-artifact-evidence.svg").read_text(encoding="utf-8")
         for route in ("#/view/repositories", "#/view/artifacts", "#/view/evidenced"):
+            self.assertIn(route, diagram)
+
+    def test_level_six_diagram_links_toolchain_and_artifact_views(self):
+        diagram = (ROOT / "diagrams" / "level-6-toolchain-build-flow.svg").read_text(encoding="utf-8")
+        for route in ("#/view/toolchains", "#/view/artifacts", "#/view/evidenced"):
             self.assertIn(route, diagram)
 
 

@@ -79,6 +79,10 @@ Dependencies not resolvable to a package in the same snapshot are retained in
 `generated/unresolved-dependencies.json`. They are not silently converted into
 false architecture relationships.
 
+For a downloaded pacman repository database, `tools/import_repository_db.py`
+converts in-archive `desc` records into that same verified importer contract;
+see [`REPOSITORY-DATABASE-IMPORT.md`](REPOSITORY-DATABASE-IMPORT.md).
+
 ## Deep inventory and analysis
 
 `tools/deep_inventory.py` uses only the Python standard library. It maps

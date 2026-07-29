@@ -23,7 +23,7 @@
 - [x] Generate package dependency and reverse-navigation relationships
 - [x] Produce package addition, removal, and version-change reports
 - [x] Support on-demand and Windows Scheduled Task refresh
-- [ ] Ingest repository database archives directly
+- [x] Ingest repository database archives directly
 - [x] Statically ingest package recipes without executing PKGBUILDs
 - [x] Extract installed and repository package-file manifests
 - [x] Extract PE imports, exports, subsystem, architecture, and debug metadata

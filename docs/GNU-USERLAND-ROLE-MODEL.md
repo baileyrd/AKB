@@ -12,6 +12,9 @@ last_verified: 2026-07-28
 
 # GNU Userland Role Model
 
+The [Level 7 userland and applications view](../diagrams/level-7-userland-applications.svg)
+connects this role model to shell, package, runtime, and Git for Windows paths.
+
 | Component family | Role | Boundary |
 | --- | --- | --- |
 | Bash and shell startup | Command interpretation, environment/profile processing, script execution | Profile behavior is shell configuration, not global MSYS2 policy |

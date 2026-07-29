@@ -4,7 +4,7 @@
 - Entities: **15717**
 - Relationships: **76105**
 - Authored documents: **47**
-- Linked SVG diagrams: **7**
+- Linked SVG diagrams: **8**
 
 ## Explicit gaps
 

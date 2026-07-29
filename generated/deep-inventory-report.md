@@ -2,20 +2,24 @@
 
 > Generated from verified artifact observations; do not edit manually.
 
-- Snapshot: `20260729T115414Z-93c5b258a95b`
-- Entities: **8**
-- Relationships: **8**
+- Snapshot: `20260729T122657Z-eac21b0c1bb8`
+- Entities: **20**
+- Relationships: **20**
 - Unresolved references: **0**
 - Collector warnings: **0**
 
 | Entity kind | Count |
 | --- | ---: |
-| dll | 3 |
+| dll | 10 |
 | filesystem-path | 5 |
+| header | 2 |
+| import-library | 1 |
+| pkg-config-module | 1 |
+| static-library | 1 |
 
 ## Change summary
 
-- Added: **8**
-- Removed: **0**
-- Changed: **0**
-- Unchanged: **0**
+- Added: **16**
+- Removed: **532**
+- Changed: **3**
+- Unchanged: **1**

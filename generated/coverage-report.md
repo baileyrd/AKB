@@ -2,8 +2,8 @@
 
 > Generated from the composed model; do not edit manually.
 
-- Entities: **15734**
-- Entities with evidence: **15731**
+- Entities: **15746**
+- Entities with evidence: **15743**
 - Claims: **0**
 - Evidence records: **3**
 
@@ -12,4 +12,4 @@
 | deprecated | 2 |
 | partial | 6 |
 | planned | 1 |
-| verified | 15725 |
+| verified | 15737 |

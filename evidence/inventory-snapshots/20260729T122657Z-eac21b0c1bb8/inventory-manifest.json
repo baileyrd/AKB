@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "collector_version": "0.4.0",
+  "generated_at": "2026-07-29T12:26:57.386899+00:00",
+  "collector": "tools/analyze_package_archive.py",
+  "scope": "package-archive",
+  "package": "mingw-w64-ucrt-x86_64-zlib",
+  "source_archive": {
+    "name": "ucrt-zlib.pkg.tar.zst",
+    "sha256": "841401182976d2f9e17e5c0ebaac51f2a8014140ea53d67625e91c8fb3c85ea0"
+  },
+  "counts": {
+    "artifacts.jsonl": 11,
+    "pe-imports.jsonl": 9,
+    "pe-exports.jsonl": 114,
+    "archive-members.jsonl": 131,
+    "development-metadata.jsonl": 1,
+    "recipes.jsonl": 0,
+    "warnings.jsonl": 0
+  },
+  "sha256": {
+    "artifacts.jsonl": "2da4590275190f7b347ab3edc6afdcc61c2116f8450a84df44068f8e6cd1c020",
+    "pe-imports.jsonl": "3ef1266ed9bc508e88121d5d4fc583f4143fa21a535ea2a286887888c75ab378",
+    "pe-exports.jsonl": "dfd04435d053822b0d4965fcb294d9cd25c2c91b521394d1bb60cff3b5d22915",
+    "archive-members.jsonl": "72f5d0dfc2dfb406591e536e47da07d44f985eaaed0d11ed2a7e9c27d0c61fda",
+    "development-metadata.jsonl": "fed582cbf475cb460762adce7dd68f170ea7792fddbc2cd94f2fb61c6129a092",
+    "recipes.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "warnings.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

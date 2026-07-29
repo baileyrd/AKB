@@ -1,8 +1,8 @@
 {
   "schema_version": "0.2.0",
   "snapshot": {
-    "id": "20260729T115414Z-93c5b258a95b",
-    "observed_at": "2026-07-29T11:54:14.956988+00:00",
+    "id": "20260729T122657Z-eac21b0c1bb8",
+    "observed_at": "2026-07-29T12:26:57.386899+00:00",
     "description": "Generated MSYS2 package artifact and build-evidence projection.",
     "upstream_versions": {
       "collector": "0.4.0"
@@ -10,9 +10,9 @@
   },
   "entities": [
     {
-      "id": "dll:msys2:/usr/bin/msys-z.dll",
+      "id": "dll:msys2:/ucrt64/bin/zlib1.dll",
       "kind": "dll",
-      "name": "/usr/bin/msys-z.dll",
+      "name": "/ucrt64/bin/zlib1.dll",
       "status": "verified",
       "confidence": "verified",
       "authority": "MSYS2",
@@ -23,401 +23,477 @@
       ],
       "applicability": {},
       "properties": {
-        "archive": "zlib.pkg.tar.zst",
+        "archive": "ucrt-zlib.pkg.tar.zst",
         "pe": {
           "architecture": "x86_64",
-          "characteristics": "0x222e",
+          "characteristics": "0x2226",
           "format": "PE32+",
-          "has_debug_directory": true,
-          "image_base": 22061907968,
+          "has_debug_directory": false,
+          "image_base": 9692577792,
           "machine": "0x8664",
-          "section_count": 11,
+          "section_count": 10,
           "subsystem": "windows-console",
-          "timestamp": 1771352746
+          "timestamp": 1772699060
         },
         "present": true,
-        "sha256": "f548bb1632160282c3853415182d695c655d0eb7c12aa42a0538161898694b6f",
-        "size": 91648,
+        "sha256": "11cd91171765cd65f1c3362e3df67e5f5a618a6b88c8cdec899b802eaf1c7b0d",
+        "size": 127291,
         "exports": [
           {
-            "name": "adler32",
+            "name": "_dist_code",
             "ordinal": 1
           },
           {
-            "name": "adler32_combine",
+            "name": "_length_code",
             "ordinal": 2
           },
           {
-            "name": "adler32_combine64",
+            "name": "_tr_align",
             "ordinal": 3
           },
           {
-            "name": "adler32_z",
+            "name": "_tr_flush_bits",
             "ordinal": 4
           },
           {
-            "name": "compress",
+            "name": "_tr_flush_block",
             "ordinal": 5
           },
           {
-            "name": "compress2",
+            "name": "_tr_init",
             "ordinal": 6
           },
           {
-            "name": "compress2_z",
+            "name": "_tr_stored_block",
             "ordinal": 7
           },
           {
-            "name": "compressBound",
+            "name": "_tr_tally",
             "ordinal": 8
           },
           {
-            "name": "compressBound_z",
+            "name": "adler32",
             "ordinal": 9
           },
           {
-            "name": "compress_z",
+            "name": "adler32_combine",
             "ordinal": 10
           },
           {
-            "name": "crc32",
+            "name": "adler32_combine64",
             "ordinal": 11
           },
           {
-            "name": "crc32_combine",
+            "name": "adler32_z",
             "ordinal": 12
           },
           {
-            "name": "crc32_combine64",
+            "name": "compress",
             "ordinal": 13
           },
           {
-            "name": "crc32_combine_gen",
+            "name": "compress2",
             "ordinal": 14
           },
           {
-            "name": "crc32_combine_gen64",
+            "name": "compress2_z",
             "ordinal": 15
           },
           {
-            "name": "crc32_combine_op",
+            "name": "compressBound",
             "ordinal": 16
           },
           {
-            "name": "crc32_z",
+            "name": "compressBound_z",
             "ordinal": 17
           },
           {
-            "name": "deflate",
+            "name": "compress_z",
             "ordinal": 18
           },
           {
-            "name": "deflateBound",
+            "name": "crc32",
             "ordinal": 19
           },
           {
-            "name": "deflateBound_z",
+            "name": "crc32_combine",
             "ordinal": 20
           },
           {
-            "name": "deflateCopy",
+            "name": "crc32_combine64",
             "ordinal": 21
           },
           {
-            "name": "deflateEnd",
+            "name": "crc32_combine_gen",
             "ordinal": 22
           },
           {
-            "name": "deflateGetDictionary",
+            "name": "crc32_combine_gen64",
             "ordinal": 23
           },
           {
-            "name": "deflateInit2_",
+            "name": "crc32_combine_op",
             "ordinal": 24
           },
           {
-            "name": "deflateInit_",
+            "name": "crc32_z",
             "ordinal": 25
           },
           {
-            "name": "deflateParams",
+            "name": "deflate",
             "ordinal": 26
           },
           {
-            "name": "deflatePending",
+            "name": "deflateBound",
             "ordinal": 27
           },
           {
-            "name": "deflatePrime",
+            "name": "deflateBound_z",
             "ordinal": 28
           },
           {
-            "name": "deflateReset",
+            "name": "deflateCopy",
             "ordinal": 29
           },
           {
-            "name": "deflateResetKeep",
+            "name": "deflateEnd",
             "ordinal": 30
           },
           {
-            "name": "deflateSetDictionary",
+            "name": "deflateGetDictionary",
             "ordinal": 31
           },
           {
-            "name": "deflateSetHeader",
+            "name": "deflateInit2_",
             "ordinal": 32
           },
           {
-            "name": "deflateTune",
+            "name": "deflateInit_",
             "ordinal": 33
           },
           {
-            "name": "deflateUsed",
+            "name": "deflateParams",
             "ordinal": 34
           },
           {
-            "name": "get_crc_table",
+            "name": "deflatePending",
             "ordinal": 35
           },
           {
-            "name": "gzbuffer",
+            "name": "deflatePrime",
             "ordinal": 36
           },
           {
-            "name": "gzclearerr",
+            "name": "deflateReset",
             "ordinal": 37
           },
           {
-            "name": "gzclose",
+            "name": "deflateResetKeep",
             "ordinal": 38
           },
           {
-            "name": "gzclose_r",
+            "name": "deflateSetDictionary",
             "ordinal": 39
           },
           {
-            "name": "gzclose_w",
+            "name": "deflateSetHeader",
             "ordinal": 40
           },
           {
-            "name": "gzdirect",
+            "name": "deflateTune",
             "ordinal": 41
           },
           {
-            "name": "gzdopen",
+            "name": "deflateUsed",
             "ordinal": 42
           },
           {
-            "name": "gzeof",
+            "name": "deflate_copyright",
             "ordinal": 43
           },
           {
-            "name": "gzerror",
+            "name": "get_crc_table",
             "ordinal": 44
           },
           {
-            "name": "gzflush",
+            "name": "gz_error",
             "ordinal": 45
           },
           {
-            "name": "gzfread",
+            "name": "gz_intmax",
             "ordinal": 46
           },
           {
-            "name": "gzfwrite",
+            "name": "gzbuffer",
             "ordinal": 47
           },
           {
-            "name": "gzgetc",
+            "name": "gzclearerr",
             "ordinal": 48
           },
           {
-            "name": "gzgetc_",
+            "name": "gzclose",
             "ordinal": 49
           },
           {
-            "name": "gzgets",
+            "name": "gzclose_r",
             "ordinal": 50
           },
           {
-            "name": "gzoffset",
+            "name": "gzclose_w",
             "ordinal": 51
           },
           {
-            "name": "gzoffset64",
+            "name": "gzdirect",
             "ordinal": 52
           },
           {
-            "name": "gzopen",
+            "name": "gzdopen",
             "ordinal": 53
           },
           {
-            "name": "gzopen64",
+            "name": "gzeof",
             "ordinal": 54
           },
           {
-            "name": "gzprintf",
+            "name": "gzerror",
             "ordinal": 55
           },
           {
-            "name": "gzputc",
+            "name": "gzflush",
             "ordinal": 56
           },
           {
-            "name": "gzputs",
+            "name": "gzfread",
             "ordinal": 57
           },
           {
-            "name": "gzread",
+            "name": "gzfwrite",
             "ordinal": 58
           },
           {
-            "name": "gzrewind",
+            "name": "gzgetc",
             "ordinal": 59
           },
           {
-            "name": "gzseek",
+            "name": "gzgetc_",
             "ordinal": 60
           },
           {
-            "name": "gzseek64",
+            "name": "gzgets",
             "ordinal": 61
           },
           {
-            "name": "gzsetparams",
+            "name": "gzoffset",
             "ordinal": 62
           },
           {
-            "name": "gztell",
+            "name": "gzoffset64",
             "ordinal": 63
           },
           {
-            "name": "gztell64",
+            "name": "gzopen",
             "ordinal": 64
           },
           {
-            "name": "gzungetc",
+            "name": "gzopen64",
             "ordinal": 65
           },
           {
-            "name": "gzvprintf",
+            "name": "gzopen_w",
             "ordinal": 66
           },
           {
-            "name": "gzwrite",
+            "name": "gzprintf",
             "ordinal": 67
           },
           {
-            "name": "inflate",
+            "name": "gzputc",
             "ordinal": 68
           },
           {
-            "name": "inflateBack",
+            "name": "gzputs",
             "ordinal": 69
           },
           {
-            "name": "inflateBackEnd",
+            "name": "gzread",
             "ordinal": 70
           },
           {
-            "name": "inflateBackInit_",
+            "name": "gzrewind",
             "ordinal": 71
           },
           {
-            "name": "inflateCodesUsed",
+            "name": "gzseek",
             "ordinal": 72
           },
           {
-            "name": "inflateCopy",
+            "name": "gzseek64",
             "ordinal": 73
           },
           {
-            "name": "inflateEnd",
+            "name": "gzsetparams",
             "ordinal": 74
           },
           {
-            "name": "inflateGetDictionary",
+            "name": "gztell",
             "ordinal": 75
           },
           {
-            "name": "inflateGetHeader",
+            "name": "gztell64",
             "ordinal": 76
           },
           {
-            "name": "inflateInit2_",
+            "name": "gzungetc",
             "ordinal": 77
           },
           {
-            "name": "inflateInit_",
+            "name": "gzvprintf",
             "ordinal": 78
           },
           {
-            "name": "inflateMark",
+            "name": "gzwrite",
             "ordinal": 79
           },
           {
-            "name": "inflatePrime",
+            "name": "inflate",
             "ordinal": 80
           },
           {
-            "name": "inflateReset",
+            "name": "inflateBack",
             "ordinal": 81
           },
           {
-            "name": "inflateReset2",
+            "name": "inflateBackEnd",
             "ordinal": 82
           },
           {
-            "name": "inflateResetKeep",
+            "name": "inflateBackInit_",
             "ordinal": 83
           },
           {
-            "name": "inflateSetDictionary",
+            "name": "inflateCodesUsed",
             "ordinal": 84
           },
           {
-            "name": "inflateSync",
+            "name": "inflateCopy",
             "ordinal": 85
           },
           {
-            "name": "inflateSyncPoint",
+            "name": "inflateEnd",
             "ordinal": 86
           },
           {
-            "name": "inflateUndermine",
+            "name": "inflateGetDictionary",
             "ordinal": 87
           },
           {
-            "name": "inflateValidate",
+            "name": "inflateGetHeader",
             "ordinal": 88
           },
           {
-            "name": "uncompress",
+            "name": "inflateInit2_",
             "ordinal": 89
           },
           {
-            "name": "uncompress2",
+            "name": "inflateInit_",
             "ordinal": 90
           },
           {
-            "name": "uncompress2_z",
+            "name": "inflateMark",
             "ordinal": 91
           },
           {
-            "name": "uncompress_z",
+            "name": "inflatePrime",
             "ordinal": 92
           },
           {
-            "name": "zError",
+            "name": "inflateReset",
             "ordinal": 93
           },
           {
-            "name": "zlibCompileFlags",
+            "name": "inflateReset2",
             "ordinal": 94
           },
           {
-            "name": "zlibVersion",
+            "name": "inflateResetKeep",
             "ordinal": 95
+          },
+          {
+            "name": "inflateSetDictionary",
+            "ordinal": 96
+          },
+          {
+            "name": "inflateSync",
+            "ordinal": 97
+          },
+          {
+            "name": "inflateSyncPoint",
+            "ordinal": 98
+          },
+          {
+            "name": "inflateUndermine",
+            "ordinal": 99
+          },
+          {
+            "name": "inflateValidate",
+            "ordinal": 100
+          },
+          {
+            "name": "inflate_copyright",
+            "ordinal": 101
+          },
+          {
+            "name": "inflate_fast",
+            "ordinal": 102
+          },
+          {
+            "name": "inflate_fixed",
+            "ordinal": 103
+          },
+          {
+            "name": "inflate_table",
+            "ordinal": 104
+          },
+          {
+            "name": "uncompress",
+            "ordinal": 105
+          },
+          {
+            "name": "uncompress2",
+            "ordinal": 106
+          },
+          {
+            "name": "uncompress2_z",
+            "ordinal": 107
+          },
+          {
+            "name": "uncompress_z",
+            "ordinal": 108
+          },
+          {
+            "name": "zError",
+            "ordinal": 109
+          },
+          {
+            "name": "z_errmsg",
+            "ordinal": 110
+          },
+          {
+            "name": "zcalloc",
+            "ordinal": 111
+          },
+          {
+            "name": "zcfree",
+            "ordinal": 112
+          },
+          {
+            "name": "zlibCompileFlags",
+            "ordinal": 113
+          },
+          {
+            "name": "zlibVersion",
+            "ordinal": 114
           }
         ]
       },
@@ -426,9 +502,9 @@
       ]
     },
     {
-      "id": "dll:windows:kernel32.dll",
+      "id": "dll:windows:api-ms-win-crt-convert-l1-1-0.dll",
       "kind": "dll",
-      "name": "kernel32.dll",
+      "name": "api-ms-win-crt-convert-l1-1-0.dll",
       "status": "verified",
       "confidence": "verified",
       "authority": "MSYS2",
@@ -446,9 +522,149 @@
       ]
     },
     {
-      "id": "dll:windows:msys-2.0.dll",
+      "id": "dll:windows:api-ms-win-crt-heap-l1-1-0.dll",
       "kind": "dll",
-      "name": "msys-2.0.dll",
+      "name": "api-ms-win-crt-heap-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:api-ms-win-crt-locale-l1-1-0.dll",
+      "kind": "dll",
+      "name": "api-ms-win-crt-locale-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:api-ms-win-crt-private-l1-1-0.dll",
+      "kind": "dll",
+      "name": "api-ms-win-crt-private-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:api-ms-win-crt-runtime-l1-1-0.dll",
+      "kind": "dll",
+      "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:api-ms-win-crt-stdio-l1-1-0.dll",
+      "kind": "dll",
+      "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:api-ms-win-crt-string-l1-1-0.dll",
+      "kind": "dll",
+      "name": "api-ms-win-crt-string-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:api-ms-win-crt-utility-l1-1-0.dll",
+      "kind": "dll",
+      "name": "api-ms-win-crt-utility-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "external": true
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "dll:windows:kernel32.dll",
+      "kind": "dll",
+      "name": "kernel32.dll",
       "status": "verified",
       "confidence": "verified",
       "authority": "MSYS2",
@@ -479,10 +695,10 @@
       ],
       "applicability": {},
       "properties": {
-        "archive": "zlib.pkg.tar.zst",
+        "archive": "ucrt-zlib.pkg.tar.zst",
         "present": true,
-        "sha256": "859da3493b28366e351a1ca9c5dbbb5a8283de5ec5fd1ffc6e389127211ea92a",
-        "size": 5193
+        "sha256": "fdad29bf34766da93b0f880078e5d282202e45ab5e00785b0b1d7e02d3aa1c18",
+        "size": 6153
       },
       "evidence_refs": [
         "evidence:inventory:current"
@@ -502,10 +718,10 @@
       ],
       "applicability": {},
       "properties": {
-        "archive": "zlib.pkg.tar.zst",
+        "archive": "ucrt-zlib.pkg.tar.zst",
         "present": true,
-        "sha256": "0ffcae73dd17ac3c51be7cccb1b0beb102b9dd24b79b9f02c0dde9c3606f8d7c",
-        "size": 454
+        "sha256": "1977711cfce3501ffa8671b60cc0d7b54966bbe523ff9af066fa915469ae5bc2",
+        "size": 745
       },
       "evidence_refs": [
         "evidence:inventory:current"
@@ -525,19 +741,19 @@
       ],
       "applicability": {},
       "properties": {
-        "archive": "zlib.pkg.tar.zst",
+        "archive": "ucrt-zlib.pkg.tar.zst",
         "present": true,
-        "sha256": "c1ff3af0de77969daca753aabb2b58f5bfa8bee35ca64c37c4a7875acd8200ce",
-        "size": 444
+        "sha256": "71a298f9b28fcfb13ff3d6ca0becb5bb70bb22acd6893b3f81fe559fea1c5bed",
+        "size": 519
       },
       "evidence_refs": [
         "evidence:inventory:current"
       ]
     },
     {
-      "id": "filesystem-path:msys2:/usr/share/licenses/zlib/license",
+      "id": "filesystem-path:msys2:/ucrt64/share/licenses/zlib/license",
       "kind": "filesystem-path",
-      "name": "/usr/share/licenses/zlib/LICENSE",
+      "name": "/ucrt64/share/licenses/zlib/LICENSE",
       "status": "verified",
       "confidence": "verified",
       "authority": "MSYS2",
@@ -548,7 +764,7 @@
       ],
       "applicability": {},
       "properties": {
-        "archive": "zlib.pkg.tar.zst",
+        "archive": "ucrt-zlib.pkg.tar.zst",
         "present": true,
         "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
         "size": 1002
@@ -558,9 +774,9 @@
       ]
     },
     {
-      "id": "filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz",
+      "id": "filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz",
       "kind": "filesystem-path",
-      "name": "/usr/share/man/man3/zlib.3.gz",
+      "name": "/ucrt64/share/man/man3/zlib.3.gz",
       "status": "verified",
       "confidence": "verified",
       "authority": "MSYS2",
@@ -571,10 +787,806 @@
       ],
       "applicability": {},
       "properties": {
-        "archive": "zlib.pkg.tar.zst",
+        "archive": "ucrt-zlib.pkg.tar.zst",
         "present": true,
         "sha256": "babd82a67b5d173f207592953aa8d4c191b37e8c67117de1d7386bd108de2eb5",
         "size": 2079
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "header:msys2:/ucrt64/include/zconf.h",
+      "kind": "header",
+      "name": "/ucrt64/include/zconf.h",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "archive": "ucrt-zlib.pkg.tar.zst",
+        "present": true,
+        "sha256": "6f3a8f18eaa62f482d00e4d5b083afe4bbe4ace0864d2b88a78e262680788183",
+        "size": 16970
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "header:msys2:/ucrt64/include/zlib.h",
+      "kind": "header",
+      "name": "/ucrt64/include/zlib.h",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "archive": "ucrt-zlib.pkg.tar.zst",
+        "present": true,
+        "sha256": "818667d6ab6a37fe7469cb06a7f0cb2c2cb2f2c948a03e5accf1a4a74bf3020a",
+        "size": 103848
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "import-library:msys2:/ucrt64/lib/libz.dll.a",
+      "kind": "import-library",
+      "name": "/ucrt64/lib/libz.dll.a",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "archive": "ucrt-zlib.pkg.tar.zst",
+        "present": true,
+        "sha256": "0c4848c6215d524133447d4449e0cb8a0b6673376b19be2b579506fc1d57c492",
+        "size": 70902,
+        "members": [
+          {
+            "name": "zlib1_dll_d000115.o",
+            "size": 260,
+            "offset": 7040
+          },
+          {
+            "name": "zlib1_dll_d000000.o",
+            "size": 316,
+            "offset": 7360
+          },
+          {
+            "name": "zlib1_dll_d000114.o",
+            "size": 498,
+            "offset": 7736
+          },
+          {
+            "name": "zlib1_dll_d000113.o",
+            "size": 512,
+            "offset": 8294
+          },
+          {
+            "name": "zlib1_dll_d000112.o",
+            "size": 477,
+            "offset": 8866
+          },
+          {
+            "name": "zlib1_dll_d000111.o",
+            "size": 478,
+            "offset": 9404
+          },
+          {
+            "name": "zlib1_dll_d000110.o",
+            "size": 475,
+            "offset": 9942
+          },
+          {
+            "name": "zlib1_dll_d000109.o",
+            "size": 477,
+            "offset": 10478
+          },
+          {
+            "name": "zlib1_dll_d000108.o",
+            "size": 500,
+            "offset": 11016
+          },
+          {
+            "name": "zlib1_dll_d000107.o",
+            "size": 502,
+            "offset": 11576
+          },
+          {
+            "name": "zlib1_dll_d000106.o",
+            "size": 498,
+            "offset": 12138
+          },
+          {
+            "name": "zlib1_dll_d000105.o",
+            "size": 496,
+            "offset": 12696
+          },
+          {
+            "name": "zlib1_dll_d000104.o",
+            "size": 502,
+            "offset": 13252
+          },
+          {
+            "name": "zlib1_dll_d000103.o",
+            "size": 502,
+            "offset": 13814
+          },
+          {
+            "name": "zlib1_dll_d000102.o",
+            "size": 500,
+            "offset": 14376
+          },
+          {
+            "name": "zlib1_dll_d000101.o",
+            "size": 501,
+            "offset": 14936
+          },
+          {
+            "name": "zlib1_dll_d000100.o",
+            "size": 510,
+            "offset": 15498
+          },
+          {
+            "name": "zlib1_dll_d000099.o",
+            "size": 512,
+            "offset": 16068
+          },
+          {
+            "name": "zlib1_dll_d000098.o",
+            "size": 512,
+            "offset": 16640
+          },
+          {
+            "name": "zlib1_dll_d000097.o",
+            "size": 498,
+            "offset": 17212
+          },
+          {
+            "name": "zlib1_dll_d000096.o",
+            "size": 524,
+            "offset": 17770
+          },
+          {
+            "name": "zlib1_dll_d000095.o",
+            "size": 512,
+            "offset": 18354
+          },
+          {
+            "name": "zlib1_dll_d000094.o",
+            "size": 502,
+            "offset": 18926
+          },
+          {
+            "name": "zlib1_dll_d000093.o",
+            "size": 500,
+            "offset": 19488
+          },
+          {
+            "name": "zlib1_dll_d000092.o",
+            "size": 500,
+            "offset": 20048
+          },
+          {
+            "name": "zlib1_dll_d000091.o",
+            "size": 498,
+            "offset": 20608
+          },
+          {
+            "name": "zlib1_dll_d000090.o",
+            "size": 500,
+            "offset": 21166
+          },
+          {
+            "name": "zlib1_dll_d000089.o",
+            "size": 502,
+            "offset": 21726
+          },
+          {
+            "name": "zlib1_dll_d000088.o",
+            "size": 512,
+            "offset": 22288
+          },
+          {
+            "name": "zlib1_dll_d000087.o",
+            "size": 524,
+            "offset": 22860
+          },
+          {
+            "name": "zlib1_dll_d000086.o",
+            "size": 496,
+            "offset": 23444
+          },
+          {
+            "name": "zlib1_dll_d000085.o",
+            "size": 498,
+            "offset": 24000
+          },
+          {
+            "name": "zlib1_dll_d000084.o",
+            "size": 512,
+            "offset": 24558
+          },
+          {
+            "name": "zlib1_dll_d000083.o",
+            "size": 512,
+            "offset": 25130
+          },
+          {
+            "name": "zlib1_dll_d000082.o",
+            "size": 508,
+            "offset": 25702
+          },
+          {
+            "name": "zlib1_dll_d000081.o",
+            "size": 498,
+            "offset": 26270
+          },
+          {
+            "name": "zlib1_dll_d000080.o",
+            "size": 478,
+            "offset": 26828
+          },
+          {
+            "name": "zlib1_dll_d000079.o",
+            "size": 478,
+            "offset": 27366
+          },
+          {
+            "name": "zlib1_dll_d000078.o",
+            "size": 490,
+            "offset": 27904
+          },
+          {
+            "name": "zlib1_dll_d000077.o",
+            "size": 479,
+            "offset": 28454
+          },
+          {
+            "name": "zlib1_dll_d000076.o",
+            "size": 479,
+            "offset": 28994
+          },
+          {
+            "name": "zlib1_dll_d000075.o",
+            "size": 477,
+            "offset": 29534
+          },
+          {
+            "name": "zlib1_dll_d000074.o",
+            "size": 498,
+            "offset": 30072
+          },
+          {
+            "name": "zlib1_dll_d000073.o",
+            "size": 479,
+            "offset": 30630
+          },
+          {
+            "name": "zlib1_dll_d000072.o",
+            "size": 477,
+            "offset": 31170
+          },
+          {
+            "name": "zlib1_dll_d000071.o",
+            "size": 479,
+            "offset": 31708
+          },
+          {
+            "name": "zlib1_dll_d000070.o",
+            "size": 477,
+            "offset": 32248
+          },
+          {
+            "name": "zlib1_dll_d000069.o",
+            "size": 477,
+            "offset": 32786
+          },
+          {
+            "name": "zlib1_dll_d000068.o",
+            "size": 477,
+            "offset": 33324
+          },
+          {
+            "name": "zlib1_dll_d000067.o",
+            "size": 479,
+            "offset": 33862
+          },
+          {
+            "name": "zlib1_dll_d000066.o",
+            "size": 479,
+            "offset": 34402
+          },
+          {
+            "name": "zlib1_dll_d000065.o",
+            "size": 479,
+            "offset": 34942
+          },
+          {
+            "name": "zlib1_dll_d000064.o",
+            "size": 477,
+            "offset": 35482
+          },
+          {
+            "name": "zlib1_dll_d000063.o",
+            "size": 496,
+            "offset": 36020
+          },
+          {
+            "name": "zlib1_dll_d000062.o",
+            "size": 479,
+            "offset": 36576
+          },
+          {
+            "name": "zlib1_dll_d000061.o",
+            "size": 477,
+            "offset": 37116
+          },
+          {
+            "name": "zlib1_dll_d000060.o",
+            "size": 478,
+            "offset": 37654
+          },
+          {
+            "name": "zlib1_dll_d000059.o",
+            "size": 477,
+            "offset": 38192
+          },
+          {
+            "name": "zlib1_dll_d000058.o",
+            "size": 479,
+            "offset": 38730
+          },
+          {
+            "name": "zlib1_dll_d000057.o",
+            "size": 478,
+            "offset": 39270
+          },
+          {
+            "name": "zlib1_dll_d000056.o",
+            "size": 478,
+            "offset": 39808
+          },
+          {
+            "name": "zlib1_dll_d000055.o",
+            "size": 478,
+            "offset": 40346
+          },
+          {
+            "name": "zlib1_dll_d000054.o",
+            "size": 472,
+            "offset": 40884
+          },
+          {
+            "name": "zlib1_dll_d000053.o",
+            "size": 478,
+            "offset": 41416
+          },
+          {
+            "name": "zlib1_dll_d000052.o",
+            "size": 479,
+            "offset": 41954
+          },
+          {
+            "name": "zlib1_dll_d000051.o",
+            "size": 490,
+            "offset": 42494
+          },
+          {
+            "name": "zlib1_dll_d000050.o",
+            "size": 490,
+            "offset": 43044
+          },
+          {
+            "name": "zlib1_dll_d000049.o",
+            "size": 478,
+            "offset": 43594
+          },
+          {
+            "name": "zlib1_dll_d000048.o",
+            "size": 496,
+            "offset": 44132
+          },
+          {
+            "name": "zlib1_dll_d000047.o",
+            "size": 479,
+            "offset": 44688
+          },
+          {
+            "name": "zlib1_dll_d000046.o",
+            "size": 490,
+            "offset": 45228
+          },
+          {
+            "name": "zlib1_dll_d000045.o",
+            "size": 479,
+            "offset": 45778
+          },
+          {
+            "name": "zlib1_dll_d000044.o",
+            "size": 502,
+            "offset": 46318
+          },
+          {
+            "name": "zlib1_dll_d000043.o",
+            "size": 501,
+            "offset": 46880
+          },
+          {
+            "name": "zlib1_dll_d000042.o",
+            "size": 498,
+            "offset": 47442
+          },
+          {
+            "name": "zlib1_dll_d000041.o",
+            "size": 498,
+            "offset": 48000
+          },
+          {
+            "name": "zlib1_dll_d000040.o",
+            "size": 512,
+            "offset": 48558
+          },
+          {
+            "name": "zlib1_dll_d000039.o",
+            "size": 524,
+            "offset": 49130
+          },
+          {
+            "name": "zlib1_dll_d000038.o",
+            "size": 512,
+            "offset": 49714
+          },
+          {
+            "name": "zlib1_dll_d000037.o",
+            "size": 500,
+            "offset": 50286
+          },
+          {
+            "name": "zlib1_dll_d000036.o",
+            "size": 500,
+            "offset": 50846
+          },
+          {
+            "name": "zlib1_dll_d000035.o",
+            "size": 508,
+            "offset": 51406
+          },
+          {
+            "name": "zlib1_dll_d000034.o",
+            "size": 502,
+            "offset": 51974
+          },
+          {
+            "name": "zlib1_dll_d000033.o",
+            "size": 500,
+            "offset": 52536
+          },
+          {
+            "name": "zlib1_dll_d000032.o",
+            "size": 502,
+            "offset": 53096
+          },
+          {
+            "name": "zlib1_dll_d000031.o",
+            "size": 524,
+            "offset": 53658
+          },
+          {
+            "name": "zlib1_dll_d000030.o",
+            "size": 496,
+            "offset": 54242
+          },
+          {
+            "name": "zlib1_dll_d000029.o",
+            "size": 498,
+            "offset": 54798
+          },
+          {
+            "name": "zlib1_dll_d000028.o",
+            "size": 508,
+            "offset": 55356
+          },
+          {
+            "name": "zlib1_dll_d000027.o",
+            "size": 500,
+            "offset": 55924
+          },
+          {
+            "name": "zlib1_dll_d000026.o",
+            "size": 478,
+            "offset": 56484
+          },
+          {
+            "name": "zlib1_dll_d000025.o",
+            "size": 478,
+            "offset": 57022
+          },
+          {
+            "name": "zlib1_dll_d000024.o",
+            "size": 512,
+            "offset": 57560
+          },
+          {
+            "name": "zlib1_dll_d000023.o",
+            "size": 522,
+            "offset": 58132
+          },
+          {
+            "name": "zlib1_dll_d000022.o",
+            "size": 514,
+            "offset": 58714
+          },
+          {
+            "name": "zlib1_dll_d000021.o",
+            "size": 510,
+            "offset": 59288
+          },
+          {
+            "name": "zlib1_dll_d000020.o",
+            "size": 502,
+            "offset": 59858
+          },
+          {
+            "name": "zlib1_dll_d000019.o",
+            "size": 472,
+            "offset": 60420
+          },
+          {
+            "name": "zlib1_dll_d000018.o",
+            "size": 496,
+            "offset": 60952
+          },
+          {
+            "name": "zlib1_dll_d000017.o",
+            "size": 510,
+            "offset": 61508
+          },
+          {
+            "name": "zlib1_dll_d000016.o",
+            "size": 502,
+            "offset": 62078
+          },
+          {
+            "name": "zlib1_dll_d000015.o",
+            "size": 498,
+            "offset": 62640
+          },
+          {
+            "name": "zlib1_dll_d000014.o",
+            "size": 490,
+            "offset": 63198
+          },
+          {
+            "name": "zlib1_dll_d000013.o",
+            "size": 479,
+            "offset": 63748
+          },
+          {
+            "name": "zlib1_dll_d000012.o",
+            "size": 490,
+            "offset": 64288
+          },
+          {
+            "name": "zlib1_dll_d000011.o",
+            "size": 514,
+            "offset": 64838
+          },
+          {
+            "name": "zlib1_dll_d000010.o",
+            "size": 510,
+            "offset": 65412
+          },
+          {
+            "name": "zlib1_dll_d000009.o",
+            "size": 478,
+            "offset": 65982
+          },
+          {
+            "name": "zlib1_dll_d000008.o",
+            "size": 490,
+            "offset": 66520
+          },
+          {
+            "name": "zlib1_dll_d000007.o",
+            "size": 512,
+            "offset": 67070
+          },
+          {
+            "name": "zlib1_dll_d000006.o",
+            "size": 479,
+            "offset": 67642
+          },
+          {
+            "name": "zlib1_dll_d000005.o",
+            "size": 510,
+            "offset": 68182
+          },
+          {
+            "name": "zlib1_dll_d000004.o",
+            "size": 508,
+            "offset": 68752
+          },
+          {
+            "name": "zlib1_dll_d000003.o",
+            "size": 490,
+            "offset": 69320
+          },
+          {
+            "name": "zlib1_dll_d000002.o",
+            "size": 487,
+            "offset": 69870
+          },
+          {
+            "name": "zlib1_dll_d000001.o",
+            "size": 483,
+            "offset": 70418
+          }
+        ]
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc",
+      "kind": "pkg-config-module",
+      "name": "/ucrt64/lib/pkgconfig/zlib.pc",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "archive": "ucrt-zlib.pkg.tar.zst",
+        "present": true,
+        "sha256": "882348d91826831e18962c8e00e41ad61ce3515143d8fc32b2324ebe795003cd",
+        "size": 260,
+        "parsed_metadata": {
+          "cflags": [
+            "-I/ucrt64/include"
+          ],
+          "description": "zlib compression library",
+          "libs": [
+            "-L/ucrt64/lib",
+            "-lz"
+          ],
+          "libs_private": [],
+          "name": "zlib",
+          "requires": [],
+          "url": "",
+          "variables": {
+            "exec_prefix": "${prefix}",
+            "includedir": "${prefix}/include",
+            "libdir": "${exec_prefix}/lib",
+            "prefix": "/ucrt64",
+            "sharedlibdir": "${exec_prefix}/bin"
+          },
+          "version": "1.3.2"
+        }
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "static-library:msys2:/ucrt64/lib/libz.a",
+      "kind": "static-library",
+      "name": "/ucrt64/lib/libz.a",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "generated",
+        "deep-inventory"
+      ],
+      "applicability": {},
+      "properties": {
+        "archive": "ucrt-zlib.pkg.tar.zst",
+        "present": true,
+        "sha256": "322b465342199effa1bba496a03a3c775c77e8778067c27a5d92894ac6d19903",
+        "size": 115694,
+        "members": [
+          {
+            "name": "adler32.o",
+            "size": 2366,
+            "offset": 2390
+          },
+          {
+            "name": "crc32.o",
+            "size": 13253,
+            "offset": 4816
+          },
+          {
+            "name": "deflate.o",
+            "size": 21772,
+            "offset": 18130
+          },
+          {
+            "name": "infback.o",
+            "size": 7873,
+            "offset": 39962
+          },
+          {
+            "name": "inffast.o",
+            "size": 2387,
+            "offset": 47896
+          },
+          {
+            "name": "inflate.o",
+            "size": 17273,
+            "offset": 50344
+          },
+          {
+            "name": "inftrees.o",
+            "size": 5471,
+            "offset": 67678
+          },
+          {
+            "name": "trees.o",
+            "size": 13964,
+            "offset": 73210
+          },
+          {
+            "name": "zutil.o",
+            "size": 1605,
+            "offset": 87234
+          },
+          {
+            "name": "compress.o",
+            "size": 2388,
+            "offset": 88900
+          },
+          {
+            "name": "uncompr.o",
+            "size": 2245,
+            "offset": 91348
+          },
+          {
+            "name": "gzclose.o",
+            "size": 756,
+            "offset": 93654
+          },
+          {
+            "name": "gzlib.o",
+            "size": 6865,
+            "offset": 94470
+          },
+          {
+            "name": "gzread.o",
+            "size": 7365,
+            "offset": 101396
+          },
+          {
+            "name": "gzwrite.o",
+            "size": 6871,
+            "offset": 108822
+          }
+        ]
       },
       "evidence_refs": [
         "evidence:inventory:current"
@@ -583,40 +1595,25 @@
   ],
   "relationships": [
     {
-      "id": "relationship:inventory:imports-dll-e7b05cdd4e919a5ceace",
+      "id": "relationship:inventory:imports-dll-189721d86432b0e07eee",
       "type": "imports-dll",
-      "source": "dll:msys2:/usr/bin/msys-z.dll",
-      "target": "dll:windows:msys-2.0.dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-stdio-l1-1-0.dll",
       "status": "verified",
       "confidence": "verified",
       "scope": "deep-inventory",
       "condition": "",
       "properties": {
         "symbols": [
-          "__errno",
-          "_impure_ptr",
-          "calloc",
-          "close",
-          "cygwin_internal",
-          "dll_dllcrt0",
-          "fcntl",
-          "free",
-          "lseek",
-          "malloc",
-          "memchr",
-          "memcpy",
-          "memmove",
-          "memset",
-          "msys_detach_dll",
-          "open",
-          "posix_memalign",
-          "read",
-          "realloc",
-          "snprintf",
-          "strerror",
-          "strlen",
-          "vsnprintf",
-          "write"
+          "__acrt_iob_func",
+          "__stdio_common_vfprintf",
+          "_close",
+          "_lseeki64",
+          "_open",
+          "_read",
+          "_wopen",
+          "_write",
+          "fputc"
         ],
         "ordinals": []
       },
@@ -625,9 +1622,100 @@
       ]
     },
     {
-      "id": "relationship:inventory:imports-dll-fbe3f5e854658b58f04e",
+      "id": "relationship:inventory:imports-dll-2e01ef161166f723c43e",
       "type": "imports-dll",
-      "source": "dll:msys2:/usr/bin/msys-z.dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-convert-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "mbrtowc",
+          "wcrtomb",
+          "wcstombs"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-479f0a8c2f6da5499e0a",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-utility-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "rand_s"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-69b60a3a069c61b63da3",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-string-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "memset",
+          "strlen",
+          "strncmp",
+          "strnlen",
+          "wcslen",
+          "wcsnlen"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-77b19c35d6e879af3d1d",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-runtime-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "_errno",
+          "_execute_onexit_table",
+          "_exit",
+          "_initialize_onexit_table",
+          "_initterm",
+          "_initterm_e",
+          "_register_onexit_function",
+          "abort",
+          "strerror"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-a3173901406e7f94152b",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
       "target": "dll:windows:kernel32.dll",
       "status": "verified",
       "confidence": "verified",
@@ -635,7 +1723,18 @@
       "condition": "",
       "properties": {
         "symbols": [
-          "GetModuleHandleA"
+          "DeleteCriticalSection",
+          "EnterCriticalSection",
+          "GetCurrentProcess",
+          "GetLastError",
+          "InitializeCriticalSection",
+          "IsProcessorFeaturePresent",
+          "LeaveCriticalSection",
+          "Sleep",
+          "TerminateProcess",
+          "TlsGetValue",
+          "VirtualProtect",
+          "VirtualQuery"
         ],
         "ordinals": []
       },
@@ -644,10 +1743,71 @@
       ]
     },
     {
-      "id": "relationship:inventory:installs-2325eaaa5e7ef8e36cd5",
+      "id": "relationship:inventory:imports-dll-a351e1ff58501f6aa1d9",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-heap-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "calloc",
+          "free",
+          "malloc"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-aaa0e5b406e9659bf446",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-private-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "memchr",
+          "memcpy",
+          "memmove"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:imports-dll-e08dcc21b5ac9980c4ed",
+      "type": "imports-dll",
+      "source": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "target": "dll:windows:api-ms-win-crt-locale-l1-1-0.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {
+        "symbols": [
+          "localeconv"
+        ],
+        "ordinals": []
+      },
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-2dfaa2e2183738d053ef",
       "type": "installs",
-      "source": "package:msys2:zlib",
-      "target": "filesystem-path:msys2:/usr/share/licenses/zlib/license",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz",
       "status": "verified",
       "confidence": "verified",
       "scope": "deep-inventory",
@@ -658,10 +1818,10 @@
       ]
     },
     {
-      "id": "relationship:inventory:installs-48c85dfcc14beb679bd5",
+      "id": "relationship:inventory:installs-50bba37f2cdca08ba440",
       "type": "installs",
-      "source": "package:msys2:zlib",
-      "target": "filesystem-path:msys2:/usr/share/man/man3/zlib.3.gz",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "static-library:msys2:/ucrt64/lib/libz.a",
       "status": "verified",
       "confidence": "verified",
       "scope": "deep-inventory",
@@ -672,37 +1832,9 @@
       ]
     },
     {
-      "id": "relationship:inventory:installs-69f681df0a80e1ddfacd",
+      "id": "relationship:inventory:installs-52140eca90805d7f003e",
       "type": "installs",
-      "source": "package:msys2:zlib",
-      "target": "filesystem-path:msys2:/.pkginfo",
-      "status": "verified",
-      "confidence": "verified",
-      "scope": "deep-inventory",
-      "condition": "",
-      "properties": {},
-      "evidence_refs": [
-        "evidence:inventory:current"
-      ]
-    },
-    {
-      "id": "relationship:inventory:installs-d1bcc87b19d9f9e78e4c",
-      "type": "installs",
-      "source": "package:msys2:zlib",
-      "target": "dll:msys2:/usr/bin/msys-z.dll",
-      "status": "verified",
-      "confidence": "verified",
-      "scope": "deep-inventory",
-      "condition": "",
-      "properties": {},
-      "evidence_refs": [
-        "evidence:inventory:current"
-      ]
-    },
-    {
-      "id": "relationship:inventory:installs-dab3a71905611effacd1",
-      "type": "installs",
-      "source": "package:msys2:zlib",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
       "target": "filesystem-path:msys2:/.mtree",
       "status": "verified",
       "confidence": "verified",
@@ -714,10 +1846,108 @@
       ]
     },
     {
-      "id": "relationship:inventory:installs-fd4aa9e2dd44ad99c71d",
+      "id": "relationship:inventory:installs-53cccc9461144c6f7b1b",
       "type": "installs",
-      "source": "package:msys2:zlib",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "header:msys2:/ucrt64/include/zlib.h",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-89479287807202cd9efe",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "dll:msys2:/ucrt64/bin/zlib1.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-b52046827669ec4c7c9a",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "filesystem-path:msys2:/ucrt64/share/licenses/zlib/license",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-b9037fcbb16784d5828f",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "filesystem-path:msys2:/.pkginfo",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-cadfdc9f9d0f2caa2e23",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
       "target": "filesystem-path:msys2:/.buildinfo",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-cf9b2f704acecfdff4ba",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-d0660150d0a46e082c67",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "import-library:msys2:/ucrt64/lib/libz.dll.a",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "deep-inventory",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:inventory:current"
+      ]
+    },
+    {
+      "id": "relationship:inventory:installs-d3c938989f6fdb52b875",
+      "type": "installs",
+      "source": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "target": "header:msys2:/ucrt64/include/zconf.h",
       "status": "verified",
       "confidence": "verified",
       "scope": "deep-inventory",
@@ -734,10 +1964,10 @@
       "id": "evidence:inventory:current",
       "class": "observed",
       "title": "MSYS2 deep package inventory",
-      "locator": "evidence/inventory-snapshots/20260729T115414Z-93c5b258a95b/inventory-manifest.json",
-      "retrieved_at": "2026-07-29T11:54:14.956988+00:00",
+      "locator": "evidence/inventory-snapshots/20260729T122657Z-eac21b0c1bb8/inventory-manifest.json",
+      "retrieved_at": "2026-07-29T12:26:57.386899+00:00",
       "upstream_version": "0.4.0",
-      "integrity": "93c5b258a95bff59bba44f332270d121acedc5906af048e59d2ee321d5608f0b",
+      "integrity": "eac21b0c1bb851510dcc33c7c5050a463dea787c54b1b660eaf4dcef44fc7257",
       "notes": "Collected by tools/deep_inventory.py."
     }
   ]

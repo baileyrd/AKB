@@ -22,7 +22,7 @@ template alone is not sufficient.
 | MSYS runtime and environment architecture | Partial | Runtime/environment role models and Level 0/1 links | Subsystem objects, flows, and tested evidence for each behavior |
 | GNU, toolchain, pacman, Git for Windows documentation | Partial | Dedicated role and boundary documents | Per-component pages with interfaces, dependencies, and primary evidence |
 | Interactive Explorer | Partial | Stable routes, search, filters, dependency navigation | Zoomable graphical exploration and complete populated object categories |
-| Level 0–7 linked diagram hierarchy | Partial | Linked Level 0 and Level 1 SVGs | Levels 2–7, rendered PNGs, and evidence-qualified drill-down nodes |
+| Level 0–7 linked diagram hierarchy | Partial | Eight linked, route-tested SVGs spanning Levels 0–7 | Diagrams are conceptual navigation aids; per-object evidence-qualified drill-down coverage remains incomplete |
 | Every major claim traceable to evidence | Partial | Source registry and snapshot manifest | Claim coverage for authored narrative and per-object citations |
 | Security, performance, upgrade, and operations | Partial | Dedicated authored documents and refresh policy | Measured operational history and requirement-specific evidence |
 

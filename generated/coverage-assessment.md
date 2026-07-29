@@ -10,4 +10,4 @@
 
 - Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.
 - Package-name library candidates are not logical library identities or ABI evidence.
-- Per-object documentation and Level 1–7 linked diagrams remain incomplete.
+- The Level 0–7 linked SVG hierarchy is navigable, but its conceptual nodes do not replace per-object documentation or evidence.

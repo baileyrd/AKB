@@ -21,7 +21,7 @@ def main() -> None:
         "gaps": [
             "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",
             "Package-name library candidates are not logical library identities or ABI evidence.",
-            "The Level 0–7 linked SVG hierarchy is navigable, but its conceptual nodes do not replace per-object documentation or evidence.",
+            "The Level 0–7 linked SVG hierarchy and generated per-object dossiers are navigable, but they do not replace substantive per-object evidence.",
         ],
     }
     output = ROOT / "generated" / "coverage-assessment.json"

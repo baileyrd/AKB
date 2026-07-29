@@ -85,6 +85,12 @@ and reverse-dependency-impact views in `generated/`. Start with the linked
 [Level 0 and Level 1 diagrams](docs/DIAGRAM-HIERARCHY.md), then drill into the
 Explorer or snapshot-qualified reports.
 
+For a compact, stable entry for every composed object, use the generated
+[object dossiers](generated/object-dossiers.md). Each dossier records the
+object's identity, type, status, attached evidence references, and incoming
+and outgoing relationship counts. An absent evidence reference is reported as
+`none recorded`; it is not an assertion that the object has been verified.
+
 ### Start the Explorer
 
 Generate the Explorer, then open the HTML file in a browser. No package

@@ -19,5 +19,7 @@ node links to a stable object route or an explicitly snapshot-qualified view.
 
 ![MSYS2 Level 1 eight layers](../diagrams/level-1-eight-layers.svg)
 
+![MSYS2 Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
+
 The diagram is conceptual. Package and dependency counts are not encoded in
 the diagram itself; consult the generated catalog views for snapshot evidence.

@@ -25,4 +25,7 @@ jobs:
       - name: Verify generated indexes are reproducible
         run: |
           python tools/akb.py generate
+          python tools/build_explorer.py
+          python tools/build_catalog_views.py
+          python tools/assess_akb_coverage.py
           git diff --exit-code

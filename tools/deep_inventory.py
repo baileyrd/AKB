@@ -54,6 +54,11 @@ def sha256(path: Path) -> str:
 def classify_path(value: str) -> str:
     path = PurePosixPath(value.lower())
     name = path.name
+    # SPDX/GNU license texts such as COPYING.LIB are not COFF/GNU archives.
+    # Treat them as ordinary files even though their suffix matches a common
+    # Windows static-library extension.
+    if "licenses" in path.parts:
+        return "file"
     if name.endswith(".dll.a"):
         return "import-library"
     if name.endswith((".cmake", "config.cmake", "targets.cmake")):

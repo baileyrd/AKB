@@ -51,6 +51,12 @@ def write_jsonl(path: Path, values: list[dict]) -> None:
 
 
 class AnalyzerTests(unittest.TestCase):
+    def test_license_lib_suffix_is_not_an_archive(self) -> None:
+        self.assertEqual(
+            ANALYZER.classify_path("/ucrt64/share/licenses/gcc/COPYING.LIB"),
+            "file",
+        )
+
     def test_msys_path_rejects_traversal(self) -> None:
         with self.assertRaises(ANALYZER.InventoryError):
             ANALYZER.msys_path(Path("C:/msys64"), "/usr/../../outside")

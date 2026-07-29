@@ -28,6 +28,9 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn('aria-label="Breadcrumb"', rendered)
         self.assertIn('class="expand"', rendered)
         self.assertIn('Collapse relationships', rendered)
+        self.assertIn('Dependencies', rendered)
+        self.assertIn('Dependents', rendered)
+        self.assertIn('isDependency', rendered)
 
 
 if __name__ == "__main__":

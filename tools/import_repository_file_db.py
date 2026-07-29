@@ -5,13 +5,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import tarfile
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from tools.deep_inventory import classify_path
-from tools.import_repository_db import RepositoryDatabaseError, parse_desc, sha256
+try:
+    from tools.deep_inventory import classify_path
+    from tools.import_repository_db import RepositoryDatabaseError, parse_desc, sha256
+except ModuleNotFoundError:  # Running this file directly adds tools/ to sys.path.
+    from deep_inventory import classify_path  # type: ignore[no-redef]
+    from import_repository_db import RepositoryDatabaseError, parse_desc, sha256  # type: ignore[no-redef]
 
 
 STREAMS = (
@@ -28,35 +34,70 @@ def safe_package_path(value: str) -> str:
     return "/" + path.as_posix()
 
 
+def artifact_rows(package: str, file_database: bytes) -> list[dict[str, str]]:
+    artifacts: list[dict[str, str]] = []
+    for value in parse_desc(file_database).get("FILES", []):
+        if value.endswith("/"):
+            continue
+        path = safe_package_path(value)
+        artifacts.append({"package": package, "path": path, "kind": classify_path(path), "present": False})
+    return artifacts
+
+
+def records_from_members(members: dict[str, tarfile.TarInfo], bundle: tarfile.TarFile) -> list[dict[str, str]]:
+    artifacts: list[dict[str, str]] = []
+    descriptions = sorted(name for name in members if name.endswith("/desc"))
+    if not descriptions:
+        raise RepositoryDatabaseError("archive has no package desc records")
+    for description_name in descriptions:
+        prefix = description_name.removesuffix("/desc")
+        files_member = members.get(f"{prefix}/files")
+        if files_member is None:
+            continue
+        description = bundle.extractfile(members[description_name])
+        file_list = bundle.extractfile(files_member)
+        if description is None or file_list is None:
+            raise RepositoryDatabaseError(f"cannot read package file records: {prefix}")
+        package = parse_desc(description.read()).get("NAME", [""])[0]
+        if not package:
+            raise RepositoryDatabaseError(f"package description lacks NAME: {prefix}")
+        artifacts.extend(artifact_rows(package, file_list.read()))
+    return artifacts
+
+
+def records_with_bsdtar(archive: Path) -> list[dict[str, str]]:
+    listed = subprocess.run(["tar", "-tf", str(archive)], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+    if listed.returncode:
+        raise RepositoryDatabaseError(f"cannot list repository file database: {listed.stderr.strip()}")
+    names = [name for name in listed.stdout.splitlines() if name]
+    if any(name.startswith("/") or ".." in PurePosixPath(name).parts for name in names):
+        raise RepositoryDatabaseError("archive contains an unsafe member path")
+    with tempfile.TemporaryDirectory() as directory:
+        destination = Path(directory)
+        extracted = subprocess.run(["tar", "-xf", str(archive), "-C", str(destination)], text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+        if extracted.returncode:
+            raise RepositoryDatabaseError(f"cannot extract repository file database: {extracted.stderr.strip()}")
+        artifacts: list[dict[str, str]] = []
+        for description_path in sorted(destination.rglob("desc")):
+            if not description_path.is_file() or not description_path.resolve().is_relative_to(destination.resolve()):
+                continue
+            files_path = description_path.with_name("files")
+            if not files_path.is_file() or not files_path.resolve().is_relative_to(destination.resolve()):
+                continue
+            package = parse_desc(description_path.read_bytes()).get("NAME", [""])[0]
+            if not package:
+                raise RepositoryDatabaseError(f"package description lacks NAME: {description_path}")
+            artifacts.extend(artifact_rows(package, files_path.read_bytes()))
+        return artifacts
+
+
 def records(archive: Path) -> list[dict[str, str]]:
     """Extract package-owned paths from a `.files` archive without unpacking it."""
-    artifacts: list[dict[str, str]] = []
     try:
         with tarfile.open(archive, "r:*") as bundle:
-            members = {member.name: member for member in bundle.getmembers() if member.isfile()}
-            descriptions = sorted(name for name in members if name.endswith("/desc"))
-            if not descriptions:
-                raise RepositoryDatabaseError("archive has no package desc records")
-            for description_name in descriptions:
-                prefix = description_name.removesuffix("/desc")
-                files_member = members.get(f"{prefix}/files")
-                if files_member is None:
-                    continue
-                description = bundle.extractfile(members[description_name])
-                file_list = bundle.extractfile(files_member)
-                if description is None or file_list is None:
-                    raise RepositoryDatabaseError(f"cannot read package file records: {prefix}")
-                package = parse_desc(description.read()).get("NAME", [""])[0]
-                if not package:
-                    raise RepositoryDatabaseError(f"package description lacks NAME: {prefix}")
-                values = parse_desc(file_list.read()).get("FILES", [])
-                for value in values:
-                    if value.endswith("/"):
-                        continue
-                    path = safe_package_path(value)
-                    artifacts.append({"package": package, "path": path, "kind": classify_path(path), "present": False})
-    except tarfile.ReadError as exc:
-        raise RepositoryDatabaseError("cannot read repository file database; provide a tar-readable .files archive") from exc
+            artifacts = records_from_members({member.name: member for member in bundle.getmembers() if member.isfile()}, bundle)
+    except tarfile.ReadError:
+        artifacts = records_with_bsdtar(archive)
     except (OSError, tarfile.TarError, UnicodeDecodeError) as exc:
         raise RepositoryDatabaseError(f"cannot read repository file database: {exc}") from exc
     if not artifacts:

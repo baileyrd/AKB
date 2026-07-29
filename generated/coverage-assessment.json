@@ -11,6 +11,11 @@
   },
   "authored_documents": 47,
   "diagram_files": 8,
+  "package_payload_coverage": {
+    "catalog_packages": 15711,
+    "observed_packages": 2,
+    "percent": 0.013
+  },
   "gaps": [
     "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",
     "Package-name library candidates are not logical library identities or ABI evidence.",

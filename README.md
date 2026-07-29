@@ -129,6 +129,10 @@ selected MSYS2 environment. See
 The collector/importer boundary is specified in
 [`docs/DEEP-INVENTORY-CONTRACT.md`](docs/DEEP-INVENTORY-CONTRACT.md).
 
+Large full-repository file projections can be retained locally rather than in
+Git; see [`docs/LOCAL-EVIDENCE-RETENTION.md`](docs/LOCAL-EVIDENCE-RETENTION.md)
+for their scope, regeneration path, and publication boundary.
+
 ### Offline and archive-based evidence
 
 The same evidence pipeline can ingest package metadata and payloads without

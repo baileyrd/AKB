@@ -11,7 +11,7 @@ XLINK = "{http://www.w3.org/1999/xlink}href"
 class DiagramTests(unittest.TestCase):
     def test_linked_diagrams_are_well_formed_and_have_explorer_routes(self):
         diagrams = sorted((ROOT / "diagrams").glob("*.svg"))
-        self.assertGreaterEqual(len(diagrams), 4)
+        self.assertGreaterEqual(len(diagrams), 5)
         for path in diagrams:
             root = ET.parse(path).getroot()
             self.assertEqual(root.tag, SVG + "svg")
@@ -30,6 +30,11 @@ class DiagramTests(unittest.TestCase):
         diagram = (ROOT / "diagrams" / "level-3-msys-runtime-boundary.svg").read_text(encoding="utf-8")
         for route in ("runtime%3Amsys2%3Amsys-2.0.dll", "environment%3Amsys2%3Amsys", "#/view/runtimes"):
             self.assertIn(route, diagram)
+
+    def test_level_four_diagram_links_all_environment_objects(self):
+        diagram = (ROOT / "diagrams" / "level-4-environment-matrix.svg").read_text(encoding="utf-8")
+        for environment in ("msys", "ucrt64", "clang64", "clangarm64", "mingw64", "mingw32"):
+            self.assertIn(f"environment%3Amsys2%3A{environment}", diagram)
 
 
 if __name__ == "__main__":

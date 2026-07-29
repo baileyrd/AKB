@@ -23,6 +23,9 @@ This page compares the six modeled MSYS2 environments. It is a decision aid,
 not an ABI-compatibility guarantee. Package names, installed artifacts, and
 current tool versions belong to the generated inventory.
 
+The [Level 4 environment matrix](../diagrams/level-4-environment-matrix.svg)
+provides linked navigation for the architecture, CRT, and lifecycle axes.
+
 The linked [Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
 shows where this comparison sits: repository metadata and package payloads are
 handled from the MSYS control plane, then project into each native environment.

@@ -36,8 +36,11 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn('Dependents', rendered)
         self.assertIn('isDependency', rendered)
         self.assertIn("const viewRoute", rendered)
-        for name in ("layers", "packages", "libraries", "runtimes", "toolchains", "repositories"):
+        for name in ("layers", "packages", "artifacts", "libraries", "runtimes", "toolchains", "repositories", "evidenced"):
             self.assertIn(f"{name}:", rendered)
+        self.assertIn("Observed properties", rendered)
+        self.assertIn("Evidence", rendered)
+        self.assertIn("objectDetails", rendered)
         self.assertIn('role="img"', rendered_svg)
         self.assertIn('<desc id="description">', rendered_svg)
         self.assertIn('tabindex="0"', rendered_svg)

@@ -1,12 +1,16 @@
 AKB architecture graph overview
 
 Objects
+- component:bzip2:bzip2 (component): bzip2
 - component:gnu:bash (component): GNU Bash
 - component:gnu:coreutils (component): GNU Coreutils
 - component:gnu:findutils (component): GNU Findutils
 - component:gnu:gawk (component): GNU Awk (gawk)
 - component:gnu:grep (component): GNU Grep
+- component:gnu:gzip (component): GNU Gzip
 - component:gnu:sed (component): GNU Sed
+- component:gnu:tar (component): GNU Tar
+- component:tukaani:xz (component): XZ Utils
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
 - dll:windows:api-ms-win-crt-heap-l1-1-0.dll (dll): api-ms-win-crt-heap-l1-1-0.dll
@@ -16313,6 +16317,18 @@ Relationships
 - environment:msys2:msys --contains--> component:gnu:findutils
 - component:gnu:findutils --uses-runtime--> runtime:msys2:msys-2.0.dll
 - component:gnu:findutils --packaged-by--> package:msys2:findutils
+- environment:msys2:msys --contains--> component:gnu:tar
+- component:gnu:tar --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:tar --packaged-by--> package:msys2:tar
+- environment:msys2:msys --contains--> component:gnu:gzip
+- component:gnu:gzip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:gzip --packaged-by--> package:msys2:gzip
+- environment:msys2:msys --contains--> component:bzip2:bzip2
+- component:bzip2:bzip2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:bzip2:bzip2 --packaged-by--> package:msys2:bzip2
+- environment:msys2:msys --contains--> component:tukaani:xz
+- component:tukaani:xz --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:tukaani:xz --packaged-by--> package:msys2:xz
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

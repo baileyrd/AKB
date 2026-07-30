@@ -5,9 +5,11 @@
 | Claim | Subject | Classification | Confidence | Evidence |
 | --- | --- | --- | --- | --- |
 | claim:component:bash:provides-sh | component:gnu:bash | fact | verified | evidence:catalog:current |
+| claim:component:bzip2:libbz2-split | component:bzip2:bzip2 | inference | high | evidence:catalog:current |
 | claim:component:coreutils:posix-utilities | component:gnu:coreutils | fact | verified | evidence:catalog:current |
 | claim:component:findutils:role | component:gnu:findutils | inference | high | evidence:catalog:current |
 | claim:component:gawk:provides-awk | component:gnu:gawk | fact | verified | evidence:catalog:current |
+| claim:component:gzip:wrapper-scripts | component:gnu:gzip | inference | high | evidence:catalog:current |
 | claim:environment:clang64:toolchain | environment:msys2:clang64 | fact | verified | evidence:msys2:environments-2026-07-28 |
 | claim:environment:clangarm64:toolchain | environment:msys2:clangarm64 | fact | verified | evidence:msys2:environments-2026-07-28 |
 | claim:environment:mingw32:lifecycle | environment:msys2:mingw32 | fact | verified | evidence:msys2:environments-2026-07-28 |

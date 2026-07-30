@@ -4,12 +4,16 @@
 
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
+| component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 2 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 2 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 2 | 1 |
+| component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
+| component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
+| component:tukaani:xz | component | XZ Utils | partial | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
 | dll:windows:api-ms-win-crt-heap-l1-1-0.dll | dll | api-ms-win-crt-heap-l1-1-0.dll | verified | 0 | 1 |
@@ -28,7 +32,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 7 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 11 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -618,7 +622,7 @@
 | package:msys2:bsdtar | package | bsdtar | verified | 11 | 4 |
 | package:msys2:btyacc | package | btyacc | verified | 2 | 0 |
 | package:msys2:busybox | package | busybox | verified | 2 | 0 |
-| package:msys2:bzip2 | package | bzip2 | verified | 3 | 5 |
+| package:msys2:bzip2 | package | bzip2 | verified | 3 | 6 |
 | package:msys2:ca-certificates | package | ca-certificates | verified | 8 | 7 |
 | package:msys2:cargo-c | package | cargo-c | verified | 8 | 0 |
 | package:msys2:cargo-edit | package | cargo-edit | verified | 3 | 0 |
@@ -731,7 +735,7 @@
 | package:msys2:guile | package | guile | verified | 3 | 3 |
 | package:msys2:guile-mqtt | package | guile-mqtt | verified | 4 | 0 |
 | package:msys2:gyp | package | gyp | verified | 4 | 0 |
-| package:msys2:gzip | package | gzip | verified | 4 | 5 |
+| package:msys2:gzip | package | gzip | verified | 4 | 6 |
 | package:msys2:heimdal | package | heimdal | verified | 3 | 2 |
 | package:msys2:heimdal-devel | package | heimdal-devel | verified | 7 | 1 |
 | package:msys2:heimdal-libs | package | heimdal-libs | verified | 7 | 4 |
@@ -16221,7 +16225,7 @@
 | package:msys2:stow | package | stow | verified | 3 | 0 |
 | package:msys2:subversion | package | subversion | verified | 23 | 8 |
 | package:msys2:swig | package | swig | verified | 4 | 0 |
-| package:msys2:tar | package | tar | verified | 4 | 3 |
+| package:msys2:tar | package | tar | verified | 4 | 4 |
 | package:msys2:task | package | task | verified | 14 | 0 |
 | package:msys2:tcl | package | tcl | verified | 3 | 5 |
 | package:msys2:tcl-devel | package | tcl-devel | verified | 3 | 0 |
@@ -16265,7 +16269,7 @@
 | package:msys2:xorgproto | package | xorgproto | verified | 2 | 0 |
 | package:msys2:xorriso | package | xorriso | verified | 6 | 0 |
 | package:msys2:xxhash | package | xxhash | verified | 3 | 1 |
-| package:msys2:xz | package | xz | verified | 5 | 3 |
+| package:msys2:xz | package | xz | verified | 5 | 4 |
 | package:msys2:yasm | package | yasm | verified | 2 | 0 |
 | package:msys2:yasm-devel | package | yasm-devel | verified | 2 | 0 |
 | package:msys2:yelp-tools | package | yelp-tools | verified | 7 | 0 |
@@ -16286,5 +16290,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 7 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 11 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

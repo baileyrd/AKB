@@ -4,6 +4,18 @@
 
 | ID | Type | Source | Target | Status |
 | --- | --- | --- | --- | --- |
+| relationship:archive-compression:bzip2-packaged-by-package | packaged-by | component:bzip2:bzip2 | package:msys2:bzip2 | verified |
+| relationship:archive-compression:bzip2-uses-msys-runtime | uses-runtime | component:bzip2:bzip2 | runtime:msys2:msys-2.0.dll | partial |
+| relationship:archive-compression:gzip-packaged-by-package | packaged-by | component:gnu:gzip | package:msys2:gzip | verified |
+| relationship:archive-compression:gzip-uses-msys-runtime | uses-runtime | component:gnu:gzip | runtime:msys2:msys-2.0.dll | partial |
+| relationship:archive-compression:msys-contains-bzip2 | contains | environment:msys2:msys | component:bzip2:bzip2 | partial |
+| relationship:archive-compression:msys-contains-gzip | contains | environment:msys2:msys | component:gnu:gzip | partial |
+| relationship:archive-compression:msys-contains-tar | contains | environment:msys2:msys | component:gnu:tar | partial |
+| relationship:archive-compression:msys-contains-xz | contains | environment:msys2:msys | component:tukaani:xz | partial |
+| relationship:archive-compression:tar-packaged-by-package | packaged-by | component:gnu:tar | package:msys2:tar | verified |
+| relationship:archive-compression:tar-uses-msys-runtime | uses-runtime | component:gnu:tar | runtime:msys2:msys-2.0.dll | partial |
+| relationship:archive-compression:xz-packaged-by-package | packaged-by | component:tukaani:xz | package:msys2:xz | verified |
+| relationship:archive-compression:xz-uses-msys-runtime | uses-runtime | component:tukaani:xz | runtime:msys2:msys-2.0.dll | partial |
 | relationship:bootstrap:msys-runtime-environment | uses-runtime | environment:msys2:msys | runtime:msys2:msys-2.0.dll | planned |
 | relationship:bootstrap:msys2-contains-clang64 | contains | ecosystem:msys2:msys2 | environment:msys2:clang64 | partial |
 | relationship:bootstrap:msys2-contains-clangarm64 | contains | ecosystem:msys2:msys2 | environment:msys2:clangarm64 | partial |

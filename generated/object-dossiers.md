@@ -2,6 +2,15 @@
 
 > Generated from the composed model; each heading is a stable object documentation anchor.
 
+## `component:bzip2:bzip2`
+
+- Name: bzip2
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:gnu:bash`
 
 - Name: GNU Bash
@@ -47,12 +56,39 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnu:gzip`
+
+- Name: GNU Gzip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gzip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:gnu:sed`
 
 - Name: GNU Sed
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:sed-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:tar`
+
+- Name: GNU Tar
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:tar-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:tukaani:xz`
+
+- Name: XZ Utils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
@@ -224,7 +260,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 7
+- Outgoing relationships: 11
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5535,7 +5571,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:ca-certificates`
 
@@ -6552,7 +6588,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:heimdal`
 
@@ -145962,7 +145998,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:task`
 
@@ -146358,7 +146394,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:yasm`
 
@@ -146547,7 +146583,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 7
+- Incoming relationships: 11
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

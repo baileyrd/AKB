@@ -72,9 +72,11 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Interactive line editing | `package:msys2:libreadline` | Used by gawk's built-in interactive debugger (`gawk --debug`), documented in the user's guide's debugger chapter, for its readline-based command prompt. |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
 
-A fourth recorded dependency, `sh`, is not explained by this snapshot alone
-and is recorded as open work, consistent with the same unexplained `sh`
-dependency noted for [GNU Grep](GNU-GREP.md) and [GNU Sed](GNU-SED.md).
+gawk's declared package dependencies also list `sh`, a virtual capability
+provided by `package:msys2:bash` rather than an actual package name; it
+does not resolve to a `runtime-depends-on` edge and is instead retained in
+`generated/unresolved-dependencies.json`, per the same explanation given for
+[GNU Grep](GNU-GREP.md#dependencies).
 
 ## Reverse Dependencies
 
@@ -141,10 +143,10 @@ Language semantics, arbitrary-precision arithmetic, the debugger, and the
 POSIX/GNU-extension boundary are backed by the official GNU Awk user's guide
 (`evidence:gnu:gawk-manual-2026-07-30`). Package identity, version, license,
 `provides: awk`, and dependency edges are backed by the pacman catalog
-snapshot (`evidence:catalog:current`). Open: the recorded `sh` runtime
-dependency is unexplained pending file-inventory evidence, and whether the
-MSYS2 build enables dynamically loaded extensions (`-l`) by default has not
-been directly observed.
+snapshot (`evidence:catalog:current`). The unresolved `sh` dependency is
+explained by `generated/unresolved-dependencies.json`, not merely asserted.
+Open: whether the MSYS2 build enables dynamically loaded extensions (`-l`)
+by default has not been directly observed.
 
 ## Related Objects
 

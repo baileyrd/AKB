@@ -73,10 +73,17 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
 | Perl-compatible regex | `package:msys2:libpcre` | Backs grep's `-P`/`--perl-regexp` matching engine, per the GNU Grep manual's description of the PCRE-based matcher. |
 
-A fourth recorded dependency, `sh`, is not explained by this snapshot alone;
-whether it reflects a bundled helper script or a build-time-only requirement
-is unconfirmed without package file-inventory evidence and is recorded here
-as open work rather than an asserted reason.
+grep's declared package dependencies also list `sh`, but this does not
+appear as a fourth `runtime-depends-on` edge: `sh` is a virtual capability
+(provided by `package:msys2:bash`, per
+`claim:component:bash:provides-sh`), not an actual package name, so the
+catalog import step cannot resolve it to a package ID and instead retains it
+in `generated/unresolved-dependencies.json` rather than asserting a false
+relationship, per the documented behavior in
+[Self-Updating Knowledge Base](SELF-UPDATING-KNOWLEDGE-BASE.md). The
+underlying fact — grep's build declares a dependency satisfied by whatever
+package provides `sh` — is real; only its resolution to a specific package
+ID is what remains unautomated.
 
 ## Reverse Dependencies
 
@@ -141,9 +148,10 @@ collation behavior.
 Matching-engine, exit-status, and option semantics are backed by the
 official GNU Grep manual (`evidence:gnu:grep-manual-2026-07-30`). Package
 identity, version, license, and dependency edges are backed by the pacman
-catalog snapshot (`evidence:catalog:current`). Open: the recorded `sh`
-runtime dependency is unexplained pending file-inventory evidence, and `-P`
-availability has not been directly exercised as a controlled observation.
+catalog snapshot (`evidence:catalog:current`). The unresolved `sh` dependency
+is explained by `generated/unresolved-dependencies.json`, not merely
+asserted. Open: `-P` availability has not been directly exercised as a
+controlled observation.
 
 ## Related Objects
 

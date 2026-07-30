@@ -233,6 +233,78 @@
         "role": "filesystem traversal and command construction over found files"
       },
       "evidence_refs": ["evidence:gnu:findutils-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:tar",
+      "kind": "component",
+      "name": "GNU Tar",
+      "summary": "The GNU archiving utility, packaged in the MSYS environment for storing, backing up, and transporting file trees as a single archive stream.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["tar"],
+      "tags": ["gnu-userland", "archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/tar/tar.html",
+        "packaged_as": "package:msys2:tar",
+        "role": "archive creation and extraction"
+      },
+      "evidence_refs": ["evidence:gnu:tar-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:gzip",
+      "kind": "component",
+      "name": "GNU Gzip",
+      "summary": "The GNU compression utility, packaged in the MSYS environment for single-file DEFLATE-based compression, commonly paired with tar.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["gzip", "gunzip", "zcat"],
+      "tags": ["gnu-userland", "archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/gzip/",
+        "packaged_as": "package:msys2:gzip",
+        "role": "single-file compression"
+      },
+      "evidence_refs": ["evidence:gnu:gzip-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:bzip2:bzip2",
+      "kind": "component",
+      "name": "bzip2",
+      "summary": "A Burrows-Wheeler-based single-file compression utility, packaged in the MSYS environment and split from its shared library, libbz2.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Julian Seward",
+      "aliases": ["bzip2", "bunzip2", "bzcat"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "http://www.bzip.org",
+        "packaged_as": "package:msys2:bzip2",
+        "role": "single-file compression"
+      },
+      "evidence_refs": ["evidence:bzip2:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:tukaani:xz",
+      "kind": "component",
+      "name": "XZ Utils",
+      "summary": "The Tukaani Project's LZMA2-based compression utilities, packaged in the MSYS environment and split from their shared codec library, liblzma.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Tukaani Project",
+      "aliases": ["xz", "unxz", "xzcat", "lzma"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://tukaani.org/xz/",
+        "packaged_as": "package:msys2:xz",
+        "role": "single-file compression"
+      },
+      "evidence_refs": ["evidence:tukaani:xz-project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -547,6 +619,150 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-tar",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:tar",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:tar-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:tar",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of tar, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:tar-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:tar",
+      "target": "package:msys2:tar",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-gzip",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:gzip",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:gzip-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:gzip",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of gzip, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:gzip-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:gzip",
+      "target": "package:msys2:gzip",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-bzip2",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:bzip2:bzip2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:bzip2-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:bzip2:bzip2",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of bzip2, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:bzip2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:bzip2:bzip2",
+      "target": "package:msys2:bzip2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-xz",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:tukaani:xz",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:xz-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:tukaani:xz",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of xz, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:xz-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:tukaani:xz",
+      "target": "package:msys2:xz",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -649,6 +865,26 @@
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:gzip:wrapper-scripts",
+      "subject": "component:gnu:gzip",
+      "statement": "The MSYS gzip package's dependencies on bash and less reflect its bundled shell-script wrappers (zcat, zless, zgrep, zcmp, zdiff) rather than a dependency of the core gzip/gunzip binary itself.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:bzip2:libbz2-split",
+      "subject": "component:bzip2:bzip2",
+      "statement": "The MSYS bzip2 CLI package is split from and links against libbz2, its shared compression library, rather than bundling the codec statically.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "evidence": [
@@ -721,6 +957,46 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Findutils manual. Used for find predicate/action grammar and the find/xargs NUL-delimiter safety pattern. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:tar-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Tar Manual",
+      "locator": "https://www.gnu.org/software/tar/manual/tar.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Tar manual. Used for archive format, incremental/multi-volume behavior, and permission/ownership preservation semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:gzip-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Gzip Manual",
+      "locator": "https://www.gnu.org/software/gzip/manual/gzip.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Gzip manual. Used for the DEFLATE-based compression model and the bundled wrapper-script family (zcat, zless, zgrep, zcmp, zdiff). MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:bzip2:project-site-2026-07-30",
+      "class": "primary",
+      "title": "bzip2 and libbzip2 (official project site)",
+      "locator": "http://www.bzip.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official bzip2 project site and documentation, matching the project_url recorded for package:msys2:bzip2 in the catalog snapshot. Used for the Burrows-Wheeler compression model and the CLI/library split between bzip2 and libbz2."
+    },
+    {
+      "id": "evidence:tukaani:xz-project-site-2026-07-30",
+      "class": "primary",
+      "title": "XZ Utils (official project site)",
+      "locator": "https://tukaani.org/xz/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Tukaani Project XZ Utils site, matching the project_url recorded for package:msys2:xz in the catalog snapshot. Used for the LZMA2 compression model and the CLI/library split between xz and liblzma."
     }
   ]
 }

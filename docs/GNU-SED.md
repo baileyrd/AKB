@@ -72,9 +72,11 @@ The catalog snapshot records one `runtime-depends-on` edge for
 | --- | --- | --- |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
 
-A second recorded dependency, `sh`, is not explained by this snapshot alone
-and is recorded as open work, consistent with the same unexplained `sh`
-dependency noted for [GNU Grep](GNU-GREP.md).
+sed's declared package dependencies also list `sh`, a virtual capability
+provided by `package:msys2:bash` rather than an actual package name; it
+does not resolve to a `runtime-depends-on` edge and is instead retained in
+`generated/unresolved-dependencies.json`, per the same explanation given for
+[GNU Grep](GNU-GREP.md#dependencies).
 
 ## Reverse Dependencies
 
@@ -141,10 +143,10 @@ portability bug, mirroring the same dialect-selection issue documented for
 Command-language, addressing, and `-i`/`e`-command semantics are backed by
 the official GNU Sed manual (`evidence:gnu:sed-manual-2026-07-30`). Package
 identity, version, license, and dependency edges are backed by the pacman
-catalog snapshot (`evidence:catalog:current`). Open: the recorded `sh`
-runtime dependency is unexplained pending file-inventory evidence, and the
-exact `-i` temporary-file/replace behavior on this environment's filesystem
-boundary has not been directly observed.
+catalog snapshot (`evidence:catalog:current`). The unresolved `sh` dependency
+is explained by `generated/unresolved-dependencies.json`, not merely
+asserted. Open: the exact `-i` temporary-file/replace behavior on this
+environment's filesystem boundary has not been directly observed.
 
 ## Related Objects
 

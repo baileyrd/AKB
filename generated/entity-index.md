@@ -8,6 +8,8 @@
 | component:cmake:cmake | component | CMake | partial | 3 | 1 |
 | component:curl:curl | component | curl | partial | 3 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
+| component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
+| component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
 | component:gnu:binutils | component | GNU Binutils | partial | 1 | 3 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
@@ -20,6 +22,8 @@
 | component:gnu:gdb | component | GDB | partial | 1 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 2 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
+| component:gnu:libtool | component | GNU Libtool | partial | 2 | 1 |
+| component:gnu:make | component | GNU Make | partial | 2 | 1 |
 | component:gnu:nano | component | GNU Nano | partial | 3 | 1 |
 | component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
@@ -61,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 30 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 7 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -618,11 +622,11 @@
 | package:msys2:autoconf-wrapper | package | autoconf-wrapper | verified | 9 | 6 |
 | package:msys2:autoconf2.13 | package | autoconf2.13 | verified | 6 | 1 |
 | package:msys2:autoconf2.69 | package | autoconf2.69 | verified | 6 | 1 |
-| package:msys2:autoconf2.71 | package | autoconf2.71 | verified | 7 | 1 |
+| package:msys2:autoconf2.71 | package | autoconf2.71 | verified | 7 | 2 |
 | package:msys2:autoconf2.72 | package | autoconf2.72 | verified | 7 | 1 |
 | package:msys2:autoconf2.73 | package | autoconf2.73 | verified | 7 | 1 |
 | package:msys2:autogen | package | autogen | verified | 9 | 0 |
-| package:msys2:automake-wrapper | package | automake-wrapper | verified | 12 | 6 |
+| package:msys2:automake-wrapper | package | automake-wrapper | verified | 12 | 7 |
 | package:msys2:automake1.11 | package | automake1.11 | verified | 4 | 1 |
 | package:msys2:automake1.12 | package | automake1.12 | verified | 4 | 1 |
 | package:msys2:automake1.13 | package | automake1.13 | verified | 4 | 1 |
@@ -917,7 +921,7 @@
 | package:msys2:libtasn1-devel | package | libtasn1-devel | verified | 3 | 1 |
 | package:msys2:libtirpc | package | libtirpc | verified | 3 | 1 |
 | package:msys2:libtirpc-devel | package | libtirpc-devel | verified | 3 | 0 |
-| package:msys2:libtool | package | libtool | verified | 4 | 1 |
+| package:msys2:libtool | package | libtool | verified | 4 | 2 |
 | package:msys2:libtre | package | libtre | verified | 5 | 2 |
 | package:msys2:libtre-devel | package | libtre-devel | verified | 5 | 0 |
 | package:msys2:libunistring | package | libunistring | verified | 3 | 10 |
@@ -953,7 +957,7 @@
 | package:msys2:lzip | package | lzip | verified | 3 | 4 |
 | package:msys2:lzop | package | lzop | verified | 3 | 7 |
 | package:msys2:m4 | package | m4 | verified | 5 | 7 |
-| package:msys2:make | package | make | verified | 3 | 12 |
+| package:msys2:make | package | make | verified | 3 | 13 |
 | package:msys2:man-db | package | man-db | verified | 9 | 2 |
 | package:msys2:man-pages-posix | package | man-pages-posix | verified | 2 | 0 |
 | package:msys2:man2html | package | man2html | verified | 4 | 0 |
@@ -16319,5 +16323,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 30 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 34 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

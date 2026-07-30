@@ -38,6 +38,24 @@
 - Outgoing relationships: 5
 - Incoming relationships: 1
 
+## `component:gnu:autoconf`
+
+- Name: GNU Autoconf
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:autoconf-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:automake`
+
+- Name: GNU Automake
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:automake-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:gnu:bash`
 
 - Name: GNU Bash
@@ -143,6 +161,24 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gzip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:libtool`
+
+- Name: GNU Libtool
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:libtool-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:make`
+
+- Name: GNU Make
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:make-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
@@ -521,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 30
+- Outgoing relationships: 34
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5535,7 +5571,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:autoconf2.72`
 
@@ -5571,7 +5607,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:automake1.11`
 
@@ -8226,7 +8262,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:libtre`
 
@@ -8550,7 +8586,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:man-db`
 
@@ -146844,7 +146880,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 30
+- Incoming relationships: 34
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

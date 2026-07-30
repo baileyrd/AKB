@@ -5,6 +5,8 @@ Objects
 - component:cmake:cmake (component): CMake
 - component:curl:curl (component): curl
 - component:git:git (component): Git (MSYS2 package)
+- component:gnu:autoconf (component): GNU Autoconf
+- component:gnu:automake (component): GNU Automake
 - component:gnu:bash (component): GNU Bash
 - component:gnu:binutils (component): GNU Binutils
 - component:gnu:coreutils (component): GNU Coreutils
@@ -17,6 +19,8 @@ Objects
 - component:gnu:gdb (component): GDB
 - component:gnu:grep (component): GNU Grep
 - component:gnu:gzip (component): GNU Gzip
+- component:gnu:libtool (component): GNU Libtool
+- component:gnu:make (component): GNU Make
 - component:gnu:nano (component): GNU Nano
 - component:gnu:ncurses (component): ncurses
 - component:gnu:sed (component): GNU Sed
@@ -16451,6 +16455,18 @@ Relationships
 - component:mesonbuild:meson --invokes--> component:ninja-build:ninja
 - component:cmake:cmake --requires--> component:pkgconf:pkgconf
 - component:mesonbuild:meson --requires--> component:pkgconf:pkgconf
+- environment:msys2:msys --contains--> component:gnu:autoconf
+- component:gnu:autoconf --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:autoconf --packaged-by--> package:msys2:autoconf2.71
+- environment:msys2:msys --contains--> component:gnu:automake
+- component:gnu:automake --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:automake --packaged-by--> package:msys2:automake-wrapper
+- environment:msys2:msys --contains--> component:gnu:libtool
+- component:gnu:libtool --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:libtool --packaged-by--> package:msys2:libtool
+- environment:msys2:msys --contains--> component:gnu:make
+- component:gnu:make --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:make --packaged-by--> package:msys2:make
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

@@ -16,6 +16,10 @@ model_refs:
   - component:mesonbuild:meson
   - component:ninja-build:ninja
   - component:pkgconf:pkgconf
+  - component:gnu:autoconf
+  - component:gnu:automake
+  - component:gnu:libtool
+  - component:gnu:make
 evidence_refs:
   - evidence:gnu:gcc-manual-2026-07-30
   - evidence:gnu:binutils-manual-2026-07-30
@@ -27,6 +31,10 @@ evidence_refs:
   - evidence:mesonbuild:documentation-2026-07-30
   - evidence:ninja-build:manual-2026-07-30
   - evidence:pkgconf:project-site-2026-07-30
+  - evidence:gnu:autoconf-manual-2026-07-30
+  - evidence:gnu:automake-manual-2026-07-30
+  - evidence:gnu:libtool-manual-2026-07-30
+  - evidence:gnu:make-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -56,9 +64,8 @@ their pages document that distinction explicitly rather than reusing
 Volume 5's `uses-runtime` pattern. LLD's packaging declares it as a
 substitute for the `binutils` capability in CLANG64, modeled explicitly as
 a packaging-level `compatible-with` relationship rather than an assumption
-of identical linker behavior. The Autotools family (autoconf, automake,
-libtool, make) remains open work for this volume, along with the C++
-library row.
+of identical linker behavior. The C++ library row remains open work for
+this volume.
 
 ## Build system tools
 
@@ -82,9 +89,31 @@ environment (`relationship:toolchain:cmake-invokes-ninja`,
 for dependency discovery (`relationship:toolchain:cmake-requires-pkgconf`,
 `relationship:toolchain:meson-requires-pkgconf`) — the same
 generator/executor separation pattern as the compiler/linker pairs above,
-just without a GCC-vs-LLVM split. The Autotools family (autoconf, automake,
-libtool, make) remains the only unwritten toolchain-tool group for this
-volume.
+just without a GCC-vs-LLVM split.
+
+## Autotools family
+
+The Autotools family lives in the MSYS environment, not per native
+environment like the tools above, since it orchestrates portable
+`configure`/`make`-based builds rather than producing native code itself.
+
+| Role | Tool | Boundary | Per-tool page |
+| --- | --- | --- | --- |
+| Configure-script generation | Autoconf | m4-macro-based; generates `configure`, does not run it standalone | [GNU Autoconf](GNU-AUTOCONF.md) |
+| Makefile.in generation | Automake | Packaged as 8 side-by-side versions dispatched by a wrapper, not a single package | [GNU Automake](GNU-AUTOMAKE.md) |
+| Portable library build support | Libtool | Generates a project-local `libtool` script; does not compile/link itself | [GNU Libtool](GNU-LIBTOOL.md) |
+| Build-rule execution | Make | Packaged twice — MSYS and, separately, UCRT64 native | [GNU Make](GNU-MAKE.md) |
+
+[GNU Autoconf](GNU-AUTOCONF.md), [GNU Automake](GNU-AUTOMAKE.md),
+[GNU Libtool](GNU-LIBTOOL.md), and [GNU Make](GNU-MAKE.md) complete the
+Autotools family and, with it, every toolchain-tool group originally
+identified for this volume except the C++ library row. Two packaging
+patterns worth carrying forward: Automake is packaged as multiple
+side-by-side versioned packages dispatched by a wrapper rather than one
+package (`claim:component:automake:versioned-dispatch`), and Make is
+packaged twice — once for MSYS build orchestration, once as a native
+UCRT64 toolchain member with zero recorded reverse dependents in this
+snapshot.
 
 ## Decision Rules
 

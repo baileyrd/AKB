@@ -4,6 +4,8 @@
 
 | Claim | Subject | Classification | Confidence | Evidence |
 | --- | --- | --- | --- | --- |
+| claim:component:autoconf:m4-macro-processor | component:gnu:autoconf | fact | verified | evidence:gnu:autoconf-manual-2026-07-30, evidence:catalog:current |
+| claim:component:automake:versioned-dispatch | component:gnu:automake | fact | verified | evidence:catalog:current |
 | claim:component:bash:provides-sh | component:gnu:bash | fact | verified | evidence:catalog:current |
 | claim:component:binutils:compressed-debug-sections | component:gnu:binutils | inference | high | evidence:catalog:current |
 | claim:component:bzip2:libbz2-split | component:bzip2:bzip2 | inference | high | evidence:catalog:current |
@@ -17,6 +19,7 @@
 | claim:component:git:nano-fallback-editor | component:git:git | inference | high | evidence:catalog:current |
 | claim:component:gzip:wrapper-scripts | component:gnu:gzip | inference | high | evidence:catalog:current |
 | claim:component:less:pcre-search | component:greenwood:less | inference | high | evidence:catalog:current |
+| claim:component:libtool:generated-shell-script | component:gnu:libtool | inference | high | evidence:catalog:current |
 | claim:component:lld:provides-binutils-capability | component:llvm:lld | fact | verified | evidence:catalog:current |
 | claim:component:lldb:python-scripting | component:llvm:lldb | inference | high | evidence:catalog:current |
 | claim:component:lz4:self-versioned-dependency | component:lz4:lz4 | inference | medium | evidence:catalog:current |

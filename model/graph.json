@@ -827,6 +827,78 @@
         "role": "library compile/link flag metadata query"
       },
       "evidence_refs": ["evidence:pkgconf:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:autoconf",
+      "kind": "component",
+      "name": "GNU Autoconf",
+      "summary": "An m4-macro-based framework for generating portable configure scripts, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["autoconf", "autoreconf", "autoheader"],
+      "tags": ["gnu-userland", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/autoconf",
+        "packaged_as": "package:msys2:autoconf2.71",
+        "role": "configure-script generation"
+      },
+      "evidence_refs": ["evidence:gnu:autoconf-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:automake",
+      "kind": "component",
+      "name": "GNU Automake",
+      "summary": "A tool for generating portable Makefile.in files from higher-level Makefile.am descriptions, packaged in the MSYS environment as multiple side-by-side versioned packages dispatched by a wrapper script.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["automake", "aclocal"],
+      "tags": ["gnu-userland", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/automake/",
+        "packaged_as": "package:msys2:automake-wrapper",
+        "role": "Makefile.in generation"
+      },
+      "evidence_refs": ["evidence:gnu:automake-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:libtool",
+      "kind": "component",
+      "name": "GNU Libtool",
+      "summary": "A generic library-build support script generator, providing a portable interface for building shared and static libraries, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libtool", "libtoolize"],
+      "tags": ["gnu-userland", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libtool",
+        "packaged_as": "package:msys2:libtool",
+        "role": "portable shared/static library build support"
+      },
+      "evidence_refs": ["evidence:gnu:libtool-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:make",
+      "kind": "component",
+      "name": "GNU Make",
+      "summary": "A dependency-rule build-file executor, packaged both in the MSYS environment and, separately, as a native build for each MinGW-w64 environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["make"],
+      "tags": ["gnu-userland", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/make",
+        "packaged_as": "package:msys2:make",
+        "role": "build-rule execution"
+      },
+      "evidence_refs": ["evidence:gnu:make-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -2401,6 +2473,150 @@
       "condition": "Backs Meson's dependency() function's pkg-config dependency-discovery mode.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:msys-contains-autoconf",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:autoconf",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:autoconf-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:autoconf",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of autoconf, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:autotools:autoconf-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:autoconf",
+      "target": "package:msys2:autoconf2.71",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:msys-contains-automake",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:automake",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:automake-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:automake",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of automake, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:autotools:automake-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:automake",
+      "target": "package:msys2:automake-wrapper",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:msys-contains-libtool",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:libtool",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:libtool-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:libtool",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libtool, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:autotools:libtool-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:libtool",
+      "target": "package:msys2:libtool",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:msys-contains-make",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:make",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:make-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:make",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of make, not to any native (non-MSYS) build. A separate mingw-w64-ucrt-x86_64-make package provides a native UCRT64 build with 0 recorded reverse dependencies in this snapshot.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:autotools:make-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:make",
+      "target": "package:msys2:make",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -2670,6 +2886,36 @@
       "statement": "The MSYS2 pkgconf package provides, conflicts with, and replaces pkg-config in this environment, making pkgconf the packaged substitute for the original freedesktop.org pkg-config tool.",
       "classification": "fact",
       "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:autoconf:m4-macro-processor",
+      "subject": "component:gnu:autoconf",
+      "statement": "Autoconf is fundamentally an m4 macro-processing framework: autoconf/autoheader/autoreconf expand m4 macros to generate a portable configure script, which explains its dependency on m4.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:gnu:autoconf-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:automake:versioned-dispatch",
+      "subject": "component:gnu:automake",
+      "statement": "MSYS2 packages automake as multiple side-by-side versioned packages (automake1.11 through automake1.18 in this snapshot), with automake-wrapper acting as a version-dispatching frontend that provides the generic automake/aclocal commands.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:libtool:generated-shell-script",
+      "subject": "component:gnu:libtool",
+      "statement": "Libtool's primary artifact, the project-local libtool script, is itself a generated shell script executed via bash, which explains the package's dependency on bash.",
+      "classification": "inference",
+      "confidence": "high",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -3075,6 +3321,46 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official pkgconf project repository, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-pkgconf in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:autoconf-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Autoconf (official project page)",
+      "locator": "https://www.gnu.org/software/autoconf",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Autoconf project page, matching the project_url recorded for package:msys2:autoconf2.71 in the catalog snapshot. Used for the m4-macro-based configure-script generation model."
+    },
+    {
+      "id": "evidence:gnu:automake-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Automake (official project page)",
+      "locator": "https://www.gnu.org/software/automake/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Automake project page. Distinct from the automake-wrapper package's own project_url (the Gentoo autotools-wrappers project, which implements the version-dispatch mechanism rather than Automake itself)."
+    },
+    {
+      "id": "evidence:gnu:libtool-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Libtool (official project page)",
+      "locator": "https://www.gnu.org/software/libtool",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Libtool project page, matching the project_url recorded for package:msys2:libtool in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:make-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Make Manual",
+      "locator": "https://www.gnu.org/software/make/manual/make.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Make manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     }
   ]
 }

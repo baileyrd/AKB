@@ -40,6 +40,14 @@ of the shell that executed it. It is evidence of that MSYS runtime context,
 not proof of Windows loader, registry, filesystem, console, or networking
 behavior generally.
 
+## Controlled local host observation
+
+On 2026-07-30, non-privileged host APIs reported Windows NT `10.0.26200.8973`
+on x64, with `C:\Windows\system32` as the system directory. Console output
+was redirected in the automated collection context. WMI operating-system and
+volume queries were denied by host access policy, so this observation does not
+claim filesystem type, edition, or management-API behavior.
+
 ## Interface map
 
 ```mermaid

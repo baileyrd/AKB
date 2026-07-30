@@ -38,6 +38,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnu:binutils`
+
+- Name: GNU Binutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:binutils-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
 ## `component:gnu:coreutils`
 
 - Name: GNU Coreutils
@@ -90,6 +99,24 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gawk-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:gcc`
+
+- Name: GCC
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gcc-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:gdb`
+
+- Name: GDB
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gdb-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `component:gnu:grep`
@@ -440,7 +467,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 0
+- Outgoing relationships: 3
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -81477,7 +81504,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-bitwise`
 
@@ -84726,7 +84753,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-ada`
 
@@ -84807,7 +84834,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gdb-multiarch`
 

@@ -5,12 +5,15 @@ Objects
 - component:curl:curl (component): curl
 - component:git:git (component): Git (MSYS2 package)
 - component:gnu:bash (component): GNU Bash
+- component:gnu:binutils (component): GNU Binutils
 - component:gnu:coreutils (component): GNU Coreutils
 - component:gnu:cpio (component): GNU Cpio
 - component:gnu:ed (component): GNU Ed
 - component:gnu:emacs (component): GNU Emacs
 - component:gnu:findutils (component): GNU Findutils
 - component:gnu:gawk (component): GNU Awk (gawk)
+- component:gnu:gcc (component): GCC
+- component:gnu:gdb (component): GDB
 - component:gnu:grep (component): GNU Grep
 - component:gnu:gzip (component): GNU Gzip
 - component:gnu:nano (component): GNU Nano
@@ -16414,6 +16417,13 @@ Relationships
 - component:git:git --requires--> component:openssl:openssl
 - component:curl:curl --requires--> component:openssl:openssl
 - component:openssh:openssh --requires--> component:openssl:openssl
+- environment:msys2:ucrt64 --contains--> component:gnu:gcc
+- component:gnu:gcc --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gcc
+- environment:msys2:ucrt64 --contains--> component:gnu:binutils
+- component:gnu:binutils --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-binutils
+- environment:msys2:ucrt64 --contains--> component:gnu:gdb
+- component:gnu:gdb --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gdb
+- component:gnu:gcc --invokes--> component:gnu:binutils
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

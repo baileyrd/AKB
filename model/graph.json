@@ -647,6 +647,60 @@
         "role": "TLS/SSL and general-purpose cryptography"
       },
       "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:gcc",
+      "kind": "component",
+      "name": "GCC",
+      "summary": "The GNU Compiler Collection, packaged per native environment (UCRT64 shown here) as the default C/C++/OpenMP compiler driver for MinGW-w64 targets.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["gcc", "g++", "cc"],
+      "tags": ["toolchain", "compiler", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gcc.gnu.org",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gcc",
+        "role": "compiler driver"
+      },
+      "evidence_refs": ["evidence:gnu:gcc-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:binutils",
+      "kind": "component",
+      "name": "GNU Binutils",
+      "summary": "The GNU binary utilities (assembler, linker, and object-file tools), packaged per native environment (UCRT64 shown here) as GCC's default backend toolchain.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["as", "ld", "binutils", "objdump", "nm", "ar"],
+      "tags": ["toolchain", "linker", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/binutils/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-binutils",
+        "role": "assembler, linker, and object-file tools"
+      },
+      "evidence_refs": ["evidence:gnu:binutils-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:gdb",
+      "kind": "component",
+      "name": "GDB",
+      "summary": "The GNU Debugger, packaged per native environment (UCRT64 shown here) as the default debugger for GCC-oriented environments.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["gdb"],
+      "tags": ["toolchain", "debugger", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/gdb/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gdb",
+        "role": "debugger"
+      },
+      "evidence_refs": ["evidence:gnu:gdb-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -1897,6 +1951,90 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-gcc",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:gnu:gcc",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:gcc",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gcc",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-binutils",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:gnu:binutils",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:binutils-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:binutils",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-binutils",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-gdb",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:gnu:gdb",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:gdb",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gdb",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-invokes-binutils",
+      "type": "invokes",
+      "source": "component:gnu:gcc",
+      "target": "component:gnu:binutils",
+      "status": "verified",
+      "confidence": "high",
+      "scope": "build",
+      "condition": "GCC's driver invokes the assembler (as) and linker (ld) as backend subprocesses.",
+      "properties": {},
+      "evidence_refs": ["evidence:gnu:gcc-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -2085,6 +2223,36 @@
       "subject": "component:git:git",
       "statement": "The git component modeled in this volume is the plain MSYS2-packaged git, distinct from the separately distributed Git for Windows product documented in Volume 9; both distributions track upstream Git 2.55.0 as of their respective 2026-07-29 and 2026-07-30 observations, but have separate package and release provenance.",
       "classification": "fact",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:gcc:optimizer-arithmetic-libraries",
+      "subject": "component:gnu:gcc",
+      "statement": "GCC's dependencies on gmp, mpfr, and mpc back arbitrary-precision arithmetic used during compilation (for example, constant folding), and its dependency on isl backs the Graphite loop-optimization framework.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:binutils:compressed-debug-sections",
+      "subject": "component:gnu:binutils",
+      "statement": "Binutils' dependencies on zlib and zstd back compressed debug-section support (--compress-debug-sections=zlib|zstd).",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:gdb:python-scripting",
+      "subject": "component:gnu:gdb",
+      "statement": "GDB's dependency on python backs its Python scripting API (pretty-printers, gdb.execute), and its optional dependency on python-pygments backs syntax-highlighted source-code display.",
+      "classification": "inference",
       "confidence": "high",
       "valid_from": "2026-07-29",
       "valid_to": null,
@@ -2391,6 +2559,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official OpenSSL project site, matching the project_url recorded for package:msys2:openssl in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:gcc-manual-2026-07-30",
+      "class": "primary",
+      "title": "GCC Online Documentation",
+      "locator": "https://gcc.gnu.org/onlinedocs/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GCC online documentation index. Used for the compilation pipeline (preprocess/compile/assemble/link), the assembler/linker backend invocation, and optimizer-library usage. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:binutils-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Binutils (official project page)",
+      "locator": "https://www.gnu.org/software/binutils/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Binutils project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-binutils in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:gdb-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Debugger (official project page)",
+      "locator": "https://www.gnu.org/software/gdb/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Debugger project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-gdb in the catalog snapshot."
     }
   ]
 }

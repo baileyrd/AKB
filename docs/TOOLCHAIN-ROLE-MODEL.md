@@ -6,19 +6,41 @@ status: partial
 model_refs:
   - environment:msys2:ucrt64
   - environment:msys2:clang64
-evidence_refs: []
+  - component:gnu:gcc
+  - component:gnu:binutils
+  - component:gnu:gdb
+evidence_refs:
+  - evidence:gnu:gcc-manual-2026-07-30
+  - evidence:gnu:binutils-manual-2026-07-30
+  - evidence:gnu:gdb-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
 # MSYS2 Toolchain Role Model
 
-| Role | GCC-oriented environments | LLVM-oriented environments | Boundary |
-| --- | --- | --- | --- |
-| Compiler driver | GCC | Clang | Source-language translation only; not full ABI identity |
-| Linker | GNU binutils/ld by default | LLD by default | Linker features and output behavior are target-specific |
-| C++ library | libstdc++ | libc++ | Do not mix object/static-library assumptions across C++ ABI boundaries |
-| Debugger | GDB | LLDB where provided | Debugger selection does not change program ABI |
-| CRT/target | Determined by selected environment | Determined by selected environment | UCRT/MSVCRT and architecture remain independent dimensions |
+| Role | GCC-oriented environments | LLVM-oriented environments | Boundary | Per-tool page |
+| --- | --- | --- | --- | --- |
+| Compiler driver | GCC | Clang | Source-language translation only; not full ABI identity | [GCC](GNU-GCC.md) (Clang not yet written) |
+| Linker | GNU binutils/ld by default | LLD by default | Linker features and output behavior are target-specific | [GNU Binutils](GNU-BINUTILS.md) (LLD not yet written) |
+| C++ library | libstdc++ | libc++ | Do not mix object/static-library assumptions across C++ ABI boundaries | Not yet written |
+| Debugger | GDB | LLDB where provided | Debugger selection does not change program ABI | [GDB](GNU-GDB.md) (LLDB not yet written) |
+| CRT/target | Determined by selected environment | Determined by selected environment | UCRT/MSVCRT and architecture remain independent dimensions | Not applicable — covered by [Runtime Environments](RUNTIME-ENVIRONMENTS.md) |
+
+[GCC](GNU-GCC.md), [GNU Binutils](GNU-BINUTILS.md), and [GDB](GNU-GDB.md)
+are the first per-tool pages for this volume, covering the GCC-oriented
+compiler/linker/debugger triad: each covers architectural classification,
+responsibilities, boundaries, dependencies, configuration, initialization
+and execution flow, runtime behavior, compatibility, security
+considerations, failure modes, and evidence for its component, backed by
+official upstream documentation and the pacman catalog snapshot. Unlike
+Volume 5's MSYS-environment tools, none of these three depend on
+`msys-2.0.dll` — they are native MinGW-w64 (UCRT64) packages, per the
+[MSYS2 and MinGW-w64 role model](MSYS2-AND-MINGW-W64-ROLE-MODEL.md), and
+their pages document that distinction explicitly rather than reusing
+Volume 5's `uses-runtime` pattern. The LLVM-oriented counterparts (Clang,
+LLD, LLDB), the build-system tools (CMake, Meson, Ninja, pkgconf), and the
+Autotools family (autoconf, automake, libtool, make) remain open work for
+this volume.
 
 ## Decision Rules
 

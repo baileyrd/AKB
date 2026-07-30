@@ -5,10 +5,13 @@
 | Claim | Subject | Classification | Confidence | Evidence |
 | --- | --- | --- | --- | --- |
 | claim:component:bash:provides-sh | component:gnu:bash | fact | verified | evidence:catalog:current |
+| claim:component:binutils:compressed-debug-sections | component:gnu:binutils | inference | high | evidence:catalog:current |
 | claim:component:bzip2:libbz2-split | component:bzip2:bzip2 | inference | high | evidence:catalog:current |
 | claim:component:coreutils:posix-utilities | component:gnu:coreutils | fact | verified | evidence:catalog:current |
 | claim:component:findutils:role | component:gnu:findutils | inference | high | evidence:catalog:current |
 | claim:component:gawk:provides-awk | component:gnu:gawk | fact | verified | evidence:catalog:current |
+| claim:component:gcc:optimizer-arithmetic-libraries | component:gnu:gcc | inference | high | evidence:catalog:current |
+| claim:component:gdb:python-scripting | component:gnu:gdb | inference | high | evidence:catalog:current |
 | claim:component:git:msys-package-boundary | component:git:git | fact | high | evidence:catalog:current |
 | claim:component:git:nano-fallback-editor | component:git:git | inference | high | evidence:catalog:current |
 | claim:component:gzip:wrapper-scripts | component:gnu:gzip | inference | high | evidence:catalog:current |

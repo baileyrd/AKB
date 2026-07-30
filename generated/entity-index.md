@@ -8,12 +8,15 @@
 | component:curl:curl | component | curl | partial | 3 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
+| component:gnu:binutils | component | GNU Binutils | partial | 1 | 2 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 3 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 2 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 2 | 1 |
+| component:gnu:gcc | component | GCC | partial | 2 | 1 |
+| component:gnu:gdb | component | GDB | partial | 1 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 2 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:nano | component | GNU Nano | partial | 3 | 1 |
@@ -52,7 +55,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 30 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 3 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -9056,7 +9059,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-biber | package | mingw-w64-ucrt-x86_64-biber | verified | 37 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-bin2header | package | mingw-w64-ucrt-x86_64-bin2header | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-binaryen | package | mingw-w64-ucrt-x86_64-binaryen | verified | 2 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-binutils | package | mingw-w64-ucrt-x86_64-binutils | verified | 6 | 5 |
+| package:msys2:mingw-w64-ucrt-x86_64-binutils | package | mingw-w64-ucrt-x86_64-binutils | verified | 6 | 6 |
 | package:msys2:mingw-w64-ucrt-x86_64-bitwise | package | mingw-w64-ucrt-x86_64-bitwise | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-blas | package | mingw-w64-ucrt-x86_64-blas | verified | 3 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-blas64 | package | mingw-w64-ucrt-x86_64-blas64 | verified | 3 | 2 |
@@ -9417,7 +9420,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-gavl | package | mingw-w64-ucrt-x86_64-gavl | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gc | package | mingw-w64-ucrt-x86_64-gc | verified | 4 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcab | package | mingw-w64-ucrt-x86_64-gcab | verified | 5 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-gcc | package | mingw-w64-ucrt-x86_64-gcc | verified | 14 | 7 |
+| package:msys2:mingw-w64-ucrt-x86_64-gcc | package | mingw-w64-ucrt-x86_64-gcc | verified | 14 | 8 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-ada | package | mingw-w64-ucrt-x86_64-gcc-ada | verified | 11 | 33 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-fortran | package | mingw-w64-ucrt-x86_64-gcc-fortran | verified | 12 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-libgfortran | package | mingw-w64-ucrt-x86_64-gcc-libgfortran | verified | 4 | 52 |
@@ -9426,7 +9429,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-objc | package | mingw-w64-ucrt-x86_64-gcc-objc | verified | 11 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcovr | package | mingw-w64-ucrt-x86_64-gcovr | verified | 7 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gdal | package | mingw-w64-ucrt-x86_64-gdal | verified | 49 | 10 |
-| package:msys2:mingw-w64-ucrt-x86_64-gdb | package | mingw-w64-ucrt-x86_64-gdb | verified | 15 | 5 |
+| package:msys2:mingw-w64-ucrt-x86_64-gdb | package | mingw-w64-ucrt-x86_64-gdb | verified | 15 | 6 |
 | package:msys2:mingw-w64-ucrt-x86_64-gdb-multiarch | package | mingw-w64-ucrt-x86_64-gdb-multiarch | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gdbm | package | mingw-w64-ucrt-x86_64-gdbm | verified | 5 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-gdcm | package | mingw-w64-ucrt-x86_64-gdcm | verified | 10 | 1 |

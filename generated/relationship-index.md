@@ -76769,3 +76769,10 @@
 | relationship:ssh-curl-git:openssh-uses-msys-runtime | uses-runtime | component:openssh:openssh | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:openssl-packaged-by-package | packaged-by | component:openssl:openssl | package:msys2:openssl | verified |
 | relationship:ssh-curl-git:openssl-uses-msys-runtime | uses-runtime | component:openssl:openssl | runtime:msys2:msys-2.0.dll | partial |
+| relationship:toolchain:binutils-packaged-by-package | packaged-by | component:gnu:binutils | package:msys2:mingw-w64-ucrt-x86_64-binutils | verified |
+| relationship:toolchain:gcc-invokes-binutils | invokes | component:gnu:gcc | component:gnu:binutils | verified |
+| relationship:toolchain:gcc-packaged-by-package | packaged-by | component:gnu:gcc | package:msys2:mingw-w64-ucrt-x86_64-gcc | verified |
+| relationship:toolchain:gdb-packaged-by-package | packaged-by | component:gnu:gdb | package:msys2:mingw-w64-ucrt-x86_64-gdb | verified |
+| relationship:toolchain:ucrt64-contains-binutils | contains | environment:msys2:ucrt64 | component:gnu:binutils | partial |
+| relationship:toolchain:ucrt64-contains-gcc | contains | environment:msys2:ucrt64 | component:gnu:gcc | partial |
+| relationship:toolchain:ucrt64-contains-gdb | contains | environment:msys2:ucrt64 | component:gnu:gdb | partial |

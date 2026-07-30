@@ -57,5 +57,12 @@ python tools/import_runtime_observation.py work/runtime-observation.json
 python tools/akb.py all
 ```
 
+For a controlled MSYS-shell behavior observation, add `--behavior`. This
+opt-in suite records the outcome of bounded process-lifecycle, shell `exec`,
+signal-delivery, filesystem-symlink, and terminal-device-namespace probes.
+It does not claim general process, loader, filesystem, or PTY behavior beyond
+the exact command result. The symlink probe uses a newly-created temporary
+directory and removes it before the shell exits.
+
 `Update-Akb.ps1` invokes this stage by default. Use `-SkipRuntimeObservation`
 when collecting package state alone.

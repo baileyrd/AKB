@@ -332,6 +332,27 @@ class ImporterTests(unittest.TestCase):
         self.assertEqual(len(merged["evidence"]), 2)
         self.assertEqual(merged["claims"], [])
 
+    def test_accumulation_retains_evidence_for_overlapping_objects(self) -> None:
+        previous = {
+            "entities": [{"id": "dll:msys2:/curl.dll", "evidence_refs": ["evidence:inventory:old"]}],
+            "relationships": [{"id": "relationship:inventory:curl", "evidence_refs": ["evidence:inventory:old"]}],
+            "evidence": [{"id": "evidence:inventory:old"}],
+        }
+        current = {
+            "entities": [{"id": "dll:msys2:/curl.dll", "evidence_refs": ["evidence:inventory:new"], "properties": {"sha256": "new"}}],
+            "relationships": [{"id": "relationship:inventory:curl", "evidence_refs": ["evidence:inventory:new"]}],
+            "evidence": [{"id": "evidence:inventory:new"}],
+        }
+        merged = IMPORTER.merge_projection(previous, current)
+        self.assertEqual(
+            merged["entities"][0]["evidence_refs"],
+            ["evidence:inventory:new", "evidence:inventory:old"],
+        )
+        self.assertEqual(
+            merged["relationships"][0]["evidence_refs"],
+            ["evidence:inventory:new", "evidence:inventory:old"],
+        )
+
     def test_end_to_end_import_writes_snapshot_and_reports(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -377,6 +398,15 @@ class ImporterTests(unittest.TestCase):
             self.assertTrue(
                 (root / "snapshots" / result["snapshot"] / "architecture-inventory.json").is_file()
             )
+
+    def test_verify_only_validates_without_current_projection(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_fixture(root)
+            result = IMPORTER.verify_inventory(root)
+        self.assertEqual(result["collector"], "fixture")
+        self.assertEqual(result["records"], 5)
+        self.assertEqual(result["warnings"], 0)
 
 
 if __name__ == "__main__":

@@ -51,6 +51,20 @@ executes the collector; they do not prove native loader, process, or filesystem
 behavior. On this x86_64 host, CLANGARM64 target binaries were discovered but
 reported `executed: false`, so no target-execution claim is made.
 
+It additionally retains a hash-verified expanded installed-artifact snapshot
+from 2026-07-30 with 48,258 owned paths, 7,876 PE imports, 309,193 PE
+exports, 987,057 archive members, 81 development-metadata records, and zero
+collector warnings. It is retained independently of the current composite
+projection because an in-memory accumulation of multi-million-record local
+snapshots exceeds the workstation-safe publication/import budget.
+
+It also retains a controlled MSYS-shell behavior observation from
+2026-07-30. The process-lifecycle, shell `exec`, and `USR1` signal probes
+returned status 0, and `/dev/tty` existed. The self-cleaning symlink probe
+created and read its target successfully, while `test -L` returned non-zero;
+this is retained as an observed classification discrepancy, not treated as
+proof of POSIX symlink parity or general filesystem behavior.
+
 ## Scope and interpretation
 
 The retained records establish package ownership of paths from signed

@@ -6,7 +6,7 @@ status: partial
 model_refs:
   - runtime:msys2:msys-2.0.dll
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # MSYS Runtime Behavior Architecture Map
@@ -36,6 +36,26 @@ explicitly load the MSYS runtime.
 This is a responsibility map, not a claim of exact implementation ordering or
 feature parity. Each row requires source revision, Windows version, and
 reproducible observation evidence before being elevated beyond `partial`.
+
+## Controlled local observation
+
+On 2026-07-30, the bounded `--behavior` collector ran through the isolated
+MSYS x86_64 shell (MSYS runtime reported by `uname` as `3.6.10`). Its raw
+output is retained locally rather than committed. The following are exact
+command outcomes, not general compatibility claims:
+
+| Probe | Observed outcome | Boundary |
+| --- | --- | --- |
+| Process lifecycle | Background child existed and exited with status 0 | A shell child/process-management observation only |
+| Shell `exec` | Replaced shell emitted `exec-ok` with status 0 | Does not characterize loader behavior |
+| Signal delivery | A shell `USR1` trap emitted `signal=USR1` with status 0 | Does not establish the complete signal mapping |
+| Filesystem symlink | `ln -s` succeeded and the target was readable, but `test -L` returned non-zero | The collector preserves this classification discrepancy; it does not claim POSIX symlink parity |
+| Terminal-device namespace | `/dev` and `/dev/tty` existed | This is not a PTY allocation or ConPTY integration test |
+
+The collector has a five-second bound per probe and creates/removes only a
+fresh temporary directory for the symlink check. See the
+[runtime observation contract](RUNTIME-OBSERVATION-CONTRACT.md) for the
+command and retention boundary.
 
 ## Related Views
 

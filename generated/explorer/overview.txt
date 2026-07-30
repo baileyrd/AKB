@@ -602,6 +602,7 @@ Objects
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - library:boost:boost (library): Boost
+- library:bzip2:libbz2 (library): libbz2
 - library:curl:libcurl (library): libcurl
 - library:darwinsys:file (library): file
 - library:facebook:zstd (library): Zstandard (library)
@@ -16860,6 +16861,11 @@ Relationships
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys
 - component:gnupg:gnupg --requires--> library:gnupg:npth@msys
 - component:gnupg:gnupg --requires--> library:nettle:nettle@msys
+- component:bzip2:bzip2 --requires--> library:bzip2:libbz2
+- library:darwinsys:file --requires--> library:bzip2:libbz2
+- component:gnupg:gnupg --requires--> library:bzip2:libbz2
+- component:info-zip:zip --requires--> library:bzip2:libbz2
+- component:info-zip:unzip --requires--> library:bzip2:libbz2
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

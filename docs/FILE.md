@@ -9,6 +9,7 @@ model_refs:
   - component:gnu:nano
   - library:gnu:zlib@msys
   - library:facebook:zstd@msys-lib
+  - library:bzip2:libbz2
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -64,20 +65,21 @@ does not already indicate a type.
 
 ## Dependencies
 
-The MSYS `package:msys2:file` declares dependencies on `libbz2`,
-`liblzma`, [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
+The MSYS `package:msys2:file` declares dependencies on
+[libbz2](LIBBZ2.md) (`package:msys2:libbz2`,
+`relationship:foundation-libraries:file-requires-libbz2`), `liblzma`,
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md)
 (`package:msys2:libzstd`,
 `relationship:foundation-libraries:file-requires-libzstd`), and
 [zlib (MSYS)](ZLIB-MSYS.md) (`package:msys2:zlib`,
 `relationship:foundation-libraries:file-requires-zlib-msys`) — all
 separate MSYS-environment sibling packages, reflecting file's own
 built-in support for identifying files inside compressed containers.
-`libbz2` and `liblzma` are not individually modeled as separate
-components in this knowledge base; `zstd` and `zlib` now are, closing
-two items this page previously left open — both distinct catalog
-entities from this knowledge base's UCRT64 and CLANG64 siblings, the same
-package/environment distinction applied consistently throughout this
-volume.
+`liblzma` is not individually modeled as a separate component in this
+knowledge base; `libbz2`, `zstd`, and `zlib` now are, closing three items
+this page previously left open — all distinct catalog entities from this
+knowledge base's UCRT64 and CLANG64 siblings, the same package/environment
+distinction applied consistently throughout this volume.
 
 ## Reverse Dependencies
 
@@ -145,8 +147,8 @@ Open: whether [Nano](GNU-NANO.md) invokes the `file` command or links
 `libmagic` directly was not confirmed (carried over from
 [GNU Nano's own page](GNU-NANO.md#dependencies)); whether a native
 (UCRT64/CLANG64/i686) `file` package exists in this snapshot was also not
-confirmed. Also explicitly out of scope for this page: the `libbz2` and
-`liblzma` sub-dependencies are not individually modeled as components in
+confirmed. Also explicitly out of scope for this page: the `liblzma`
+sub-dependency is not individually modeled as a component in
 this knowledge base; header-level API surface and PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -158,3 +160,4 @@ methodology, also remain open.
 - [GNU Nano](GNU-NANO.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
+- [libbz2](LIBBZ2.md)

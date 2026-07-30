@@ -64,6 +64,7 @@ The catalog snapshot records one `runtime-depends-on` edge for
 library/CLI split pattern — the `bzip2` command-line package links
 dynamically against `libbz2`, its shared compression library, rather than
 statically bundling the codec (`claim:component:bzip2:libbz2-split`).
+Documented fully in [libbz2](LIBBZ2.md).
 
 ## Reverse Dependencies
 
@@ -133,4 +134,5 @@ package file-inventory evidence.
 - [GNU Tar](GNU-TAR.md)
 - [GNU Gzip](GNU-GZIP.md)
 - [XZ Utils](XZ-UTILS.md)
+- [libbz2](LIBBZ2.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)

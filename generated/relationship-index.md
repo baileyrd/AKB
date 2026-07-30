@@ -76205,6 +76205,7 @@
 | relationship:foundation-libraries:boost-packaged-by-package | packaged-by | library:boost:boost | package:msys2:mingw-w64-ucrt-x86_64-boost | verified |
 | relationship:foundation-libraries:brotli-packaged-by-package | packaged-by | library:google:brotli | package:msys2:brotli | verified |
 | relationship:foundation-libraries:brotli-uses-msys-runtime | uses-runtime | library:google:brotli | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:bzip2-requires-libbz2 | requires | component:bzip2:bzip2 | library:bzip2:libbz2 | verified |
 | relationship:foundation-libraries:ca-certificates-packaged-by-package | packaged-by | library:mozilla:ca-certificates | package:msys2:ca-certificates | verified |
 | relationship:foundation-libraries:clang-libs-packaged-by-package | packaged-by | library:llvm:clang-libs | package:msys2:mingw-w64-clang-x86_64-clang-libs | verified |
 | relationship:foundation-libraries:clang64-contains-clang-libs | contains | environment:msys2:clang64 | library:llvm:clang-libs | partial |
@@ -76216,6 +76217,7 @@
 | relationship:foundation-libraries:expat-msys-uses-msys-runtime | uses-runtime | library:libexpat:expat@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:expat-packaged-by-package | packaged-by | library:libexpat:expat | package:msys2:mingw-w64-ucrt-x86_64-expat | verified |
 | relationship:foundation-libraries:file-packaged-by-package | packaged-by | library:darwinsys:file | package:msys2:file | verified |
+| relationship:foundation-libraries:file-requires-libbz2 | requires | library:darwinsys:file | library:bzip2:libbz2 | verified |
 | relationship:foundation-libraries:file-requires-libzstd | requires | library:darwinsys:file | library:facebook:zstd@msys-lib | verified |
 | relationship:foundation-libraries:file-requires-zlib-msys | requires | library:darwinsys:file | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:file-uses-msys-runtime | uses-runtime | library:darwinsys:file | runtime:msys2:msys-2.0.dll | partial |
@@ -77047,6 +77049,7 @@
 | relationship:ssh-curl-git:gnupg-packaged-by-package | packaged-by | component:gnupg:gnupg | package:msys2:gnupg | verified |
 | relationship:ssh-curl-git:gnupg-requires-gnutls | requires | component:gnupg:gnupg | library:gnutls:gnutls | verified |
 | relationship:ssh-curl-git:gnupg-requires-libassuan | requires | component:gnupg:gnupg | library:gnupg:libassuan@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-libbz2 | requires | component:gnupg:gnupg | library:bzip2:libbz2 | verified |
 | relationship:ssh-curl-git:gnupg-requires-libcurl | requires | component:gnupg:gnupg | library:curl:libcurl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libgcrypt | requires | component:gnupg:gnupg | library:gnupg:libgcrypt@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libiconv-msys | requires | component:gnupg:gnupg | library:gnu:libiconv@msys | verified |
@@ -77126,3 +77129,5 @@
 | relationship:toolchain:ucrt64-contains-meson | contains | environment:msys2:ucrt64 | component:mesonbuild:meson | partial |
 | relationship:toolchain:ucrt64-contains-ninja | contains | environment:msys2:ucrt64 | component:ninja-build:ninja | partial |
 | relationship:toolchain:ucrt64-contains-pkgconf | contains | environment:msys2:ucrt64 | component:pkgconf:pkgconf | partial |
+| relationship:zip-family:unzip-requires-libbz2 | requires | component:info-zip:unzip | library:bzip2:libbz2 | verified |
+| relationship:zip-family:zip-requires-libbz2 | requires | component:info-zip:zip | library:bzip2:libbz2 | verified |

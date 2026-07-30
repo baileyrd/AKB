@@ -79,6 +79,7 @@ model_refs:
   - library:mozilla:ca-certificates
   - library:libssh2:libssh2
   - library:facebook:zstd@msys-lib
+  - library:bzip2:libbz2
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -202,8 +203,9 @@ flowchart LR
 [zlib (CLANG64)](ZLIB-CLANG64.md), [Zstandard (CLANG64)](LIBZSTD-CLANG64.md),
 [libcbor](LIBCBOR.md), [Heimdal runtime libraries](HEIMDAL-LIBS.md),
 [zlib (MSYS)](ZLIB-MSYS.md), [Brotli](BROTLI.md),
-[ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md), and
-[Zstandard (MSYS library)](LIBZSTD-MSYS.md) are this volume's first
+[ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md),
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md), and [libbz2](LIBBZ2.md) are
+this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
@@ -217,7 +219,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All seventy-five pages are deliberately scoped to package/dependency-level
+All seventy-six pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -415,7 +417,25 @@ left open). This knowledge base now documents three separately
 versioned zlib catalog entities (MSYS, UCRT64, CLANG64) and four
 separately versioned Zstandard entities (an MSYS CLI tool plus MSYS,
 UCRT64, and CLANG64 library packages), each cross-linked to the others
-rather than conflated. These pages are a starting point for this
+rather than conflated. A follow-on batch closed
+[libbz2](LIBBZ2.md), the Burrows-Wheeler codec library split from
+[the bzip2 CLI](BZIP2.md), already cited by package name across five
+already-documented pages ([bzip2](BZIP2.md), [file](FILE.md),
+[GnuPG](GNUPG.md), [Info-ZIP Zip](INFO-ZIP-ZIP.md), and
+[Info-ZIP UnZip](INFO-ZIP-UNZIP.md)) without ever being modeled as an
+entity of its own — each now has a `requires` edge to it. Investigating
+libbz2's remaining catalog dependents caught a near-miss before
+publication rather than after: `package:msys2:pcre` and
+`package:msys2:pcre2` also declare a `libbz2` dependency, but those are
+the separate `pcregrep`/`pcre2grep` CLI meta-packages, not the
+`libpcre`/`libpcre2_8` library packages this volume already documents
+on [PCRE (MSYS)](PCRE-MSYS.md) and [PCRE2 (MSYS)](PCRE2-MSYS.md) — an
+initial draft of libbz2's reverse-dependency edges pointed at those two
+existing library entities before this distinction was caught and
+corrected, so the edges were removed rather than left standing, and the
+two meta-packages are recorded as an explicitly open, not-yet-modeled
+item on [libbz2's own page](LIBBZ2.md#reverse-dependencies) instead.
+These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

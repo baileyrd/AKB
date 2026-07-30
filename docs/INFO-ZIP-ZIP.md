@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:info-zip:zip
   - package:msys2:zip
+  - library:bzip2:libbz2
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -59,6 +60,7 @@ bzip2 as an alternate per-entry compression method within `.zip` archives,
 which explains this dependency
 (`claim:component:zip-family:bzip2-method`) — the same underlying method
 [UnZip](INFO-ZIP-UNZIP.md) must also support to extract such entries.
+Documented fully in [libbz2](LIBBZ2.md).
 
 ## Reverse Dependencies
 
@@ -120,4 +122,5 @@ version-qualified security review implied above.
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [Info-ZIP UnZip](INFO-ZIP-UNZIP.md)
 - [bzip2](BZIP2.md)
+- [libbz2](LIBBZ2.md)
 - [p7zip](P7ZIP.md)

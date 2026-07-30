@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:info-zip:unzip
   - package:msys2:unzip
+  - library:bzip2:libbz2
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -59,7 +60,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Interactive shell | `package:msys2:bash` | Backs the bundled `zipgrep` shell-script wrapper, the same wrapper-script pattern documented for [GNU Gzip](GNU-GZIP.md#dependencies). |
-| bzip2 compression method | `package:msys2:libbz2` | Needed to extract entries compressed with the bzip2 method, the counterpart to the dependency documented for [Zip](INFO-ZIP-ZIP.md#dependencies) (`claim:component:zip-family:bzip2-method`). |
+| bzip2 compression method | `package:msys2:libbz2` | Needed to extract entries compressed with the bzip2 method, the counterpart to the dependency documented for [Zip](INFO-ZIP-ZIP.md#dependencies) (`claim:component:zip-family:bzip2-method`). Documented fully in [libbz2](LIBBZ2.md). |
 
 ## Reverse Dependencies
 
@@ -125,3 +126,4 @@ beyond the general version-qualified security review implied above.
 - [Info-ZIP Zip](INFO-ZIP-ZIP.md)
 - [GNU Gzip](GNU-GZIP.md)
 - [bzip2](BZIP2.md)
+- [libbz2](LIBBZ2.md)

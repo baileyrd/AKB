@@ -8,7 +8,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:cmake:cmake`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 14
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -242,7 +242,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:info-zip:unzip-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:info-zip:zip`
@@ -251,7 +251,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:info-zip:zip-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:llvm:clang`
@@ -5411,6 +5411,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 1
 
+## `library:bzip2:libbz2`
+
+- Name: libbz2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 5
+
 ## `library:curl:libcurl`
 
 - Name: libcurl
@@ -5426,7 +5435,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:darwinsys:file-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `library:facebook:zstd`

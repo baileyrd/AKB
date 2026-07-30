@@ -4,7 +4,7 @@
 
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
-| component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
+| component:bzip2:bzip2 | component | bzip2 | partial | 3 | 1 |
 | component:cmake:cmake | component | CMake | partial | 8 | 1 |
 | component:curl:curl | component | curl | partial | 11 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 8 | 1 |
@@ -28,10 +28,10 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 6 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 3 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 13 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 14 | 1 |
 | component:greenwood:less | component | less | partial | 4 | 1 |
-| component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
-| component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
+| component:info-zip:unzip | component | Info-ZIP UnZip | partial | 3 | 1 |
+| component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
 | component:llvm:clang | component | Clang | partial | 3 | 1 |
 | component:llvm:lld | component | LLD | partial | 5 | 2 |
 | component:llvm:lldb | component | LLDB | partial | 4 | 1 |
@@ -605,8 +605,9 @@
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
+| library:bzip2:libbz2 | library | libbz2 | partial | 0 | 5 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
-| library:darwinsys:file | library | file | partial | 4 | 2 |
+| library:darwinsys:file | library | file | partial | 5 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 4 |
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 2 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |

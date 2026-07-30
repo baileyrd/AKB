@@ -2249,6 +2249,24 @@
         "role": "Zstandard compression"
       },
       "evidence_refs": ["evidence:facebook:zstd-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:bzip2:libbz2",
+      "kind": "library",
+      "name": "libbz2",
+      "summary": "The Burrows-Wheeler compression codec library split from the MSYS bzip2 CLI package, linked by pcre, pcre2, file, gnupg, zip, and unzip for bzip2-format decompression support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Julian Seward",
+      "aliases": ["libbz2"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "http://www.bzip.org",
+        "packaged_as": "package:msys2:libbz2",
+        "role": "Burrows-Wheeler compression"
+      },
+      "evidence_refs": ["evidence:bzip2:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -7781,6 +7799,66 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Corrected 2026-07-30: originally pointed to the UCRT64-packaged library:nettle:nettle entity; GnuPG's own MSYS-packaged catalog dependency is the separately versioned MSYS nettle package instead.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:bzip2-requires-libbz2",
+      "type": "requires",
+      "source": "component:bzip2:bzip2",
+      "target": "library:bzip2:libbz2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "The bzip2 CLI is split from and links against libbz2, its shared compression library.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:file-requires-libbz2",
+      "type": "requires",
+      "source": "library:darwinsys:file",
+      "target": "library:bzip2:libbz2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs identifying files inside bzip2-compressed containers.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libbz2",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:bzip2:libbz2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support, alongside zlib.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:zip-family:zip-requires-libbz2",
+      "type": "requires",
+      "source": "component:info-zip:zip",
+      "target": "library:bzip2:libbz2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the bzip2 compression method within .zip archives.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:zip-family:unzip-requires-libbz2",
+      "type": "requires",
+      "source": "component:info-zip:unzip",
+      "target": "library:bzip2:libbz2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Needed to extract entries compressed with the bzip2 method within .zip archives.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

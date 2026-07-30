@@ -15,6 +15,7 @@ model_refs:
   - library:gnu:libintl
   - library:curl:libcurl
   - library:gnu:readline@msys
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -82,7 +83,7 @@ stack plus archive, terminal, and database libraries:
 | TLS for network lookups | `package:msys2:libgnutls` | Backs `dirmngr`'s TLS-secured connections to key servers and OCSP responders — the network-facing exception to GnuPG's OpenSSL independence. Documented fully in [GnuTLS](GNUTLS.md). |
 | HTTP transfer library | `package:msys2:libcurl` | Backs `dirmngr`'s HTTP-based key-server and certificate-revocation lookups. Documented fully in [libcurl](LIBCURL.md). |
 | Compression | `package:msys2:bzip2`, `package:msys2:libbz2`, `package:msys2:zlib` | Back compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support. |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Interactive line editing | `package:msys2:libreadline` | Backs interactive prompts in GnuPG's command-line tools. Documented fully in [GNU Readline (MSYS)](GNU-READLINE-MSYS.md). |
 | Key/passphrase database | `package:msys2:libsqlite` | Backs GnuPG's key- and trust-database storage. |
@@ -176,3 +177,4 @@ version-qualified security review noted above.
 - [GNU libintl](GNU-LIBINTL.md)
 - [libcurl](LIBCURL.md)
 - [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

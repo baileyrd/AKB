@@ -66,6 +66,10 @@ model_refs:
   - library:llvm:clang-libs
   - library:xxhash:xxhash
   - library:tukaani:liblzma
+  - library:gnu:libiconv@msys
+  - library:gnu:gmp@msys
+  - library:libexpat:expat@msys
+  - library:gnome:libxml2@msys
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -179,8 +183,10 @@ flowchart LR
 [GNU Readline (MSYS)](GNU-READLINE-MSYS.md),
 [GNU Libltdl](GNU-LIBLTDL.md), [Zstandard (library)](LIBZSTD.md),
 [LLVM libraries](LLVM-LIBS.md), [Clang libraries](CLANG-LIBS.md),
-[xxHash](XXHASH.md), and [liblzma](LIBLZMA.md) are this volume's first
-per-library pages. The
+[xxHash](XXHASH.md), [liblzma](LIBLZMA.md),
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md), [GNU MP (MSYS)](GNU-GMP-MSYS.md),
+[Expat (MSYS)](EXPAT-MSYS.md), and [libxml2 (MSYS)](LIBXML2-MSYS.md) are
+this volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -193,7 +199,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All sixty-two pages are deliberately scoped to package/dependency-level
+All sixty-six pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -341,9 +347,28 @@ Zstandard), each getting a new `requires` edge and cross-link, plus two
 genuinely new libraries — [xxHash](XXHASH.md) (GDB's debug-info cache
 hashing) and [liblzma](LIBLZMA.md) (GDB's xz-compressed debug-section
 support, distinct from Volume 5's MSYS `xz` CLI tool the same way
-Zstandard's library form is distinct from its own CLI sibling). These
-pages are a starting point for this volume, not a demonstration that its
-full evidence model is populated.
+Zstandard's library form is distinct from its own CLI sibling). A final
+batch closed four more explicitly-flagged MSYS/UCRT64 gaps discovered
+while re-reading this volume's own prior pages:
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md) (the widest fan-in of any
+single addition this session — six already-documented entities,
+[GnuTLS](GNUTLS.md), [GnuPG](GNUPG.md), [GNU Coreutils](GNU-COREUTILS.md),
+[GNU libintl](GNU-LIBINTL.md), [GNU libunistring](GNU-LIBUNISTRING.md),
+and [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md), each had explicitly
+declined or silently omitted this exact edge before now),
+[GNU MP (MSYS)](GNU-GMP-MSYS.md) (closing an item
+[GnuTLS's own page](GNUTLS.md#dependencies) stated outright it was
+declining to model), [Expat (MSYS)](EXPAT-MSYS.md) (Git's XML
+dependency), and [libxml2 (MSYS)](LIBXML2-MSYS.md) (GNU Emacs's XML
+dependency). Fixing these also surfaced two more false GnuPG-style
+claims this batch corrected in place rather than left standing:
+[Expat (UCRT64)](EXPAT.md) had claimed Git as a direct dependent, and
+[libxml2 (UCRT64)](LIBXML2.md) had claimed both GNU Emacs and LLDB as
+direct dependents — Emacs actually depends on the MSYS sibling and LLDB
+on a third, CLANG64-packaged sibling not modeled in this knowledge
+base, neither the UCRT64 package this page documents. These pages are a
+starting point for this volume, not a demonstration that its full
+evidence model is populated.
 
 ## Family navigation
 

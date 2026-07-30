@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - library:libexpat:expat
   - package:msys2:mingw-w64-ucrt-x86_64-expat
+  - library:libexpat:expat@msys
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:libexpat:manual-2026-07-30
@@ -45,11 +46,12 @@ methodology has not been applied here and remains open.
 ## Boundaries
 
 Expat parses; it does not build a DOM tree or provide XPath/XSLT support,
-unlike [libxml2](LIBXML2.md)'s broader feature set. Several tools already
-documented in this knowledge base depend on Expat specifically for this
-lightweight parsing model: [CMake](CMAKE.md#dependencies),
-[GDB](GNU-GDB.md#dependencies), and [Git](GIT-MSYS-PACKAGE.md#dependencies)
-all declare a direct dependency on it.
+unlike [libxml2](LIBXML2.md)'s broader feature set. [CMake](CMAKE.md#dependencies)
+and [GDB](GNU-GDB.md#dependencies) both declare a direct dependency on
+this UCRT64 package specifically for this lightweight parsing model.
+[Git](GIT-MSYS-PACKAGE.md#dependencies) also depends on Expat for the
+same reason, but on the separately packaged MSYS sibling,
+[Expat (MSYS)](EXPAT-MSYS.md), not this UCRT64 package.
 
 ## Interfaces
 
@@ -101,8 +103,7 @@ convenience/feature breadth), not picking between interchangeable options.
 
 ## Security Considerations
 
-Expat parses untrusted XML input in several of its dependents (for
-example, [Git](GIT-MSYS-PACKAGE.md)'s remote-helper XML handling); XML
+Expat parses untrusted XML input in several of its dependents; XML
 parser vulnerabilities (such as entity-expansion denial-of-service) are a
 well-documented general risk class for this category of library. See
 [Threat Model and Supply Chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md) for the
@@ -135,4 +136,4 @@ methodology.
 - [CMake](CMAKE.md)
 - [libarchive](LIBARCHIVE.md)
 - [GDB](GNU-GDB.md)
-- [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
+- [Expat (MSYS)](EXPAT-MSYS.md)

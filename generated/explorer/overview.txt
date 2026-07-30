@@ -606,9 +606,12 @@ Objects
 - library:darwinsys:file (library): file
 - library:facebook:zstd (library): Zstandard (library)
 - library:gnome:libxml2 (library): libxml2
+- library:gnome:libxml2@msys (library): libxml2 (MSYS)
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:gmp (library): GNU MP (GMP)
+- library:gnu:gmp@msys (library): GNU MP (MSYS)
 - library:gnu:libiconv (library): GNU libiconv
+- library:gnu:libiconv@msys (library): GNU libiconv (MSYS)
 - library:gnu:libidn2 (library): GNU libidn2
 - library:gnu:libintl (library): GNU libintl
 - library:gnu:libltdl (library): GNU Libltdl
@@ -637,6 +640,7 @@ Objects
 - library:libarchive:libarchive (library): libarchive
 - library:libedit:libedit (library): libedit
 - library:libexpat:expat (library): Expat
+- library:libexpat:expat@msys (library): Expat (MSYS)
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
 - library:libuv:libuv (library): libuv
@@ -16779,6 +16783,28 @@ Relationships
 - component:gnu:gdb --requires--> library:facebook:zstd
 - component:gnu:gdb --requires--> library:xxhash:xxhash
 - component:gnu:gdb --requires--> library:tukaani:liblzma
+- environment:msys2:msys --contains--> library:gnu:libiconv@msys
+- library:gnu:libiconv@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libiconv@msys --packaged-by--> package:msys2:libiconv
+- environment:msys2:msys --contains--> library:gnu:gmp@msys
+- library:gnu:gmp@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:gmp@msys --packaged-by--> package:msys2:gmp
+- environment:msys2:msys --contains--> library:libexpat:expat@msys
+- library:libexpat:expat@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libexpat:expat@msys --packaged-by--> package:msys2:libexpat
+- environment:msys2:msys --contains--> library:gnome:libxml2@msys
+- library:gnome:libxml2@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnome:libxml2@msys --packaged-by--> package:msys2:libxml2
+- library:gnutls:gnutls --requires--> library:gnu:libiconv@msys
+- library:gnutls:gnutls --requires--> library:gnu:gmp@msys
+- component:gnupg:gnupg --requires--> library:gnu:libiconv@msys
+- component:gnu:coreutils --requires--> library:gnu:libiconv@msys
+- component:gnu:coreutils --requires--> library:gnu:gmp@msys
+- library:gnu:libintl --requires--> library:gnu:libiconv@msys
+- library:gnu:libunistring --requires--> library:gnu:libiconv@msys
+- library:gnupg:libgpg-error@msys --requires--> library:gnu:libiconv@msys
+- component:git:git --requires--> library:libexpat:expat@msys
+- component:gnu:emacs --requires--> library:gnome:libxml2@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

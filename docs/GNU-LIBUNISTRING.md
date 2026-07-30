@@ -9,6 +9,7 @@ model_refs:
   - component:curl:curl
   - library:gnu:libidn2
   - library:libpsl:libpsl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -67,14 +68,13 @@ which use it as a building block.
 
 ## Dependencies
 
-The MSYS `package:msys2:libunistring` declares a dependency on `libiconv`
-— the **MSYS**-environment `libiconv` package
-(`package:msys2:libiconv`), a separate catalog entity from this
-knowledge base's existing `library:gnu:libiconv` entity, which documents
-the UCRT64-packaged `libiconv` instead (see Architectural Classification).
-This page does not add a formal dependency edge to
-`library:gnu:libiconv` for that reason, and the MSYS `libiconv` package
-does not yet have its own page in this volume.
+The MSYS `package:msys2:libunistring` declares a dependency on
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
+(`package:msys2:libiconv`,
+`relationship:foundation-libraries:libunistring-requires-libiconv-msys`)
+— a separate catalog entity from this knowledge base's existing
+`library:gnu:libiconv` entity, which documents the UCRT64-packaged
+`libiconv` instead (see Architectural Classification).
 
 ## Reverse Dependencies
 
@@ -144,12 +144,11 @@ libunistring project page (`evidence:gnu:libunistring-manual-2026-07-30`),
 matching the `project_url` already recorded for
 `package:msys2:libunistring` in the catalog. Package identity, version,
 and the recorded dependency/dependent edges are backed by the pacman
-catalog snapshot (`evidence:catalog:current`). Open, and explicitly out of
-scope for this page: the MSYS `libiconv` sub-dependency is not
-individually modeled as a component in this knowledge base; header-level
-API surface and PE import/export-level evidence, per the
+catalog snapshot (`evidence:catalog:current`). Open, and explicitly out
+of scope for this page: header-level API surface and PE
+import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology, also remain open.
+methodology.
 
 ## Related Objects
 
@@ -157,3 +156,4 @@ methodology, also remain open.
 - [curl](CURL.md)
 - [GNU libidn2](GNU-LIBIDN2.md)
 - [libpsl](LIBPSL.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

@@ -11,6 +11,7 @@ model_refs:
   - library:gnupg:libksba@msys
   - component:gnupg:gnupg
   - library:gnu:libintl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -72,8 +73,10 @@ upstream project.
 ## Dependencies
 
 The catalog snapshot records two `runtime-depends-on` edges for
-`package:msys2:libgpg-error`: `package:msys2:libiconv` and
-[GNU libintl](GNU-LIBINTL.md) (`package:msys2:libintl`) — both
+`package:msys2:libgpg-error`:
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md) (`package:msys2:libiconv`,
+`relationship:foundation-libraries:libgpg-error-msys-requires-libiconv-msys`)
+and [GNU libintl](GNU-LIBINTL.md) (`package:msys2:libintl`) — both
 MSYS-environment sibling packages backing character-set conversion and
 localized error-string output respectively
 (`relationship:foundation-libraries:libgpg-error-msys-requires-libintl`),
@@ -157,3 +160,4 @@ pacman catalog snapshot (`evidence:catalog:current`).
 - [libassuan (MSYS)](LIBASSUAN-MSYS.md)
 - [libksba (MSYS)](LIBKSBA-MSYS.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

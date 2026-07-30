@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-libxml2
   - library:gnu:libiconv
   - library:gnu:zlib
+  - library:gnome:libxml2@msys
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnome:libxml2-manual-2026-07-30
@@ -42,17 +43,23 @@ methodology has not been applied here and remains open.
 
 - Parsing XML into an in-memory DOM tree (or via a SAX-style streaming
   interface as an alternative mode), plus XPath querying, XML Schema/DTD
-  validation, and HTML parsing.
-- Backing [GNU Emacs](GNU-EMACS.md#dependencies)'s built-in libxml2-based
-  HTML/XML parsing (used, for example, by its `eww` web browser) and
-  [LLDB](LLDB.md#dependencies)'s target-description handling.
+  validation, and HTML parsing, for whatever UCRT64-native program links
+  this package.
 
 ## Boundaries
 
 Libxml2 provides a broader feature set than [Expat](EXPAT.md)'s streaming
 parser, at the cost of a heavier dependency footprint (see Dependencies).
 Choosing between them in a given dependent tool is an architectural
-trade-off, not an interchangeable pairing.
+trade-off, not an interchangeable pairing. This UCRT64 package is
+distinct from two other environment-specific libxml2 siblings already
+cited elsewhere in this knowledge base: [GNU Emacs](GNU-EMACS.md)'s
+built-in libxml2-based parsing (`eww`, `libxml-parse-html-region`)
+depends on the separately versioned MSYS package, documented on
+[libxml2 (MSYS)](LIBXML2-MSYS.md); [LLDB's](LLDB.md#dependencies)
+target-description handling depends on a CLANG64-packaged libxml2, a
+third distinct catalog entity not individually modeled in this
+knowledge base.
 
 ## Interfaces
 
@@ -147,5 +154,5 @@ methodology.
 - [Expat](EXPAT.md)
 - [GNU libiconv](GNU-LIBICONV.md)
 - [zlib](ZLIB.md)
-- [GNU Emacs](GNU-EMACS.md)
+- [libxml2 (MSYS)](LIBXML2-MSYS.md)
 - [LLDB](LLDB.md)

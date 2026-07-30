@@ -35,7 +35,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:git:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `component:gnu:autoconf`
@@ -80,7 +80,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:coreutils-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:gnu:cpio`
@@ -107,7 +107,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:gnu:findutils`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 60
+- Outgoing relationships: 64
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5447,6 +5447,15 @@
 - Outgoing relationships: 3
 - Incoming relationships: 1
 
+## `library:gnome:libxml2@msys`
+
+- Name: libxml2 (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:gnu:gettext`
 
 - Name: GNU gettext
@@ -5465,6 +5474,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 6
 
+## `library:gnu:gmp@msys`
+
+- Name: GNU MP (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
 ## `library:gnu:libiconv`
 
 - Name: GNU libiconv
@@ -5473,6 +5491,15 @@
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 5
+
+## `library:gnu:libiconv@msys`
+
+- Name: GNU libiconv (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 7
 
 ## `library:gnu:libidn2`
 
@@ -5489,7 +5516,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libintl-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 17
 
 ## `library:gnu:libltdl`
@@ -5525,7 +5552,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 4
 
 ## `library:gnu:mpfr`
@@ -5624,7 +5651,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 4
 
 ## `library:gnupg:libksba`
@@ -5669,7 +5696,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 8
 - Incoming relationships: 3
 
 ## `library:google:cppdap`
@@ -5725,6 +5752,15 @@
 - Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 3
+
+## `library:libexpat:expat@msys`
+
+- Name: Expat (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
 
 ## `library:libisl:isl`
 
@@ -7272,7 +7308,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:gmp-devel`
 
@@ -7965,7 +8001,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `package:msys2:libexpat-devel`
 
@@ -8190,7 +8226,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 59
+- Incoming relationships: 60
 
 ## `package:msys2:libiconv-devel`
 
@@ -8946,7 +8982,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:libxml2-devel`
 
@@ -147438,7 +147474,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 60
+- Incoming relationships: 64
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

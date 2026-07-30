@@ -22,6 +22,7 @@ model_refs:
   - library:gnupg:libgpg-error@msys
   - library:gnu:libidn2
   - library:p11-glue:p11-kit
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -87,12 +88,14 @@ sometimes loosely called "gettext" in casual references.
 ## Dependencies
 
 The MSYS `package:msys2:libintl` declares dependencies on `gcc-libs` and
-`libiconv` — the latter the **MSYS**-environment `libiconv` package
-(`package:msys2:libiconv`), a separate catalog entity from this
-knowledge base's existing `library:gnu:libiconv`, which documents the
-UCRT64-packaged `libiconv` instead, the same distinction already made
-for [GNU libunistring](GNU-LIBUNISTRING.md#dependencies) elsewhere in
-this volume.
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
+(`package:msys2:libiconv`,
+`relationship:foundation-libraries:libintl-requires-libiconv-msys`), a
+separate catalog entity from this knowledge base's existing
+`library:gnu:libiconv`, which documents the UCRT64-packaged `libiconv`
+instead, the same distinction already made for
+[GNU libunistring](GNU-LIBUNISTRING.md#dependencies) elsewhere in this
+volume.
 
 ## Reverse Dependencies
 
@@ -165,11 +168,12 @@ Message-translation runtime scope is backed by the official GNU gettext
 project page (`evidence:gnu:libintl-manual-2026-07-30`), matching the
 `project_url` already recorded for `package:msys2:libintl` in the
 catalog. Package identity, version, and the sixteen modeled
-dependency/dependent edges are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: the ~43 remaining recorded dependents not individually modeled in
-this knowledge base, the MSYS `libiconv` sub-dependency, and header-level
-API surface / PE import/export-level evidence, per the
+dependency/dependent edges (now seventeen with
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)) are backed by the pacman
+catalog snapshot (`evidence:catalog:current`). Open, and explicitly out
+of scope for this page: the ~43 remaining recorded dependents not
+individually modeled in this knowledge base, and header-level API
+surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -178,6 +182,7 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU gettext](GNU-GETTEXT.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [GNU Findutils](GNU-FINDUTILS.md)
 - [GNU Awk (gawk)](GNU-AWK.md)
 - [GNU Grep](GNU-GREP.md)

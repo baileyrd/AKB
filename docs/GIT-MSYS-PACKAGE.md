@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:git
   - library:gnu:libintl
   - library:pcre:pcre2@msys
+  - library:libexpat:expat@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -76,7 +77,7 @@ backends and Git's Perl-scripted subcommands:
 | SSH transport | `package:msys2:openssh` | Backs Git's `ssh://`/`user@host:path` remote URLs (`relationship:ssh-curl-git:git-requires-openssh`), documented fully in [OpenSSH](OPENSSH.md). |
 | Cryptography | `package:msys2:openssl` | Backs Git's own use of TLS/cryptographic primitives beyond what curl/openssh already provide. |
 | Regex engine | `package:msys2:libpcre2_8` | Backs Perl-compatible regular expressions in commands such as `git grep --perl-regexp`. Documented fully in [PCRE2 (MSYS)](PCRE2-MSYS.md). |
-| XML parsing | `package:msys2:libexpat` | Backs Git's `git-svn` and remote-helper XML handling. |
+| XML parsing | `package:msys2:libexpat` | Backs Git's `git-svn` and remote-helper XML handling. Documented fully in [Expat (MSYS)](EXPAT-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Fallback commit-message editor | `package:msys2:nano` | Backs Git's guaranteed-present fallback editor when no `EDITOR`/`core.editor`/`VISUAL` is configured, not a build-time requirement of Git's own functionality (`claim:component:git:nano-fallback-editor`). |
 | Perl interpreter and modules | `package:msys2:perl`, `perl-Error`, `perl-Authen-SASL`, `perl-libwww`, `perl-MIME-tools`, `perl-Net-SMTP-SSL`, `perl-TermReadKey` | Back Git's Perl-implemented subcommands, most notably `git send-email` (SASL authentication, MIME message construction, SMTP-over-TLS) and `git-cvsserver`/related tooling. |
@@ -161,3 +162,4 @@ general version-qualified security review noted above.
 - [GNU Nano](GNU-NANO.md)
 - [GNU libintl](GNU-LIBINTL.md)
 - [PCRE2 (MSYS)](PCRE2-MSYS.md)
+- [Expat (MSYS)](EXPAT-MSYS.md)

@@ -557,6 +557,96 @@
         "role": "screen text editing"
       },
       "evidence_refs": ["evidence:vim:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:openssh:openssh",
+      "kind": "component",
+      "name": "OpenSSH",
+      "summary": "The free implementation of the SSH protocol suite, packaged in the MSYS environment for secure remote login and file transfer.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "OpenBSD Project",
+      "aliases": ["ssh", "sshd", "scp", "sftp", "openssh"],
+      "tags": ["network", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.openssh.com/portable.html",
+        "packaged_as": "package:msys2:openssh",
+        "role": "secure remote login and file transfer"
+      },
+      "evidence_refs": ["evidence:openssh:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:curl:curl",
+      "kind": "component",
+      "name": "curl",
+      "summary": "A multi-protocol command-line file-transfer client, packaged in the MSYS environment and split from its transfer library, libcurl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Daniel Stenberg / curl project",
+      "aliases": ["curl"],
+      "tags": ["network", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://curl.se/",
+        "packaged_as": "package:msys2:curl",
+        "role": "multi-protocol file transfer"
+      },
+      "evidence_refs": ["evidence:curl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:git:git",
+      "kind": "component",
+      "name": "Git (MSYS2 package)",
+      "summary": "The fast distributed version control system, packaged as a plain MSYS2 package — distinct from the separately distributed Git for Windows product documented in Volume 9.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Linus Torvalds / Git community (Junio C Hamano, maintainer)",
+      "aliases": ["git"],
+      "tags": ["vcs", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://git-scm.com/",
+        "packaged_as": "package:msys2:git",
+        "role": "distributed version control"
+      },
+      "evidence_refs": ["evidence:git:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnupg:gnupg",
+      "kind": "component",
+      "name": "GnuPG",
+      "summary": "A complete implementation of the OpenPGP standard for encryption and signing, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Werner Koch / GnuPG project",
+      "aliases": ["gpg", "gpg2", "gnupg"],
+      "tags": ["security", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/",
+        "packaged_as": "package:msys2:gnupg",
+        "role": "encryption and digital signing"
+      },
+      "evidence_refs": ["evidence:gnupg:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:openssl:openssl",
+      "kind": "component",
+      "name": "OpenSSL",
+      "summary": "A general-purpose cryptography and TLS/SSL toolkit, packaged in the MSYS environment and split from its shared cryptographic library, libopenssl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "OpenSSL Software Foundation / OpenSSL project",
+      "aliases": ["openssl"],
+      "tags": ["security", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://openssl-library.org",
+        "packaged_as": "package:msys2:openssl",
+        "role": "TLS/SSL and general-purpose cryptography"
+      },
+      "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -1567,6 +1657,246 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:msys-contains-openssh",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:openssh:openssh",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:openssh:openssh",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of openssh, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:openssh:openssh",
+      "target": "package:msys2:openssh",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:msys-contains-curl",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:curl:curl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:curl:curl",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of curl, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:curl:curl",
+      "target": "package:msys2:curl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:msys-contains-git",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:git:git",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:git:git",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of git, not to any native (non-MSYS) build and not to the separately distributed Git for Windows product documented in Volume 9.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:git:git",
+      "target": "package:msys2:git",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:msys-contains-gnupg",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnupg:gnupg",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnupg:gnupg",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of gnupg, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnupg:gnupg",
+      "target": "package:msys2:gnupg",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:msys-contains-openssl",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:openssl:openssl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssl-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:openssl:openssl",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of openssl, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:openssl:openssl",
+      "target": "package:msys2:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-requires-curl",
+      "type": "requires",
+      "source": "component:git:git",
+      "target": "component:curl:curl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "transport",
+      "condition": "Backs Git's HTTP(S) remote transport.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-requires-openssh",
+      "type": "requires",
+      "source": "component:git:git",
+      "target": "component:openssh:openssh",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "transport",
+      "condition": "Backs Git's SSH remote transport.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-requires-openssl",
+      "type": "requires",
+      "source": "component:git:git",
+      "target": "component:openssl:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "transport",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-openssl",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "component:openssl:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "transport",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-requires-openssl",
+      "type": "requires",
+      "source": "component:openssh:openssh",
+      "target": "component:openssl:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "transport",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -1736,6 +2066,26 @@
       "statement": "ncurses is the most-depended-upon package observed in this catalog snapshot among the tools modeled in this knowledge base, reflecting its role as the shared terminal-capability library underlying nearly every interactive text-mode program.",
       "classification": "observation",
       "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:git:nano-fallback-editor",
+      "subject": "component:git:git",
+      "statement": "Git's runtime dependency on nano reflects its use as a guaranteed-present fallback editor for commit messages and interactive commands when no EDITOR/core.editor/VISUAL is configured, not a build-time requirement of Git's own functionality.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:git:msys-package-boundary",
+      "subject": "component:git:git",
+      "statement": "The git component modeled in this volume is the plain MSYS2-packaged git, distinct from the separately distributed Git for Windows product documented in Volume 9; both distributions track upstream Git 2.55.0 as of their respective 2026-07-29 and 2026-07-30 observations, but have separate package and release provenance.",
+      "classification": "fact",
+      "confidence": "high",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -1991,6 +2341,56 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Vim project site, matching the project_url recorded for package:msys2:vim in the catalog snapshot."
+    },
+    {
+      "id": "evidence:openssh:project-site-2026-07-30",
+      "class": "primary",
+      "title": "OpenSSH (official project site)",
+      "locator": "https://www.openssh.com/portable.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official OpenSSH portable-release project page, matching the project_url recorded for package:msys2:openssh in the catalog snapshot."
+    },
+    {
+      "id": "evidence:curl:project-site-2026-07-30",
+      "class": "primary",
+      "title": "curl (official project site)",
+      "locator": "https://curl.se/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official curl project site, matching the project_url recorded for package:msys2:curl in the catalog snapshot."
+    },
+    {
+      "id": "evidence:git:project-site-2026-07-30",
+      "class": "primary",
+      "title": "Git (official project site)",
+      "locator": "https://git-scm.com/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Git project site, matching the project_url recorded for package:msys2:git in the catalog snapshot. Scoped to the plain MSYS2 git package; see Volume 9 for the separately distributed Git for Windows product."
+    },
+    {
+      "id": "evidence:gnupg:project-site-2026-07-30",
+      "class": "primary",
+      "title": "GnuPG (official project site)",
+      "locator": "https://gnupg.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GnuPG project site, matching the project_url recorded for package:msys2:gnupg in the catalog snapshot."
+    },
+    {
+      "id": "evidence:openssl:project-site-2026-07-30",
+      "class": "primary",
+      "title": "OpenSSL (official project site)",
+      "locator": "https://openssl-library.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official OpenSSL project site, matching the project_url recorded for package:msys2:openssl in the catalog snapshot."
     }
   ]
 }

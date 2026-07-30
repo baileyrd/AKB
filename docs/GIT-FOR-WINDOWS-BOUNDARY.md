@@ -46,4 +46,7 @@ component versions not directly observed.
 ## Related Views
 
 - [GNU userland role model](GNU-USERLAND-ROLE-MODEL.md)
+- [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md) — the plain MSYS2 `git`
+  package's own architecture and dependencies, distinct from this page's
+  Git for Windows product boundary
 - [MSYS2 and MinGW-w64 role model](MSYS2-AND-MINGW-W64-ROLE-MODEL.md)

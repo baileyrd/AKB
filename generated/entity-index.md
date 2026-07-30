@@ -5,6 +5,8 @@
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
+| component:curl:curl | component | curl | partial | 3 | 2 |
+| component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
@@ -18,12 +20,15 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 2 | 1 |
 | component:greenwood:less | component | less | partial | 3 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
+| component:openssh:openssh | component | OpenSSH | partial | 3 | 2 |
+| component:openssl:openssl | component | OpenSSL | partial | 2 | 4 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:tukaani:xz | component | XZ Utils | partial | 2 | 1 |
 | component:vim:vim | component | Vim | partial | 3 | 1 |
@@ -46,7 +51,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 25 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 30 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -663,7 +668,7 @@
 | package:msys2:crosstool-ng | package | crosstool-ng | verified | 4 | 0 |
 | package:msys2:cscope | package | cscope | verified | 3 | 0 |
 | package:msys2:ctags | package | ctags | verified | 7 | 1 |
-| package:msys2:curl | package | curl | verified | 543 | 8 |
+| package:msys2:curl | package | curl | verified | 543 | 9 |
 | package:msys2:cvs | package | cvs | verified | 6 | 2 |
 | package:msys2:cygnative | package | cygnative | verified | 2 | 0 |
 | package:msys2:cygrunsrv | package | cygrunsrv | verified | 2 | 0 |
@@ -722,7 +727,7 @@
 | package:msys2:gettext | package | gettext | verified | 5 | 13 |
 | package:msys2:gettext-devel | package | gettext-devel | verified | 5 | 5 |
 | package:msys2:gi-docgen | package | gi-docgen | verified | 8 | 0 |
-| package:msys2:git | package | git | verified | 19 | 9 |
+| package:msys2:git | package | git | verified | 19 | 10 |
 | package:msys2:git-crypt | package | git-crypt | verified | 7 | 0 |
 | package:msys2:git-extras | package | git-extras | verified | 3 | 0 |
 | package:msys2:git-filter-repo | package | git-filter-repo | verified | 4 | 0 |
@@ -736,7 +741,7 @@
 | package:msys2:gnu-efi-devel | package | gnu-efi-devel | verified | 2 | 1 |
 | package:msys2:gnu-netcat | package | gnu-netcat | verified | 3 | 0 |
 | package:msys2:gnulib-l10n | package | gnulib-l10n | verified | 2 | 0 |
-| package:msys2:gnupg | package | gnupg | verified | 19 | 4 |
+| package:msys2:gnupg | package | gnupg | verified | 19 | 5 |
 | package:msys2:gnutls | package | gnutls | verified | 3 | 0 |
 | package:msys2:gperf | package | gperf | verified | 4 | 0 |
 | package:msys2:gradle | package | gradle | verified | 2 | 1 |
@@ -15957,8 +15962,8 @@
 | package:msys2:oniguruma | package | oniguruma | verified | 2 | 2 |
 | package:msys2:openbsd-netcat | package | openbsd-netcat | verified | 3 | 0 |
 | package:msys2:opensp | package | opensp | verified | 4 | 0 |
-| package:msys2:openssh | package | openssh | verified | 7 | 8 |
-| package:msys2:openssl | package | openssl | verified | 5 | 21 |
+| package:msys2:openssh | package | openssh | verified | 7 | 9 |
+| package:msys2:openssl | package | openssl | verified | 5 | 22 |
 | package:msys2:openssl-devel | package | openssl-devel | verified | 3 | 10 |
 | package:msys2:openssl-docs | package | openssl-docs | verified | 2 | 0 |
 | package:msys2:p11-kit | package | p11-kit | verified | 3 | 1 |
@@ -16304,5 +16309,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 25 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 30 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

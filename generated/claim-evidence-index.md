@@ -9,6 +9,8 @@
 | claim:component:coreutils:posix-utilities | component:gnu:coreutils | fact | verified | evidence:catalog:current |
 | claim:component:findutils:role | component:gnu:findutils | inference | high | evidence:catalog:current |
 | claim:component:gawk:provides-awk | component:gnu:gawk | fact | verified | evidence:catalog:current |
+| claim:component:git:msys-package-boundary | component:git:git | fact | high | evidence:catalog:current |
+| claim:component:git:nano-fallback-editor | component:git:git | inference | high | evidence:catalog:current |
 | claim:component:gzip:wrapper-scripts | component:gnu:gzip | inference | high | evidence:catalog:current |
 | claim:component:less:pcre-search | component:greenwood:less | inference | high | evidence:catalog:current |
 | claim:component:lz4:self-versioned-dependency | component:lz4:lz4 | inference | medium | evidence:catalog:current |

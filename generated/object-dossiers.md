@@ -11,6 +11,24 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:curl:curl`
+
+- Name: curl
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `component:git:git`
+
+- Name: Git (MSYS2 package)
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:git:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
 ## `component:gnu:bash`
 
 - Name: GNU Bash
@@ -128,6 +146,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnupg:gnupg`
+
+- Name: GnuPG
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:greenwood:less`
 
 - Name: less
@@ -181,6 +208,24 @@
 - Evidence: evidence:mintty:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
+
+## `component:openssh:openssh`
+
+- Name: OpenSSH
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:openssh:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `component:openssl:openssl`
+
+- Name: OpenSSL
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 4
 
 ## `component:p7zip:p7zip`
 
@@ -386,7 +431,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 25
+- Outgoing relationships: 30
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5940,7 +5985,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 543
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:cvs`
 
@@ -6471,7 +6516,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:git-crypt`
 
@@ -6597,7 +6642,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:gnutls`
 
@@ -143586,7 +143631,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:openssl`
 
@@ -143595,7 +143640,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:openssl-devel`
 
@@ -146709,7 +146754,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 25
+- Incoming relationships: 30
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

@@ -2,6 +2,8 @@ AKB architecture graph overview
 
 Objects
 - component:bzip2:bzip2 (component): bzip2
+- component:curl:curl (component): curl
+- component:git:git (component): Git (MSYS2 package)
 - component:gnu:bash (component): GNU Bash
 - component:gnu:coreutils (component): GNU Coreutils
 - component:gnu:cpio (component): GNU Cpio
@@ -15,12 +17,15 @@ Objects
 - component:gnu:ncurses (component): ncurses
 - component:gnu:sed (component): GNU Sed
 - component:gnu:tar (component): GNU Tar
+- component:gnupg:gnupg (component): GnuPG
 - component:greenwood:less (component): less
 - component:info-zip:unzip (component): Info-ZIP UnZip
 - component:info-zip:zip (component): Info-ZIP Zip
 - component:lz4:lz4 (component): LZ4
 - component:lzip:lzip (component): Lzip
 - component:mintty:mintty (component): mintty
+- component:openssh:openssh (component): OpenSSH
+- component:openssl:openssl (component): OpenSSL
 - component:p7zip:p7zip (component): p7zip
 - component:tukaani:xz (component): XZ Utils
 - component:vim:vim (component): Vim
@@ -16389,6 +16394,26 @@ Relationships
 - component:greenwood:less --requires--> component:gnu:ncurses
 - component:gnu:nano --requires--> component:gnu:ncurses
 - component:vim:vim --requires--> component:gnu:ncurses
+- environment:msys2:msys --contains--> component:openssh:openssh
+- component:openssh:openssh --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:openssh:openssh --packaged-by--> package:msys2:openssh
+- environment:msys2:msys --contains--> component:curl:curl
+- component:curl:curl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:curl:curl --packaged-by--> package:msys2:curl
+- environment:msys2:msys --contains--> component:git:git
+- component:git:git --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:git:git --packaged-by--> package:msys2:git
+- environment:msys2:msys --contains--> component:gnupg:gnupg
+- component:gnupg:gnupg --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnupg:gnupg --packaged-by--> package:msys2:gnupg
+- environment:msys2:msys --contains--> component:openssl:openssl
+- component:openssl:openssl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:openssl:openssl --packaged-by--> package:msys2:openssl
+- component:git:git --requires--> component:curl:curl
+- component:git:git --requires--> component:openssh:openssh
+- component:git:git --requires--> component:openssl:openssl
+- component:curl:curl --requires--> component:openssl:openssl
+- component:openssh:openssh --requires--> component:openssl:openssl
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

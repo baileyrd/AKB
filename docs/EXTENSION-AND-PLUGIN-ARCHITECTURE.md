@@ -33,6 +33,36 @@ flowchart LR
 | Documentation view | Explains scope, assumptions, and usage | Must distinguish observed data from architectural interpretation |
 | External plugin | Isolated integration with declared credentials and permissions | Do not include secrets, arbitrary environment variables, or implicit network side effects in an evidence snapshot |
 
+## Concrete extension implementations
+
+Every extension point above already has at least one real implementation in
+this repository, not just a described contract:
+
+| Extension point | Concrete implementation(s) | Input/output contract |
+| --- | --- | --- |
+| Collector | `tools/catalog-msys2-packages.ps1`, `tools/collect_runtime_observation.py`, `tools/collect_toolchain_build_observation.py`, `tools/collect_recipe_tree.py`, `tools/deep_inventory.py`/`Collect-AkbDeepInventory.ps1`, `tools/analyze_package_archive.py`, `tools/verify_recipe_sources.py` | Each writes a documented JSON/JSONL observation format; none executes untrusted package recipes to collect fields, per `docs/DEEP-INVENTORY-CONTRACT.md` and `docs/RUNTIME-OBSERVATION-CONTRACT.md` |
+| Importer | `tools/import_package_catalog.py`, `tools/import_repository_db.py`, `tools/import_repository_file_db.py`, `tools/import_recipe_tree.py`, `tools/import_deep_inventory.py`, `tools/import_package_archives.py`, `tools/import_runtime_observation.py` | Each validates its collector's output against a declared schema before producing typed entities/relationships; unresolved references are retained explicitly (for example, `generated/unresolved-dependencies.json`, per `docs/SELF-UPDATING-KNOWLEDGE-BASE.md`) rather than dropped |
+| Vocabulary/schema | `model/schema/architecture-graph.schema.json`, `model/schema/deep-inventory.schema.json`, `model/schema/runtime-observation.schema.json`, `model/vocabularies/entity-kinds.json`, `model/vocabularies/relationship-types.json` | Each carries its own `schema_version`/`version` field (see Compatibility rules below) |
+| Generator | `tools/akb.py generate`, `tools/build_catalog_views.py`, `tools/build_explorer.py`, `tools/assess_akb_coverage.py`, `tools/benchmark_akb.py` | Each reads only the composed model and writes to `generated/`; none is a hand-authored source of truth |
+| Documentation view | Every `docs/*.md` page's frontmatter (`status`, `model_refs`, `evidence_refs`) | Distinguishes authored architecture from generated projections per `docs/DOCUMENTATION-STANDARD.md` |
+| External plugin | Not yet implemented in this repository | No external-service integration exists yet; the contract row above is aspirational until one is built |
+
+## Compatibility and migration status
+
+The mechanism for incompatible changes exists and is enforced today:
+`model/schema/deep-inventory.schema.json` and
+`model/schema/runtime-observation.schema.json` both pin `schema_version` to
+a fixed `const: "1.0.0"` (any incompatible collector change would require
+bumping that constant and the importer that validates against it), and
+`model/graph.json`'s `schema_version` and both vocabulary files' `version`
+fields follow semver (currently `0.1.0` across all three). As of this
+snapshot, however, none of these version fields has ever been bumped in
+this repository's history — there is no exercised migration case to point
+to yet, only the designed mechanism. This is stated plainly rather than
+inferred from the mechanism's existence: a compatibility rule that has
+never been exercised is not the same evidence as one that has survived a
+real breaking change.
+
 ## Lifecycle
 
 1. Register the source and refresh policy before collecting data.

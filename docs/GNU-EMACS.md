@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:emacs
   - library:gnome:libxml2@msys
   - library:gnu:zlib@msys
+  - library:nettle:libhogweed@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -73,7 +74,7 @@ in this volume, each mapping to a specific built-in Emacs feature:
 | XML/HTML parsing | `package:msys2:libxml2` | Backs Emacs' built-in libxml2-based parsing, used by features such as the `eww` web browser and `libxml-parse-html-region`. Documented fully in [libxml2 (MSYS)](LIBXML2-MSYS.md). |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
 | TLS/network security | `package:msys2:libgnutls` | Backs Emacs' Network Security Manager and TLS-based network connections. Documented fully in [GnuTLS](GNUTLS.md). |
-| Cryptographic primitives | `package:msys2:libhogweed` | Part of the Nettle cryptographic library, a dependency of GnuTLS above rather than a separate Emacs feature in its own right. |
+| Cryptographic primitives | `package:msys2:libhogweed` | Part of the Nettle cryptographic library, a dependency of GnuTLS above rather than a separate Emacs feature in its own right. Documented fully in [Hogweed (MSYS)](LIBHOGWEED-MSYS.md). |
 | Core application framework | `package:msys2:glib2` | GLib event-loop/utility library; this MSYS console build's exact reliance on it (versus being present only for a shared GUI-toolkit build variant) has not been directly confirmed. |
 
 ## Reverse Dependencies
@@ -154,3 +155,4 @@ specific console-oriented package have not been directly confirmed.
 - [GnuTLS](GNUTLS.md)
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)

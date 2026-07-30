@@ -7,6 +7,7 @@ model_refs:
   - library:nettle:nettle@msys
   - package:msys2:nettle
   - component:gnupg:gnupg
+  - library:nettle:libnettle@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -48,12 +49,13 @@ on.
 - Backing additional cryptographic primitives directly for
   [GnuPG's](GNUPG.md) MSYS-packaged build, the same functional role
   [Nettle (UCRT64)](NETTLE.md) documents for the UCRT64 packaging
-  context. This is a separate package (`package:msys2:nettle`) from the
-  `libnettle` package (`package:msys2:libnettle`) [GnuTLS](GNUTLS.md)
-  itself depends on for its own Nettle use backing GnuPG's `dirmngr` TLS
-  connections and GNU Emacs' Network Security Manager — `libnettle` is
-  not modeled as a separate entity in this knowledge base, and should not
-  be conflated with this `nettle` package.
+  context. This is a separate package (`package:msys2:nettle`) from
+  [libnettle (MSYS)](LIBNETTLE-MSYS.md) (`package:msys2:libnettle`)
+  [GnuTLS](GNUTLS.md) itself depends on directly for its own Nettle use
+  backing GnuPG's `dirmngr` TLS connections and GNU Emacs' Network
+  Security Manager — this `nettle` meta-package depends on `libnettle`
+  in turn (see Dependencies), so the two are related but should not be
+  conflated.
 
 ## Boundaries
 
@@ -69,12 +71,17 @@ interface details, since both packages share the same upstream project.
 ## Dependencies
 
 The catalog snapshot records one `runtime-depends-on` edge for
-`package:msys2:nettle`: `package:msys2:libhogweed` — the MSYS-packaged
-Hogweed (Nettle's public-key cryptography sublibrary), already noted by
-package name on [GNU Emacs's own page](GNU-EMACS.md#dependencies) as a
-distinct dependency of Emacs' own GnuTLS use, not individually modeled as
-a separate component in this knowledge base. This is a different
-sub-dependency structure from [Nettle (UCRT64)](NETTLE.md)'s own package.
+`package:msys2:nettle`: `package:msys2:libnettle` — the MSYS-packaged
+base Nettle cryptographic library, documented fully on
+[libnettle (MSYS)](LIBNETTLE-MSYS.md)
+(`relationship:foundation-libraries:nettle-msys-requires-libnettle-msys`).
+**Correction, 2026-07-30**: this page originally stated a direct
+`libhogweed` dependency here; the catalog's actual edge targets
+`libnettle` instead, with [Hogweed](LIBHOGWEED-MSYS.md) one level
+further down `libnettle`'s own dependency chain — a distinction now
+made explicit across both new pages rather than left conflated. This is
+a different sub-dependency structure from [Nettle (UCRT64)](NETTLE.md)'s
+own package.
 
 ## Reverse Dependencies
 
@@ -109,7 +116,7 @@ page for detail not specific to the MSYS/UCRT64 packaging distinction.
 This is the correction record for the MSYS/UCRT64 packaging distinction
 itself: the two `nettle` packages share the same version (`4.0-1`) but
 are separately built, separate catalog entities with different
-sub-dependency structures (this MSYS package depends on `libhogweed`; see
+sub-dependency structures (this MSYS package depends on `libnettle`; see
 Dependencies) and are not interchangeable at the binary level.
 
 ## Security Considerations
@@ -131,10 +138,12 @@ The cryptographic-primitives role is backed by the official Nettle
 project page (`evidence:nettle:manual-2026-07-30`), the same evidence
 record [Nettle (UCRT64)](NETTLE.md) cites. Package identity, version, and
 the recorded dependency/dependent edges (including the 2026-07-30
-correction to `relationship:ssh-curl-git:gnupg-requires-nettle`) are
-backed by the pacman catalog snapshot (`evidence:catalog:current`). Open,
-and explicitly out of scope for this page: the `libhogweed` sub-dependency
-is not individually modeled as a component in this knowledge base.
+correction to `relationship:ssh-curl-git:gnupg-requires-nettle`, and the
+2026-07-30 correction of this page's own Dependencies section from
+`libhogweed` to `libnettle`) are backed by the pacman catalog snapshot
+(`evidence:catalog:current`). No open items beyond the general
+header-level API surface / PE import/export-level evidence noted
+elsewhere in this volume's methodology.
 
 ## Related Objects
 
@@ -142,3 +151,5 @@ is not individually modeled as a component in this knowledge base.
 - [GnuPG](GNUPG.md)
 - [Nettle (UCRT64)](NETTLE.md)
 - [GnuTLS](GNUTLS.md)
+- [libnettle (MSYS)](LIBNETTLE-MSYS.md)
+- [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)

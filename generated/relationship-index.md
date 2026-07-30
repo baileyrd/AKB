@@ -76284,6 +76284,7 @@
 | relationship:foundation-libraries:libgpg-error-msys-requires-libintl | requires | library:gnupg:libgpg-error@msys | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libgpg-error-msys-uses-msys-runtime | uses-runtime | library:gnupg:libgpg-error@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgpg-error-packaged-by-package | packaged-by | library:gnupg:libgpg-error | package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | verified |
+| relationship:foundation-libraries:libhogweed-msys-requires-gmp-msys | requires | library:nettle:libhogweed@msys | library:gnu:gmp@msys | verified |
 | relationship:foundation-libraries:libiconv-msys-packaged-by-package | packaged-by | library:gnu:libiconv@msys | package:msys2:libiconv | verified |
 | relationship:foundation-libraries:libiconv-msys-uses-msys-runtime | uses-runtime | library:gnu:libiconv@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libiconv-packaged-by-package | packaged-by | library:gnu:libiconv | package:msys2:mingw-w64-ucrt-x86_64-libiconv | verified |
@@ -76301,6 +76302,7 @@
 | relationship:foundation-libraries:libltdl-packaged-by-package | packaged-by | library:gnu:libltdl | package:msys2:libltdl | verified |
 | relationship:foundation-libraries:libltdl-uses-msys-runtime | uses-runtime | library:gnu:libltdl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:liblzma-packaged-by-package | packaged-by | library:tukaani:liblzma | package:msys2:mingw-w64-ucrt-x86_64-xz | verified |
+| relationship:foundation-libraries:libnettle-msys-requires-libhogweed-msys | requires | library:nettle:libnettle@msys | library:nettle:libhogweed@msys | verified |
 | relationship:foundation-libraries:libnghttp2-packaged-by-package | packaged-by | library:nghttp2:libnghttp2 | package:msys2:libnghttp2 | verified |
 | relationship:foundation-libraries:libnghttp2-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libnghttp3-packaged-by-package | packaged-by | library:nghttp2:libnghttp3 | package:msys2:libnghttp3 | verified |
@@ -76374,6 +76376,7 @@
 | relationship:foundation-libraries:msys-contains-readline-msys | contains | environment:msys2:msys | library:gnu:readline@msys | partial |
 | relationship:foundation-libraries:msys-contains-zlib-msys | contains | environment:msys2:msys | library:gnu:zlib@msys | partial |
 | relationship:foundation-libraries:nettle-msys-packaged-by-package | packaged-by | library:nettle:nettle@msys | package:msys2:nettle | verified |
+| relationship:foundation-libraries:nettle-msys-requires-libnettle-msys | requires | library:nettle:nettle@msys | library:nettle:libnettle@msys | verified |
 | relationship:foundation-libraries:nettle-msys-uses-msys-runtime | uses-runtime | library:nettle:nettle@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:nettle-packaged-by-package | packaged-by | library:nettle:nettle | package:msys2:mingw-w64-ucrt-x86_64-nettle | verified |
 | relationship:foundation-libraries:nettle-requires-gmp | requires | library:nettle:nettle | library:gnu:gmp | verified |
@@ -76450,6 +76453,7 @@
 | relationship:gnu-userland:coreutils-requires-libintl | requires | component:gnu:coreutils | library:gnu:libintl | verified |
 | relationship:gnu-userland:coreutils-uses-msys-runtime | uses-runtime | component:gnu:coreutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:emacs-requires-gnutls | requires | component:gnu:emacs | library:gnutls:gnutls | verified |
+| relationship:gnu-userland:emacs-requires-libhogweed-msys | requires | component:gnu:emacs | library:nettle:libhogweed@msys | verified |
 | relationship:gnu-userland:emacs-requires-libxml2-msys | requires | component:gnu:emacs | library:gnome:libxml2@msys | verified |
 | relationship:gnu-userland:emacs-requires-zlib-msys | requires | component:gnu:emacs | library:gnu:zlib@msys | verified |
 | relationship:gnu-userland:findutils-packaged-by-package | packaged-by | component:gnu:findutils | package:msys2:findutils | verified |
@@ -77062,6 +77066,7 @@
 | relationship:ssh-curl-git:gnupg-requires-npth | requires | component:gnupg:gnupg | library:gnupg:npth@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-zlib-msys | requires | component:gnupg:gnupg | library:gnu:zlib@msys | verified |
 | relationship:ssh-curl-git:gnupg-uses-msys-runtime | uses-runtime | component:gnupg:gnupg | runtime:msys2:msys-2.0.dll | partial |
+| relationship:ssh-curl-git:gnutls-requires-libnettle-msys | requires | library:gnutls:gnutls | library:nettle:libnettle@msys | verified |
 | relationship:ssh-curl-git:libcurl-requires-openssl | requires | library:curl:libcurl | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:msys-contains-curl | contains | environment:msys2:msys | component:curl:curl | partial |
 | relationship:ssh-curl-git:msys-contains-git | contains | environment:msys2:msys | component:git:git | partial |

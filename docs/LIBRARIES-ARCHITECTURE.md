@@ -81,6 +81,8 @@ model_refs:
   - library:facebook:zstd@msys-lib
   - library:bzip2:libbz2
   - library:gnu:mpfr@msys
+  - library:nettle:libnettle@msys
+  - library:nettle:libhogweed@msys
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -205,8 +207,9 @@ flowchart LR
 [libcbor](LIBCBOR.md), [Heimdal runtime libraries](HEIMDAL-LIBS.md),
 [zlib (MSYS)](ZLIB-MSYS.md), [Brotli](BROTLI.md),
 [ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md),
-[Zstandard (MSYS library)](LIBZSTD-MSYS.md), [libbz2](LIBBZ2.md), and
-[GNU MPFR (MSYS)](GNU-MPFR-MSYS.md) are
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md), [libbz2](LIBBZ2.md),
+[GNU MPFR (MSYS)](GNU-MPFR-MSYS.md), [libnettle (MSYS)](LIBNETTLE-MSYS.md),
+and [Hogweed (MSYS)](LIBHOGWEED-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -221,7 +224,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All seventy-seven pages are deliberately scoped to package/dependency-level
+All seventy-nine pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -445,7 +448,25 @@ catalog entity from this volume's existing
 [GNU MPFR (UCRT64)](GNU-MPFR.md) page, the same MSYS-vs-native pattern
 applied throughout this session, with its own `requires` edge back onto
 [GNU MP (MSYS)](GNU-GMP-MSYS.md) closing an inter-library loop between
-two now-modeled MSYS math libraries. These pages are a starting point for this
+two now-modeled MSYS math libraries. A final batch closed the MSYS
+Nettle sub-library pair GnuTLS and GNU Emacs actually depend on:
+[libnettle (MSYS)](LIBNETTLE-MSYS.md) (GnuTLS's own direct Nettle
+dependency, already flagged by name but not modeled on both
+[GnuTLS's](GNUTLS.md) and [Nettle (MSYS)'s](NETTLE-MSYS.md) own pages)
+and [Hogweed (MSYS)](LIBHOGWEED-MSYS.md) (Nettle's public-key
+sublibrary, depended on by libnettle and directly by
+[GNU Emacs](GNU-EMACS.md), already flagged on Emacs' own page). Modeling
+these caught a real error rather than just filling a gap:
+[Nettle (MSYS)'s](NETTLE-MSYS.md#dependencies) own Dependencies section
+had stated `package:msys2:nettle` depends directly on `libhogweed`, but
+the catalog's actual edge targets `libnettle` instead, with `libhogweed`
+one level further down `libnettle`'s own dependency chain — corrected in
+place rather than left standing, the same discipline applied to every
+other conflation this session has caught. [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
+also picked up a `requires` edge onto [GNU MP (MSYS)](GNU-GMP-MSYS.md)
+for its own arbitrary-precision arithmetic needs, its fourth modeled
+reverse dependent alongside GnuTLS, Coreutils, and MPFR. These pages are
+a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

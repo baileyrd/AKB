@@ -15,7 +15,7 @@
 | component:gnu:coreutils | component | GNU Coreutils | partial | 5 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
-| component:gnu:emacs | component | GNU Emacs | partial | 6 | 1 |
+| component:gnu:emacs | component | GNU Emacs | partial | 7 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 5 | 1 |
 | component:gnu:gcc | component | GCC | partial | 4 | 1 |
@@ -615,7 +615,7 @@
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 6 |
-| library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 4 |
+| library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 5 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 7 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 3 | 4 |
@@ -642,7 +642,7 @@
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
-| library:gnutls:gnutls | library | GnuTLS | partial | 8 | 3 |
+| library:gnutls:gnutls | library | GnuTLS | partial | 9 | 3 |
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
@@ -665,8 +665,10 @@
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 3 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
+| library:nettle:libhogweed@msys | library | libhogweed | partial | 1 | 2 |
+| library:nettle:libnettle@msys | library | libnettle | partial | 1 | 2 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 1 |
-| library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 2 | 2 |
+| library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 3 | 2 |
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 3 |
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 3 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 3 |

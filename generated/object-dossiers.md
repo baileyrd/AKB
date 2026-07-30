@@ -107,7 +107,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 7
 - Incoming relationships: 1
 
 ## `component:gnu:findutils`
@@ -5508,7 +5508,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:libiconv`
 
@@ -5750,7 +5750,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 3
 
 ## `library:google:brotli`
@@ -5951,6 +5951,24 @@
 - Outgoing relationships: 3
 - Incoming relationships: 1
 
+## `library:nettle:libhogweed@msys`
+
+- Name: libhogweed
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:nettle:libnettle@msys`
+
+- Name: libnettle
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
 ## `library:nettle:nettle`
 
 - Name: Nettle
@@ -5966,7 +5984,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:nghttp2:libnghttp2`

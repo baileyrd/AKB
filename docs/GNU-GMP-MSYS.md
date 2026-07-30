@@ -71,15 +71,18 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 12 relationships targeting
-`package:msys2:gmp`. Three are already modeled in this knowledge base:
+`package:msys2:gmp`. Four are already modeled in this knowledge base:
 `package:msys2:libgnutls`
 (`relationship:foundation-libraries:gnutls-msys-requires-gmp-msys`),
 `package:msys2:coreutils`
-(`relationship:gnu-userland:coreutils-requires-gmp-msys`), and
+(`relationship:gnu-userland:coreutils-requires-gmp-msys`),
 `package:msys2:mpfr`
 (`relationship:foundation-libraries:mpfr-msys-requires-gmp-msys`,
-documented fully in [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)). The
-remaining ~9 recorded dependents (`autogen`, `cocom`, `isl`, `libguile`,
+documented fully in [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)), and
+`package:msys2:libhogweed`
+(`relationship:foundation-libraries:libhogweed-msys-requires-gmp-msys`,
+documented fully in [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)). The
+remaining ~8 recorded dependents (`autogen`, `cocom`, `isl`, `libguile`,
 and others, including the MSYS-native `gcc` and `mpc` toolchain packages)
 are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -146,3 +149,4 @@ methodology.
 - [GnuTLS](GNUTLS.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)
+- [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)

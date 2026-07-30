@@ -2285,6 +2285,42 @@
         "role": "arbitrary-precision floating-point arithmetic"
       },
       "evidence_refs": ["evidence:gnu:mpfr-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nettle:libnettle@msys",
+      "kind": "library",
+      "name": "libnettle",
+      "summary": "The base Nettle cryptographic library, packaged in the MSYS environment as a separate catalog entity from the package:msys2:nettle meta-package — depended on by GnuTLS directly and by nettle (MSYS) transitively.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Niels Möller",
+      "aliases": ["libnettle"],
+      "tags": ["library", "cryptography"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.lysator.liu.se/~nisse/nettle/",
+        "packaged_as": "package:msys2:libnettle",
+        "role": "low-level cryptographic primitives"
+      },
+      "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nettle:libhogweed@msys",
+      "kind": "library",
+      "name": "libhogweed",
+      "summary": "Nettle's public-key cryptography sublibrary, packaged in the MSYS environment — depended on by libnettle and directly by GNU Emacs for GnuTLS-backed public-key operations.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Niels Möller",
+      "aliases": ["libhogweed"],
+      "tags": ["library", "cryptography"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.lysator.liu.se/~nisse/nettle/",
+        "packaged_as": "package:msys2:libhogweed",
+        "role": "public-key cryptography primitives"
+      },
+      "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -7901,6 +7937,66 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "MPFR builds its correctly-rounded floating-point arithmetic on GMP's arbitrary-precision integer primitives.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:nettle-msys-requires-libnettle-msys",
+      "type": "requires",
+      "source": "library:nettle:nettle@msys",
+      "target": "library:nettle:libnettle@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: this page's own Dependencies section had prose-only stated a direct libhogweed dependency; the catalog's actual runtime-depends-on edge is package:msys2:nettle -> package:msys2:libnettle, with libhogweed one level further down libnettle's own dependency chain.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libnettle-msys-requires-libhogweed-msys",
+      "type": "requires",
+      "source": "library:nettle:libnettle@msys",
+      "target": "library:nettle:libhogweed@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "libnettle depends on Hogweed, Nettle's public-key cryptography sublibrary.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libhogweed-msys-requires-gmp-msys",
+      "type": "requires",
+      "source": "library:nettle:libhogweed@msys",
+      "target": "library:gnu:gmp@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Hogweed's public-key cryptography primitives build on GMP's arbitrary-precision integer arithmetic.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnutls-requires-libnettle-msys",
+      "type": "requires",
+      "source": "library:gnutls:gnutls",
+      "target": "library:nettle:libnettle@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs GnuTLS's own Nettle-based cryptographic primitives, in turn backing GnuPG's dirmngr TLS connections and GNU Emacs' Network Security Manager.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:emacs-requires-libhogweed-msys",
+      "type": "requires",
+      "source": "component:gnu:emacs",
+      "target": "library:nettle:libhogweed@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "A direct catalog dependency alongside Emacs' transitive libnettle/GnuTLS dependency chain, per the catalog snapshot.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

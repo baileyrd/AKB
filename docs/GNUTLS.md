@@ -14,6 +14,7 @@ model_refs:
   - library:gnu:libintl
   - library:gnu:libiconv@msys
   - library:gnu:gmp@msys
+  - library:nettle:libnettle@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -78,28 +79,30 @@ TLS specifically for HTTPS-based key-server lookups.
 The MSYS `package:msys2:libgnutls` declares dependencies on `gcc-libs`,
 [libidn2](GNU-LIBIDN2.md) (internationalized domain name support),
 [libiconv (MSYS)](GNU-LIBICONV-MSYS.md), [libintl](GNU-LIBINTL.md),
-[GNU MP (MSYS)](GNU-GMP-MSYS.md), `libnettle`,
+[GNU MP (MSYS)](GNU-GMP-MSYS.md), [libnettle (MSYS)](LIBNETTLE-MSYS.md),
 [p11-kit](P11-KIT.md) (PKCS#11 module support, for hardware security
 tokens and smart cards), [libtasn1](GNU-LIBTASN1.md) (ASN.1/DER parsing
 for certificates), and `zlib` — all separate MSYS-environment sibling
-packages. Six of these (libidn2, libintl, p11-kit, libtasn1, libiconv,
-gmp) now have their own pages and explicit `requires` edges from
-`library:gnutls:gnutls` in the model graph
+packages. Seven of these (libidn2, libintl, p11-kit, libtasn1, libiconv,
+gmp, libnettle) now have their own pages and explicit `requires` edges
+from `library:gnutls:gnutls` in the model graph
 (`relationship:foundation-libraries:gnutls-requires-libidn2`,
 `relationship:foundation-libraries:gnutls-msys-requires-libintl`,
 `relationship:foundation-libraries:gnutls-requires-p11-kit`,
 `relationship:foundation-libraries:gnutls-requires-libtasn1`,
 `relationship:foundation-libraries:gnutls-msys-requires-libiconv-msys`,
-`relationship:foundation-libraries:gnutls-msys-requires-gmp-msys`) —
+`relationship:foundation-libraries:gnutls-msys-requires-gmp-msys`,
+`relationship:ssh-curl-git:gnutls-requires-libnettle-msys`) —
 closing an item this page originally left explicitly unmodeled,
 correcting a prior version of this paragraph that declined to add
 `gmp`/`libiconv` edges at all rather than modeling the correct MSYS
 siblings. This page does not add a formal dependency edge to this
-knowledge base's existing `library:nettle:nettle` or `library:gnu:zlib`
-entities, because those remain the UCRT64-packaged versions of the
-same-named libraries, not this MSYS package's actual dependencies — the
-same package/environment distinction this page's own Architectural
-Classification section makes about GnuTLS itself.
+knowledge base's existing `library:nettle:nettle` (the UCRT64-packaged
+Nettle entity, distinct from [libnettle (MSYS)](LIBNETTLE-MSYS.md)) or
+`library:gnu:zlib` entities, because those remain the UCRT64-packaged
+versions of the same-named libraries, not this MSYS package's actual
+dependencies — the same package/environment distinction this page's own
+Architectural Classification section makes about GnuTLS itself.
 
 ## Reverse Dependencies
 
@@ -181,6 +184,7 @@ methodology, also remain open.
 - [GNU MP (MSYS)](GNU-GMP-MSYS.md)
 - [OpenSSL](OPENSSL.md)
 - [Nettle](NETTLE.md)
+- [libnettle (MSYS)](LIBNETTLE-MSYS.md)
 - [GNU libidn2](GNU-LIBIDN2.md)
 - [GNU Libtasn1](GNU-LIBTASN1.md)
 - [GNU libintl](GNU-LIBINTL.md)

@@ -50,6 +50,27 @@ class RuntimeObservationTests(unittest.TestCase):
         self.assertFalse(result["executed"])
         self.assertEqual(result["error"], "FileNotFoundError")
 
+    def test_behavior_collection_is_opt_in_and_bounded(self) -> None:
+        original = COLLECTOR.behavior_probe_observation
+        try:
+            COLLECTOR.behavior_probe_observation = lambda _: {"found": True, "executed": True, "returncode": 0}
+            without_behavior = COLLECTOR.collect("msys")
+            with_behavior = COLLECTOR.collect("msys", behavior=True)
+        finally:
+            COLLECTOR.behavior_probe_observation = original
+        self.assertNotIn("behavior_probes", without_behavior)
+        self.assertEqual(set(with_behavior["behavior_probes"]), set(COLLECTOR.BEHAVIOR_PROBES))
+        self.assertIn("temporary directory", with_behavior["notes"][-1])
+
+    def test_behavior_probe_marks_missing_shell(self) -> None:
+        original = COLLECTOR.shutil.which
+        try:
+            COLLECTOR.shutil.which = lambda _: None
+            result = COLLECTOR.behavior_probe_observation("printf test")
+        finally:
+            COLLECTOR.shutil.which = original
+        self.assertEqual(result, {"found": False})
+
     def test_projection_preserves_environment_as_target(self) -> None:
         result = IMPORTER.projection(self.fixture())
         self.assertEqual(result["entities"][0]["kind"], "configuration")

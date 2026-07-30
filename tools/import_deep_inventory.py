@@ -554,10 +554,23 @@ def merge_projection(previous: dict[str, Any] | None, current: dict[str, Any]) -
     """Accumulate independently verified inventory snapshots by stable IDs."""
     if not previous:
         return current
-    for key in ("entities", "relationships", "evidence"):
+    for key in ("entities", "relationships"):
         merged = {item["id"]: item for item in previous.get(key, [])}
-        merged.update({item["id"]: item for item in current.get(key, [])})
+        for item in current.get(key, []):
+            prior = merged.get(item["id"])
+            if prior:
+                # Current properties describe the newest observation, while
+                # both snapshots remain visible as supporting evidence.
+                item = dict(item)
+                item["evidence_refs"] = sorted(
+                    set(prior.get("evidence_refs", []))
+                    | set(item.get("evidence_refs", []))
+                )
+            merged[item["id"]] = item
         current[key] = sorted(merged.values(), key=lambda item: item["id"])
+    evidence = {item["id"]: item for item in previous.get("evidence", [])}
+    evidence.update({item["id"]: item for item in current.get("evidence", [])})
+    current["evidence"] = sorted(evidence.values(), key=lambda item: item["id"])
     current["claims"] = []
     return current
 
@@ -592,17 +605,38 @@ def import_inventory(directory: Path, accumulate: bool = False) -> dict[str, Any
     }
 
 
+def verify_inventory(directory: Path) -> dict[str, Any]:
+    """Validate a deep-inventory snapshot without loading the current model."""
+    manifest, records = verify_input(directory)
+    return {
+        "collector": manifest.get("collector", ""),
+        "generated_at": manifest.get("generated_at", ""),
+        "records": sum(len(values) for values in records.values()),
+        "warnings": len(records["warnings.jsonl"]),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("inventory_directory", type=Path)
     parser.add_argument("--accumulate", action="store_true", help="retain prior verified inventory observations")
+    parser.add_argument(
+        "--verify-only", action="store_true",
+        help="validate manifest hashes and records without changing the current projection",
+    )
     args = parser.parse_args()
     try:
-        result = import_inventory(args.inventory_directory.resolve(), args.accumulate)
+        directory = args.inventory_directory.resolve()
+        result = (
+            verify_inventory(directory)
+            if args.verify_only
+            else import_inventory(directory, args.accumulate)
+        )
     except (InventoryImportError, OSError, ValueError, KeyError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
-    print("Imported " + ", ".join(f"{key}={value}" for key, value in result.items()))
+    prefix = "Verified" if args.verify_only else "Imported"
+    print(prefix + " " + ", ".join(f"{key}={value}" for key, value in result.items()))
     return 0
 
 

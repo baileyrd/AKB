@@ -23,6 +23,15 @@ PROBES = {
     "mount_table": ("mount",),
     "proc_self_executable": ("readlink", "/proc/self/exe"),
 }
+BEHAVIOR_PROBES = {
+    # Every command is self-contained. The symlink probe uses and removes a
+    # fresh temporary directory; no existing file or configuration is changed.
+    "process_lifecycle": 'sleep 1 & child=$!; kill -0 "$child"; wait "$child"; printf "child-exited=%s" "$?"',
+    "exec_replacement": 'exec printf "exec-ok"',
+    "signal_delivery": "trap 'printf signal=USR1' USR1; kill -USR1 $$",
+    "filesystem_symlink": 'd=$(mktemp -d) || exit 1; trap \'rm -rf "$d"\' EXIT; printf payload > "$d/target"; ln -s target "$d/link"; made=$?; test -L "$d/link"; is_link=$?; content=$(cat "$d/link" 2>&1); read_status=$?; test "$content" = payload; matches=$?; printf "made=%s is-link=%s read=%s matches=%s" "$made" "$is_link" "$read_status" "$matches"; test "$made" -eq 0 && test "$is_link" -eq 0 && test "$read_status" -eq 0 && test "$matches" -eq 0',
+    "terminal_device_namespace": 'test -d /dev && test -e /dev/tty && printf dev-tty=present',
+}
 
 
 def tool_observation(name: str) -> dict[str, object]:
@@ -67,9 +76,30 @@ def probe_observation(command: tuple[str, ...]) -> dict[str, object]:
     }
 
 
-def collect(environment: str) -> dict[str, object]:
-    """Capture only explicit allow-listed variables and tool identity metadata."""
+def behavior_probe_observation(script: str) -> dict[str, object]:
+    """Run one bounded MSYS-shell behavior probe without retaining secrets."""
+    shell = shutil.which("sh")
+    if not shell:
+        return {"found": False}
+    try:
+        completed = subprocess.run(
+            [shell, "-c", script], capture_output=True, text=True,
+            timeout=5, check=False,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        return {"found": True, "executed": False, "error": type(exc).__name__}
+    output = (completed.stdout or completed.stderr).strip()
     return {
+        "found": True,
+        "executed": True,
+        "returncode": completed.returncode,
+        "output": output[:8000],
+    }
+
+
+def collect(environment: str, behavior: bool = False) -> dict[str, object]:
+    """Capture only explicit allow-listed variables and tool identity metadata."""
+    result: dict[str, object] = {
         "schema_version": "1.0.0",
         "collector_version": "0.4.0",
         "observed_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -83,15 +113,28 @@ def collect(environment: str) -> dict[str, object]:
             "Path and mount probes describe the MSYS shell/runtime that executed the collector; they do not establish native tool runtime behavior.",
         ],
     }
+    if behavior:
+        result["behavior_probes"] = {
+            name: behavior_probe_observation(script)
+            for name, script in BEHAVIOR_PROBES.items()
+        }
+        result["notes"].append(
+            "Behavior probes run through the selected MSYS shell; the symlink probe creates and removes only a fresh temporary directory."
+        )
+    return result
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--environment", required=True, choices=ENVIRONMENTS)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--behavior", action="store_true",
+        help="include bounded process, exec, signal, symlink, and terminal-device probes",
+    )
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(collect(args.environment), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    args.output.write_text(json.dumps(collect(args.environment, args.behavior), indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return 0
 
 

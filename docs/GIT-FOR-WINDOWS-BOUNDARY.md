@@ -6,7 +6,7 @@ status: partial
 model_refs:
   - ecosystem:msys2:msys2
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # Git for Windows Distribution Boundary
@@ -31,6 +31,17 @@ share a pacman-managed lifecycle with one.
    runtime behavior.
 3. Treat SSH, credential management, HTTP/libcurl, OpenSSL, and DLL loading as
    dedicated integration domains rather than attributes of Git alone.
+
+## Controlled local installation observation
+
+On 2026-07-30, the installed command resolved to
+`C:\Program Files\Git\cmd\git.exe`, reporting Git for Windows
+`2.55.0.windows.3`; the bundled Bash resolved to
+`C:\Program Files\Git\usr\bin\bash.exe`. In the same host command context,
+`ssh.exe` and `curl.exe` resolved to Windows system locations, not the Git for
+Windows tree. This is local executable-resolution evidence only; it does not
+establish launcher behavior, transport selection, DLL loading, or bundled
+component versions not directly observed.
 
 ## Related Views
 

@@ -70,7 +70,7 @@ in this volume, each mapping to a specific built-in Emacs feature:
 | Compression support | `package:msys2:zlib` | Backs Emacs' built-in "auto-compression mode," which transparently reads and writes compressed files. |
 | XML/HTML parsing | `package:msys2:libxml2` | Backs Emacs' built-in libxml2-based parsing, used by features such as the `eww` web browser and `libxml-parse-html-region`. |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
-| TLS/network security | `package:msys2:libgnutls` | Backs Emacs' Network Security Manager and TLS-based network connections. |
+| TLS/network security | `package:msys2:libgnutls` | Backs Emacs' Network Security Manager and TLS-based network connections. Documented fully in [GnuTLS](GNUTLS.md). |
 | Cryptographic primitives | `package:msys2:libhogweed` | Part of the Nettle cryptographic library, a dependency of GnuTLS above rather than a separate Emacs feature in its own right. |
 | Core application framework | `package:msys2:glib2` | GLib event-loop/utility library; this MSYS console build's exact reliance on it (versus being present only for a shared GUI-toolkit build variant) has not been directly confirmed. |
 
@@ -149,3 +149,4 @@ specific console-oriented package have not been directly confirmed.
 - [Vim](VIM.md)
 - [GNU Nano](GNU-NANO.md)
 - [GNU Ed](GNU-ED.md)
+- [GnuTLS](GNUTLS.md)

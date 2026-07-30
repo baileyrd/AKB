@@ -107,7 +107,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnu:findutils`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 34
+- Outgoing relationships: 35
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5528,6 +5528,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 2
 
+## `library:gnutls:gnutls`
+
+- Name: GnuTLS
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
 ## `library:libexpat:expat`
 
 - Name: Expat
@@ -7767,7 +7776,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `package:msys2:libgnutls-devel`
 
@@ -147096,7 +147105,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 34
+- Incoming relationships: 35
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

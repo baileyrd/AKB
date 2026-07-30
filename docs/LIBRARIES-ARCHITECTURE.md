@@ -28,6 +28,7 @@ model_refs:
   - library:gnupg:libksba
   - library:gnupg:npth
   - library:nettle:nettle
+  - library:gnutls:gnutls
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -52,6 +53,7 @@ evidence_refs:
   - evidence:gnupg:libksba-manual-2026-07-30
   - evidence:gnupg:npth-manual-2026-07-30
   - evidence:nettle:manual-2026-07-30
+  - evidence:gnutls:manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -93,8 +95,8 @@ flowchart LR
 [winpthreads](WINPTHREADS.md), [PCRE2](PCRE2.md),
 [libgpg-error](LIBGPG-ERROR.md), [libgcrypt](LIBGCRYPT.md),
 [libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md),
-[nPth](NPTH.md), and [Nettle](NETTLE.md) are this volume's
-first per-library pages. The
+[nPth](NPTH.md), [Nettle](NETTLE.md), and [GnuTLS](GNUTLS.md) are this
+volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -107,7 +109,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All twenty-four pages are deliberately scoped to package/dependency-level
+All twenty-five pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -121,12 +123,15 @@ medium-confidence dev/runtime-split inference and was revised down to
 new evidence that complicated the original theory rather than confirming
 it, recorded as such rather than quietly dropped. The GnuPG crypto-stack
 pages ([libgpg-error](LIBGPG-ERROR.md), [libgcrypt](LIBGCRYPT.md),
-[libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md), [nPth](NPTH.md)) also
-close a loop back into Volume 5: `component:gnupg:gnupg` now has explicit
-`requires` edges to each of them, rather than the dependencies living
-only in [GnuPG's](GNUPG.md) own prose table. These pages are a starting
-point for this volume, not a demonstration that its full evidence model
-is populated.
+[libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md), [nPth](NPTH.md),
+[Nettle](NETTLE.md), and [GnuTLS](GNUTLS.md)) also close a loop back into
+Volume 5: `component:gnupg:gnupg` now has explicit `requires` edges to
+each of them, rather than the dependencies living only in
+[GnuPG's](GNUPG.md) own prose table. [GnuTLS](GNUTLS.md) closes a second
+such loop into `component:gnu:emacs`, whose
+[dependency table](GNU-EMACS.md#dependencies) already cited it by package
+name before this page existed. These pages are a starting point for this
+volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation
 

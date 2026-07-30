@@ -70,7 +70,7 @@ stack plus archive, terminal, and database libraries:
 | IPC between GnuPG components | `package:msys2:libassuan` | Backs the Assuan IPC protocol GnuPG uses for communication between `gpg`, `dirmngr`, and other GnuPG-family helper processes. |
 | Certificate/CMS handling | `package:msys2:libksba` | Backs X.509/CMS certificate parsing, used specifically by GnuPG's S/MIME support (`gpgsm`) despite GnuPG's primary focus being OpenPGP rather than X.509. |
 | Threading | `package:msys2:libnpth` | GnuPG's own portable threading library (New/Nth Pth), used internally for concurrent operations. |
-| TLS for network lookups | `package:msys2:libgnutls` | Backs `dirmngr`'s TLS-secured connections to key servers and OCSP responders — the network-facing exception to GnuPG's OpenSSL independence. |
+| TLS for network lookups | `package:msys2:libgnutls` | Backs `dirmngr`'s TLS-secured connections to key servers and OCSP responders — the network-facing exception to GnuPG's OpenSSL independence. Documented fully in [GnuTLS](GNUTLS.md). |
 | HTTP transfer library | `package:msys2:libcurl` | Backs `dirmngr`'s HTTP-based key-server and certificate-revocation lookups. |
 | Compression | `package:msys2:bzip2`, `package:msys2:libbz2`, `package:msys2:zlib` | Back compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support. |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
@@ -151,3 +151,9 @@ version-qualified security review noted above.
 - [OpenSSL](OPENSSL.md)
 - [curl](CURL.md)
 - [GNU Emacs](GNU-EMACS.md)
+- [GnuTLS](GNUTLS.md)
+- [libgcrypt](LIBGCRYPT.md)
+- [libassuan](LIBASSUAN.md)
+- [libksba](LIBKSBA.md)
+- [nPth](NPTH.md)
+- [Nettle](NETTLE.md)

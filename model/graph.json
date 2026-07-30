@@ -1331,6 +1331,24 @@
         "role": "low-level cryptographic primitives"
       },
       "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnutls:gnutls",
+      "kind": "library",
+      "name": "GnuTLS",
+      "summary": "A library implementing TLS/SSL and related cryptographic protocols, packaged in the MSYS environment and depended on by GnuPG's dirmngr network lookups and GNU Emacs' Network Security Manager.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuTLS project",
+      "aliases": ["gnutls", "libgnutls"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnutls.org/",
+        "packaged_as": "package:msys2:libgnutls",
+        "role": "TLS/SSL and related cryptographic protocols"
+      },
+      "evidence_refs": ["evidence:gnutls:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -3819,6 +3837,66 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-gnutls",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnutls:gnutls",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnutls:gnutls",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libgnutls, not to any native (non-MSYS) build such as the separately packaged UCRT64 gnutls library.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnutls:gnutls",
+      "target": "package:msys2:libgnutls",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-gnutls",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnutls:gnutls",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs dirmngr's TLS-secured connections to key servers and OCSP responders.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:emacs-requires-gnutls",
+      "type": "requires",
+      "source": "component:gnu:emacs",
+      "target": "library:gnutls:gnutls",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Emacs' Network Security Manager and TLS-based network connections.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -4941,6 +5019,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Nettle project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-nettle in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnutls:manual-2026-07-30",
+      "class": "primary",
+      "title": "GnuTLS (official project site)",
+      "locator": "https://www.gnutls.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GnuTLS project site, matching the project_url recorded for package:msys2:libgnutls in the catalog snapshot."
     }
   ]
 }

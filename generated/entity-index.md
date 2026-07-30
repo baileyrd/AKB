@@ -15,7 +15,7 @@
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
-| component:gnu:emacs | component | GNU Emacs | partial | 3 | 1 |
+| component:gnu:emacs | component | GNU Emacs | partial | 4 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 2 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 2 | 1 |
 | component:gnu:gcc | component | GCC | partial | 2 | 1 |
@@ -28,7 +28,7 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 7 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 8 | 1 |
 | component:greenwood:less | component | less | partial | 3 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 35 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 31 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -618,6 +618,7 @@
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 2 |
+| library:gnutls:gnutls | library | GnuTLS | partial | 2 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
@@ -866,7 +867,7 @@
 | package:msys2:libgettextpo | package | libgettextpo | verified | 3 | 1 |
 | package:msys2:libgit2 | package | libgit2 | verified | 7 | 3 |
 | package:msys2:libgit2-devel | package | libgit2-devel | verified | 6 | 0 |
-| package:msys2:libgnutls | package | libgnutls | verified | 11 | 10 |
+| package:msys2:libgnutls | package | libgnutls | verified | 11 | 11 |
 | package:msys2:libgnutls-devel | package | libgnutls-devel | verified | 7 | 0 |
 | package:msys2:libgpg-error | package | libgpg-error | verified | 4 | 6 |
 | package:msys2:libgpg-error-devel | package | libgpg-error-devel | verified | 4 | 4 |
@@ -16347,5 +16348,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 34 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 35 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

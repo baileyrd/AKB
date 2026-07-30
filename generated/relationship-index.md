@@ -76198,6 +76198,8 @@
 | relationship:foundation-libraries:gettext-packaged-by-package | packaged-by | library:gnu:gettext | package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | verified |
 | relationship:foundation-libraries:gettext-requires-libiconv | requires | library:gnu:gettext | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:gmp-packaged-by-package | packaged-by | library:gnu:gmp | package:msys2:mingw-w64-ucrt-x86_64-gmp | verified |
+| relationship:foundation-libraries:gnutls-packaged-by-package | packaged-by | library:gnutls:gnutls | package:msys2:libgnutls | verified |
+| relationship:foundation-libraries:gnutls-uses-msys-runtime | uses-runtime | library:gnutls:gnutls | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:icu-packaged-by-package | packaged-by | library:unicode:icu | package:msys2:mingw-w64-ucrt-x86_64-icu | verified |
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
 | relationship:foundation-libraries:isl-requires-gmp | requires | library:libisl:isl | library:gnu:gmp | verified |
@@ -76218,6 +76220,7 @@
 | relationship:foundation-libraries:mpc-requires-mpfr | requires | library:multiprecision:mpc | library:gnu:mpfr | verified |
 | relationship:foundation-libraries:mpfr-packaged-by-package | packaged-by | library:gnu:mpfr | package:msys2:mingw-w64-ucrt-x86_64-mpfr | verified |
 | relationship:foundation-libraries:mpfr-requires-gmp | requires | library:gnu:mpfr | library:gnu:gmp | verified |
+| relationship:foundation-libraries:msys-contains-gnutls | contains | environment:msys2:msys | library:gnutls:gnutls | partial |
 | relationship:foundation-libraries:nettle-packaged-by-package | packaged-by | library:nettle:nettle | package:msys2:mingw-w64-ucrt-x86_64-nettle | verified |
 | relationship:foundation-libraries:nettle-requires-gmp | requires | library:nettle:nettle | library:gnu:gmp | verified |
 | relationship:foundation-libraries:npth-packaged-by-package | packaged-by | library:gnupg:npth | package:msys2:mingw-w64-ucrt-x86_64-npth | verified |
@@ -76255,6 +76258,7 @@
 | relationship:gnu-userland:bash-uses-msys-runtime | uses-runtime | component:gnu:bash | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:coreutils-packaged-by-package | packaged-by | component:gnu:coreutils | package:msys2:coreutils | verified |
 | relationship:gnu-userland:coreutils-uses-msys-runtime | uses-runtime | component:gnu:coreutils | runtime:msys2:msys-2.0.dll | partial |
+| relationship:gnu-userland:emacs-requires-gnutls | requires | component:gnu:emacs | library:gnutls:gnutls | verified |
 | relationship:gnu-userland:findutils-packaged-by-package | packaged-by | component:gnu:findutils | package:msys2:findutils | verified |
 | relationship:gnu-userland:findutils-uses-msys-runtime | uses-runtime | component:gnu:findutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:gawk-packaged-by-package | packaged-by | component:gnu:gawk | package:msys2:gawk | verified |
@@ -76834,6 +76838,7 @@
 | relationship:ssh-curl-git:git-requires-openssl | requires | component:git:git | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:git-uses-msys-runtime | uses-runtime | component:git:git | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:gnupg-packaged-by-package | packaged-by | component:gnupg:gnupg | package:msys2:gnupg | verified |
+| relationship:ssh-curl-git:gnupg-requires-gnutls | requires | component:gnupg:gnupg | library:gnutls:gnutls | verified |
 | relationship:ssh-curl-git:gnupg-requires-libassuan | requires | component:gnupg:gnupg | library:gnupg:libassuan | verified |
 | relationship:ssh-curl-git:gnupg-requires-libgcrypt | requires | component:gnupg:gnupg | library:gnupg:libgcrypt | verified |
 | relationship:ssh-curl-git:gnupg-requires-libksba | requires | component:gnupg:gnupg | library:gnupg:libksba | verified |

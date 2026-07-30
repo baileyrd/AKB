@@ -615,6 +615,7 @@ Objects
 - library:gnupg:libgpg-error (library): libgpg-error
 - library:gnupg:libksba (library): libksba
 - library:gnupg:npth (library): nPth (New Portable Threads)
+- library:gnutls:gnutls (library): GnuTLS
 - library:libexpat:expat (library): Expat
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:llvm:libc++ (library): libc++
@@ -16555,6 +16556,11 @@ Relationships
 - environment:msys2:ucrt64 --contains--> library:nettle:nettle
 - library:nettle:nettle --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-nettle
 - library:nettle:nettle --requires--> library:gnu:gmp
+- environment:msys2:msys --contains--> library:gnutls:gnutls
+- library:gnutls:gnutls --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnutls:gnutls --packaged-by--> package:msys2:libgnutls
+- component:gnupg:gnupg --requires--> library:gnutls:gnutls
+- component:gnu:emacs --requires--> library:gnutls:gnutls
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan
 - component:gnupg:gnupg --requires--> library:gnupg:libksba

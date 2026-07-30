@@ -2,6 +2,7 @@ AKB architecture graph overview
 
 Objects
 - component:bzip2:bzip2 (component): bzip2
+- component:cmake:cmake (component): CMake
 - component:curl:curl (component): curl
 - component:git:git (component): Git (MSYS2 package)
 - component:gnu:bash (component): GNU Bash
@@ -29,10 +30,13 @@ Objects
 - component:llvm:lldb (component): LLDB
 - component:lz4:lz4 (component): LZ4
 - component:lzip:lzip (component): Lzip
+- component:mesonbuild:meson (component): Meson
 - component:mintty:mintty (component): mintty
+- component:ninja-build:ninja (component): Ninja
 - component:openssh:openssh (component): OpenSSH
 - component:openssl:openssl (component): OpenSSL
 - component:p7zip:p7zip (component): p7zip
+- component:pkgconf:pkgconf (component): pkgconf
 - component:tukaani:xz (component): XZ Utils
 - component:vim:vim (component): Vim
 - component:zstd:zstd (component): Zstandard (zstd)
@@ -16435,6 +16439,18 @@ Relationships
 - component:llvm:lldb --packaged-by--> package:msys2:mingw-w64-clang-x86_64-lldb
 - component:llvm:clang --invokes--> component:llvm:lld
 - component:llvm:lld --compatible-with--> component:gnu:binutils
+- environment:msys2:ucrt64 --contains--> component:cmake:cmake
+- component:cmake:cmake --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-cmake
+- environment:msys2:ucrt64 --contains--> component:mesonbuild:meson
+- component:mesonbuild:meson --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-meson
+- environment:msys2:ucrt64 --contains--> component:ninja-build:ninja
+- component:ninja-build:ninja --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-ninja
+- environment:msys2:ucrt64 --contains--> component:pkgconf:pkgconf
+- component:pkgconf:pkgconf --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-pkgconf
+- component:cmake:cmake --invokes--> component:ninja-build:ninja
+- component:mesonbuild:meson --invokes--> component:ninja-build:ninja
+- component:cmake:cmake --requires--> component:pkgconf:pkgconf
+- component:mesonbuild:meson --requires--> component:pkgconf:pkgconf
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

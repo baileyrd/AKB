@@ -12,6 +12,10 @@ model_refs:
   - component:llvm:clang
   - component:llvm:lld
   - component:llvm:lldb
+  - component:cmake:cmake
+  - component:mesonbuild:meson
+  - component:ninja-build:ninja
+  - component:pkgconf:pkgconf
 evidence_refs:
   - evidence:gnu:gcc-manual-2026-07-30
   - evidence:gnu:binutils-manual-2026-07-30
@@ -19,6 +23,10 @@ evidence_refs:
   - evidence:llvm:clang-manual-2026-07-30
   - evidence:llvm:lld-manual-2026-07-30
   - evidence:llvm:lldb-manual-2026-07-30
+  - evidence:cmake:documentation-2026-07-30
+  - evidence:mesonbuild:documentation-2026-07-30
+  - evidence:ninja-build:manual-2026-07-30
+  - evidence:pkgconf:project-site-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -48,9 +56,35 @@ their pages document that distinction explicitly rather than reusing
 Volume 5's `uses-runtime` pattern. LLD's packaging declares it as a
 substitute for the `binutils` capability in CLANG64, modeled explicitly as
 a packaging-level `compatible-with` relationship rather than an assumption
-of identical linker behavior. The build-system tools (CMake, Meson, Ninja,
-pkgconf) and the Autotools family (autoconf, automake, libtool, make)
-remain open work for this volume, along with the C++ library row.
+of identical linker behavior. The Autotools family (autoconf, automake,
+libtool, make) remains open work for this volume, along with the C++
+library row.
+
+## Build system tools
+
+Unlike the compiler/linker/debugger triads above, these build-system tools
+are not split into separate GCC-oriented/LLVM-oriented rows: this
+environment packages one build of each per native environment (UCRT64
+shown here), used regardless of which compiler driver a project selects.
+
+| Role | Tool | Boundary | Per-tool page |
+| --- | --- | --- | --- |
+| Build-file generator (CMake-family) | CMake | Generates backend build files; does not build directly | [CMake](CMAKE.md) |
+| Build-file generator (Meson-family) | Meson | Generates backend build files (Ninja by default); does not build directly | [Meson](MESON.md) |
+| Build-file executor | Ninja | Executes exactly what its generator produced; does not discover dependencies itself | [Ninja](NINJA.md) |
+| Library metadata query | pkgconf | Answers compiler/linker flag queries from `.pc` files; packaged as the pkg-config substitute in this environment | [pkgconf](PKGCONF.md) |
+
+[CMake](CMAKE.md), [Meson](MESON.md), [Ninja](NINJA.md), and
+[pkgconf](PKGCONF.md) complete the build-system tool row: both CMake and
+Meson depend on and invoke Ninja as their build backend in this
+environment (`relationship:toolchain:cmake-invokes-ninja`,
+`relationship:toolchain:meson-invokes-ninja`) and both depend on pkgconf
+for dependency discovery (`relationship:toolchain:cmake-requires-pkgconf`,
+`relationship:toolchain:meson-requires-pkgconf`) — the same
+generator/executor separation pattern as the compiler/linker pairs above,
+just without a GCC-vs-LLVM split. The Autotools family (autoconf, automake,
+libtool, make) remains the only unwritten toolchain-tool group for this
+volume.
 
 ## Decision Rules
 

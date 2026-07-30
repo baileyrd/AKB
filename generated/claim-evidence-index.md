@@ -7,6 +7,7 @@
 | claim:component:bash:provides-sh | component:gnu:bash | fact | verified | evidence:catalog:current |
 | claim:component:binutils:compressed-debug-sections | component:gnu:binutils | inference | high | evidence:catalog:current |
 | claim:component:bzip2:libbz2-split | component:bzip2:bzip2 | inference | high | evidence:catalog:current |
+| claim:component:cmake:feature-dependencies | component:cmake:cmake | inference | high | evidence:catalog:current |
 | claim:component:coreutils:posix-utilities | component:gnu:coreutils | fact | verified | evidence:catalog:current |
 | claim:component:findutils:role | component:gnu:findutils | inference | high | evidence:catalog:current |
 | claim:component:gawk:provides-awk | component:gnu:gawk | fact | verified | evidence:catalog:current |
@@ -19,7 +20,9 @@
 | claim:component:lld:provides-binutils-capability | component:llvm:lld | fact | verified | evidence:catalog:current |
 | claim:component:lldb:python-scripting | component:llvm:lldb | inference | high | evidence:catalog:current |
 | claim:component:lz4:self-versioned-dependency | component:lz4:lz4 | inference | medium | evidence:catalog:current |
+| claim:component:meson:ninja-backend | component:mesonbuild:meson | fact | verified | evidence:catalog:current |
 | claim:component:ncurses:hub | component:gnu:ncurses | observation | verified | evidence:catalog:current |
+| claim:component:pkgconf:pkg-config-substitute | component:pkgconf:pkgconf | fact | verified | evidence:catalog:current |
 | claim:component:vim:perl-integration | component:vim:vim | inference | high | evidence:catalog:current |
 | claim:component:zip-family:bzip2-method | component:info-zip:zip | inference | high | evidence:catalog:current |
 | claim:environment:clang64:toolchain | environment:msys2:clang64 | fact | verified | evidence:msys2:environments-2026-07-28 |

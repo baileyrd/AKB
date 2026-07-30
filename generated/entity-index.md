@@ -5,6 +5,7 @@
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
+| component:cmake:cmake | component | CMake | partial | 3 | 1 |
 | component:curl:curl | component | curl | partial | 3 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
@@ -32,10 +33,13 @@
 | component:llvm:lldb | component | LLDB | partial | 1 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
+| component:mesonbuild:meson | component | Meson | partial | 3 | 1 |
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
+| component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
 | component:openssh:openssh | component | OpenSSH | partial | 3 | 2 |
 | component:openssl:openssl | component | OpenSSL | partial | 2 | 4 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
+| component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
 | component:tukaani:xz | component | XZ Utils | partial | 2 | 1 |
 | component:vim:vim | component | Vim | partial | 3 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 2 | 1 |
@@ -58,7 +62,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 30 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 3 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 7 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -9160,7 +9164,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-cliquer | package | mingw-w64-ucrt-x86_64-cliquer | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-clucene | package | mingw-w64-ucrt-x86_64-clucene | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-clustal-omega | package | mingw-w64-ucrt-x86_64-clustal-omega | verified | 4 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-cmake | package | mingw-w64-ucrt-x86_64-cmake | verified | 13 | 12 |
+| package:msys2:mingw-w64-ucrt-x86_64-cmake | package | mingw-w64-ucrt-x86_64-cmake | verified | 13 | 13 |
 | package:msys2:mingw-w64-ucrt-x86_64-cmake-bootstrap | package | mingw-w64-ucrt-x86_64-cmake-bootstrap | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-cmake-cmcldeps | package | mingw-w64-ucrt-x86_64-cmake-cmcldeps | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-cmake-docs | package | mingw-w64-ucrt-x86_64-cmake-docs | verified | 2 | 0 |
@@ -10327,7 +10331,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-meld3 | package | mingw-w64-ucrt-x86_64-meld3 | verified | 9 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-mesa | package | mingw-w64-ucrt-x86_64-mesa | verified | 13 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-meshoptimizer | package | mingw-w64-ucrt-x86_64-meshoptimizer | verified | 2 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-meson | package | mingw-w64-ucrt-x86_64-meson | verified | 7 | 2 |
+| package:msys2:mingw-w64-ucrt-x86_64-meson | package | mingw-w64-ucrt-x86_64-meson | verified | 7 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-meson-python | package | mingw-w64-ucrt-x86_64-meson-python | verified | 6 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-mesonlsp | package | mingw-w64-ucrt-x86_64-mesonlsp | verified | 11 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-metis | package | mingw-w64-ucrt-x86_64-metis | verified | 2 | 13 |
@@ -10429,7 +10433,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-nicotine+ | package | mingw-w64-ucrt-x86_64-nicotine+ | verified | 10 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-nim | package | mingw-w64-ucrt-x86_64-nim | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-nimble | package | mingw-w64-ucrt-x86_64-nimble | verified | 4 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-ninja | package | mingw-w64-ucrt-x86_64-ninja | verified | 2 | 6 |
+| package:msys2:mingw-w64-ucrt-x86_64-ninja | package | mingw-w64-ucrt-x86_64-ninja | verified | 2 | 7 |
 | package:msys2:mingw-w64-ucrt-x86_64-nlohmann-json | package | mingw-w64-ucrt-x86_64-nlohmann-json | verified | 2 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-nlopt | package | mingw-w64-ucrt-x86_64-nlopt | verified | 2 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-nme | package | mingw-w64-ucrt-x86_64-nme | verified | 6 | 0 |
@@ -10749,7 +10753,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-pixman | package | mingw-w64-ucrt-x86_64-pixman | verified | 2 | 8 |
 | package:msys2:mingw-w64-ucrt-x86_64-pkcs11-helper | package | mingw-w64-ucrt-x86_64-pkcs11-helper | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-pkg-config | package | mingw-w64-ucrt-x86_64-pkg-config | verified | 3 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-pkgconf | package | mingw-w64-ucrt-x86_64-pkgconf | verified | 2 | 7 |
+| package:msys2:mingw-w64-ucrt-x86_64-pkgconf | package | mingw-w64-ucrt-x86_64-pkgconf | verified | 2 | 8 |
 | package:msys2:mingw-w64-ucrt-x86_64-planarity | package | mingw-w64-ucrt-x86_64-planarity | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-plantri | package | mingw-w64-ucrt-x86_64-plantri | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-plasma-activities | package | mingw-w64-ucrt-x86_64-plasma-activities | verified | 6 | 0 |

@@ -755,6 +755,78 @@
         "role": "debugger"
       },
       "evidence_refs": ["evidence:llvm:lldb-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:cmake:cmake",
+      "kind": "component",
+      "name": "CMake",
+      "summary": "A cross-platform build-system generator, packaged per native environment (UCRT64 shown here), producing native build files (including Ninja) rather than building directly.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Kitware, Inc.",
+      "aliases": ["cmake"],
+      "tags": ["toolchain", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.cmake.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-cmake",
+        "role": "build-system generator"
+      },
+      "evidence_refs": ["evidence:cmake:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:mesonbuild:meson",
+      "kind": "component",
+      "name": "Meson",
+      "summary": "A high-productivity build system, packaged per native environment (UCRT64 shown here), generating Ninja build files by default rather than building directly.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Jussi Pakkanen / Meson development team",
+      "aliases": ["meson"],
+      "tags": ["toolchain", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://mesonbuild.com/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-meson",
+        "role": "build-system generator"
+      },
+      "evidence_refs": ["evidence:mesonbuild:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:ninja-build:ninja",
+      "kind": "component",
+      "name": "Ninja",
+      "summary": "A small, fast build-file executor, packaged per native environment (UCRT64 shown here) and used as the default backend for both CMake and Meson.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Evan Martin / Ninja community",
+      "aliases": ["ninja"],
+      "tags": ["toolchain", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://ninja-build.org",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-ninja",
+        "role": "build-file execution"
+      },
+      "evidence_refs": ["evidence:ninja-build:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:pkgconf:pkgconf",
+      "kind": "component",
+      "name": "pkgconf",
+      "summary": "A pkg-config-compatible library-metadata query tool, packaged per native environment (UCRT64 shown here) as the packaged substitute for the original freedesktop.org pkg-config.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "pkgconf project",
+      "aliases": ["pkgconf", "pkg-config"],
+      "tags": ["toolchain", "build-system", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://github.com/pkgconf/pkgconf",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-pkgconf",
+        "role": "library compile/link flag metadata query"
+      },
+      "evidence_refs": ["evidence:pkgconf:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -2185,6 +2257,150 @@
       "condition": "The MSYS2 lld package declares that it provides the binutils virtual capability in the CLANG64 environment (claim:component:lld:provides-binutils-capability); this is a packaging-level substitutability claim, not a guarantee of identical linker features or output behavior, per the Toolchain Role Model's boundary note.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-cmake",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:cmake:cmake",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:cmake:cmake",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-cmake",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-meson",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:mesonbuild:meson",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:meson-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:mesonbuild:meson",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-meson",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-ninja",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:ninja-build:ninja",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ninja-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:ninja-build:ninja",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-ninja",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:ucrt64-contains-pkgconf",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "component:pkgconf:pkgconf",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:pkgconf-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:pkgconf:pkgconf",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-pkgconf",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-invokes-ninja",
+      "type": "invokes",
+      "source": "component:cmake:cmake",
+      "target": "component:ninja-build:ninja",
+      "status": "verified",
+      "confidence": "high",
+      "scope": "build",
+      "condition": "CMake's Ninja generator produces build.ninja files that CMake then invokes ninja to execute.",
+      "properties": {},
+      "evidence_refs": ["evidence:cmake:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:meson-invokes-ninja",
+      "type": "invokes",
+      "source": "component:mesonbuild:meson",
+      "target": "component:ninja-build:ninja",
+      "status": "verified",
+      "confidence": "high",
+      "scope": "build",
+      "condition": "Ninja is Meson's default and primary build backend (claim:component:meson:ninja-backend).",
+      "properties": {},
+      "evidence_refs": ["evidence:mesonbuild:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-pkgconf",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "component:pkgconf:pkgconf",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs CMake's pkg-config-mode dependency discovery (find_package in Config/pkg-config search modes).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:meson-requires-pkgconf",
+      "type": "requires",
+      "source": "component:mesonbuild:meson",
+      "target": "component:pkgconf:pkgconf",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs Meson's dependency() function's pkg-config dependency-discovery mode.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -2422,6 +2638,36 @@
       "id": "claim:component:lld:provides-binutils-capability",
       "subject": "component:llvm:lld",
       "statement": "The MSYS2 lld package declares that it provides the binutils virtual capability in the CLANG64 environment, letting packages that depend on a generic binutils-like toolchain resolve against LLD instead of GNU Binutils.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:cmake:feature-dependencies",
+      "subject": "component:cmake:cmake",
+      "statement": "CMake's dependencies map to specific built-in features: cppdap backs its --debugger Debug Adapter Protocol support, curl backs file(DOWNLOAD)/ExternalProject network operations, jsoncpp backs its JSON-based file-api and CMakePresets.json support, libarchive backs file(ARCHIVE_CREATE) and CPack archive generation, and rhash backs its file(<HASH>) commands.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:meson:ninja-backend",
+      "subject": "component:mesonbuild:meson",
+      "statement": "Meson's dependency on ninja reflects Ninja as its default and primary build backend: Meson generates build files that Ninja executes rather than compiling directly.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:pkgconf:pkg-config-substitute",
+      "subject": "component:pkgconf:pkgconf",
+      "statement": "The MSYS2 pkgconf package provides, conflicts with, and replaces pkg-config in this environment, making pkgconf the packaged substitute for the original freedesktop.org pkg-config tool.",
       "classification": "fact",
       "confidence": "verified",
       "valid_from": "2026-07-29",
@@ -2789,6 +3035,46 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official LLDB project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-lldb in the catalog snapshot."
+    },
+    {
+      "id": "evidence:cmake:documentation-2026-07-30",
+      "class": "primary",
+      "title": "CMake Documentation",
+      "locator": "https://cmake.org/cmake/help/latest/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official CMake documentation for the current release. Used for the generator model (CMake produces build files rather than building directly) and feature-to-dependency mapping. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:mesonbuild:documentation-2026-07-30",
+      "class": "primary",
+      "title": "Meson Build System Manual",
+      "locator": "https://mesonbuild.com/Manual.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Meson manual. Used for the generator model and its default Ninja backend. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:ninja-build:manual-2026-07-30",
+      "class": "primary",
+      "title": "Ninja Manual",
+      "locator": "https://ninja-build.org/manual.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Ninja manual. Used for its deliberately minimal, generated-file-execution design. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:pkgconf:project-site-2026-07-30",
+      "class": "primary",
+      "title": "pkgconf (official project repository)",
+      "locator": "https://github.com/pkgconf/pkgconf",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official pkgconf project repository, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-pkgconf in the catalog snapshot."
     }
   ]
 }

@@ -11,6 +11,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:cmake:cmake`
+
+- Name: CMake
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:cmake:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
 ## `component:curl:curl`
 
 - Name: curl
@@ -254,6 +263,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:mesonbuild:meson`
+
+- Name: Meson
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:mesonbuild:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
 ## `component:mintty:mintty`
 
 - Name: mintty
@@ -262,6 +280,15 @@
 - Evidence: evidence:mintty:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
+
+## `component:ninja-build:ninja`
+
+- Name: Ninja
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:ninja-build:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
 
 ## `component:openssh:openssh`
 
@@ -289,6 +316,15 @@
 - Evidence: evidence:p7zip:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
+
+## `component:pkgconf:pkgconf`
+
+- Name: pkgconf
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:pkgconf:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
 
 ## `component:tukaani:xz`
 
@@ -494,7 +530,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 3
+- Outgoing relationships: 7
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -82413,7 +82449,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmake-bootstrap`
 
@@ -92916,7 +92952,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-meson-python`
 
@@ -93834,7 +93870,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nlohmann-json`
 
@@ -96714,7 +96750,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-planarity`
 

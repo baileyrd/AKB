@@ -13,6 +13,12 @@ model_refs:
   - library:google:brotli@ucrt64
   - library:libssh2:libssh2@ucrt64
   - library:c-ares:c-ares@ucrt64
+  - library:gnu:libidn2@ucrt64
+  - library:libpsl:libpsl@ucrt64
+  - library:mozilla:ca-certificates@ucrt64
+  - library:nghttp2:libnghttp2@ucrt64
+  - library:nghttp2:libngtcp2@ucrt64
+  - library:nghttp2:libnghttp3@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:curl:project-site-2026-07-30
@@ -73,9 +79,9 @@ groups.
 ## Dependencies
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-curl` declares twelve
-`runtime-depends-on` edges. Six are UCRT64-packaged sibling libraries
-this knowledge base already documents, so this page adds explicit
-`requires` edges for them: [zlib](ZLIB.md) (HTTP
+`runtime-depends-on` edges — **all twelve now have `requires` edges to
+their own UCRT64-native library pages**, completing full dependency
+coverage for this package: [zlib](ZLIB.md) (HTTP
 `Content-Encoding: gzip`/`deflate` support,
 `relationship:foundation-libraries:curl-ucrt64-requires-zlib`),
 [Zstandard (library)](LIBZSTD.md) (HTTP `Content-Encoding: zstd`
@@ -88,20 +94,26 @@ session at 124 recorded dependents),
 support, `relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64`),
 [libssh2 (UCRT64)](LIBSSH2-UCRT64.md) (`sftp://`/`scp://` support,
 `relationship:foundation-libraries:curl-ucrt64-requires-libssh2-ucrt64`),
-and [c-ares (UCRT64)](C-ARES-UCRT64.md) (asynchronous DNS resolution,
+[c-ares (UCRT64)](C-ARES-UCRT64.md) (asynchronous DNS resolution,
 `relationship:foundation-libraries:curl-ucrt64-requires-c-ares-ucrt64`
-— the first page in this knowledge base for any c-ares package).
-The remaining six — `mingw-w64-ucrt-x86_64-libidn2`,
-`mingw-w64-ucrt-x86_64-libpsl`, `mingw-w64-ucrt-x86_64-ca-certificates`,
-`mingw-w64-ucrt-x86_64-nghttp2`, `mingw-w64-ucrt-x86_64-ngtcp2`, and
-`mingw-w64-ucrt-x86_64-nghttp3` — remain UCRT64-native packages
-distinct from the MSYS-environment packages this knowledge base's
-existing [GNU libidn2](GNU-LIBIDN2.md), [libpsl](LIBPSL.md),
-[ca-certificates](CA-CERTIFICATES.md), [libnghttp2](LIBNGHTTP2.md),
-[libngtcp2](LIBNGTCP2.md), and [libnghttp3](LIBNGHTTP3.md) pages
-document, so no formal `requires` edges are added for the remaining
-six, the same package/environment distinction applied consistently
-throughout this volume.
+— the first page in this knowledge base for any c-ares package),
+[GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md) (internationalized
+domain name processing,
+`relationship:foundation-libraries:curl-ucrt64-requires-libidn2-ucrt64`),
+[libpsl (UCRT64)](LIBPSL-UCRT64.md) (Public Suffix List
+cookie-domain-scoping safety,
+`relationship:foundation-libraries:curl-ucrt64-requires-libpsl-ucrt64`),
+[ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md) (TLS
+certificate-chain verification,
+`relationship:foundation-libraries:curl-ucrt64-requires-ca-certificates-ucrt64`),
+[libnghttp2 (UCRT64)](LIBNGHTTP2-UCRT64.md) (HTTP/2 support,
+`relationship:foundation-libraries:curl-ucrt64-requires-libnghttp2-ucrt64`),
+[libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md) (QUIC transport,
+`relationship:foundation-libraries:curl-ucrt64-requires-libngtcp2-ucrt64`),
+and [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md) (HTTP/3 support,
+`relationship:foundation-libraries:curl-ucrt64-requires-libnghttp3-ucrt64`).
+This mirrors the same full-coverage milestone
+[libcurl (MSYS)](LIBCURL.md#dependencies) reached earlier this session.
 
 ## Reverse Dependencies
 
@@ -170,12 +182,12 @@ project site (`evidence:curl:project-site-2026-07-30`), the same
 evidence record [curl (MSYS)](CURL.md) and
 [libcurl (MSYS)](LIBCURL.md) cite, matching the `project_url` already
 recorded for `package:msys2:mingw-w64-ucrt-x86_64-curl` in the catalog.
-Package identity, version, license, and the modeled dependency/dependent
-edges are backed by the pacman catalog snapshot
+Package identity, version, license, and all twelve modeled
+dependency/dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: the six remaining sub-dependencies not individually modeled,
-the ~66 remaining recorded reverse dependents not individually modeled,
-and header-level API surface / PE import/export-level evidence, per the
+this page: the ~66 remaining recorded reverse dependents not
+individually modeled, and header-level API surface / PE
+import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -191,3 +203,9 @@ methodology.
 - [Brotli (UCRT64)](BROTLI-UCRT64.md)
 - [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
 - [c-ares (UCRT64)](C-ARES-UCRT64.md)
+- [GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md)
+- [libpsl (UCRT64)](LIBPSL-UCRT64.md)
+- [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
+- [libnghttp2 (UCRT64)](LIBNGHTTP2-UCRT64.md)
+- [libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md)
+- [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md)

@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-openssl
   - library:curl:curl@ucrt64
   - library:libssh2:libssh2@ucrt64
+  - library:mozilla:ca-certificates@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
@@ -75,9 +76,9 @@ throughout this volume for MSYS/UCRT64/CLANG64 sibling groups.
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-openssl` declares no
 `runtime-depends-on` edges beyond standard toolchain runtime support;
 it records only an *optional* dependency on
-`mingw-w64-ucrt-x86_64-ca-certificates` (a UCRT64-native package not
-yet individually modeled in this knowledge base), which this page does
-not promote to a formal graph edge, the same treatment optional
+[ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
+(`mingw-w64-ucrt-x86_64-ca-certificates`), which this page does not
+promote to a formal graph edge, the same treatment optional
 dependencies receive elsewhere in this volume (for example,
 [CMake's](CMAKE.md#dependencies) own optional `emacs` dependency).
 
@@ -162,8 +163,7 @@ the catalog. Package identity, version, license, and the one modeled
 dependent edge are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
 this page: the ~123 remaining recorded dependents not individually
-modeled, the optional `ca-certificates` (UCRT64) sub-dependency not
-individually modeled, and header-level API surface / PE
+modeled, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -175,3 +175,4 @@ methodology.
 - [libopenssl (MSYS)](LIBOPENSSL.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
+- [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)

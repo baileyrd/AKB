@@ -2555,6 +2555,132 @@
         "role": "asynchronous DNS resolution"
       },
       "evidence_refs": ["evidence:c-ares:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libunistring@ucrt64",
+      "kind": "library",
+      "name": "libunistring (UCRT64)",
+      "summary": "A library for manipulating Unicode strings and C strings, packaged in the UCRT64 environment specifically and depended on by libidn2 (UCRT64) and libpsl (UCRT64), distinct from the separately versioned MSYS libunistring this knowledge base's library:gnu:libunistring entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libunistring"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libunistring",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libunistring",
+        "role": "Unicode string processing"
+      },
+      "evidence_refs": ["evidence:gnu:libunistring-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libidn2@ucrt64",
+      "kind": "library",
+      "name": "GNU libidn2 (UCRT64)",
+      "summary": "An implementation of the IDNA2008, Punycode, and TR46 internationalized domain name specifications, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) and libpsl (UCRT64), distinct from the separately versioned MSYS libidn2 this knowledge base's library:gnu:libidn2 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libidn2"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libidn/#libidn2",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libidn2",
+        "role": "internationalized domain name (IDNA) processing"
+      },
+      "evidence_refs": ["evidence:gnu:libidn2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libpsl:libpsl@ucrt64",
+      "kind": "library",
+      "name": "libpsl (UCRT64)",
+      "summary": "A library for parsing and evaluating a domain name against Mozilla's Public Suffix List, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64), distinct from the separately versioned MSYS libpsl this knowledge base's library:libpsl:libpsl entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libpsl project",
+      "aliases": ["libpsl"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://github.com/rockdaboot/libpsl",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libpsl",
+        "role": "Public Suffix List parsing and evaluation"
+      },
+      "evidence_refs": ["evidence:libpsl:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mozilla:ca-certificates@ucrt64",
+      "kind": "library",
+      "name": "ca-certificates (UCRT64)",
+      "summary": "A curated bundle of common Certificate Authority root certificates, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) to back TLS certificate-chain verification, distinct from the separately versioned MSYS ca-certificates this knowledge base's library:mozilla:ca-certificates entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Mozilla",
+      "aliases": ["ca-certificates"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-ca-certificates",
+        "role": "trusted CA root certificate bundle"
+      },
+      "evidence_refs": ["evidence:mozilla:ca-certificates-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nghttp2:libnghttp2@ucrt64",
+      "kind": "library",
+      "name": "libnghttp2 (UCRT64)",
+      "summary": "A reusable C library implementing the framing layer of HTTP/2, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) for HTTP/2 protocol support, distinct from the separately versioned MSYS libnghttp2 this knowledge base's library:nghttp2:libnghttp2 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "nghttp2 project",
+      "aliases": ["libnghttp2", "nghttp2"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://nghttp2.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-nghttp2",
+        "role": "HTTP/2 protocol framing"
+      },
+      "evidence_refs": ["evidence:nghttp2:libnghttp2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nghttp2:libngtcp2@ucrt64",
+      "kind": "library",
+      "name": "libngtcp2 (UCRT64)",
+      "summary": "An implementation of the IETF QUIC transport protocol, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) to carry HTTP/3 traffic over QUIC, distinct from the separately versioned MSYS libngtcp2 this knowledge base's library:nghttp2:libngtcp2 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "nghttp2 project",
+      "aliases": ["libngtcp2"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://nghttp2.org/ngtcp2",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-ngtcp2",
+        "role": "QUIC transport protocol implementation"
+      },
+      "evidence_refs": ["evidence:nghttp2:libngtcp2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nghttp2:libnghttp3@ucrt64",
+      "kind": "library",
+      "name": "libnghttp3 (UCRT64)",
+      "summary": "An HTTP/3 protocol library, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) for HTTP/3 protocol support alongside libngtcp2 (UCRT64)'s QUIC transport, distinct from the separately versioned MSYS libnghttp3 this knowledge base's library:nghttp2:libnghttp3 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "nghttp2 project",
+      "aliases": ["libnghttp3"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://nghttp2.org/nghttp3",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-nghttp3",
+        "role": "HTTP/3 protocol implementation"
+      },
+      "evidence_refs": ["evidence:nghttp2:libnghttp3-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8675,6 +8801,186 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs SSH2's optional zlib-based transport compression.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-libidn2-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:gnu:libidn2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA) processing for hostnames, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-libpsl-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:libpsl:libpsl@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs cookie-domain-scoping safety against the Public Suffix List, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-ca-certificates-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:mozilla:ca-certificates@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs TLS certificate-chain verification against a trusted root store, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-libnghttp2-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:nghttp2:libnghttp2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP/2 protocol support, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-libngtcp2-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:nghttp2:libngtcp2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs QUIC transport for HTTP/3, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-libnghttp3-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:nghttp2:libnghttp3@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP/3 protocol support alongside libngtcp2 (UCRT64)'s QUIC transport, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled, completing full coverage of all twelve of curl (UCRT64)'s declared dependencies.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-ucrt64-requires-libiconv",
+      "type": "requires",
+      "source": "library:gnu:libidn2@ucrt64",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-ucrt64-requires-gettext",
+      "type": "requires",
+      "source": "library:gnu:libidn2@ucrt64",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-ucrt64-requires-libunistring-ucrt64",
+      "type": "requires",
+      "source": "library:gnu:libidn2@ucrt64",
+      "target": "library:gnu:libunistring@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode string processing, closing an item this page's own MSYS sibling (GNU libidn2) had already documented a directly-analogous edge for.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-ucrt64-requires-libiconv",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@ucrt64",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-ucrt64-requires-gettext",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@ucrt64",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-ucrt64-requires-libunistring-ucrt64",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@ucrt64",
+      "target": "library:gnu:libunistring@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode string processing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-ucrt64-requires-libidn2-ucrt64",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@ucrt64",
+      "target": "library:gnu:libidn2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA) processing for Public Suffix List matching against non-ASCII domain labels.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libunistring-ucrt64-requires-libiconv",
+      "type": "requires",
+      "source": "library:gnu:libunistring@ucrt64",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libngtcp2-ucrt64-requires-openssl-ucrt64",
+      "type": "requires",
+      "source": "library:nghttp2:libngtcp2@ucrt64",
+      "target": "library:openssl:openssl@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs QUIC's own TLS 1.3 handshake; this package also declares a dependency on a UCRT64-native GnuTLS package not individually modeled in this knowledge base.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

@@ -157,3 +157,4 @@ methodology.
 - [GNU libidn2](GNU-LIBIDN2.md)
 - [libpsl](LIBPSL.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
+- [GNU libunistring (UCRT64)](GNU-LIBUNISTRING-UCRT64.md)

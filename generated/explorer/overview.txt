@@ -619,11 +619,13 @@ Objects
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libiconv@msys (library): GNU libiconv (MSYS)
 - library:gnu:libidn2 (library): GNU libidn2
+- library:gnu:libidn2@ucrt64 (library): GNU libidn2 (UCRT64)
 - library:gnu:libintl (library): GNU libintl
 - library:gnu:libltdl (library): GNU Libltdl
 - library:gnu:libstdc++ (library): libstdc++
 - library:gnu:libtasn1 (library): GNU Libtasn1
 - library:gnu:libunistring (library): GNU libunistring
+- library:gnu:libunistring@ucrt64 (library): libunistring (UCRT64)
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:mpfr@msys (library): GNU MPFR (MSYS)
 - library:gnu:ncurses@ucrt64 (library): ncurses (UCRT64)
@@ -658,6 +660,7 @@ Objects
 - library:libffi:libffi@msys (library): libffi (MSYS)
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
+- library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
 - library:libssh2:libssh2 (library): libssh2
 - library:libssh2:libssh2@ucrt64 (library): libssh2 (UCRT64)
 - library:libuv:libuv (library): libuv
@@ -671,14 +674,18 @@ Objects
 - library:mingw-w64:winpthreads@clang64 (library): winpthreads (CLANG64)
 - library:mingweditline:wineditline (library): WinEditLine
 - library:mozilla:ca-certificates (library): ca-certificates
+- library:mozilla:ca-certificates@ucrt64 (library): ca-certificates (UCRT64)
 - library:multiprecision:mpc (library): GNU MPC
 - library:nettle:libhogweed@msys (library): libhogweed
 - library:nettle:libnettle@msys (library): libnettle
 - library:nettle:nettle (library): Nettle
 - library:nettle:nettle@msys (library): Nettle (MSYS)
 - library:nghttp2:libnghttp2 (library): libnghttp2
+- library:nghttp2:libnghttp2@ucrt64 (library): libnghttp2 (UCRT64)
 - library:nghttp2:libnghttp3 (library): libnghttp3
+- library:nghttp2:libnghttp3@ucrt64 (library): libnghttp3 (UCRT64)
 - library:nghttp2:libngtcp2 (library): libngtcp2
+- library:nghttp2:libngtcp2@ucrt64 (library): libngtcp2 (UCRT64)
 - library:openssl:libopenssl (library): libopenssl
 - library:openssl:openssl@ucrt64 (library): OpenSSL (UCRT64)
 - library:p11-glue:p11-kit (library): p11-kit
@@ -16926,6 +16933,21 @@ Relationships
 - library:curl:curl@ucrt64 --requires--> library:c-ares:c-ares@ucrt64
 - library:libssh2:libssh2@ucrt64 --requires--> library:openssl:openssl@ucrt64
 - library:libssh2:libssh2@ucrt64 --requires--> library:gnu:zlib
+- library:curl:curl@ucrt64 --requires--> library:gnu:libidn2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:libpsl:libpsl@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:mozilla:ca-certificates@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:nghttp2:libnghttp2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:nghttp2:libngtcp2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:nghttp2:libnghttp3@ucrt64
+- library:gnu:libidn2@ucrt64 --requires--> library:gnu:libiconv
+- library:gnu:libidn2@ucrt64 --requires--> library:gnu:gettext
+- library:gnu:libidn2@ucrt64 --requires--> library:gnu:libunistring@ucrt64
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libiconv
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:gettext
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libunistring@ucrt64
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libidn2@ucrt64
+- library:gnu:libunistring@ucrt64 --requires--> library:gnu:libiconv
+- library:nghttp2:libngtcp2@ucrt64 --requires--> library:openssl:openssl@ucrt64
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

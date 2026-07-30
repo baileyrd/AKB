@@ -143,3 +143,4 @@ confirmed.
 - [curl](CURL.md)
 - [libcurl](LIBCURL.md)
 - [OpenSSL](OPENSSL.md)
+- [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)

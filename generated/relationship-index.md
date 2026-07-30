@@ -76215,6 +76215,12 @@
 | relationship:foundation-libraries:cppdap-packaged-by-package | packaged-by | library:google:cppdap | package:msys2:mingw-w64-ucrt-x86_64-cppdap | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64 | requires | library:curl:curl@ucrt64 | library:google:brotli@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-c-ares-ucrt64 | requires | library:curl:curl@ucrt64 | library:c-ares:c-ares@ucrt64 | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-ca-certificates-ucrt64 | requires | library:curl:curl@ucrt64 | library:mozilla:ca-certificates@ucrt64 | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-libidn2-ucrt64 | requires | library:curl:curl@ucrt64 | library:gnu:libidn2@ucrt64 | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-libnghttp2-ucrt64 | requires | library:curl:curl@ucrt64 | library:nghttp2:libnghttp2@ucrt64 | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-libnghttp3-ucrt64 | requires | library:curl:curl@ucrt64 | library:nghttp2:libnghttp3@ucrt64 | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-libngtcp2-ucrt64 | requires | library:curl:curl@ucrt64 | library:nghttp2:libngtcp2@ucrt64 | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-libpsl-ucrt64 | requires | library:curl:curl@ucrt64 | library:libpsl:libpsl@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-libssh2-ucrt64 | requires | library:curl:curl@ucrt64 | library:libssh2:libssh2@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64 | requires | library:curl:curl@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-zlib | requires | library:curl:curl@ucrt64 | library:gnu:zlib | verified |
@@ -76298,6 +76304,9 @@
 | relationship:foundation-libraries:libidn2-packaged-by-package | packaged-by | library:gnu:libidn2 | package:msys2:libidn2 | verified |
 | relationship:foundation-libraries:libidn2-requires-libintl | requires | library:gnu:libidn2 | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libidn2-requires-libunistring | requires | library:gnu:libidn2 | library:gnu:libunistring | verified |
+| relationship:foundation-libraries:libidn2-ucrt64-requires-gettext | requires | library:gnu:libidn2@ucrt64 | library:gnu:gettext | verified |
+| relationship:foundation-libraries:libidn2-ucrt64-requires-libiconv | requires | library:gnu:libidn2@ucrt64 | library:gnu:libiconv | verified |
+| relationship:foundation-libraries:libidn2-ucrt64-requires-libunistring-ucrt64 | requires | library:gnu:libidn2@ucrt64 | library:gnu:libunistring@ucrt64 | verified |
 | relationship:foundation-libraries:libidn2-uses-msys-runtime | uses-runtime | library:gnu:libidn2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libintl-packaged-by-package | packaged-by | library:gnu:libintl | package:msys2:libintl | verified |
 | relationship:foundation-libraries:libintl-requires-libiconv-msys | requires | library:gnu:libintl | library:gnu:libiconv@msys | verified |
@@ -76318,10 +76327,15 @@
 | relationship:foundation-libraries:libnghttp3-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp3 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libngtcp2-packaged-by-package | packaged-by | library:nghttp2:libngtcp2 | package:msys2:libngtcp2 | verified |
 | relationship:foundation-libraries:libngtcp2-requires-libopenssl | requires | library:nghttp2:libngtcp2 | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:libngtcp2-ucrt64-requires-openssl-ucrt64 | requires | library:nghttp2:libngtcp2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:libngtcp2-uses-msys-runtime | uses-runtime | library:nghttp2:libngtcp2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libpsl-packaged-by-package | packaged-by | library:libpsl:libpsl | package:msys2:libpsl | verified |
 | relationship:foundation-libraries:libpsl-requires-libidn2 | requires | library:libpsl:libpsl | library:gnu:libidn2 | verified |
 | relationship:foundation-libraries:libpsl-requires-libunistring | requires | library:libpsl:libpsl | library:gnu:libunistring | verified |
+| relationship:foundation-libraries:libpsl-ucrt64-requires-gettext | requires | library:libpsl:libpsl@ucrt64 | library:gnu:gettext | verified |
+| relationship:foundation-libraries:libpsl-ucrt64-requires-libiconv | requires | library:libpsl:libpsl@ucrt64 | library:gnu:libiconv | verified |
+| relationship:foundation-libraries:libpsl-ucrt64-requires-libidn2-ucrt64 | requires | library:libpsl:libpsl@ucrt64 | library:gnu:libidn2@ucrt64 | verified |
+| relationship:foundation-libraries:libpsl-ucrt64-requires-libunistring-ucrt64 | requires | library:libpsl:libpsl@ucrt64 | library:gnu:libunistring@ucrt64 | verified |
 | relationship:foundation-libraries:libpsl-uses-msys-runtime | uses-runtime | library:libpsl:libpsl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libssh2-packaged-by-package | packaged-by | library:libssh2:libssh2 | package:msys2:libssh2 | verified |
 | relationship:foundation-libraries:libssh2-ucrt64-requires-openssl-ucrt64 | requires | library:libssh2:libssh2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
@@ -76331,6 +76345,7 @@
 | relationship:foundation-libraries:libtasn1-uses-msys-runtime | uses-runtime | library:gnu:libtasn1 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libunistring-packaged-by-package | packaged-by | library:gnu:libunistring | package:msys2:libunistring | verified |
 | relationship:foundation-libraries:libunistring-requires-libiconv-msys | requires | library:gnu:libunistring | library:gnu:libiconv@msys | verified |
+| relationship:foundation-libraries:libunistring-ucrt64-requires-libiconv | requires | library:gnu:libunistring@ucrt64 | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:libunistring-uses-msys-runtime | uses-runtime | library:gnu:libunistring | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libuv-packaged-by-package | packaged-by | library:libuv:libuv | package:msys2:mingw-w64-ucrt-x86_64-libuv | verified |
 | relationship:foundation-libraries:libwinpthread-packaged-by-package | packaged-by | library:mingw-w64:libwinpthread | package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | verified |

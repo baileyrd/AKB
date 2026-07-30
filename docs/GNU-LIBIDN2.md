@@ -152,3 +152,4 @@ methodology.
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libpsl](LIBPSL.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md)

@@ -6,9 +6,15 @@ status: partial
 model_refs:
   - library:gnu:libstdc++
   - library:llvm:libc++
+  - library:gnu:zlib
+  - library:gnu:libiconv
+  - library:gnu:gettext
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
+  - evidence:zlib:manual-2026-07-30
+  - evidence:gnu:libiconv-manual-2026-07-30
+  - evidence:gnu:gettext-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -41,14 +47,21 @@ flowchart LR
 
 ## First library pages
 
-[libstdc++](LIBSTDCXX.md) and [libc++](LIBCXX.md) are this volume's first
-per-library pages, resolving the "C++ library" row the
-[Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open. Both are
-deliberately scoped to package/dependency-level evidence only — package
-identity, bundling, provides/depends relationships, and reverse-dependency
-counts — and both explicitly flag that the fuller methodology below
-(headers, `pkg-config`/CMake metadata, PE import/export analysis) has not
-been applied to them and remains open. They are a starting point for this
+[libstdc++](LIBSTDCXX.md), [libc++](LIBCXX.md), [zlib](ZLIB.md),
+[GNU libiconv](GNU-LIBICONV.md), and [GNU gettext](GNU-GETTEXT.md) are this
+volume's first per-library pages. The first pair resolved the "C++
+library" row the [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left
+open; the latter three are foundational libraries cited by dependency
+rationale across dozens of pages elsewhere in this knowledge base
+(character-set conversion, NLS, and DEFLATE compression) that had not yet
+been given pages of their own. zlib's 299 recorded reverse dependents make
+it the most-depended-upon package identified anywhere in this knowledge
+base to date (`claim:library:zlib-hub`). All five pages are deliberately
+scoped to package/dependency-level evidence only — package identity,
+bundling, provides/depends relationships, and reverse-dependency counts —
+and all explicitly flag that the fuller methodology below (headers,
+`pkg-config`/CMake metadata, PE import/export analysis) has not been
+applied to them and remains open. They are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

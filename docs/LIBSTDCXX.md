@@ -76,12 +76,13 @@ libstdc++ (`claim:library:libcxx-cc-libs-capability`).
 ## Reverse Dependencies
 
 `package:msys2:mingw-w64-ucrt-x86_64-gcc-libs` records **167** relationships
-targeting it in this snapshot — the largest reverse-dependency count
-observed anywhere in this knowledge base so far, larger even than
+targeting it in this snapshot — larger than
 [ncurses](NCURSES.md#reverse-dependencies)'s 40 and
-[OpenSSL](OPENSSL.md#reverse-dependencies)'s 21. This is a directly
-observed fact, not an inference: nearly every C/C++ program built with GCC
-in this environment needs the runtime libraries this package bundles. See
+[OpenSSL](OPENSSL.md#reverse-dependencies)'s 21, though smaller than
+[zlib](ZLIB.md#reverse-dependencies)'s 299, the largest recorded in this
+knowledge base. This is a directly observed fact, not an inference: nearly
+every C/C++ program built with GCC in this environment needs the runtime
+libraries this package bundles. See
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -121,10 +122,11 @@ pair rather than duplicated in full.
 ## Security Considerations
 
 No libstdc++-specific vulnerability review has been performed for this
-volume; given its 167 recorded dependents, a defect here would have the
-widest blast radius of any component or library documented in this
-knowledge base so far — the same risk-concentration observation already
-made for [ncurses](NCURSES.md#security-considerations) and
+volume; given its 167 recorded dependents, a defect here would have a very
+wide blast radius — second only to [zlib](ZLIB.md#security-considerations)'s
+299 among the components and libraries documented in this knowledge base
+so far — the same risk-concentration observation already made for
+[ncurses](NCURSES.md#security-considerations) and
 [OpenSSL](OPENSSL.md#security-considerations), at a larger scale. See
 [Threat Model and Supply Chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md) for the
 project's general supply-chain posture.

@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 9 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 12 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -604,7 +604,10 @@
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
+| library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
+| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
+| library:gnu:zlib | library | zlib | partial | 1 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
@@ -9464,7 +9467,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-geoipupdate | package | mingw-w64-ucrt-x86_64-geoipupdate | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-geos | package | mingw-w64-ucrt-x86_64-geos | verified | 2 | 9 |
 | package:msys2:mingw-w64-ucrt-x86_64-gettext-libtextstyle | package | mingw-w64-ucrt-x86_64-gettext-libtextstyle | verified | 3 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | package | mingw-w64-ucrt-x86_64-gettext-runtime | verified | 3 | 141 |
+| package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | package | mingw-w64-ucrt-x86_64-gettext-runtime | verified | 3 | 142 |
 | package:msys2:mingw-w64-ucrt-x86_64-gettext-tools | package | mingw-w64-ucrt-x86_64-gettext-tools | verified | 5 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gexiv2 | package | mingw-w64-ucrt-x86_64-gexiv2 | verified | 4 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-gf2x | package | mingw-w64-ucrt-x86_64-gf2x | verified | 2 | 1 |
@@ -9988,7 +9991,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libheif | package | mingw-w64-ucrt-x86_64-libheif | verified | 19 | 18 |
 | package:msys2:mingw-w64-ucrt-x86_64-libhomfly | package | mingw-w64-ucrt-x86_64-libhomfly | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libical | package | mingw-w64-ucrt-x86_64-libical | verified | 8 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-libiconv | package | mingw-w64-ucrt-x86_64-libiconv | verified | 2 | 82 |
+| package:msys2:mingw-w64-ucrt-x86_64-libiconv | package | mingw-w64-ucrt-x86_64-libiconv | verified | 2 | 83 |
 | package:msys2:mingw-w64-ucrt-x86_64-libicsneo | package | mingw-w64-ucrt-x86_64-libicsneo | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libid3tag | package | mingw-w64-ucrt-x86_64-libid3tag | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-libidl2 | package | mingw-w64-ucrt-x86_64-libidl2 | verified | 3 | 0 |
@@ -12814,7 +12817,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-zint-qt | package | mingw-w64-ucrt-x86_64-zint-qt | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zix | package | mingw-w64-ucrt-x86_64-zix | verified | 2 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-zizmor | package | mingw-w64-ucrt-x86_64-zizmor | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-zlib | package | mingw-w64-ucrt-x86_64-zlib | verified | 13 | 299 |
+| package:msys2:mingw-w64-ucrt-x86_64-zlib | package | mingw-w64-ucrt-x86_64-zlib | verified | 13 | 300 |
 | package:msys2:mingw-w64-ucrt-x86_64-zlib-ng | package | mingw-w64-ucrt-x86_64-zlib-ng | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-zlib-ng-compat | package | mingw-w64-ucrt-x86_64-zlib-ng-compat | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zoitechat | package | mingw-w64-ucrt-x86_64-zoitechat | verified | 16 | 0 |

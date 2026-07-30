@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 9
+- Outgoing relationships: 12
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5402,6 +5402,24 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:gnu:gettext`
+
+- Name: GNU gettext
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnu:libiconv`
+
+- Name: GNU libiconv
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
 ## `library:gnu:libstdc++`
 
 - Name: libstdc++
@@ -5410,6 +5428,15 @@
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:gnu:zlib`
+
+- Name: zlib
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
 
 ## `library:llvm:libc++`
 
@@ -85149,7 +85176,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 141
+- Incoming relationships: 142
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gettext-tools`
 
@@ -89865,7 +89892,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 82
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libicsneo`
 
@@ -115299,7 +115326,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 299
+- Incoming relationships: 300
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zlib-ng`
 

@@ -76193,6 +76193,13 @@
 | relationship:editors-pagers-terminals:vim-packaged-by-package | packaged-by | component:vim:vim | package:msys2:vim | verified |
 | relationship:editors-pagers-terminals:vim-uses-msys-runtime | uses-runtime | component:vim:vim | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:vim-uses-ncurses | requires | component:vim:vim | component:gnu:ncurses | verified |
+| relationship:foundation-libraries:gettext-packaged-by-package | packaged-by | library:gnu:gettext | package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | verified |
+| relationship:foundation-libraries:gettext-requires-libiconv | requires | library:gnu:gettext | library:gnu:libiconv | verified |
+| relationship:foundation-libraries:libiconv-packaged-by-package | packaged-by | library:gnu:libiconv | package:msys2:mingw-w64-ucrt-x86_64-libiconv | verified |
+| relationship:foundation-libraries:ucrt64-contains-gettext | contains | environment:msys2:ucrt64 | library:gnu:gettext | partial |
+| relationship:foundation-libraries:ucrt64-contains-libiconv | contains | environment:msys2:ucrt64 | library:gnu:libiconv | partial |
+| relationship:foundation-libraries:ucrt64-contains-zlib | contains | environment:msys2:ucrt64 | library:gnu:zlib | partial |
+| relationship:foundation-libraries:zlib-packaged-by-package | packaged-by | library:gnu:zlib | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
 | relationship:gnu-userland:bash-packaged-by-package | packaged-by | component:gnu:bash | package:msys2:bash | verified |
 | relationship:gnu-userland:bash-uses-msys-runtime | uses-runtime | component:gnu:bash | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:coreutils-packaged-by-package | packaged-by | component:gnu:coreutils | package:msys2:coreutils | verified |

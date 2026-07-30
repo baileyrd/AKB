@@ -935,6 +935,60 @@
         "role": "C++ standard library implementation"
       },
       "evidence_refs": ["evidence:llvm:libcxx-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:zlib",
+      "kind": "library",
+      "name": "zlib",
+      "summary": "A general-purpose DEFLATE compression library, packaged per native environment (UCRT64 shown here) and, per this snapshot, the single most-depended-upon library in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Jean-loup Gailly and Mark Adler",
+      "aliases": ["zlib"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.zlib.net/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+        "role": "general-purpose DEFLATE compression library"
+      },
+      "evidence_refs": ["evidence:zlib:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libiconv",
+      "kind": "library",
+      "name": "GNU libiconv",
+      "summary": "A character-set conversion library, packaged per native environment (UCRT64 shown here) and depended on across most of this environment's text-processing tools.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libiconv"],
+      "tags": ["library", "gnu-userland", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libiconv/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libiconv",
+        "role": "character-set conversion"
+      },
+      "evidence_refs": ["evidence:gnu:libiconv-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:gettext",
+      "kind": "library",
+      "name": "GNU gettext",
+      "summary": "The GNU internationalization (NLS) runtime library, packaged per native environment (UCRT64 shown here) as gettext-runtime, separate from the gettext-tools and gettext-libtextstyle packages.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["gettext", "libintl"],
+      "tags": ["library", "gnu-userland", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/gettext/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime",
+        "role": "native-language message translation runtime"
+      },
+      "evidence_refs": ["evidence:gnu:gettext-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -2725,6 +2779,90 @@
       "condition": "Both implement the C++ standard library API surface, but object files and static libraries built against one are not link-compatible with the other without rebuilding, per Runtime Environments' general CRT/C++ library compatibility guidance.",
       "properties": {},
       "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-zlib",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:zlib",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:zlib",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libiconv",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:libiconv",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libiconv-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:libiconv",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-gettext",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:gettext",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gettext-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:gettext",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gettext-requires-libiconv",
+      "type": "requires",
+      "source": "library:gnu:gettext",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "gettext-runtime declares a direct runtime-depends-on edge to libiconv in the catalog snapshot.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -3052,6 +3190,26 @@
       "id": "claim:library:libcxx-cross-environment-availability",
       "subject": "library:llvm:libc++",
       "statement": "libc++ is packaged for UCRT64 and MINGW64 as well as CLANG64, meaning a project can opt into libc++ even in a GCC-oriented environment rather than being restricted to libstdc++.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:zlib-hub",
+      "subject": "library:gnu:zlib",
+      "statement": "zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.",
+      "classification": "observation",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:gettext-package-split",
+      "subject": "library:gnu:gettext",
+      "statement": "GNU gettext is split into three separate MSYS2 packages: gettext-runtime (the libintl runtime library), gettext-tools (msgfmt/xgettext/msginit and other CLI tools), and gettext-libtextstyle (a terminal text-styling library used by the tools); this page models the runtime component.",
       "classification": "fact",
       "confidence": "verified",
       "valid_from": "2026-07-29",
@@ -3519,6 +3677,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official libc++ project site, matching the project_url recorded for the libc++ packages in the catalog snapshot."
+    },
+    {
+      "id": "evidence:zlib:manual-2026-07-30",
+      "class": "primary",
+      "title": "zlib Manual",
+      "locator": "https://www.zlib.net/manual.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:libiconv-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU libiconv (official project page)",
+      "locator": "https://www.gnu.org/software/libiconv/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU libiconv project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libiconv in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:gettext-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU gettext Manual",
+      "locator": "https://www.gnu.org/software/gettext/manual/gettext.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU gettext manual. MSYS2-specific packaging (the runtime/tools/libtextstyle package split), version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     }
   ]
 }

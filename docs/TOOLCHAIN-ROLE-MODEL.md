@@ -70,8 +70,8 @@ substitute for the `binutils` capability in CLANG64, modeled explicitly as
 a packaging-level `compatible-with` relationship rather than an assumption
 of identical linker behavior. [libstdc++](LIBSTDCXX.md) and
 [libc++](LIBCXX.md) fill the C++ library row: libstdc++ is bundled inside
-`gcc-libs` (167 reverse dependents, the largest observed in this knowledge
-base) rather than packaged standalone, while libc++ is packaged separately
+`gcc-libs` (167 reverse dependents, second only to
+[zlib](ZLIB.md)'s 299) rather than packaged standalone, while libc++ is packaged separately
 and — notably — installable in UCRT64 and MINGW64 as well as CLANG64, so
 the C++-library choice and the CRT/architecture choice are independently
 selectable within a GCC-oriented environment. Both pages are filed under

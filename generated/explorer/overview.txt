@@ -601,7 +601,10 @@ Objects
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
+- library:gnu:gettext (library): GNU gettext
+- library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libstdc++ (library): libstdc++
+- library:gnu:zlib (library): zlib
 - library:llvm:libc++ (library): libc++
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
@@ -16475,6 +16478,13 @@ Relationships
 - environment:msys2:clang64 --contains--> library:llvm:libc++
 - library:llvm:libc++ --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libc++
 - library:llvm:libc++ --compatible-with--> library:gnu:libstdc++
+- environment:msys2:ucrt64 --contains--> library:gnu:zlib
+- library:gnu:zlib --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
+- environment:msys2:ucrt64 --contains--> library:gnu:libiconv
+- library:gnu:libiconv --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libiconv
+- environment:msys2:ucrt64 --contains--> library:gnu:gettext
+- library:gnu:gettext --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime
+- library:gnu:gettext --requires--> library:gnu:libiconv
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

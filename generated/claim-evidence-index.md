@@ -34,6 +34,8 @@
 | claim:environment:mingw64:lifecycle | environment:msys2:mingw64 | fact | verified | evidence:msys2:environments-2026-07-28 |
 | claim:environment:msys:role | environment:msys2:msys | fact | verified | evidence:msys2:environments-2026-07-28 |
 | claim:environment:ucrt64:default | environment:msys2:ucrt64 | fact | verified | evidence:msys2:environments-2026-07-28 |
+| claim:library:gettext-package-split | library:gnu:gettext | fact | verified | evidence:catalog:current |
 | claim:library:libcxx-cc-libs-capability | library:llvm:libc++ | fact | verified | evidence:catalog:current |
 | claim:library:libcxx-cross-environment-availability | library:llvm:libc++ | fact | verified | evidence:catalog:current |
 | claim:library:libstdcxx-bundled-in-gcc-libs | library:gnu:libstdc++ | fact | verified | evidence:catalog:current |
+| claim:library:zlib-hub | library:gnu:zlib | observation | verified | evidence:catalog:current |

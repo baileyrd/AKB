@@ -10,7 +10,10 @@
 | claim:component:findutils:role | component:gnu:findutils | inference | high | evidence:catalog:current |
 | claim:component:gawk:provides-awk | component:gnu:gawk | fact | verified | evidence:catalog:current |
 | claim:component:gzip:wrapper-scripts | component:gnu:gzip | inference | high | evidence:catalog:current |
+| claim:component:less:pcre-search | component:greenwood:less | inference | high | evidence:catalog:current |
 | claim:component:lz4:self-versioned-dependency | component:lz4:lz4 | inference | medium | evidence:catalog:current |
+| claim:component:ncurses:hub | component:gnu:ncurses | observation | verified | evidence:catalog:current |
+| claim:component:vim:perl-integration | component:vim:vim | inference | high | evidence:catalog:current |
 | claim:component:zip-family:bzip2-method | component:info-zip:zip | inference | high | evidence:catalog:current |
 | claim:environment:clang64:toolchain | environment:msys2:clang64 | fact | verified | evidence:msys2:environments-2026-07-28 |
 | claim:environment:clangarm64:toolchain | environment:msys2:clangarm64 | fact | verified | evidence:msys2:environments-2026-07-28 |

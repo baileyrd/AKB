@@ -431,6 +431,132 @@
         "role": "single-file compression"
       },
       "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:ed",
+      "kind": "component",
+      "name": "GNU Ed",
+      "summary": "The GNU implementation of ed, the POSIX-mandated line-oriented text editor, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["ed"],
+      "tags": ["gnu-userland", "editor", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/ed/ed.html",
+        "packaged_as": "package:msys2:ed",
+        "role": "line-oriented text editing"
+      },
+      "evidence_refs": ["evidence:gnu:ed-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:emacs",
+      "kind": "component",
+      "name": "GNU Emacs",
+      "summary": "The extensible, self-documenting display editor, packaged in the MSYS environment as its console (non-GUI-toolkit) build.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["emacs"],
+      "tags": ["gnu-userland", "editor", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/emacs/",
+        "packaged_as": "package:msys2:emacs",
+        "role": "extensible display editor"
+      },
+      "evidence_refs": ["evidence:gnu:emacs-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:greenwood:less",
+      "kind": "component",
+      "name": "less",
+      "summary": "A terminal-based pager for viewing text files a screen at a time, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Mark Nudelman",
+      "aliases": ["less"],
+      "tags": ["pager", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "http://www.greenwoodsoftware.com/less",
+        "packaged_as": "package:msys2:less",
+        "role": "terminal text paging"
+      },
+      "evidence_refs": ["evidence:less:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:mintty:mintty",
+      "kind": "component",
+      "name": "mintty",
+      "summary": "A terminal emulator with native Windows look and feel, hosting MSYS shell sessions in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Andy Koppe",
+      "aliases": ["mintty"],
+      "tags": ["terminal", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://mintty.github.io",
+        "packaged_as": "package:msys2:mintty",
+        "role": "terminal emulation"
+      },
+      "evidence_refs": ["evidence:mintty:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:nano",
+      "kind": "component",
+      "name": "GNU Nano",
+      "summary": "A small, easy-to-use screen editor descended from Pico, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["nano"],
+      "tags": ["gnu-userland", "editor", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.nano-editor.org",
+        "packaged_as": "package:msys2:nano",
+        "role": "screen text editing"
+      },
+      "evidence_refs": ["evidence:gnu:nano-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:ncurses",
+      "kind": "component",
+      "name": "ncurses",
+      "summary": "The terminal-capability and screen-handling library underlying most of this batch's interactive text-mode programs, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["ncurses"],
+      "tags": ["library", "terminal", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/ncurses/",
+        "packaged_as": "package:msys2:ncurses",
+        "role": "terminal capability and screen-handling library"
+      },
+      "evidence_refs": ["evidence:gnu:ncurses-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:vim:vim",
+      "kind": "component",
+      "name": "Vim",
+      "summary": "A highly configurable, improved version of the vi text editor, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Bram Moolenaar / Vim community",
+      "aliases": ["vim", "vi"],
+      "tags": ["editor", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.vim.org",
+        "packaged_as": "package:msys2:vim",
+        "role": "screen text editing"
+      },
+      "evidence_refs": ["evidence:vim:documentation-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -1141,6 +1267,306 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-ed",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:ed",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:ed-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:ed",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of ed, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:ed-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:ed",
+      "target": "package:msys2:ed",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-emacs",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:emacs",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:emacs-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:emacs",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of emacs, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:emacs-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:emacs",
+      "target": "package:msys2:emacs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-less",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:greenwood:less",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:less-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:greenwood:less",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of less, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:less-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:greenwood:less",
+      "target": "package:msys2:less",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-mintty",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:mintty:mintty",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:mintty-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:mintty:mintty",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of mintty, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:mintty-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:mintty:mintty",
+      "target": "package:msys2:mintty",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-nano",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:nano",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:nano-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:nano",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of nano, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:nano-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:nano",
+      "target": "package:msys2:nano",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-ncurses",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:ncurses",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:ncurses-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:ncurses",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of ncurses, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:ncurses-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:ncurses",
+      "target": "package:msys2:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:msys-contains-vim",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:vim:vim",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:vim-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:vim:vim",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of vim, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:vim-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:vim:vim",
+      "target": "package:msys2:vim",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:emacs-uses-ncurses",
+      "type": "requires",
+      "source": "component:gnu:emacs",
+      "target": "component:gnu:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:less-uses-ncurses",
+      "type": "requires",
+      "source": "component:greenwood:less",
+      "target": "component:gnu:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:nano-uses-ncurses",
+      "type": "requires",
+      "source": "component:gnu:nano",
+      "target": "component:gnu:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:vim-uses-ncurses",
+      "type": "requires",
+      "source": "component:vim:vim",
+      "target": "component:gnu:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -1280,6 +1706,36 @@
       "statement": "The MSYS lz4 package's declared dependency on lz4 itself reflects a version-pinned constraint against its own bundled shared library rather than a distinct dependency package.",
       "classification": "inference",
       "confidence": "medium",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:less:pcre-search",
+      "subject": "component:greenwood:less",
+      "statement": "less's dependency on libpcre2_8 backs Perl-compatible regular-expression support in its search functionality.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:vim:perl-integration",
+      "subject": "component:vim:vim",
+      "statement": "Vim's dependency on perl reflects optional built-in Perl-interpreter integration, enabling embedded Perl scripting via :perl.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:ncurses:hub",
+      "subject": "component:gnu:ncurses",
+      "statement": "ncurses is the most-depended-upon package observed in this catalog snapshot among the tools modeled in this knowledge base, reflecting its role as the shared terminal-capability library underlying nearly every interactive text-mode program.",
+      "classification": "observation",
+      "confidence": "verified",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -1465,6 +1921,76 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official LZ4 project site, matching the project_url recorded for package:msys2:lz4 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:ed-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Ed (official project page)",
+      "locator": "https://www.gnu.org/software/ed/ed.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Ed project page, matching the project_url recorded for package:msys2:ed in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:emacs-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Emacs Manual",
+      "locator": "https://www.gnu.org/software/emacs/manual/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Emacs manual index. Used for the extension model and the built-in features (network security manager, XML parsing, auto-compression) mapped to specific package dependencies. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:less:project-site-2026-07-30",
+      "class": "primary",
+      "title": "less (official project site)",
+      "locator": "http://www.greenwoodsoftware.com/less",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official less project site, matching the project_url recorded for package:msys2:less in the catalog snapshot."
+    },
+    {
+      "id": "evidence:mintty:project-site-2026-07-30",
+      "class": "primary",
+      "title": "mintty (official project site)",
+      "locator": "https://mintty.github.io",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official mintty project site, matching the project_url recorded for package:msys2:mintty in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:nano-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Nano (official project site)",
+      "locator": "https://www.nano-editor.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Nano project site, matching the project_url recorded for package:msys2:nano in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:ncurses-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Ncurses (official project site)",
+      "locator": "https://www.gnu.org/software/ncurses/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Ncurses project site, matching the project_url recorded for package:msys2:ncurses in the catalog snapshot."
+    },
+    {
+      "id": "evidence:vim:documentation-2026-07-30",
+      "class": "primary",
+      "title": "Vim (official project site)",
+      "locator": "https://www.vim.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Vim project site, matching the project_url recorded for package:msys2:vim in the catalog snapshot."
     }
   ]
 }

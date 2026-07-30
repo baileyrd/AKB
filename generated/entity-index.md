@@ -8,18 +8,25 @@
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
+| component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
+| component:gnu:emacs | component | GNU Emacs | partial | 3 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 2 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 2 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 2 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
+| component:gnu:nano | component | GNU Nano | partial | 3 | 1 |
+| component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
+| component:greenwood:less | component | less | partial | 3 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
+| component:mintty:mintty | component | mintty | partial | 2 | 1 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:tukaani:xz | component | XZ Utils | partial | 2 | 1 |
+| component:vim:vim | component | Vim | partial | 3 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
@@ -39,7 +46,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 18 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 25 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -683,11 +690,11 @@
 | package:msys2:dosfstools | package | dosfstools | verified | 4 | 0 |
 | package:msys2:doxygen | package | doxygen | verified | 5 | 0 |
 | package:msys2:dtc | package | dtc | verified | 3 | 1 |
-| package:msys2:ed | package | ed | verified | 2 | 1 |
+| package:msys2:ed | package | ed | verified | 2 | 2 |
 | package:msys2:editorconfig-vim | package | editorconfig-vim | verified | 3 | 0 |
 | package:msys2:efitools | package | efitools | verified | 4 | 0 |
 | package:msys2:elinks | package | elinks | verified | 14 | 0 |
-| package:msys2:emacs | package | emacs | verified | 9 | 1 |
+| package:msys2:emacs | package | emacs | verified | 9 | 2 |
 | package:msys2:enscript | package | enscript | verified | 6 | 0 |
 | package:msys2:etc-update | package | etc-update | verified | 5 | 0 |
 | package:msys2:expat | package | expat | verified | 2 | 2 |
@@ -771,7 +778,7 @@
 | package:msys2:just | package | just | verified | 3 | 0 |
 | package:msys2:lcov | package | lcov | verified | 5 | 0 |
 | package:msys2:lemon | package | lemon | verified | 2 | 0 |
-| package:msys2:less | package | less | verified | 4 | 3 |
+| package:msys2:less | package | less | verified | 4 | 4 |
 | package:msys2:lftp | package | lftp | verified | 16 | 0 |
 | package:msys2:libarchive | package | libarchive | verified | 11 | 7 |
 | package:msys2:libarchive-devel | package | libarchive-devel | verified | 12 | 0 |
@@ -15903,7 +15910,7 @@
 | package:msys2:mingw-w64-x86_64-zydis | package | mingw-w64-x86_64-zydis | verified | 3 | 1 |
 | package:msys2:mingw-w64-x86_64-zydis-docs | package | mingw-w64-x86_64-zydis-docs | verified | 2 | 0 |
 | package:msys2:mingw-w64-x86_64-zziplib | package | mingw-w64-x86_64-zziplib | verified | 4 | 0 |
-| package:msys2:mintty | package | mintty | verified | 2 | 2 |
+| package:msys2:mintty | package | mintty | verified | 2 | 3 |
 | package:msys2:mksh | package | mksh | verified | 3 | 0 |
 | package:msys2:mm-common | package | mm-common | verified | 2 | 0 |
 | package:msys2:moreutils | package | moreutils | verified | 2 | 0 |
@@ -15931,12 +15938,12 @@
 | package:msys2:msys2-w32api-runtime | package | msys2-w32api-runtime | verified | 3 | 1 |
 | package:msys2:mutt | package | mutt | verified | 10 | 0 |
 | package:msys2:namcap | package | namcap | verified | 5 | 0 |
-| package:msys2:nano | package | nano | verified | 5 | 8 |
+| package:msys2:nano | package | nano | verified | 5 | 9 |
 | package:msys2:nano-syntax-highlighting | package | nano-syntax-highlighting | verified | 3 | 0 |
 | package:msys2:nasm | package | nasm | verified | 2 | 0 |
 | package:msys2:nawk | package | nawk | verified | 2 | 0 |
 | package:msys2:ncdu | package | ncdu | verified | 3 | 0 |
-| package:msys2:ncurses | package | ncurses | verified | 3 | 40 |
+| package:msys2:ncurses | package | ncurses | verified | 3 | 41 |
 | package:msys2:ncurses-devel | package | ncurses-devel | verified | 3 | 3 |
 | package:msys2:neofetch | package | neofetch | verified | 3 | 0 |
 | package:msys2:neomutt | package | neomutt | verified | 11 | 0 |
@@ -16261,7 +16268,7 @@
 | package:msys2:util-linux | package | util-linux | verified | 7 | 2 |
 | package:msys2:uutils-coreutils | package | uutils-coreutils | verified | 4 | 0 |
 | package:msys2:vifm | package | vifm | verified | 3 | 0 |
-| package:msys2:vim | package | vim | verified | 7 | 5 |
+| package:msys2:vim | package | vim | verified | 7 | 6 |
 | package:msys2:vimpager | package | vimpager | verified | 4 | 0 |
 | package:msys2:w3m | package | w3m | verified | 8 | 0 |
 | package:msys2:wcd | package | wcd | verified | 5 | 0 |
@@ -16297,5 +16304,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 18 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 25 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

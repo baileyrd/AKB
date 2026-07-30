@@ -38,6 +38,24 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnu:ed`
+
+- Name: GNU Ed
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:ed-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:emacs`
+
+- Name: GNU Emacs
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
 ## `component:gnu:findutils`
 
 - Name: GNU Findutils
@@ -74,6 +92,24 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnu:nano`
+
+- Name: GNU Nano
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:nano-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:gnu:ncurses`
+
+- Name: ncurses
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 5
+
 ## `component:gnu:sed`
 
 - Name: GNU Sed
@@ -90,6 +126,15 @@
 - Status: `partial`
 - Evidence: evidence:gnu:tar-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:greenwood:less`
+
+- Name: less
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:less:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:info-zip:unzip`
@@ -128,6 +173,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:mintty:mintty`
+
+- Name: mintty
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:mintty:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:p7zip:p7zip`
 
 - Name: p7zip
@@ -144,6 +198,15 @@
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:vim:vim`
+
+- Name: Vim
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:vim:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:zstd:zstd`
@@ -323,7 +386,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 18
+- Outgoing relationships: 25
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -6120,7 +6183,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:editorconfig-vim`
 
@@ -6156,7 +6219,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:enscript`
 
@@ -6912,7 +6975,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:lftp`
 
@@ -143100,7 +143163,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mksh`
 
@@ -143352,7 +143415,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:nano-syntax-highlighting`
 
@@ -143397,7 +143460,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 40
+- Incoming relationships: 41
 
 ## `package:msys2:ncurses-devel`
 
@@ -146322,7 +146385,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:vimpager`
 
@@ -146646,7 +146709,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 18
+- Incoming relationships: 25
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

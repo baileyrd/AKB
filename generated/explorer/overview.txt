@@ -5,18 +5,25 @@ Objects
 - component:gnu:bash (component): GNU Bash
 - component:gnu:coreutils (component): GNU Coreutils
 - component:gnu:cpio (component): GNU Cpio
+- component:gnu:ed (component): GNU Ed
+- component:gnu:emacs (component): GNU Emacs
 - component:gnu:findutils (component): GNU Findutils
 - component:gnu:gawk (component): GNU Awk (gawk)
 - component:gnu:grep (component): GNU Grep
 - component:gnu:gzip (component): GNU Gzip
+- component:gnu:nano (component): GNU Nano
+- component:gnu:ncurses (component): ncurses
 - component:gnu:sed (component): GNU Sed
 - component:gnu:tar (component): GNU Tar
+- component:greenwood:less (component): less
 - component:info-zip:unzip (component): Info-ZIP UnZip
 - component:info-zip:zip (component): Info-ZIP Zip
 - component:lz4:lz4 (component): LZ4
 - component:lzip:lzip (component): Lzip
+- component:mintty:mintty (component): mintty
 - component:p7zip:p7zip (component): p7zip
 - component:tukaani:xz (component): XZ Utils
+- component:vim:vim (component): Vim
 - component:zstd:zstd (component): Zstandard (zstd)
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
@@ -16357,6 +16364,31 @@ Relationships
 - environment:msys2:msys --contains--> component:lz4:lz4
 - component:lz4:lz4 --uses-runtime--> runtime:msys2:msys-2.0.dll
 - component:lz4:lz4 --packaged-by--> package:msys2:lz4
+- environment:msys2:msys --contains--> component:gnu:ed
+- component:gnu:ed --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:ed --packaged-by--> package:msys2:ed
+- environment:msys2:msys --contains--> component:gnu:emacs
+- component:gnu:emacs --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:emacs --packaged-by--> package:msys2:emacs
+- environment:msys2:msys --contains--> component:greenwood:less
+- component:greenwood:less --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:greenwood:less --packaged-by--> package:msys2:less
+- environment:msys2:msys --contains--> component:mintty:mintty
+- component:mintty:mintty --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:mintty:mintty --packaged-by--> package:msys2:mintty
+- environment:msys2:msys --contains--> component:gnu:nano
+- component:gnu:nano --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:nano --packaged-by--> package:msys2:nano
+- environment:msys2:msys --contains--> component:gnu:ncurses
+- component:gnu:ncurses --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:ncurses --packaged-by--> package:msys2:ncurses
+- environment:msys2:msys --contains--> component:vim:vim
+- component:vim:vim --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:vim:vim --packaged-by--> package:msys2:vim
+- component:gnu:emacs --requires--> component:gnu:ncurses
+- component:greenwood:less --requires--> component:gnu:ncurses
+- component:gnu:nano --requires--> component:gnu:ncurses
+- component:vim:vim --requires--> component:gnu:ncurses
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

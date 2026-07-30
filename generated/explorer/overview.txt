@@ -649,7 +649,9 @@ Objects
 - library:nghttp2:libnghttp3 (library): libnghttp3
 - library:nghttp2:libngtcp2 (library): libngtcp2
 - library:p11-glue:p11-kit (library): p11-kit
+- library:pcre:pcre (library): PCRE (MSYS)
 - library:pcre:pcre2 (library): PCRE2
+- library:pcre:pcre2@msys (library): PCRE2 (MSYS)
 - library:rhash:rhash (library): RHash
 - library:sqlite:sqlite3 (library): SQLite
 - library:unicode:icu (library): ICU (International Components for Unicode)
@@ -16722,6 +16724,15 @@ Relationships
 - library:curl:libcurl --requires--> library:libpsl:libpsl
 - library:curl:libcurl --requires--> library:gnu:libunistring
 - library:curl:libcurl --requires--> component:openssl:openssl
+- environment:msys2:msys --contains--> library:pcre:pcre2@msys
+- library:pcre:pcre2@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:pcre:pcre2@msys --packaged-by--> package:msys2:libpcre2_8
+- environment:msys2:msys --contains--> library:pcre:pcre
+- library:pcre:pcre --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:pcre:pcre --packaged-by--> package:msys2:libpcre
+- component:git:git --requires--> library:pcre:pcre2@msys
+- component:greenwood:less --requires--> library:pcre:pcre2@msys
+- component:gnu:grep --requires--> library:pcre:pcre
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

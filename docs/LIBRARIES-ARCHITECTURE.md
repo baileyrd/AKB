@@ -57,6 +57,8 @@ model_refs:
   - library:gnupg:libgpg-error@msys
   - library:gnu:libintl
   - library:curl:libcurl
+  - library:pcre:pcre2@msys
+  - library:pcre:pcre
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -104,6 +106,7 @@ evidence_refs:
   - evidence:mingweditline:manual-2026-07-30
   - evidence:gnu:libintl-manual-2026-07-30
   - evidence:curl:project-site-2026-07-30
+  - evidence:pcre:pcre1-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -158,7 +161,8 @@ flowchart LR
 [libassuan (MSYS)](LIBASSUAN-MSYS.md), [libksba (MSYS)](LIBKSBA-MSYS.md),
 [nPth (MSYS)](NPTH-MSYS.md), [Nettle (MSYS)](NETTLE-MSYS.md),
 [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md),
-[GNU libintl](GNU-LIBINTL.md), and [libcurl](LIBCURL.md) are this
+[GNU libintl](GNU-LIBINTL.md), [libcurl](LIBCURL.md),
+[PCRE2 (MSYS)](PCRE2-MSYS.md), and [PCRE (MSYS)](PCRE-MSYS.md) are this
 volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
@@ -172,7 +176,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All fifty-three pages are deliberately scoped to package/dependency-level
+All fifty-five pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -281,9 +285,15 @@ two independent consumers — without ever being modeled as an entity of
 its own. [libcurl's](LIBCURL.md) new page picks up six sibling-library
 `requires` edges essentially for free, since its own MSYS dependency
 list happens to match six libraries this volume had already added while
-covering curl's CLI dependencies directly. These pages are a starting
-point for this volume, not a demonstration that its full evidence model
-is populated.
+covering curl's CLI dependencies directly. The same sweep also closed out
+the MSYS PCRE pair: [PCRE2 (MSYS)](PCRE2-MSYS.md) (`libpcre2_8`, backing
+Git's `--perl-regexp` and less's search) and [PCRE (MSYS)](PCRE-MSYS.md)
+(`libpcre`, the older PCRE1 line GNU Grep's `-P` engine depends on
+instead) — both already correctly distinguished in prose from this
+volume's existing [PCRE2 (UCRT64)](PCRE2.md) page before these pages
+existed, now given pages and graph edges of their own. These pages are a
+starting point for this volume, not a demonstration that its full
+evidence model is populated.
 
 ## Family navigation
 

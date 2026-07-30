@@ -76177,6 +76177,7 @@
 | relationship:editors-pagers-terminals:emacs-uses-msys-runtime | uses-runtime | component:gnu:emacs | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:emacs-uses-ncurses | requires | component:gnu:emacs | component:gnu:ncurses | verified |
 | relationship:editors-pagers-terminals:less-packaged-by-package | packaged-by | component:greenwood:less | package:msys2:less | verified |
+| relationship:editors-pagers-terminals:less-requires-pcre2-msys | requires | component:greenwood:less | library:pcre:pcre2@msys | verified |
 | relationship:editors-pagers-terminals:less-uses-msys-runtime | uses-runtime | component:greenwood:less | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:less-uses-ncurses | requires | component:greenwood:less | component:gnu:ncurses | verified |
 | relationship:editors-pagers-terminals:mintty-packaged-by-package | packaged-by | component:mintty:mintty | package:msys2:mintty | verified |
@@ -76310,6 +76311,8 @@
 | relationship:foundation-libraries:msys-contains-nettle-msys | contains | environment:msys2:msys | library:nettle:nettle@msys | partial |
 | relationship:foundation-libraries:msys-contains-npth-msys | contains | environment:msys2:msys | library:gnupg:npth@msys | partial |
 | relationship:foundation-libraries:msys-contains-p11-kit | contains | environment:msys2:msys | library:p11-glue:p11-kit | partial |
+| relationship:foundation-libraries:msys-contains-pcre | contains | environment:msys2:msys | library:pcre:pcre | partial |
+| relationship:foundation-libraries:msys-contains-pcre2-msys | contains | environment:msys2:msys | library:pcre:pcre2@msys | partial |
 | relationship:foundation-libraries:nettle-msys-packaged-by-package | packaged-by | library:nettle:nettle@msys | package:msys2:nettle | verified |
 | relationship:foundation-libraries:nettle-msys-uses-msys-runtime | uses-runtime | library:nettle:nettle@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:nettle-packaged-by-package | packaged-by | library:nettle:nettle | package:msys2:mingw-w64-ucrt-x86_64-nettle | verified |
@@ -76321,6 +76324,10 @@
 | relationship:foundation-libraries:p11-kit-requires-libintl | requires | library:p11-glue:p11-kit | library:gnu:libintl | verified |
 | relationship:foundation-libraries:p11-kit-requires-libtasn1 | requires | library:p11-glue:p11-kit | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:p11-kit-uses-msys-runtime | uses-runtime | library:p11-glue:p11-kit | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:pcre-packaged-by-package | packaged-by | library:pcre:pcre | package:msys2:libpcre | verified |
+| relationship:foundation-libraries:pcre-uses-msys-runtime | uses-runtime | library:pcre:pcre | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:pcre2-msys-packaged-by-package | packaged-by | library:pcre:pcre2@msys | package:msys2:libpcre2_8 | verified |
+| relationship:foundation-libraries:pcre2-msys-uses-msys-runtime | uses-runtime | library:pcre:pcre2@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |
 | relationship:foundation-libraries:pcre2-requires-wineditline | requires | library:pcre:pcre2 | library:mingweditline:wineditline | verified |
 | relationship:foundation-libraries:pcre2-requires-zlib | requires | library:pcre:pcre2 | library:gnu:zlib | verified |
@@ -76377,6 +76384,7 @@
 | relationship:gnu-userland:gawk-uses-msys-runtime | uses-runtime | component:gnu:gawk | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:grep-packaged-by-package | packaged-by | component:gnu:grep | package:msys2:grep | verified |
 | relationship:gnu-userland:grep-requires-libintl | requires | component:gnu:grep | library:gnu:libintl | verified |
+| relationship:gnu-userland:grep-requires-pcre | requires | component:gnu:grep | library:pcre:pcre | verified |
 | relationship:gnu-userland:grep-uses-msys-runtime | uses-runtime | component:gnu:grep | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:msys-contains-bash | contains | environment:msys2:msys | component:gnu:bash | partial |
 | relationship:gnu-userland:msys-contains-coreutils | contains | environment:msys2:msys | component:gnu:coreutils | partial |
@@ -76957,6 +76965,7 @@
 | relationship:ssh-curl-git:git-requires-libintl | requires | component:git:git | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:git-requires-openssh | requires | component:git:git | component:openssh:openssh | verified |
 | relationship:ssh-curl-git:git-requires-openssl | requires | component:git:git | component:openssl:openssl | verified |
+| relationship:ssh-curl-git:git-requires-pcre2-msys | requires | component:git:git | library:pcre:pcre2@msys | verified |
 | relationship:ssh-curl-git:git-uses-msys-runtime | uses-runtime | component:git:git | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:gnupg-packaged-by-package | packaged-by | component:gnupg:gnupg | package:msys2:gnupg | verified |
 | relationship:ssh-curl-git:gnupg-requires-gnutls | requires | component:gnupg:gnupg | library:gnutls:gnutls | verified |

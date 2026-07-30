@@ -23,7 +23,8 @@ PCRE2 implements Perl 5-style regular expressions as a library, and it is
 the engine already cited as backing the `-P`/`--perl-regexp` matching
 modes documented for [GNU Grep](GNU-GREP.md#dependencies) and
 [less](LESS.md#dependencies) (both of which depend on the MSYS-environment
-`libpcre2_8` package rather than this UCRT64 build, per Boundaries). This
+`libpcre2_8` package rather than this UCRT64 build, per Boundaries, now
+documented on its own page, [PCRE2 (MSYS)](PCRE2-MSYS.md)). This
 page documents its architectural role; see the
 [official PCRE2 project site](https://pcre.org/) for the pattern-syntax
 reference.
@@ -47,11 +48,11 @@ only.
 
 This UCRT64 `pcre2` package is a distinct catalog entity from the
 MSYS-environment `libpcre2_8` package that [GNU Grep](GNU-GREP.md#dependencies)
-and [less](LESS.md#dependencies) actually depend on — the same upstream
-PCRE2 project, packaged separately per environment, the same pattern
-already documented for [zlib](ZLIB.md) and other libraries in this
-volume. This page does not claim those two tools depend on this specific
-UCRT64 package.
+and [less](LESS.md#dependencies) actually depend on, documented on
+[PCRE2 (MSYS)](PCRE2-MSYS.md) — the same upstream PCRE2 project, packaged
+separately per environment, the same pattern already documented for
+[zlib](ZLIB.md) and other libraries in this volume. This page does not
+claim those two tools depend on this specific UCRT64 package.
 
 ## Interfaces
 
@@ -144,3 +145,4 @@ methodology.
 - [zlib](ZLIB.md)
 - [libarchive](LIBARCHIVE.md)
 - [WinEditLine](WINEDITLINE.md)
+- [PCRE2 (MSYS)](PCRE2-MSYS.md)

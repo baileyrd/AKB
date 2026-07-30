@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:grep
   - package:msys2:grep
   - library:gnu:libintl
+  - library:pcre:pcre
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -72,7 +73,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | --- | --- | --- |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
-| Perl-compatible regex | `package:msys2:libpcre` | Backs grep's `-P`/`--perl-regexp` matching engine, per the GNU Grep manual's description of the PCRE-based matcher. |
+| Perl-compatible regex | `package:msys2:libpcre` | Backs grep's `-P`/`--perl-regexp` matching engine, per the GNU Grep manual's description of the PCRE-based matcher. Documented fully in [PCRE (MSYS)](PCRE-MSYS.md). |
 
 grep's declared package dependencies also list `sh`, but this does not
 appear as a fourth `runtime-depends-on` edge: `sh` is a virtual capability
@@ -160,4 +161,5 @@ controlled observation.
 - [GNU Sed](GNU-SED.md)
 - [GNU Findutils](GNU-FINDUTILS.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [PCRE (MSYS)](PCRE-MSYS.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

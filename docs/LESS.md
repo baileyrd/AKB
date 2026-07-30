@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:greenwood:less
   - package:msys2:less
+  - library:pcre:pcre2@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -62,7 +63,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Perl-compatible regex | `package:msys2:libpcre2_8` | Backs Perl-compatible regular-expression support in less's search functionality (`claim:component:less:pcre-search`). |
+| Perl-compatible regex | `package:msys2:libpcre2_8` | Backs Perl-compatible regular-expression support in less's search functionality (`claim:component:less:pcre-search`). Documented fully in [PCRE2 (MSYS)](PCRE2-MSYS.md). |
 | Terminal capability library | `package:msys2:ncurses` | Screen drawing and cursor control, the same shared dependency documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
 
 ## Reverse Dependencies
@@ -131,3 +132,4 @@ version-qualified security review implied above.
 - [GNU Gzip](GNU-GZIP.md)
 - [Info-ZIP UnZip](INFO-ZIP-UNZIP.md)
 - [mintty](MINTTY.md)
+- [PCRE2 (MSYS)](PCRE2-MSYS.md)

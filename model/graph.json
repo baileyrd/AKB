@@ -1853,6 +1853,42 @@
         "role": "multi-protocol file transfer"
       },
       "evidence_refs": ["evidence:curl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pcre:pcre2@msys",
+      "kind": "library",
+      "name": "PCRE2 (MSYS)",
+      "summary": "A library implementing Perl-compatible regular expressions, packaged in the MSYS environment specifically as libpcre2_8 — depended on by Git (git grep --perl-regexp) and less, distinct from the separately versioned UCRT64 PCRE2 this knowledge base's library:pcre:pcre2 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PCRE project",
+      "aliases": ["libpcre2_8", "pcre2"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.pcre.org/",
+        "packaged_as": "package:msys2:libpcre2_8",
+        "role": "Perl-compatible regular expression matching"
+      },
+      "evidence_refs": ["evidence:pcre:pcre2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pcre:pcre",
+      "kind": "library",
+      "name": "PCRE (MSYS)",
+      "summary": "The original (PCRE1) library implementing Perl-compatible regular expressions, packaged in the MSYS environment as libpcre — depended on by GNU Grep's -P/--perl-regexp matching engine, and superseded upstream by PCRE2 (documented separately in this volume).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PCRE project",
+      "aliases": ["libpcre", "pcre"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.pcre.org/",
+        "packaged_as": "package:msys2:libpcre",
+        "role": "Perl-compatible regular expression matching (legacy PCRE1)"
+      },
+      "evidence_refs": ["evidence:pcre:pcre1-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -5997,6 +6033,114 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-pcre2-msys",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:pcre:pcre2@msys",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-msys-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:pcre:pcre2@msys",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-msys-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:pcre:pcre2@msys",
+      "target": "package:msys2:libpcre2_8",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-pcre",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:pcre:pcre",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:pcre:pcre",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:pcre:pcre",
+      "target": "package:msys2:libpcre",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-requires-pcre2-msys",
+      "type": "requires",
+      "source": "component:git:git",
+      "target": "library:pcre:pcre2@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Perl-compatible regular expressions in commands such as git grep --perl-regexp.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:less-requires-pcre2-msys",
+      "type": "requires",
+      "source": "component:greenwood:less",
+      "target": "library:pcre:pcre2@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Perl-compatible regular-expression support in less's search functionality.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:grep-requires-pcre",
+      "type": "requires",
+      "source": "component:gnu:grep",
+      "target": "library:pcre:pcre",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs grep's -P/--perl-regexp matching engine.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -7339,6 +7483,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU gettext project page, matching the project_url recorded for package:msys2:libintl in the catalog snapshot."
+    },
+    {
+      "id": "evidence:pcre:pcre1-manual-2026-07-30",
+      "class": "primary",
+      "title": "PCRE (legacy PCRE1, official project site)",
+      "locator": "https://www.pcre.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official PCRE project site, matching the project_url recorded for package:msys2:libpcre in the catalog snapshot."
     }
   ]
 }

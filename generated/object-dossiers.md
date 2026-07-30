@@ -35,7 +35,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:git:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 7
 - Incoming relationships: 1
 
 ## `component:gnu:autoconf`
@@ -152,7 +152,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:grep-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnu:gzip`
@@ -233,7 +233,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:less:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:info-zip:unzip`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 56
+- Outgoing relationships: 58
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5834,6 +5834,15 @@
 - Outgoing relationships: 4
 - Incoming relationships: 2
 
+## `library:pcre:pcre`
+
+- Name: PCRE (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:pcre:pcre2`
 
 - Name: PCRE2
@@ -5842,6 +5851,15 @@
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 2
+
+## `library:pcre:pcre2@msys`
+
+- Name: PCRE2 (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
 
 ## `library:rhash:rhash`
 
@@ -8442,7 +8460,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:libpcre16`
 
@@ -8478,7 +8496,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:libpcre2posix`
 
@@ -147357,7 +147375,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 56
+- Incoming relationships: 58
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

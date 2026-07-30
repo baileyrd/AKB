@@ -7,7 +7,7 @@
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
 | component:cmake:cmake | component | CMake | partial | 8 | 1 |
 | component:curl:curl | component | curl | partial | 9 | 2 |
-| component:git:git | component | Git (MSYS2 package) | partial | 6 | 1 |
+| component:git:git | component | Git (MSYS2 package) | partial | 7 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
@@ -20,7 +20,7 @@
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 3 | 1 |
 | component:gnu:gcc | component | GCC | partial | 2 | 1 |
 | component:gnu:gdb | component | GDB | partial | 1 | 1 |
-| component:gnu:grep | component | GNU Grep | partial | 3 | 1 |
+| component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:libtool | component | GNU Libtool | partial | 2 | 1 |
 | component:gnu:make | component | GNU Make | partial | 3 | 1 |
@@ -29,7 +29,7 @@
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 3 | 1 |
 | component:gnupg:gnupg | component | GnuPG | partial | 10 | 1 |
-| component:greenwood:less | component | less | partial | 3 | 1 |
+| component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
 | component:llvm:clang | component | Clang | partial | 2 | 1 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 56 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 58 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 38 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -652,7 +652,9 @@
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 3 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 3 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 4 | 2 |
+| library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |
+| library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
@@ -941,11 +943,11 @@
 | package:msys2:libp11-kit-devel | package | libp11-kit-devel | verified | 3 | 1 |
 | package:msys2:libpcap | package | libpcap | verified | 3 | 1 |
 | package:msys2:libpcap-devel | package | libpcap-devel | verified | 3 | 0 |
-| package:msys2:libpcre | package | libpcre | verified | 3 | 5 |
+| package:msys2:libpcre | package | libpcre | verified | 3 | 6 |
 | package:msys2:libpcre16 | package | libpcre16 | verified | 3 | 2 |
 | package:msys2:libpcre2_16 | package | libpcre2_16 | verified | 3 | 2 |
 | package:msys2:libpcre2_32 | package | libpcre2_32 | verified | 3 | 3 |
-| package:msys2:libpcre2_8 | package | libpcre2_8 | verified | 3 | 12 |
+| package:msys2:libpcre2_8 | package | libpcre2_8 | verified | 3 | 13 |
 | package:msys2:libpcre2posix | package | libpcre2posix | verified | 3 | 2 |
 | package:msys2:libpcre32 | package | libpcre32 | verified | 3 | 2 |
 | package:msys2:libpcrecpp | package | libpcrecpp | verified | 4 | 2 |
@@ -16376,5 +16378,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 56 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 58 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

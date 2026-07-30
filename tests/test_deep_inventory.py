@@ -408,6 +408,17 @@ class ImporterTests(unittest.TestCase):
         self.assertEqual(result["records"], 5)
         self.assertEqual(result["warnings"], 0)
 
+    def test_standalone_projection_does_not_use_current_model(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_fixture(root)
+            output = root / "projection.json"
+            result = IMPORTER.project_inventory(root, output)
+            projection = json.loads(output.read_text(encoding="utf-8"))
+        self.assertTrue(output.name)
+        self.assertEqual(result["unresolved"], 3)
+        self.assertEqual(projection["snapshot"]["id"], result["snapshot"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -57,6 +57,9 @@ exports, 987,057 archive members, 81 development-metadata records, and zero
 collector warnings. It is retained independently of the current composite
 projection because an in-memory accumulation of multi-million-record local
 snapshots exceeds the workstation-safe publication/import budget.
+Use `tools/import_deep_inventory.py <snapshot> --projection-output <path>` to
+produce a typed local overlay without reading or replacing that composite
+projection; the two models remain separately queryable and evidence-qualified.
 
 It also retains a controlled MSYS-shell behavior observation from
 2026-07-30. The process-lifecycle, shell `exec`, and `USR1` signal probes

@@ -59,6 +59,8 @@ model_refs:
   - library:curl:libcurl
   - library:pcre:pcre2@msys
   - library:pcre:pcre
+  - library:gnu:readline@msys
+  - library:gnu:libltdl
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -107,6 +109,7 @@ evidence_refs:
   - evidence:gnu:libintl-manual-2026-07-30
   - evidence:curl:project-site-2026-07-30
   - evidence:pcre:pcre1-manual-2026-07-30
+  - evidence:gnu:libtool-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -162,8 +165,10 @@ flowchart LR
 [nPth (MSYS)](NPTH-MSYS.md), [Nettle (MSYS)](NETTLE-MSYS.md),
 [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md),
 [GNU libintl](GNU-LIBINTL.md), [libcurl](LIBCURL.md),
-[PCRE2 (MSYS)](PCRE2-MSYS.md), and [PCRE (MSYS)](PCRE-MSYS.md) are this
-volume's first per-library pages. The
+[PCRE2 (MSYS)](PCRE2-MSYS.md), [PCRE (MSYS)](PCRE-MSYS.md),
+[GNU Readline (MSYS)](GNU-READLINE-MSYS.md), and
+[GNU Libltdl](GNU-LIBLTDL.md) are this volume's first per-library pages.
+The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -176,7 +181,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All fifty-five pages are deliberately scoped to package/dependency-level
+All fifty-seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -291,9 +296,16 @@ Git's `--perl-regexp` and less's search) and [PCRE (MSYS)](PCRE-MSYS.md)
 (`libpcre`, the older PCRE1 line GNU Grep's `-P` engine depends on
 instead) — both already correctly distinguished in prose from this
 volume's existing [PCRE2 (UCRT64)](PCRE2.md) page before these pages
-existed, now given pages and graph edges of their own. These pages are a
-starting point for this volume, not a demonstration that its full
-evidence model is populated.
+existed, now given pages and graph edges of their own. Two more
+single-item gaps closed this batch: [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
+(`libreadline`, backing GnuPG's interactive prompts and gawk's built-in
+debugger, distinct from this volume's existing UCRT64 Readline entity —
+[GNU Readline (UCRT64)](GNU-READLINE.md)'s own page previously claimed
+GnuPG as a direct dependent, corrected here the same way the GnuPG
+crypto-stack pages were corrected earlier this session) and
+[GNU Libltdl](GNU-LIBLTDL.md) (`libltdl`, Libtool's own companion
+dlopen() wrapper library). These pages are a starting point for this
+volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation
 

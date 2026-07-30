@@ -125,7 +125,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gawk-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnu:gcc`
@@ -170,7 +170,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:libtool-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:make`
@@ -198,7 +198,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `component:gnu:sed`
 
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 58
+- Outgoing relationships: 60
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5483,6 +5483,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 17
 
+## `library:gnu:libltdl`
+
+- Name: GNU Libltdl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtool-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:gnu:libstdc++`
 
 - Name: libstdc++
@@ -5527,6 +5536,15 @@
 - Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
+
+## `library:gnu:readline@msys`
+
+- Name: GNU Readline (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 3
 
 ## `library:gnu:termcap`
 
@@ -8226,7 +8244,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:liblz4`
 
@@ -8595,7 +8613,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 25
+- Incoming relationships: 26
 
 ## `package:msys2:libreadline-devel`
 
@@ -147375,7 +147393,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 58
+- Incoming relationships: 60
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:gnu:libtool
   - package:msys2:libtool
+  - library:gnu:libltdl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -64,7 +65,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Script interpreter | `package:msys2:bash` | Libtool's primary artifact, the generated `libtool` script, is itself a shell script executed via bash (`claim:component:libtool:generated-shell-script`). |
-| Portable dynamic loading | `package:msys2:libltdl` | Libtool's companion C library, providing a portable `dlopen()`-style API for loading modules at runtime, independent of the `libtool` build-time script. |
+| Portable dynamic loading | `package:msys2:libltdl` | Libtool's companion C library, providing a portable `dlopen()`-style API for loading modules at runtime, independent of the `libtool` build-time script. Documented fully in [GNU Libltdl](GNU-LIBLTDL.md). |
 
 ## Reverse Dependencies
 
@@ -139,3 +140,4 @@ general version-qualified security review noted above.
 - [GNU Autoconf](GNU-AUTOCONF.md)
 - [GNU Automake](GNU-AUTOMAKE.md)
 - [GNU Make](GNU-MAKE.md)
+- [GNU Libltdl](GNU-LIBLTDL.md)

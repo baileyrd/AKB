@@ -17,18 +17,18 @@
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 4 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
-| component:gnu:gawk | component | GNU Awk (gawk) | partial | 3 | 1 |
+| component:gnu:gawk | component | GNU Awk (gawk) | partial | 4 | 1 |
 | component:gnu:gcc | component | GCC | partial | 2 | 1 |
 | component:gnu:gdb | component | GDB | partial | 1 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
-| component:gnu:libtool | component | GNU Libtool | partial | 2 | 1 |
+| component:gnu:libtool | component | GNU Libtool | partial | 3 | 1 |
 | component:gnu:make | component | GNU Make | partial | 3 | 1 |
 | component:gnu:nano | component | GNU Nano | partial | 5 | 1 |
-| component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
+| component:gnu:ncurses | component | ncurses | partial | 2 | 6 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 3 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 10 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 11 | 1 |
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 58 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 60 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 38 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -613,11 +613,13 @@
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 4 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 3 | 4 |
 | library:gnu:libintl | library | GNU libintl | partial | 2 | 17 |
+| library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 2 | 4 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 1 |
+| library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 5 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
@@ -917,7 +919,7 @@
 | package:msys2:libintl | package | libintl | verified | 4 | 60 |
 | package:msys2:libksba | package | libksba | verified | 4 | 3 |
 | package:msys2:libksba-devel | package | libksba-devel | verified | 4 | 0 |
-| package:msys2:libltdl | package | libltdl | verified | 2 | 2 |
+| package:msys2:libltdl | package | libltdl | verified | 2 | 3 |
 | package:msys2:liblz4 | package | liblz4 | verified | 3 | 7 |
 | package:msys2:liblz4-devel | package | liblz4-devel | verified | 3 | 1 |
 | package:msys2:liblzma | package | liblzma | verified | 2 | 12 |
@@ -958,7 +960,7 @@
 | package:msys2:libpsl-devel | package | libpsl-devel | verified | 5 | 1 |
 | package:msys2:libqrencode | package | libqrencode | verified | 2 | 2 |
 | package:msys2:libqrencode-devel | package | libqrencode-devel | verified | 3 | 0 |
-| package:msys2:libreadline | package | libreadline | verified | 3 | 25 |
+| package:msys2:libreadline | package | libreadline | verified | 3 | 26 |
 | package:msys2:libreadline-devel | package | libreadline-devel | verified | 4 | 2 |
 | package:msys2:librhash | package | librhash | verified | 4 | 3 |
 | package:msys2:librhash-devel | package | librhash-devel | verified | 3 | 0 |
@@ -16378,5 +16380,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 58 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 60 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

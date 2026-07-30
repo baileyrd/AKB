@@ -610,11 +610,13 @@ Objects
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libidn2 (library): GNU libidn2
 - library:gnu:libintl (library): GNU libintl
+- library:gnu:libltdl (library): GNU Libltdl
 - library:gnu:libstdc++ (library): libstdc++
 - library:gnu:libtasn1 (library): GNU Libtasn1
 - library:gnu:libunistring (library): GNU libunistring
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:readline (library): GNU Readline
+- library:gnu:readline@msys (library): GNU Readline (MSYS)
 - library:gnu:termcap (library): GNU termcap
 - library:gnu:zlib (library): zlib
 - library:gnupg:libassuan (library): libassuan
@@ -16733,6 +16735,16 @@ Relationships
 - component:git:git --requires--> library:pcre:pcre2@msys
 - component:greenwood:less --requires--> library:pcre:pcre2@msys
 - component:gnu:grep --requires--> library:pcre:pcre
+- environment:msys2:msys --contains--> library:gnu:readline@msys
+- library:gnu:readline@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:readline@msys --packaged-by--> package:msys2:libreadline
+- library:gnu:readline@msys --requires--> component:gnu:ncurses
+- component:gnupg:gnupg --requires--> library:gnu:readline@msys
+- component:gnu:gawk --requires--> library:gnu:readline@msys
+- environment:msys2:msys --contains--> library:gnu:libltdl
+- library:gnu:libltdl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libltdl --packaged-by--> package:msys2:libltdl
+- component:gnu:libtool --requires--> library:gnu:libltdl
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

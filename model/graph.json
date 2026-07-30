@@ -1889,6 +1889,42 @@
         "role": "Perl-compatible regular expression matching (legacy PCRE1)"
       },
       "evidence_refs": ["evidence:pcre:pcre1-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:readline@msys",
+      "kind": "library",
+      "name": "GNU Readline (MSYS)",
+      "summary": "A library providing line editing, history, and completion for interactive command-line programs, packaged in the MSYS environment specifically as libreadline — depended on by GnuPG's interactive prompts and gawk's built-in debugger, distinct from the separately versioned UCRT64 GNU Readline this knowledge base's library:gnu:readline entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libreadline", "readline"],
+      "tags": ["library", "gnu-userland"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://tiswww.case.edu/php/chet/readline/rltop.html",
+        "packaged_as": "package:msys2:libreadline",
+        "role": "interactive line editing, history, and completion"
+      },
+      "evidence_refs": ["evidence:gnu:readline-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libltdl",
+      "kind": "library",
+      "name": "GNU Libltdl",
+      "summary": "A system-independent dlopen() wrapper library for GNU Libtool, packaged in the MSYS environment and depended on by GNU Libtool itself.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libltdl"],
+      "tags": ["library", "gnu-userland", "toolchain"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libtool",
+        "packaged_as": "package:msys2:libltdl",
+        "role": "portable dlopen() wrapper for GNU Libtool"
+      },
+      "evidence_refs": ["evidence:gnu:libtool-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -6137,6 +6173,126 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs grep's -P/--perl-regexp matching engine.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-readline-msys",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:readline@msys",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:readline-msys-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:readline@msys",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:readline-msys-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:readline@msys",
+      "target": "package:msys2:libreadline",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:readline-msys-requires-ncurses",
+      "type": "requires",
+      "source": "library:gnu:readline@msys",
+      "target": "component:gnu:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs terminal capability and cursor control for interactive line editing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libreadline",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnu:readline@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs interactive prompts in GnuPG's command-line tools.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:gawk-requires-libreadline",
+      "type": "requires",
+      "source": "component:gnu:gawk",
+      "target": "library:gnu:readline@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gawk's built-in interactive debugger (gawk --debug) command prompt.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libltdl",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:libltdl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libltdl-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:libltdl",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libltdl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:libltdl",
+      "target": "package:msys2:libltdl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:libtool-requires-libltdl",
+      "type": "requires",
+      "source": "component:gnu:libtool",
+      "target": "library:gnu:libltdl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Libtool's companion C library, providing a portable dlopen()-style API for loadable modules.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

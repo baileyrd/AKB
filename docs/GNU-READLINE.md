@@ -7,8 +7,8 @@ model_refs:
   - library:gnu:readline
   - package:msys2:mingw-w64-ucrt-x86_64-readline
   - component:gnu:gdb
-  - component:gnupg:gnupg
   - library:gnu:termcap
+  - library:gnu:readline@msys
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:readline-manual-2026-07-30
@@ -22,9 +22,11 @@ last_verified: 2026-07-30
 
 Readline provides interactive line editing, history, and tab-completion for
 command-line programs, and it is the dependency behind the interactive
-prompts already documented for [GDB](GNU-GDB.md#dependencies) and
-[GnuPG](GNUPG.md#dependencies). This page documents its architectural
-role; see the
+prompt already documented for [GDB](GNU-GDB.md#dependencies). This page
+documents the **UCRT64**-packaged build specifically;
+[GnuPG's](GNUPG.md) own MSYS-packaged interactive prompts depend on a
+separately versioned MSYS sibling package instead, documented on
+[GNU Readline (MSYS)](GNU-READLINE-MSYS.md). See the
 [official GNU Readline project page](https://tiswww.case.edu/php/chet/readline/rltop.html)
 for the key-binding and API reference.
 
@@ -76,8 +78,10 @@ Readline's narrower line-editing-only scope.
 
 The snapshot records 36 relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-readline`, including
-[GDB](GNU-GDB.md#dependencies)'s and [GnuPG](GNUPG.md#dependencies)'s
-interactive-prompt dependencies. See the
+[GDB's](GNU-GDB.md#dependencies) interactive-prompt dependency.
+[GnuPG](GNUPG.md) is **not** among them — its own interactive prompts
+depend on [GNU Readline (MSYS)](GNU-READLINE-MSYS.md#reverse-dependencies)
+instead, a separate catalog entity. See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -98,11 +102,15 @@ against it, the same model documented for
 
 ## Runtime Behavior
 
-Because `~/.inputrc` is shared across every Readline-linked program, a
-key-binding change a user makes affects [GDB](GNU-GDB.md)'s prompt,
-[GnuPG](GNUPG.md)'s prompt, and any other Readline-based tool
-simultaneously — a documented, deliberate consistency property, not a
-surprising side effect.
+Because `~/.inputrc` is shared across every Readline-linked program
+regardless of which specific Readline package it links against, a
+key-binding change a user makes affects [GDB's](GNU-GDB.md) prompt
+(backed by this UCRT64 package), [GnuPG's](GNUPG.md) prompt (backed by
+the separate [GNU Readline (MSYS)](GNU-READLINE-MSYS.md) package
+instead), and any other Readline-based tool simultaneously — a
+documented, deliberate consistency property of the Readline library
+convention itself, not evidence that both programs share this specific
+package.
 
 ## Compatibility and Variants
 
@@ -143,5 +151,5 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [ncurses](NCURSES.md)
 - [GDB](GNU-GDB.md)
-- [GnuPG](GNUPG.md)
 - [GNU termcap](GNU-TERMCAP.md)
+- [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)

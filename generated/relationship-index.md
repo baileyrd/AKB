@@ -44,6 +44,7 @@
 | relationship:autotools:automake-packaged-by-package | packaged-by | component:gnu:automake | package:msys2:automake-wrapper | verified |
 | relationship:autotools:automake-uses-msys-runtime | uses-runtime | component:gnu:automake | runtime:msys2:msys-2.0.dll | partial |
 | relationship:autotools:libtool-packaged-by-package | packaged-by | component:gnu:libtool | package:msys2:libtool | verified |
+| relationship:autotools:libtool-requires-libltdl | requires | component:gnu:libtool | library:gnu:libltdl | verified |
 | relationship:autotools:libtool-uses-msys-runtime | uses-runtime | component:gnu:libtool | runtime:msys2:msys-2.0.dll | partial |
 | relationship:autotools:make-packaged-by-package | packaged-by | component:gnu:make | package:msys2:make | verified |
 | relationship:autotools:make-requires-libintl | requires | component:gnu:make | library:gnu:libintl | verified |
@@ -76263,6 +76264,8 @@
 | relationship:foundation-libraries:libksba-msys-uses-msys-runtime | uses-runtime | library:gnupg:libksba@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libksba-packaged-by-package | packaged-by | library:gnupg:libksba | package:msys2:mingw-w64-ucrt-x86_64-libksba | verified |
 | relationship:foundation-libraries:libksba-requires-libgpg-error | requires | library:gnupg:libksba | library:gnupg:libgpg-error | verified |
+| relationship:foundation-libraries:libltdl-packaged-by-package | packaged-by | library:gnu:libltdl | package:msys2:libltdl | verified |
+| relationship:foundation-libraries:libltdl-uses-msys-runtime | uses-runtime | library:gnu:libltdl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libnghttp2-packaged-by-package | packaged-by | library:nghttp2:libnghttp2 | package:msys2:libnghttp2 | verified |
 | relationship:foundation-libraries:libnghttp2-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libnghttp3-packaged-by-package | packaged-by | library:nghttp2:libnghttp3 | package:msys2:libnghttp3 | verified |
@@ -76301,6 +76304,7 @@
 | relationship:foundation-libraries:msys-contains-libidn2 | contains | environment:msys2:msys | library:gnu:libidn2 | partial |
 | relationship:foundation-libraries:msys-contains-libintl | contains | environment:msys2:msys | library:gnu:libintl | partial |
 | relationship:foundation-libraries:msys-contains-libksba-msys | contains | environment:msys2:msys | library:gnupg:libksba@msys | partial |
+| relationship:foundation-libraries:msys-contains-libltdl | contains | environment:msys2:msys | library:gnu:libltdl | partial |
 | relationship:foundation-libraries:msys-contains-libnghttp2 | contains | environment:msys2:msys | library:nghttp2:libnghttp2 | partial |
 | relationship:foundation-libraries:msys-contains-libnghttp3 | contains | environment:msys2:msys | library:nghttp2:libnghttp3 | partial |
 | relationship:foundation-libraries:msys-contains-libngtcp2 | contains | environment:msys2:msys | library:nghttp2:libngtcp2 | partial |
@@ -76313,6 +76317,7 @@
 | relationship:foundation-libraries:msys-contains-p11-kit | contains | environment:msys2:msys | library:p11-glue:p11-kit | partial |
 | relationship:foundation-libraries:msys-contains-pcre | contains | environment:msys2:msys | library:pcre:pcre | partial |
 | relationship:foundation-libraries:msys-contains-pcre2-msys | contains | environment:msys2:msys | library:pcre:pcre2@msys | partial |
+| relationship:foundation-libraries:msys-contains-readline-msys | contains | environment:msys2:msys | library:gnu:readline@msys | partial |
 | relationship:foundation-libraries:nettle-msys-packaged-by-package | packaged-by | library:nettle:nettle@msys | package:msys2:nettle | verified |
 | relationship:foundation-libraries:nettle-msys-uses-msys-runtime | uses-runtime | library:nettle:nettle@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:nettle-packaged-by-package | packaged-by | library:nettle:nettle | package:msys2:mingw-w64-ucrt-x86_64-nettle | verified |
@@ -76331,6 +76336,9 @@
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |
 | relationship:foundation-libraries:pcre2-requires-wineditline | requires | library:pcre:pcre2 | library:mingweditline:wineditline | verified |
 | relationship:foundation-libraries:pcre2-requires-zlib | requires | library:pcre:pcre2 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:readline-msys-packaged-by-package | packaged-by | library:gnu:readline@msys | package:msys2:libreadline | verified |
+| relationship:foundation-libraries:readline-msys-requires-ncurses | requires | library:gnu:readline@msys | component:gnu:ncurses | verified |
+| relationship:foundation-libraries:readline-msys-uses-msys-runtime | uses-runtime | library:gnu:readline@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:readline-packaged-by-package | packaged-by | library:gnu:readline | package:msys2:mingw-w64-ucrt-x86_64-readline | verified |
 | relationship:foundation-libraries:readline-requires-termcap | requires | library:gnu:readline | library:gnu:termcap | verified |
 | relationship:foundation-libraries:rhash-packaged-by-package | packaged-by | library:rhash:rhash | package:msys2:mingw-w64-ucrt-x86_64-rhash | verified |
@@ -76381,6 +76389,7 @@
 | relationship:gnu-userland:findutils-uses-msys-runtime | uses-runtime | component:gnu:findutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:gawk-packaged-by-package | packaged-by | component:gnu:gawk | package:msys2:gawk | verified |
 | relationship:gnu-userland:gawk-requires-libintl | requires | component:gnu:gawk | library:gnu:libintl | verified |
+| relationship:gnu-userland:gawk-requires-libreadline | requires | component:gnu:gawk | library:gnu:readline@msys | verified |
 | relationship:gnu-userland:gawk-uses-msys-runtime | uses-runtime | component:gnu:gawk | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:grep-packaged-by-package | packaged-by | component:gnu:grep | package:msys2:grep | verified |
 | relationship:gnu-userland:grep-requires-libintl | requires | component:gnu:grep | library:gnu:libintl | verified |
@@ -76974,6 +76983,7 @@
 | relationship:ssh-curl-git:gnupg-requires-libgcrypt | requires | component:gnupg:gnupg | library:gnupg:libgcrypt@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libintl | requires | component:gnupg:gnupg | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libksba | requires | component:gnupg:gnupg | library:gnupg:libksba@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-libreadline | requires | component:gnupg:gnupg | library:gnu:readline@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-nettle | requires | component:gnupg:gnupg | library:nettle:nettle@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-npth | requires | component:gnupg:gnupg | library:gnupg:npth@msys | verified |
 | relationship:ssh-curl-git:gnupg-uses-msys-runtime | uses-runtime | component:gnupg:gnupg | runtime:msys2:msys-2.0.dll | partial |

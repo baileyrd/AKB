@@ -129,3 +129,4 @@ methodology.
 - [GNU MPC](GNU-MPC.md)
 - [GCC](GNU-GCC.md)
 - [GDB](GNU-GDB.md)
+- [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)

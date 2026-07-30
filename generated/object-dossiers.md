@@ -125,7 +125,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gawk-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:gnu:gcc`
@@ -5508,7 +5508,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:libiconv`
 
@@ -5590,6 +5590,15 @@
 - Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 3
+
+## `library:gnu:mpfr@msys`
+
+- Name: GNU MPFR (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
 
 ## `library:gnu:readline`
 

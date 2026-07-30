@@ -2254,7 +2254,7 @@
       "id": "library:bzip2:libbz2",
       "kind": "library",
       "name": "libbz2",
-      "summary": "The Burrows-Wheeler compression codec library split from the MSYS bzip2 CLI package, linked by pcre, pcre2, file, gnupg, zip, and unzip for bzip2-format decompression support.",
+      "summary": "The Burrows-Wheeler compression codec library split from the MSYS bzip2 CLI package, linked by bzip2, file, gnupg, zip, and unzip for bzip2-format decompression support.",
       "status": "partial",
       "confidence": "high",
       "authority": "Julian Seward",
@@ -2267,6 +2267,24 @@
         "role": "Burrows-Wheeler compression"
       },
       "evidence_refs": ["evidence:bzip2:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:mpfr@msys",
+      "kind": "library",
+      "name": "GNU MPFR (MSYS)",
+      "summary": "The GNU multiple-precision floating-point library, packaged in the MSYS environment specifically — depended on by gawk's --bignum arbitrary-precision mode, distinct from the separately versioned UCRT64 MPFR this knowledge base's library:gnu:mpfr entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["mpfr"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.mpfr.org/",
+        "packaged_as": "package:msys2:mpfr",
+        "role": "arbitrary-precision floating-point arithmetic"
+      },
+      "evidence_refs": ["evidence:gnu:mpfr-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -7859,6 +7877,30 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Needed to extract entries compressed with the bzip2 method within .zip archives.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:gawk-requires-mpfr-msys",
+      "type": "requires",
+      "source": "component:gnu:gawk",
+      "target": "library:gnu:mpfr@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gawk's --bignum arbitrary-precision integer/floating-point mode.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpfr-msys-requires-gmp-msys",
+      "type": "requires",
+      "source": "library:gnu:mpfr@msys",
+      "target": "library:gnu:gmp@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "MPFR builds its correctly-rounded floating-point arithmetic on GMP's arbitrary-precision integer primitives.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

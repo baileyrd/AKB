@@ -80,6 +80,7 @@ model_refs:
   - library:libssh2:libssh2
   - library:facebook:zstd@msys-lib
   - library:bzip2:libbz2
+  - library:gnu:mpfr@msys
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -204,7 +205,8 @@ flowchart LR
 [libcbor](LIBCBOR.md), [Heimdal runtime libraries](HEIMDAL-LIBS.md),
 [zlib (MSYS)](ZLIB-MSYS.md), [Brotli](BROTLI.md),
 [ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md),
-[Zstandard (MSYS library)](LIBZSTD-MSYS.md), and [libbz2](LIBBZ2.md) are
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md), [libbz2](LIBBZ2.md), and
+[GNU MPFR (MSYS)](GNU-MPFR-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -219,7 +221,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All seventy-six pages are deliberately scoped to package/dependency-level
+All seventy-seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -435,7 +437,15 @@ existing library entities before this distinction was caught and
 corrected, so the edges were removed rather than left standing, and the
 two meta-packages are recorded as an explicitly open, not-yet-modeled
 item on [libbz2's own page](LIBBZ2.md#reverse-dependencies) instead.
-These pages are a starting point for this
+A further batch closed
+[GNU MPFR (MSYS)](GNU-MPFR-MSYS.md), gawk's `--bignum` arbitrary-precision
+dependency, already cited by package name on
+[GNU-AWK.md's dependency table](GNU-AWK.md#dependencies) — a distinct
+catalog entity from this volume's existing
+[GNU MPFR (UCRT64)](GNU-MPFR.md) page, the same MSYS-vs-native pattern
+applied throughout this session, with its own `requires` edge back onto
+[GNU MP (MSYS)](GNU-GMP-MSYS.md) closing an inter-library loop between
+two now-modeled MSYS math libraries. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

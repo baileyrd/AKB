@@ -17,7 +17,7 @@
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 6 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
-| component:gnu:gawk | component | GNU Awk (gawk) | partial | 4 | 1 |
+| component:gnu:gawk | component | GNU Awk (gawk) | partial | 5 | 1 |
 | component:gnu:gcc | component | GCC | partial | 4 | 1 |
 | component:gnu:gdb | component | GDB | partial | 11 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
@@ -615,7 +615,7 @@
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 6 |
-| library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 3 |
+| library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 4 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 5 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 7 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 3 | 4 |
@@ -625,6 +625,7 @@
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 4 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 3 |
+| library:gnu:mpfr@msys | library | GNU MPFR (MSYS) | partial | 1 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |

@@ -622,6 +622,7 @@ Objects
 - library:gnu:libtasn1 (library): GNU Libtasn1
 - library:gnu:libunistring (library): GNU libunistring
 - library:gnu:mpfr (library): GNU MPFR
+- library:gnu:mpfr@msys (library): GNU MPFR (MSYS)
 - library:gnu:readline (library): GNU Readline
 - library:gnu:readline@msys (library): GNU Readline (MSYS)
 - library:gnu:termcap (library): GNU termcap
@@ -16866,6 +16867,8 @@ Relationships
 - component:gnupg:gnupg --requires--> library:bzip2:libbz2
 - component:info-zip:zip --requires--> library:bzip2:libbz2
 - component:info-zip:unzip --requires--> library:bzip2:libbz2
+- component:gnu:gawk --requires--> library:gnu:mpfr@msys
+- library:gnu:mpfr@msys --requires--> library:gnu:gmp@msys
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

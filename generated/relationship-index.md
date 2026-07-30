@@ -76333,6 +76333,7 @@
 | relationship:foundation-libraries:mpc-packaged-by-package | packaged-by | library:multiprecision:mpc | package:msys2:mingw-w64-ucrt-x86_64-mpc | verified |
 | relationship:foundation-libraries:mpc-requires-gmp | requires | library:multiprecision:mpc | library:gnu:gmp | verified |
 | relationship:foundation-libraries:mpc-requires-mpfr | requires | library:multiprecision:mpc | library:gnu:mpfr | verified |
+| relationship:foundation-libraries:mpfr-msys-requires-gmp-msys | requires | library:gnu:mpfr@msys | library:gnu:gmp@msys | verified |
 | relationship:foundation-libraries:mpfr-packaged-by-package | packaged-by | library:gnu:mpfr | package:msys2:mingw-w64-ucrt-x86_64-mpfr | verified |
 | relationship:foundation-libraries:mpfr-requires-gmp | requires | library:gnu:mpfr | library:gnu:gmp | verified |
 | relationship:foundation-libraries:msys-contains-brotli | contains | environment:msys2:msys | library:google:brotli | partial |
@@ -76457,6 +76458,7 @@
 | relationship:gnu-userland:gawk-packaged-by-package | packaged-by | component:gnu:gawk | package:msys2:gawk | verified |
 | relationship:gnu-userland:gawk-requires-libintl | requires | component:gnu:gawk | library:gnu:libintl | verified |
 | relationship:gnu-userland:gawk-requires-libreadline | requires | component:gnu:gawk | library:gnu:readline@msys | verified |
+| relationship:gnu-userland:gawk-requires-mpfr-msys | requires | component:gnu:gawk | library:gnu:mpfr@msys | verified |
 | relationship:gnu-userland:gawk-uses-msys-runtime | uses-runtime | component:gnu:gawk | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:grep-packaged-by-package | packaged-by | component:gnu:grep | package:msys2:grep | verified |
 | relationship:gnu-userland:grep-requires-libintl | requires | component:gnu:grep | library:gnu:libintl | verified |

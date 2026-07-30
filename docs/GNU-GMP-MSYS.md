@@ -71,13 +71,17 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 12 relationships targeting
-`package:msys2:gmp`. Two are already modeled in this knowledge base:
+`package:msys2:gmp`. Three are already modeled in this knowledge base:
 `package:msys2:libgnutls`
-(`relationship:foundation-libraries:gnutls-msys-requires-gmp-msys`) and
+(`relationship:foundation-libraries:gnutls-msys-requires-gmp-msys`),
 `package:msys2:coreutils`
-(`relationship:gnu-userland:coreutils-requires-gmp-msys`). The
-remaining ~10 recorded dependents (`autogen`, `cocom`, `isl`, `libguile`,
-and others) are not individually modeled in this knowledge base; see the
+(`relationship:gnu-userland:coreutils-requires-gmp-msys`), and
+`package:msys2:mpfr`
+(`relationship:foundation-libraries:mpfr-msys-requires-gmp-msys`,
+documented fully in [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)). The
+remaining ~9 recorded dependents (`autogen`, `cocom`, `isl`, `libguile`,
+and others, including the MSYS-native `gcc` and `mpc` toolchain packages)
+are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -141,3 +145,4 @@ methodology.
 - [GNU MP (UCRT64)](GNU-GMP.md)
 - [GnuTLS](GNUTLS.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
+- [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)

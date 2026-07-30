@@ -87,6 +87,10 @@ model_refs:
   - library:gnu:ncurses@ucrt64
   - library:gnome:libxml2@clang64
   - library:tukaani:liblzma@clang64
+  - library:mingw-w64:winpthreads@clang64
+  - library:mingw-w64:libwinpthread@clang64
+  - library:libffi:libffi@msys
+  - library:libffi:libffi@clang64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -145,6 +149,7 @@ evidence_refs:
   - evidence:google:brotli-manual-2026-07-30
   - evidence:mozilla:ca-certificates-manual-2026-07-30
   - evidence:libssh2:manual-2026-07-30
+  - evidence:libffi:project-site-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -215,7 +220,10 @@ flowchart LR
 [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md), [libnettle (MSYS)](LIBNETTLE-MSYS.md),
 [Hogweed (MSYS)](LIBHOGWEED-MSYS.md), [libopenssl](LIBOPENSSL.md),
 [ncurses (UCRT64)](NCURSES-UCRT64.md), [libxml2 (CLANG64)](LIBXML2-CLANG64.md),
-and [liblzma (CLANG64)](LIBLZMA-CLANG64.md) are
+[liblzma (CLANG64)](LIBLZMA-CLANG64.md),
+[winpthreads (CLANG64)](WINPTHREADS-CLANG64.md),
+[libwinpthread (CLANG64)](LIBWINPTHREAD-CLANG64.md),
+[libffi (MSYS)](LIBFFI-MSYS.md), and [libffi (CLANG64)](LIBFFI-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -230,7 +238,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All eighty-three pages are deliberately scoped to package/dependency-level
+All eighty-seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -510,7 +518,25 @@ dependent before this CLANG64-packaged sibling was modeled — 126
 recorded reverse dependents, the widest of any library added this
 session) and [liblzma (CLANG64)](LIBLZMA-CLANG64.md) (explicitly
 flagged as not-yet-modeled on [liblzma (UCRT64)'s](LIBLZMA.md) own page
-before now). These pages are a starting point for this
+before now). A final batch extended the same graph-completeness check
+to Clang, closing its own missing `winpthreads` edge
+([winpthreads (CLANG64)](WINPTHREADS-CLANG64.md), the third such
+missing toolchain-to-threading-library edge found this session after
+GCC and Binutils) and its companion
+[libwinpthread (CLANG64)](LIBWINPTHREAD-CLANG64.md) (139 recorded
+reverse dependents, a similarly wide footprint to the UCRT64 sibling's
+152). Following that same dependency chain into
+[LLVM libraries](LLVM-LIBS.md) surfaced a more serious defect than a
+missing edge: that page's Dependencies section had flatly stated no
+`runtime-depends-on` edges existed for the package, when the catalog in
+fact records four — corrected in place with all four edges added,
+closing [libffi (CLANG64)](LIBFFI-CLANG64.md) (a new entity) alongside
+edges onto the already-modeled [libxml2 (CLANG64)](LIBXML2-CLANG64.md),
+[zlib (CLANG64)](ZLIB-CLANG64.md), and
+[Zstandard (CLANG64)](LIBZSTD-CLANG64.md). Modeling libffi (CLANG64)
+also closed [libffi (MSYS)](LIBFFI-MSYS.md), p11-kit's own
+foreign-function-interface dependency that page had explicitly left
+unmodeled since its first publication. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

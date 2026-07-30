@@ -76336,6 +76336,10 @@
 | relationship:foundation-libraries:lldb-requires-liblzma-clang64 | requires | component:llvm:lldb | library:tukaani:liblzma@clang64 | verified |
 | relationship:foundation-libraries:lldb-requires-libxml2-clang64 | requires | component:llvm:lldb | library:gnome:libxml2@clang64 | verified |
 | relationship:foundation-libraries:llvm-libs-packaged-by-package | packaged-by | library:llvm:llvm-libs | package:msys2:mingw-w64-clang-x86_64-llvm-libs | verified |
+| relationship:foundation-libraries:llvm-libs-requires-libffi-clang64 | requires | library:llvm:llvm-libs | library:libffi:libffi@clang64 | verified |
+| relationship:foundation-libraries:llvm-libs-requires-libxml2-clang64 | requires | library:llvm:llvm-libs | library:gnome:libxml2@clang64 | verified |
+| relationship:foundation-libraries:llvm-libs-requires-zlib-clang64 | requires | library:llvm:llvm-libs | library:gnu:zlib@clang64 | verified |
+| relationship:foundation-libraries:llvm-libs-requires-zstd-clang64 | requires | library:llvm:llvm-libs | library:facebook:zstd@clang64 | verified |
 | relationship:foundation-libraries:mpc-packaged-by-package | packaged-by | library:multiprecision:mpc | package:msys2:mingw-w64-ucrt-x86_64-mpc | verified |
 | relationship:foundation-libraries:mpc-requires-gmp | requires | library:multiprecision:mpc | library:gnu:gmp | verified |
 | relationship:foundation-libraries:mpc-requires-mpfr | requires | library:multiprecision:mpc | library:gnu:mpfr | verified |
@@ -76388,6 +76392,7 @@
 | relationship:foundation-libraries:npth-msys-uses-msys-runtime | uses-runtime | library:gnupg:npth@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:npth-packaged-by-package | packaged-by | library:gnupg:npth | package:msys2:mingw-w64-ucrt-x86_64-npth | verified |
 | relationship:foundation-libraries:p11-kit-packaged-by-package | packaged-by | library:p11-glue:p11-kit | package:msys2:libp11-kit | verified |
+| relationship:foundation-libraries:p11-kit-requires-libffi-msys | requires | library:p11-glue:p11-kit | library:libffi:libffi@msys | verified |
 | relationship:foundation-libraries:p11-kit-requires-libintl | requires | library:p11-glue:p11-kit | library:gnu:libintl | verified |
 | relationship:foundation-libraries:p11-kit-requires-libtasn1 | requires | library:p11-glue:p11-kit | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:p11-kit-uses-msys-runtime | uses-runtime | library:p11-glue:p11-kit | runtime:msys2:msys-2.0.dll | partial |
@@ -76440,6 +76445,7 @@
 | relationship:foundation-libraries:ucrt64-contains-zlib | contains | environment:msys2:ucrt64 | library:gnu:zlib | partial |
 | relationship:foundation-libraries:ucrt64-contains-zstd | contains | environment:msys2:ucrt64 | library:facebook:zstd | partial |
 | relationship:foundation-libraries:wineditline-packaged-by-package | packaged-by | library:mingweditline:wineditline | package:msys2:mingw-w64-ucrt-x86_64-wineditline | verified |
+| relationship:foundation-libraries:winpthreads-clang64-requires-libwinpthread-clang64 | requires | library:mingw-w64:winpthreads@clang64 | library:mingw-w64:libwinpthread@clang64 | verified |
 | relationship:foundation-libraries:winpthreads-packaged-by-package | packaged-by | library:mingw-w64:winpthreads | package:msys2:mingw-w64-ucrt-x86_64-winpthreads | verified |
 | relationship:foundation-libraries:winpthreads-requires-libwinpthread | requires | library:mingw-w64:winpthreads | library:mingw-w64:libwinpthread | verified |
 | relationship:foundation-libraries:xxhash-packaged-by-package | packaged-by | library:xxhash:xxhash | package:msys2:mingw-w64-ucrt-x86_64-xxhash | verified |
@@ -77095,6 +77101,7 @@
 | relationship:toolchain:clang-invokes-lld | invokes | component:llvm:clang | component:llvm:lld | verified |
 | relationship:toolchain:clang-packaged-by-package | packaged-by | component:llvm:clang | package:msys2:mingw-w64-clang-x86_64-clang | verified |
 | relationship:toolchain:clang-requires-clang-libs | requires | component:llvm:clang | library:llvm:clang-libs | verified |
+| relationship:toolchain:clang-requires-winpthreads-clang64 | requires | component:llvm:clang | library:mingw-w64:winpthreads@clang64 | verified |
 | relationship:toolchain:clang64-contains-clang | contains | environment:msys2:clang64 | component:llvm:clang | partial |
 | relationship:toolchain:clang64-contains-lld | contains | environment:msys2:clang64 | component:llvm:lld | partial |
 | relationship:toolchain:clang64-contains-lldb | contains | environment:msys2:clang64 | component:llvm:lldb | partial |

@@ -2393,6 +2393,78 @@
         "role": "LZMA/xz compression"
       },
       "evidence_refs": ["evidence:tukaani:xz-library-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mingw-w64:winpthreads@clang64",
+      "kind": "library",
+      "name": "winpthreads (CLANG64)",
+      "summary": "A version-pinned companion package to libwinpthread (CLANG64), packaged in the CLANG64 environment specifically and depended on by Clang for POSIX-threads-style threading support, distinct from the separately versioned UCRT64 winpthreads this knowledge base's library:mingw-w64:winpthreads entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "MinGW-w64 project",
+      "aliases": ["winpthreads"],
+      "tags": ["library", "threading"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.mingw-w64.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-winpthreads",
+        "role": "POSIX threads implementation"
+      },
+      "evidence_refs": ["evidence:mingw-w64:libwinpthread-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mingw-w64:libwinpthread@clang64",
+      "kind": "library",
+      "name": "libwinpthread (CLANG64)",
+      "summary": "The MinGW-w64 POSIX-threads runtime library, packaged in the CLANG64 environment specifically — 139 recorded catalog dependents — distinct from the separately versioned UCRT64 libwinpthread this knowledge base's library:mingw-w64:libwinpthread entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "MinGW-w64 project",
+      "aliases": ["libwinpthread"],
+      "tags": ["library", "threading"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.mingw-w64.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libwinpthread",
+        "role": "POSIX threads implementation"
+      },
+      "evidence_refs": ["evidence:mingw-w64:libwinpthread-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libffi:libffi@msys",
+      "kind": "library",
+      "name": "libffi (MSYS)",
+      "summary": "A portable, high-level foreign function interface library, packaged in the MSYS environment specifically and depended on by p11-kit, distinct from the separately versioned CLANG64 libffi this knowledge base's library:libffi:libffi@clang64 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libffi project",
+      "aliases": ["libffi"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://sourceware.org/libffi/",
+        "packaged_as": "package:msys2:libffi",
+        "role": "foreign function interface"
+      },
+      "evidence_refs": ["evidence:libffi:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libffi:libffi@clang64",
+      "kind": "library",
+      "name": "libffi (CLANG64)",
+      "summary": "A portable, high-level foreign function interface library, packaged in the CLANG64 environment specifically and depended on by LLVM libraries, distinct from the separately versioned MSYS libffi this knowledge base's library:libffi:libffi@msys entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libffi project",
+      "aliases": ["libffi"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://sourceware.org/libffi",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libffi",
+        "role": "foreign function interface"
+      },
+      "evidence_refs": ["evidence:libffi:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8215,6 +8287,90 @@
       "condition": "Backs reading debug information compressed with the xz/LZMA algorithm, alongside LLDB's zlib (CLANG64) dependency.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang-requires-winpthreads-clang64",
+      "type": "requires",
+      "source": "component:llvm:clang",
+      "target": "library:mingw-w64:winpthreads@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs POSIX-threads-style threading support for programs produced by this compiler, already cited by package name on this page's own Dependencies table without a corresponding graph edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:winpthreads-clang64-requires-libwinpthread-clang64",
+      "type": "requires",
+      "source": "library:mingw-w64:winpthreads@clang64",
+      "target": "library:mingw-w64:libwinpthread@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Version-pinned to an exact matching libwinpthread build in the catalog snapshot, the same split pattern documented for the UCRT64 siblings (claim:library:winpthreads-libwinpthread-split).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-requires-libffi-msys",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit",
+      "target": "library:libffi:libffi@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs p11-kit's foreign-function-interface needs for loading PKCS#11 modules, closing an item this page had previously left unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:llvm-libs-requires-libffi-clang64",
+      "type": "requires",
+      "source": "library:llvm:llvm-libs",
+      "target": "library:libffi:libffi@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: this page's own Dependencies section had incorrectly stated no runtime-depends-on edges exist beyond standard toolchain support; the catalog in fact records four (libffi, libxml2, zlib, zstd).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:llvm-libs-requires-libxml2-clang64",
+      "type": "requires",
+      "source": "library:llvm:llvm-libs",
+      "target": "library:gnome:libxml2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: added alongside the libffi/zlib/zstd edges to fix this page's previously-incorrect no-dependencies claim.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:llvm-libs-requires-zlib-clang64",
+      "type": "requires",
+      "source": "library:llvm:llvm-libs",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: added alongside the libffi/libxml2/zstd edges to fix this page's previously-incorrect no-dependencies claim.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:llvm-libs-requires-zstd-clang64",
+      "type": "requires",
+      "source": "library:llvm:llvm-libs",
+      "target": "library:facebook:zstd@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: added alongside the libffi/libxml2/zlib edges to fix this page's previously-incorrect no-dependencies claim.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -9599,6 +9755,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official libssh2 project site, matching the project_url recorded for package:msys2:libssh2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libffi:project-site-2026-07-30",
+      "class": "primary",
+      "title": "libffi (official project site)",
+      "locator": "https://sourceware.org/libffi/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libffi project site, matching the project_url recorded for package:msys2:libffi and package:msys2:mingw-w64-clang-x86_64-libffi in the catalog snapshot."
     }
   ]
 }

@@ -260,7 +260,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:clang-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:llvm:lld`
@@ -5454,7 +5454,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:facebook:zstd@msys-lib`
 
@@ -5481,7 +5481,7 @@
 - Status: `partial`
 - Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnome:libxml2@msys`
 
@@ -5661,7 +5661,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:zlib@msys`
 
@@ -5852,6 +5852,24 @@
 - Outgoing relationships: 2
 - Incoming relationships: 2
 
+## `library:libffi:libffi@clang64`
+
+- Name: libffi (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:libffi:libffi@msys`
+
+- Name: libffi (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:libisl:isl`
 
 - Name: isl (Integer Set Library)
@@ -5921,7 +5939,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:llvm:llvm-libs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `library:mingw-w64:libwinpthread`
@@ -5933,6 +5951,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 3
 
+## `library:mingw-w64:libwinpthread@clang64`
+
+- Name: libwinpthread (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:mingw-w64:winpthreads`
 
 - Name: winpthreads
@@ -5941,6 +5968,15 @@
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:mingw-w64:winpthreads@clang64`
+
+- Name: winpthreads (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
 
 ## `library:mingweditline:wineditline`
 
@@ -6047,7 +6083,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `library:pcre:pcre`

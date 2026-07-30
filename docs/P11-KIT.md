@@ -9,6 +9,7 @@ model_refs:
   - library:gnutls:gnutls
   - library:gnu:libtasn1
   - library:gnu:libintl
+  - library:libffi:libffi@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -70,16 +71,17 @@ modules p11-kit loads on the caller's behalf.
 
 ## Dependencies
 
-The MSYS `package:msys2:libp11-kit` declares dependencies on `libffi`
-(foreign function interface library), [GNU libintl](GNU-LIBINTL.md)
-(gettext-based message translation,
+The MSYS `package:msys2:libp11-kit` declares dependencies on
+[libffi (MSYS)](LIBFFI-MSYS.md) (foreign function interface library,
+`relationship:foundation-libraries:p11-kit-requires-libffi-msys`,
+closing an item this page previously left unmodeled),
+[GNU libintl](GNU-LIBINTL.md) (gettext-based message translation,
 `relationship:foundation-libraries:p11-kit-requires-libintl`), and
 `libtasn1` (ASN.1/DER parsing, documented in
 [GNU Libtasn1](GNU-LIBTASN1.md) — the same underlying library GnuTLS
 itself also depends on directly, per
 `relationship:foundation-libraries:p11-kit-requires-libtasn1` in this
-knowledge base's graph). `libffi` is not yet given its own page in this
-volume.
+knowledge base's graph).
 
 ## Reverse Dependencies
 
@@ -147,10 +149,9 @@ PKCS#11 coordination scope is backed by the official p11-kit project page
 catalog. Package identity, version, and the recorded dependency/dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: this package's own sub-dependency `libffi` is not individually
-modeled as a component in this knowledge base, nor is the separate
-`p11-kit` command-line-tools package; header-level API surface and PE
-import/export-level evidence, per the
+page: the separate `p11-kit` command-line-tools package is not
+individually modeled in this knowledge base; header-level API surface
+and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
@@ -160,3 +161,4 @@ methodology, also remain open.
 - [GnuTLS](GNUTLS.md)
 - [GNU Libtasn1](GNU-LIBTASN1.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [libffi (MSYS)](LIBFFI-MSYS.md)

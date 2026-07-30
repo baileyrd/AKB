@@ -32,7 +32,7 @@
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 3 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
-| component:llvm:clang | component | Clang | partial | 3 | 1 |
+| component:llvm:clang | component | Clang | partial | 4 | 1 |
 | component:llvm:lld | component | LLD | partial | 5 | 2 |
 | component:llvm:lldb | component | LLDB | partial | 6 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
@@ -609,10 +609,10 @@
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
 | library:darwinsys:file | library | file | partial | 5 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 4 |
-| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 2 |
+| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
-| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 0 | 1 |
+| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 0 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 7 |
@@ -632,7 +632,7 @@
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 8 |
-| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 3 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 4 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 7 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
@@ -654,6 +654,8 @@
 | library:libedit:libedit | library | libedit | partial | 2 | 2 |
 | library:libexpat:expat | library | Expat | partial | 1 | 3 |
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 2 |
+| library:libffi:libffi@clang64 | library | libffi (CLANG64) | partial | 0 | 1 |
+| library:libffi:libffi@msys | library | libffi (MSYS) | partial | 0 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 2 | 2 |
@@ -661,9 +663,11 @@
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 3 |
 | library:llvm:clang-libs | library | Clang libraries | partial | 1 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
-| library:llvm:llvm-libs | library | LLVM libraries | partial | 1 | 3 |
+| library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 3 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 3 |
+| library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
+| library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 3 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
@@ -675,7 +679,7 @@
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 3 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 3 |
-| library:p11-glue:p11-kit | library | p11-kit | partial | 4 | 2 |
+| library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |

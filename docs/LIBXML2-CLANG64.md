@@ -77,12 +77,15 @@ this entity in this knowledge base.
 
 The catalog snapshot records 126 relationships targeting
 `package:msys2:mingw-w64-clang-x86_64-libxml2` — the widest
-reverse-dependency footprint of any library added in this batch. One is
-now modeled in this knowledge base: [LLDB](LLDB.md)
-(`relationship:foundation-libraries:lldb-requires-libxml2-clang64`).
-The remaining ~125 recorded dependents (a broad mix of CLANG64 packages
-including `libarchive`, `gdal`, `imagemagick`, and `llvm-libs` itself)
-are not individually modeled in this knowledge base; see the
+reverse-dependency footprint of any library added in this batch. Two
+are now modeled in this knowledge base: [LLDB](LLDB.md)
+(`relationship:foundation-libraries:lldb-requires-libxml2-clang64`) and
+[LLVM libraries](LLVM-LIBS.md)
+(`relationship:foundation-libraries:llvm-libs-requires-libxml2-clang64`,
+correcting that page's own prior incorrect no-dependencies claim). The
+remaining ~124 recorded dependents (a broad mix of CLANG64 packages
+including `libarchive`, `gdal`, and `imagemagick`) are not individually
+modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -146,3 +149,4 @@ methodology.
 - [libxml2 (UCRT64)](LIBXML2.md)
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
 - [LLDB](LLDB.md)
+- [LLVM libraries](LLVM-LIBS.md)

@@ -7,6 +7,7 @@ model_refs:
   - component:llvm:clang
   - package:msys2:mingw-w64-clang-x86_64-clang
   - library:llvm:clang-libs
+  - library:mingw-w64:winpthreads@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:clang-manual-2026-07-30
@@ -71,7 +72,14 @@ The catalog snapshot records seven `runtime-depends-on` edges for
 | Backend linker | `mingw-w64-clang-x86_64-lld` | Invoked as Clang's default backend linker (`relationship:toolchain:clang-invokes-lld`), documented fully in [LLD](LLD.md). |
 | LLVM command-line tools | `mingw-w64-clang-x86_64-llvm-tools` | Auxiliary LLVM tools (such as `llvm-ar`, `llvm-objdump`) used alongside the compiler. |
 | Target C runtime and headers | `mingw-w64-clang-x86_64-crt`, `mingw-w64-clang-x86_64-headers` | The MinGW-w64 CRT and Windows API headers this build targets (UCRT for this environment). |
-| Threading | `mingw-w64-clang-x86_64-winpthreads` | Backs POSIX-threads-style threading support for produced programs, the same dependency documented for [GCC](GNU-GCC.md#dependencies). |
+| Threading | `mingw-w64-clang-x86_64-winpthreads` | Backs POSIX-threads-style threading support for produced programs, the same dependency documented for [GCC](GNU-GCC.md#dependencies). Documented fully in [winpthreads (CLANG64)](WINPTHREADS-CLANG64.md). |
+
+**Correction, 2026-07-30**: the winpthreads dependency above was cited
+by package name in this table since this page's first publication, but
+had never been backed by a corresponding `requires` graph edge —
+`relationship:toolchain:clang-requires-winpthreads-clang64` is now
+added to close the gap, the same graph-completeness pattern found for
+GCC and Binutils in this session.
 
 An optional dependency on the full `mingw-w64-clang-x86_64-llvm` package
 extends this installation with the broader LLVM tool suite beyond what
@@ -151,3 +159,4 @@ the general version-qualified security review noted above.
 - [GCC](GNU-GCC.md)
 - [Runtime Environments](RUNTIME-ENVIRONMENTS.md)
 - [Clang libraries](CLANG-LIBS.md)
+- [winpthreads (CLANG64)](WINPTHREADS-CLANG64.md)

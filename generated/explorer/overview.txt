@@ -651,6 +651,8 @@ Objects
 - library:libedit:libedit (library): libedit
 - library:libexpat:expat (library): Expat
 - library:libexpat:expat@msys (library): Expat (MSYS)
+- library:libffi:libffi@clang64 (library): libffi (CLANG64)
+- library:libffi:libffi@msys (library): libffi (MSYS)
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
 - library:libssh2:libssh2 (library): libssh2
@@ -660,7 +662,9 @@ Objects
 - library:llvm:libc++ (library): libc++
 - library:llvm:llvm-libs (library): LLVM libraries
 - library:mingw-w64:libwinpthread (library): libwinpthread
+- library:mingw-w64:libwinpthread@clang64 (library): libwinpthread (CLANG64)
 - library:mingw-w64:winpthreads (library): winpthreads
+- library:mingw-w64:winpthreads@clang64 (library): winpthreads (CLANG64)
 - library:mingweditline:wineditline (library): WinEditLine
 - library:mozilla:ca-certificates (library): ca-certificates
 - library:multiprecision:mpc (library): GNU MPC
@@ -16892,6 +16896,13 @@ Relationships
 - component:gnu:gdb --requires--> library:gnu:ncurses@ucrt64
 - component:llvm:lldb --requires--> library:gnome:libxml2@clang64
 - component:llvm:lldb --requires--> library:tukaani:liblzma@clang64
+- component:llvm:clang --requires--> library:mingw-w64:winpthreads@clang64
+- library:mingw-w64:winpthreads@clang64 --requires--> library:mingw-w64:libwinpthread@clang64
+- library:p11-glue:p11-kit --requires--> library:libffi:libffi@msys
+- library:llvm:llvm-libs --requires--> library:libffi:libffi@clang64
+- library:llvm:llvm-libs --requires--> library:gnome:libxml2@clang64
+- library:llvm:llvm-libs --requires--> library:gnu:zlib@clang64
+- library:llvm:llvm-libs --requires--> library:facebook:zstd@clang64
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

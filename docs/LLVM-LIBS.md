@@ -9,6 +9,10 @@ model_refs:
   - component:llvm:lld
   - component:llvm:lldb
   - library:llvm:clang-libs
+  - library:libffi:libffi@clang64
+  - library:gnome:libxml2@clang64
+  - library:gnu:zlib@clang64
+  - library:facebook:zstd@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:llvm-libs-manual-2026-07-30
@@ -65,9 +69,16 @@ front-end specifically for expression evaluation).
 
 ## Dependencies
 
-The catalog snapshot records no `runtime-depends-on` edges for
-`package:msys2:mingw-w64-clang-x86_64-llvm-libs` beyond standard
-toolchain runtime support.
+**Correction, 2026-07-30**: this section originally stated no
+`runtime-depends-on` edges existed for this package beyond standard
+toolchain support — that claim was false. The catalog snapshot in fact
+records four:
+
+| Dependency | Package | Architectural reason |
+| --- | --- | --- |
+| Foreign function interface | `mingw-w64-clang-x86_64-libffi` | Backs a runtime call-signature dispatch need somewhere in LLVM's own infrastructure; the exact internal subsystem consuming it was not directly confirmed. Documented fully in [libffi (CLANG64)](LIBFFI-CLANG64.md). |
+| XML parsing | `mingw-w64-clang-x86_64-libxml2` | Backs an XML-format need somewhere in LLVM's own infrastructure; the exact internal subsystem consuming it was not directly confirmed. Documented fully in [libxml2 (CLANG64)](LIBXML2-CLANG64.md). |
+| Compression | `mingw-w64-clang-x86_64-zlib`, `mingw-w64-clang-x86_64-zstd` | Back compressed section support, the same rationale documented for [LLD](LLD.md#dependencies) and [LLDB](LLDB.md#dependencies). Documented fully in [zlib (CLANG64)](ZLIB-CLANG64.md) and [Zstandard (CLANG64)](LIBZSTD-CLANG64.md). |
 
 ## Reverse Dependencies
 
@@ -130,11 +141,14 @@ noted in Architectural Classification.
 LLVM infrastructure scope is backed by the official LLVM project site
 (`evidence:llvm:llvm-libs-manual-2026-07-30`), matching the `project_url`
 already recorded for `package:msys2:mingw-w64-clang-x86_64-llvm-libs` in
-the catalog. Package identity, version, and the two modeled dependent
-edges are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: the ~19 remaining recorded dependents not individually modeled,
-and header-level API surface / PE import/export-level evidence, per the
+the catalog. Package identity, version, and the recorded dependency and
+dependent edges (including the 2026-07-30 correction of this page's own
+Dependencies section) are backed by the pacman catalog snapshot
+(`evidence:catalog:current`). Open: the exact internal LLVM subsystem
+consuming libffi and libxml2 was not directly confirmed. Also explicitly
+out of scope for this page: the ~19 remaining recorded reverse
+dependents not individually modeled, and header-level API surface / PE
+import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -144,3 +158,7 @@ methodology.
 - [LLD](LLD.md)
 - [LLDB](LLDB.md)
 - [Clang libraries](CLANG-LIBS.md)
+- [libffi (CLANG64)](LIBFFI-CLANG64.md)
+- [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
+- [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)

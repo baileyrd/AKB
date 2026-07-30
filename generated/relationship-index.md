@@ -76202,6 +76202,7 @@
 | relationship:foundation-libraries:libxml2-packaged-by-package | packaged-by | library:gnome:libxml2 | package:msys2:mingw-w64-ucrt-x86_64-libxml2 | verified |
 | relationship:foundation-libraries:libxml2-requires-libiconv | requires | library:gnome:libxml2 | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:libxml2-requires-zlib | requires | library:gnome:libxml2 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:readline-packaged-by-package | packaged-by | library:gnu:readline | package:msys2:mingw-w64-ucrt-x86_64-readline | verified |
 | relationship:foundation-libraries:sqlite3-packaged-by-package | packaged-by | library:sqlite:sqlite3 | package:msys2:mingw-w64-ucrt-x86_64-sqlite3 | verified |
 | relationship:foundation-libraries:sqlite3-requires-zlib | requires | library:sqlite:sqlite3 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:ucrt64-contains-boost | contains | environment:msys2:ucrt64 | library:boost:boost | partial |
@@ -76210,6 +76211,7 @@
 | relationship:foundation-libraries:ucrt64-contains-icu | contains | environment:msys2:ucrt64 | library:unicode:icu | partial |
 | relationship:foundation-libraries:ucrt64-contains-libiconv | contains | environment:msys2:ucrt64 | library:gnu:libiconv | partial |
 | relationship:foundation-libraries:ucrt64-contains-libxml2 | contains | environment:msys2:ucrt64 | library:gnome:libxml2 | partial |
+| relationship:foundation-libraries:ucrt64-contains-readline | contains | environment:msys2:ucrt64 | library:gnu:readline | partial |
 | relationship:foundation-libraries:ucrt64-contains-sqlite3 | contains | environment:msys2:ucrt64 | library:sqlite:sqlite3 | partial |
 | relationship:foundation-libraries:ucrt64-contains-zlib | contains | environment:msys2:ucrt64 | library:gnu:zlib | partial |
 | relationship:foundation-libraries:zlib-packaged-by-package | packaged-by | library:gnu:zlib | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |

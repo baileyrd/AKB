@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 17
+- Outgoing relationships: 18
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5446,6 +5446,15 @@
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:gnu:readline`
+
+- Name: GNU Readline
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
 
 ## `library:gnu:zlib`
 
@@ -108396,7 +108405,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 36
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-readosm`
 

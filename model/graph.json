@@ -1079,6 +1079,24 @@
         "role": "embedded SQL database engine"
       },
       "evidence_refs": ["evidence:sqlite:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:readline",
+      "kind": "library",
+      "name": "GNU Readline",
+      "summary": "A library providing line editing, history, and completion for interactive command-line programs, packaged per native environment (UCRT64 shown here) and depended on by GDB and GnuPG.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["readline", "libreadline"],
+      "tags": ["library", "gnu-userland", "terminal"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://tiswww.case.edu/php/chet/readline/rltop.html",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-readline",
+        "role": "interactive line editing, history, and completion"
+      },
+      "evidence_refs": ["evidence:gnu:readline-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -3109,6 +3127,30 @@
       "condition": "Backs SQLite's optional compression-related extensions and utilities.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-readline",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:readline",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:readline-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:readline",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-readline",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -4023,6 +4065,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official SQLite project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-sqlite3 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:readline-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Readline (official project page)",
+      "locator": "https://tiswww.case.edu/php/chet/readline/rltop.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Readline project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-readline in the catalog snapshot."
     }
   ]
 }

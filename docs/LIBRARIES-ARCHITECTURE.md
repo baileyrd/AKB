@@ -14,6 +14,7 @@ model_refs:
   - library:unicode:icu
   - library:boost:boost
   - library:sqlite:sqlite3
+  - library:gnu:readline
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -25,6 +26,7 @@ evidence_refs:
   - evidence:unicode:icu-manual-2026-07-30
   - evidence:boost:documentation-2026-07-30
   - evidence:sqlite:documentation-2026-07-30
+  - evidence:gnu:readline-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -60,7 +62,8 @@ flowchart LR
 [libstdc++](LIBSTDCXX.md), [libc++](LIBCXX.md), [zlib](ZLIB.md),
 [GNU libiconv](GNU-LIBICONV.md), [GNU gettext](GNU-GETTEXT.md),
 [Expat](EXPAT.md), [libxml2](LIBXML2.md), [ICU](ICU.md), [Boost](BOOST.md),
-and [SQLite](SQLITE3.md) are this volume's first per-library pages. The
+[SQLite](SQLITE3.md), and [GNU Readline](GNU-READLINE.md) are this
+volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -73,7 +76,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All ten pages are deliberately scoped to package/dependency-level evidence
+All eleven pages are deliberately scoped to package/dependency-level evidence
 only — package identity, bundling, provides/depends relationships, and
 reverse-dependency counts — and all explicitly flag that the fuller
 methodology below (headers, `pkg-config`/CMake metadata, PE import/export

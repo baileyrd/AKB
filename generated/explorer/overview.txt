@@ -606,6 +606,7 @@ Objects
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libstdc++ (library): libstdc++
+- library:gnu:readline (library): GNU Readline
 - library:gnu:zlib (library): zlib
 - library:libexpat:expat (library): Expat
 - library:llvm:libc++ (library): libc++
@@ -16503,6 +16504,8 @@ Relationships
 - environment:msys2:ucrt64 --contains--> library:sqlite:sqlite3
 - library:sqlite:sqlite3 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-sqlite3
 - library:sqlite:sqlite3 --requires--> library:gnu:zlib
+- environment:msys2:ucrt64 --contains--> library:gnu:readline
+- library:gnu:readline --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-readline
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

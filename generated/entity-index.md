@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 17 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 18 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -609,6 +609,7 @@
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
+| library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
 | library:gnu:zlib | library | zlib | partial | 1 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
@@ -12047,7 +12048,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-rcedit | package | mingw-w64-ucrt-x86_64-rcedit | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-rclone | package | mingw-w64-ucrt-x86_64-rclone | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-re2 | package | mingw-w64-ucrt-x86_64-re2 | verified | 3 | 8 |
-| package:msys2:mingw-w64-ucrt-x86_64-readline | package | mingw-w64-ucrt-x86_64-readline | verified | 3 | 36 |
+| package:msys2:mingw-w64-ucrt-x86_64-readline | package | mingw-w64-ucrt-x86_64-readline | verified | 3 | 37 |
 | package:msys2:mingw-w64-ucrt-x86_64-readosm | package | mingw-w64-ucrt-x86_64-readosm | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-readstat | package | mingw-w64-ucrt-x86_64-readstat | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-recode | package | mingw-w64-ucrt-x86_64-recode | verified | 3 | 2 |

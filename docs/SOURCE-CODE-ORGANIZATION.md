@@ -71,6 +71,11 @@ This establishes recipe-declared source retrieval and installed ownership as
 separate observations; it does not prove patch application, build execution,
 or byte identity between the retrieved source and the installed DLL.
 
+A controlled local build then applied both verified patches successfully but
+failed under MSYS GCC `15.3.0` while compiling `gzlib.c`, which referenced
+`lseek` without a visible declaration. This is a version-qualified failed
+build observation, not evidence that the recipe or installed DLL is invalid.
+
 ## Related volumes
 
 - Volume 11: [Repository package inventory](REPOSITORY-PACKAGE-INVENTORY.md)

@@ -38,4 +38,6 @@
 | claim:library:libcxx-cc-libs-capability | library:llvm:libc++ | fact | verified | evidence:catalog:current |
 | claim:library:libcxx-cross-environment-availability | library:llvm:libc++ | fact | verified | evidence:catalog:current |
 | claim:library:libstdcxx-bundled-in-gcc-libs | library:gnu:libstdc++ | fact | verified | evidence:catalog:current |
+| claim:library:libxml2-iconv-zlib-features | library:gnome:libxml2 | inference | high | evidence:catalog:current |
+| claim:library:sqlite3-tcl-test-dependency | library:sqlite:sqlite3 | inference | high | evidence:catalog:current |
 | claim:library:zlib-hub | library:gnu:zlib | observation | verified | evidence:catalog:current |

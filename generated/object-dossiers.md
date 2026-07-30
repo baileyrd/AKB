@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 12
+- Outgoing relationships: 17
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5402,6 +5402,24 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:boost:boost`
+
+- Name: Boost
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:boost:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnome:libxml2`
+
+- Name: libxml2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
 ## `library:gnu:gettext`
 
 - Name: GNU gettext
@@ -5418,7 +5436,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:libstdc++`
 
@@ -5436,6 +5454,15 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `library:libexpat:expat`
+
+- Name: Expat
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `library:llvm:libc++`
@@ -5446,6 +5473,24 @@
 - Evidence: evidence:llvm:libcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:sqlite:sqlite3`
+
+- Name: SQLite
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:sqlite:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:unicode:icu`
+
+- Name: ICU (International Components for Unicode)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:unicode:icu-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
 
 ## `package:msys2:ack`
 
@@ -81738,7 +81783,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 18
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-boost-libs`
 
@@ -84177,7 +84222,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 38
+- Incoming relationships: 39
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-expresscpp`
 
@@ -87129,7 +87174,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 46
+- Incoming relationships: 47
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-id3lib`
 
@@ -91998,7 +92043,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 128
+- Incoming relationships: 129
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libxml2-docs`
 
@@ -110196,7 +110241,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 49
+- Incoming relationships: 50
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sqlite3mc`
 

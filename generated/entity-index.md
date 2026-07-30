@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 12 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 17 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -604,11 +604,16 @@
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
+| library:boost:boost | library | Boost | partial | 1 | 1 |
+| library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
-| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 2 |
+| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 1 |
+| library:gnu:zlib | library | zlib | partial | 1 | 3 |
+| library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
+| library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
+| library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -9085,7 +9090,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-blosc | package | mingw-w64-ucrt-x86_64-blosc | verified | 7 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-blosc2 | package | mingw-w64-ucrt-x86_64-blosc2 | verified | 5 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-blueprint-compiler | package | mingw-w64-ucrt-x86_64-blueprint-compiler | verified | 3 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-boost | package | mingw-w64-ucrt-x86_64-boost | verified | 5 | 18 |
+| package:msys2:mingw-w64-ucrt-x86_64-boost | package | mingw-w64-ucrt-x86_64-boost | verified | 5 | 19 |
 | package:msys2:mingw-w64-ucrt-x86_64-boost-libs | package | mingw-w64-ucrt-x86_64-boost-libs | verified | 7 | 30 |
 | package:msys2:mingw-w64-ucrt-x86_64-bootloadhid | package | mingw-w64-ucrt-x86_64-bootloadhid | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-bottom | package | mingw-w64-ucrt-x86_64-bottom | verified | 2 | 0 |
@@ -9356,7 +9361,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-evcxr_repl | package | mingw-w64-ucrt-x86_64-evcxr_repl | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-evince | package | mingw-w64-ucrt-x86_64-evince | verified | 27 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-exiv2 | package | mingw-w64-ucrt-x86_64-exiv2 | verified | 10 | 9 |
-| package:msys2:mingw-w64-ucrt-x86_64-expat | package | mingw-w64-ucrt-x86_64-expat | verified | 2 | 38 |
+| package:msys2:mingw-w64-ucrt-x86_64-expat | package | mingw-w64-ucrt-x86_64-expat | verified | 2 | 39 |
 | package:msys2:mingw-w64-ucrt-x86_64-expresscpp | package | mingw-w64-ucrt-x86_64-expresscpp | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-exprtk | package | mingw-w64-ucrt-x86_64-exprtk | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-extra-cmake-modules | package | mingw-w64-ucrt-x86_64-extra-cmake-modules | verified | 3 | 0 |
@@ -9684,7 +9689,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-icestorm | package | mingw-w64-ucrt-x86_64-icestorm | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-iconv | package | mingw-w64-ucrt-x86_64-iconv | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-icoutils | package | mingw-w64-ucrt-x86_64-icoutils | verified | 4 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-icu | package | mingw-w64-ucrt-x86_64-icu | verified | 2 | 46 |
+| package:msys2:mingw-w64-ucrt-x86_64-icu | package | mingw-w64-ucrt-x86_64-icu | verified | 2 | 47 |
 | package:msys2:mingw-w64-ucrt-x86_64-id3lib | package | mingw-w64-ucrt-x86_64-id3lib | verified | 5 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-ideviceinstaller | package | mingw-w64-ucrt-x86_64-ideviceinstaller | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-idevicerestore | package | mingw-w64-ucrt-x86_64-idevicerestore | verified | 7 | 0 |
@@ -10225,7 +10230,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libxml++ | package | mingw-w64-ucrt-x86_64-libxml++ | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libxml++-5.0 | package | mingw-w64-ucrt-x86_64-libxml++-5.0 | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libxml++2.6 | package | mingw-w64-ucrt-x86_64-libxml++2.6 | verified | 4 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-libxml2 | package | mingw-w64-ucrt-x86_64-libxml2 | verified | 5 | 128 |
+| package:msys2:mingw-w64-ucrt-x86_64-libxml2 | package | mingw-w64-ucrt-x86_64-libxml2 | verified | 5 | 129 |
 | package:msys2:mingw-w64-ucrt-x86_64-libxml2-docs | package | mingw-w64-ucrt-x86_64-libxml2-docs | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libxmlb | package | mingw-w64-ucrt-x86_64-libxmlb | verified | 5 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libxmp | package | mingw-w64-ucrt-x86_64-libxmp | verified | 3 | 2 |
@@ -12247,7 +12252,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-sqlcipher | package | mingw-w64-ucrt-x86_64-sqlcipher | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-sqlite-docs | package | mingw-w64-ucrt-x86_64-sqlite-docs | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-sqlite-orm | package | mingw-w64-ucrt-x86_64-sqlite-orm | verified | 3 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-sqlite3 | package | mingw-w64-ucrt-x86_64-sqlite3 | verified | 4 | 49 |
+| package:msys2:mingw-w64-ucrt-x86_64-sqlite3 | package | mingw-w64-ucrt-x86_64-sqlite3 | verified | 4 | 50 |
 | package:msys2:mingw-w64-ucrt-x86_64-sqlite3mc | package | mingw-w64-ucrt-x86_64-sqlite3mc | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-sqlitebrowser | package | mingw-w64-ucrt-x86_64-sqlitebrowser | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-sqlitestudio | package | mingw-w64-ucrt-x86_64-sqlitestudio | verified | 9 | 1 |

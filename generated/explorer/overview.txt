@@ -601,11 +601,16 @@ Objects
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
+- library:boost:boost (library): Boost
+- library:gnome:libxml2 (library): libxml2
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libstdc++ (library): libstdc++
 - library:gnu:zlib (library): zlib
+- library:libexpat:expat (library): Expat
 - library:llvm:libc++ (library): libc++
+- library:sqlite:sqlite3 (library): SQLite
+- library:unicode:icu (library): ICU (International Components for Unicode)
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -16485,6 +16490,19 @@ Relationships
 - environment:msys2:ucrt64 --contains--> library:gnu:gettext
 - library:gnu:gettext --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime
 - library:gnu:gettext --requires--> library:gnu:libiconv
+- environment:msys2:ucrt64 --contains--> library:libexpat:expat
+- library:libexpat:expat --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-expat
+- environment:msys2:ucrt64 --contains--> library:gnome:libxml2
+- library:gnome:libxml2 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libxml2
+- library:gnome:libxml2 --requires--> library:gnu:libiconv
+- library:gnome:libxml2 --requires--> library:gnu:zlib
+- environment:msys2:ucrt64 --contains--> library:unicode:icu
+- library:unicode:icu --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-icu
+- environment:msys2:ucrt64 --contains--> library:boost:boost
+- library:boost:boost --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-boost
+- environment:msys2:ucrt64 --contains--> library:sqlite:sqlite3
+- library:sqlite:sqlite3 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-sqlite3
+- library:sqlite:sqlite3 --requires--> library:gnu:zlib
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

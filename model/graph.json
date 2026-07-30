@@ -989,6 +989,96 @@
         "role": "native-language message translation runtime"
       },
       "evidence_refs": ["evidence:gnu:gettext-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libexpat:expat",
+      "kind": "library",
+      "name": "Expat",
+      "summary": "A stream-oriented XML parser library, packaged per native environment (UCRT64 shown here) and used by several other tools documented in this knowledge base (CMake, GDB) for XML-format handling.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "James Clark / Expat maintainers",
+      "aliases": ["expat", "libexpat"],
+      "tags": ["library", "xml"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://libexpat.github.io/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-expat",
+        "role": "stream-oriented XML parsing"
+      },
+      "evidence_refs": ["evidence:libexpat:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnome:libxml2",
+      "kind": "library",
+      "name": "libxml2",
+      "summary": "A full-featured XML parsing and toolkit library, packaged per native environment (UCRT64 shown here) with built-in character-set conversion and compressed-XML support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Daniel Veillard / GNOME project",
+      "aliases": ["libxml2"],
+      "tags": ["library", "xml"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libxml2",
+        "role": "XML parsing and toolkit"
+      },
+      "evidence_refs": ["evidence:gnome:libxml2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:unicode:icu",
+      "kind": "library",
+      "name": "ICU (International Components for Unicode)",
+      "summary": "A mature Unicode and internationalization library covering text handling, collation, formatting, and locale data, packaged per native environment (UCRT64 shown here).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Unicode Consortium / ICU project",
+      "aliases": ["icu", "libicu"],
+      "tags": ["library", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://icu.unicode.org/home/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-icu",
+        "role": "Unicode and internationalization"
+      },
+      "evidence_refs": ["evidence:unicode:icu-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:boost:boost",
+      "kind": "library",
+      "name": "Boost",
+      "summary": "A large collection of peer-reviewed, portable C++ source libraries, packaged per native environment (UCRT64 shown here) with optional Python-binding support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Boost Steering Committee / Boost community",
+      "aliases": ["boost"],
+      "tags": ["library", "cxx"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.boost.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-boost",
+        "role": "general-purpose C++ library collection"
+      },
+      "evidence_refs": ["evidence:boost:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:sqlite:sqlite3",
+      "kind": "library",
+      "name": "SQLite",
+      "summary": "A self-contained, serverless SQL database engine library, packaged per native environment (UCRT64 shown here) and depended on by GnuPG for its key/trust database, among others.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "D. Richard Hipp / SQLite Consortium",
+      "aliases": ["sqlite3", "sqlite"],
+      "tags": ["library", "database"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.sqlite.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-sqlite3",
+        "role": "embedded SQL database engine"
+      },
+      "evidence_refs": ["evidence:sqlite:documentation-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -2863,6 +2953,162 @@
       "condition": "gettext-runtime declares a direct runtime-depends-on edge to libiconv in the catalog snapshot.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-expat",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:libexpat:expat",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:expat-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libexpat:expat",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-expat",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libxml2",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnome:libxml2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libxml2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnome:libxml2",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libxml2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libxml2-requires-libiconv",
+      "type": "requires",
+      "source": "library:gnome:libxml2",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs libxml2's character-set conversion between an XML document's declared encoding and the caller's requested encoding (claim:library:libxml2-iconv-zlib-features).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libxml2-requires-zlib",
+      "type": "requires",
+      "source": "library:gnome:libxml2",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs libxml2's support for reading gzip-compressed XML documents (claim:library:libxml2-iconv-zlib-features).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-icu",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:unicode:icu",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:icu-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:unicode:icu",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-icu",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-boost",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:boost:boost",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:boost-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:boost:boost",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-boost",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-sqlite3",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:sqlite:sqlite3",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:sqlite3-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:sqlite:sqlite3",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-sqlite3",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:sqlite3-requires-zlib",
+      "type": "requires",
+      "source": "library:sqlite:sqlite3",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs SQLite's optional compression-related extensions and utilities.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -3212,6 +3458,26 @@
       "statement": "GNU gettext is split into three separate MSYS2 packages: gettext-runtime (the libintl runtime library), gettext-tools (msgfmt/xgettext/msginit and other CLI tools), and gettext-libtextstyle (a terminal text-styling library used by the tools); this page models the runtime component.",
       "classification": "fact",
       "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:libxml2-iconv-zlib-features",
+      "subject": "library:gnome:libxml2",
+      "statement": "libxml2's dependencies on libiconv and zlib back its character-encoding conversion and compressed-XML (gzip) reading support respectively.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:sqlite3-tcl-test-dependency",
+      "subject": "library:sqlite:sqlite3",
+      "statement": "SQLite's dependency on tcl reflects its own canonical test-suite tooling, which is Tcl-based, bundled into this package rather than a runtime requirement of the SQL engine itself.",
+      "classification": "inference",
+      "confidence": "high",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -3707,6 +3973,56 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU gettext manual. MSYS2-specific packaging (the runtime/tools/libtextstyle package split), version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:libexpat:manual-2026-07-30",
+      "class": "primary",
+      "title": "Expat (official project site)",
+      "locator": "https://libexpat.github.io/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Expat project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-expat in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnome:libxml2-manual-2026-07-30",
+      "class": "primary",
+      "title": "libxml2 (official project wiki)",
+      "locator": "https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libxml2 project wiki, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libxml2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:unicode:icu-manual-2026-07-30",
+      "class": "primary",
+      "title": "ICU (official project site)",
+      "locator": "https://icu.unicode.org/home/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official ICU project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-icu in the catalog snapshot."
+    },
+    {
+      "id": "evidence:boost:documentation-2026-07-30",
+      "class": "primary",
+      "title": "Boost (official project site)",
+      "locator": "https://www.boost.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Boost project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-boost in the catalog snapshot."
+    },
+    {
+      "id": "evidence:sqlite:documentation-2026-07-30",
+      "class": "primary",
+      "title": "SQLite (official project site)",
+      "locator": "https://www.sqlite.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official SQLite project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-sqlite3 in the catalog snapshot."
     }
   ]
 }

@@ -42,12 +42,14 @@ Its integrated projection has five unresolved metadata dependencies because
 their provider artifacts were not part of that bounded installation; they are
 retained as unresolved rather than inferred.
 
-The same isolated installation retains bounded runtime observations for both
-the MSYS and UCRT64 selected environments. Each records an allow-listed
-environment subset, tool identity, `uname`, MSYS path conversion, the mount
-table, and the executing utility's `/proc/self/exe` view. The latter probes
-describe the MSYS shell/runtime that executes the collector; they do not prove
-native UCRT64 loader, process, or filesystem behavior.
+The same isolated installation retains bounded runtime observations for all
+six modeled selections: MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, and
+MINGW32. Each records an allow-listed environment subset, tool identity,
+`uname`, MSYS path conversion, the mount table, and the executing utility's
+`/proc/self/exe` view. The latter probes describe the MSYS shell/runtime that
+executes the collector; they do not prove native loader, process, or filesystem
+behavior. On this x86_64 host, CLANGARM64 target binaries were discovered but
+reported `executed: false`, so no target-execution claim is made.
 
 ## Scope and interpretation
 

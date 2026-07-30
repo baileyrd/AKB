@@ -66,6 +66,7 @@ On 2026-07-30, the retained MSYS2 `zlib/PKGBUILD` declared upstream
 `d7a0654783a4da529d1bb793b7ad9c3318020af77667bcae35f95d0e42a792f3`.
 A local retrieval of that exact URL matched the declared digest. The same
 isolated installation contains `zlib 1.3.2-1` and `/usr/bin/msys-z.dll`.
+The two recipe-local patches also matched their declared SHA-256 values.
 This establishes recipe-declared source retrieval and installed ownership as
 separate observations; it does not prove patch application, build execution,
 or byte identity between the retrieved source and the installed DLL.

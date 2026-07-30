@@ -19,7 +19,7 @@
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 4 | 1 |
 | component:gnu:gcc | component | GCC | partial | 4 | 1 |
-| component:gnu:gdb | component | GDB | partial | 1 | 1 |
+| component:gnu:gdb | component | GDB | partial | 11 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:libtool | component | GNU Libtool | partial | 3 | 1 |
@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 60 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 39 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -607,22 +607,22 @@
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 9 | 3 |
 | library:darwinsys:file | library | file | partial | 2 | 2 |
-| library:facebook:zstd | library | Zstandard (library) | partial | 1 | 3 |
+| library:facebook:zstd | library | Zstandard (library) | partial | 1 | 4 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
-| library:gnu:gettext | library | GNU gettext | partial | 2 | 2 |
-| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
-| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 4 |
+| library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
+| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 6 |
+| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 5 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 3 | 4 |
 | library:gnu:libintl | library | GNU libintl | partial | 2 | 17 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 2 | 4 |
-| library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
-| library:gnu:readline | library | GNU Readline | partial | 2 | 1 |
+| library:gnu:mpfr | library | GNU MPFR | partial | 2 | 3 |
+| library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 7 |
+| library:gnu:zlib | library | zlib | partial | 1 | 8 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -639,7 +639,7 @@
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 5 | 2 |
 | library:libedit:libedit | library | libedit | partial | 2 | 2 |
-| library:libexpat:expat | library | Expat | partial | 1 | 2 |
+| library:libexpat:expat | library | Expat | partial | 1 | 3 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
@@ -662,7 +662,9 @@
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
+| library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 1 | 2 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
+| library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
 | library:yubico:libfido2 | library | libfido2 | partial | 2 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
@@ -12846,8 +12848,8 @@
 | package:msys2:mingw-w64-ucrt-x86_64-xpm-nox | package | mingw-w64-ucrt-x86_64-xpm-nox | verified | 2 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-xsimd | package | mingw-w64-ucrt-x86_64-xsimd | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-xvidcore | package | mingw-w64-ucrt-x86_64-xvidcore | verified | 2 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-xxhash | package | mingw-w64-ucrt-x86_64-xxhash | verified | 2 | 4 |
-| package:msys2:mingw-w64-ucrt-x86_64-xz | package | mingw-w64-ucrt-x86_64-xz | verified | 3 | 43 |
+| package:msys2:mingw-w64-ucrt-x86_64-xxhash | package | mingw-w64-ucrt-x86_64-xxhash | verified | 2 | 5 |
+| package:msys2:mingw-w64-ucrt-x86_64-xz | package | mingw-w64-ucrt-x86_64-xz | verified | 3 | 44 |
 | package:msys2:mingw-w64-ucrt-x86_64-yajl | package | mingw-w64-ucrt-x86_64-yajl | verified | 2 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-yaml-cpp | package | mingw-w64-ucrt-x86_64-yaml-cpp | verified | 2 | 7 |
 | package:msys2:mingw-w64-ucrt-x86_64-yarn | package | mingw-w64-ucrt-x86_64-yarn | verified | 3 | 0 |

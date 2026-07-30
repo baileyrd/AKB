@@ -1979,6 +1979,42 @@
         "role": "Clang parsing, semantic analysis, and code generation"
       },
       "evidence_refs": ["evidence:llvm:clang-libs-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:xxhash:xxhash",
+      "kind": "library",
+      "name": "xxHash",
+      "summary": "An extremely fast non-cryptographic hash algorithm library, packaged per native environment (UCRT64 shown here) and depended on by GDB to back its debug-info index/cache features for fast repeated symbol lookups.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yann Collet",
+      "aliases": ["xxhash"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://xxhash.com/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-xxhash",
+        "role": "fast non-cryptographic hashing"
+      },
+      "evidence_refs": ["evidence:xxhash:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:tukaani:liblzma",
+      "kind": "library",
+      "name": "liblzma (XZ Utils library)",
+      "summary": "The compression library underlying XZ Utils, packaged per native environment (UCRT64 shown here) and depended on by GDB to back reading debug information compressed with the xz/LZMA algorithm.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Tukaani project",
+      "aliases": ["liblzma", "xz"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://tukaani.org/xz",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-xz",
+        "role": "LZMA/xz compression"
+      },
+      "evidence_refs": ["evidence:tukaani:xz-library-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -6531,6 +6567,174 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:ucrt64-contains-xxhash",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:xxhash:xxhash",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:xxhash-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:xxhash:xxhash",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-xxhash",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-liblzma",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:tukaani:liblzma",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:liblzma-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:tukaani:liblzma",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-xz",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-expat",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:libexpat:expat",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs XML-format target descriptions and remote-protocol data.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-gmp",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs precise evaluation of arbitrary-precision expressions during debugging sessions.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-mpfr",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:mpfr",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs precise evaluation of arbitrary-precision expressions during debugging sessions.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-libiconv",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Portable multibyte/character-set handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-readline",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:readline",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs command-line editing and history at GDB's interactive prompt.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-gettext",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-zlib",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs reading debug information compressed with zlib.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-zstd",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:facebook:zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs reading debug information compressed with zstd.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-xxhash",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:xxhash:xxhash",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs GDB's debug-info index/cache features, which use fast hashing to speed up repeated symbol lookups.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-liblzma",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:tukaani:liblzma",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs reading debug information compressed with xz/LZMA.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -7913,6 +8117,26 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Clang project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-clang-libs in the catalog snapshot."
+    },
+    {
+      "id": "evidence:xxhash:manual-2026-07-30",
+      "class": "primary",
+      "title": "xxHash (official project site)",
+      "locator": "https://xxhash.com/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official xxHash project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-xxhash in the catalog snapshot."
+    },
+    {
+      "id": "evidence:tukaani:xz-library-manual-2026-07-30",
+      "class": "primary",
+      "title": "XZ Utils / liblzma (official project site)",
+      "locator": "https://tukaani.org/xz",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official XZ Utils project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-xz in the catalog snapshot."
     }
   ]
 }

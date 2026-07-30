@@ -75,11 +75,13 @@ The catalog snapshot records 94 relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-zstd` — the widest
 reverse-dependency footprint of any library added in this batch,
 reflecting Zstandard's status as a broadly-adopted general-purpose
-compression library across the UCRT64 package ecosystem. Two are
+compression library across the UCRT64 package ecosystem. Three are
 already modeled in this knowledge base: `package:msys2:mingw-w64-ucrt-x86_64-gcc`
-(`relationship:toolchain:gcc-requires-zstd`) and
+(`relationship:toolchain:gcc-requires-zstd`),
 `package:msys2:mingw-w64-ucrt-x86_64-binutils`
-(`relationship:toolchain:binutils-requires-zstd`). The remaining ~92
+(`relationship:toolchain:binutils-requires-zstd`), and
+`package:msys2:mingw-w64-ucrt-x86_64-gdb`
+(`relationship:toolchain:gdb-requires-zstd`). The remaining ~91
 recorded dependents (a broad mix of UCRT64 packages such as `blender`,
 `arrow`, and numerous cross-compilation toolchains) are not individually
 modeled in this knowledge base; see the
@@ -151,4 +153,5 @@ methodology.
 - [Zstandard (MSYS CLI tool)](ZSTD.md)
 - [GNU GCC](GNU-GCC.md)
 - [GNU Binutils](GNU-BINUTILS.md)
+- [GDB](GNU-GDB.md)
 - [zlib](ZLIB.md)

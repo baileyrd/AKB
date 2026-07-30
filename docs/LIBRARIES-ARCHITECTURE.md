@@ -64,6 +64,8 @@ model_refs:
   - library:facebook:zstd
   - library:llvm:llvm-libs
   - library:llvm:clang-libs
+  - library:xxhash:xxhash
+  - library:tukaani:liblzma
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -116,6 +118,8 @@ evidence_refs:
   - evidence:facebook:zstd-manual-2026-07-30
   - evidence:llvm:llvm-libs-manual-2026-07-30
   - evidence:llvm:clang-libs-manual-2026-07-30
+  - evidence:xxhash:manual-2026-07-30
+  - evidence:tukaani:xz-library-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -174,8 +178,9 @@ flowchart LR
 [PCRE2 (MSYS)](PCRE2-MSYS.md), [PCRE (MSYS)](PCRE-MSYS.md),
 [GNU Readline (MSYS)](GNU-READLINE-MSYS.md),
 [GNU Libltdl](GNU-LIBLTDL.md), [Zstandard (library)](LIBZSTD.md),
-[LLVM libraries](LLVM-LIBS.md), and [Clang libraries](CLANG-LIBS.md) are
-this volume's first per-library pages. The
+[LLVM libraries](LLVM-LIBS.md), [Clang libraries](CLANG-LIBS.md),
+[xxHash](XXHASH.md), and [liblzma](LIBLZMA.md) are this volume's first
+per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -188,7 +193,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All sixty pages are deliberately scoped to package/dependency-level
+All sixty-two pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -327,9 +332,18 @@ libraries also picked up new dependency edges in this batch without new
 pages: [zlib](ZLIB.md#reverse-dependencies) and
 [GNU gettext](GNU-GETTEXT.md#related-objects) both gained `requires`
 edges from GCC and/or Binutils, since those UCRT64 packages' own
-dependency lists matched these existing entities exactly. These pages
-are a starting point for this volume, not a demonstration that its full
-evidence model is populated.
+dependency lists matched these existing entities exactly. A follow-on
+pass through [GDB's](GNU-GDB.md) own dependency table (not yet checked
+this session) found the richest single-page yield: eight of GDB's twelve
+declared dependencies matched entities already modeled in this volume
+(Expat, GNU MP, GNU MPFR, GNU libiconv, GNU Readline, GNU gettext, zlib,
+Zstandard), each getting a new `requires` edge and cross-link, plus two
+genuinely new libraries — [xxHash](XXHASH.md) (GDB's debug-info cache
+hashing) and [liblzma](LIBLZMA.md) (GDB's xz-compressed debug-section
+support, distinct from Volume 5's MSYS `xz` CLI tool the same way
+Zstandard's library form is distinct from its own CLI sibling). These
+pages are a starting point for this volume, not a demonstration that its
+full evidence model is populated.
 
 ## Family navigation
 

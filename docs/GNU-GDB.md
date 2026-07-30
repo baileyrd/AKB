@@ -6,6 +6,16 @@ status: partial
 model_refs:
   - component:gnu:gdb
   - package:msys2:mingw-w64-ucrt-x86_64-gdb
+  - library:libexpat:expat
+  - library:gnu:gmp
+  - library:gnu:mpfr
+  - library:gnu:libiconv
+  - library:gnu:readline
+  - library:gnu:gettext
+  - library:gnu:zlib
+  - library:facebook:zstd
+  - library:xxhash:xxhash
+  - library:tukaani:liblzma
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:gdb-manual-2026-07-30
@@ -68,13 +78,13 @@ debugger feature:
 | Scripting API | `mingw-w64-ucrt-x86_64-python` | Backs GDB's Python scripting API for pretty-printers and automation (`claim:component:gdb:python-scripting`). |
 | Syntax highlighting (optional) | `mingw-w64-ucrt-x86_64-python-pygments` | Backs styled source-code display when listing source alongside execution (`claim:component:gdb:python-scripting`). |
 | Terminal UI | `mingw-w64-ucrt-x86_64-ncurses` | Backs GDB's TUI (text user interface) mode, the same terminal-capability library documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
-| Interactive line editing | `mingw-w64-ucrt-x86_64-readline` | Backs command-line editing and history at GDB's interactive prompt. |
-| XML parsing | `mingw-w64-ucrt-x86_64-expat` | Backs XML-format target descriptions and remote-protocol data. |
-| Arbitrary-precision arithmetic | `mingw-w64-ucrt-x86_64-gmp`, `mingw-w64-ucrt-x86_64-mpfr` | Back precise evaluation of arbitrary-precision expressions during debugging sessions. |
-| Character-set conversion | `mingw-w64-ucrt-x86_64-libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
-| Fast hashing | `mingw-w64-ucrt-x86_64-xxhash` | Backs GDB's debug-info index/cache features, which use fast hashing to speed up repeated symbol lookups. |
-| Compressed debug sections | `mingw-w64-ucrt-x86_64-xz`, `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back reading debug information compressed with any of these algorithms, extending the compression-format support already documented for [GNU Binutils](GNU-BINUTILS.md#dependencies) with xz as an additional option. |
-| Native-language messages | `mingw-w64-ucrt-x86_64-gettext-runtime` | gettext-based message translation (NLS). |
+| Interactive line editing | `mingw-w64-ucrt-x86_64-readline` | Backs command-line editing and history at GDB's interactive prompt. Documented fully in [GNU Readline](GNU-READLINE.md). |
+| XML parsing | `mingw-w64-ucrt-x86_64-expat` | Backs XML-format target descriptions and remote-protocol data. Documented fully in [Expat](EXPAT.md). |
+| Arbitrary-precision arithmetic | `mingw-w64-ucrt-x86_64-gmp`, `mingw-w64-ucrt-x86_64-mpfr` | Back precise evaluation of arbitrary-precision expressions during debugging sessions. Documented fully in [GNU MP](GNU-GMP.md) and [GNU MPFR](GNU-MPFR.md). |
+| Character-set conversion | `mingw-w64-ucrt-x86_64-libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv](GNU-LIBICONV.md). |
+| Fast hashing | `mingw-w64-ucrt-x86_64-xxhash` | Backs GDB's debug-info index/cache features, which use fast hashing to speed up repeated symbol lookups. Documented fully in [xxHash](XXHASH.md). |
+| Compressed debug sections | `mingw-w64-ucrt-x86_64-xz`, `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back reading debug information compressed with any of these algorithms, extending the compression-format support already documented for [GNU Binutils](GNU-BINUTILS.md#dependencies) with xz as an additional option. Documented fully in [liblzma](LIBLZMA.md), [zlib](ZLIB.md), and [Zstandard (library)](LIBZSTD.md). |
+| Native-language messages | `mingw-w64-ucrt-x86_64-gettext-runtime` | gettext-based message translation (NLS). Documented fully in [GNU gettext](GNU-GETTEXT.md). |
 
 ## Reverse Dependencies
 
@@ -148,3 +158,13 @@ ptrace-based backend) has not been directly observed.
 - [GNU Binutils](GNU-BINUTILS.md)
 - [LLDB](LLDB.md)
 - [ncurses](NCURSES.md)
+- [GNU Readline](GNU-READLINE.md)
+- [Expat](EXPAT.md)
+- [GNU MP (GMP)](GNU-GMP.md)
+- [GNU MPFR](GNU-MPFR.md)
+- [GNU libiconv](GNU-LIBICONV.md)
+- [xxHash](XXHASH.md)
+- [liblzma](LIBLZMA.md)
+- [zlib](ZLIB.md)
+- [Zstandard (library)](LIBZSTD.md)
+- [GNU gettext](GNU-GETTEXT.md)

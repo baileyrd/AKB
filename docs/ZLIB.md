@@ -153,4 +153,5 @@ this library's unusually wide blast radius.
 - [libarchive](LIBARCHIVE.md)
 - [GNU GCC](GNU-GCC.md)
 - [GNU Binutils](GNU-BINUTILS.md)
+- [GDB](GNU-GDB.md)
 - [Zstandard (library)](LIBZSTD.md)

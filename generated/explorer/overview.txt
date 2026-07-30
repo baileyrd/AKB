@@ -659,7 +659,9 @@ Objects
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
 - library:rhash:rhash (library): RHash
 - library:sqlite:sqlite3 (library): SQLite
+- library:tukaani:liblzma (library): liblzma (XZ Utils library)
 - library:unicode:icu (library): ICU (International Components for Unicode)
+- library:xxhash:xxhash (library): xxHash
 - library:yubico:libfido2 (library): libfido2
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
@@ -16763,6 +16765,20 @@ Relationships
 - library:llvm:clang-libs --packaged-by--> package:msys2:mingw-w64-clang-x86_64-clang-libs
 - component:llvm:clang --requires--> library:llvm:clang-libs
 - component:llvm:lldb --requires--> library:llvm:clang-libs
+- environment:msys2:ucrt64 --contains--> library:xxhash:xxhash
+- library:xxhash:xxhash --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-xxhash
+- environment:msys2:ucrt64 --contains--> library:tukaani:liblzma
+- library:tukaani:liblzma --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-xz
+- component:gnu:gdb --requires--> library:libexpat:expat
+- component:gnu:gdb --requires--> library:gnu:gmp
+- component:gnu:gdb --requires--> library:gnu:mpfr
+- component:gnu:gdb --requires--> library:gnu:libiconv
+- component:gnu:gdb --requires--> library:gnu:readline
+- component:gnu:gdb --requires--> library:gnu:gettext
+- component:gnu:gdb --requires--> library:gnu:zlib
+- component:gnu:gdb --requires--> library:facebook:zstd
+- component:gnu:gdb --requires--> library:xxhash:xxhash
+- component:gnu:gdb --requires--> library:tukaani:liblzma
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

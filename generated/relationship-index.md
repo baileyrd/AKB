@@ -76269,6 +76269,7 @@
 | relationship:foundation-libraries:libksba-requires-libgpg-error | requires | library:gnupg:libksba | library:gnupg:libgpg-error | verified |
 | relationship:foundation-libraries:libltdl-packaged-by-package | packaged-by | library:gnu:libltdl | package:msys2:libltdl | verified |
 | relationship:foundation-libraries:libltdl-uses-msys-runtime | uses-runtime | library:gnu:libltdl | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:liblzma-packaged-by-package | packaged-by | library:tukaani:liblzma | package:msys2:mingw-w64-ucrt-x86_64-xz | verified |
 | relationship:foundation-libraries:libnghttp2-packaged-by-package | packaged-by | library:nghttp2:libnghttp2 | package:msys2:libnghttp2 | verified |
 | relationship:foundation-libraries:libnghttp2-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libnghttp3-packaged-by-package | packaged-by | library:nghttp2:libnghttp3 | package:msys2:libnghttp3 | verified |
@@ -76363,6 +76364,7 @@
 | relationship:foundation-libraries:ucrt64-contains-libgpg-error | contains | environment:msys2:ucrt64 | library:gnupg:libgpg-error | partial |
 | relationship:foundation-libraries:ucrt64-contains-libiconv | contains | environment:msys2:ucrt64 | library:gnu:libiconv | partial |
 | relationship:foundation-libraries:ucrt64-contains-libksba | contains | environment:msys2:ucrt64 | library:gnupg:libksba | partial |
+| relationship:foundation-libraries:ucrt64-contains-liblzma | contains | environment:msys2:ucrt64 | library:tukaani:liblzma | partial |
 | relationship:foundation-libraries:ucrt64-contains-libuv | contains | environment:msys2:ucrt64 | library:libuv:libuv | partial |
 | relationship:foundation-libraries:ucrt64-contains-libwinpthread | contains | environment:msys2:ucrt64 | library:mingw-w64:libwinpthread | partial |
 | relationship:foundation-libraries:ucrt64-contains-libxml2 | contains | environment:msys2:ucrt64 | library:gnome:libxml2 | partial |
@@ -76377,11 +76379,13 @@
 | relationship:foundation-libraries:ucrt64-contains-termcap | contains | environment:msys2:ucrt64 | library:gnu:termcap | partial |
 | relationship:foundation-libraries:ucrt64-contains-wineditline | contains | environment:msys2:ucrt64 | library:mingweditline:wineditline | partial |
 | relationship:foundation-libraries:ucrt64-contains-winpthreads | contains | environment:msys2:ucrt64 | library:mingw-w64:winpthreads | partial |
+| relationship:foundation-libraries:ucrt64-contains-xxhash | contains | environment:msys2:ucrt64 | library:xxhash:xxhash | partial |
 | relationship:foundation-libraries:ucrt64-contains-zlib | contains | environment:msys2:ucrt64 | library:gnu:zlib | partial |
 | relationship:foundation-libraries:ucrt64-contains-zstd | contains | environment:msys2:ucrt64 | library:facebook:zstd | partial |
 | relationship:foundation-libraries:wineditline-packaged-by-package | packaged-by | library:mingweditline:wineditline | package:msys2:mingw-w64-ucrt-x86_64-wineditline | verified |
 | relationship:foundation-libraries:winpthreads-packaged-by-package | packaged-by | library:mingw-w64:winpthreads | package:msys2:mingw-w64-ucrt-x86_64-winpthreads | verified |
 | relationship:foundation-libraries:winpthreads-requires-libwinpthread | requires | library:mingw-w64:winpthreads | library:mingw-w64:libwinpthread | verified |
+| relationship:foundation-libraries:xxhash-packaged-by-package | packaged-by | library:xxhash:xxhash | package:msys2:mingw-w64-ucrt-x86_64-xxhash | verified |
 | relationship:foundation-libraries:zlib-packaged-by-package | packaged-by | library:gnu:zlib | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
 | relationship:foundation-libraries:zstd-packaged-by-package | packaged-by | library:facebook:zstd | package:msys2:mingw-w64-ucrt-x86_64-zstd | verified |
 | relationship:gnu-userland:bash-packaged-by-package | packaged-by | component:gnu:bash | package:msys2:bash | verified |
@@ -77031,6 +77035,16 @@
 | relationship:toolchain:gcc-requires-zlib | requires | component:gnu:gcc | library:gnu:zlib | verified |
 | relationship:toolchain:gcc-requires-zstd | requires | component:gnu:gcc | library:facebook:zstd | verified |
 | relationship:toolchain:gdb-packaged-by-package | packaged-by | component:gnu:gdb | package:msys2:mingw-w64-ucrt-x86_64-gdb | verified |
+| relationship:toolchain:gdb-requires-expat | requires | component:gnu:gdb | library:libexpat:expat | verified |
+| relationship:toolchain:gdb-requires-gettext | requires | component:gnu:gdb | library:gnu:gettext | verified |
+| relationship:toolchain:gdb-requires-gmp | requires | component:gnu:gdb | library:gnu:gmp | verified |
+| relationship:toolchain:gdb-requires-libiconv | requires | component:gnu:gdb | library:gnu:libiconv | verified |
+| relationship:toolchain:gdb-requires-liblzma | requires | component:gnu:gdb | library:tukaani:liblzma | verified |
+| relationship:toolchain:gdb-requires-mpfr | requires | component:gnu:gdb | library:gnu:mpfr | verified |
+| relationship:toolchain:gdb-requires-readline | requires | component:gnu:gdb | library:gnu:readline | verified |
+| relationship:toolchain:gdb-requires-xxhash | requires | component:gnu:gdb | library:xxhash:xxhash | verified |
+| relationship:toolchain:gdb-requires-zlib | requires | component:gnu:gdb | library:gnu:zlib | verified |
+| relationship:toolchain:gdb-requires-zstd | requires | component:gnu:gdb | library:facebook:zstd | verified |
 | relationship:toolchain:lld-compatible-with-binutils | compatible-with | component:llvm:lld | component:gnu:binutils | partial |
 | relationship:toolchain:lld-packaged-by-package | packaged-by | component:llvm:lld | package:msys2:mingw-w64-clang-x86_64-lld | verified |
 | relationship:toolchain:lld-requires-llvm-libs | requires | component:llvm:lld | library:llvm:llvm-libs | verified |

@@ -143,7 +143,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gdb-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `component:gnu:grep`
@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 39
+- Outgoing relationships: 41
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5436,7 +5436,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnome:libxml2`
 
@@ -5454,7 +5454,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:gmp`
 
@@ -5463,7 +5463,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:gnu:libiconv`
 
@@ -5472,7 +5472,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:libidn2`
 
@@ -5535,7 +5535,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:readline`
 
@@ -5544,7 +5544,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:readline@msys`
 
@@ -5571,7 +5571,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `library:gnupg:libassuan`
 
@@ -5724,7 +5724,7 @@
 - Status: `partial`
 - Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:libisl:isl`
 
@@ -5924,6 +5924,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:tukaani:liblzma`
+
+- Name: liblzma (XZ Utils library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
 ## `library:unicode:icu`
 
 - Name: ICU (International Components for Unicode)
@@ -5932,6 +5941,15 @@
 - Evidence: evidence:unicode:icu-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 1
+
+## `library:xxhash:xxhash`
+
+- Name: xxHash
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:xxhash:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
 
 ## `library:yubico:libfido2`
 
@@ -115587,7 +115605,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-xz`
 
@@ -115596,7 +115614,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 43
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-yajl`
 

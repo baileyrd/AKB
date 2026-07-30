@@ -158,3 +158,4 @@ methodology remains open.
 - [zlib](ZLIB.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [GNU Binutils](GNU-BINUTILS.md)
+- [GDB](GNU-GDB.md)

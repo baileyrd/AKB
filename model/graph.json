@@ -1835,6 +1835,24 @@
         "role": "internationalized message translation (NLS) runtime"
       },
       "evidence_refs": ["evidence:gnu:libintl-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:curl:libcurl",
+      "kind": "library",
+      "name": "libcurl",
+      "summary": "The multi-protocol file-transfer library underlying the curl CLI, packaged in the MSYS environment and also depended on directly by GnuPG's dirmngr for HTTP-based key-server and certificate-revocation lookups.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "curl project",
+      "aliases": ["libcurl"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://curl.se/",
+        "packaged_as": "package:msys2:libcurl",
+        "role": "multi-protocol file transfer"
+      },
+      "evidence_refs": ["evidence:curl:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -5831,6 +5849,150 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs Vim's built-in file-encryption feature (:X, -x), which uses crypt()-family hashing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libcurl",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:curl:libcurl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:curl:libcurl",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:curl:libcurl",
+      "target": "package:msys2:libcurl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-libcurl",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:curl:libcurl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "The curl CLI links against libcurl, its own shared transfer library.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libcurl",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:curl:libcurl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs dirmngr's HTTP-based key-server and certificate-revocation lookups.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libidn2",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:gnu:libidn2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA) handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libnghttp2",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:nghttp2:libnghttp2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the HTTP/2 protocol.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libnghttp3",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:nghttp2:libnghttp3",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the HTTP/3 protocol.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libngtcp2",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:nghttp2:libngtcp2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the QUIC transport protocol underlying HTTP/3.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libpsl",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:libpsl:libpsl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs correct cookie-domain-scoping decisions using the Public Suffix List.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libunistring",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:gnu:libunistring",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode-aware string processing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:libcurl-requires-openssl",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "component:openssl:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "transport",
+      "condition": "Backs HTTPS and other TLS-secured transfers.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

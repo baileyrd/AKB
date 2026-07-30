@@ -602,6 +602,7 @@ Objects
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - library:boost:boost (library): Boost
+- library:curl:libcurl (library): libcurl
 - library:darwinsys:file (library): file
 - library:gnome:libxml2 (library): libxml2
 - library:gnu:gettext (library): GNU gettext
@@ -16709,6 +16710,18 @@ Relationships
 - library:gnu:libidn2 --requires--> library:gnu:libintl
 - library:p11-glue:p11-kit --requires--> library:gnu:libintl
 - component:vim:vim --requires--> library:libxcrypt:libxcrypt
+- environment:msys2:msys --contains--> library:curl:libcurl
+- library:curl:libcurl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:curl:libcurl --packaged-by--> package:msys2:libcurl
+- component:curl:curl --requires--> library:curl:libcurl
+- component:gnupg:gnupg --requires--> library:curl:libcurl
+- library:curl:libcurl --requires--> library:gnu:libidn2
+- library:curl:libcurl --requires--> library:nghttp2:libnghttp2
+- library:curl:libcurl --requires--> library:nghttp2:libnghttp3
+- library:curl:libcurl --requires--> library:nghttp2:libngtcp2
+- library:curl:libcurl --requires--> library:libpsl:libpsl
+- library:curl:libcurl --requires--> library:gnu:libunistring
+- library:curl:libcurl --requires--> component:openssl:openssl
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

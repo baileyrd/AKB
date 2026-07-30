@@ -26,7 +26,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 2
 
 ## `component:git:git`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -342,7 +342,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `component:p7zip:p7zip`
 
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 55
+- Outgoing relationships: 56
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5411,6 +5411,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 1
 
+## `library:curl:libcurl`
+
+- Name: libcurl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 9
+- Incoming relationships: 3
+
 ## `library:darwinsys:file`
 
 - Name: file
@@ -5463,7 +5472,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:libintl`
 
@@ -5499,7 +5508,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:mpfr`
 
@@ -5706,7 +5715,7 @@
 - Status: `partial`
 - Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:libuv:libuv`
 
@@ -5796,7 +5805,7 @@
 - Status: `partial`
 - Evidence: evidence:nghttp2:libnghttp2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:nghttp2:libnghttp3`
 
@@ -5805,7 +5814,7 @@
 - Status: `partial`
 - Evidence: evidence:nghttp2:libnghttp3-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:nghttp2:libngtcp2`
 
@@ -5814,7 +5823,7 @@
 - Status: `partial`
 - Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:p11-glue:p11-kit`
 
@@ -7803,7 +7812,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:libcurl-devel`
 
@@ -147348,7 +147357,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 55
+- Incoming relationships: 56
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

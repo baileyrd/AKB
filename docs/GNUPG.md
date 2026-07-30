@@ -13,6 +13,7 @@ model_refs:
   - library:nettle:nettle@msys
   - library:gnupg:libgpg-error@msys
   - library:gnu:libintl
+  - library:curl:libcurl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -78,7 +79,7 @@ stack plus archive, terminal, and database libraries:
 | Certificate/CMS handling | `package:msys2:libksba` | Backs X.509/CMS certificate parsing, used specifically by GnuPG's S/MIME support (`gpgsm`) despite GnuPG's primary focus being OpenPGP rather than X.509. Documented fully in [libksba (MSYS)](LIBKSBA-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libksba](LIBKSBA.md) package. |
 | Threading | `package:msys2:libnpth` | GnuPG's own portable threading library (New/Nth Pth), used internally for concurrent operations. Documented fully in [nPth (MSYS)](NPTH-MSYS.md) — corrected 2026-07-30 from an earlier link to the UCRT64 [nPth](NPTH.md) package. |
 | TLS for network lookups | `package:msys2:libgnutls` | Backs `dirmngr`'s TLS-secured connections to key servers and OCSP responders — the network-facing exception to GnuPG's OpenSSL independence. Documented fully in [GnuTLS](GNUTLS.md). |
-| HTTP transfer library | `package:msys2:libcurl` | Backs `dirmngr`'s HTTP-based key-server and certificate-revocation lookups. |
+| HTTP transfer library | `package:msys2:libcurl` | Backs `dirmngr`'s HTTP-based key-server and certificate-revocation lookups. Documented fully in [libcurl](LIBCURL.md). |
 | Compression | `package:msys2:bzip2`, `package:msys2:libbz2`, `package:msys2:zlib` | Back compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support. |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
@@ -172,3 +173,4 @@ version-qualified security review noted above.
 - [Nettle (MSYS)](NETTLE-MSYS.md)
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [libcurl](LIBCURL.md)

@@ -76230,6 +76230,14 @@
 | relationship:foundation-libraries:libassuan-msys-uses-msys-runtime | uses-runtime | library:gnupg:libassuan@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libassuan-packaged-by-package | packaged-by | library:gnupg:libassuan | package:msys2:mingw-w64-ucrt-x86_64-libassuan | verified |
 | relationship:foundation-libraries:libassuan-requires-libgpg-error | requires | library:gnupg:libassuan | library:gnupg:libgpg-error | verified |
+| relationship:foundation-libraries:libcurl-packaged-by-package | packaged-by | library:curl:libcurl | package:msys2:libcurl | verified |
+| relationship:foundation-libraries:libcurl-requires-libidn2 | requires | library:curl:libcurl | library:gnu:libidn2 | verified |
+| relationship:foundation-libraries:libcurl-requires-libnghttp2 | requires | library:curl:libcurl | library:nghttp2:libnghttp2 | verified |
+| relationship:foundation-libraries:libcurl-requires-libnghttp3 | requires | library:curl:libcurl | library:nghttp2:libnghttp3 | verified |
+| relationship:foundation-libraries:libcurl-requires-libngtcp2 | requires | library:curl:libcurl | library:nghttp2:libngtcp2 | verified |
+| relationship:foundation-libraries:libcurl-requires-libpsl | requires | library:curl:libcurl | library:libpsl:libpsl | verified |
+| relationship:foundation-libraries:libcurl-requires-libunistring | requires | library:curl:libcurl | library:gnu:libunistring | verified |
+| relationship:foundation-libraries:libcurl-uses-msys-runtime | uses-runtime | library:curl:libcurl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libedit-packaged-by-package | packaged-by | library:libedit:libedit | package:msys2:libedit | verified |
 | relationship:foundation-libraries:libedit-uses-msys-runtime | uses-runtime | library:libedit:libedit | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libfido2-packaged-by-package | packaged-by | library:yubico:libfido2 | package:msys2:libfido2 | verified |
@@ -76284,6 +76292,7 @@
 | relationship:foundation-libraries:msys-contains-gnutls | contains | environment:msys2:msys | library:gnutls:gnutls | partial |
 | relationship:foundation-libraries:msys-contains-heimdal | contains | environment:msys2:msys | library:h5l:heimdal | partial |
 | relationship:foundation-libraries:msys-contains-libassuan-msys | contains | environment:msys2:msys | library:gnupg:libassuan@msys | partial |
+| relationship:foundation-libraries:msys-contains-libcurl | contains | environment:msys2:msys | library:curl:libcurl | partial |
 | relationship:foundation-libraries:msys-contains-libedit | contains | environment:msys2:msys | library:libedit:libedit | partial |
 | relationship:foundation-libraries:msys-contains-libfido2 | contains | environment:msys2:msys | library:yubico:libfido2 | partial |
 | relationship:foundation-libraries:msys-contains-libgcrypt-msys | contains | environment:msys2:msys | library:gnupg:libgcrypt@msys | partial |
@@ -76935,6 +76944,7 @@
 | relationship:inventory:installs-ff545dec9beb3d8607c2 | installs | package:msys2:curl | filesystem-path:msys2:/usr/share/man/man3/curlopt_localport.3.gz | verified |
 | relationship:inventory:installs-ffb65233e254270fc4a6 | installs | package:msys2:curl | filesystem-path:msys2:/usr/share/man/man3/curlopt_useragent.3.gz | verified |
 | relationship:ssh-curl-git:curl-packaged-by-package | packaged-by | component:curl:curl | package:msys2:curl | verified |
+| relationship:ssh-curl-git:curl-requires-libcurl | requires | component:curl:curl | library:curl:libcurl | verified |
 | relationship:ssh-curl-git:curl-requires-libnghttp2 | requires | component:curl:curl | library:nghttp2:libnghttp2 | verified |
 | relationship:ssh-curl-git:curl-requires-libnghttp3 | requires | component:curl:curl | library:nghttp2:libnghttp3 | verified |
 | relationship:ssh-curl-git:curl-requires-libngtcp2 | requires | component:curl:curl | library:nghttp2:libngtcp2 | verified |
@@ -76951,12 +76961,14 @@
 | relationship:ssh-curl-git:gnupg-packaged-by-package | packaged-by | component:gnupg:gnupg | package:msys2:gnupg | verified |
 | relationship:ssh-curl-git:gnupg-requires-gnutls | requires | component:gnupg:gnupg | library:gnutls:gnutls | verified |
 | relationship:ssh-curl-git:gnupg-requires-libassuan | requires | component:gnupg:gnupg | library:gnupg:libassuan@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-libcurl | requires | component:gnupg:gnupg | library:curl:libcurl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libgcrypt | requires | component:gnupg:gnupg | library:gnupg:libgcrypt@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libintl | requires | component:gnupg:gnupg | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libksba | requires | component:gnupg:gnupg | library:gnupg:libksba@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-nettle | requires | component:gnupg:gnupg | library:nettle:nettle@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-npth | requires | component:gnupg:gnupg | library:gnupg:npth@msys | verified |
 | relationship:ssh-curl-git:gnupg-uses-msys-runtime | uses-runtime | component:gnupg:gnupg | runtime:msys2:msys-2.0.dll | partial |
+| relationship:ssh-curl-git:libcurl-requires-openssl | requires | library:curl:libcurl | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:msys-contains-curl | contains | environment:msys2:msys | component:curl:curl | partial |
 | relationship:ssh-curl-git:msys-contains-git | contains | environment:msys2:msys | component:git:git | partial |
 | relationship:ssh-curl-git:msys-contains-gnupg | contains | environment:msys2:msys | component:gnupg:gnupg | partial |

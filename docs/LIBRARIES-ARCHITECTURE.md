@@ -3,8 +3,12 @@ id: doc:volume-6:libraries-architecture
 title: MSYS2 Library Architecture
 volume: 6
 status: partial
-model_refs: []
-evidence_refs: []
+model_refs:
+  - library:gnu:libstdc++
+  - library:llvm:libc++
+evidence_refs:
+  - evidence:gnu:libstdcxx-manual-2026-07-30
+  - evidence:llvm:libcxx-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -34,6 +38,18 @@ flowchart LR
 | Which headers and metadata describe a consumption surface? | Package paths plus parsed `.pc`/CMake metadata | Public API stability or a successful build |
 | Which archive members exist? | Hash-qualified archive-member inventory | Runtime behavior or object-level ABI compatibility |
 | Which binaries consume a DLL? | Static `imports-dll` relationships in one observation | Transitive runtime loading or reverse package dependency |
+
+## First library pages
+
+[libstdc++](LIBSTDCXX.md) and [libc++](LIBCXX.md) are this volume's first
+per-library pages, resolving the "C++ library" row the
+[Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open. Both are
+deliberately scoped to package/dependency-level evidence only — package
+identity, bundling, provides/depends relationships, and reverse-dependency
+counts — and both explicitly flag that the fuller methodology below
+(headers, `pkg-config`/CMake metadata, PE import/export analysis) has not
+been applied to them and remains open. They are a starting point for this
+volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation
 

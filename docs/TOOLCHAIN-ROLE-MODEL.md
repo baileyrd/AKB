@@ -20,6 +20,8 @@ model_refs:
   - component:gnu:automake
   - component:gnu:libtool
   - component:gnu:make
+  - library:gnu:libstdc++
+  - library:llvm:libc++
 evidence_refs:
   - evidence:gnu:gcc-manual-2026-07-30
   - evidence:gnu:binutils-manual-2026-07-30
@@ -35,6 +37,8 @@ evidence_refs:
   - evidence:gnu:automake-manual-2026-07-30
   - evidence:gnu:libtool-manual-2026-07-30
   - evidence:gnu:make-manual-2026-07-30
+  - evidence:gnu:libstdcxx-manual-2026-07-30
+  - evidence:llvm:libcxx-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -44,7 +48,7 @@ last_verified: 2026-07-30
 | --- | --- | --- | --- | --- |
 | Compiler driver | GCC | Clang | Source-language translation only; not full ABI identity | [GCC](GNU-GCC.md), [Clang](CLANG.md) |
 | Linker | GNU binutils/ld by default | LLD by default | Linker features and output behavior are target-specific; LLD declares binutils-capability substitutability in packaging only | [GNU Binutils](GNU-BINUTILS.md), [LLD](LLD.md) |
-| C++ library | libstdc++ | libc++ | Do not mix object/static-library assumptions across C++ ABI boundaries | Not yet written |
+| C++ library | libstdc++ (default) | libc++ (default) | Do not mix object/static-library assumptions across C++ ABI boundaries; libc++ is also installable in GCC-oriented environments as a non-default opt-in | [libstdc++](LIBSTDCXX.md), [libc++](LIBCXX.md) |
 | Debugger | GDB | LLDB where provided | Debugger selection does not change program ABI | [GDB](GNU-GDB.md), [LLDB](LLDB.md) |
 | CRT/target | Determined by selected environment | Determined by selected environment | UCRT/MSVCRT and architecture remain independent dimensions | Not applicable — covered by [Runtime Environments](RUNTIME-ENVIRONMENTS.md) |
 
@@ -64,8 +68,16 @@ their pages document that distinction explicitly rather than reusing
 Volume 5's `uses-runtime` pattern. LLD's packaging declares it as a
 substitute for the `binutils` capability in CLANG64, modeled explicitly as
 a packaging-level `compatible-with` relationship rather than an assumption
-of identical linker behavior. The C++ library row remains open work for
-this volume.
+of identical linker behavior. [libstdc++](LIBSTDCXX.md) and
+[libc++](LIBCXX.md) fill the C++ library row: libstdc++ is bundled inside
+`gcc-libs` (167 reverse dependents, the largest observed in this knowledge
+base) rather than packaged standalone, while libc++ is packaged separately
+and — notably — installable in UCRT64 and MINGW64 as well as CLANG64, so
+the C++-library choice and the CRT/architecture choice are independently
+selectable within a GCC-oriented environment. Both pages are filed under
+Volume 6 (Libraries) rather than this volume, since they are libraries, not
+toolchain tools; this row links out to them rather than duplicating that
+material.
 
 ## Build system tools
 
@@ -107,7 +119,7 @@ environment like the tools above, since it orchestrates portable
 [GNU Autoconf](GNU-AUTOCONF.md), [GNU Automake](GNU-AUTOMAKE.md),
 [GNU Libtool](GNU-LIBTOOL.md), and [GNU Make](GNU-MAKE.md) complete the
 Autotools family and, with it, every toolchain-tool group originally
-identified for this volume except the C++ library row. Two packaging
+identified for this volume. Two packaging
 patterns worth carrying forward: Automake is packaged as multiple
 side-by-side versioned packages dispatched by a wrapper rather than one
 package (`claim:component:automake:versioned-dispatch`), and Make is

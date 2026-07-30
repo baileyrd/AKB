@@ -521,7 +521,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 3823
 
 ## `environment:msys2:clangarm64`
@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 7
+- Outgoing relationships: 9
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5401,6 +5401,24 @@
 - Evidence: evidence:inventory:current
 - Outgoing relationships: 0
 - Incoming relationships: 1
+
+## `library:gnu:libstdc++`
+
+- Name: libstdc++
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:llvm:libc++`
+
+- Name: libc++
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:llvm:libcxx-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
 
 ## `package:msys2:ack`
 
@@ -84888,7 +84906,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 167
+- Incoming relationships: 168
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-lto-dump`
 
@@ -88992,7 +89010,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libcaca`
 

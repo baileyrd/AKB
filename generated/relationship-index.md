@@ -76162,6 +76162,12 @@
 | relationship:catalog:runtime-depends-on-fff81bda1a84d1484148 | runtime-depends-on | package:msys2:mingw-w64-clang-x86_64-collada-dom | package:msys2:mingw-w64-clang-x86_64-boost-libs | verified |
 | relationship:catalog:runtime-depends-on-fff90c28bfbb544d6bcd | runtime-depends-on | package:msys2:mingw-w64-x86_64-python-scikit-image | package:msys2:mingw-w64-x86_64-python-lazy-loader | verified |
 | relationship:catalog:runtime-depends-on-fff9285443bae57a82da | runtime-depends-on | package:msys2:mingw-w64-x86_64-goxel | package:msys2:mingw-w64-x86_64-libwinpthread | verified |
+| relationship:cxx-library:clang64-contains-libcxx | contains | environment:msys2:clang64 | library:llvm:libc++ | partial |
+| relationship:cxx-library:libcxx-compatible-with-libstdcxx | compatible-with | library:llvm:libc++ | library:gnu:libstdc++ | partial |
+| relationship:cxx-library:libcxx-packaged-by-package | packaged-by | library:llvm:libc++ | package:msys2:mingw-w64-ucrt-x86_64-libc++ | verified |
+| relationship:cxx-library:libstdcxx-packaged-by-gcc-libs | packaged-by | library:gnu:libstdc++ | package:msys2:mingw-w64-ucrt-x86_64-gcc-libs | verified |
+| relationship:cxx-library:ucrt64-contains-libcxx | contains | environment:msys2:ucrt64 | library:llvm:libc++ | partial |
+| relationship:cxx-library:ucrt64-contains-libstdcxx | contains | environment:msys2:ucrt64 | library:gnu:libstdc++ | partial |
 | relationship:editors-pagers-terminals:ed-packaged-by-package | packaged-by | component:gnu:ed | package:msys2:ed | verified |
 | relationship:editors-pagers-terminals:ed-uses-msys-runtime | uses-runtime | component:gnu:ed | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:emacs-packaged-by-package | packaged-by | component:gnu:emacs | package:msys2:emacs | verified |

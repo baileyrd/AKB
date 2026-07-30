@@ -61,12 +61,12 @@
 | dll:windows:msys-curl-4.dll | dll | msys-curl-4.dll | verified | 0 | 1 |
 | dll:windows:msys-z.dll | dll | msys-z.dll | verified | 0 | 1 |
 | ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
-| environment:msys2:clang64 | environment | CLANG64 | partial | 3 | 3823 |
+| environment:msys2:clang64 | environment | CLANG64 | partial | 4 | 3823 |
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 7 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 9 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -604,6 +604,8 @@
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
+| library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
+| library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -9435,7 +9437,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-ada | package | mingw-w64-ucrt-x86_64-gcc-ada | verified | 11 | 33 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-fortran | package | mingw-w64-ucrt-x86_64-gcc-fortran | verified | 12 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-libgfortran | package | mingw-w64-ucrt-x86_64-gcc-libgfortran | verified | 4 | 52 |
-| package:msys2:mingw-w64-ucrt-x86_64-gcc-libs | package | mingw-w64-ucrt-x86_64-gcc-libs | verified | 4 | 167 |
+| package:msys2:mingw-w64-ucrt-x86_64-gcc-libs | package | mingw-w64-ucrt-x86_64-gcc-libs | verified | 4 | 168 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-lto-dump | package | mingw-w64-ucrt-x86_64-gcc-lto-dump | verified | 11 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcc-objc | package | mingw-w64-ucrt-x86_64-gcc-objc | verified | 11 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gcovr | package | mingw-w64-ucrt-x86_64-gcovr | verified | 7 | 0 |
@@ -9891,7 +9893,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libbraiding | package | mingw-w64-ucrt-x86_64-libbraiding | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libbs2b | package | mingw-w64-ucrt-x86_64-libbs2b | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libbsdf | package | mingw-w64-ucrt-x86_64-libbsdf | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-libc++ | package | mingw-w64-ucrt-x86_64-libc++ | verified | 2 | 3 |
+| package:msys2:mingw-w64-ucrt-x86_64-libc++ | package | mingw-w64-ucrt-x86_64-libc++ | verified | 2 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-libcaca | package | mingw-w64-ucrt-x86_64-libcaca | verified | 5 | 5 |
 | package:msys2:mingw-w64-ucrt-x86_64-libcacard | package | mingw-w64-ucrt-x86_64-libcacard | verified | 5 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-libcbor | package | mingw-w64-ucrt-x86_64-libcbor | verified | 2 | 1 |

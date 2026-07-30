@@ -899,6 +899,42 @@
         "role": "build-rule execution"
       },
       "evidence_refs": ["evidence:gnu:make-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libstdc++",
+      "kind": "library",
+      "name": "libstdc++",
+      "summary": "GCC's C++ standard library implementation, bundled inside the gcc-libs package rather than distributed as a standalone MSYS2 package.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libstdc++", "libstdcxx"],
+      "tags": ["library", "cxx-standard-library"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gcc.gnu.org/onlinedocs/libstdc++/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gcc-libs",
+        "role": "C++ standard library implementation"
+      },
+      "evidence_refs": ["evidence:gnu:libstdcxx-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:llvm:libc++",
+      "kind": "library",
+      "name": "libc++",
+      "summary": "LLVM's C++ standard library implementation, packaged standalone for CLANG64, UCRT64, and MINGW64 rather than bundled with a compiler package.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": ["libc++", "libcxx"],
+      "tags": ["library", "cxx-standard-library"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64", "environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://libcxx.llvm.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libc++",
+        "role": "C++ standard library implementation"
+      },
+      "evidence_refs": ["evidence:llvm:libcxx-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -2617,6 +2653,78 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:cxx-library:ucrt64-contains-libstdcxx",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:libstdc++",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:cxx-library:libstdcxx-packaged-by-gcc-libs",
+      "type": "packaged-by",
+      "source": "library:gnu:libstdc++",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gcc-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "libstdc++ is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries, not packaged standalone (claim:library:libstdcxx-bundled-in-gcc-libs).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:cxx-library:ucrt64-contains-libcxx",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:llvm:libc++",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:cxx-library:clang64-contains-libcxx",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "library:llvm:libc++",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:cxx-library:libcxx-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:llvm:libc++",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libc++",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "This page cites the UCRT64 package; separate mingw-w64-clang-x86_64-libc++ and mingw-w64-x86_64-libc++ packages exist for CLANG64 and MINGW64 respectively.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:cxx-library:libcxx-compatible-with-libstdcxx",
+      "type": "compatible-with",
+      "source": "library:llvm:libc++",
+      "target": "library:gnu:libstdc++",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "abi",
+      "condition": "Both implement the C++ standard library API surface, but object files and static libraries built against one are not link-compatible with the other without rebuilding, per Runtime Environments' general CRT/C++ library compatibility guidance.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
     }
   ],
   "claims": [
@@ -2916,6 +3024,36 @@
       "statement": "Libtool's primary artifact, the project-local libtool script, is itself a generated shell script executed via bash, which explains the package's dependency on bash.",
       "classification": "inference",
       "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:libstdcxx-bundled-in-gcc-libs",
+      "subject": "library:gnu:libstdc++",
+      "statement": "libstdc++ is not packaged as a standalone MSYS2 package; it is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:libcxx-cc-libs-capability",
+      "subject": "library:llvm:libc++",
+      "statement": "In CLANG64, the libc++ package itself provides the gcc-libs/cc-libs virtual capability, since no separate GCC runtime package exists in that environment; in UCRT64, libc++ instead depends on the cc-libs capability that gcc-libs provides there.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:libcxx-cross-environment-availability",
+      "subject": "library:llvm:libc++",
+      "statement": "libc++ is packaged for UCRT64 and MINGW64 as well as CLANG64, meaning a project can opt into libc++ even in a GCC-oriented environment rather than being restricted to libstdc++.",
+      "classification": "fact",
+      "confidence": "verified",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -3361,6 +3499,26 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Make manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:libstdcxx-manual-2026-07-30",
+      "class": "primary",
+      "title": "The GNU C++ Library Documentation",
+      "locator": "https://gcc.gnu.org/onlinedocs/libstdc++/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libstdc++ documentation index, part of the GCC documentation set. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:llvm:libcxx-manual-2026-07-30",
+      "class": "primary",
+      "title": "libc++ (official project site)",
+      "locator": "https://libcxx.llvm.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libc++ project site, matching the project_url recorded for the libc++ packages in the catalog snapshot."
     }
   ]
 }

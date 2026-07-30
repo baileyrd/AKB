@@ -601,6 +601,8 @@ Objects
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
+- library:gnu:libstdc++ (library): libstdc++
+- library:llvm:libc++ (library): libc++
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -16467,6 +16469,12 @@ Relationships
 - environment:msys2:msys --contains--> component:gnu:make
 - component:gnu:make --uses-runtime--> runtime:msys2:msys-2.0.dll
 - component:gnu:make --packaged-by--> package:msys2:make
+- environment:msys2:ucrt64 --contains--> library:gnu:libstdc++
+- library:gnu:libstdc++ --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gcc-libs
+- environment:msys2:ucrt64 --contains--> library:llvm:libc++
+- environment:msys2:clang64 --contains--> library:llvm:libc++
+- library:llvm:libc++ --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libc++
+- library:llvm:libc++ --compatible-with--> library:gnu:libstdc++
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

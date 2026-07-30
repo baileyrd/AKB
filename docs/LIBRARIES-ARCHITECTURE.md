@@ -15,6 +15,13 @@ model_refs:
   - library:boost:boost
   - library:sqlite:sqlite3
   - library:gnu:readline
+  - library:gnu:gmp
+  - library:gnu:mpfr
+  - library:multiprecision:mpc
+  - library:libisl:isl
+  - library:mingw-w64:libwinpthread
+  - library:mingw-w64:winpthreads
+  - library:pcre:pcre2
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -27,6 +34,12 @@ evidence_refs:
   - evidence:boost:documentation-2026-07-30
   - evidence:sqlite:documentation-2026-07-30
   - evidence:gnu:readline-manual-2026-07-30
+  - evidence:gnu:gmp-manual-2026-07-30
+  - evidence:gnu:mpfr-manual-2026-07-30
+  - evidence:multiprecision:mpc-manual-2026-07-30
+  - evidence:libisl:manual-2026-07-30
+  - evidence:mingw-w64:libwinpthread-manual-2026-07-30
+  - evidence:pcre:pcre2-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -62,8 +75,11 @@ flowchart LR
 [libstdc++](LIBSTDCXX.md), [libc++](LIBCXX.md), [zlib](ZLIB.md),
 [GNU libiconv](GNU-LIBICONV.md), [GNU gettext](GNU-GETTEXT.md),
 [Expat](EXPAT.md), [libxml2](LIBXML2.md), [ICU](ICU.md), [Boost](BOOST.md),
-[SQLite](SQLITE3.md), and [GNU Readline](GNU-READLINE.md) are this
-volume's first per-library pages. The
+[SQLite](SQLITE3.md), [GNU Readline](GNU-READLINE.md),
+[GNU MP (GMP)](GNU-GMP.md), [GNU MPFR](GNU-MPFR.md), [GNU MPC](GNU-MPC.md),
+[isl](LIBISL.md), [libwinpthread](LIBWINPTHREAD.md),
+[winpthreads](WINPTHREADS.md), and [PCRE2](PCRE2.md) are this volume's
+first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -76,11 +92,16 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All eleven pages are deliberately scoped to package/dependency-level evidence
-only — package identity, bundling, provides/depends relationships, and
-reverse-dependency counts — and all explicitly flag that the fuller
-methodology below (headers, `pkg-config`/CMake metadata, PE import/export
-analysis) has not been applied to them and remains open. They are a
+All eighteen pages are deliberately scoped to package/dependency-level
+evidence only — package identity, bundling, provides/depends
+relationships, and reverse-dependency counts — and all explicitly flag
+that the fuller methodology below (headers, `pkg-config`/CMake metadata,
+PE import/export analysis) has not been applied to them and remains open.
+[winpthreads](WINPTHREADS.md) goes further and states outright that most
+of its own headings could not be filled in at this evidence level — its
+relationship to [libwinpthread](LIBWINPTHREAD.md) is recorded as a
+medium-confidence inference, not a confirmed split, precisely because
+package/dependency data alone cannot settle it. These pages are a
 starting point for this volume, not a demonstration that its full
 evidence model is populated.
 

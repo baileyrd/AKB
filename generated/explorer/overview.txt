@@ -604,12 +604,19 @@ Objects
 - library:boost:boost (library): Boost
 - library:gnome:libxml2 (library): libxml2
 - library:gnu:gettext (library): GNU gettext
+- library:gnu:gmp (library): GNU MP (GMP)
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libstdc++ (library): libstdc++
+- library:gnu:mpfr (library): GNU MPFR
 - library:gnu:readline (library): GNU Readline
 - library:gnu:zlib (library): zlib
 - library:libexpat:expat (library): Expat
+- library:libisl:isl (library): isl (Integer Set Library)
 - library:llvm:libc++ (library): libc++
+- library:mingw-w64:libwinpthread (library): libwinpthread
+- library:mingw-w64:winpthreads (library): winpthreads
+- library:multiprecision:mpc (library): GNU MPC
+- library:pcre:pcre2 (library): PCRE2
 - library:sqlite:sqlite3 (library): SQLite
 - library:unicode:icu (library): ICU (International Components for Unicode)
 - package:msys2:ack (package): ack
@@ -16506,6 +16513,26 @@ Relationships
 - library:sqlite:sqlite3 --requires--> library:gnu:zlib
 - environment:msys2:ucrt64 --contains--> library:gnu:readline
 - library:gnu:readline --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-readline
+- environment:msys2:ucrt64 --contains--> library:gnu:gmp
+- library:gnu:gmp --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gmp
+- environment:msys2:ucrt64 --contains--> library:gnu:mpfr
+- library:gnu:mpfr --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-mpfr
+- library:gnu:mpfr --requires--> library:gnu:gmp
+- environment:msys2:ucrt64 --contains--> library:multiprecision:mpc
+- library:multiprecision:mpc --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-mpc
+- library:multiprecision:mpc --requires--> library:gnu:gmp
+- library:multiprecision:mpc --requires--> library:gnu:mpfr
+- environment:msys2:ucrt64 --contains--> library:libisl:isl
+- library:libisl:isl --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-isl
+- library:libisl:isl --requires--> library:gnu:gmp
+- environment:msys2:ucrt64 --contains--> library:mingw-w64:libwinpthread
+- library:mingw-w64:libwinpthread --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libwinpthread
+- environment:msys2:ucrt64 --contains--> library:mingw-w64:winpthreads
+- library:mingw-w64:winpthreads --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-winpthreads
+- library:mingw-w64:winpthreads --requires--> library:mingw-w64:libwinpthread
+- environment:msys2:ucrt64 --contains--> library:pcre:pcre2
+- library:pcre:pcre2 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-pcre2
+- library:pcre:pcre2 --requires--> library:gnu:zlib
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

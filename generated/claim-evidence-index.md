@@ -39,5 +39,7 @@
 | claim:library:libcxx-cross-environment-availability | library:llvm:libc++ | fact | verified | evidence:catalog:current |
 | claim:library:libstdcxx-bundled-in-gcc-libs | library:gnu:libstdc++ | fact | verified | evidence:catalog:current |
 | claim:library:libxml2-iconv-zlib-features | library:gnome:libxml2 | inference | high | evidence:catalog:current |
+| claim:library:pcre2-wineditline-interactive-tool | library:pcre:pcre2 | inference | high | evidence:catalog:current |
 | claim:library:sqlite3-tcl-test-dependency | library:sqlite:sqlite3 | inference | high | evidence:catalog:current |
+| claim:library:winpthreads-libwinpthread-split | library:mingw-w64:winpthreads | inference | medium | evidence:catalog:current |
 | claim:library:zlib-hub | library:gnu:zlib | observation | verified | evidence:catalog:current |

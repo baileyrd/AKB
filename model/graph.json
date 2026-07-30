@@ -1097,6 +1097,132 @@
         "role": "interactive line editing, history, and completion"
       },
       "evidence_refs": ["evidence:gnu:readline-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:gmp",
+      "kind": "library",
+      "name": "GNU MP (GMP)",
+      "summary": "An arbitrary-precision arithmetic library, packaged per native environment (UCRT64 shown here) and depended on by GCC, GDB, and the MPFR/MPC/ISL libraries that in turn depend on it.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["gmp", "libgmp"],
+      "tags": ["library", "gnu-userland", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gmplib.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gmp",
+        "role": "arbitrary-precision arithmetic"
+      },
+      "evidence_refs": ["evidence:gnu:gmp-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:mpfr",
+      "kind": "library",
+      "name": "GNU MPFR",
+      "summary": "A multiple-precision, correctly-rounded floating-point library built on GMP, packaged per native environment (UCRT64 shown here) and depended on by GCC and GDB for arbitrary-precision evaluation.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["mpfr", "libmpfr"],
+      "tags": ["library", "gnu-userland", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.mpfr.org",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-mpfr",
+        "role": "multiple-precision floating-point arithmetic"
+      },
+      "evidence_refs": ["evidence:gnu:mpfr-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:multiprecision:mpc",
+      "kind": "library",
+      "name": "GNU MPC",
+      "summary": "A multiple-precision complex-number arithmetic library built on GMP and MPFR, packaged per native environment (UCRT64 shown here) and depended on by GCC.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "The MPC team (Andreas Enge et al.)",
+      "aliases": ["mpc", "libmpc"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.multiprecision.org",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-mpc",
+        "role": "multiple-precision complex arithmetic"
+      },
+      "evidence_refs": ["evidence:multiprecision:mpc-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libisl:isl",
+      "kind": "library",
+      "name": "isl (Integer Set Library)",
+      "summary": "A library for manipulating sets and relations of integer points bounded by linear constraints, built on GMP and packaged per native environment (UCRT64 shown here); backs GCC's Graphite loop-optimization framework.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "The isl team (Sven Verdoolaege et al.)",
+      "aliases": ["isl", "libisl"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://libisl.sourceforge.io/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-isl",
+        "role": "polyhedral integer set/relation manipulation"
+      },
+      "evidence_refs": ["evidence:libisl:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mingw-w64:libwinpthread",
+      "kind": "library",
+      "name": "libwinpthread",
+      "summary": "The MinGW-w64 project's POSIX-threads-style threading runtime for Windows, packaged per native environment (UCRT64 shown here) and, per this snapshot, the third most-depended-upon package identified in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "MinGW-w64 project",
+      "aliases": ["libwinpthread", "winpthreads runtime"],
+      "tags": ["library", "threading"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.mingw-w64.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libwinpthread",
+        "role": "POSIX-threads-style threading runtime"
+      },
+      "evidence_refs": ["evidence:mingw-w64:libwinpthread-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mingw-w64:winpthreads",
+      "kind": "library",
+      "name": "winpthreads",
+      "summary": "A version-pinned companion package to libwinpthread, packaged per native environment (UCRT64 shown here); plausibly the development (headers/import-library) counterpart to the libwinpthread runtime, pending file-level confirmation.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MinGW-w64 project",
+      "aliases": ["winpthreads"],
+      "tags": ["library", "threading"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.mingw-w64.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-winpthreads",
+        "role": "threading runtime companion package"
+      },
+      "evidence_refs": ["evidence:mingw-w64:libwinpthread-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pcre:pcre2",
+      "kind": "library",
+      "name": "PCRE2",
+      "summary": "A library implementing Perl 5-style regular expressions, packaged per native environment (UCRT64 shown here) and backing the -P/--perl-regexp matching engines already documented for grep and less.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Philip Hazel / PCRE2 maintainers",
+      "aliases": ["pcre2", "libpcre2"],
+      "tags": ["library", "regex"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://pcre.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-pcre2",
+        "role": "Perl-compatible regular expressions"
+      },
+      "evidence_refs": ["evidence:pcre:pcre2-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -3151,6 +3277,246 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-gmp",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:gmp",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gmp-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:gmp",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-mpfr",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:mpfr",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpfr-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:mpfr",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-mpfr",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpfr-requires-gmp",
+      "type": "requires",
+      "source": "library:gnu:mpfr",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-mpc",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:multiprecision:mpc",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpc-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:multiprecision:mpc",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-mpc",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpc-requires-gmp",
+      "type": "requires",
+      "source": "library:multiprecision:mpc",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpc-requires-mpfr",
+      "type": "requires",
+      "source": "library:multiprecision:mpc",
+      "target": "library:gnu:mpfr",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-isl",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:libisl:isl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:isl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libisl:isl",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-isl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:isl-requires-gmp",
+      "type": "requires",
+      "source": "library:libisl:isl",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libwinpthread",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:mingw-w64:libwinpthread",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libwinpthread-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:mingw-w64:libwinpthread",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libwinpthread",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-winpthreads",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:mingw-w64:winpthreads",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:winpthreads-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:mingw-w64:winpthreads",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-winpthreads",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:winpthreads-requires-libwinpthread",
+      "type": "requires",
+      "source": "library:mingw-w64:winpthreads",
+      "target": "library:mingw-w64:libwinpthread",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Version-pinned to an exact matching libwinpthread build in the catalog snapshot (claim:library:winpthreads-libwinpthread-split).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-pcre2",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:pcre:pcre2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:pcre:pcre2",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-pcre2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-requires-zlib",
+      "type": "requires",
+      "source": "library:pcre:pcre2",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Backs pcre2grep's support for searching compressed files.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -3520,6 +3886,26 @@
       "statement": "SQLite's dependency on tcl reflects its own canonical test-suite tooling, which is Tcl-based, bundled into this package rather than a runtime requirement of the SQL engine itself.",
       "classification": "inference",
       "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:pcre2-wineditline-interactive-tool",
+      "subject": "library:pcre:pcre2",
+      "statement": "pcre2's dependency on wineditline backs interactive line editing in its bundled pcre2test tool, the Windows port of the BSD editline library serving a comparable role to GNU Readline elsewhere in this volume.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:library:winpthreads-libwinpthread-split",
+      "subject": "library:mingw-w64:winpthreads",
+      "statement": "The MSYS2 winpthreads package is plausibly the development (headers/import-library) counterpart to the libwinpthread runtime package, given the version-pinned dependency and near-identical package summaries; this is not confirmed against the package's actual file contents.",
+      "classification": "inference",
+      "confidence": "medium",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -4075,6 +4461,66 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Readline project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-readline in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:gmp-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU MP (official project site)",
+      "locator": "https://gmplib.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU MP project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-gmp in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:mpfr-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU MPFR (official project site)",
+      "locator": "https://www.mpfr.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU MPFR project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-mpfr in the catalog snapshot."
+    },
+    {
+      "id": "evidence:multiprecision:mpc-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU MPC (official project site)",
+      "locator": "https://www.multiprecision.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU MPC project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-mpc in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libisl:manual-2026-07-30",
+      "class": "primary",
+      "title": "isl (official project site)",
+      "locator": "https://libisl.sourceforge.io/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official isl project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-isl in the catalog snapshot."
+    },
+    {
+      "id": "evidence:mingw-w64:libwinpthread-manual-2026-07-30",
+      "class": "primary",
+      "title": "MinGW-w64 (official project site)",
+      "locator": "https://www.mingw-w64.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official MinGW-w64 project site, matching the project_url recorded for both package:msys2:mingw-w64-ucrt-x86_64-libwinpthread and package:msys2:mingw-w64-ucrt-x86_64-winpthreads in the catalog snapshot."
+    },
+    {
+      "id": "evidence:pcre:pcre2-manual-2026-07-30",
+      "class": "primary",
+      "title": "PCRE2 (official project site)",
+      "locator": "https://pcre.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official PCRE2 project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-pcre2 in the catalog snapshot."
     }
   ]
 }

@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 18
+- Outgoing relationships: 25
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5429,6 +5429,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:gnu:gmp`
+
+- Name: GNU MP (GMP)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
 ## `library:gnu:libiconv`
 
 - Name: GNU libiconv
@@ -5447,6 +5456,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 2
 
+## `library:gnu:mpfr`
+
+- Name: GNU MPFR
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:gnu:readline`
 
 - Name: GNU Readline
@@ -5463,7 +5481,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:libexpat:expat`
 
@@ -5474,6 +5492,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 1
 
+## `library:libisl:isl`
+
+- Name: isl (Integer Set Library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libisl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `library:llvm:libc++`
 
 - Name: libc++
@@ -5482,6 +5509,42 @@
 - Evidence: evidence:llvm:libcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:mingw-w64:libwinpthread`
+
+- Name: libwinpthread
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:mingw-w64:winpthreads`
+
+- Name: winpthreads
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:multiprecision:mpc`
+
+- Name: GNU MPC
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:multiprecision:mpc-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `library:pcre:pcre2`
+
+- Name: PCRE2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
 
 ## `library:sqlite:sqlite3`
 
@@ -85761,7 +85824,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 71
+- Incoming relationships: 72
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gmsh`
 
@@ -87381,7 +87444,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-iso-codes`
 
@@ -91944,7 +92007,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 152
+- Incoming relationships: 153
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libwmf`
 
@@ -93420,7 +93483,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpdecimal`
 
@@ -93447,7 +93510,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 33
+- Incoming relationships: 34
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpg123`
 
@@ -95256,7 +95319,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 35
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pdal`
 
@@ -114615,7 +114678,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-winpthreads-stub`
 

@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 18 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 25 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -607,12 +607,19 @@
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
+| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 4 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
+| library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
 | library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
-| library:gnu:zlib | library | zlib | partial | 1 | 3 |
+| library:gnu:zlib | library | zlib | partial | 1 | 4 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
+| library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
+| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
+| library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
+| library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
+| library:pcre:pcre2 | library | PCRE2 | partial | 2 | 1 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
@@ -9532,7 +9539,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-glslviewer | package | mingw-w64-ucrt-x86_64-glslviewer | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gmic | package | mingw-w64-ucrt-x86_64-gmic | verified | 11 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gmime | package | mingw-w64-ucrt-x86_64-gmime | verified | 7 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-gmp | package | mingw-w64-ucrt-x86_64-gmp | verified | 2 | 71 |
+| package:msys2:mingw-w64-ucrt-x86_64-gmp | package | mingw-w64-ucrt-x86_64-gmp | verified | 2 | 72 |
 | package:msys2:mingw-w64-ucrt-x86_64-gmsh | package | mingw-w64-ucrt-x86_64-gmsh | verified | 9 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gn | package | mingw-w64-ucrt-x86_64-gn | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gnatcoll-core | package | mingw-w64-ucrt-x86_64-gnatcoll-core | verified | 4 | 20 |
@@ -9712,7 +9719,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-irrlicht | package | mingw-w64-ucrt-x86_64-irrlicht | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-is_utf8 | package | mingw-w64-ucrt-x86_64-is_utf8 | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-isa-l | package | mingw-w64-ucrt-x86_64-isa-l | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-isl | package | mingw-w64-ucrt-x86_64-isl | verified | 3 | 12 |
+| package:msys2:mingw-w64-ucrt-x86_64-isl | package | mingw-w64-ucrt-x86_64-isl | verified | 3 | 13 |
 | package:msys2:mingw-w64-ucrt-x86_64-iso-codes | package | mingw-w64-ucrt-x86_64-iso-codes | verified | 2 | 8 |
 | package:msys2:mingw-w64-ucrt-x86_64-ispc | package | mingw-w64-ucrt-x86_64-ispc | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-itk | package | mingw-w64-ucrt-x86_64-itk | verified | 13 | 0 |
@@ -10219,7 +10226,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libwebm | package | mingw-w64-ucrt-x86_64-libwebm | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libwebp | package | mingw-w64-ucrt-x86_64-libwebp | verified | 6 | 42 |
 | package:msys2:mingw-w64-ucrt-x86_64-libwebsockets | package | mingw-w64-ucrt-x86_64-libwebsockets | verified | 4 | 2 |
-| package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | package | mingw-w64-ucrt-x86_64-libwinpthread | verified | 2 | 152 |
+| package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | package | mingw-w64-ucrt-x86_64-libwinpthread | verified | 2 | 153 |
 | package:msys2:mingw-w64-ucrt-x86_64-libwmf | package | mingw-w64-ucrt-x86_64-libwmf | verified | 8 | 5 |
 | package:msys2:mingw-w64-ucrt-x86_64-libwpd | package | mingw-w64-ucrt-x86_64-libwpd | verified | 6 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libwpg | package | mingw-w64-ucrt-x86_64-libwpg | verified | 5 | 2 |
@@ -10383,10 +10390,10 @@
 | package:msys2:mingw-w64-ucrt-x86_64-moor | package | mingw-w64-ucrt-x86_64-moor | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-mopac | package | mingw-w64-ucrt-x86_64-mopac | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-mosquitto | package | mingw-w64-ucrt-x86_64-mosquitto | verified | 7 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-mpc | package | mingw-w64-ucrt-x86_64-mpc | verified | 4 | 15 |
+| package:msys2:mingw-w64-ucrt-x86_64-mpc | package | mingw-w64-ucrt-x86_64-mpc | verified | 4 | 16 |
 | package:msys2:mingw-w64-ucrt-x86_64-mpdecimal | package | mingw-w64-ucrt-x86_64-mpdecimal | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-mpfi | package | mingw-w64-ucrt-x86_64-mpfi | verified | 4 | 3 |
-| package:msys2:mingw-w64-ucrt-x86_64-mpfr | package | mingw-w64-ucrt-x86_64-mpfr | verified | 3 | 33 |
+| package:msys2:mingw-w64-ucrt-x86_64-mpfr | package | mingw-w64-ucrt-x86_64-mpfr | verified | 3 | 34 |
 | package:msys2:mingw-w64-ucrt-x86_64-mpg123 | package | mingw-w64-ucrt-x86_64-mpg123 | verified | 5 | 8 |
 | package:msys2:mingw-w64-ucrt-x86_64-mpv | package | mingw-w64-ucrt-x86_64-mpv | verified | 23 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-mruby | package | mingw-w64-ucrt-x86_64-mruby | verified | 2 | 0 |
@@ -10587,7 +10594,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-pastix | package | mingw-w64-ucrt-x86_64-pastix | verified | 8 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-pcaudiolib | package | mingw-w64-ucrt-x86_64-pcaudiolib | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-pcre | package | mingw-w64-ucrt-x86_64-pcre | verified | 5 | 4 |
-| package:msys2:mingw-w64-ucrt-x86_64-pcre2 | package | mingw-w64-ucrt-x86_64-pcre2 | verified | 5 | 35 |
+| package:msys2:mingw-w64-ucrt-x86_64-pcre2 | package | mingw-w64-ucrt-x86_64-pcre2 | verified | 5 | 36 |
 | package:msys2:mingw-w64-ucrt-x86_64-pdal | package | mingw-w64-ucrt-x86_64-pdal | verified | 15 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-pdcurses | package | mingw-w64-ucrt-x86_64-pdcurses | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-pdf2djvu | package | mingw-w64-ucrt-x86_64-pdf2djvu | verified | 8 | 0 |
@@ -12738,7 +12745,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-wineditline | package | mingw-w64-ucrt-x86_64-wineditline | verified | 2 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-winfile | package | mingw-w64-ucrt-x86_64-winfile | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-winico | package | mingw-w64-ucrt-x86_64-winico | verified | 3 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-winpthreads | package | mingw-w64-ucrt-x86_64-winpthreads | verified | 4 | 5 |
+| package:msys2:mingw-w64-ucrt-x86_64-winpthreads | package | mingw-w64-ucrt-x86_64-winpthreads | verified | 4 | 6 |
 | package:msys2:mingw-w64-ucrt-x86_64-winpthreads-stub | package | mingw-w64-ucrt-x86_64-winpthreads-stub | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-winpty | package | mingw-w64-ucrt-x86_64-winpty | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-winsparkle | package | mingw-w64-ucrt-x86_64-winsparkle | verified | 5 | 0 |

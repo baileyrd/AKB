@@ -28,7 +28,7 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 2 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 7 | 1 |
 | component:greenwood:less | component | less | partial | 3 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 34 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 25 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 31 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -607,18 +607,24 @@
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
-| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 4 |
+| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
 | library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
 | library:gnu:zlib | library | zlib | partial | 1 | 4 |
+| library:gnupg:libassuan | library | libassuan | partial | 2 | 2 |
+| library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 2 |
+| library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
+| library:gnupg:libksba | library | libksba | partial | 2 | 2 |
+| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 2 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
+| library:nettle:nettle | library | Nettle | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 2 | 1 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
@@ -9894,7 +9900,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libaribcaption | package | mingw-w64-ucrt-x86_64-libaribcaption | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libart_lgpl | package | mingw-w64-ucrt-x86_64-libart_lgpl | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libass | package | mingw-w64-ucrt-x86_64-libass | verified | 8 | 6 |
-| package:msys2:mingw-w64-ucrt-x86_64-libassuan | package | mingw-w64-ucrt-x86_64-libassuan | verified | 4 | 3 |
+| package:msys2:mingw-w64-ucrt-x86_64-libassuan | package | mingw-w64-ucrt-x86_64-libassuan | verified | 4 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-libatomic_ops | package | mingw-w64-ucrt-x86_64-libatomic_ops | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libavif | package | mingw-w64-ucrt-x86_64-libavif | verified | 11 | 12 |
 | package:msys2:mingw-w64-ucrt-x86_64-libavro | package | mingw-w64-ucrt-x86_64-libavro | verified | 9 | 1 |
@@ -9966,7 +9972,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libfyaml | package | mingw-w64-ucrt-x86_64-libfyaml | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgadu | package | mingw-w64-ucrt-x86_64-libgadu | verified | 6 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgccjit | package | mingw-w64-ucrt-x86_64-libgccjit | verified | 11 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-libgcrypt | package | mingw-w64-ucrt-x86_64-libgcrypt | verified | 3 | 19 |
+| package:msys2:mingw-w64-ucrt-x86_64-libgcrypt | package | mingw-w64-ucrt-x86_64-libgcrypt | verified | 3 | 20 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgd | package | mingw-w64-ucrt-x86_64-libgd | verified | 13 | 9 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgda | package | mingw-w64-ucrt-x86_64-libgda | verified | 20 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgdiplus | package | mingw-w64-ucrt-x86_64-libgdiplus | verified | 10 | 0 |
@@ -9988,7 +9994,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libgnurx | package | mingw-w64-ucrt-x86_64-libgnurx | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgoom2 | package | mingw-w64-ucrt-x86_64-libgoom2 | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgovirt | package | mingw-w64-ucrt-x86_64-libgovirt | verified | 5 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | package | mingw-w64-ucrt-x86_64-libgpg-error | verified | 3 | 8 |
+| package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | package | mingw-w64-ucrt-x86_64-libgpg-error | verified | 3 | 9 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgphoto2 | package | mingw-w64-ucrt-x86_64-libgphoto2 | verified | 11 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgpr | package | mingw-w64-ucrt-x86_64-libgpr | verified | 4 | 9 |
 | package:msys2:mingw-w64-ucrt-x86_64-libgridxc | package | mingw-w64-ucrt-x86_64-libgridxc | verified | 4 | 1 |
@@ -10030,7 +10036,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libkexiv2 | package | mingw-w64-ucrt-x86_64-libkexiv2 | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libkml | package | mingw-w64-ucrt-x86_64-libkml | verified | 7 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libkqueue | package | mingw-w64-ucrt-x86_64-libkqueue | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-libksba | package | mingw-w64-ucrt-x86_64-libksba | verified | 3 | 1 |
+| package:msys2:mingw-w64-ucrt-x86_64-libksba | package | mingw-w64-ucrt-x86_64-libksba | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-liblangtag | package | mingw-w64-ucrt-x86_64-liblangtag | verified | 6 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-liblas | package | mingw-w64-ucrt-x86_64-liblas | verified | 5 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-liblastfm | package | mingw-w64-ucrt-x86_64-liblastfm | verified | 5 | 0 |
@@ -10441,7 +10447,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-netcdf | package | mingw-w64-ucrt-x86_64-netcdf | verified | 10 | 11 |
 | package:msys2:mingw-w64-ucrt-x86_64-netcdf-cxx | package | mingw-w64-ucrt-x86_64-netcdf-cxx | verified | 5 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-netcdf-fortran | package | mingw-w64-ucrt-x86_64-netcdf-fortran | verified | 4 | 3 |
-| package:msys2:mingw-w64-ucrt-x86_64-nettle | package | mingw-w64-ucrt-x86_64-nettle | verified | 3 | 10 |
+| package:msys2:mingw-w64-ucrt-x86_64-nettle | package | mingw-w64-ucrt-x86_64-nettle | verified | 3 | 11 |
 | package:msys2:mingw-w64-ucrt-x86_64-nettle3 | package | mingw-w64-ucrt-x86_64-nettle3 | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-newton-dynamics | package | mingw-w64-ucrt-x86_64-newton-dynamics | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-nextpnr | package | mingw-w64-ucrt-x86_64-nextpnr | verified | 5 | 0 |
@@ -10466,7 +10472,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-nodejs-webpack-cli | package | mingw-w64-ucrt-x86_64-nodejs-webpack-cli | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-notcurses | package | mingw-w64-ucrt-x86_64-notcurses | verified | 8 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-notepad++ | package | mingw-w64-ucrt-x86_64-notepad++ | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-npth | package | mingw-w64-ucrt-x86_64-npth | verified | 3 | 2 |
+| package:msys2:mingw-w64-ucrt-x86_64-npth | package | mingw-w64-ucrt-x86_64-npth | verified | 3 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-nsis | package | mingw-w64-ucrt-x86_64-nsis | verified | 2 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-nsis-nsisunz | package | mingw-w64-ucrt-x86_64-nsis-nsisunz | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-nspr | package | mingw-w64-ucrt-x86_64-nspr | verified | 2 | 4 |

@@ -610,12 +610,18 @@ Objects
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:readline (library): GNU Readline
 - library:gnu:zlib (library): zlib
+- library:gnupg:libassuan (library): libassuan
+- library:gnupg:libgcrypt (library): libgcrypt
+- library:gnupg:libgpg-error (library): libgpg-error
+- library:gnupg:libksba (library): libksba
+- library:gnupg:npth (library): nPth (New Portable Threads)
 - library:libexpat:expat (library): Expat
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:llvm:libc++ (library): libc++
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:winpthreads (library): winpthreads
 - library:multiprecision:mpc (library): GNU MPC
+- library:nettle:nettle (library): Nettle
 - library:pcre:pcre2 (library): PCRE2
 - library:sqlite:sqlite3 (library): SQLite
 - library:unicode:icu (library): ICU (International Components for Unicode)
@@ -16533,6 +16539,27 @@ Relationships
 - environment:msys2:ucrt64 --contains--> library:pcre:pcre2
 - library:pcre:pcre2 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-pcre2
 - library:pcre:pcre2 --requires--> library:gnu:zlib
+- environment:msys2:ucrt64 --contains--> library:gnupg:libgpg-error
+- library:gnupg:libgpg-error --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:libgcrypt
+- library:gnupg:libgcrypt --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libgcrypt
+- library:gnupg:libgcrypt --requires--> library:gnupg:libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:libassuan
+- library:gnupg:libassuan --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libassuan
+- library:gnupg:libassuan --requires--> library:gnupg:libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:libksba
+- library:gnupg:libksba --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libksba
+- library:gnupg:libksba --requires--> library:gnupg:libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:npth
+- library:gnupg:npth --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-npth
+- environment:msys2:ucrt64 --contains--> library:nettle:nettle
+- library:nettle:nettle --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-nettle
+- library:nettle:nettle --requires--> library:gnu:gmp
+- component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
+- component:gnupg:gnupg --requires--> library:gnupg:libassuan
+- component:gnupg:gnupg --requires--> library:gnupg:libksba
+- component:gnupg:gnupg --requires--> library:gnupg:npth
+- component:gnupg:gnupg --requires--> library:nettle:nettle
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 7
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 25
+- Outgoing relationships: 31
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5436,7 +5436,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:libiconv`
 
@@ -5482,6 +5482,51 @@
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 4
+
+## `library:gnupg:libassuan`
+
+- Name: libassuan
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:gnupg:libgcrypt`
+
+- Name: libgcrypt
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgcrypt-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:gnupg:libgpg-error`
+
+- Name: libgpg-error
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
+## `library:gnupg:libksba`
+
+- Name: libksba
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:gnupg:npth`
+
+- Name: nPth (New Portable Threads)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
 
 ## `library:libexpat:expat`
 
@@ -5536,6 +5581,15 @@
 - Evidence: evidence:multiprecision:mpc-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 1
+
+## `library:nettle:nettle`
+
+- Name: Nettle
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
 
 ## `library:pcre:pcre2`
 
@@ -89019,7 +89073,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libatomic_ops`
 
@@ -89667,7 +89721,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgd`
 
@@ -89865,7 +89919,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgphoto2`
 
@@ -90243,7 +90297,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-liblangtag`
 
@@ -93942,7 +93996,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nettle3`
 
@@ -94167,7 +94221,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nsis`
 

@@ -1192,9 +1192,9 @@
       "id": "library:mingw-w64:winpthreads",
       "kind": "library",
       "name": "winpthreads",
-      "summary": "A version-pinned companion package to libwinpthread, packaged per native environment (UCRT64 shown here); plausibly the development (headers/import-library) counterpart to the libwinpthread runtime, pending file-level confirmation.",
+      "summary": "A version-pinned companion package to libwinpthread, packaged per native environment (UCRT64 shown here); its exact relationship to libwinpthread is unresolved, complicated by a separate winpthreads-stub package that provides/conflicts with it as a near-empty placeholder alternative.",
       "status": "partial",
-      "confidence": "medium",
+      "confidence": "low",
       "authority": "MinGW-w64 project",
       "aliases": ["winpthreads"],
       "tags": ["library", "threading"],
@@ -1223,6 +1223,114 @@
         "role": "Perl-compatible regular expressions"
       },
       "evidence_refs": ["evidence:pcre:pcre2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libgpg-error",
+      "kind": "library",
+      "name": "libgpg-error",
+      "summary": "A shared error-code definition library used across the GnuPG project's own library stack, packaged per native environment (UCRT64 shown here) and the common foundation beneath libgcrypt, libassuan, and libksba.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libgpg-error"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libgpg-error",
+        "role": "shared error-code definitions for the GnuPG library stack"
+      },
+      "evidence_refs": ["evidence:gnupg:libgpg-error-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libgcrypt",
+      "kind": "library",
+      "name": "libgcrypt",
+      "summary": "GnuPG's general-purpose cryptographic library, packaged per native environment (UCRT64 shown here) and the primary low-level crypto library backing GnuPG itself.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libgcrypt"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/software/libgcrypt/index.html",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libgcrypt",
+        "role": "general-purpose cryptography"
+      },
+      "evidence_refs": ["evidence:gnupg:libgcrypt-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libassuan",
+      "kind": "library",
+      "name": "libassuan",
+      "summary": "An IPC library used by GnuPG-related software to communicate between cooperating processes (gpg, dirmngr, pinentry), packaged per native environment (UCRT64 shown here).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libassuan"],
+      "tags": ["library", "security", "ipc"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/related_software/libassuan",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libassuan",
+        "role": "inter-process communication for GnuPG's split-process architecture"
+      },
+      "evidence_refs": ["evidence:gnupg:libassuan-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libksba",
+      "kind": "library",
+      "name": "libksba",
+      "summary": "A CMS and X.509 certificate access library, packaged per native environment (UCRT64 shown here) and used specifically by GnuPG's S/MIME support despite GnuPG's primary focus being OpenPGP.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libksba"],
+      "tags": ["library", "security", "x509"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnupg.org/related_software/libksba/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libksba",
+        "role": "CMS and X.509 certificate parsing"
+      },
+      "evidence_refs": ["evidence:gnupg:libksba-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:npth",
+      "kind": "library",
+      "name": "nPth (New Portable Threads)",
+      "summary": "GnuPG's own portable threading library, packaged per native environment (UCRT64 shown here) and used internally for GnuPG's concurrent operations.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["npth", "nPth"],
+      "tags": ["library", "threading"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-npth",
+        "role": "portable threading for GnuPG's internal concurrency"
+      },
+      "evidence_refs": ["evidence:gnupg:npth-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nettle:nettle",
+      "kind": "library",
+      "name": "Nettle",
+      "summary": "A low-level cryptographic library, packaged per native environment (UCRT64 shown here) and used by GnuTLS and GnuPG for additional cryptographic primitives.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Niels Möller",
+      "aliases": ["nettle"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.lysator.liu.se/~nisse/nettle",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-nettle",
+        "role": "low-level cryptographic primitives"
+      },
+      "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -3517,6 +3625,258 @@
       "condition": "Backs pcre2grep's support for searching compressed files.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libgpg-error",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnupg:libgpg-error",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgpg-error-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnupg:libgpg-error",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libgpg-error",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libgcrypt",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnupg:libgcrypt",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgcrypt-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnupg:libgcrypt",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libgcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgcrypt-requires-libgpg-error",
+      "type": "requires",
+      "source": "library:gnupg:libgcrypt",
+      "target": "library:gnupg:libgpg-error",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libassuan",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnupg:libassuan",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libassuan-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnupg:libassuan",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libassuan",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libassuan-requires-libgpg-error",
+      "type": "requires",
+      "source": "library:gnupg:libassuan",
+      "target": "library:gnupg:libgpg-error",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libksba",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnupg:libksba",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libksba-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnupg:libksba",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libksba",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libksba-requires-libgpg-error",
+      "type": "requires",
+      "source": "library:gnupg:libksba",
+      "target": "library:gnupg:libgpg-error",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-npth",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnupg:npth",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:npth-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnupg:npth",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-npth",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-nettle",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:nettle:nettle",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:nettle-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:nettle:nettle",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-nettle",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:nettle-requires-gmp",
+      "type": "requires",
+      "source": "library:nettle:nettle",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnupg:libgcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libassuan",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnupg:libassuan",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libksba",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnupg:libksba",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs GnuPG's S/MIME (gpgsm) support specifically.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-npth",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnupg:npth",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-nettle",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:nettle:nettle",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -3903,9 +4263,9 @@
     {
       "id": "claim:library:winpthreads-libwinpthread-split",
       "subject": "library:mingw-w64:winpthreads",
-      "statement": "The MSYS2 winpthreads package is plausibly the development (headers/import-library) counterpart to the libwinpthread runtime package, given the version-pinned dependency and near-identical package summaries; this is not confirmed against the package's actual file contents.",
+      "statement": "The MSYS2 winpthreads package's exact relationship to libwinpthread is unresolved from package-level evidence alone: the version-pinned dependency and near-identical summaries are consistent with a development/runtime split, but a separate winpthreads-stub package that provides/conflicts with winpthreads (a near-empty, 8-byte-installed placeholder swappable for it) argues against a simple dev-headers theory and toward winpthreads containing a real, optionally-replaceable implementation component instead. Neither theory is confirmed against file contents.",
       "classification": "inference",
-      "confidence": "medium",
+      "confidence": "low",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -4521,6 +4881,66 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official PCRE2 project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-pcre2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnupg:libgpg-error-manual-2026-07-30",
+      "class": "primary",
+      "title": "GnuPG project site (libgpg-error)",
+      "locator": "https://gnupg.org",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GnuPG project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libgpg-error in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnupg:libgcrypt-manual-2026-07-30",
+      "class": "primary",
+      "title": "libgcrypt (official project page)",
+      "locator": "https://gnupg.org/software/libgcrypt/index.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libgcrypt project page under gnupg.org."
+    },
+    {
+      "id": "evidence:gnupg:libassuan-manual-2026-07-30",
+      "class": "primary",
+      "title": "libassuan (official project page)",
+      "locator": "https://gnupg.org/related_software/libassuan",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libassuan project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libassuan in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnupg:libksba-manual-2026-07-30",
+      "class": "primary",
+      "title": "libksba (official project page)",
+      "locator": "https://www.gnupg.org/related_software/libksba/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libksba project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libksba in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnupg:npth-manual-2026-07-30",
+      "class": "primary",
+      "title": "GnuPG project site (nPth)",
+      "locator": "https://gnupg.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GnuPG project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-npth in the catalog snapshot."
+    },
+    {
+      "id": "evidence:nettle:manual-2026-07-30",
+      "class": "primary",
+      "title": "Nettle (official project site)",
+      "locator": "https://www.lysator.liu.se/~nisse/nettle",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Nettle project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-nettle in the catalog snapshot."
     }
   ]
 }

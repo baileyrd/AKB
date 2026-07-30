@@ -36,13 +36,19 @@ page cites the UCRT64 build,
 
 ## Responsibilities
 
-Plausibly, providing the development headers and/or import library needed
-to *link against* the threading implementation, with
-[libwinpthread](LIBWINPTHREAD.md) providing the runtime DLL itself
-(`claim:library:winpthreads-libwinpthread-split`). This is recorded at
-`medium` confidence: the catalog snapshot does not include file-level
-package contents, so this page cannot confirm the split from the
-dependency data alone.
+Unresolved from package-level evidence. The initial working theory —
+development headers/import library, with
+[libwinpthread](LIBWINPTHREAD.md) providing the runtime DLL — is
+complicated by a separate `mingw-w64-ucrt-x86_64-winpthreads-stub`
+package discovered in this same catalog snapshot: it `provides` and
+`conflicts` with `winpthreads`, is a near-empty placeholder (8 bytes
+installed, license `NONE`), and exists for CLANG64, CLANGARM64, and
+MINGW64 as well as UCRT64. A package a project can swap for an empty
+stub is a poor fit for "required development headers" — that pattern
+reads more like an optional or replaceable implementation component.
+Both theories remain unconfirmed (`claim:library:winpthreads-libwinpthread-split`,
+recorded at `low` confidence after this finding, down from the earlier
+`medium`).
 
 ## Boundaries
 
@@ -82,10 +88,11 @@ Not established at package/dependency-level evidence.
 
 ## Initialization and Execution Flow
 
-If this page's dev-package inference is correct, this package would have
-no runtime execution role at all — its contents would be consumed only at
-build/link time, contributed to a program's `mingw-w64-ucrt-x86_64-*`
-build environment rather than to any running process.
+Unresolved. If the (now weakened) dev-package theory holds, this package
+would have no runtime execution role, consumed only at build/link time.
+If instead it is a real, stub-replaceable implementation component, it
+would have a genuine runtime role like [libwinpthread](LIBWINPTHREAD.md)'s.
+This page does not pick one theory over the other.
 
 ## Runtime Behavior
 
@@ -97,7 +104,12 @@ Given the identical recorded version and the near-identical package
 summaries ("MinGW-w64 winpthreads library" for both packages in the
 catalog), this page treats winpthreads and
 [libwinpthread](LIBWINPTHREAD.md) as tightly coupled companions rather
-than independent, separately versionable libraries.
+than independent, separately versionable libraries. Separately,
+`winpthreads-stub` is a documented, catalog-observed alternative to this
+package specifically (`provides`/`conflicts: winpthreads`) across
+UCRT64, CLANG64, CLANGARM64, and MINGW64 — a real packaging variant this
+page flags but does not model as its own component, given its
+near-zero content.
 
 ## Security Considerations
 
@@ -113,16 +125,22 @@ Not established at package/dependency-level evidence.
 
 ## Evidence, Assumptions, and Open Questions
 
-Package identity, version, and both dependency edges are backed by the
+Package identity, version, both dependency edges, and the
+`winpthreads-stub` provides/conflicts relationship are backed by the
 pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:library:winpthreads-libwinpthread-split`. Open, and the primary
-purpose of this page: this page's central claim — that winpthreads is the
-development counterpart to libwinpthread's runtime — is an inference from
-naming, version-pinning, and reverse-dependency-count patterns, not a
-confirmed fact; resolving it requires package file-inventory evidence
-(per [Package File Inventory](PACKAGE-FILE-INVENTORY.md)) that this
-snapshot does not include. Nearly every section above is marked "not
-established" rather than filled with speculation dressed as fact.
+purpose of this page: what this package actually contains remains
+unresolved — the original dev/runtime-split theory and the
+stub-replaceable-implementation reading it prompted are both live,
+unconfirmed hypotheses, not a settled fact; resolving it requires package
+file-inventory evidence (per
+[Package File Inventory](PACKAGE-FILE-INVENTORY.md)) that this snapshot
+does not include. Nearly every section above is marked "not established"
+or "unresolved" rather than filled with speculation dressed as fact, and
+this page's own confidence was revised downward (medium to low) when the
+new stub-package evidence complicated rather than confirmed the initial
+theory — a deliberate record of updating a claim when new evidence
+warrants it, not just adding new claims.
 
 ## Related Objects
 

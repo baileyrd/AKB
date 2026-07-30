@@ -22,6 +22,12 @@ model_refs:
   - library:mingw-w64:libwinpthread
   - library:mingw-w64:winpthreads
   - library:pcre:pcre2
+  - library:gnupg:libgpg-error
+  - library:gnupg:libgcrypt
+  - library:gnupg:libassuan
+  - library:gnupg:libksba
+  - library:gnupg:npth
+  - library:nettle:nettle
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -40,6 +46,12 @@ evidence_refs:
   - evidence:libisl:manual-2026-07-30
   - evidence:mingw-w64:libwinpthread-manual-2026-07-30
   - evidence:pcre:pcre2-manual-2026-07-30
+  - evidence:gnupg:libgpg-error-manual-2026-07-30
+  - evidence:gnupg:libgcrypt-manual-2026-07-30
+  - evidence:gnupg:libassuan-manual-2026-07-30
+  - evidence:gnupg:libksba-manual-2026-07-30
+  - evidence:gnupg:npth-manual-2026-07-30
+  - evidence:nettle:manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -78,7 +90,10 @@ flowchart LR
 [SQLite](SQLITE3.md), [GNU Readline](GNU-READLINE.md),
 [GNU MP (GMP)](GNU-GMP.md), [GNU MPFR](GNU-MPFR.md), [GNU MPC](GNU-MPC.md),
 [isl](LIBISL.md), [libwinpthread](LIBWINPTHREAD.md),
-[winpthreads](WINPTHREADS.md), and [PCRE2](PCRE2.md) are this volume's
+[winpthreads](WINPTHREADS.md), [PCRE2](PCRE2.md),
+[libgpg-error](LIBGPG-ERROR.md), [libgcrypt](LIBGCRYPT.md),
+[libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md),
+[nPth](NPTH.md), and [Nettle](NETTLE.md) are this volume's
 first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
@@ -92,18 +107,26 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All eighteen pages are deliberately scoped to package/dependency-level
+All twenty-four pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
 PE import/export analysis) has not been applied to them and remains open.
 [winpthreads](WINPTHREADS.md) goes further and states outright that most
-of its own headings could not be filled in at this evidence level — its
-relationship to [libwinpthread](LIBWINPTHREAD.md) is recorded as a
-medium-confidence inference, not a confirmed split, precisely because
-package/dependency data alone cannot settle it. These pages are a
-starting point for this volume, not a demonstration that its full
-evidence model is populated.
+of its own headings could not be filled in at this evidence level. Its
+relationship to [libwinpthread](LIBWINPTHREAD.md) started as a
+medium-confidence dev/runtime-split inference and was revised down to
+`low` after discovering a third package, `winpthreads-stub`, that
+`provides`/`conflicts` with `winpthreads` as a near-empty placeholder —
+new evidence that complicated the original theory rather than confirming
+it, recorded as such rather than quietly dropped. The GnuPG crypto-stack
+pages ([libgpg-error](LIBGPG-ERROR.md), [libgcrypt](LIBGCRYPT.md),
+[libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md), [nPth](NPTH.md)) also
+close a loop back into Volume 5: `component:gnupg:gnupg` now has explicit
+`requires` edges to each of them, rather than the dependencies living
+only in [GnuPG's](GNUPG.md) own prose table. These pages are a starting
+point for this volume, not a demonstration that its full evidence model
+is populated.
 
 ## Family navigation
 

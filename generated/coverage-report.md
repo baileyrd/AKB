@@ -2,14 +2,14 @@
 
 > Generated from the composed model; do not edit manually.
 
-- Entities: **16339**
-- Entities with evidence: **16336**
+- Entities: **16345**
+- Entities with evidence: **16342**
 - Claims: **39**
-- Evidence records: **63**
+- Evidence records: **69**
 
 | Entity status | Count |
 | --- | ---: |
 | deprecated | 2 |
-| partial | 67 |
+| partial | 73 |
 | planned | 1 |
 | verified | 16269 |

@@ -305,6 +305,132 @@
         "role": "single-file compression"
       },
       "evidence_refs": ["evidence:tukaani:xz-project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:zstd:zstd",
+      "kind": "component",
+      "name": "Zstandard (zstd)",
+      "summary": "A fast lossless compression algorithm and CLI, packaged in the MSYS environment and split from its shared codec library, libzstd.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Meta Platforms / Yann Collet",
+      "aliases": ["zstd", "unzstd", "zstdcat"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://facebook.github.io/zstd/",
+        "packaged_as": "package:msys2:zstd",
+        "role": "single-file compression"
+      },
+      "evidence_refs": ["evidence:zstd:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:info-zip:zip",
+      "kind": "component",
+      "name": "Info-ZIP Zip",
+      "summary": "The Info-ZIP archiver that creates PKZIP-compatible .zip archives, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Info-ZIP",
+      "aliases": ["zip"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "http://www.info-zip.org/Zip.html",
+        "packaged_as": "package:msys2:zip",
+        "role": "zip archive creation"
+      },
+      "evidence_refs": ["evidence:info-zip:zip-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:info-zip:unzip",
+      "kind": "component",
+      "name": "Info-ZIP UnZip",
+      "summary": "The Info-ZIP extractor for PKZIP-compatible .zip archives, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Info-ZIP",
+      "aliases": ["unzip"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "http://www.info-zip.org/",
+        "packaged_as": "package:msys2:unzip",
+        "role": "zip archive extraction"
+      },
+      "evidence_refs": ["evidence:info-zip:unzip-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:p7zip:p7zip",
+      "kind": "component",
+      "name": "p7zip",
+      "summary": "A command-line port of the 7-Zip archiver (7z format and algorithms originating with Igor Pavlov's 7-Zip), packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "p7zip project",
+      "aliases": ["7z", "7za", "7zr", "p7zip"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://github.com/p7zip-project/p7zip",
+        "packaged_as": "package:msys2:p7zip",
+        "role": "7z/zip/multi-format archive creation and extraction"
+      },
+      "evidence_refs": ["evidence:p7zip:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:lzip:lzip",
+      "kind": "component",
+      "name": "Lzip",
+      "summary": "A single-file LZMA-based compressor designed around a simple, well-specified format optimized for long-term data safety, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Antonio Diaz Diaz",
+      "aliases": ["lzip"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.nongnu.org/lzip/lzip.html",
+        "packaged_as": "package:msys2:lzip",
+        "role": "single-file compression"
+      },
+      "evidence_refs": ["evidence:lzip:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:cpio",
+      "kind": "component",
+      "name": "GNU Cpio",
+      "summary": "The GNU implementation of cpio, copying file archives to and from a cpio- or tar-format stream, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["cpio"],
+      "tags": ["gnu-userland", "archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/cpio/",
+        "packaged_as": "package:msys2:cpio",
+        "role": "archive creation and extraction"
+      },
+      "evidence_refs": ["evidence:gnu:cpio-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:lz4:lz4",
+      "kind": "component",
+      "name": "LZ4",
+      "summary": "A very fast lossless compression algorithm and CLI prioritizing speed over ratio, packaged in the MSYS environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yann Collet",
+      "aliases": ["lz4", "unlz4", "lz4cat"],
+      "tags": ["archive-compression", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://lz4.github.io/lz4/",
+        "packaged_as": "package:msys2:lz4",
+        "role": "single-file compression"
+      },
+      "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -763,6 +889,258 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-zstd",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:zstd:zstd",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:zstd-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:zstd:zstd",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of zstd, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:zstd-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:zstd:zstd",
+      "target": "package:msys2:zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-zip",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:info-zip:zip",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:zip-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:info-zip:zip",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of zip, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:zip-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:info-zip:zip",
+      "target": "package:msys2:zip",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-unzip",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:info-zip:unzip",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:unzip-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:info-zip:unzip",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of unzip, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:unzip-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:info-zip:unzip",
+      "target": "package:msys2:unzip",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-p7zip",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:p7zip:p7zip",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:p7zip-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:p7zip:p7zip",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of p7zip, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:p7zip-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:p7zip:p7zip",
+      "target": "package:msys2:p7zip",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-lzip",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:lzip:lzip",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:lzip-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:lzip:lzip",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of lzip, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:lzip-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:lzip:lzip",
+      "target": "package:msys2:lzip",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-cpio",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:cpio",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:cpio-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:cpio",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of cpio, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:cpio-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:cpio",
+      "target": "package:msys2:cpio",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:msys-contains-lz4",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:lz4:lz4",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:lz4-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:lz4:lz4",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of lz4, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:archive-compression:lz4-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:lz4:lz4",
+      "target": "package:msys2:lz4",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -885,6 +1263,26 @@
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:zip-family:bzip2-method",
+      "subject": "component:info-zip:zip",
+      "statement": "Zip and UnZip support the bzip2 compression method within .zip archives, explaining their libbz2 dependency.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:lz4:self-versioned-dependency",
+      "subject": "component:lz4:lz4",
+      "statement": "The MSYS lz4 package's declared dependency on lz4 itself reflects a version-pinned constraint against its own bundled shared library rather than a distinct dependency package.",
+      "classification": "inference",
+      "confidence": "medium",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "evidence": [
@@ -997,6 +1395,76 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Tukaani Project XZ Utils site, matching the project_url recorded for package:msys2:xz in the catalog snapshot. Used for the LZMA2 compression model and the CLI/library split between xz and liblzma."
+    },
+    {
+      "id": "evidence:zstd:project-site-2026-07-30",
+      "class": "primary",
+      "title": "Zstandard (official project site)",
+      "locator": "https://facebook.github.io/zstd/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Zstandard project site, matching the project_url recorded for package:msys2:zstd in the catalog snapshot. Used for the compression model and the CLI/library split between zstd and libzstd."
+    },
+    {
+      "id": "evidence:info-zip:zip-manual-2026-07-30",
+      "class": "primary",
+      "title": "Info-ZIP Zip (official project page)",
+      "locator": "http://www.info-zip.org/Zip.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Info-ZIP Zip project page, matching the project_url recorded for package:msys2:zip in the catalog snapshot."
+    },
+    {
+      "id": "evidence:info-zip:unzip-manual-2026-07-30",
+      "class": "primary",
+      "title": "Info-ZIP (official project site)",
+      "locator": "http://www.info-zip.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Info-ZIP project site, matching the project_url recorded for package:msys2:unzip in the catalog snapshot."
+    },
+    {
+      "id": "evidence:p7zip:project-site-2026-07-30",
+      "class": "primary",
+      "title": "p7zip (official project site)",
+      "locator": "https://github.com/p7zip-project/p7zip",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official p7zip-project repository, matching the project_url recorded for package:msys2:p7zip in the catalog snapshot."
+    },
+    {
+      "id": "evidence:lzip:manual-2026-07-30",
+      "class": "primary",
+      "title": "Lzip (official project site)",
+      "locator": "https://www.nongnu.org/lzip/lzip.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Lzip project site, matching the project_url recorded for package:msys2:lzip in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:cpio-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Cpio Manual",
+      "locator": "https://www.gnu.org/software/cpio/manual/cpio.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:lz4:manual-2026-07-30",
+      "class": "primary",
+      "title": "LZ4 (official project site)",
+      "locator": "https://lz4.github.io/lz4/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official LZ4 project site, matching the project_url recorded for package:msys2:lz4 in the catalog snapshot."
     }
   ]
 }

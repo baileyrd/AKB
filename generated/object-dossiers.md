@@ -29,6 +29,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnu:cpio`
+
+- Name: GNU Cpio
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:cpio-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:gnu:findutils`
 
 - Name: GNU Findutils
@@ -83,12 +92,66 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:info-zip:unzip`
+
+- Name: Info-ZIP UnZip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:info-zip:unzip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:info-zip:zip`
+
+- Name: Info-ZIP Zip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:info-zip:zip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:lz4:lz4`
+
+- Name: LZ4
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:lzip:lzip`
+
+- Name: Lzip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:lzip:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:p7zip:p7zip`
+
+- Name: p7zip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:p7zip:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `component:tukaani:xz`
 
 - Name: XZ Utils
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:zstd:zstd`
+
+- Name: Zstandard (zstd)
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:zstd:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
@@ -260,7 +323,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 11
+- Outgoing relationships: 18
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5769,7 +5832,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:cppdap`
 
@@ -8253,7 +8316,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:lzip`
 
@@ -8262,7 +8325,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:lzop`
 
@@ -143505,7 +143568,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:pacman`
 
@@ -146214,7 +146277,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:upx`
 
@@ -146448,7 +146511,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `package:msys2:zlib`
 
@@ -146502,7 +146565,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc`
 
@@ -146583,7 +146646,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 11
+- Incoming relationships: 18
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

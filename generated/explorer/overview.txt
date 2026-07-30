@@ -4,13 +4,20 @@ Objects
 - component:bzip2:bzip2 (component): bzip2
 - component:gnu:bash (component): GNU Bash
 - component:gnu:coreutils (component): GNU Coreutils
+- component:gnu:cpio (component): GNU Cpio
 - component:gnu:findutils (component): GNU Findutils
 - component:gnu:gawk (component): GNU Awk (gawk)
 - component:gnu:grep (component): GNU Grep
 - component:gnu:gzip (component): GNU Gzip
 - component:gnu:sed (component): GNU Sed
 - component:gnu:tar (component): GNU Tar
+- component:info-zip:unzip (component): Info-ZIP UnZip
+- component:info-zip:zip (component): Info-ZIP Zip
+- component:lz4:lz4 (component): LZ4
+- component:lzip:lzip (component): Lzip
+- component:p7zip:p7zip (component): p7zip
 - component:tukaani:xz (component): XZ Utils
+- component:zstd:zstd (component): Zstandard (zstd)
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
 - dll:windows:api-ms-win-crt-heap-l1-1-0.dll (dll): api-ms-win-crt-heap-l1-1-0.dll
@@ -16329,6 +16336,27 @@ Relationships
 - environment:msys2:msys --contains--> component:tukaani:xz
 - component:tukaani:xz --uses-runtime--> runtime:msys2:msys-2.0.dll
 - component:tukaani:xz --packaged-by--> package:msys2:xz
+- environment:msys2:msys --contains--> component:zstd:zstd
+- component:zstd:zstd --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:zstd:zstd --packaged-by--> package:msys2:zstd
+- environment:msys2:msys --contains--> component:info-zip:zip
+- component:info-zip:zip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:info-zip:zip --packaged-by--> package:msys2:zip
+- environment:msys2:msys --contains--> component:info-zip:unzip
+- component:info-zip:unzip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:info-zip:unzip --packaged-by--> package:msys2:unzip
+- environment:msys2:msys --contains--> component:p7zip:p7zip
+- component:p7zip:p7zip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:p7zip:p7zip --packaged-by--> package:msys2:p7zip
+- environment:msys2:msys --contains--> component:lzip:lzip
+- component:lzip:lzip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:lzip:lzip --packaged-by--> package:msys2:lzip
+- environment:msys2:msys --contains--> component:gnu:cpio
+- component:gnu:cpio --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:cpio --packaged-by--> package:msys2:cpio
+- environment:msys2:msys --contains--> component:lz4:lz4
+- component:lz4:lz4 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:lz4:lz4 --packaged-by--> package:msys2:lz4
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

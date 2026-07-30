@@ -155,3 +155,5 @@ this library's unusually wide blast radius.
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)
 - [Zstandard (library)](LIBZSTD.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)
+- [zlib (CLANG64)](ZLIB-CLANG64.md)

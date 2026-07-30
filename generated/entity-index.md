@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
 | component:cmake:cmake | component | CMake | partial | 8 | 1 |
-| component:curl:curl | component | curl | partial | 9 | 2 |
+| component:curl:curl | component | curl | partial | 10 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 8 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
@@ -15,7 +15,7 @@
 | component:gnu:coreutils | component | GNU Coreutils | partial | 5 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
-| component:gnu:emacs | component | GNU Emacs | partial | 5 | 1 |
+| component:gnu:emacs | component | GNU Emacs | partial | 6 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 4 | 1 |
 | component:gnu:gcc | component | GCC | partial | 4 | 1 |
@@ -28,13 +28,13 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 6 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 3 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 12 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 13 | 1 |
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
 | component:llvm:clang | component | Clang | partial | 3 | 1 |
-| component:llvm:lld | component | LLD | partial | 3 | 2 |
-| component:llvm:lldb | component | LLDB | partial | 3 | 1 |
+| component:llvm:lld | component | LLD | partial | 5 | 2 |
+| component:llvm:lldb | component | LLDB | partial | 4 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
 | component:mesonbuild:meson | component | Meson | partial | 3 | 1 |
@@ -61,11 +61,11 @@
 | dll:windows:msys-curl-4.dll | dll | msys-curl-4.dll | verified | 0 | 1 |
 | dll:windows:msys-z.dll | dll | msys-z.dll | verified | 0 | 1 |
 | ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
-| environment:msys2:clang64 | environment | CLANG64 | partial | 6 | 3823 |
+| environment:msys2:clang64 | environment | CLANG64 | partial | 8 | 3823 |
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 64 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 67 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -605,9 +605,10 @@
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
-| library:curl:libcurl | library | libcurl | partial | 9 | 3 |
-| library:darwinsys:file | library | file | partial | 2 | 2 |
+| library:curl:libcurl | library | libcurl | partial | 10 | 3 |
+| library:darwinsys:file | library | file | partial | 3 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 4 |
+| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 2 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
@@ -626,6 +627,8 @@
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 8 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 3 |
+| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 7 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -638,7 +641,8 @@
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 8 | 3 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
-| library:h5l:heimdal | library | Heimdal | partial | 2 | 2 |
+| library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
+| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 2 | 2 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 5 | 2 |
 | library:libedit:libedit | library | libedit | partial | 2 | 2 |
@@ -664,12 +668,13 @@
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
+| library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
 | library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 1 | 2 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
-| library:yubico:libfido2 | library | libfido2 | partial | 2 | 2 |
+| library:yubico:libfido2 | library | libfido2 | partial | 4 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -837,7 +842,7 @@
 | package:msys2:gzip | package | gzip | verified | 4 | 6 |
 | package:msys2:heimdal | package | heimdal | verified | 3 | 3 |
 | package:msys2:heimdal-devel | package | heimdal-devel | verified | 7 | 1 |
-| package:msys2:heimdal-libs | package | heimdal-libs | verified | 7 | 4 |
+| package:msys2:heimdal-libs | package | heimdal-libs | verified | 7 | 5 |
 | package:msys2:help2man | package | help2man | verified | 4 | 0 |
 | package:msys2:hexcurse | package | hexcurse | verified | 3 | 0 |
 | package:msys2:icmake | package | icmake | verified | 2 | 0 |
@@ -882,7 +887,7 @@
 | package:msys2:libbz2-devel | package | libbz2-devel | verified | 3 | 1 |
 | package:msys2:libcares | package | libcares | verified | 3 | 2 |
 | package:msys2:libcares-devel | package | libcares-devel | verified | 3 | 1 |
-| package:msys2:libcbor | package | libcbor | verified | 2 | 2 |
+| package:msys2:libcbor | package | libcbor | verified | 2 | 3 |
 | package:msys2:libcbor-devel | package | libcbor-devel | verified | 3 | 0 |
 | package:msys2:libcurl | package | libcurl | verified | 14 | 9 |
 | package:msys2:libcurl-devel | package | libcurl-devel | verified | 13 | 0 |
@@ -8616,14 +8621,14 @@
 | package:msys2:mingw-w64-clang-x86_64-zint-qt | package | mingw-w64-clang-x86_64-zint-qt | verified | 5 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-zix | package | mingw-w64-clang-x86_64-zix | verified | 2 | 2 |
 | package:msys2:mingw-w64-clang-x86_64-zizmor | package | mingw-w64-clang-x86_64-zizmor | verified | 2 | 0 |
-| package:msys2:mingw-w64-clang-x86_64-zlib | package | mingw-w64-clang-x86_64-zlib | verified | 2 | 287 |
+| package:msys2:mingw-w64-clang-x86_64-zlib | package | mingw-w64-clang-x86_64-zlib | verified | 2 | 288 |
 | package:msys2:mingw-w64-clang-x86_64-zlib-ng | package | mingw-w64-clang-x86_64-zlib-ng | verified | 2 | 1 |
 | package:msys2:mingw-w64-clang-x86_64-zlib-ng-compat | package | mingw-w64-clang-x86_64-zlib-ng-compat | verified | 2 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-zoitechat | package | mingw-w64-clang-x86_64-zoitechat | verified | 16 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-zola | package | mingw-w64-clang-x86_64-zola | verified | 2 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-zopfli | package | mingw-w64-clang-x86_64-zopfli | verified | 2 | 1 |
 | package:msys2:mingw-w64-clang-x86_64-zoxide | package | mingw-w64-clang-x86_64-zoxide | verified | 2 | 1 |
-| package:msys2:mingw-w64-clang-x86_64-zstd | package | mingw-w64-clang-x86_64-zstd | verified | 2 | 86 |
+| package:msys2:mingw-w64-clang-x86_64-zstd | package | mingw-w64-clang-x86_64-zstd | verified | 2 | 87 |
 | package:msys2:mingw-w64-clang-x86_64-zug | package | mingw-w64-clang-x86_64-zug | verified | 2 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-zvbi | package | mingw-w64-clang-x86_64-zvbi | verified | 6 | 1 |
 | package:msys2:mingw-w64-clang-x86_64-zxcvbn-c | package | mingw-w64-clang-x86_64-zxcvbn-c | verified | 2 | 0 |
@@ -16375,7 +16380,7 @@
 | package:msys2:yelp-xsl | package | yelp-xsl | verified | 2 | 1 |
 | package:msys2:yodl | package | yodl | verified | 3 | 0 |
 | package:msys2:zip | package | zip | verified | 3 | 14 |
-| package:msys2:zlib | package | zlib | verified | 3 | 60 |
+| package:msys2:zlib | package | zlib | verified | 3 | 61 |
 | package:msys2:zlib-devel | package | zlib-devel | verified | 3 | 9 |
 | package:msys2:znc | package | znc | verified | 8 | 0 |
 | package:msys2:zsh | package | zsh | verified | 6 | 1 |
@@ -16389,5 +16394,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 64 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 67 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

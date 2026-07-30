@@ -2087,6 +2087,96 @@
         "role": "XML parsing"
       },
       "evidence_refs": ["evidence:gnome:libxml2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:zlib@clang64",
+      "kind": "library",
+      "name": "zlib (CLANG64)",
+      "summary": "The zlib compression library, packaged in the CLANG64 environment specifically and depended on by LLD and LLDB, distinct from the separately versioned UCRT64 zlib this knowledge base's library:gnu:zlib entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "zlib project",
+      "aliases": ["zlib"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.zlib.net/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-zlib",
+        "role": "DEFLATE compression"
+      },
+      "evidence_refs": ["evidence:zlib:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:facebook:zstd@clang64",
+      "kind": "library",
+      "name": "Zstandard (CLANG64)",
+      "summary": "The Zstandard compression library, packaged in the CLANG64 environment specifically and depended on by LLD to back compressed debug-section support, distinct from the separately versioned UCRT64 Zstandard this knowledge base's library:facebook:zstd entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Meta (Facebook)",
+      "aliases": ["zstd", "libzstd"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://facebook.github.io/zstd/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-zstd",
+        "role": "Zstandard compression"
+      },
+      "evidence_refs": ["evidence:facebook:zstd-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pjk:libcbor",
+      "kind": "library",
+      "name": "libcbor",
+      "summary": "A C library for parsing and generating CBOR, a general-purpose schema-less binary data format, packaged in the MSYS environment and depended on by libfido2 for its own CBOR-encoded FIDO2/U2F protocol data.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PJK (Pavel Kalvoda)",
+      "aliases": ["libcbor"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://github.com/PJK/libcbor",
+        "packaged_as": "package:msys2:libcbor",
+        "role": "CBOR binary-format parsing and generation"
+      },
+      "evidence_refs": ["evidence:pjk:libcbor-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:h5l:heimdal-libs",
+      "kind": "library",
+      "name": "Heimdal runtime libraries",
+      "summary": "The runtime shared-library half of the Heimdal Kerberos V5 package, packaged in the MSYS environment and depended on by the Heimdal CLI/tools package itself, following the same CLI/library-package split pattern already documented for curl/libcurl and OpenSSL/libopenssl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Heimdal Project",
+      "aliases": ["heimdal-libs"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.h5l.org/",
+        "packaged_as": "package:msys2:heimdal-libs",
+        "role": "Kerberos V5 runtime shared libraries"
+      },
+      "evidence_refs": ["evidence:h5l:heimdal-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:zlib@msys",
+      "kind": "library",
+      "name": "zlib (MSYS)",
+      "summary": "The zlib compression library, packaged in the MSYS environment specifically — with 60 recorded reverse dependents, depended on directly by curl, GNU Emacs, GnuPG, libcurl, libfido2, and file, all already documented in this knowledge base, distinct from the separately versioned UCRT64 zlib this knowledge base's library:gnu:zlib entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "zlib project",
+      "aliases": ["zlib"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.zlib.net/",
+        "packaged_as": "package:msys2:zlib",
+        "role": "DEFLATE compression"
+      },
+      "evidence_refs": ["evidence:zlib:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -7071,6 +7161,294 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:clang64-contains-zlib",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "library:gnu:zlib@clang64",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-clang64-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:zlib@clang64",
+      "target": "package:msys2:mingw-w64-clang-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:clang64-contains-zstd",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "library:facebook:zstd@clang64",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zstd-clang64-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:facebook:zstd@clang64",
+      "target": "package:msys2:mingw-w64-clang-x86_64-zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libcbor",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:pjk:libcbor",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcbor-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:pjk:libcbor",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcbor-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:pjk:libcbor",
+      "target": "package:msys2:libcbor",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-heimdal-libs",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:h5l:heimdal-libs",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-libs-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:h5l:heimdal-libs",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-libs-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:h5l:heimdal-libs",
+      "target": "package:msys2:heimdal-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lld-requires-zlib-clang64",
+      "type": "requires",
+      "source": "component:llvm:lld",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs compressed debug-section support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lld-requires-zstd-clang64",
+      "type": "requires",
+      "source": "component:llvm:lld",
+      "target": "library:facebook:zstd@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs compressed debug-section support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lldb-requires-zlib-clang64",
+      "type": "requires",
+      "source": "component:llvm:lldb",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs reading debug information compressed with zlib.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-requires-libcbor",
+      "type": "requires",
+      "source": "library:yubico:libfido2",
+      "target": "library:pjk:libcbor",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs CBOR-encoded FIDO2/U2F protocol data.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-requires-heimdal-libs",
+      "type": "requires",
+      "source": "library:h5l:heimdal",
+      "target": "library:h5l:heimdal-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "The Heimdal package's own runtime shared-library half.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-zlib-msys",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:zlib@msys",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-msys-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:zlib@msys",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-msys-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:zlib@msys",
+      "target": "package:msys2:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-zlib-msys",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs transparent decompression of Content-Encoding: gzip/deflate HTTP responses.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:emacs-requires-zlib-msys",
+      "type": "requires",
+      "source": "component:gnu:emacs",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Emacs' built-in auto-compression mode.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-zlib-msys",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs compressed OpenPGP packet handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-zlib-msys",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs transparent decompression support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-requires-zlib-msys",
+      "type": "requires",
+      "source": "library:yubico:libfido2",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:file-requires-zlib-msys",
+      "type": "requires",
+      "source": "library:darwinsys:file",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs identifying files inside gzip-compressed containers.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -8473,6 +8851,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official XZ Utils project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-xz in the catalog snapshot."
+    },
+    {
+      "id": "evidence:pjk:libcbor-manual-2026-07-30",
+      "class": "primary",
+      "title": "libcbor (GitHub project page)",
+      "locator": "https://github.com/PJK/libcbor",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libcbor project page, matching the project_url recorded for package:msys2:libcbor in the catalog snapshot."
     }
   ]
 }

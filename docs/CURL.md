@@ -12,6 +12,7 @@ model_refs:
   - library:libpsl:libpsl
   - library:gnu:libunistring
   - library:curl:libcurl
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -76,7 +77,7 @@ CLI tool documented in this batch, reflecting curl's multi-protocol design:
 | QUIC transport | `package:msys2:libngtcp2` | Backs the QUIC transport protocol underlying HTTP/3, alongside `libnghttp3` above. Documented fully in [libngtcp2](LIBNGTCP2.md). |
 | Public Suffix List | `package:msys2:libpsl` | Backs correct cookie-domain-scoping decisions using the Public Suffix List, preventing cookies from being set for overly broad domain suffixes. Documented fully in [libpsl](LIBPSL.md). |
 | Unicode string handling | `package:msys2:libunistring` | Backs Unicode-aware string processing, for example in internationalized domain names. Documented fully in [GNU libunistring](GNU-LIBUNISTRING.md). |
-| Compression | `package:msys2:zlib` | Backs transparent decompression of `Content-Encoding: gzip`/`deflate` HTTP responses. |
+| Compression | `package:msys2:zlib` | Backs transparent decompression of `Content-Encoding: gzip`/`deflate` HTTP responses. Documented fully in [zlib (MSYS)](ZLIB-MSYS.md). |
 
 ## Reverse Dependencies
 
@@ -150,3 +151,4 @@ general version-qualified security review noted above.
 - [libpsl](LIBPSL.md)
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libcurl](LIBCURL.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

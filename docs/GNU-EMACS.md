@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:emacs
   - package:msys2:emacs
   - library:gnome:libxml2@msys
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -68,7 +69,7 @@ in this volume, each mapping to a specific built-in Emacs feature:
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Terminal capability library | `package:msys2:ncurses` | Screen drawing and cursor control in this console build, the same shared dependency documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
-| Compression support | `package:msys2:zlib` | Backs Emacs' built-in "auto-compression mode," which transparently reads and writes compressed files. |
+| Compression support | `package:msys2:zlib` | Backs Emacs' built-in "auto-compression mode," which transparently reads and writes compressed files. Documented fully in [zlib (MSYS)](ZLIB-MSYS.md). |
 | XML/HTML parsing | `package:msys2:libxml2` | Backs Emacs' built-in libxml2-based parsing, used by features such as the `eww` web browser and `libxml-parse-html-region`. Documented fully in [libxml2 (MSYS)](LIBXML2-MSYS.md). |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
 | TLS/network security | `package:msys2:libgnutls` | Backs Emacs' Network Security Manager and TLS-based network connections. Documented fully in [GnuTLS](GNUTLS.md). |
@@ -152,3 +153,4 @@ specific console-oriented package have not been directly confirmed.
 - [GNU Ed](GNU-ED.md)
 - [GnuTLS](GNUTLS.md)
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

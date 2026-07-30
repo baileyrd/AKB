@@ -16,6 +16,7 @@ model_refs:
   - library:curl:libcurl
   - library:gnu:readline@msys
   - library:gnu:libiconv@msys
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -82,7 +83,7 @@ stack plus archive, terminal, and database libraries:
 | Threading | `package:msys2:libnpth` | GnuPG's own portable threading library (New/Nth Pth), used internally for concurrent operations. Documented fully in [nPth (MSYS)](NPTH-MSYS.md) — corrected 2026-07-30 from an earlier link to the UCRT64 [nPth](NPTH.md) package. |
 | TLS for network lookups | `package:msys2:libgnutls` | Backs `dirmngr`'s TLS-secured connections to key servers and OCSP responders — the network-facing exception to GnuPG's OpenSSL independence. Documented fully in [GnuTLS](GNUTLS.md). |
 | HTTP transfer library | `package:msys2:libcurl` | Backs `dirmngr`'s HTTP-based key-server and certificate-revocation lookups. Documented fully in [libcurl](LIBCURL.md). |
-| Compression | `package:msys2:bzip2`, `package:msys2:libbz2`, `package:msys2:zlib` | Back compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support. |
+| Compression | `package:msys2:bzip2`, `package:msys2:libbz2`, `package:msys2:zlib` | Back compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support. Documented fully in [zlib (MSYS)](ZLIB-MSYS.md). |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Interactive line editing | `package:msys2:libreadline` | Backs interactive prompts in GnuPG's command-line tools. Documented fully in [GNU Readline (MSYS)](GNU-READLINE-MSYS.md). |
@@ -178,3 +179,4 @@ version-qualified security review noted above.
 - [libcurl](LIBCURL.md)
 - [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

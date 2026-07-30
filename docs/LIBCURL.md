@@ -15,6 +15,7 @@ model_refs:
   - library:nghttp2:libngtcp2
   - library:libpsl:libpsl
   - library:gnu:libunistring
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -84,15 +85,15 @@ already lists directly, since the CLI's own dependency table happens to
 match libcurl's here. A seventh, [OpenSSL](OPENSSL.md)
 (`package:msys2:openssl`, TLS/HTTPS support), also matches this
 knowledge base's existing `component:openssl:openssl` entity exactly and
-gets a `requires` edge as well. The remaining five —
-`package:msys2:brotli`, `package:msys2:ca-certificates`,
-`package:msys2:libssh2`, `package:msys2:libzstd`, and
-`package:msys2:zlib` — are not individually modeled as components in
-this knowledge base; the `zlib` here is specifically the **MSYS**
-package, a distinct catalog entity from this knowledge base's existing
-`library:gnu:zlib`, which documents the UCRT64-packaged `zlib` instead,
-so no edge is added for it, the same package/environment distinction
-applied consistently throughout this volume.
+gets a `requires` edge as well. An eighth, [zlib (MSYS)](ZLIB-MSYS.md)
+(`package:msys2:zlib`, transparent decompression support,
+`relationship:foundation-libraries:libcurl-requires-zlib-msys`), closes
+an item this page previously declined to model — distinct from this
+knowledge base's UCRT64 and CLANG64 zlib entities, now given its own
+page. The remaining four — `package:msys2:brotli`,
+`package:msys2:ca-certificates`, `package:msys2:libssh2`, and
+`package:msys2:libzstd` — are not individually modeled as components in
+this knowledge base.
 
 ## Reverse Dependencies
 
@@ -165,9 +166,9 @@ Protocol and API semantics are backed by the official curl project site
 upstream project. Package identity, version, and the recorded
 dependency/dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: the `brotli`, `ca-certificates`, `libssh2`, `libzstd`, and MSYS
-`zlib` sub-dependencies are not individually modeled as components in
-this knowledge base; header-level API surface and PE import/export-level
+page: the `brotli`, `ca-certificates`, `libssh2`, and `libzstd`
+sub-dependencies are not individually modeled as components in this
+knowledge base; header-level API surface and PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
@@ -184,3 +185,4 @@ methodology, also remain open.
 - [libngtcp2](LIBNGTCP2.md)
 - [libpsl](LIBPSL.md)
 - [GNU libunistring](GNU-LIBUNISTRING.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

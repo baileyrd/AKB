@@ -7,6 +7,7 @@ model_refs:
   - library:darwinsys:file
   - package:msys2:file
   - component:gnu:nano
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -63,12 +64,14 @@ does not already indicate a type.
 ## Dependencies
 
 The MSYS `package:msys2:file` declares dependencies on `libbz2`,
-`liblzma`, `libzstd`, and `zlib` — all separate MSYS-environment sibling
-packages, reflecting file's own built-in support for identifying files
-inside compressed containers. None are individually modeled as separate
-components in this knowledge base; the MSYS `zlib` here is a distinct
-catalog entity from this knowledge base's existing `library:gnu:zlib`,
-which documents the UCRT64-packaged `zlib` instead, the same
+`liblzma`, `libzstd`, and [zlib (MSYS)](ZLIB-MSYS.md)
+(`relationship:foundation-libraries:file-requires-zlib-msys`) — all
+separate MSYS-environment sibling packages, reflecting file's own
+built-in support for identifying files inside compressed containers.
+`libbz2`, `liblzma`, and `libzstd` are not individually modeled as
+separate components in this knowledge base; `zlib` now is, closing an
+item this page previously left open — a distinct catalog entity from
+this knowledge base's UCRT64 and CLANG64 zlib entities, the same
 package/environment distinction applied consistently throughout this
 volume.
 
@@ -149,3 +152,4 @@ methodology, also remain open.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU Nano](GNU-NANO.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

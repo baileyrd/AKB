@@ -7,6 +7,8 @@ model_refs:
   - component:llvm:lld
   - package:msys2:mingw-w64-clang-x86_64-lld
   - library:llvm:llvm-libs
+  - library:gnu:zlib@clang64
+  - library:facebook:zstd@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:lld-manual-2026-07-30
@@ -62,7 +64,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | LLVM's shared libraries | `mingw-w64-clang-x86_64-llvm-libs` | LLD is built on LLVM's object-file and code-generation infrastructure libraries. Documented fully in [LLVM libraries](LLVM-LIBS.md). |
-| Compressed debug sections | `mingw-w64-clang-x86_64-zlib`, `mingw-w64-clang-x86_64-zstd` | Back compressed debug-section support, the same rationale documented for [GNU Binutils](GNU-BINUTILS.md#dependencies). |
+| Compressed debug sections | `mingw-w64-clang-x86_64-zlib`, `mingw-w64-clang-x86_64-zstd` | Back compressed debug-section support, the same rationale documented for [GNU Binutils](GNU-BINUTILS.md#dependencies). Documented fully in [zlib (CLANG64)](ZLIB-CLANG64.md) and [Zstandard (CLANG64)](LIBZSTD-CLANG64.md). |
 
 ## Reverse Dependencies
 
@@ -141,3 +143,5 @@ the general version-qualified security review noted above.
 - [LLDB](LLDB.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [LLVM libraries](LLVM-LIBS.md)
+- [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)

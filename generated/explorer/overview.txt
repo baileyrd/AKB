@@ -605,6 +605,7 @@ Objects
 - library:curl:libcurl (library): libcurl
 - library:darwinsys:file (library): file
 - library:facebook:zstd (library): Zstandard (library)
+- library:facebook:zstd@clang64 (library): Zstandard (CLANG64)
 - library:gnome:libxml2 (library): libxml2
 - library:gnome:libxml2@msys (library): libxml2 (MSYS)
 - library:gnu:gettext (library): GNU gettext
@@ -623,6 +624,8 @@ Objects
 - library:gnu:readline@msys (library): GNU Readline (MSYS)
 - library:gnu:termcap (library): GNU termcap
 - library:gnu:zlib (library): zlib
+- library:gnu:zlib@clang64 (library): zlib (CLANG64)
+- library:gnu:zlib@msys (library): zlib (MSYS)
 - library:gnupg:libassuan (library): libassuan
 - library:gnupg:libassuan@msys (library): libassuan (MSYS)
 - library:gnupg:libgcrypt (library): libgcrypt
@@ -636,6 +639,7 @@ Objects
 - library:gnutls:gnutls (library): GnuTLS
 - library:google:cppdap (library): cppdap
 - library:h5l:heimdal (library): Heimdal
+- library:h5l:heimdal-libs (library): Heimdal runtime libraries
 - library:jsoncpp:jsoncpp (library): JsonCpp
 - library:libarchive:libarchive (library): libarchive
 - library:libedit:libedit (library): libedit
@@ -661,6 +665,7 @@ Objects
 - library:pcre:pcre (library): PCRE (MSYS)
 - library:pcre:pcre2 (library): PCRE2
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
+- library:pjk:libcbor (library): libcbor
 - library:rhash:rhash (library): RHash
 - library:sqlite:sqlite3 (library): SQLite
 - library:tukaani:liblzma (library): liblzma (XZ Utils library)
@@ -16805,6 +16810,30 @@ Relationships
 - library:gnupg:libgpg-error@msys --requires--> library:gnu:libiconv@msys
 - component:git:git --requires--> library:libexpat:expat@msys
 - component:gnu:emacs --requires--> library:gnome:libxml2@msys
+- environment:msys2:clang64 --contains--> library:gnu:zlib@clang64
+- library:gnu:zlib@clang64 --packaged-by--> package:msys2:mingw-w64-clang-x86_64-zlib
+- environment:msys2:clang64 --contains--> library:facebook:zstd@clang64
+- library:facebook:zstd@clang64 --packaged-by--> package:msys2:mingw-w64-clang-x86_64-zstd
+- environment:msys2:msys --contains--> library:pjk:libcbor
+- library:pjk:libcbor --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:pjk:libcbor --packaged-by--> package:msys2:libcbor
+- environment:msys2:msys --contains--> library:h5l:heimdal-libs
+- library:h5l:heimdal-libs --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:h5l:heimdal-libs --packaged-by--> package:msys2:heimdal-libs
+- component:llvm:lld --requires--> library:gnu:zlib@clang64
+- component:llvm:lld --requires--> library:facebook:zstd@clang64
+- component:llvm:lldb --requires--> library:gnu:zlib@clang64
+- library:yubico:libfido2 --requires--> library:pjk:libcbor
+- library:h5l:heimdal --requires--> library:h5l:heimdal-libs
+- environment:msys2:msys --contains--> library:gnu:zlib@msys
+- library:gnu:zlib@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:zlib@msys --packaged-by--> package:msys2:zlib
+- component:curl:curl --requires--> library:gnu:zlib@msys
+- component:gnu:emacs --requires--> library:gnu:zlib@msys
+- component:gnupg:gnupg --requires--> library:gnu:zlib@msys
+- library:curl:libcurl --requires--> library:gnu:zlib@msys
+- library:yubico:libfido2 --requires--> library:gnu:zlib@msys
+- library:darwinsys:file --requires--> library:gnu:zlib@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

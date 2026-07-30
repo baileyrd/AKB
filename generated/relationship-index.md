@@ -76206,11 +76206,14 @@
 | relationship:foundation-libraries:clang-libs-packaged-by-package | packaged-by | library:llvm:clang-libs | package:msys2:mingw-w64-clang-x86_64-clang-libs | verified |
 | relationship:foundation-libraries:clang64-contains-clang-libs | contains | environment:msys2:clang64 | library:llvm:clang-libs | partial |
 | relationship:foundation-libraries:clang64-contains-llvm-libs | contains | environment:msys2:clang64 | library:llvm:llvm-libs | partial |
+| relationship:foundation-libraries:clang64-contains-zlib | contains | environment:msys2:clang64 | library:gnu:zlib@clang64 | partial |
+| relationship:foundation-libraries:clang64-contains-zstd | contains | environment:msys2:clang64 | library:facebook:zstd@clang64 | partial |
 | relationship:foundation-libraries:cppdap-packaged-by-package | packaged-by | library:google:cppdap | package:msys2:mingw-w64-ucrt-x86_64-cppdap | verified |
 | relationship:foundation-libraries:expat-msys-packaged-by-package | packaged-by | library:libexpat:expat@msys | package:msys2:libexpat | verified |
 | relationship:foundation-libraries:expat-msys-uses-msys-runtime | uses-runtime | library:libexpat:expat@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:expat-packaged-by-package | packaged-by | library:libexpat:expat | package:msys2:mingw-w64-ucrt-x86_64-expat | verified |
 | relationship:foundation-libraries:file-packaged-by-package | packaged-by | library:darwinsys:file | package:msys2:file | verified |
+| relationship:foundation-libraries:file-requires-zlib-msys | requires | library:darwinsys:file | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:file-uses-msys-runtime | uses-runtime | library:darwinsys:file | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:gettext-packaged-by-package | packaged-by | library:gnu:gettext | package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | verified |
 | relationship:foundation-libraries:gettext-requires-libiconv | requires | library:gnu:gettext | library:gnu:libiconv | verified |
@@ -76225,7 +76228,10 @@
 | relationship:foundation-libraries:gnutls-requires-libtasn1 | requires | library:gnutls:gnutls | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:gnutls-requires-p11-kit | requires | library:gnutls:gnutls | library:p11-glue:p11-kit | verified |
 | relationship:foundation-libraries:gnutls-uses-msys-runtime | uses-runtime | library:gnutls:gnutls | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:heimdal-libs-packaged-by-package | packaged-by | library:h5l:heimdal-libs | package:msys2:heimdal-libs | verified |
+| relationship:foundation-libraries:heimdal-libs-uses-msys-runtime | uses-runtime | library:h5l:heimdal-libs | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-packaged-by-package | packaged-by | library:h5l:heimdal | package:msys2:heimdal | verified |
+| relationship:foundation-libraries:heimdal-requires-heimdal-libs | requires | library:h5l:heimdal | library:h5l:heimdal-libs | verified |
 | relationship:foundation-libraries:heimdal-uses-msys-runtime | uses-runtime | library:h5l:heimdal | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:icu-packaged-by-package | packaged-by | library:unicode:icu | package:msys2:mingw-w64-ucrt-x86_64-icu | verified |
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
@@ -76241,6 +76247,8 @@
 | relationship:foundation-libraries:libassuan-msys-uses-msys-runtime | uses-runtime | library:gnupg:libassuan@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libassuan-packaged-by-package | packaged-by | library:gnupg:libassuan | package:msys2:mingw-w64-ucrt-x86_64-libassuan | verified |
 | relationship:foundation-libraries:libassuan-requires-libgpg-error | requires | library:gnupg:libassuan | library:gnupg:libgpg-error | verified |
+| relationship:foundation-libraries:libcbor-packaged-by-package | packaged-by | library:pjk:libcbor | package:msys2:libcbor | verified |
+| relationship:foundation-libraries:libcbor-uses-msys-runtime | uses-runtime | library:pjk:libcbor | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libcurl-packaged-by-package | packaged-by | library:curl:libcurl | package:msys2:libcurl | verified |
 | relationship:foundation-libraries:libcurl-requires-libidn2 | requires | library:curl:libcurl | library:gnu:libidn2 | verified |
 | relationship:foundation-libraries:libcurl-requires-libnghttp2 | requires | library:curl:libcurl | library:nghttp2:libnghttp2 | verified |
@@ -76248,10 +76256,13 @@
 | relationship:foundation-libraries:libcurl-requires-libngtcp2 | requires | library:curl:libcurl | library:nghttp2:libngtcp2 | verified |
 | relationship:foundation-libraries:libcurl-requires-libpsl | requires | library:curl:libcurl | library:libpsl:libpsl | verified |
 | relationship:foundation-libraries:libcurl-requires-libunistring | requires | library:curl:libcurl | library:gnu:libunistring | verified |
+| relationship:foundation-libraries:libcurl-requires-zlib-msys | requires | library:curl:libcurl | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libcurl-uses-msys-runtime | uses-runtime | library:curl:libcurl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libedit-packaged-by-package | packaged-by | library:libedit:libedit | package:msys2:libedit | verified |
 | relationship:foundation-libraries:libedit-uses-msys-runtime | uses-runtime | library:libedit:libedit | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libfido2-packaged-by-package | packaged-by | library:yubico:libfido2 | package:msys2:libfido2 | verified |
+| relationship:foundation-libraries:libfido2-requires-libcbor | requires | library:yubico:libfido2 | library:pjk:libcbor | verified |
+| relationship:foundation-libraries:libfido2-requires-zlib-msys | requires | library:yubico:libfido2 | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libfido2-uses-msys-runtime | uses-runtime | library:yubico:libfido2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgcrypt-msys-packaged-by-package | packaged-by | library:gnupg:libgcrypt@msys | package:msys2:libgcrypt | verified |
 | relationship:foundation-libraries:libgcrypt-msys-requires-libgpg-error-msys | requires | library:gnupg:libgcrypt@msys | library:gnupg:libgpg-error@msys | verified |
@@ -76315,7 +76326,9 @@
 | relationship:foundation-libraries:msys-contains-gmp-msys | contains | environment:msys2:msys | library:gnu:gmp@msys | partial |
 | relationship:foundation-libraries:msys-contains-gnutls | contains | environment:msys2:msys | library:gnutls:gnutls | partial |
 | relationship:foundation-libraries:msys-contains-heimdal | contains | environment:msys2:msys | library:h5l:heimdal | partial |
+| relationship:foundation-libraries:msys-contains-heimdal-libs | contains | environment:msys2:msys | library:h5l:heimdal-libs | partial |
 | relationship:foundation-libraries:msys-contains-libassuan-msys | contains | environment:msys2:msys | library:gnupg:libassuan@msys | partial |
+| relationship:foundation-libraries:msys-contains-libcbor | contains | environment:msys2:msys | library:pjk:libcbor | partial |
 | relationship:foundation-libraries:msys-contains-libcurl | contains | environment:msys2:msys | library:curl:libcurl | partial |
 | relationship:foundation-libraries:msys-contains-libedit | contains | environment:msys2:msys | library:libedit:libedit | partial |
 | relationship:foundation-libraries:msys-contains-libfido2 | contains | environment:msys2:msys | library:yubico:libfido2 | partial |
@@ -76340,6 +76353,7 @@
 | relationship:foundation-libraries:msys-contains-pcre | contains | environment:msys2:msys | library:pcre:pcre | partial |
 | relationship:foundation-libraries:msys-contains-pcre2-msys | contains | environment:msys2:msys | library:pcre:pcre2@msys | partial |
 | relationship:foundation-libraries:msys-contains-readline-msys | contains | environment:msys2:msys | library:gnu:readline@msys | partial |
+| relationship:foundation-libraries:msys-contains-zlib-msys | contains | environment:msys2:msys | library:gnu:zlib@msys | partial |
 | relationship:foundation-libraries:nettle-msys-packaged-by-package | packaged-by | library:nettle:nettle@msys | package:msys2:nettle | verified |
 | relationship:foundation-libraries:nettle-msys-uses-msys-runtime | uses-runtime | library:nettle:nettle@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:nettle-packaged-by-package | packaged-by | library:nettle:nettle | package:msys2:mingw-w64-ucrt-x86_64-nettle | verified |
@@ -76403,7 +76417,11 @@
 | relationship:foundation-libraries:winpthreads-packaged-by-package | packaged-by | library:mingw-w64:winpthreads | package:msys2:mingw-w64-ucrt-x86_64-winpthreads | verified |
 | relationship:foundation-libraries:winpthreads-requires-libwinpthread | requires | library:mingw-w64:winpthreads | library:mingw-w64:libwinpthread | verified |
 | relationship:foundation-libraries:xxhash-packaged-by-package | packaged-by | library:xxhash:xxhash | package:msys2:mingw-w64-ucrt-x86_64-xxhash | verified |
+| relationship:foundation-libraries:zlib-clang64-packaged-by-package | packaged-by | library:gnu:zlib@clang64 | package:msys2:mingw-w64-clang-x86_64-zlib | verified |
+| relationship:foundation-libraries:zlib-msys-packaged-by-package | packaged-by | library:gnu:zlib@msys | package:msys2:zlib | verified |
+| relationship:foundation-libraries:zlib-msys-uses-msys-runtime | uses-runtime | library:gnu:zlib@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:zlib-packaged-by-package | packaged-by | library:gnu:zlib | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
+| relationship:foundation-libraries:zstd-clang64-packaged-by-package | packaged-by | library:facebook:zstd@clang64 | package:msys2:mingw-w64-clang-x86_64-zstd | verified |
 | relationship:foundation-libraries:zstd-packaged-by-package | packaged-by | library:facebook:zstd | package:msys2:mingw-w64-ucrt-x86_64-zstd | verified |
 | relationship:gnu-userland:bash-packaged-by-package | packaged-by | component:gnu:bash | package:msys2:bash | verified |
 | relationship:gnu-userland:bash-uses-msys-runtime | uses-runtime | component:gnu:bash | runtime:msys2:msys-2.0.dll | partial |
@@ -76414,6 +76432,7 @@
 | relationship:gnu-userland:coreutils-uses-msys-runtime | uses-runtime | component:gnu:coreutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:emacs-requires-gnutls | requires | component:gnu:emacs | library:gnutls:gnutls | verified |
 | relationship:gnu-userland:emacs-requires-libxml2-msys | requires | component:gnu:emacs | library:gnome:libxml2@msys | verified |
+| relationship:gnu-userland:emacs-requires-zlib-msys | requires | component:gnu:emacs | library:gnu:zlib@msys | verified |
 | relationship:gnu-userland:findutils-packaged-by-package | packaged-by | component:gnu:findutils | package:msys2:findutils | verified |
 | relationship:gnu-userland:findutils-requires-libintl | requires | component:gnu:findutils | library:gnu:libintl | verified |
 | relationship:gnu-userland:findutils-uses-msys-runtime | uses-runtime | component:gnu:findutils | runtime:msys2:msys-2.0.dll | partial |
@@ -76998,6 +77017,7 @@
 | relationship:ssh-curl-git:curl-requires-libpsl | requires | component:curl:curl | library:libpsl:libpsl | verified |
 | relationship:ssh-curl-git:curl-requires-libunistring | requires | component:curl:curl | library:gnu:libunistring | verified |
 | relationship:ssh-curl-git:curl-requires-openssl | requires | component:curl:curl | component:openssl:openssl | verified |
+| relationship:ssh-curl-git:curl-requires-zlib-msys | requires | component:curl:curl | library:gnu:zlib@msys | verified |
 | relationship:ssh-curl-git:curl-uses-msys-runtime | uses-runtime | component:curl:curl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:git-packaged-by-package | packaged-by | component:git:git | package:msys2:git | verified |
 | relationship:ssh-curl-git:git-requires-curl | requires | component:git:git | component:curl:curl | verified |
@@ -77018,6 +77038,7 @@
 | relationship:ssh-curl-git:gnupg-requires-libreadline | requires | component:gnupg:gnupg | library:gnu:readline@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-nettle | requires | component:gnupg:gnupg | library:nettle:nettle@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-npth | requires | component:gnupg:gnupg | library:gnupg:npth@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-zlib-msys | requires | component:gnupg:gnupg | library:gnu:zlib@msys | verified |
 | relationship:ssh-curl-git:gnupg-uses-msys-runtime | uses-runtime | component:gnupg:gnupg | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:libcurl-requires-openssl | requires | library:curl:libcurl | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:msys-contains-curl | contains | environment:msys2:msys | component:curl:curl | partial |
@@ -77070,9 +77091,12 @@
 | relationship:toolchain:lld-compatible-with-binutils | compatible-with | component:llvm:lld | component:gnu:binutils | partial |
 | relationship:toolchain:lld-packaged-by-package | packaged-by | component:llvm:lld | package:msys2:mingw-w64-clang-x86_64-lld | verified |
 | relationship:toolchain:lld-requires-llvm-libs | requires | component:llvm:lld | library:llvm:llvm-libs | verified |
+| relationship:toolchain:lld-requires-zlib-clang64 | requires | component:llvm:lld | library:gnu:zlib@clang64 | verified |
+| relationship:toolchain:lld-requires-zstd-clang64 | requires | component:llvm:lld | library:facebook:zstd@clang64 | verified |
 | relationship:toolchain:lldb-packaged-by-package | packaged-by | component:llvm:lldb | package:msys2:mingw-w64-clang-x86_64-lldb | verified |
 | relationship:toolchain:lldb-requires-clang-libs | requires | component:llvm:lldb | library:llvm:clang-libs | verified |
 | relationship:toolchain:lldb-requires-llvm-libs | requires | component:llvm:lldb | library:llvm:llvm-libs | verified |
+| relationship:toolchain:lldb-requires-zlib-clang64 | requires | component:llvm:lldb | library:gnu:zlib@clang64 | verified |
 | relationship:toolchain:meson-invokes-ninja | invokes | component:mesonbuild:meson | component:ninja-build:ninja | verified |
 | relationship:toolchain:meson-packaged-by-package | packaged-by | component:mesonbuild:meson | package:msys2:mingw-w64-ucrt-x86_64-meson | verified |
 | relationship:toolchain:meson-requires-pkgconf | requires | component:mesonbuild:meson | component:pkgconf:pkgconf | verified |

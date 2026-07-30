@@ -70,6 +70,11 @@ model_refs:
   - library:gnu:gmp@msys
   - library:libexpat:expat@msys
   - library:gnome:libxml2@msys
+  - library:gnu:zlib@clang64
+  - library:facebook:zstd@clang64
+  - library:pjk:libcbor
+  - library:h5l:heimdal-libs
+  - library:gnu:zlib@msys
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -124,6 +129,7 @@ evidence_refs:
   - evidence:llvm:clang-libs-manual-2026-07-30
   - evidence:xxhash:manual-2026-07-30
   - evidence:tukaani:xz-library-manual-2026-07-30
+  - evidence:pjk:libcbor-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -185,8 +191,11 @@ flowchart LR
 [LLVM libraries](LLVM-LIBS.md), [Clang libraries](CLANG-LIBS.md),
 [xxHash](XXHASH.md), [liblzma](LIBLZMA.md),
 [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md), [GNU MP (MSYS)](GNU-GMP-MSYS.md),
-[Expat (MSYS)](EXPAT-MSYS.md), and [libxml2 (MSYS)](LIBXML2-MSYS.md) are
-this volume's first per-library pages. The
+[Expat (MSYS)](EXPAT-MSYS.md), [libxml2 (MSYS)](LIBXML2-MSYS.md),
+[zlib (CLANG64)](ZLIB-CLANG64.md), [Zstandard (CLANG64)](LIBZSTD-CLANG64.md),
+[libcbor](LIBCBOR.md), [Heimdal runtime libraries](HEIMDAL-LIBS.md), and
+[zlib (MSYS)](ZLIB-MSYS.md) are this volume's first per-library pages.
+The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -199,7 +208,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All sixty-six pages are deliberately scoped to package/dependency-level
+All seventy-one pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -366,9 +375,31 @@ claims this batch corrected in place rather than left standing:
 [libxml2 (UCRT64)](LIBXML2.md) had claimed both GNU Emacs and LLDB as
 direct dependents — Emacs actually depends on the MSYS sibling and LLDB
 on a third, CLANG64-packaged sibling not modeled in this knowledge
-base, neither the UCRT64 package this page documents. These pages are a
-starting point for this volume, not a demonstration that its full
-evidence model is populated.
+base, neither the UCRT64 package this page documents. A further batch
+picked up the previously-deferred CLANG64 compression siblings for
+[LLD](LLD.md) and [LLDB](LLDB.md) —
+[zlib (CLANG64)](ZLIB-CLANG64.md) and
+[Zstandard (CLANG64)](LIBZSTD-CLANG64.md), the third distinct catalog
+entity for each name alongside their MSYS and UCRT64 siblings — plus
+two more small, previously-flagged single-dependent gaps:
+[libcbor](LIBCBOR.md) (libfido2's CBOR encoding dependency) and
+[Heimdal runtime libraries](HEIMDAL-LIBS.md) (Heimdal's own
+CLI/library-package split, the same pattern already documented for
+curl/libcurl and OpenSSL/libopenssl). Investigating libcbor surfaced one
+more real error: [LIBFIDO2.md](LIBFIDO2.md#dependencies) had
+misidentified its own `zlib` dependency as this knowledge base's UCRT64
+zlib entity, when it is in fact a third, MSYS-packaged zlib sibling —
+[zlib (MSYS)](ZLIB-MSYS.md), now modeled with 60 recorded reverse
+dependents, six already documented in this knowledge base
+([curl](CURL.md), [GNU Emacs](GNU-EMACS.md), [GnuPG](GNUPG.md),
+[libcurl](LIBCURL.md), [libfido2](LIBFIDO2.md), and [file](FILE.md)),
+matching [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)'s own six-dependent
+fan-in as the widest found this session. This knowledge base now
+documents three separately versioned zlib catalog entities (MSYS,
+UCRT64, CLANG64) and three separately versioned Zstandard entities
+(the same three environments), each cross-linked to the others rather
+than conflated. These pages are a starting point for this volume, not a
+demonstration that its full evidence model is populated.
 
 ## Family navigation
 

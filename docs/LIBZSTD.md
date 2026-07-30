@@ -111,11 +111,11 @@ in ordinary compilation or linking without that flag.
 
 ## Compatibility and Variants
 
-Native environments other than UCRT64 in this catalog (CLANG64, i686)
-package Zstandard separately, confirmed for CLANG64 specifically as a
-dependency of [LLD](LLD.md) and [LLDB](LLDB.md) — a distinct catalog
-entity from this UCRT64 package, not individually modeled as its own
-page in this batch.
+Native environments other than UCRT64 in this catalog also package
+Zstandard separately; the CLANG64 build, a dependency of
+[LLD](LLD.md) specifically (not LLDB, which depends on zlib and xz but
+not zstd), is documented on [Zstandard (CLANG64)](LIBZSTD-CLANG64.md) —
+a distinct catalog entity from this UCRT64 package.
 
 ## Security Considerations
 
@@ -155,3 +155,4 @@ methodology.
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)
 - [zlib](ZLIB.md)
+- [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)

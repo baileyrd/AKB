@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-clang-x86_64-lldb
   - library:llvm:llvm-libs
   - library:llvm:clang-libs
+  - library:gnu:zlib@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:lldb-manual-2026-07-30
@@ -67,7 +68,7 @@ The catalog snapshot records six `runtime-depends-on` edges for
 | LLVM's shared libraries | `mingw-w64-clang-x86_64-llvm-libs` | The same LLVM infrastructure libraries documented as a dependency for [LLD](LLD.md#dependencies). Documented fully in [LLVM libraries](LLVM-LIBS.md). |
 | XML parsing | `mingw-w64-clang-x86_64-libxml2` | Backs XML-format target descriptions and remote-protocol data, the same rationale documented for [GDB](GNU-GDB.md#dependencies)'s `expat` dependency, using a different XML library. |
 | Scripting API | `mingw-w64-clang-x86_64-python` | Backs LLDB's Python scripting API (`claim:component:lldb:python-scripting`). |
-| Compressed debug sections | `mingw-w64-clang-x86_64-xz`, `mingw-w64-clang-x86_64-zlib` | Back reading debug information compressed with either algorithm, the same rationale documented for [GDB](GNU-GDB.md#dependencies). |
+| Compressed debug sections | `mingw-w64-clang-x86_64-xz`, `mingw-w64-clang-x86_64-zlib` | Back reading debug information compressed with either algorithm, the same rationale documented for [GDB](GNU-GDB.md#dependencies). Documented fully in [zlib (CLANG64)](ZLIB-CLANG64.md); the CLANG64 `xz` package is not individually modeled in this knowledge base. |
 
 ## Reverse Dependencies
 
@@ -139,3 +140,4 @@ has not been directly observed, the same open item already flagged for
 - [GDB](GNU-GDB.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [Clang libraries](CLANG-LIBS.md)
+- [zlib (CLANG64)](ZLIB-CLANG64.md)

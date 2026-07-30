@@ -7,6 +7,8 @@ model_refs:
   - library:yubico:libfido2
   - package:msys2:libfido2
   - component:openssh:openssh
+  - library:pjk:libcbor
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -61,14 +63,22 @@ OpenSSH authentication method rather than a shared mechanism.
 
 ## Dependencies
 
-The MSYS `package:msys2:libfido2` declares dependencies on `libcbor` (a
-CBOR binary-format parsing library used by the FIDO2 protocol's own
-data encoding, not yet given its own page in this volume),
-`package:msys2:openssl`, and `package:msys2:zlib` — the latter two are
-this knowledge base's existing `component:openssl:openssl`'s packaged
-form and `library:gnu:zlib` respectively, though this page does not add
-formal `requires` edges for them since libfido2's use is a build/runtime
-linkage rather than a documented architectural relationship distinct from
+The MSYS `package:msys2:libfido2` declares dependencies on
+[libcbor](LIBCBOR.md) (a CBOR binary-format parsing library used by the
+FIDO2 protocol's own data encoding,
+`relationship:foundation-libraries:libfido2-requires-libcbor`),
+`package:msys2:openssl`, and [zlib (MSYS)](ZLIB-MSYS.md)
+(`package:msys2:zlib`,
+`relationship:foundation-libraries:libfido2-requires-zlib-msys`) — a
+correction: this paragraph previously (incorrectly) identified the zlib
+dependency as this knowledge base's existing UCRT64
+`library:gnu:zlib` entity; it is in fact the separately versioned MSYS
+package, distinct from both the UCRT64 and CLANG64 zlib siblings this
+knowledge base also documents. `package:msys2:openssl` correctly
+matches this knowledge base's existing `component:openssl:openssl`
+packaged form, though this page does not add a formal `requires` edge
+for it since libfido2's use is a build/runtime linkage rather than a
+documented architectural relationship distinct from
 [OpenSSH's](OPENSSH.md#dependencies) own separate, direct dependency on
 `package:msys2:openssl`.
 
@@ -141,11 +151,9 @@ matching the `project_url` already recorded for `package:msys2:libfido2`
 in the catalog. Package identity, version, and the recorded
 dependency/dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: the `libcbor` sub-dependency is not individually modeled as a
-component in this knowledge base; header-level API surface and PE
-import/export-level evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology, also remain open.
+page: header-level API surface and PE import/export-level evidence, per
+the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology.
 
 ## Related Objects
 
@@ -153,3 +161,5 @@ methodology, also remain open.
 - [OpenSSH](OPENSSH.md)
 - [Heimdal](HEIMDAL.md)
 - [libxcrypt](LIBXCRYPT.md)
+- [libcbor](LIBCBOR.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

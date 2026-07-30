@@ -26,7 +26,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 10
 - Incoming relationships: 2
 
 ## `component:git:git`
@@ -107,7 +107,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `component:gnu:findutils`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 13
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -269,7 +269,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:lld-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `component:llvm:lldb`
@@ -278,7 +278,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:lz4:lz4`
@@ -521,7 +521,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 6
+- Outgoing relationships: 8
 - Incoming relationships: 3823
 
 ## `environment:msys2:clangarm64`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 64
+- Outgoing relationships: 67
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5417,7 +5417,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 10
 - Incoming relationships: 3
 
 ## `library:darwinsys:file`
@@ -5426,7 +5426,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:darwinsys:file-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:facebook:zstd`
@@ -5437,6 +5437,15 @@
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 4
+
+## `library:facebook:zstd@clang64`
+
+- Name: Zstandard (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnome:libxml2`
 
@@ -5600,6 +5609,24 @@
 - Outgoing relationships: 1
 - Incoming relationships: 8
 
+## `library:gnu:zlib@clang64`
+
+- Name: zlib (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `library:gnu:zlib@msys`
+
+- Name: zlib (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 7
+
 ## `library:gnupg:libassuan`
 
 - Name: libassuan
@@ -5711,6 +5738,15 @@
 ## `library:h5l:heimdal`
 
 - Name: Heimdal
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:h5l:heimdal-libs`
+
+- Name: Heimdal runtime libraries
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
@@ -5942,6 +5978,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 3
 
+## `library:pjk:libcbor`
+
+- Name: libcbor
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pjk:libcbor-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:rhash:rhash`
 
 - Name: RHash
@@ -5993,7 +6038,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `package:msys2:ack`
@@ -7506,7 +7551,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:help2man`
 
@@ -7911,7 +7956,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:libcbor-devel`
 
@@ -77517,7 +77562,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 287
+- Incoming relationships: 288
 
 ## `package:msys2:mingw-w64-clang-x86_64-zlib-ng`
 
@@ -77580,7 +77625,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 86
+- Incoming relationships: 87
 
 ## `package:msys2:mingw-w64-clang-x86_64-zug`
 
@@ -147348,7 +147393,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 60
+- Incoming relationships: 61
 
 ## `package:msys2:zlib-devel`
 
@@ -147474,7 +147519,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 64
+- Incoming relationships: 67
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

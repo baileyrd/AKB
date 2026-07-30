@@ -7,6 +7,7 @@ model_refs:
   - library:h5l:heimdal
   - package:msys2:heimdal
   - component:openssh:openssh
+  - library:h5l:heimdal-libs
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -66,11 +67,14 @@ depending on Kerberos-specific APIs directly.
 ## Dependencies
 
 The catalog snapshot records one `runtime-depends-on` edge for
-`package:msys2:heimdal`: `package:msys2:heimdal-libs`, the package's own
-runtime shared-library half. This page does not add a formal `requires`
-edge to a separate `heimdal-libs` entity in this knowledge base, since
-[OpenSSH's](OPENSSH.md) own catalog-recorded dependency targets
-`package:msys2:heimdal` directly rather than `heimdal-libs`.
+`package:msys2:heimdal`: [Heimdal runtime libraries](HEIMDAL-LIBS.md)
+(`package:msys2:heimdal-libs`,
+`relationship:foundation-libraries:heimdal-requires-heimdal-libs`), the
+package's own runtime shared-library half, now given its own page,
+closing an item this page previously declined to model. This is
+separate from [OpenSSH's](OPENSSH.md) own catalog-recorded dependency,
+which targets `package:msys2:heimdal` directly rather than
+`heimdal-libs`.
 
 ## Reverse Dependencies
 
@@ -139,11 +143,10 @@ catalog. Package identity, version, and the recorded dependency/dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open: `/etc/krb5.conf`'s presence and
 content in this environment were not directly confirmed. Also explicitly
-out of scope for this page: the separate `heimdal-libs` runtime-library
-package is not individually modeled as a component in this knowledge
-base; header-level API surface and PE import/export-level evidence, per
-the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology, also remain open.
+out of scope for this page: header-level API surface and PE
+import/export-level evidence, per the
+[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology.
 
 ## Related Objects
 
@@ -151,3 +154,4 @@ methodology, also remain open.
 - [OpenSSH](OPENSSH.md)
 - [libfido2](LIBFIDO2.md)
 - [libxcrypt](LIBXCRYPT.md)
+- [Heimdal runtime libraries](HEIMDAL-LIBS.md)

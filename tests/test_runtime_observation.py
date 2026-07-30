@@ -40,6 +40,16 @@ class RuntimeObservationTests(unittest.TestCase):
         self.assertEqual(set(result["tools"]), set(COLLECTOR.TOOLS))
         self.assertEqual(set(result["probes"]), set(COLLECTOR.PROBES))
 
+    def test_tool_observation_marks_non_executable_tool(self) -> None:
+        original = COLLECTOR.shutil.which
+        try:
+            COLLECTOR.shutil.which = lambda _: "C:/missing/tool.exe"
+            result = COLLECTOR.tool_observation("tool")
+        finally:
+            COLLECTOR.shutil.which = original
+        self.assertFalse(result["executed"])
+        self.assertEqual(result["error"], "FileNotFoundError")
+
     def test_projection_preserves_environment_as_target(self) -> None:
         result = IMPORTER.projection(self.fixture())
         self.assertEqual(result["entities"][0]["kind"], "configuration")

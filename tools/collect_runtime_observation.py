@@ -35,11 +35,14 @@ def tool_observation(name: str) -> dict[str, object]:
         completed = subprocess.run(
             [path, "--version"], capture_output=True, text=True, timeout=3, check=False
         )
+        result["executed"] = True
+        result["returncode"] = completed.returncode
         first_line = (completed.stdout or completed.stderr).splitlines()
         if first_line:
             result["version"] = first_line[0][:500]
-    except (OSError, subprocess.SubprocessError):
-        pass
+    except (OSError, subprocess.SubprocessError) as exc:
+        result["executed"] = False
+        result["error"] = type(exc).__name__
     return result
 
 

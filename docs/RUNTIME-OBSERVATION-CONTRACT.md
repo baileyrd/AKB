@@ -16,6 +16,11 @@ possible, reading their first `--version` output line. Tool execution is
 bounded by a three-second timeout and does not perform package installation,
 network activity, or configuration changes.
 
+When a resolved tool cannot execute, the observation records `executed: false`
+and a sanitized exception class. This is particularly relevant when inspecting
+a target-architecture environment from a host that cannot execute its native
+binaries; discovery is not evidence of successful execution.
+
 The collector also records bounded, read-only observations of `uname`, MSYS
 `cygpath` conversion in both directions, the MSYS mount table, and the
 executing process's `/proc/self/exe` link. Output is

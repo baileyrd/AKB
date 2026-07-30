@@ -68,11 +68,12 @@ constraint to verify for each boundary.
 
 The environment properties and lifecycle labels above are based on the
 [official MSYS2 environment documentation](https://www.msys2.org/docs/environments/),
-retrieved 2026-07-28. Bounded local observations currently cover MSYS and
-UCRT64; all other environment rows remain architectural/reference coverage
-until their own observations are collected. Per-package availability and exact
-tool versions are time-sensitive and must be answered from a catalog or
-runtime observation.
+retrieved 2026-07-28. Bounded local observations currently cover all six
+modeled environment selections. They establish selected environment variables
+and discovered tool identity only; CLANGARM64 target tools were not executable
+on the x86_64 observation host. Per-package availability and exact tool
+versions are time-sensitive and must be answered from a catalog or runtime
+observation.
 
 ## Related Objects
 

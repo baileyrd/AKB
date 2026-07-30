@@ -7,7 +7,7 @@ model_refs:
   - environment:msys2:ucrt64
   - environment:msys2:clang64
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # MSYS2 Toolchain Role Model
@@ -29,6 +29,18 @@ last_verified: 2026-07-28
    compatibility; validate ownership and CRT crossings at each API boundary.
 4. Generated inventory identifies installed tool artifacts; it does not prove
    a project’s effective flags or link order.
+
+## Controlled local build observations
+
+On 2026-07-30, a self-cleaning collector compiled a fixed one-line C program
+inside the selected isolated environment and then attempted to execute the
+temporary PE output. UCRT64 GCC, CLANG64 Clang, and MINGW64 GCC each compiled
+and executed successfully on this x86_64 host. The UCRT64 output was a
+126,188-byte x86_64 PE. Raw observations remain local-only.
+
+This proves only the exact compiler/environment/source combination and empty
+program workflow. It does not establish ABI compatibility, effective project
+flags, link-order behavior, or a general build-pipeline guarantee.
 
 ## Related Views
 

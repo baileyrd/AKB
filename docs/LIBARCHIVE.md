@@ -13,6 +13,7 @@ model_refs:
   - library:gnu:zlib
   - library:facebook:zstd
   - library:tukaani:liblzma
+  - library:openssl:openssl@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:libarchive:manual-2026-07-30
@@ -78,25 +79,29 @@ existed.
 ## Dependencies
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-libarchive` declares
-dependencies on ten packages. Six are the same UCRT64-packaged sibling
-libraries this knowledge base already documents, so this page adds
-explicit `requires` edges for them: [Expat](EXPAT.md) (XML-format
+dependencies on ten packages. Seven are the same UCRT64-packaged
+sibling libraries this knowledge base already documents, so this page
+adds explicit `requires` edges for them: [Expat](EXPAT.md) (XML-format
 handling for archive formats such as PAX/tar extended headers that embed
 XML metadata), [GNU libiconv](GNU-LIBICONV.md) (character-set conversion
 for archive entry filenames and metadata), [PCRE2](PCRE2.md)
 (regular-expression matching for archive entry filtering),
 [zlib](ZLIB.md) (DEFLATE-based archive formats such as zip and
-gzip-compressed tar), [Zstandard (library)](LIBZSTD.md), and
+gzip-compressed tar), [Zstandard (library)](LIBZSTD.md),
 [liblzma (UCRT64)](LIBLZMA.md) (`.zst`- and `.xz`/LZMA-compressed
-archive formats respectively). **Correction, 2026-07-30**: the
-zstd/xz edges were originally declined here, reasoning that only the
-MSYS `zstd`/`xz` CLI tools were modeled at the time; both now have
-UCRT64-native library-entity pages of their own, and the two missing
-edges (`relationship:toolchain:libarchive-requires-zstd`,
-`relationship:toolchain:libarchive-requires-liblzma`) are added. The
-remaining four —
-`mingw-w64-ucrt-x86_64-bzip2`, `mingw-w64-ucrt-x86_64-libb2`,
-`mingw-w64-ucrt-x86_64-lz4`, and `mingw-w64-ucrt-x86_64-openssl` —
+archive formats respectively), and [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+(cryptographic primitives for encrypted archive formats,
+`relationship:toolchain:libarchive-requires-openssl-ucrt64`, added
+2026-07-30). **Correction, 2026-07-30**: the zstd/xz/openssl edges were
+originally declined here, reasoning that only their MSYS CLI-tool
+siblings were modeled at the time; all three now have UCRT64-native
+library-entity pages of their own, and the three missing edges
+(`relationship:toolchain:libarchive-requires-zstd`,
+`relationship:toolchain:libarchive-requires-liblzma`,
+`relationship:toolchain:libarchive-requires-openssl-ucrt64`) are added.
+The remaining three —
+`mingw-w64-ucrt-x86_64-bzip2`, `mingw-w64-ucrt-x86_64-libb2`, and
+`mingw-w64-ucrt-x86_64-lz4` —
 remain UCRT64-native packages not individually modeled as their own
 library entities in this knowledge base, so no formal `requires` edges
 are added for them.
@@ -187,3 +192,4 @@ methodology.
 - [zlib](ZLIB.md)
 - [Zstandard (library)](LIBZSTD.md)
 - [liblzma (UCRT64)](LIBLZMA.md)
+- [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)

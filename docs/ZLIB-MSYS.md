@@ -87,7 +87,7 @@ The catalog snapshot records 60 relationships targeting
 `package:msys2:zlib` — the widest reverse-dependency fan-in of any
 single batch addition this session, tied in spirit with
 [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)'s six modeled dependents.
-Six are already modeled in this knowledge base: `package:msys2:curl`
+Nine are already modeled in this knowledge base: `package:msys2:curl`
 (`relationship:ssh-curl-git:curl-requires-zlib-msys`),
 `package:msys2:emacs`
 (`relationship:gnu-userland:emacs-requires-zlib-msys`),
@@ -96,10 +96,16 @@ Six are already modeled in this knowledge base: `package:msys2:curl`
 `package:msys2:libcurl`
 (`relationship:foundation-libraries:libcurl-requires-zlib-msys`),
 `package:msys2:libfido2`
-(`relationship:foundation-libraries:libfido2-requires-zlib-msys`), and
+(`relationship:foundation-libraries:libfido2-requires-zlib-msys`),
 `package:msys2:file`
-(`relationship:foundation-libraries:file-requires-zlib-msys`). The
-remaining ~54 recorded dependents (`binutils` — the separate MSYS
+(`relationship:foundation-libraries:file-requires-zlib-msys`),
+`package:msys2:libgnutls`
+(`relationship:foundation-libraries:gnutls-msys-requires-zlib-msys`),
+`package:msys2:libssh2`
+(`relationship:foundation-libraries:libssh2-requires-zlib-msys`), and
+`package:msys2:libxml2`
+(`relationship:foundation-libraries:libxml2-msys-requires-zlib-msys`).
+The remaining ~51 recorded dependents (`binutils` — the separate MSYS
 `binutils` package, distinct from the UCRT64 package
 [GNU Binutils](GNU-BINUTILS.md) documents — `cmake`, `git-crypt`,
 `glib2`, `libarchive`, and many others) are not individually modeled in
@@ -173,3 +179,6 @@ methodology.
 - [libcurl](LIBCURL.md)
 - [libfido2](LIBFIDO2.md)
 - [file](FILE.md)
+- [GnuTLS](GNUTLS.md)
+- [libssh2](LIBSSH2.md)
+- [libxml2 (MSYS)](LIBXML2-MSYS.md)

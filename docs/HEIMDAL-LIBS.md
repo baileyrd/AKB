@@ -9,6 +9,7 @@ model_refs:
   - library:h5l:heimdal
   - library:libxcrypt:libxcrypt
   - library:openssl:libopenssl
+  - library:libedit:libedit
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -66,20 +67,26 @@ CLI/library split pattern, not a duplicate of the same functionality.
 
 ## Dependencies
 
-The catalog snapshot records a `runtime-depends-on` edge from
+The catalog snapshot records `runtime-depends-on` edges from
 `package:msys2:heimdal-libs` to `package:msys2:libopenssl` — OpenSSL's
 own runtime library, backing Heimdal's use of OpenSSL cryptographic
 primitives alongside its Kerberos implementation, documented fully in
 [libopenssl](LIBOPENSSL.md)
-(`relationship:foundation-libraries:heimdal-libs-requires-libopenssl`).
-Beyond that edge, the remainder of this package's own dependencies are
-not individually enumerated on this page; this page's scope is
-otherwise limited to confirming and documenting the
-[Heimdal](HEIMDAL.md) dependency relationship. `package:msys2:libxcrypt`
-is among its recorded reverse dependents' own dependency set, per this
-page's Reverse Dependencies below, reflecting the broader
-`crypt()`-family hashing ecosystem
-[libxcrypt's own page](LIBXCRYPT.md#reverse-dependencies) documents.
+(`relationship:foundation-libraries:heimdal-libs-requires-libopenssl`)
+— [libedit](LIBEDIT.md) (interactive line editing in Heimdal's own
+tools,
+`relationship:foundation-libraries:heimdal-libs-requires-libedit`,
+added 2026-07-30), and [libxcrypt](LIBXCRYPT.md) (`crypt()`-family
+password hashing,
+`relationship:foundation-libraries:heimdal-libs-requires-libxcrypt`,
+added 2026-07-30 — correcting a prior version of this paragraph that
+only noted libxcrypt among heimdal-libs' *reverse* dependents' own
+dependency set rather than as heimdal-libs' own direct forward
+dependency). Beyond these three edges, the remainder of this package's
+own dependencies (`libdb`, `libsqlite`) are not individually modeled in
+this knowledge base; this page's scope is otherwise limited to
+confirming and documenting the [Heimdal](HEIMDAL.md) dependency
+relationship.
 
 ## Reverse Dependencies
 
@@ -145,7 +152,7 @@ identity, version, and the modeled dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open: whether
 other native environments package heimdal-libs separately was not
 confirmed. Also explicitly out of scope for this page: this package's
-remaining sub-dependencies beyond libopenssl, and header-level API
+remaining `libdb`/`libsqlite` sub-dependencies, and header-level API
 surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -156,3 +163,5 @@ methodology.
 - [Heimdal](HEIMDAL.md)
 - [OpenSSH](OPENSSH.md)
 - [libopenssl](LIBOPENSSL.md)
+- [libedit](LIBEDIT.md)
+- [libxcrypt](LIBXCRYPT.md)

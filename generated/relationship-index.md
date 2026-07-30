@@ -76242,6 +76242,7 @@
 | relationship:foundation-libraries:gnutls-msys-requires-gmp-msys | requires | library:gnutls:gnutls | library:gnu:gmp@msys | verified |
 | relationship:foundation-libraries:gnutls-msys-requires-libiconv-msys | requires | library:gnutls:gnutls | library:gnu:libiconv@msys | verified |
 | relationship:foundation-libraries:gnutls-msys-requires-libintl | requires | library:gnutls:gnutls | library:gnu:libintl | verified |
+| relationship:foundation-libraries:gnutls-msys-requires-zlib-msys | requires | library:gnutls:gnutls | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:gnutls-packaged-by-package | packaged-by | library:gnutls:gnutls | package:msys2:libgnutls | verified |
 | relationship:foundation-libraries:gnutls-requires-libidn2 | requires | library:gnutls:gnutls | library:gnu:libidn2 | verified |
 | relationship:foundation-libraries:gnutls-requires-libtasn1 | requires | library:gnutls:gnutls | library:gnu:libtasn1 | verified |
@@ -76259,7 +76260,9 @@
 | relationship:foundation-libraries:gnutls-ucrt64-requires-zstd | requires | library:gnutls:gnutls@ucrt64 | library:facebook:zstd | verified |
 | relationship:foundation-libraries:gnutls-uses-msys-runtime | uses-runtime | library:gnutls:gnutls | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-libs-packaged-by-package | packaged-by | library:h5l:heimdal-libs | package:msys2:heimdal-libs | verified |
+| relationship:foundation-libraries:heimdal-libs-requires-libedit | requires | library:h5l:heimdal-libs | library:libedit:libedit | verified |
 | relationship:foundation-libraries:heimdal-libs-requires-libopenssl | requires | library:h5l:heimdal-libs | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:heimdal-libs-requires-libxcrypt | requires | library:h5l:heimdal-libs | library:libxcrypt:libxcrypt | verified |
 | relationship:foundation-libraries:heimdal-libs-uses-msys-runtime | uses-runtime | library:h5l:heimdal-libs | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-packaged-by-package | packaged-by | library:h5l:heimdal | package:msys2:heimdal | verified |
 | relationship:foundation-libraries:heimdal-requires-heimdal-libs | requires | library:h5l:heimdal | library:h5l:heimdal-libs | verified |
@@ -76351,6 +76354,9 @@
 | relationship:foundation-libraries:libpsl-ucrt64-requires-libunistring-ucrt64 | requires | library:libpsl:libpsl@ucrt64 | library:gnu:libunistring@ucrt64 | verified |
 | relationship:foundation-libraries:libpsl-uses-msys-runtime | uses-runtime | library:libpsl:libpsl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libssh2-packaged-by-package | packaged-by | library:libssh2:libssh2 | package:msys2:libssh2 | verified |
+| relationship:foundation-libraries:libssh2-requires-ca-certificates | requires | library:libssh2:libssh2 | library:mozilla:ca-certificates | verified |
+| relationship:foundation-libraries:libssh2-requires-openssl | requires | library:libssh2:libssh2 | component:openssl:openssl | verified |
+| relationship:foundation-libraries:libssh2-requires-zlib-msys | requires | library:libssh2:libssh2 | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libssh2-ucrt64-requires-openssl-ucrt64 | requires | library:libssh2:libssh2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:libssh2-ucrt64-requires-zlib | requires | library:libssh2:libssh2@ucrt64 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:libssh2-uses-msys-runtime | uses-runtime | library:libssh2:libssh2 | runtime:msys2:msys-2.0.dll | partial |
@@ -76365,6 +76371,8 @@
 | relationship:foundation-libraries:libxcrypt-packaged-by-package | packaged-by | library:libxcrypt:libxcrypt | package:msys2:libxcrypt | verified |
 | relationship:foundation-libraries:libxcrypt-uses-msys-runtime | uses-runtime | library:libxcrypt:libxcrypt | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libxml2-msys-packaged-by-package | packaged-by | library:gnome:libxml2@msys | package:msys2:libxml2 | verified |
+| relationship:foundation-libraries:libxml2-msys-requires-readline-msys | requires | library:gnome:libxml2@msys | library:gnu:readline@msys | verified |
+| relationship:foundation-libraries:libxml2-msys-requires-zlib-msys | requires | library:gnome:libxml2@msys | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libxml2-msys-uses-msys-runtime | uses-runtime | library:gnome:libxml2@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libxml2-packaged-by-package | packaged-by | library:gnome:libxml2 | package:msys2:mingw-w64-ucrt-x86_64-libxml2 | verified |
 | relationship:foundation-libraries:libxml2-requires-libiconv | requires | library:gnome:libxml2 | library:gnu:libiconv | verified |
@@ -77182,6 +77190,7 @@
 | relationship:toolchain:gdb-requires-zlib | requires | component:gnu:gdb | library:gnu:zlib | verified |
 | relationship:toolchain:gdb-requires-zstd | requires | component:gnu:gdb | library:facebook:zstd | verified |
 | relationship:toolchain:libarchive-requires-liblzma | requires | library:libarchive:libarchive | library:tukaani:liblzma | verified |
+| relationship:toolchain:libarchive-requires-openssl-ucrt64 | requires | library:libarchive:libarchive | library:openssl:openssl@ucrt64 | verified |
 | relationship:toolchain:libarchive-requires-zstd | requires | library:libarchive:libarchive | library:facebook:zstd | verified |
 | relationship:toolchain:lld-compatible-with-binutils | compatible-with | component:llvm:lld | component:gnu:binutils | partial |
 | relationship:toolchain:lld-packaged-by-package | packaged-by | component:llvm:lld | package:msys2:mingw-w64-clang-x86_64-lld | verified |
@@ -77195,6 +77204,7 @@
 | relationship:toolchain:meson-invokes-ninja | invokes | component:mesonbuild:meson | component:ninja-build:ninja | verified |
 | relationship:toolchain:meson-packaged-by-package | packaged-by | component:mesonbuild:meson | package:msys2:mingw-w64-ucrt-x86_64-meson | verified |
 | relationship:toolchain:meson-requires-pkgconf | requires | component:mesonbuild:meson | component:pkgconf:pkgconf | verified |
+| relationship:toolchain:ncurses-ucrt64-requires-pcre2 | requires | library:gnu:ncurses@ucrt64 | library:pcre:pcre2 | verified |
 | relationship:toolchain:ninja-packaged-by-package | packaged-by | component:ninja-build:ninja | package:msys2:mingw-w64-ucrt-x86_64-ninja | verified |
 | relationship:toolchain:pkgconf-packaged-by-package | packaged-by | component:pkgconf:pkgconf | package:msys2:mingw-w64-ucrt-x86_64-pkgconf | verified |
 | relationship:toolchain:ucrt64-contains-binutils | contains | environment:msys2:ucrt64 | component:gnu:binutils | partial |

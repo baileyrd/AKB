@@ -7,6 +7,9 @@ model_refs:
   - library:libssh2:libssh2
   - package:msys2:libssh2
   - library:curl:libcurl
+  - library:gnu:zlib@msys
+  - library:mozilla:ca-certificates
+  - component:openssl:openssl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -59,10 +62,21 @@ support rather than interactive SSH sessions.
 
 ## Dependencies
 
-The catalog snapshot records dependencies for `package:msys2:libssh2`
-not individually enumerated on this page; this page's scope is limited
-to confirming and documenting the [libcurl](LIBCURL.md) dependency
-relationship.
+The catalog snapshot records dependencies for `package:msys2:libssh2`.
+Three are already-modeled MSYS sibling entities, so this page adds
+explicit `requires` edges for them: [zlib (MSYS)](ZLIB-MSYS.md)
+(optional zlib-based transport compression,
+`relationship:foundation-libraries:libssh2-requires-zlib-msys`),
+[ca-certificates](CA-CERTIFICATES.md) (trusted root certificate
+verification,
+`relationship:foundation-libraries:libssh2-requires-ca-certificates`),
+and [OpenSSL](OPENSSL.md) (SSH2's own cryptographic primitives — key
+exchange, ciphers, MACs,
+`relationship:foundation-libraries:libssh2-requires-openssl`). All
+three were added 2026-07-30, closing sub-dependencies this page had
+previously left unenumerated; this page's scope otherwise remains
+limited to confirming and documenting the [libcurl](LIBCURL.md)
+dependency relationship.
 
 ## Reverse Dependencies
 
@@ -125,12 +139,12 @@ being treated as a general curl transfer defect.
 SSH2 client protocol implementation scope is backed by the official
 libssh2 project site (`evidence:libssh2:manual-2026-07-30`), matching
 the `project_url` already recorded for `package:msys2:libssh2` in the
-catalog. Package identity, version, and the modeled dependent edge are
-backed by the pacman catalog snapshot (`evidence:catalog:current`).
+catalog. Package identity, version, and the recorded dependency and
+dependent edges are backed by the pacman catalog snapshot
+(`evidence:catalog:current`).
 Open: whether CLANG64 or i686 also package libssh2 separately was not
-confirmed. Also explicitly out of scope for this page: this
-package's own sub-dependencies, and header-level API surface / PE
-import/export-level evidence, per the
+confirmed. Also explicitly out of scope for this page: header-level
+API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -140,3 +154,6 @@ methodology.
 - [libcurl](LIBCURL.md)
 - [OpenSSH](OPENSSH.md)
 - [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)
+- [ca-certificates](CA-CERTIFICATES.md)
+- [OpenSSL](OPENSSL.md)

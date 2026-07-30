@@ -656,7 +656,29 @@ dependents include separate UCRT64-native `gnupg` and `emacs`
 packages, distinct catalog entities from this knowledge base's MSYS
 [GnuPG](GNUPG.md) and [GNU Emacs](GNU-EMACS.md) — flagged explicitly
 rather than conflated, the same MSYS/UCRT64 discipline maintained
-throughout this session. These pages are a starting point for this
+throughout this session. A final pass re-ran the volume-wide
+catalog-vs-graph edge audit against the now-larger set of modeled
+entities and found ten more closeable gaps, all between entities
+already documented elsewhere in this knowledge base — no new pages:
+[GnuTLS's](GNUTLS.md#dependencies) own long-declined `zlib` edge (the
+correct MSYS zlib sibling now exists);
+[libssh2's](LIBSSH2.md#dependencies) and
+[libxml2 (MSYS)'s](LIBXML2-MSYS.md#dependencies) own dependency tables,
+both of which had stated their sub-dependencies were "not individually
+enumerated," closed with edges onto zlib (MSYS), ca-certificates,
+OpenSSL, and GNU Readline (MSYS) respectively — the
+[ca-certificates](CA-CERTIFICATES.md#reverse-dependencies) page's own
+prior note that libssh2 "does not itself record a direct
+`ca-certificates` dependency" was corrected in place, since the catalog
+does in fact record one;
+[Heimdal runtime libraries'](HEIMDAL-LIBS.md#dependencies) own
+`libedit` and `libxcrypt` edges, the latter correcting a prior version
+of that page which had only noted libxcrypt among heimdal-libs'
+*reverse* dependents rather than as its own direct forward dependency;
+[libarchive's](LIBARCHIVE.md#dependencies) own declined OpenSSL
+(UCRT64) edge, closed now that page exists; and
+[ncurses (UCRT64)'s](NCURSES-UCRT64.md#dependencies) own PCRE2 (UCRT64)
+edge. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

@@ -7,6 +7,8 @@ model_refs:
   - library:gnome:libxml2@msys
   - package:msys2:libxml2
   - component:gnu:emacs
+  - library:gnu:readline@msys
+  - library:gnu:zlib@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -61,10 +63,18 @@ this volume for MSYS/UCRT64 sibling pairs.
 
 ## Dependencies
 
-The catalog snapshot records dependencies for `package:msys2:libxml2`
-not individually enumerated on this page; this page's scope is limited
-to confirming and documenting the [GNU Emacs](GNU-EMACS.md) dependency
-relationship.
+The catalog snapshot records dependencies for `package:msys2:libxml2`.
+Two are already-modeled MSYS sibling libraries, so this page adds
+explicit `requires` edges for them: [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
+(interactive shell mode, `xmllint --shell`,
+`relationship:foundation-libraries:libxml2-msys-requires-readline-msys`)
+and [zlib (MSYS)](ZLIB-MSYS.md) (built-in support for reading
+gzip-compressed XML files,
+`relationship:foundation-libraries:libxml2-msys-requires-zlib-msys`).
+Both were added 2026-07-30, closing sub-dependencies this page had
+previously left unenumerated; this page's scope otherwise remains
+limited to confirming and documenting the [GNU Emacs](GNU-EMACS.md)
+dependency relationship.
 
 ## Reverse Dependencies
 
@@ -127,10 +137,10 @@ Emacs-specific defect.
 
 XML parsing scope is backed by the official libxml2 project page
 (`evidence:gnome:libxml2-manual-2026-07-30`), the same evidence record
-[libxml2 (UCRT64)](LIBXML2.md) cites. Package identity, version, and the
-modeled dependent edge are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: this package's own sub-dependencies, the ~11 remaining
+[libxml2 (UCRT64)](LIBXML2.md) cites. Package identity, version, and
+the recorded dependency and dependent edges are backed by the pacman
+catalog snapshot (`evidence:catalog:current`). Open, and explicitly
+out of scope for this page: the ~11 remaining
 recorded dependents not individually modeled, and header-level API
 surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -141,3 +151,5 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libxml2 (UCRT64)](LIBXML2.md)
 - [GNU Emacs](GNU-EMACS.md)
+- [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
+- [zlib (MSYS)](ZLIB-MSYS.md)

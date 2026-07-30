@@ -41,7 +41,7 @@
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
 | component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
 | component:openssh:openssh | component | OpenSSH | partial | 7 | 2 |
-| component:openssl:openssl | component | OpenSSL | partial | 3 | 5 |
+| component:openssl:openssl | component | OpenSSL | partial | 3 | 6 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
 | component:tukaani:xz | component | XZ Utils | partial | 3 | 1 |
@@ -615,7 +615,7 @@
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 0 | 2 |
-| library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
+| library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 9 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
@@ -632,13 +632,13 @@
 | library:gnu:libunistring@ucrt64 | library | libunistring (UCRT64) | partial | 1 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 4 |
 | library:gnu:mpfr@msys | library | GNU MPFR (MSYS) | partial | 1 | 1 |
-| library:gnu:ncurses@ucrt64 | library | ncurses (UCRT64) | partial | 0 | 1 |
+| library:gnu:ncurses@ucrt64 | library | ncurses (UCRT64) | partial | 1 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
-| library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
+| library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 4 |
-| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 7 |
+| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 10 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -649,16 +649,16 @@
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
-| library:gnutls:gnutls | library | GnuTLS | partial | 9 | 3 |
+| library:gnutls:gnutls | library | GnuTLS | partial | 10 | 3 |
 | library:gnutls:gnutls@ucrt64 | library | GnuTLS (UCRT64) | partial | 11 | 1 |
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
-| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 3 | 2 |
+| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 5 | 2 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
-| library:libarchive:libarchive | library | libarchive | partial | 7 | 2 |
-| library:libedit:libedit | library | libedit | partial | 2 | 2 |
+| library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
+| library:libedit:libedit | library | libedit | partial | 2 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 4 |
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 2 |
 | library:libffi:libffi@clang64 | library | libffi (CLANG64) | partial | 0 | 1 |
@@ -667,10 +667,10 @@
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libpsl:libpsl@ucrt64 | library | libpsl (UCRT64) | partial | 4 | 1 |
-| library:libssh2:libssh2 | library | libssh2 | partial | 2 | 2 |
+| library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
-| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 3 |
+| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 4 |
 | library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
@@ -679,7 +679,7 @@
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
-| library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 3 |
+| library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 4 |
 | library:mozilla:ca-certificates@ucrt64 | library | ca-certificates (UCRT64) | partial | 1 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
 | library:nettle:libhogweed@msys | library | libhogweed | partial | 1 | 2 |
@@ -693,11 +693,11 @@
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 3 |
-| library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 3 |
+| library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
-| library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |
+| library:pcre:pcre2 | library | PCRE2 | partial | 3 | 3 |
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |

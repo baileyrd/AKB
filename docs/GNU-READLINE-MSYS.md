@@ -91,7 +91,9 @@ knowledge base's graph), `package:msys2:gawk`
 UCRT64 `gdb` package [GNU GDB's own page](GNU-GDB.md) documents),
 `package:msys2:inetutils`, `package:msys2:lftp`, `package:msys2:libgdbm`,
 `package:msys2:libguile`, its own `-devel` subpackage,
-`package:msys2:libxml2`, `package:msys2:nnn`, `package:msys2:pcre`, and
+`package:msys2:libxml2` (`relationship:foundation-libraries:libxml2-msys-requires-readline-msys`,
+documented fully in [libxml2 (MSYS)](LIBXML2-MSYS.md)),
+`package:msys2:nnn`, `package:msys2:pcre`, and
 `package:msys2:pcre2`, among others not individually enumerated here.
 
 ## Configuration

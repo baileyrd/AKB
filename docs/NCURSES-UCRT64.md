@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-ncurses
   - component:gnu:gdb
   - component:gnu:ncurses
+  - library:pcre:pcre2
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:ncurses-manual-2026-07-30
@@ -67,12 +68,11 @@ this volume for MSYS/native sibling pairs.
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-ncurses` declares
 dependencies on `mingw-w64-ucrt-x86_64-cc-libs`,
-`mingw-w64-ucrt-x86_64-pcre2`, and `mingw-w64-ucrt-x86_64-libsystre` —
-all UCRT64-environment sibling packages, not individually modeled as
-separate dependency edges from this entity in this knowledge base
-(`pcre2` is already modeled as [PCRE2 (UCRT64)](PCRE2.md), but this
-page does not assert a formal dependency edge from that entity without
-directly confirming the version/build match).
+[PCRE2 (UCRT64)](PCRE2.md) (regular-expression support,
+`relationship:toolchain:ncurses-ucrt64-requires-pcre2`, added
+2026-07-30), and `mingw-w64-ucrt-x86_64-libsystre` — the latter not
+individually modeled as a separate dependency edge from this entity in
+this knowledge base.
 
 ## Reverse Dependencies
 
@@ -135,11 +135,11 @@ defect, the same triage order applicable to any ncurses-based program.
 Terminal-capability library scope is backed by the official GNU Ncurses
 project site (`evidence:gnu:ncurses-manual-2026-07-30`), the same
 evidence record [ncurses (MSYS)](NCURSES.md) cites. Package identity,
-version, license, and the one modeled dependent edge are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: the ~10 remaining recorded
-dependents not individually modeled, this package's own
-cc-libs/pcre2/libsystre sub-dependencies, and header-level API surface
+version, license, and the recorded dependency and dependent edges are
+backed by the pacman catalog snapshot (`evidence:catalog:current`).
+Open, and explicitly out of scope for this page: the ~10 remaining
+recorded dependents not individually modeled, this package's own
+cc-libs/libsystre sub-dependencies, and header-level API surface
 / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -149,3 +149,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [ncurses (MSYS)](NCURSES.md)
 - [GDB](GNU-GDB.md)
+- [PCRE2](PCRE2.md)

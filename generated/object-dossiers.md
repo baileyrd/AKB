@@ -342,7 +342,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `component:p7zip:p7zip`
 
@@ -5507,7 +5507,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `library:gnu:gettext`
@@ -5660,7 +5660,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 0
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `library:gnu:readline`
@@ -5679,7 +5679,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:termcap`
 
@@ -5715,7 +5715,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 7
+- Incoming relationships: 10
 
 ## `library:gnupg:libassuan`
 
@@ -5813,7 +5813,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 10
 - Incoming relationships: 3
 
 ## `library:gnutls:gnutls@ucrt64`
@@ -5867,7 +5867,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `library:jsoncpp:jsoncpp`
@@ -5885,7 +5885,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 2
 
 ## `library:libedit:libedit`
@@ -5895,7 +5895,7 @@
 - Status: `partial`
 - Evidence: evidence:libedit:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:libexpat:expat`
 
@@ -5975,7 +5975,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `library:libssh2:libssh2@ucrt64`
@@ -6003,7 +6003,7 @@
 - Status: `partial`
 - Evidence: evidence:libxcrypt:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:llvm:clang-libs`
 
@@ -6084,7 +6084,7 @@
 - Status: `partial`
 - Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:mozilla:ca-certificates@ucrt64`
 
@@ -6210,7 +6210,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:p11-glue:p11-kit`
 
@@ -6246,7 +6246,7 @@
 - Status: `partial`
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:pcre:pcre2@msys`
 

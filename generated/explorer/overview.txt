@@ -16968,6 +16968,16 @@ Relationships
 - library:p11-glue:p11-kit@ucrt64 --requires--> library:gnu:libtasn1@ucrt64
 - library:p11-glue:p11-kit@ucrt64 --requires--> library:libffi:libffi@ucrt64
 - library:p11-glue:p11-kit@ucrt64 --requires--> library:gnu:gettext
+- library:gnutls:gnutls --requires--> library:gnu:zlib@msys
+- library:libssh2:libssh2 --requires--> library:gnu:zlib@msys
+- library:libssh2:libssh2 --requires--> library:mozilla:ca-certificates
+- library:libssh2:libssh2 --requires--> component:openssl:openssl
+- library:gnome:libxml2@msys --requires--> library:gnu:readline@msys
+- library:gnome:libxml2@msys --requires--> library:gnu:zlib@msys
+- library:h5l:heimdal-libs --requires--> library:libedit:libedit
+- library:h5l:heimdal-libs --requires--> library:libxcrypt:libxcrypt
+- library:libarchive:libarchive --requires--> library:openssl:openssl@ucrt64
+- library:gnu:ncurses@ucrt64 --requires--> library:pcre:pcre2
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

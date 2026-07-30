@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:ca-certificates
   - component:curl:curl
   - library:curl:libcurl
+  - library:libssh2:libssh2
   - environment:msys2:msys
 last_verified: 2026-07-30
 evidence_refs:
@@ -71,14 +72,17 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 5 relationships targeting
-`package:msys2:ca-certificates`. Two are already modeled in this
+`package:msys2:ca-certificates`. Three are already modeled in this
 knowledge base: `package:msys2:curl`
 (`relationship:ssh-curl-git:curl-requires-ca-certificates` in this
-knowledge base's graph) and `package:msys2:libcurl`
-(`relationship:foundation-libraries:libcurl-requires-ca-certificates`).
-The remaining 3 recorded dependents (`lftp`, `libneon`, `libssh2` —
-[libssh2's own page](LIBSSH2.md) does not itself record a direct
-`ca-certificates` dependency, only libcurl's use of both) are not
+knowledge base's graph), `package:msys2:libcurl`
+(`relationship:foundation-libraries:libcurl-requires-ca-certificates`),
+and `package:msys2:libssh2`
+(`relationship:foundation-libraries:libssh2-requires-ca-certificates`,
+added 2026-07-30 — **correction**: this section previously stated
+libssh2 did not itself record a direct `ca-certificates` dependency;
+the catalog does in fact record one). The remaining 2 recorded
+dependents (`lftp` and `libneon`) are not
 individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -144,3 +148,4 @@ confirmed.
 - [libcurl](LIBCURL.md)
 - [OpenSSL](OPENSSL.md)
 - [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
+- [libssh2](LIBSSH2.md)

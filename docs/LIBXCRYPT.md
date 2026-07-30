@@ -76,8 +76,11 @@ base's graph), `package:msys2:vim`
 [Vim's](VIM.md#dependencies) built-in `:X` file-encryption feature),
 `package:msys2:apr`, `package:msys2:apr-util`,
 `package:msys2:autogen`, `package:msys2:cvs`,
-`package:msys2:heimdal-libs` (the runtime-library half of
-[Heimdal](HEIMDAL.md)), `package:msys2:info`, `package:msys2:libguile`,
+`package:msys2:heimdal-libs`
+(`relationship:foundation-libraries:heimdal-libs-requires-libxcrypt`,
+added 2026-07-30, documented fully in
+[Heimdal runtime libraries](HEIMDAL-LIBS.md)),
+`package:msys2:info`, `package:msys2:libguile`,
 `package:msys2:libsasl`, its own `-devel` subpackage, and others not
 individually enumerated here; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)

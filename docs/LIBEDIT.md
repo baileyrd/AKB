@@ -69,10 +69,11 @@ for terminal capability and cursor control.
 The catalog snapshot records 4 relationships targeting
 `package:msys2:libedit`: `package:msys2:openssh`
 (`relationship:ssh-curl-git:openssh-requires-libedit` in this knowledge
-base's graph), `package:msys2:heimdal-libs` (the runtime-library half of
-[Heimdal](HEIMDAL.md), documented on that page rather than modeled as a
-separate edge here), `package:msys2:llvm-libs`, and its own `-devel`
-subpackage.
+base's graph), `package:msys2:heimdal-libs`
+(`relationship:foundation-libraries:heimdal-libs-requires-libedit`,
+added 2026-07-30, documented fully in
+[Heimdal runtime libraries](HEIMDAL-LIBS.md)), `package:msys2:llvm-libs`,
+and its own `-devel` subpackage.
 
 ## Configuration
 

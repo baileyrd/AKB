@@ -145,3 +145,4 @@ confirmed.
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
 - [GnuPG](GNUPG.md)
 - [libopenssl](LIBOPENSSL.md)
+- [libssh2](LIBSSH2.md)

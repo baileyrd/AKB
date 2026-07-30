@@ -76117,6 +76117,12 @@
 | relationship:catalog:runtime-depends-on-fff81bda1a84d1484148 | runtime-depends-on | package:msys2:mingw-w64-clang-x86_64-collada-dom | package:msys2:mingw-w64-clang-x86_64-boost-libs | verified |
 | relationship:catalog:runtime-depends-on-fff90c28bfbb544d6bcd | runtime-depends-on | package:msys2:mingw-w64-x86_64-python-scikit-image | package:msys2:mingw-w64-x86_64-python-lazy-loader | verified |
 | relationship:catalog:runtime-depends-on-fff9285443bae57a82da | runtime-depends-on | package:msys2:mingw-w64-x86_64-goxel | package:msys2:mingw-w64-x86_64-libwinpthread | verified |
+| relationship:gnu-userland:bash-packaged-by-package | packaged-by | component:gnu:bash | package:msys2:bash | verified |
+| relationship:gnu-userland:bash-uses-msys-runtime | uses-runtime | component:gnu:bash | runtime:msys2:msys-2.0.dll | partial |
+| relationship:gnu-userland:coreutils-packaged-by-package | packaged-by | component:gnu:coreutils | package:msys2:coreutils | verified |
+| relationship:gnu-userland:coreutils-uses-msys-runtime | uses-runtime | component:gnu:coreutils | runtime:msys2:msys-2.0.dll | partial |
+| relationship:gnu-userland:msys-contains-bash | contains | environment:msys2:msys | component:gnu:bash | partial |
+| relationship:gnu-userland:msys-contains-coreutils | contains | environment:msys2:msys | component:gnu:coreutils | partial |
 | relationship:inventory:imports-dll-0943995334683ca1d4cb | imports-dll | executable:msys2:/usr/bin/curl.exe | dll:windows:kernel32.dll | verified |
 | relationship:inventory:imports-dll-189721d86432b0e07eee | imports-dll | dll:msys2:/ucrt64/bin/zlib1.dll | dll:windows:api-ms-win-crt-stdio-l1-1-0.dll | verified |
 | relationship:inventory:imports-dll-2e01ef161166f723c43e | imports-dll | dll:msys2:/ucrt64/bin/zlib1.dll | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | verified |

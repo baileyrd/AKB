@@ -125,6 +125,42 @@
       "applicability": {},
       "properties": {"prefix": "/mingw32", "architecture": "i686", "crt": "MSVCRT", "compiler_family": "GCC", "cxx_library": "libstdc++", "lifecycle": "phase-out"},
       "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "component:gnu:bash",
+      "kind": "component",
+      "name": "GNU Bash",
+      "summary": "The GNU Bourne-Again shell, packaged in the MSYS environment as the default interactive and login command interpreter.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["bash"],
+      "tags": ["gnu-userland", "shell", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/bash/",
+        "packaged_as": "package:msys2:bash",
+        "role": "interactive and login shell"
+      },
+      "evidence_refs": ["evidence:gnu:bash-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:coreutils",
+      "kind": "component",
+      "name": "GNU Coreutils",
+      "summary": "The GNU core utilities collection, packaged in the MSYS environment as the primary POSIX-oriented file, shell, and text manipulation command set.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["coreutils"],
+      "tags": ["gnu-userland", "utilities", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/coreutils/",
+        "packaged_as": "package:msys2:coreutils",
+        "role": "core file, shell, and text utilities"
+      },
+      "evidence_refs": ["evidence:gnu:coreutils-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -223,6 +259,78 @@
       "condition": "",
       "properties": {},
       "evidence_refs": []
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-bash",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:bash",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-coreutils",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:coreutils",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:bash-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:bash",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of bash, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:gnu-userland:coreutils-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:coreutils",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of coreutils, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:gnu-userland:bash-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:bash",
+      "target": "package:msys2:bash",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:coreutils-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:coreutils",
+      "target": "package:msys2:coreutils",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -285,6 +393,26 @@
       "valid_from": "2026-07-28",
       "valid_to": null,
       "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "claim:component:bash:provides-sh",
+      "subject": "component:gnu:bash",
+      "statement": "The MSYS bash package provides the `sh` command.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:coreutils:posix-utilities",
+      "subject": "component:gnu:coreutils",
+      "statement": "GNU Coreutils packages the core POSIX-oriented file, shell, and text manipulation utilities for the MSYS environment.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "evidence": [
@@ -297,6 +425,26 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official environment matrix and lifecycle guidance retrieved for Bootstrap 0.5."
+    },
+    {
+      "id": "evidence:gnu:bash-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Bash Reference Manual",
+      "locator": "https://www.gnu.org/software/bash/manual/bash.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Bash reference manual. Used for shell grammar, invocation modes, and startup-file semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:coreutils-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Coreutils Manual",
+      "locator": "https://www.gnu.org/software/coreutils/manual/coreutils.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Coreutils manual. Used for command architecture, common options, and locale/internationalization behavior. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     }
   ]
 }

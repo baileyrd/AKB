@@ -4,6 +4,8 @@
 
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
+| component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
+| component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
 | dll:windows:api-ms-win-crt-heap-l1-1-0.dll | dll | api-ms-win-crt-heap-l1-1-0.dll | verified | 0 | 1 |
@@ -22,7 +24,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 1 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 3 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -596,7 +598,7 @@
 | package:msys2:axel | package | axel | verified | 4 | 0 |
 | package:msys2:base | package | base | verified | 36 | 1 |
 | package:msys2:base-devel | package | base-devel | verified | 20 | 0 |
-| package:msys2:bash | package | bash | verified | 2 | 46 |
+| package:msys2:bash | package | bash | verified | 2 | 47 |
 | package:msys2:bash-completion | package | bash-completion | verified | 3 | 3 |
 | package:msys2:bash-devel | package | bash-devel | verified | 2 | 0 |
 | package:msys2:bash-preexec | package | bash-preexec | verified | 2 | 3 |
@@ -633,7 +635,7 @@
 | package:msys2:colordiff | package | colordiff | verified | 4 | 4 |
 | package:msys2:colormake | package | colormake | verified | 3 | 0 |
 | package:msys2:compiler-rt | package | compiler-rt | verified | 3 | 1 |
-| package:msys2:coreutils | package | coreutils | verified | 5 | 7 |
+| package:msys2:coreutils | package | coreutils | verified | 5 | 8 |
 | package:msys2:cpio | package | cpio | verified | 3 | 4 |
 | package:msys2:cppdap | package | cppdap | verified | 4 | 1 |
 | package:msys2:crosstool-ng | package | crosstool-ng | verified | 4 | 0 |
@@ -16280,5 +16282,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 1 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 3 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

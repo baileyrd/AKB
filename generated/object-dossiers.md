@@ -2,6 +2,24 @@
 
 > Generated from the composed model; each heading is a stable object documentation anchor.
 
+## `component:gnu:bash`
+
+- Name: GNU Bash
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:bash-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:coreutils`
+
+- Name: GNU Coreutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:coreutils-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `dll:msys2:/ucrt64/bin/zlib1.dll`
 
 - Name: /ucrt64/bin/zlib1.dll
@@ -170,7 +188,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 1
+- Outgoing relationships: 3
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5337,7 +5355,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 46
+- Incoming relationships: 47
 
 ## `package:msys2:bash-completion`
 
@@ -5670,7 +5688,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:cpio`
 
@@ -146493,7 +146511,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

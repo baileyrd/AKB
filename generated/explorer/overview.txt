@@ -1,6 +1,8 @@
 AKB architecture graph overview
 
 Objects
+- component:gnu:bash (component): GNU Bash
+- component:gnu:coreutils (component): GNU Coreutils
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
 - dll:windows:api-ms-win-crt-heap-l1-1-0.dll (dll): api-ms-win-crt-heap-l1-1-0.dll
@@ -16289,6 +16291,12 @@ Relationships
 - ecosystem:msys2:msys2 --contains--> environment:msys2:clangarm64
 - ecosystem:msys2:msys2 --contains--> environment:msys2:mingw64
 - ecosystem:msys2:msys2 --contains--> environment:msys2:mingw32
+- environment:msys2:msys --contains--> component:gnu:bash
+- environment:msys2:msys --contains--> component:gnu:coreutils
+- component:gnu:bash --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:coreutils --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:bash --packaged-by--> package:msys2:bash
+- component:gnu:coreutils --packaged-by--> package:msys2:coreutils
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

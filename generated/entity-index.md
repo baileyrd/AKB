@@ -6,6 +6,10 @@
 | --- | --- | --- | --- | ---: | ---: |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
+| component:gnu:findutils | component | GNU Findutils | partial | 2 | 1 |
+| component:gnu:gawk | component | GNU Awk (gawk) | partial | 2 | 1 |
+| component:gnu:grep | component | GNU Grep | partial | 2 | 1 |
+| component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
 | dll:windows:api-ms-win-crt-heap-l1-1-0.dll | dll | api-ms-win-crt-heap-l1-1-0.dll | verified | 0 | 1 |
@@ -24,7 +28,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 3 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 7 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 0 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -681,14 +685,14 @@
 | package:msys2:fido2-tools | package | fido2-tools | verified | 3 | 0 |
 | package:msys2:file | package | file | verified | 7 | 8 |
 | package:msys2:filesystem | package | filesystem | verified | 2 | 2 |
-| package:msys2:findutils | package | findutils | verified | 4 | 6 |
+| package:msys2:findutils | package | findutils | verified | 4 | 7 |
 | package:msys2:fish | package | fish | verified | 7 | 1 |
 | package:msys2:fisher | package | fisher | verified | 4 | 0 |
 | package:msys2:flex | package | flex | verified | 5 | 1 |
 | package:msys2:flexc++ | package | flexc++ | verified | 3 | 0 |
 | package:msys2:fmt | package | fmt | verified | 3 | 1 |
 | package:msys2:fzy | package | fzy | verified | 2 | 0 |
-| package:msys2:gawk | package | gawk | verified | 5 | 7 |
+| package:msys2:gawk | package | gawk | verified | 5 | 8 |
 | package:msys2:gcc | package | gcc | verified | 15 | 2 |
 | package:msys2:gcc-libs | package | gcc-libs | verified | 2 | 94 |
 | package:msys2:gdb | package | gdb | verified | 13 | 3 |
@@ -719,7 +723,7 @@
 | package:msys2:gperf | package | gperf | verified | 4 | 0 |
 | package:msys2:gradle | package | gradle | verified | 2 | 1 |
 | package:msys2:gradle-doc | package | gradle-doc | verified | 3 | 0 |
-| package:msys2:grep | package | grep | verified | 5 | 4 |
+| package:msys2:grep | package | grep | verified | 5 | 5 |
 | package:msys2:grml-zsh-config | package | grml-zsh-config | verified | 7 | 0 |
 | package:msys2:groff | package | groff | verified | 4 | 1 |
 | package:msys2:gtest | package | gtest | verified | 3 | 0 |
@@ -16201,7 +16205,7 @@
 | package:msys2:rust | package | rust | verified | 12 | 3 |
 | package:msys2:scons | package | scons | verified | 3 | 0 |
 | package:msys2:screenfetch | package | screenfetch | verified | 4 | 0 |
-| package:msys2:sed | package | sed | verified | 3 | 14 |
+| package:msys2:sed | package | sed | verified | 3 | 15 |
 | package:msys2:setconf | package | setconf | verified | 2 | 0 |
 | package:msys2:sgml-common | package | sgml-common | verified | 2 | 4 |
 | package:msys2:sharutils | package | sharutils | verified | 5 | 1 |
@@ -16282,5 +16286,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 3 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 7 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

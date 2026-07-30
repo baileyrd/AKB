@@ -20,6 +20,42 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `component:gnu:findutils`
+
+- Name: GNU Findutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:findutils-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:gawk`
+
+- Name: GNU Awk (gawk)
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gawk-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:grep`
+
+- Name: GNU Grep
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:grep-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:sed`
+
+- Name: GNU Sed
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:sed-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `dll:msys2:/ucrt64/bin/zlib1.dll`
 
 - Name: /ucrt64/bin/zlib1.dll
@@ -188,7 +224,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 3
+- Outgoing relationships: 7
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -6102,7 +6138,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:fish`
 
@@ -6165,7 +6201,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:gcc`
 
@@ -6444,7 +6480,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:grml-zsh-config`
 
@@ -145782,7 +145818,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 14
+- Incoming relationships: 15
 
 ## `package:msys2:setconf`
 
@@ -146511,7 +146547,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

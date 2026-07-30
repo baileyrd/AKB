@@ -145,5 +145,9 @@ version-qualified security review has been performed.
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Bash](GNU-BASH.md)
+- [GNU Grep](GNU-GREP.md)
+- [GNU Sed](GNU-SED.md)
+- [GNU Awk (gawk)](GNU-AWK.md)
+- [GNU Findutils](GNU-FINDUTILS.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)

@@ -171,6 +171,10 @@ bash's linked runtime libraries is likewise open.
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
+- [GNU Grep](GNU-GREP.md)
+- [GNU Sed](GNU-SED.md)
+- [GNU Awk (gawk)](GNU-AWK.md)
+- [GNU Findutils](GNU-FINDUTILS.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)
 - [MSYS Runtime Behavior Map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
 - [MSYS2 and MinGW-w64 Role Model](MSYS2-AND-MINGW-W64-ROLE-MODEL.md)

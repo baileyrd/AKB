@@ -161,6 +161,78 @@
         "role": "core file, shell, and text utilities"
       },
       "evidence_refs": ["evidence:gnu:coreutils-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:grep",
+      "kind": "component",
+      "name": "GNU Grep",
+      "summary": "The GNU string-search utility, packaged in the MSYS environment for BRE/ERE/PCRE pattern matching over text streams and files.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["grep", "egrep", "fgrep"],
+      "tags": ["gnu-userland", "utilities", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/grep/",
+        "packaged_as": "package:msys2:grep",
+        "role": "pattern search over text streams and files"
+      },
+      "evidence_refs": ["evidence:gnu:grep-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:sed",
+      "kind": "component",
+      "name": "GNU Sed",
+      "summary": "The GNU stream editor, packaged in the MSYS environment for scripted, non-interactive text transformation.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["sed"],
+      "tags": ["gnu-userland", "utilities", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/sed",
+        "packaged_as": "package:msys2:sed",
+        "role": "scripted stream text transformation"
+      },
+      "evidence_refs": ["evidence:gnu:sed-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:gawk",
+      "kind": "component",
+      "name": "GNU Awk (gawk)",
+      "summary": "GNU's implementation of the POSIX awk pattern-scanning and processing language, packaged in the MSYS environment and providing the `awk` command.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["awk", "gawk"],
+      "tags": ["gnu-userland", "utilities", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/gawk/",
+        "packaged_as": "package:msys2:gawk",
+        "role": "pattern-scanning and text-processing language"
+      },
+      "evidence_refs": ["evidence:gnu:gawk-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:gnu:findutils",
+      "kind": "component",
+      "name": "GNU Findutils",
+      "summary": "The GNU file-finding utilities, packaged in the MSYS environment for predicate-based filesystem traversal and command construction over found files.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["find", "xargs", "findutils"],
+      "tags": ["gnu-userland", "utilities", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/findutils",
+        "packaged_as": "package:msys2:findutils",
+        "role": "filesystem traversal and command construction over found files"
+      },
+      "evidence_refs": ["evidence:gnu:findutils-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -331,6 +403,150 @@
       "condition": "",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-grep",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:grep",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:grep-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:grep",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of grep, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:gnu-userland:grep-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:grep",
+      "target": "package:msys2:grep",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-sed",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:sed",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:sed-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:sed",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of sed, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:gnu-userland:sed-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:sed",
+      "target": "package:msys2:sed",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-gawk",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:gawk",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:gawk-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:gawk",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of gawk, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:gnu-userland:gawk-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:gawk",
+      "target": "package:msys2:gawk",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-findutils",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:findutils",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:findutils-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:findutils",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of findutils, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:gnu-userland:findutils-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:findutils",
+      "target": "package:msys2:findutils",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -413,6 +629,26 @@
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:gawk:provides-awk",
+      "subject": "component:gnu:gawk",
+      "statement": "The MSYS gawk package provides the `awk` command.",
+      "classification": "fact",
+      "confidence": "verified",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:findutils:role",
+      "subject": "component:gnu:findutils",
+      "statement": "GNU Findutils packages the file-locating and command-construction utilities (including `find` and `xargs`) for the MSYS environment.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "evidence": [
@@ -445,6 +681,46 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Coreutils manual. Used for command architecture, common options, and locale/internationalization behavior. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:grep-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Grep Manual",
+      "locator": "https://www.gnu.org/software/grep/manual/grep.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Grep manual. Used for pattern-matching engine selection (BRE/ERE/PCRE), exit-status conventions, and option semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:sed-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Sed Manual",
+      "locator": "https://www.gnu.org/software/sed/manual/sed.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Sed manual. Used for scripting-language commands (including the `e` execute command), in-place editing, and addressing semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:gawk-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Awk User's Guide (gawk manual)",
+      "locator": "https://www.gnu.org/software/gawk/manual/gawk.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Awk user's guide. Used for the awk language model, arbitrary-precision arithmetic, the interactive debugger, and POSIX-vs-GNU-extension boundaries. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnu:findutils-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Findutils Manual",
+      "locator": "https://www.gnu.org/software/findutils/manual/find.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Findutils manual. Used for find predicate/action grammar and the find/xargs NUL-delimiter safety pattern. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     }
   ]
 }

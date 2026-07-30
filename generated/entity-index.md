@@ -11,14 +11,14 @@
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
-| component:gnu:binutils | component | GNU Binutils | partial | 1 | 3 |
+| component:gnu:binutils | component | GNU Binutils | partial | 4 | 3 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 3 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 4 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 4 | 1 |
-| component:gnu:gcc | component | GCC | partial | 2 | 1 |
+| component:gnu:gcc | component | GCC | partial | 4 | 1 |
 | component:gnu:gdb | component | GDB | partial | 1 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
@@ -32,9 +32,9 @@
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
-| component:llvm:clang | component | Clang | partial | 2 | 1 |
-| component:llvm:lld | component | LLD | partial | 2 | 2 |
-| component:llvm:lldb | component | LLDB | partial | 1 | 1 |
+| component:llvm:clang | component | Clang | partial | 3 | 1 |
+| component:llvm:lld | component | LLD | partial | 3 | 2 |
+| component:llvm:lldb | component | LLDB | partial | 3 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
 | component:mesonbuild:meson | component | Meson | partial | 3 | 1 |
@@ -61,12 +61,12 @@
 | dll:windows:msys-curl-4.dll | dll | msys-curl-4.dll | verified | 0 | 1 |
 | dll:windows:msys-z.dll | dll | msys-z.dll | verified | 0 | 1 |
 | ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
-| environment:msys2:clang64 | environment | CLANG64 | partial | 4 | 3823 |
+| environment:msys2:clang64 | environment | CLANG64 | partial | 6 | 3823 |
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 60 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 38 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 39 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -607,8 +607,9 @@
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 9 | 3 |
 | library:darwinsys:file | library | file | partial | 2 | 2 |
+| library:facebook:zstd | library | Zstandard (library) | partial | 1 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
-| library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
+| library:gnu:gettext | library | GNU gettext | partial | 2 | 2 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 4 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 3 | 4 |
@@ -621,7 +622,7 @@
 | library:gnu:readline | library | GNU Readline | partial | 2 | 1 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 5 |
+| library:gnu:zlib | library | zlib | partial | 1 | 7 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -643,7 +644,9 @@
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 3 |
+| library:llvm:clang-libs | library | Clang libraries | partial | 1 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
+| library:llvm:llvm-libs | library | LLVM libraries | partial | 1 | 3 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
@@ -5021,7 +5024,7 @@
 | package:msys2:mingw-w64-clang-x86_64-clang | package | mingw-w64-clang-x86_64-clang | verified | 10 | 13 |
 | package:msys2:mingw-w64-clang-x86_64-clang-21 | package | mingw-w64-clang-x86_64-clang-21 | verified | 8 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-clang-analyzer | package | mingw-w64-clang-x86_64-clang-analyzer | verified | 4 | 0 |
-| package:msys2:mingw-w64-clang-x86_64-clang-libs | package | mingw-w64-clang-x86_64-clang-libs | verified | 3 | 17 |
+| package:msys2:mingw-w64-clang-x86_64-clang-libs | package | mingw-w64-clang-x86_64-clang-libs | verified | 3 | 18 |
 | package:msys2:mingw-w64-clang-x86_64-clang-tools-extra | package | mingw-w64-clang-x86_64-clang-tools-extra | verified | 3 | 5 |
 | package:msys2:mingw-w64-clang-x86_64-clazy | package | mingw-w64-clang-x86_64-clazy | verified | 4 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-clblast | package | mingw-w64-clang-x86_64-clblast | verified | 4 | 0 |
@@ -6065,7 +6068,7 @@
 | package:msys2:mingw-w64-clang-x86_64-lldb-mi | package | mingw-w64-clang-x86_64-lldb-mi | verified | 4 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-llvm | package | mingw-w64-clang-x86_64-llvm | verified | 4 | 2 |
 | package:msys2:mingw-w64-clang-x86_64-llvm-21 | package | mingw-w64-clang-x86_64-llvm-21 | verified | 2 | 1 |
-| package:msys2:mingw-w64-clang-x86_64-llvm-libs | package | mingw-w64-clang-x86_64-llvm-libs | verified | 6 | 22 |
+| package:msys2:mingw-w64-clang-x86_64-llvm-libs | package | mingw-w64-clang-x86_64-llvm-libs | verified | 6 | 23 |
 | package:msys2:mingw-w64-clang-x86_64-llvm-openmp | package | mingw-w64-clang-x86_64-llvm-openmp | verified | 2 | 1 |
 | package:msys2:mingw-w64-clang-x86_64-llvm-tools | package | mingw-w64-clang-x86_64-llvm-tools | verified | 3 | 2 |
 | package:msys2:mingw-w64-clang-x86_64-lmdb | package | mingw-w64-clang-x86_64-lmdb | verified | 2 | 2 |
@@ -12876,7 +12879,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-zola | package | mingw-w64-ucrt-x86_64-zola | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zopfli | package | mingw-w64-ucrt-x86_64-zopfli | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-zoxide | package | mingw-w64-ucrt-x86_64-zoxide | verified | 2 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-zstd | package | mingw-w64-ucrt-x86_64-zstd | verified | 2 | 94 |
+| package:msys2:mingw-w64-ucrt-x86_64-zstd | package | mingw-w64-ucrt-x86_64-zstd | verified | 2 | 95 |
 | package:msys2:mingw-w64-ucrt-x86_64-zug | package | mingw-w64-ucrt-x86_64-zug | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zvbi | package | mingw-w64-ucrt-x86_64-zvbi | verified | 6 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-zxcvbn-c | package | mingw-w64-ucrt-x86_64-zxcvbn-c | verified | 3 | 0 |

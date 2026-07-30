@@ -1925,6 +1925,60 @@
         "role": "portable dlopen() wrapper for GNU Libtool"
       },
       "evidence_refs": ["evidence:gnu:libtool-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:facebook:zstd",
+      "kind": "library",
+      "name": "Zstandard (library)",
+      "summary": "The Zstandard compression library, packaged per native environment (UCRT64 shown here) and depended on by GCC and Binutils to back compressed debug-section support, with 94 recorded reverse dependents in this environment — the widest of any library added in this batch.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Meta (Facebook)",
+      "aliases": ["zstd", "libzstd"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://facebook.github.io/zstd/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-zstd",
+        "role": "Zstandard compression"
+      },
+      "evidence_refs": ["evidence:facebook:zstd-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:llvm:llvm-libs",
+      "kind": "library",
+      "name": "LLVM libraries",
+      "summary": "LLVM's shared object-file and code-generation infrastructure libraries, packaged per native environment (CLANG64 shown here) and depended on by LLD and LLDB, both built on this shared infrastructure.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": ["llvm-libs"],
+      "tags": ["library", "toolchain"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://llvm.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-llvm-libs",
+        "role": "LLVM object-file and code-generation infrastructure"
+      },
+      "evidence_refs": ["evidence:llvm:llvm-libs-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:llvm:clang-libs",
+      "kind": "library",
+      "name": "Clang libraries",
+      "summary": "Clang's own shared libraries (parsing, semantic analysis, code generation), packaged per native environment (CLANG64 shown here), separated from the CLI driver package and reused by LLDB for expression evaluation during debugging sessions.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": ["clang-libs"],
+      "tags": ["library", "toolchain"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://clang.llvm.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-clang-libs",
+        "role": "Clang parsing, semantic analysis, and code generation"
+      },
+      "evidence_refs": ["evidence:llvm:clang-libs-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -6297,6 +6351,186 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:ucrt64-contains-zstd",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:facebook:zstd",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zstd-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:facebook:zstd",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-zstd",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:facebook:zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs compressed debug-section support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-zlib",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs compressed debug-section support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:binutils-requires-zstd",
+      "type": "requires",
+      "source": "component:gnu:binutils",
+      "target": "library:facebook:zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs --compress-debug-sections=zstd.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:binutils-requires-zlib",
+      "type": "requires",
+      "source": "component:gnu:binutils",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs --compress-debug-sections=zlib.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:binutils-requires-gettext",
+      "type": "requires",
+      "source": "component:gnu:binutils",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs gettext-based message translation (NLS) for this native-environment build.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:clang64-contains-llvm-libs",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "library:llvm:llvm-libs",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:llvm-libs-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:llvm:llvm-libs",
+      "target": "package:msys2:mingw-w64-clang-x86_64-llvm-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lld-requires-llvm-libs",
+      "type": "requires",
+      "source": "component:llvm:lld",
+      "target": "library:llvm:llvm-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "LLD is built on LLVM's object-file and code-generation infrastructure libraries.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lldb-requires-llvm-libs",
+      "type": "requires",
+      "source": "component:llvm:lldb",
+      "target": "library:llvm:llvm-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "The same LLVM infrastructure libraries LLD depends on.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:clang64-contains-clang-libs",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "library:llvm:clang-libs",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:clang-libs-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:llvm:clang-libs",
+      "target": "package:msys2:mingw-w64-clang-x86_64-clang-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang-requires-clang-libs",
+      "type": "requires",
+      "source": "component:llvm:clang",
+      "target": "library:llvm:clang-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Clang's own shared libraries, separated from the CLI driver package.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lldb-requires-clang-libs",
+      "type": "requires",
+      "source": "component:llvm:lldb",
+      "target": "library:llvm:clang-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "LLDB reuses Clang's parsing/semantic-analysis libraries for expression evaluation during debugging sessions.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -7649,6 +7883,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official PCRE project site, matching the project_url recorded for package:msys2:libpcre in the catalog snapshot."
+    },
+    {
+      "id": "evidence:facebook:zstd-manual-2026-07-30",
+      "class": "primary",
+      "title": "Zstandard (official project site)",
+      "locator": "https://facebook.github.io/zstd/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Zstandard project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-zstd in the catalog snapshot."
+    },
+    {
+      "id": "evidence:llvm:llvm-libs-manual-2026-07-30",
+      "class": "primary",
+      "title": "LLVM (official project site)",
+      "locator": "https://llvm.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official LLVM project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-llvm-libs in the catalog snapshot."
+    },
+    {
+      "id": "evidence:llvm:clang-libs-manual-2026-07-30",
+      "class": "primary",
+      "title": "Clang (official project site)",
+      "locator": "https://clang.llvm.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Clang project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-clang-libs in the catalog snapshot."
     }
   ]
 }

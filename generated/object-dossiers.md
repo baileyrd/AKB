@@ -71,7 +71,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:binutils-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 4
 - Incoming relationships: 3
 
 ## `component:gnu:coreutils`
@@ -134,7 +134,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gcc-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnu:gdb`
@@ -260,7 +260,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:clang-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:llvm:lld`
@@ -269,7 +269,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:lld-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `component:llvm:lldb`
@@ -278,7 +278,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:lz4:lz4`
@@ -521,7 +521,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 4
+- Outgoing relationships: 6
 - Incoming relationships: 3823
 
 ## `environment:msys2:clangarm64`
@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 38
+- Outgoing relationships: 39
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5429,6 +5429,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 2
 
+## `library:facebook:zstd`
+
+- Name: Zstandard (library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
 ## `library:gnome:libxml2`
 
 - Name: libxml2
@@ -5445,7 +5454,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:gmp`
 
@@ -5562,7 +5571,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `library:gnupg:libassuan`
 
@@ -5753,6 +5762,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 3
 
+## `library:llvm:clang-libs`
+
+- Name: Clang libraries
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:llvm:clang-libs-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
 ## `library:llvm:libc++`
 
 - Name: libc++
@@ -5761,6 +5779,15 @@
 - Evidence: evidence:llvm:libcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:llvm:llvm-libs`
+
+- Name: LLVM libraries
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:llvm:llvm-libs-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
 
 ## `library:mingw-w64:libwinpthread`
 
@@ -45162,7 +45189,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 17
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-tools-extra`
 
@@ -54558,7 +54585,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 22
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-clang-x86_64-llvm-openmp`
 
@@ -115857,7 +115884,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 94
+- Incoming relationships: 95
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zug`
 

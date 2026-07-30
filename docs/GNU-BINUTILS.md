@@ -6,6 +6,9 @@ status: partial
 model_refs:
   - component:gnu:binutils
   - package:msys2:mingw-w64-ucrt-x86_64-binutils
+  - library:facebook:zstd
+  - library:gnu:zlib
+  - library:gnu:gettext
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:binutils-manual-2026-07-30
@@ -64,9 +67,9 @@ The catalog snapshot records four `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Native-language messages | `mingw-w64-ucrt-x86_64-gettext-runtime` | gettext-based message translation (NLS) for this native-environment build. |
+| Native-language messages | `mingw-w64-ucrt-x86_64-gettext-runtime` | gettext-based message translation (NLS) for this native-environment build. Documented fully in [GNU gettext](GNU-GETTEXT.md). |
 | Threading | `mingw-w64-ucrt-x86_64-libwinpthread` | Backs POSIX-threads-style threading support in the built binutils tools themselves. |
-| Compressed debug sections | `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back `--compress-debug-sections=zlib` and the newer `=zstd` compression modes respectively (`claim:component:binutils:compressed-debug-sections`). |
+| Compressed debug sections | `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back `--compress-debug-sections=zlib` and the newer `=zstd` compression modes respectively (`claim:component:binutils:compressed-debug-sections`). Documented fully in [zlib](ZLIB.md) and [Zstandard (library)](LIBZSTD.md). |
 
 ## Reverse Dependencies
 
@@ -141,3 +144,6 @@ the general version-qualified security review noted above.
 - [GCC](GNU-GCC.md)
 - [GDB](GNU-GDB.md)
 - [LLD](LLD.md)
+- [GNU gettext](GNU-GETTEXT.md)
+- [zlib](ZLIB.md)
+- [Zstandard (library)](LIBZSTD.md)

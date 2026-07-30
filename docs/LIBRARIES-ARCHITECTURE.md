@@ -61,6 +61,9 @@ model_refs:
   - library:pcre:pcre
   - library:gnu:readline@msys
   - library:gnu:libltdl
+  - library:facebook:zstd
+  - library:llvm:llvm-libs
+  - library:llvm:clang-libs
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -110,6 +113,9 @@ evidence_refs:
   - evidence:curl:project-site-2026-07-30
   - evidence:pcre:pcre1-manual-2026-07-30
   - evidence:gnu:libtool-manual-2026-07-30
+  - evidence:facebook:zstd-manual-2026-07-30
+  - evidence:llvm:llvm-libs-manual-2026-07-30
+  - evidence:llvm:clang-libs-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -166,9 +172,10 @@ flowchart LR
 [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md),
 [GNU libintl](GNU-LIBINTL.md), [libcurl](LIBCURL.md),
 [PCRE2 (MSYS)](PCRE2-MSYS.md), [PCRE (MSYS)](PCRE-MSYS.md),
-[GNU Readline (MSYS)](GNU-READLINE-MSYS.md), and
-[GNU Libltdl](GNU-LIBLTDL.md) are this volume's first per-library pages.
-The
+[GNU Readline (MSYS)](GNU-READLINE-MSYS.md),
+[GNU Libltdl](GNU-LIBLTDL.md), [Zstandard (library)](LIBZSTD.md),
+[LLVM libraries](LLVM-LIBS.md), and [Clang libraries](CLANG-LIBS.md) are
+this volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -181,7 +188,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All fifty-seven pages are deliberately scoped to package/dependency-level
+All sixty pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -304,8 +311,25 @@ debugger, distinct from this volume's existing UCRT64 Readline entity —
 GnuPG as a direct dependent, corrected here the same way the GnuPG
 crypto-stack pages were corrected earlier this session) and
 [GNU Libltdl](GNU-LIBLTDL.md) (`libltdl`, Libtool's own companion
-dlopen() wrapper library). These pages are a starting point for this
-volume, not a demonstration that its full evidence model is populated.
+dlopen() wrapper library). A final batch expanded the sweep into Volume
+8's LLVM/native-toolchain dependency tables for the first time:
+[Zstandard (library)](LIBZSTD.md) (the UCRT64 `zstd` library backing
+compressed debug sections in [GCC](GNU-GCC.md) and
+[GNU Binutils](GNU-BINUTILS.md), a distinct catalog entity from the
+MSYS `zstd` CLI tool Volume 5 already documents, with 94 recorded
+reverse dependents — second only to
+[GNU libintl's](GNU-LIBINTL.md) 59 among MSYS-only libraries, and the
+widest of any UCRT64-native library added this session), plus
+[LLVM libraries](LLVM-LIBS.md) and [Clang libraries](CLANG-LIBS.md)
+(the CLANG64-packaged infrastructure underlying [LLD](LLD.md),
+[LLDB](LLDB.md), and [Clang](CLANG.md) itself). Two already-modeled
+libraries also picked up new dependency edges in this batch without new
+pages: [zlib](ZLIB.md#reverse-dependencies) and
+[GNU gettext](GNU-GETTEXT.md#related-objects) both gained `requires`
+edges from GCC and/or Binutils, since those UCRT64 packages' own
+dependency lists matched these existing entities exactly. These pages
+are a starting point for this volume, not a demonstration that its full
+evidence model is populated.
 
 ## Family navigation
 

@@ -6,6 +6,8 @@ status: partial
 model_refs:
   - component:llvm:lldb
   - package:msys2:mingw-w64-clang-x86_64-lldb
+  - library:llvm:llvm-libs
+  - library:llvm:clang-libs
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:lldb-manual-2026-07-30
@@ -61,8 +63,8 @@ The catalog snapshot records six `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Clang's own libraries | `mingw-w64-clang-x86_64-clang-libs` | LLDB reuses Clang's parsing/semantic-analysis libraries for expression evaluation during debugging sessions. |
-| LLVM's shared libraries | `mingw-w64-clang-x86_64-llvm-libs` | The same LLVM infrastructure libraries documented as a dependency for [LLD](LLD.md#dependencies). |
+| Clang's own libraries | `mingw-w64-clang-x86_64-clang-libs` | LLDB reuses Clang's parsing/semantic-analysis libraries for expression evaluation during debugging sessions. Documented fully in [Clang libraries](CLANG-LIBS.md). |
+| LLVM's shared libraries | `mingw-w64-clang-x86_64-llvm-libs` | The same LLVM infrastructure libraries documented as a dependency for [LLD](LLD.md#dependencies). Documented fully in [LLVM libraries](LLVM-LIBS.md). |
 | XML parsing | `mingw-w64-clang-x86_64-libxml2` | Backs XML-format target descriptions and remote-protocol data, the same rationale documented for [GDB](GNU-GDB.md#dependencies)'s `expat` dependency, using a different XML library. |
 | Scripting API | `mingw-w64-clang-x86_64-python` | Backs LLDB's Python scripting API (`claim:component:lldb:python-scripting`). |
 | Compressed debug sections | `mingw-w64-clang-x86_64-xz`, `mingw-w64-clang-x86_64-zlib` | Back reading debug information compressed with either algorithm, the same rationale documented for [GDB](GNU-GDB.md#dependencies). |
@@ -135,3 +137,5 @@ has not been directly observed, the same open item already flagged for
 - [Clang](CLANG.md)
 - [LLD](LLD.md)
 - [GDB](GNU-GDB.md)
+- [LLVM libraries](LLVM-LIBS.md)
+- [Clang libraries](CLANG-LIBS.md)

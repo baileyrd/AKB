@@ -122,3 +122,4 @@ above.
 - [GNU Tar](GNU-TAR.md)
 - [XZ Utils](XZ-UTILS.md)
 - [LZ4](LZ4.md)
+- [Zstandard (library)](LIBZSTD.md)

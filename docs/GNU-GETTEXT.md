@@ -157,3 +157,4 @@ methodology remains open.
 - [GNU libiconv](GNU-LIBICONV.md)
 - [zlib](ZLIB.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
+- [GNU Binutils](GNU-BINUTILS.md)

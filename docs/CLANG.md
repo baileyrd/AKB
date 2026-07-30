@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:llvm:clang
   - package:msys2:mingw-w64-clang-x86_64-clang
+  - library:llvm:clang-libs
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:clang-manual-2026-07-30
@@ -65,7 +66,7 @@ The catalog snapshot records seven `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Clang's own libraries | `mingw-w64-clang-x86_64-clang-libs` | Clang's own shared libraries (parsing, semantic analysis, code generation), separated from the CLI driver package. |
+| Clang's own libraries | `mingw-w64-clang-x86_64-clang-libs` | Clang's own shared libraries (parsing, semantic analysis, code generation), separated from the CLI driver package. Documented fully in [Clang libraries](CLANG-LIBS.md). |
 | Compiler runtime support | `mingw-w64-clang-x86_64-compiler-rt` | LLVM's compiler runtime support library (analogous in role to GCC's `libgcc`), providing low-level runtime routines for compiled programs. |
 | Backend linker | `mingw-w64-clang-x86_64-lld` | Invoked as Clang's default backend linker (`relationship:toolchain:clang-invokes-lld`), documented fully in [LLD](LLD.md). |
 | LLVM command-line tools | `mingw-w64-clang-x86_64-llvm-tools` | Auxiliary LLVM tools (such as `llvm-ar`, `llvm-objdump`) used alongside the compiler. |
@@ -149,3 +150,4 @@ the general version-qualified security review noted above.
 - [LLDB](LLDB.md)
 - [GCC](GNU-GCC.md)
 - [Runtime Environments](RUNTIME-ENVIRONMENTS.md)
+- [Clang libraries](CLANG-LIBS.md)

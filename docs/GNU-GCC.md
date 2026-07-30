@@ -6,6 +6,8 @@ status: partial
 model_refs:
   - component:gnu:gcc
   - package:msys2:mingw-w64-ucrt-x86_64-gcc
+  - library:facebook:zstd
+  - library:gnu:zlib
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:gcc-manual-2026-07-30
@@ -80,7 +82,7 @@ The catalog snapshot records eleven `runtime-depends-on` edges for
 | Loop optimization | `mingw-w64-ucrt-x86_64-isl` | Backs the Graphite loop-optimization framework (`claim:component:gcc:optimizer-arithmetic-libraries`). |
 | Windows application manifest | `mingw-w64-ucrt-x86_64-windows-default-manifest` | An MSYS2/MinGW-w64-specific package providing a default Windows application manifest embedded into produced executables. |
 | Threading | `mingw-w64-ucrt-x86_64-winpthreads` | Backs POSIX-threads-style threading support for produced programs. |
-| Compression | `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back compressed debug-section support, the same rationale documented for [GNU Binutils](GNU-BINUTILS.md#dependencies). |
+| Compression | `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back compressed debug-section support, the same rationale documented for [GNU Binutils](GNU-BINUTILS.md#dependencies). Documented fully in [zlib](ZLIB.md) and [Zstandard (library)](LIBZSTD.md). |
 
 This package also `provides` a `mingw-w64-ucrt-x86_64-gcc-base` capability
 and `conflicts` with a separate `mingw-w64-ucrt-x86_64-gcc-rust` package —
@@ -160,3 +162,5 @@ the general version-qualified security review noted above.
 - [GDB](GNU-GDB.md)
 - [Clang](CLANG.md)
 - [Runtime Environments](RUNTIME-ENVIRONMENTS.md)
+- [zlib](ZLIB.md)
+- [Zstandard (library)](LIBZSTD.md)

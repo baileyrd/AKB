@@ -604,6 +604,7 @@ Objects
 - library:boost:boost (library): Boost
 - library:curl:libcurl (library): libcurl
 - library:darwinsys:file (library): file
+- library:facebook:zstd (library): Zstandard (library)
 - library:gnome:libxml2 (library): libxml2
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:gmp (library): GNU MP (GMP)
@@ -640,7 +641,9 @@ Objects
 - library:libpsl:libpsl (library): libpsl
 - library:libuv:libuv (library): libuv
 - library:libxcrypt:libxcrypt (library): libxcrypt
+- library:llvm:clang-libs (library): Clang libraries
 - library:llvm:libc++ (library): libc++
+- library:llvm:llvm-libs (library): LLVM libraries
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:winpthreads (library): winpthreads
 - library:mingweditline:wineditline (library): WinEditLine
@@ -16745,6 +16748,21 @@ Relationships
 - library:gnu:libltdl --uses-runtime--> runtime:msys2:msys-2.0.dll
 - library:gnu:libltdl --packaged-by--> package:msys2:libltdl
 - component:gnu:libtool --requires--> library:gnu:libltdl
+- environment:msys2:ucrt64 --contains--> library:facebook:zstd
+- library:facebook:zstd --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zstd
+- component:gnu:gcc --requires--> library:facebook:zstd
+- component:gnu:gcc --requires--> library:gnu:zlib
+- component:gnu:binutils --requires--> library:facebook:zstd
+- component:gnu:binutils --requires--> library:gnu:zlib
+- component:gnu:binutils --requires--> library:gnu:gettext
+- environment:msys2:clang64 --contains--> library:llvm:llvm-libs
+- library:llvm:llvm-libs --packaged-by--> package:msys2:mingw-w64-clang-x86_64-llvm-libs
+- component:llvm:lld --requires--> library:llvm:llvm-libs
+- component:llvm:lldb --requires--> library:llvm:llvm-libs
+- environment:msys2:clang64 --contains--> library:llvm:clang-libs
+- library:llvm:clang-libs --packaged-by--> package:msys2:mingw-w64-clang-x86_64-clang-libs
+- component:llvm:clang --requires--> library:llvm:clang-libs
+- component:llvm:lldb --requires--> library:llvm:clang-libs
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

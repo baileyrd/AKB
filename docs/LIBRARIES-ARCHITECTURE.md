@@ -84,6 +84,9 @@ model_refs:
   - library:nettle:libnettle@msys
   - library:nettle:libhogweed@msys
   - library:openssl:libopenssl
+  - library:gnu:ncurses@ucrt64
+  - library:gnome:libxml2@clang64
+  - library:tukaani:liblzma@clang64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -210,7 +213,9 @@ flowchart LR
 [ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md),
 [Zstandard (MSYS library)](LIBZSTD-MSYS.md), [libbz2](LIBBZ2.md),
 [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md), [libnettle (MSYS)](LIBNETTLE-MSYS.md),
-[Hogweed (MSYS)](LIBHOGWEED-MSYS.md), and [libopenssl](LIBOPENSSL.md) are
+[Hogweed (MSYS)](LIBHOGWEED-MSYS.md), [libopenssl](LIBOPENSSL.md),
+[ncurses (UCRT64)](NCURSES-UCRT64.md), [libxml2 (CLANG64)](LIBXML2-CLANG64.md),
+and [liblzma (CLANG64)](LIBLZMA-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -225,7 +230,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All eighty pages are deliberately scoped to package/dependency-level
+All eighty-three pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -490,7 +495,22 @@ zlib/zstd/gettext edges — that sixth edge is now added too. Both
 corrections are recorded in place on the affected pages
 (GNU-GCC.md, GNU-BINUTILS.md, GNU-GMP.md, GNU-MPFR.md, GNU-MPC.md,
 LIBISL.md, WINPTHREADS.md, LIBWINPTHREAD.md) rather than silently
-patched. These pages are a starting point for this
+patched. That same re-check surfaced GDB's own missing `ncurses`
+dependency edge — its dependency table cited
+`mingw-w64-ucrt-x86_64-ncurses` by name, but this is a separate,
+UCRT64-native catalog entity from the MSYS `ncurses` hub
+([ncurses (MSYS)](NCURSES.md), 40 reverse dependents) rather than an
+existing library missing an edge; [ncurses (UCRT64)](NCURSES-UCRT64.md)
+is now modeled with its own `requires` edge from
+[GDB](GNU-GDB.md#dependencies). The same pass closed two items
+[LLDB's](LLDB.md#dependencies) own dependency table had left open:
+[libxml2 (CLANG64)](LIBXML2-CLANG64.md) (correcting a false claim on
+[libxml2 (UCRT64)](LIBXML2.md), which had listed LLDB as a direct
+dependent before this CLANG64-packaged sibling was modeled — 126
+recorded reverse dependents, the widest of any library added this
+session) and [liblzma (CLANG64)](LIBLZMA-CLANG64.md) (explicitly
+flagged as not-yet-modeled on [liblzma (UCRT64)'s](LIBLZMA.md) own page
+before now). These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

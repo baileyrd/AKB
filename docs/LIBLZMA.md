@@ -7,6 +7,7 @@ model_refs:
   - library:tukaani:liblzma
   - package:msys2:mingw-w64-ucrt-x86_64-xz
   - component:gnu:gdb
+  - library:tukaani:liblzma@clang64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:tukaani:xz-library-manual-2026-07-30
@@ -107,7 +108,8 @@ compression formats GDB supports alongside zlib and zstd (documented on
 Native environments other than UCRT64 in this catalog (CLANG64, i686)
 package liblzma separately, confirmed for CLANG64 specifically as a
 dependency of [LLDB](LLDB.md) — a distinct catalog entity from this
-UCRT64 package, not individually modeled as its own page in this batch.
+UCRT64 package, now documented on
+[liblzma (CLANG64)](LIBLZMA-CLANG64.md).
 
 ## Security Considerations
 
@@ -133,8 +135,7 @@ the `project_url` already recorded for
 identity, version, and the modeled dependent edge are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open, and
 explicitly out of scope for this page: the ~41 remaining recorded
-dependents not individually modeled, the separate CLANG64-packaged xz
-library ([LLDB](LLDB.md) dependency), and header-level API surface / PE
+dependents not individually modeled, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -145,3 +146,5 @@ methodology.
 - [GDB](GNU-GDB.md)
 - [XZ Utils (MSYS CLI tool)](XZ-UTILS.md)
 - [Zstandard (library)](LIBZSTD.md)
+- [liblzma (CLANG64)](LIBLZMA-CLANG64.md)
+- [LLDB](LLDB.md)

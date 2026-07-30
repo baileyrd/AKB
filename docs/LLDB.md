@@ -9,6 +9,8 @@ model_refs:
   - library:llvm:llvm-libs
   - library:llvm:clang-libs
   - library:gnu:zlib@clang64
+  - library:gnome:libxml2@clang64
+  - library:tukaani:liblzma@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:llvm:lldb-manual-2026-07-30
@@ -66,9 +68,17 @@ The catalog snapshot records six `runtime-depends-on` edges for
 | --- | --- | --- |
 | Clang's own libraries | `mingw-w64-clang-x86_64-clang-libs` | LLDB reuses Clang's parsing/semantic-analysis libraries for expression evaluation during debugging sessions. Documented fully in [Clang libraries](CLANG-LIBS.md). |
 | LLVM's shared libraries | `mingw-w64-clang-x86_64-llvm-libs` | The same LLVM infrastructure libraries documented as a dependency for [LLD](LLD.md#dependencies). Documented fully in [LLVM libraries](LLVM-LIBS.md). |
-| XML parsing | `mingw-w64-clang-x86_64-libxml2` | Backs XML-format target descriptions and remote-protocol data, the same rationale documented for [GDB](GNU-GDB.md#dependencies)'s `expat` dependency, using a different XML library. |
+| XML parsing | `mingw-w64-clang-x86_64-libxml2` | Backs XML-format target descriptions and remote-protocol data, the same rationale documented for [GDB](GNU-GDB.md#dependencies)'s `expat` dependency, using a different XML library. Documented fully in [libxml2 (CLANG64)](LIBXML2-CLANG64.md). |
 | Scripting API | `mingw-w64-clang-x86_64-python` | Backs LLDB's Python scripting API (`claim:component:lldb:python-scripting`). |
-| Compressed debug sections | `mingw-w64-clang-x86_64-xz`, `mingw-w64-clang-x86_64-zlib` | Back reading debug information compressed with either algorithm, the same rationale documented for [GDB](GNU-GDB.md#dependencies). Documented fully in [zlib (CLANG64)](ZLIB-CLANG64.md); the CLANG64 `xz` package is not individually modeled in this knowledge base. |
+| Compressed debug sections | `mingw-w64-clang-x86_64-xz`, `mingw-w64-clang-x86_64-zlib` | Back reading debug information compressed with either algorithm, the same rationale documented for [GDB](GNU-GDB.md#dependencies). Documented fully in [zlib (CLANG64)](ZLIB-CLANG64.md) and [liblzma (CLANG64)](LIBLZMA-CLANG64.md). |
+
+**Correction, 2026-07-30**: this table's `libxml2` and `xz` rows were
+previously either backed by a false claim on
+[libxml2 (UCRT64)](LIBXML2.md) (which had listed LLDB as a direct
+dependent) or explicitly left unmodeled; both now have their own pages
+and `requires` edges
+(`relationship:foundation-libraries:lldb-requires-libxml2-clang64`,
+`relationship:foundation-libraries:lldb-requires-liblzma-clang64`).
 
 ## Reverse Dependencies
 
@@ -141,3 +151,5 @@ has not been directly observed, the same open item already flagged for
 - [LLVM libraries](LLVM-LIBS.md)
 - [Clang libraries](CLANG-LIBS.md)
 - [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
+- [liblzma (CLANG64)](LIBLZMA-CLANG64.md)

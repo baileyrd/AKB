@@ -2339,6 +2339,60 @@
         "role": "TLS/SSL protocol implementation and cryptographic primitives"
       },
       "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:ncurses@ucrt64",
+      "kind": "library",
+      "name": "ncurses (UCRT64)",
+      "summary": "The ncurses terminal-capability library, packaged in the UCRT64 environment specifically and depended on by GDB's TUI mode, distinct from the separately packaged MSYS ncurses this knowledge base's component:gnu:ncurses entity (Volume 5) documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["ncurses"],
+      "tags": ["library", "terminal"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/ncurses/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-ncurses",
+        "role": "terminal-capability and screen-handling library"
+      },
+      "evidence_refs": ["evidence:gnu:ncurses-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnome:libxml2@clang64",
+      "kind": "library",
+      "name": "libxml2 (CLANG64)",
+      "summary": "The libxml2 XML parsing library, packaged in the CLANG64 environment specifically and depended on by LLDB for XML-format target descriptions and remote-protocol data, distinct from the separately versioned UCRT64 libxml2 this knowledge base's library:gnome:libxml2 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Daniel Veillard / GNOME project",
+      "aliases": ["libxml2"],
+      "tags": ["library", "xml"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libxml2",
+        "role": "XML parsing and toolkit"
+      },
+      "evidence_refs": ["evidence:gnome:libxml2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:tukaani:liblzma@clang64",
+      "kind": "library",
+      "name": "liblzma (XZ Utils library, CLANG64)",
+      "summary": "The compression library underlying XZ Utils, packaged in the CLANG64 environment specifically and depended on by LLDB to back reading debug information compressed with the xz/LZMA algorithm, distinct from the separately versioned UCRT64 liblzma this knowledge base's library:tukaani:liblzma entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Tukaani project",
+      "aliases": ["liblzma", "xz"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://tukaani.org/xz",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-xz",
+        "role": "LZMA/xz compression"
+      },
+      "evidence_refs": ["evidence:tukaani:xz-library-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8123,6 +8177,42 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Corrected 2026-07-30: this page's own Dependencies table had cited libwinpthread by package name without a corresponding graph edge, unlike its already-modeled zlib/zstd/gettext edges; added to close the gap. Backs POSIX-threads-style threading support in the built binutils tools themselves.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gdb-requires-ncurses-ucrt64",
+      "type": "requires",
+      "source": "component:gnu:gdb",
+      "target": "library:gnu:ncurses@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs GDB's TUI (text user interface) mode. This UCRT64-native library is a separate catalog entity from the MSYS-packaged ncurses (component:gnu:ncurses, Volume 5) documented on NCURSES.md.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:lldb-requires-libxml2-clang64",
+      "type": "requires",
+      "source": "component:llvm:lldb",
+      "target": "library:gnome:libxml2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs XML-format target descriptions and remote-protocol data. Corrected 2026-07-30: LIBXML2.md (UCRT64) had previously claimed LLDB as a direct dependent before this correct CLANG64-packaged sibling was modeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:lldb-requires-liblzma-clang64",
+      "type": "requires",
+      "source": "component:llvm:lldb",
+      "target": "library:tukaani:liblzma@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading debug information compressed with the xz/LZMA algorithm, alongside LLDB's zlib (CLANG64) dependency.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

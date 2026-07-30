@@ -148,3 +148,4 @@ unconfirmed.
 - [GNU Nano](GNU-NANO.md)
 - [Vim](VIM.md)
 - [mintty](MINTTY.md)
+- [ncurses (UCRT64)](NCURSES-UCRT64.md)

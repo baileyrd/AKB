@@ -9,6 +9,7 @@ model_refs:
   - library:gnu:libiconv
   - library:gnu:zlib
   - library:gnome:libxml2@msys
+  - library:gnome:libxml2@clang64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnome:libxml2-manual-2026-07-30
@@ -58,8 +59,8 @@ built-in libxml2-based parsing (`eww`, `libxml-parse-html-region`)
 depends on the separately versioned MSYS package, documented on
 [libxml2 (MSYS)](LIBXML2-MSYS.md); [LLDB's](LLDB.md#dependencies)
 target-description handling depends on a CLANG64-packaged libxml2, a
-third distinct catalog entity not individually modeled in this
-knowledge base.
+third distinct catalog entity, now documented on
+[libxml2 (CLANG64)](LIBXML2-CLANG64.md).
 
 ## Interfaces
 
@@ -155,4 +156,5 @@ methodology.
 - [GNU libiconv](GNU-LIBICONV.md)
 - [zlib](ZLIB.md)
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
+- [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
 - [LLDB](LLDB.md)

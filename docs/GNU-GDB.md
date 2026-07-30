@@ -16,6 +16,7 @@ model_refs:
   - library:facebook:zstd
   - library:xxhash:xxhash
   - library:tukaani:liblzma
+  - library:gnu:ncurses@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:gdb-manual-2026-07-30
@@ -77,7 +78,7 @@ debugger feature:
 | --- | --- | --- |
 | Scripting API | `mingw-w64-ucrt-x86_64-python` | Backs GDB's Python scripting API for pretty-printers and automation (`claim:component:gdb:python-scripting`). |
 | Syntax highlighting (optional) | `mingw-w64-ucrt-x86_64-python-pygments` | Backs styled source-code display when listing source alongside execution (`claim:component:gdb:python-scripting`). |
-| Terminal UI | `mingw-w64-ucrt-x86_64-ncurses` | Backs GDB's TUI (text user interface) mode, the same terminal-capability library documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
+| Terminal UI | `mingw-w64-ucrt-x86_64-ncurses` | Backs GDB's TUI (text user interface) mode. This is a separate, UCRT64-native catalog entity from the MSYS-packaged ncurses documented as a hub in [ncurses (MSYS)](NCURSES.md#reverse-dependencies); documented fully in [ncurses (UCRT64)](NCURSES-UCRT64.md). |
 | Interactive line editing | `mingw-w64-ucrt-x86_64-readline` | Backs command-line editing and history at GDB's interactive prompt. Documented fully in [GNU Readline](GNU-READLINE.md). |
 | XML parsing | `mingw-w64-ucrt-x86_64-expat` | Backs XML-format target descriptions and remote-protocol data. Documented fully in [Expat](EXPAT.md). |
 | Arbitrary-precision arithmetic | `mingw-w64-ucrt-x86_64-gmp`, `mingw-w64-ucrt-x86_64-mpfr` | Back precise evaluation of arbitrary-precision expressions during debugging sessions. Documented fully in [GNU MP](GNU-GMP.md) and [GNU MPFR](GNU-MPFR.md). |
@@ -157,7 +158,8 @@ ptrace-based backend) has not been directly observed.
 - [GCC](GNU-GCC.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [LLDB](LLDB.md)
-- [ncurses](NCURSES.md)
+- [ncurses (MSYS)](NCURSES.md)
+- [ncurses (UCRT64)](NCURSES-UCRT64.md)
 - [GNU Readline](GNU-READLINE.md)
 - [Expat](EXPAT.md)
 - [GNU MP (GMP)](GNU-GMP.md)

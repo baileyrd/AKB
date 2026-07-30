@@ -76333,6 +76333,8 @@
 | relationship:foundation-libraries:libxml2-requires-zlib | requires | library:gnome:libxml2 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:libzstd-packaged-by-package | packaged-by | library:facebook:zstd@msys-lib | package:msys2:libzstd | verified |
 | relationship:foundation-libraries:libzstd-uses-msys-runtime | uses-runtime | library:facebook:zstd@msys-lib | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:lldb-requires-liblzma-clang64 | requires | component:llvm:lldb | library:tukaani:liblzma@clang64 | verified |
+| relationship:foundation-libraries:lldb-requires-libxml2-clang64 | requires | component:llvm:lldb | library:gnome:libxml2@clang64 | verified |
 | relationship:foundation-libraries:llvm-libs-packaged-by-package | packaged-by | library:llvm:llvm-libs | package:msys2:mingw-w64-clang-x86_64-llvm-libs | verified |
 | relationship:foundation-libraries:mpc-packaged-by-package | packaged-by | library:multiprecision:mpc | package:msys2:mingw-w64-ucrt-x86_64-mpc | verified |
 | relationship:foundation-libraries:mpc-requires-gmp | requires | library:multiprecision:mpc | library:gnu:gmp | verified |
@@ -77120,6 +77122,7 @@
 | relationship:toolchain:gdb-requires-libiconv | requires | component:gnu:gdb | library:gnu:libiconv | verified |
 | relationship:toolchain:gdb-requires-liblzma | requires | component:gnu:gdb | library:tukaani:liblzma | verified |
 | relationship:toolchain:gdb-requires-mpfr | requires | component:gnu:gdb | library:gnu:mpfr | verified |
+| relationship:toolchain:gdb-requires-ncurses-ucrt64 | requires | component:gnu:gdb | library:gnu:ncurses@ucrt64 | verified |
 | relationship:toolchain:gdb-requires-readline | requires | component:gnu:gdb | library:gnu:readline | verified |
 | relationship:toolchain:gdb-requires-xxhash | requires | component:gnu:gdb | library:xxhash:xxhash | verified |
 | relationship:toolchain:gdb-requires-zlib | requires | component:gnu:gdb | library:gnu:zlib | verified |

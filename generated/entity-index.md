@@ -19,7 +19,7 @@
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 5 | 1 |
 | component:gnu:gcc | component | GCC | partial | 9 | 1 |
-| component:gnu:gdb | component | GDB | partial | 11 | 1 |
+| component:gnu:gdb | component | GDB | partial | 12 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:libtool | component | GNU Libtool | partial | 3 | 1 |
@@ -34,7 +34,7 @@
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
 | component:llvm:clang | component | Clang | partial | 3 | 1 |
 | component:llvm:lld | component | LLD | partial | 5 | 2 |
-| component:llvm:lldb | component | LLDB | partial | 4 | 1 |
+| component:llvm:lldb | component | LLDB | partial | 6 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
 | component:mesonbuild:meson | component | Meson | partial | 3 | 1 |
@@ -612,6 +612,7 @@
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 2 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
+| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 0 | 1 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 7 |
@@ -626,6 +627,7 @@
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 4 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 4 |
 | library:gnu:mpfr@msys | library | GNU MPFR (MSYS) | partial | 1 | 1 |
+| library:gnu:ncurses@ucrt64 | library | ncurses (UCRT64) | partial | 0 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
@@ -681,6 +683,7 @@
 | library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 1 | 2 |
+| library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
 | library:yubico:libfido2 | library | libfido2 | partial | 4 | 2 |

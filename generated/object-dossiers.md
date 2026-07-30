@@ -143,7 +143,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gdb-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `component:gnu:grep`
@@ -278,7 +278,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `component:lz4:lz4`
@@ -5474,6 +5474,15 @@
 - Outgoing relationships: 3
 - Incoming relationships: 1
 
+## `library:gnome:libxml2@clang64`
+
+- Name: libxml2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:gnome:libxml2@msys`
 
 - Name: libxml2 (MSYS)
@@ -5598,6 +5607,15 @@
 - Status: `partial`
 - Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnu:ncurses@ucrt64`
+
+- Name: ncurses (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
 - Incoming relationships: 1
 
 ## `library:gnu:readline`
@@ -6094,6 +6112,15 @@
 - Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:tukaani:liblzma@clang64`
+
+- Name: liblzma (XZ Utils library, CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:unicode:icu`
 

@@ -609,6 +609,7 @@ Objects
 - library:facebook:zstd@clang64 (library): Zstandard (CLANG64)
 - library:facebook:zstd@msys-lib (library): Zstandard (MSYS library)
 - library:gnome:libxml2 (library): libxml2
+- library:gnome:libxml2@clang64 (library): libxml2 (CLANG64)
 - library:gnome:libxml2@msys (library): libxml2 (MSYS)
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:gmp (library): GNU MP (GMP)
@@ -623,6 +624,7 @@ Objects
 - library:gnu:libunistring (library): GNU libunistring
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:mpfr@msys (library): GNU MPFR (MSYS)
+- library:gnu:ncurses@ucrt64 (library): ncurses (UCRT64)
 - library:gnu:readline (library): GNU Readline
 - library:gnu:readline@msys (library): GNU Readline (MSYS)
 - library:gnu:termcap (library): GNU termcap
@@ -678,6 +680,7 @@ Objects
 - library:rhash:rhash (library): RHash
 - library:sqlite:sqlite3 (library): SQLite
 - library:tukaani:liblzma (library): liblzma (XZ Utils library)
+- library:tukaani:liblzma@clang64 (library): liblzma (XZ Utils library, CLANG64)
 - library:unicode:icu (library): ICU (International Components for Unicode)
 - library:xxhash:xxhash (library): xxHash
 - library:yubico:libfido2 (library): libfido2
@@ -16886,6 +16889,9 @@ Relationships
 - component:gnu:gcc --requires--> library:libisl:isl
 - component:gnu:gcc --requires--> library:mingw-w64:winpthreads
 - component:gnu:binutils --requires--> library:mingw-w64:libwinpthread
+- component:gnu:gdb --requires--> library:gnu:ncurses@ucrt64
+- component:llvm:lldb --requires--> library:gnome:libxml2@clang64
+- component:llvm:lldb --requires--> library:tukaani:liblzma@clang64
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

@@ -19,7 +19,7 @@ remain distinguishable from reviewed architecture.
 | Volume | Canonical material | Coverage state | Remaining proof/work |
 | ---: | --- | --- | --- |
 | 1 Executive Architecture | [Ecosystem context](ECOSYSTEM-CONTEXT.md), [domain decomposition](DOMAIN-DECOMPOSITION.md), [eight-layer architecture](EIGHT-LAYER-ARCHITECTURE.md) | Partial | Per-layer evidence-qualified drill-downs |
-| 2 Windows Platform | Cross-volume Windows boundaries in [domain decomposition](DOMAIN-DECOMPOSITION.md) and [runtime map](MSYS-RUNTIME-BEHAVIOR-MAP.md) | Gap | Canonical Windows platform page covering APIs, console/ConPTY, filesystem, registry, security, and networking boundaries |
+| 2 Windows Platform | [Windows platform boundaries](WINDOWS-PLATFORM-BOUNDARIES.md) | Partial | Controlled, version-qualified observations for the listed host boundaries |
 | 3 MSYS Runtime | [Runtime behavior map](MSYS-RUNTIME-BEHAVIOR-MAP.md), [initialization](MSYS-RUNTIME-INITIALIZATION.md) | Partial | Controlled process, signal, fork/exec, filesystem, symlink, and PTY observations |
 | 4 Runtime Environments | [Runtime environments](RUNTIME-ENVIRONMENTS.md) | Partial | Current evidence for every documented environment and compatibility/migration cases |
 | 5 GNU Userland | [GNU userland role model](GNU-USERLAND-ROLE-MODEL.md) | Partial | Per-tool startup, configuration, dependency, and interaction pages |

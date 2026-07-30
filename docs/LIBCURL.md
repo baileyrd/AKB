@@ -47,10 +47,9 @@ reference.
 `library:curl:libcurl` is packaged in the MSYS environment as
 `package:msys2:libcurl` (version `8.21.0-1` in the current catalog
 snapshot, the same version as the `curl` CLI package it ships alongside).
-A separately packaged, native (UCRT64/CLANG64/i686) `libcurl` also exists
-in the catalog (already noted on [CMake's page](CMAKE.md#dependencies)'s
-`mingw-w64-ucrt-x86_64-curl` dependency); this page documents the MSYS
-package specifically, since that is the one both
+A separately packaged, native `curl` (bundling both CLI and library, per
+[curl (UCRT64)](CURL-UCRT64.md)) also exists in the catalog; this page
+documents the MSYS package specifically, since that is the one both
 [curl](CURL.md#architectural-classification) (itself MSYS-packaged) and
 [GnuPG](GNUPG.md#architectural-classification) actually depend on.
 
@@ -113,7 +112,8 @@ base's graph), `package:msys2:gnupg`
 (`relationship:ssh-curl-git:gnupg-requires-libcurl`), `package:msys2:cargo-c`,
 `package:msys2:cmake` (the MSYS `cmake` package, a different catalog
 entity from the UCRT64 `cmake` package [CMake's own page](CMAKE.md)
-documents, whose own `curl` dependency is a separate UCRT64 package),
+documents, whose own `curl` dependency is the separate
+[curl (UCRT64)](CURL-UCRT64.md) package),
 its own `-devel` subpackage, `package:msys2:pacutils` and its `-devel`
 subpackage, and `package:msys2:rust`.
 
@@ -195,4 +195,5 @@ methodology.
 - [Brotli](BROTLI.md)
 - [ca-certificates](CA-CERTIFICATES.md)
 - [libssh2](LIBSSH2.md)
+- [curl (UCRT64)](CURL-UCRT64.md)
 - [Zstandard (MSYS library)](LIBZSTD-MSYS.md)

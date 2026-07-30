@@ -17,7 +17,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:cmake:documentation-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `component:curl:curl`
@@ -5420,6 +5420,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 5
 
+## `library:curl:curl@ucrt64`
+
+- Name: curl (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `library:curl:libcurl`
 
 - Name: libcurl
@@ -5445,7 +5454,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:facebook:zstd@clang64`
 
@@ -5652,7 +5661,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `library:gnu:zlib@clang64`
 

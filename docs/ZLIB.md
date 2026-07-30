@@ -76,7 +76,8 @@ count recorded anywhere in this knowledge base
 167 and far exceeding [ncurses](NCURSES.md#reverse-dependencies)'s 40. This
 reflects DEFLATE compression's use as a near-universal building block
 across compilers ([GCC](GNU-GCC.md), [Clang](CLANG.md), [LLD](LLD.md)),
-build systems ([CMake](CMAKE.md)), version control
+build systems ([CMake](CMAKE.md)), network transfer
+([curl (UCRT64)](CURL-UCRT64.md)), version control
 ([Git](GIT-MSYS-PACKAGE.md)), and archive tools
 ([GNU Tar](GNU-TAR.md)'s optional codec linkage question flagged on that
 page) across this environment. See the
@@ -152,6 +153,7 @@ this library's unusually wide blast radius.
 - [GNU Gzip](GNU-GZIP.md)
 - [libarchive](LIBARCHIVE.md)
 - [CMake](CMAKE.md)
+- [curl (UCRT64)](CURL-UCRT64.md)
 - [GNU GCC](GNU-GCC.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)

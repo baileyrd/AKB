@@ -5,7 +5,7 @@
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 3 | 1 |
-| component:cmake:cmake | component | CMake | partial | 10 | 1 |
+| component:cmake:cmake | component | CMake | partial | 11 | 1 |
 | component:curl:curl | component | curl | partial | 11 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 8 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
@@ -606,9 +606,10 @@
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 5 |
+| library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 2 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
 | library:darwinsys:file | library | file | partial | 5 | 2 |
-| library:facebook:zstd | library | Zstandard (library) | partial | 1 | 5 |
+| library:facebook:zstd | library | Zstandard (library) | partial | 1 | 6 |
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
@@ -631,7 +632,7 @@
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 9 |
+| library:gnu:zlib | library | zlib | partial | 1 | 10 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 4 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 7 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |

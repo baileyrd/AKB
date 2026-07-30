@@ -2465,6 +2465,24 @@
         "role": "foreign function interface"
       },
       "evidence_refs": ["evidence:libffi:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:curl:curl@ucrt64",
+      "kind": "library",
+      "name": "curl (UCRT64)",
+      "summary": "The multi-protocol file-transfer CLI/library package, packaged in the UCRT64 environment specifically and depended on by CMake for file(DOWNLOAD)/ExternalProject network fetches, distinct from both the MSYS curl CLI (component:curl:curl) and MSYS libcurl (library:curl:libcurl) this knowledge base already documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "curl project",
+      "aliases": ["curl"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://curl.se/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-curl",
+        "role": "multi-protocol file transfer"
+      },
+      "evidence_refs": ["evidence:curl:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8477,6 +8495,42 @@
       "confidence": "verified",
       "scope": "build",
       "condition": "Backs compression used internally by CMake's archive and networking features, already cited with a 'documented fully in' link on this page's own Dependencies table without a corresponding graph edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-curl-ucrt64",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "library:curl:curl@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Corrected 2026-07-30: this page's own Dependencies table had claimed its curl dependency was 'documented fully in curl (CURL.md)' — a false MSYS/UCRT64 conflation, since CURL.md documents the MSYS curl CLI package, not this separate UCRT64-native package. Backs file(DOWNLOAD) and ExternalProject's network-fetch operations.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-zlib",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP Content-Encoding: gzip/deflate support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-zstd",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:facebook:zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP Content-Encoding: zstd support.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

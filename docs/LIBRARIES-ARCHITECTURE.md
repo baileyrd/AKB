@@ -91,6 +91,7 @@ model_refs:
   - library:mingw-w64:libwinpthread@clang64
   - library:libffi:libffi@msys
   - library:libffi:libffi@clang64
+  - library:curl:curl@ucrt64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -223,7 +224,8 @@ flowchart LR
 [liblzma (CLANG64)](LIBLZMA-CLANG64.md),
 [winpthreads (CLANG64)](WINPTHREADS-CLANG64.md),
 [libwinpthread (CLANG64)](LIBWINPTHREAD-CLANG64.md),
-[libffi (MSYS)](LIBFFI-MSYS.md), and [libffi (CLANG64)](LIBFFI-CLANG64.md) are
+[libffi (MSYS)](LIBFFI-MSYS.md), [libffi (CLANG64)](LIBFFI-CLANG64.md),
+and [curl (UCRT64)](CURL-UCRT64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -238,7 +240,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All eighty-seven pages are deliberately scoped to package/dependency-level
+All eighty-eight pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -562,7 +564,23 @@ in the graph. Every affected page's Dependencies, Reverse Dependencies,
 Related Objects, and (where applicable) Evidence sections were updated
 to match, following the same correct-in-place discipline used
 throughout this session rather than silently patching the graph without
-a trace. These pages are a starting point for this
+a trace. A final batch modeled [curl (UCRT64)](CURL-UCRT64.md), a
+UCRT64-native curl package bundling both CLI and library — a third,
+previously-unmodeled curl-named catalog entity alongside
+[curl (MSYS)](CURL.md) and [libcurl (MSYS)](LIBCURL.md), with 67
+recorded reverse dependents, the widest of any library added in this
+batch. Modeling it corrected a genuine MSYS/UCRT64 conflation:
+[CMake's](CMAKE.md#dependencies) own dependency table had claimed its
+`mingw-w64-ucrt-x86_64-curl` dependency was "the same library
+documented fully in [curl](CURL.md)" — false, since CURL.md documents
+the MSYS CLI, a wholly separate catalog entity. Ten of curl
+(UCRT64)'s own twelve declared dependencies remain unmodeled (nine are
+UCRT64-native siblings of already-documented MSYS libraries — Brotli,
+GNU libidn2, libpsl, ca-certificates, libssh2, libopenssl, libnghttp2,
+libngtcp2, and libnghttp3 — and one, `c-ares`, is not modeled anywhere
+in this knowledge base yet), recorded as an explicitly open item on
+[curl (UCRT64)'s own page](CURL-UCRT64.md#dependencies) rather than
+silently assumed complete. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

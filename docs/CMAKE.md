@@ -13,6 +13,7 @@ model_refs:
   - library:rhash:rhash
   - library:libexpat:expat
   - library:gnu:zlib
+  - library:curl:curl@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:cmake:documentation-2026-07-30
@@ -82,7 +83,7 @@ to a specific built-in CMake feature
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Debug Adapter Protocol | `mingw-w64-ucrt-x86_64-cppdap` | Backs CMake's `--debugger` DAP server, letting IDEs debug `CMakeLists.txt` script execution itself. Documented fully in [cppdap](CPPDAP.md). |
-| Network downloads | `mingw-w64-ucrt-x86_64-curl` | Backs `file(DOWNLOAD)` and `ExternalProject`'s network-fetch operations, the same library documented fully in [curl](CURL.md). |
+| Network downloads | `mingw-w64-ucrt-x86_64-curl` | Backs `file(DOWNLOAD)` and `ExternalProject`'s network-fetch operations. Documented fully in [curl (UCRT64)](CURL-UCRT64.md) — **correction, 2026-07-30**: this row previously (falsely) claimed this was "the same library documented fully in [curl](CURL.md)," but CURL.md documents the MSYS curl CLI, a separate catalog entity from this UCRT64-native package. |
 | XML parsing | `mingw-w64-ucrt-x86_64-expat` | Backs XML-format handling used by some CMake generators and CTest/CDash reporting. Documented fully in [Expat](EXPAT.md). |
 | JSON support | `mingw-w64-ucrt-x86_64-jsoncpp` | Backs CMake's JSON-based file-api and `CMakePresets.json`/`CMakeUserPresets.json` support. Documented fully in [JsonCpp](JSONCPP.md). |
 | Archive creation/extraction | `mingw-w64-ucrt-x86_64-libarchive` | Backs `file(ARCHIVE_CREATE)`/`file(ARCHIVE_EXTRACT)` and CPack's archive-format generator. Documented fully in [libarchive](LIBARCHIVE.md). |
@@ -180,7 +181,7 @@ general version-qualified security review noted above.
 - [Ninja](NINJA.md)
 - [pkgconf](PKGCONF.md)
 - [Meson](MESON.md)
-- [curl](CURL.md)
+- [curl (UCRT64)](CURL-UCRT64.md)
 - [cppdap](CPPDAP.md)
 - [JsonCpp](JSONCPP.md)
 - [libarchive](LIBARCHIVE.md)

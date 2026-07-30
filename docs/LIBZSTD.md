@@ -75,17 +75,20 @@ The catalog snapshot records 94 relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-zstd` — the widest
 reverse-dependency footprint of any library added in this batch,
 reflecting Zstandard's status as a broadly-adopted general-purpose
-compression library across the UCRT64 package ecosystem. Four are
+compression library across the UCRT64 package ecosystem. Five are
 already modeled in this knowledge base: `package:msys2:mingw-w64-ucrt-x86_64-gcc`
 (`relationship:toolchain:gcc-requires-zstd`),
 `package:msys2:mingw-w64-ucrt-x86_64-binutils`
 (`relationship:toolchain:binutils-requires-zstd`),
 `package:msys2:mingw-w64-ucrt-x86_64-gdb`
-(`relationship:toolchain:gdb-requires-zstd`), and
+(`relationship:toolchain:gdb-requires-zstd`),
 `package:msys2:mingw-w64-ucrt-x86_64-libarchive`
 (`relationship:toolchain:libarchive-requires-zstd`, added 2026-07-30 to
-close a gap in [libarchive's own dependency table](LIBARCHIVE.md#dependencies)).
-The remaining ~90
+close a gap in [libarchive's own dependency table](LIBARCHIVE.md#dependencies)),
+and `package:msys2:mingw-w64-ucrt-x86_64-curl`
+(`relationship:foundation-libraries:curl-ucrt64-requires-zstd`,
+documented fully in [curl (UCRT64)](CURL-UCRT64.md)).
+The remaining ~89
 recorded dependents (a broad mix of UCRT64 packages such as `blender`,
 `arrow`, and numerous cross-compilation toolchains) are not individually
 modeled in this knowledge base; see the
@@ -162,3 +165,4 @@ methodology.
 - [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)
 - [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
 - [libarchive](LIBARCHIVE.md)
+- [curl (UCRT64)](CURL-UCRT64.md)

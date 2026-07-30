@@ -76213,6 +76213,8 @@
 | relationship:foundation-libraries:clang64-contains-zlib | contains | environment:msys2:clang64 | library:gnu:zlib@clang64 | partial |
 | relationship:foundation-libraries:clang64-contains-zstd | contains | environment:msys2:clang64 | library:facebook:zstd@clang64 | partial |
 | relationship:foundation-libraries:cppdap-packaged-by-package | packaged-by | library:google:cppdap | package:msys2:mingw-w64-ucrt-x86_64-cppdap | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-zlib | requires | library:curl:curl@ucrt64 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-zstd | requires | library:curl:curl@ucrt64 | library:facebook:zstd | verified |
 | relationship:foundation-libraries:expat-msys-packaged-by-package | packaged-by | library:libexpat:expat@msys | package:msys2:libexpat | verified |
 | relationship:foundation-libraries:expat-msys-uses-msys-runtime | uses-runtime | library:libexpat:expat@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:expat-packaged-by-package | packaged-by | library:libexpat:expat | package:msys2:mingw-w64-ucrt-x86_64-expat | verified |
@@ -77112,6 +77114,7 @@
 | relationship:toolchain:cmake-invokes-ninja | invokes | component:cmake:cmake | component:ninja-build:ninja | verified |
 | relationship:toolchain:cmake-packaged-by-package | packaged-by | component:cmake:cmake | package:msys2:mingw-w64-ucrt-x86_64-cmake | verified |
 | relationship:toolchain:cmake-requires-cppdap | requires | component:cmake:cmake | library:google:cppdap | verified |
+| relationship:toolchain:cmake-requires-curl-ucrt64 | requires | component:cmake:cmake | library:curl:curl@ucrt64 | verified |
 | relationship:toolchain:cmake-requires-expat | requires | component:cmake:cmake | library:libexpat:expat | verified |
 | relationship:toolchain:cmake-requires-jsoncpp | requires | component:cmake:cmake | library:jsoncpp:jsoncpp | verified |
 | relationship:toolchain:cmake-requires-libarchive | requires | component:cmake:cmake | library:libarchive:libarchive | verified |

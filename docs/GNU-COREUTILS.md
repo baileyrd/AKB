@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:gnu:coreutils
   - package:msys2:coreutils
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -71,7 +72,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | --- | --- | --- |
 | Arbitrary-precision arithmetic | `package:msys2:gmp` | Used by `factor` (and related numeric utilities) for bignum support, per the GNU Coreutils manual. |
 | Character-set conversion | `package:msys2:libiconv` | The MSYS C library (Cygwin-derived) does not provide built-in `iconv` conversion the way glibc does, so coreutils links the standalone GNU libiconv for portable multibyte/character-set handling. |
-| Native-language messages | `package:msys2:libintl` | Provides gettext-based message translation (NLS) for coreutils' translated diagnostic and help output. |
+| Native-language messages | `package:msys2:libintl` | Provides gettext-based message translation (NLS) for coreutils' translated diagnostic and help output. Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 
 These are recorded observed facts from `evidence:catalog:current`; the
 architectural "reason" column is a documented-upstream inference
@@ -149,5 +150,6 @@ version-qualified security review has been performed.
 - [GNU Sed](GNU-SED.md)
 - [GNU Awk (gawk)](GNU-AWK.md)
 - [GNU Findutils](GNU-FINDUTILS.md)
+- [GNU libintl](GNU-LIBINTL.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)

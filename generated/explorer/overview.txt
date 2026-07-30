@@ -608,6 +608,7 @@ Objects
 - library:gnu:gmp (library): GNU MP (GMP)
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libidn2 (library): GNU libidn2
+- library:gnu:libintl (library): GNU libintl
 - library:gnu:libstdc++ (library): libstdc++
 - library:gnu:libtasn1 (library): GNU Libtasn1
 - library:gnu:libunistring (library): GNU libunistring
@@ -16688,6 +16689,26 @@ Relationships
 - library:gnupg:libgcrypt@msys --requires--> library:gnupg:libgpg-error@msys
 - library:gnupg:libassuan@msys --requires--> library:gnupg:libgpg-error@msys
 - library:gnupg:libksba@msys --requires--> library:gnupg:libgpg-error@msys
+- environment:msys2:msys --contains--> library:gnu:libintl
+- library:gnu:libintl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libintl --packaged-by--> package:msys2:libintl
+- component:gnu:coreutils --requires--> library:gnu:libintl
+- component:gnu:findutils --requires--> library:gnu:libintl
+- component:gnu:gawk --requires--> library:gnu:libintl
+- component:gnu:grep --requires--> library:gnu:libintl
+- component:gnu:sed --requires--> library:gnu:libintl
+- component:gnu:nano --requires--> library:gnu:libintl
+- component:vim:vim --requires--> library:gnu:libintl
+- component:tukaani:xz --requires--> library:gnu:libintl
+- component:gnu:tar --requires--> library:gnu:libintl
+- component:gnu:make --requires--> library:gnu:libintl
+- component:git:git --requires--> library:gnu:libintl
+- component:gnupg:gnupg --requires--> library:gnu:libintl
+- library:gnutls:gnutls --requires--> library:gnu:libintl
+- library:gnupg:libgpg-error@msys --requires--> library:gnu:libintl
+- library:gnu:libidn2 --requires--> library:gnu:libintl
+- library:p11-glue:p11-kit --requires--> library:gnu:libintl
+- component:vim:vim --requires--> library:libxcrypt:libxcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

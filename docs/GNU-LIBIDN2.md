@@ -10,6 +10,7 @@ model_refs:
   - library:gnu:libunistring
   - library:libpsl:libpsl
   - component:curl:curl
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -64,10 +65,10 @@ that; this page and its catalog package concern `libidn2` only).
 
 ## Dependencies
 
-The MSYS `package:msys2:libidn2` declares dependencies on `libintl`
-(gettext-based message translation, not yet given its own page in this
-volume) and [libunistring](GNU-LIBUNISTRING.md) (Unicode string
-processing).
+The MSYS `package:msys2:libidn2` declares dependencies on
+[GNU libintl](GNU-LIBINTL.md) (gettext-based message translation,
+`relationship:foundation-libraries:libidn2-requires-libintl`) and
+[libunistring](GNU-LIBUNISTRING.md) (Unicode string processing).
 
 ## Reverse Dependencies
 
@@ -136,11 +137,9 @@ the `project_url` already recorded for `package:msys2:libidn2` in the
 catalog. Package identity, version, and the recorded dependency/dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: this package's own sub-dependencies (`libintl`, `libunistring`) are
-not individually modeled as components in this knowledge base; header-level
-API surface and PE import/export-level evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology, also remain open.
+page: header-level API surface and PE import/export-level evidence, per
+the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology.
 
 ## Related Objects
 
@@ -149,3 +148,4 @@ methodology, also remain open.
 - [curl](CURL.md)
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libpsl](LIBPSL.md)
+- [GNU libintl](GNU-LIBINTL.md)

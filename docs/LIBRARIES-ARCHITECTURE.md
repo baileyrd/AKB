@@ -55,6 +55,7 @@ model_refs:
   - library:gnupg:npth@msys
   - library:nettle:nettle@msys
   - library:gnupg:libgpg-error@msys
+  - library:gnu:libintl
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -100,6 +101,7 @@ evidence_refs:
   - evidence:darwinsys:file-manual-2026-07-30
   - evidence:gnu:termcap-manual-2026-07-30
   - evidence:mingweditline:manual-2026-07-30
+  - evidence:gnu:libintl-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -152,9 +154,10 @@ flowchart LR
 [RHash](RHASH.md), [file](FILE.md), [GNU termcap](GNU-TERMCAP.md),
 [WinEditLine](WINEDITLINE.md), [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md),
 [libassuan (MSYS)](LIBASSUAN-MSYS.md), [libksba (MSYS)](LIBKSBA-MSYS.md),
-[nPth (MSYS)](NPTH-MSYS.md), [Nettle (MSYS)](NETTLE-MSYS.md), and
-[libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md) are this volume's first
-per-library pages. The
+[nPth (MSYS)](NPTH-MSYS.md), [Nettle (MSYS)](NETTLE-MSYS.md),
+[libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md), and
+[GNU libintl](GNU-LIBINTL.md) are this volume's first per-library pages.
+The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -167,7 +170,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All fifty-one pages are deliberately scoped to package/dependency-level
+All fifty-two pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -256,9 +259,22 @@ volume has caught this session, after the SQLite mixup, the avoided
 libcurl mismatch, and GnuTLS's own careful environment check — this one
 was not caught before publication, only discovered afterward while
 investigating a follow-on batch, and is recorded as such rather than
-quietly corrected without a trace. These pages are a starting point for
-this volume, not a demonstration that its full evidence model is
-populated.
+quietly corrected without a trace. A systematic re-sweep of every
+Volume 5 and Volume 8 dependency table for still-undocumented package
+names then surfaced [GNU libintl](GNU-LIBINTL.md), the MSYS gettext
+runtime — with 59 recorded reverse dependents, the single most
+widely-depended-upon library discovered in this session, ahead of
+zlib's 299 total reverse dependents only because zlib's count spans both
+environments where libintl's is MSYS-only. Sixteen already-documented
+entities (eleven Volume 5 components, one Volume 8 component, and four
+Volume 6 libraries) now have explicit `requires` edges to it, closing
+every libintl citation this sweep found across the two volumes in a
+single pass. The same sweep also caught one small standalone gap: Vim's
+own `libxcrypt` dependency, already correctly identified in Vim's prose
+as the same package OpenSSH depends on, had never been given a formal
+graph edge or cross-link — both are now added. These pages are a
+starting point for this volume, not a demonstration that its full
+evidence model is populated.
 
 ## Family navigation
 

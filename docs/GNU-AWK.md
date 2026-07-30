@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:gnu:gawk
   - package:msys2:gawk
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -70,7 +71,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | --- | --- | --- |
 | Arbitrary-precision arithmetic | `package:msys2:mpfr` | Backs gawk's `--bignum` arbitrary-precision integer/floating-point mode, documented in the user's guide's arbitrary-precision-arithmetic chapter. |
 | Interactive line editing | `package:msys2:libreadline` | Used by gawk's built-in interactive debugger (`gawk --debug`), documented in the user's guide's debugger chapter, for its readline-based command prompt. |
-| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
+| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 
 gawk's declared package dependencies also list `sh`, a virtual capability
 provided by `package:msys2:bash` rather than an actual package name; it
@@ -153,4 +154,5 @@ by default has not been directly observed.
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Sed](GNU-SED.md)
 - [GNU Bash](GNU-BASH.md)
+- [GNU libintl](GNU-LIBINTL.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

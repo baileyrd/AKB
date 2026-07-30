@@ -35,7 +35,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:git:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `component:gnu:autoconf`
@@ -80,7 +80,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:coreutils-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:cpio`
@@ -116,7 +116,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:findutils-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:gawk`
@@ -125,7 +125,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gawk-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:gcc`
@@ -152,7 +152,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:grep-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:gzip`
@@ -179,7 +179,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:make-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:nano`
@@ -188,7 +188,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:nano-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:gnu:ncurses`
@@ -206,7 +206,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:sed-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:tar`
@@ -215,7 +215,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:tar-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnupg:gnupg`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -368,7 +368,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:vim:vim`
@@ -377,7 +377,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:vim:documentation-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:zstd:zstd`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 54
+- Outgoing relationships: 55
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5462,8 +5462,17 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 3
+
+## `library:gnu:libintl`
+
+- Name: GNU libintl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libintl-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 17
 
 ## `library:gnu:libstdc++`
 
@@ -5579,7 +5588,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 4
 
 ## `library:gnupg:libksba`
@@ -5624,7 +5633,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 6
 - Incoming relationships: 3
 
 ## `library:google:cppdap`
@@ -5715,7 +5724,7 @@
 - Status: `partial`
 - Evidence: evidence:libxcrypt:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:llvm:libc++`
 
@@ -5813,7 +5822,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `library:pcre:pcre2`
@@ -8163,7 +8172,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 59
+- Incoming relationships: 60
 
 ## `package:msys2:libksba`
 
@@ -147339,7 +147348,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 54
+- Incoming relationships: 55
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

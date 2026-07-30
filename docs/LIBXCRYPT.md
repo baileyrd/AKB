@@ -71,7 +71,10 @@ as a common low-level system function many tools link against, not a
 security-specific feature limited to a handful of tools. Recorded
 dependents include `package:msys2:openssh`
 (`relationship:ssh-curl-git:openssh-requires-libxcrypt` in this knowledge
-base's graph), `package:msys2:apr`, `package:msys2:apr-util`,
+base's graph), `package:msys2:vim`
+(`relationship:editors-pagers-terminals:vim-requires-libxcrypt`, backing
+[Vim's](VIM.md#dependencies) built-in `:X` file-encryption feature),
+`package:msys2:apr`, `package:msys2:apr-util`,
 `package:msys2:autogen`, `package:msys2:cvs`,
 `package:msys2:heimdal-libs` (the runtime-library half of
 [Heimdal](HEIMDAL.md)), `package:msys2:info`, `package:msys2:libguile`,

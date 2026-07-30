@@ -7,28 +7,28 @@
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
 | component:cmake:cmake | component | CMake | partial | 8 | 1 |
 | component:curl:curl | component | curl | partial | 8 | 2 |
-| component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
+| component:git:git | component | Git (MSYS2 package) | partial | 6 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
 | component:gnu:binutils | component | GNU Binutils | partial | 1 | 3 |
-| component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
+| component:gnu:coreutils | component | GNU Coreutils | partial | 3 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 4 | 1 |
-| component:gnu:findutils | component | GNU Findutils | partial | 2 | 1 |
-| component:gnu:gawk | component | GNU Awk (gawk) | partial | 2 | 1 |
+| component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
+| component:gnu:gawk | component | GNU Awk (gawk) | partial | 3 | 1 |
 | component:gnu:gcc | component | GCC | partial | 2 | 1 |
 | component:gnu:gdb | component | GDB | partial | 1 | 1 |
-| component:gnu:grep | component | GNU Grep | partial | 2 | 1 |
+| component:gnu:grep | component | GNU Grep | partial | 3 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:libtool | component | GNU Libtool | partial | 2 | 1 |
-| component:gnu:make | component | GNU Make | partial | 2 | 1 |
-| component:gnu:nano | component | GNU Nano | partial | 4 | 1 |
+| component:gnu:make | component | GNU Make | partial | 3 | 1 |
+| component:gnu:nano | component | GNU Nano | partial | 5 | 1 |
 | component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
-| component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
-| component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 8 | 1 |
+| component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
+| component:gnu:tar | component | GNU Tar | partial | 3 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 9 | 1 |
 | component:greenwood:less | component | less | partial | 3 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
@@ -44,8 +44,8 @@
 | component:openssl:openssl | component | OpenSSL | partial | 2 | 4 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
-| component:tukaani:xz | component | XZ Utils | partial | 2 | 1 |
-| component:vim:vim | component | Vim | partial | 3 | 1 |
+| component:tukaani:xz | component | XZ Utils | partial | 3 | 1 |
+| component:vim:vim | component | Vim | partial | 5 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 54 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 55 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 38 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -610,7 +610,8 @@
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 4 |
-| library:gnu:libidn2 | library | GNU libidn2 | partial | 2 | 3 |
+| library:gnu:libidn2 | library | GNU libidn2 | partial | 3 | 3 |
+| library:gnu:libintl | library | GNU libintl | partial | 2 | 17 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 2 | 3 |
@@ -623,12 +624,12 @@
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
 | library:gnupg:libgcrypt@msys | library | libgcrypt (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
-| library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 2 | 4 |
+| library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 3 | 4 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 1 |
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
-| library:gnutls:gnutls | library | GnuTLS | partial | 5 | 3 |
+| library:gnutls:gnutls | library | GnuTLS | partial | 6 | 3 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 2 | 2 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
@@ -638,7 +639,7 @@
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 2 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
-| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 2 |
+| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
@@ -649,7 +650,7 @@
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 2 |
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 2 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 2 |
-| library:p11-glue:p11-kit | library | p11-kit | partial | 3 | 2 |
+| library:p11-glue:p11-kit | library | p11-kit | partial | 4 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |
 | library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
@@ -910,7 +911,7 @@
 | package:msys2:libidn2-devel | package | libidn2-devel | verified | 3 | 3 |
 | package:msys2:libinih | package | libinih | verified | 3 | 2 |
 | package:msys2:libinih-devel | package | libinih-devel | verified | 3 | 0 |
-| package:msys2:libintl | package | libintl | verified | 4 | 59 |
+| package:msys2:libintl | package | libintl | verified | 4 | 60 |
 | package:msys2:libksba | package | libksba | verified | 4 | 3 |
 | package:msys2:libksba-devel | package | libksba-devel | verified | 4 | 0 |
 | package:msys2:libltdl | package | libltdl | verified | 2 | 2 |
@@ -16374,5 +16375,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 54 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 55 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

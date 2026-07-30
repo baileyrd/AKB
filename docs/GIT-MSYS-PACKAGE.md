@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:git:git
   - package:msys2:git
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -75,7 +76,7 @@ backends and Git's Perl-scripted subcommands:
 | Cryptography | `package:msys2:openssl` | Backs Git's own use of TLS/cryptographic primitives beyond what curl/openssh already provide. |
 | Regex engine | `package:msys2:libpcre2_8` | Backs Perl-compatible regular expressions in commands such as `git grep --perl-regexp`. |
 | XML parsing | `package:msys2:libexpat` | Backs Git's `git-svn` and remote-helper XML handling. |
-| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
+| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Fallback commit-message editor | `package:msys2:nano` | Backs Git's guaranteed-present fallback editor when no `EDITOR`/`core.editor`/`VISUAL` is configured, not a build-time requirement of Git's own functionality (`claim:component:git:nano-fallback-editor`). |
 | Perl interpreter and modules | `package:msys2:perl`, `perl-Error`, `perl-Authen-SASL`, `perl-libwww`, `perl-MIME-tools`, `perl-Net-SMTP-SSL`, `perl-TermReadKey` | Back Git's Perl-implemented subcommands, most notably `git send-email` (SASL authentication, MIME message construction, SMTP-over-TLS) and `git-cvsserver`/related tooling. |
 
@@ -157,3 +158,4 @@ general version-qualified security review noted above.
 - [OpenSSH](OPENSSH.md)
 - [OpenSSL](OPENSSL.md)
 - [GNU Nano](GNU-NANO.md)
+- [GNU libintl](GNU-LIBINTL.md)

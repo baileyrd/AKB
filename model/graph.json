@@ -1817,6 +1817,24 @@
         "role": "shared error-code vocabulary for the GnuPG library stack"
       },
       "evidence_refs": ["evidence:gnupg:libgpg-error-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libintl",
+      "kind": "library",
+      "name": "GNU libintl",
+      "summary": "The GNU Internationalization (gettext) runtime library, packaged in the MSYS environment and depended on by the majority of MSYS-environment components documented in this knowledge base for translated (NLS) message output.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libintl", "gettext-runtime"],
+      "tags": ["library", "gnu-userland", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/gettext/",
+        "packaged_as": "package:msys2:libintl",
+        "role": "internationalized message translation (NLS) runtime"
+      },
+      "evidence_refs": ["evidence:gnu:libintl-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -5577,6 +5595,246 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-libintl",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:libintl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libintl-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:libintl",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libintl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:libintl",
+      "target": "package:msys2:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:coreutils-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:coreutils",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for coreutils' translated diagnostics.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:findutils-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:findutils",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:gawk-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:gawk",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:grep-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:grep",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:gnu-userland:sed-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:sed",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:nano-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:nano",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:vim-requires-libintl",
+      "type": "requires",
+      "source": "component:vim:vim",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:xz-requires-libintl",
+      "type": "requires",
+      "source": "component:tukaani:xz",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:tar-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:tar",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:autotools:make-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:make",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:git-requires-libintl",
+      "type": "requires",
+      "source": "component:git:git",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libintl",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-msys-requires-libintl",
+      "type": "requires",
+      "source": "library:gnutls:gnutls",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgpg-error-msys-requires-libintl",
+      "type": "requires",
+      "source": "library:gnupg:libgpg-error@msys",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs localized error-string output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-requires-libintl",
+      "type": "requires",
+      "source": "library:gnu:libidn2",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-requires-libintl",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:vim-requires-libxcrypt",
+      "type": "requires",
+      "source": "component:vim:vim",
+      "target": "library:libxcrypt:libxcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Vim's built-in file-encryption feature (:X, -x), which uses crypt()-family hashing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -6909,6 +7167,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official WinEditLine project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-wineditline in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:libintl-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU gettext (official project page)",
+      "locator": "https://www.gnu.org/software/gettext/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU gettext project page, matching the project_url recorded for package:msys2:libintl in the catalog snapshot."
     }
   ]
 }

@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:gnu:sed
   - package:msys2:sed
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -70,7 +71,7 @@ The catalog snapshot records one `runtime-depends-on` edge for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
+| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 
 sed's declared package dependencies also list `sh`, a virtual capability
 provided by `package:msys2:bash` rather than an actual package name; it
@@ -153,4 +154,5 @@ environment's filesystem boundary has not been directly observed.
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Grep](GNU-GREP.md)
 - [GNU Awk (gawk)](GNU-AWK.md)
+- [GNU libintl](GNU-LIBINTL.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:libp11-kit
   - library:gnutls:gnutls
   - library:gnu:libtasn1
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -70,8 +71,10 @@ modules p11-kit loads on the caller's behalf.
 ## Dependencies
 
 The MSYS `package:msys2:libp11-kit` declares dependencies on `libffi`
-(foreign function interface library), `libintl` (gettext-based message
-translation), and `libtasn1` (ASN.1/DER parsing, documented in
+(foreign function interface library), [GNU libintl](GNU-LIBINTL.md)
+(gettext-based message translation,
+`relationship:foundation-libraries:p11-kit-requires-libintl`), and
+`libtasn1` (ASN.1/DER parsing, documented in
 [GNU Libtasn1](GNU-LIBTASN1.md) — the same underlying library GnuTLS
 itself also depends on directly, per
 `relationship:foundation-libraries:p11-kit-requires-libtasn1` in this
@@ -156,3 +159,4 @@ methodology, also remain open.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GnuTLS](GNUTLS.md)
 - [GNU Libtasn1](GNU-LIBTASN1.md)
+- [GNU libintl](GNU-LIBINTL.md)

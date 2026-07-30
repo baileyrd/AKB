@@ -28,10 +28,12 @@
 | relationship:archive-compression:p7zip-packaged-by-package | packaged-by | component:p7zip:p7zip | package:msys2:p7zip | verified |
 | relationship:archive-compression:p7zip-uses-msys-runtime | uses-runtime | component:p7zip:p7zip | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:tar-packaged-by-package | packaged-by | component:gnu:tar | package:msys2:tar | verified |
+| relationship:archive-compression:tar-requires-libintl | requires | component:gnu:tar | library:gnu:libintl | verified |
 | relationship:archive-compression:tar-uses-msys-runtime | uses-runtime | component:gnu:tar | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:unzip-packaged-by-package | packaged-by | component:info-zip:unzip | package:msys2:unzip | verified |
 | relationship:archive-compression:unzip-uses-msys-runtime | uses-runtime | component:info-zip:unzip | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:xz-packaged-by-package | packaged-by | component:tukaani:xz | package:msys2:xz | verified |
+| relationship:archive-compression:xz-requires-libintl | requires | component:tukaani:xz | library:gnu:libintl | verified |
 | relationship:archive-compression:xz-uses-msys-runtime | uses-runtime | component:tukaani:xz | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:zip-packaged-by-package | packaged-by | component:info-zip:zip | package:msys2:zip | verified |
 | relationship:archive-compression:zip-uses-msys-runtime | uses-runtime | component:info-zip:zip | runtime:msys2:msys-2.0.dll | partial |
@@ -44,6 +46,7 @@
 | relationship:autotools:libtool-packaged-by-package | packaged-by | component:gnu:libtool | package:msys2:libtool | verified |
 | relationship:autotools:libtool-uses-msys-runtime | uses-runtime | component:gnu:libtool | runtime:msys2:msys-2.0.dll | partial |
 | relationship:autotools:make-packaged-by-package | packaged-by | component:gnu:make | package:msys2:make | verified |
+| relationship:autotools:make-requires-libintl | requires | component:gnu:make | library:gnu:libintl | verified |
 | relationship:autotools:make-uses-msys-runtime | uses-runtime | component:gnu:make | runtime:msys2:msys-2.0.dll | partial |
 | relationship:autotools:msys-contains-autoconf | contains | environment:msys2:msys | component:gnu:autoconf | partial |
 | relationship:autotools:msys-contains-automake | contains | environment:msys2:msys | component:gnu:automake | partial |
@@ -76187,11 +76190,14 @@
 | relationship:editors-pagers-terminals:msys-contains-vim | contains | environment:msys2:msys | component:vim:vim | partial |
 | relationship:editors-pagers-terminals:nano-packaged-by-package | packaged-by | component:gnu:nano | package:msys2:nano | verified |
 | relationship:editors-pagers-terminals:nano-requires-file | requires | component:gnu:nano | library:darwinsys:file | verified |
+| relationship:editors-pagers-terminals:nano-requires-libintl | requires | component:gnu:nano | library:gnu:libintl | verified |
 | relationship:editors-pagers-terminals:nano-uses-msys-runtime | uses-runtime | component:gnu:nano | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:nano-uses-ncurses | requires | component:gnu:nano | component:gnu:ncurses | verified |
 | relationship:editors-pagers-terminals:ncurses-packaged-by-package | packaged-by | component:gnu:ncurses | package:msys2:ncurses | verified |
 | relationship:editors-pagers-terminals:ncurses-uses-msys-runtime | uses-runtime | component:gnu:ncurses | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:vim-packaged-by-package | packaged-by | component:vim:vim | package:msys2:vim | verified |
+| relationship:editors-pagers-terminals:vim-requires-libintl | requires | component:vim:vim | library:gnu:libintl | verified |
+| relationship:editors-pagers-terminals:vim-requires-libxcrypt | requires | component:vim:vim | library:libxcrypt:libxcrypt | verified |
 | relationship:editors-pagers-terminals:vim-uses-msys-runtime | uses-runtime | component:vim:vim | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:vim-uses-ncurses | requires | component:vim:vim | component:gnu:ncurses | verified |
 | relationship:foundation-libraries:boost-packaged-by-package | packaged-by | library:boost:boost | package:msys2:mingw-w64-ucrt-x86_64-boost | verified |
@@ -76202,6 +76208,7 @@
 | relationship:foundation-libraries:gettext-packaged-by-package | packaged-by | library:gnu:gettext | package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | verified |
 | relationship:foundation-libraries:gettext-requires-libiconv | requires | library:gnu:gettext | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:gmp-packaged-by-package | packaged-by | library:gnu:gmp | package:msys2:mingw-w64-ucrt-x86_64-gmp | verified |
+| relationship:foundation-libraries:gnutls-msys-requires-libintl | requires | library:gnutls:gnutls | library:gnu:libintl | verified |
 | relationship:foundation-libraries:gnutls-packaged-by-package | packaged-by | library:gnutls:gnutls | package:msys2:libgnutls | verified |
 | relationship:foundation-libraries:gnutls-requires-libidn2 | requires | library:gnutls:gnutls | library:gnu:libidn2 | verified |
 | relationship:foundation-libraries:gnutls-requires-libtasn1 | requires | library:gnutls:gnutls | library:gnu:libtasn1 | verified |
@@ -76233,11 +76240,15 @@
 | relationship:foundation-libraries:libgcrypt-packaged-by-package | packaged-by | library:gnupg:libgcrypt | package:msys2:mingw-w64-ucrt-x86_64-libgcrypt | verified |
 | relationship:foundation-libraries:libgcrypt-requires-libgpg-error | requires | library:gnupg:libgcrypt | library:gnupg:libgpg-error | verified |
 | relationship:foundation-libraries:libgpg-error-msys-packaged-by-package | packaged-by | library:gnupg:libgpg-error@msys | package:msys2:libgpg-error | verified |
+| relationship:foundation-libraries:libgpg-error-msys-requires-libintl | requires | library:gnupg:libgpg-error@msys | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libgpg-error-msys-uses-msys-runtime | uses-runtime | library:gnupg:libgpg-error@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgpg-error-packaged-by-package | packaged-by | library:gnupg:libgpg-error | package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | verified |
 | relationship:foundation-libraries:libiconv-packaged-by-package | packaged-by | library:gnu:libiconv | package:msys2:mingw-w64-ucrt-x86_64-libiconv | verified |
 | relationship:foundation-libraries:libidn2-packaged-by-package | packaged-by | library:gnu:libidn2 | package:msys2:libidn2 | verified |
+| relationship:foundation-libraries:libidn2-requires-libintl | requires | library:gnu:libidn2 | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libidn2-uses-msys-runtime | uses-runtime | library:gnu:libidn2 | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libintl-packaged-by-package | packaged-by | library:gnu:libintl | package:msys2:libintl | verified |
+| relationship:foundation-libraries:libintl-uses-msys-runtime | uses-runtime | library:gnu:libintl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libksba-msys-packaged-by-package | packaged-by | library:gnupg:libksba@msys | package:msys2:libksba | verified |
 | relationship:foundation-libraries:libksba-msys-requires-libgpg-error-msys | requires | library:gnupg:libksba@msys | library:gnupg:libgpg-error@msys | verified |
 | relationship:foundation-libraries:libksba-msys-uses-msys-runtime | uses-runtime | library:gnupg:libksba@msys | runtime:msys2:msys-2.0.dll | partial |
@@ -76278,6 +76289,7 @@
 | relationship:foundation-libraries:msys-contains-libgcrypt-msys | contains | environment:msys2:msys | library:gnupg:libgcrypt@msys | partial |
 | relationship:foundation-libraries:msys-contains-libgpg-error-msys | contains | environment:msys2:msys | library:gnupg:libgpg-error@msys | partial |
 | relationship:foundation-libraries:msys-contains-libidn2 | contains | environment:msys2:msys | library:gnu:libidn2 | partial |
+| relationship:foundation-libraries:msys-contains-libintl | contains | environment:msys2:msys | library:gnu:libintl | partial |
 | relationship:foundation-libraries:msys-contains-libksba-msys | contains | environment:msys2:msys | library:gnupg:libksba@msys | partial |
 | relationship:foundation-libraries:msys-contains-libnghttp2 | contains | environment:msys2:msys | library:nghttp2:libnghttp2 | partial |
 | relationship:foundation-libraries:msys-contains-libnghttp3 | contains | environment:msys2:msys | library:nghttp2:libnghttp3 | partial |
@@ -76297,6 +76309,7 @@
 | relationship:foundation-libraries:npth-msys-uses-msys-runtime | uses-runtime | library:gnupg:npth@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:npth-packaged-by-package | packaged-by | library:gnupg:npth | package:msys2:mingw-w64-ucrt-x86_64-npth | verified |
 | relationship:foundation-libraries:p11-kit-packaged-by-package | packaged-by | library:p11-glue:p11-kit | package:msys2:libp11-kit | verified |
+| relationship:foundation-libraries:p11-kit-requires-libintl | requires | library:p11-glue:p11-kit | library:gnu:libintl | verified |
 | relationship:foundation-libraries:p11-kit-requires-libtasn1 | requires | library:p11-glue:p11-kit | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:p11-kit-uses-msys-runtime | uses-runtime | library:p11-glue:p11-kit | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |
@@ -76344,13 +76357,17 @@
 | relationship:gnu-userland:bash-packaged-by-package | packaged-by | component:gnu:bash | package:msys2:bash | verified |
 | relationship:gnu-userland:bash-uses-msys-runtime | uses-runtime | component:gnu:bash | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:coreutils-packaged-by-package | packaged-by | component:gnu:coreutils | package:msys2:coreutils | verified |
+| relationship:gnu-userland:coreutils-requires-libintl | requires | component:gnu:coreutils | library:gnu:libintl | verified |
 | relationship:gnu-userland:coreutils-uses-msys-runtime | uses-runtime | component:gnu:coreutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:emacs-requires-gnutls | requires | component:gnu:emacs | library:gnutls:gnutls | verified |
 | relationship:gnu-userland:findutils-packaged-by-package | packaged-by | component:gnu:findutils | package:msys2:findutils | verified |
+| relationship:gnu-userland:findutils-requires-libintl | requires | component:gnu:findutils | library:gnu:libintl | verified |
 | relationship:gnu-userland:findutils-uses-msys-runtime | uses-runtime | component:gnu:findutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:gawk-packaged-by-package | packaged-by | component:gnu:gawk | package:msys2:gawk | verified |
+| relationship:gnu-userland:gawk-requires-libintl | requires | component:gnu:gawk | library:gnu:libintl | verified |
 | relationship:gnu-userland:gawk-uses-msys-runtime | uses-runtime | component:gnu:gawk | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:grep-packaged-by-package | packaged-by | component:gnu:grep | package:msys2:grep | verified |
+| relationship:gnu-userland:grep-requires-libintl | requires | component:gnu:grep | library:gnu:libintl | verified |
 | relationship:gnu-userland:grep-uses-msys-runtime | uses-runtime | component:gnu:grep | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:msys-contains-bash | contains | environment:msys2:msys | component:gnu:bash | partial |
 | relationship:gnu-userland:msys-contains-coreutils | contains | environment:msys2:msys | component:gnu:coreutils | partial |
@@ -76359,6 +76376,7 @@
 | relationship:gnu-userland:msys-contains-grep | contains | environment:msys2:msys | component:gnu:grep | partial |
 | relationship:gnu-userland:msys-contains-sed | contains | environment:msys2:msys | component:gnu:sed | partial |
 | relationship:gnu-userland:sed-packaged-by-package | packaged-by | component:gnu:sed | package:msys2:sed | verified |
+| relationship:gnu-userland:sed-requires-libintl | requires | component:gnu:sed | library:gnu:libintl | verified |
 | relationship:gnu-userland:sed-uses-msys-runtime | uses-runtime | component:gnu:sed | runtime:msys2:msys-2.0.dll | partial |
 | relationship:inventory:imports-dll-0943995334683ca1d4cb | imports-dll | executable:msys2:/usr/bin/curl.exe | dll:windows:kernel32.dll | verified |
 | relationship:inventory:imports-dll-189721d86432b0e07eee | imports-dll | dll:msys2:/ucrt64/bin/zlib1.dll | dll:windows:api-ms-win-crt-stdio-l1-1-0.dll | verified |
@@ -76926,6 +76944,7 @@
 | relationship:ssh-curl-git:curl-uses-msys-runtime | uses-runtime | component:curl:curl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:git-packaged-by-package | packaged-by | component:git:git | package:msys2:git | verified |
 | relationship:ssh-curl-git:git-requires-curl | requires | component:git:git | component:curl:curl | verified |
+| relationship:ssh-curl-git:git-requires-libintl | requires | component:git:git | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:git-requires-openssh | requires | component:git:git | component:openssh:openssh | verified |
 | relationship:ssh-curl-git:git-requires-openssl | requires | component:git:git | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:git-uses-msys-runtime | uses-runtime | component:git:git | runtime:msys2:msys-2.0.dll | partial |
@@ -76933,6 +76952,7 @@
 | relationship:ssh-curl-git:gnupg-requires-gnutls | requires | component:gnupg:gnupg | library:gnutls:gnutls | verified |
 | relationship:ssh-curl-git:gnupg-requires-libassuan | requires | component:gnupg:gnupg | library:gnupg:libassuan@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libgcrypt | requires | component:gnupg:gnupg | library:gnupg:libgcrypt@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-libintl | requires | component:gnupg:gnupg | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libksba | requires | component:gnupg:gnupg | library:gnupg:libksba@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-nettle | requires | component:gnupg:gnupg | library:nettle:nettle@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-npth | requires | component:gnupg:gnupg | library:gnupg:npth@msys | verified |

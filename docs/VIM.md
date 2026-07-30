@@ -6,6 +6,8 @@ status: partial
 model_refs:
   - component:vim:vim
   - package:msys2:vim
+  - library:libxcrypt:libxcrypt
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -62,8 +64,8 @@ The catalog snapshot records five `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
-| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
-| Password/crypt hashing | `package:msys2:libxcrypt` | Backs Vim's built-in file-encryption feature (`:X`, `-x`), which uses `crypt()`-family hashing. |
+| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
+| Password/crypt hashing | `package:msys2:libxcrypt` | Backs Vim's built-in file-encryption feature (`:X`, `-x`), which uses `crypt()`-family hashing. Documented fully in [libxcrypt](LIBXCRYPT.md). |
 | Embedded Perl scripting | `package:msys2:perl` | Backs optional built-in Perl-interpreter integration, enabling embedded scripting via `:perl` (`claim:component:vim:perl-integration`), an equivalent feature category to Vim's optional Python/Lua/Ruby interpreter integrations. |
 | Terminal capability library | `package:msys2:ncurses` | Screen drawing and cursor control, the same shared dependency documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
 
@@ -106,7 +108,7 @@ motions, and scripting far beyond original vi.
 
 ## Security Considerations
 
-Vim's built-in encryption (`:X`, backed by `libxcrypt`) uses `crypt()`-family
+Vim's built-in encryption (`:X`, backed by [libxcrypt](LIBXCRYPT.md)) uses `crypt()`-family
 hashing, which the project's own documentation and the broader security
 community have long noted is weak relative to modern authenticated
 encryption; it should not be relied on for strong confidentiality. See
@@ -140,3 +142,5 @@ observed.
 - [GNU Ed](GNU-ED.md)
 - [GNU Nano](GNU-NANO.md)
 - [GNU Emacs](GNU-EMACS.md)
+- [libxcrypt](LIBXCRYPT.md)
+- [GNU libintl](GNU-LIBINTL.md)

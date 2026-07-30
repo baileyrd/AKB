@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:make
   - package:msys2:make
   - package:msys2:mingw-w64-ucrt-x86_64-make
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -62,8 +63,9 @@ generator/executor pairing documented for CMake/Meson and Ninja.
 ## Dependencies
 
 The MSYS `package:msys2:make` records one `runtime-depends-on` edge:
-`package:msys2:libintl` (gettext-based message translation, the same NLS
-rationale documented for [GNU Coreutils](GNU-COREUTILS.md)). Its declared
+[GNU libintl](GNU-LIBINTL.md) (`package:msys2:libintl`, gettext-based
+message translation, the same NLS rationale documented for
+[GNU Coreutils](GNU-COREUTILS.md)). Its declared
 dependencies also list `sh`, a virtual capability provided by
 `package:msys2:bash` rather than an actual package name; it is retained in
 `generated/unresolved-dependencies.json` rather than asserted, per the same
@@ -145,3 +147,4 @@ items beyond the general version-qualified security review noted above.
 - [GNU Autoconf](GNU-AUTOCONF.md)
 - [GNU Automake](GNU-AUTOMAKE.md)
 - [Ninja](NINJA.md)
+- [GNU libintl](GNU-LIBINTL.md)

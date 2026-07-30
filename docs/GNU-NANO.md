@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:nano
   - package:msys2:nano
   - library:darwinsys:file
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -63,7 +64,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | File-type detection | `package:msys2:file` | Likely used to help select a syntax-highlighting rule set for files without a recognized extension; this specific mechanism is a plausible but not manual-confirmed explanation, recorded at medium confidence. Documented fully in [file](FILE.md). |
-| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). |
+| Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Terminal capability library | `package:msys2:ncurses` | Screen drawing and cursor control, the same shared dependency documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
 
 Nano's declared dependencies also list `sh`, a virtual capability provided
@@ -136,3 +137,4 @@ manual-confirmed fact; the unresolved `sh` dependency is explained by
 - [GNU Emacs](GNU-EMACS.md)
 - [GNU Ed](GNU-ED.md)
 - [file](FILE.md)
+- [GNU libintl](GNU-LIBINTL.md)

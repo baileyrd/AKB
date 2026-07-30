@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:gnu:tar
   - package:msys2:tar
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -63,7 +64,8 @@ package-dependency concern, addressed below.
 ## Dependencies
 
 The catalog snapshot records two `runtime-depends-on` edges for
-`package:msys2:tar`: `package:msys2:libiconv` and `package:msys2:libintl`,
+`package:msys2:tar`: `package:msys2:libiconv` and
+[GNU libintl](GNU-LIBINTL.md) (`package:msys2:libintl`),
 matching the same character-set-conversion and NLS rationale documented for
 [GNU Coreutils](GNU-COREUTILS.md). Notably, no dependency edge is recorded
 against `zlib`, `libbz2`, or `liblzma` — the codec libraries behind `-z`,
@@ -153,5 +155,6 @@ already flagged in the runtime behavior map remains open.
 - [GNU Gzip](GNU-GZIP.md)
 - [bzip2](BZIP2.md)
 - [XZ Utils](XZ-UTILS.md)
+- [GNU libintl](GNU-LIBINTL.md)
 - [MSYS Runtime Behavior Map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

@@ -6,7 +6,7 @@ status: partial
 model_refs:
   - ecosystem:msys2:msys2
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # Pacman Architecture and Transaction Model
@@ -40,6 +40,18 @@ separate provenance. A failed AKB import must not replace the prior generated
 projection. Package ownership metadata does not establish binary behavior when
 payload bytes are absent. Upgrade, repair, and rollback procedures remain
 operations-guide work and must be tested against a version-qualified install.
+
+## Controlled local state observation
+
+On 2026-07-30, a read-only query of the isolated MSYS installation reported
+pacman `6.1.0-25` with `msys2-keyring 1~20260214-1`. Its configured repository
+order was CLANGARM64, MINGW32, MINGW64, UCRT64, CLANG64, and MSYS. The local
+state contained 175 package-database directories and 170 cache archives; the
+standard hook directory contained no hook files at that instant.
+
+This is configuration and retained-state evidence only. It does not establish
+mirror availability, signature verification outcomes, transaction behavior, or
+the behavior of absent/custom hooks.
 
 ## Related Views
 

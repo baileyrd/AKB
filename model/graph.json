@@ -2483,6 +2483,24 @@
         "role": "multi-protocol file transfer"
       },
       "evidence_refs": ["evidence:curl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:openssl:openssl@ucrt64",
+      "kind": "library",
+      "name": "OpenSSL (UCRT64)",
+      "summary": "The OpenSSL TLS/SSL toolkit, packaged in the UCRT64 environment specifically (CLI and library bundled in one package) and depended on by curl (UCRT64) for HTTPS/TLS support — 124 recorded catalog dependents, the widest reverse-dependency footprint of any library added in this batch — distinct from the separately versioned MSYS openssl (component:openssl:openssl) and libopenssl (library:openssl:libopenssl) this knowledge base already documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "OpenSSL Project",
+      "aliases": ["openssl"],
+      "tags": ["library", "cryptography", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://openssl-library.org",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-openssl",
+        "role": "TLS/SSL protocol implementation and cryptographic primitives"
+      },
+      "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8531,6 +8549,18 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs HTTP Content-Encoding: zstd support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:openssl:openssl@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTPS and other TLS-secured transfers, closing one of the ten sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

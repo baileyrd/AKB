@@ -76213,6 +76213,7 @@
 | relationship:foundation-libraries:clang64-contains-zlib | contains | environment:msys2:clang64 | library:gnu:zlib@clang64 | partial |
 | relationship:foundation-libraries:clang64-contains-zstd | contains | environment:msys2:clang64 | library:facebook:zstd@clang64 | partial |
 | relationship:foundation-libraries:cppdap-packaged-by-package | packaged-by | library:google:cppdap | package:msys2:mingw-w64-ucrt-x86_64-cppdap | verified |
+| relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64 | requires | library:curl:curl@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-zlib | requires | library:curl:curl@ucrt64 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-zstd | requires | library:curl:curl@ucrt64 | library:facebook:zstd | verified |
 | relationship:foundation-libraries:expat-msys-packaged-by-package | packaged-by | library:libexpat:expat@msys | package:msys2:libexpat | verified |

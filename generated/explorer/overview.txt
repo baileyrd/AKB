@@ -677,6 +677,7 @@ Objects
 - library:nghttp2:libnghttp3 (library): libnghttp3
 - library:nghttp2:libngtcp2 (library): libngtcp2
 - library:openssl:libopenssl (library): libopenssl
+- library:openssl:openssl@ucrt64 (library): OpenSSL (UCRT64)
 - library:p11-glue:p11-kit (library): p11-kit
 - library:pcre:pcre (library): PCRE (MSYS)
 - library:pcre:pcre2 (library): PCRE2
@@ -16916,6 +16917,7 @@ Relationships
 - component:cmake:cmake --requires--> library:curl:curl@ucrt64
 - library:curl:curl@ucrt64 --requires--> library:gnu:zlib
 - library:curl:curl@ucrt64 --requires--> library:facebook:zstd
+- library:curl:curl@ucrt64 --requires--> library:openssl:openssl@ucrt64
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

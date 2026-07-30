@@ -606,7 +606,7 @@
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 5 |
-| library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 2 | 1 |
+| library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 3 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
 | library:darwinsys:file | library | file | partial | 5 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 6 |
@@ -680,6 +680,7 @@
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 3 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 3 |
+| library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 1 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |

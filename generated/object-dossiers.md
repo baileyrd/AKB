@@ -5426,7 +5426,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `library:curl:libcurl`
@@ -6085,6 +6085,15 @@
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
 - Incoming relationships: 3
+
+## `library:openssl:openssl@ucrt64`
+
+- Name: OpenSSL (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:p11-glue:p11-kit`
 

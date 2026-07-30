@@ -39,8 +39,10 @@ snapshot, license `Apache-2.0`, matching [openssl's own recorded
 license](OPENSSL.md#architectural-classification)), authored by the
 OpenSSL Project — the same project as
 [the openssl CLI package](OPENSSL.md) itself. No separate native
-(UCRT64/CLANG64/i686) `libopenssl` package was found in this catalog
-snapshot.
+(UCRT64/CLANG64/i686) *split* `libopenssl`-named package was found in
+this catalog snapshot; a UCRT64-native OpenSSL build does exist, but as
+a single bundled CLI+library package rather than a split pair — see
+[OpenSSL (UCRT64)](OPENSSL-UCRT64.md).
 
 ## Responsibilities
 
@@ -115,9 +117,14 @@ library/CLI packaging distinction.
 
 ## Compatibility and Variants
 
-No separate native (UCRT64/CLANG64/i686) `libopenssl` package was found
-in this catalog snapshot; whether one exists in a different snapshot or
-repository is recorded as an open item rather than assumed either way.
+No separate native (UCRT64/CLANG64/i686) *split* `libopenssl`-named
+package was found in this catalog snapshot. **Correction, 2026-07-30**:
+a UCRT64-native OpenSSL package does exist —
+[OpenSSL (UCRT64)](OPENSSL-UCRT64.md) — but unlike this MSYS
+package's CLI/library split, it bundles both CLI and library together
+in one package, the same non-split pattern documented for
+[curl (UCRT64)](CURL-UCRT64.md). Whether a CLANG64/i686 build exists
+remains an open item.
 
 ## Security Considerations
 
@@ -145,9 +152,8 @@ catalog. Package identity, version, and the three modeled dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
 page: the ~24 remaining recorded dependents not individually modeled,
-whether a native (UCRT64/CLANG64/i686) `libopenssl` package exists in
-this snapshot, and header-level API surface / PE import/export-level
-evidence, per the
+whether a CLANG64/i686 build exists, and header-level API surface / PE
+import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -157,3 +163,4 @@ methodology.
 - [OpenSSL](OPENSSL.md)
 - [Heimdal runtime libraries](HEIMDAL-LIBS.md)
 - [libngtcp2](LIBNGTCP2.md)
+- [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)

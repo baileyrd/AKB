@@ -26,7 +26,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 8
 - Incoming relationships: 2
 
 ## `component:git:git`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 38
+- Outgoing relationships: 43
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5454,7 +5454,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:libstdc++`
 
@@ -5471,6 +5471,15 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:gnu:libunistring`
+
+- Name: GNU libunistring
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 3
 
@@ -5573,6 +5582,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:libpsl:libpsl`
+
+- Name: libpsl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 2
+
 ## `library:llvm:libc++`
 
 - Name: libc++
@@ -5615,6 +5633,33 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:nghttp2:libnghttp2`
+
+- Name: libnghttp2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:nghttp2:libnghttp3`
+
+- Name: libnghttp3
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp3-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:nghttp2:libngtcp2`
+
+- Name: libngtcp2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
 
@@ -8100,7 +8145,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libnghttp2-devel`
 
@@ -8118,7 +8163,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libnghttp3-devel`
 
@@ -8136,7 +8181,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libngtcp2-devel`
 
@@ -8316,7 +8361,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libpsl-devel`
 
@@ -8541,7 +8586,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `package:msys2:libunistring-devel`
 
@@ -147132,7 +147177,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 38
+- Incoming relationships: 43
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

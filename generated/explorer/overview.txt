@@ -609,6 +609,7 @@ Objects
 - library:gnu:libidn2 (library): GNU libidn2
 - library:gnu:libstdc++ (library): libstdc++
 - library:gnu:libtasn1 (library): GNU Libtasn1
+- library:gnu:libunistring (library): GNU libunistring
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:readline (library): GNU Readline
 - library:gnu:zlib (library): zlib
@@ -620,11 +621,15 @@ Objects
 - library:gnutls:gnutls (library): GnuTLS
 - library:libexpat:expat (library): Expat
 - library:libisl:isl (library): isl (Integer Set Library)
+- library:libpsl:libpsl (library): libpsl
 - library:llvm:libc++ (library): libc++
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:winpthreads (library): winpthreads
 - library:multiprecision:mpc (library): GNU MPC
 - library:nettle:nettle (library): Nettle
+- library:nghttp2:libnghttp2 (library): libnghttp2
+- library:nghttp2:libnghttp3 (library): libnghttp3
+- library:nghttp2:libngtcp2 (library): libngtcp2
 - library:p11-glue:p11-kit (library): p11-kit
 - library:pcre:pcre2 (library): PCRE2
 - library:sqlite:sqlite3 (library): SQLite
@@ -16577,6 +16582,28 @@ Relationships
 - library:gnutls:gnutls --requires--> library:gnu:libtasn1
 - library:gnutls:gnutls --requires--> library:p11-glue:p11-kit
 - library:p11-glue:p11-kit --requires--> library:gnu:libtasn1
+- environment:msys2:msys --contains--> library:libpsl:libpsl
+- library:libpsl:libpsl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libpsl:libpsl --packaged-by--> package:msys2:libpsl
+- environment:msys2:msys --contains--> library:gnu:libunistring
+- library:gnu:libunistring --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libunistring --packaged-by--> package:msys2:libunistring
+- environment:msys2:msys --contains--> library:nghttp2:libnghttp2
+- library:nghttp2:libnghttp2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nghttp2:libnghttp2 --packaged-by--> package:msys2:libnghttp2
+- environment:msys2:msys --contains--> library:nghttp2:libnghttp3
+- library:nghttp2:libnghttp3 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nghttp2:libnghttp3 --packaged-by--> package:msys2:libnghttp3
+- environment:msys2:msys --contains--> library:nghttp2:libngtcp2
+- library:nghttp2:libngtcp2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nghttp2:libngtcp2 --packaged-by--> package:msys2:libngtcp2
+- component:curl:curl --requires--> library:libpsl:libpsl
+- component:curl:curl --requires--> library:gnu:libunistring
+- component:curl:curl --requires--> library:nghttp2:libnghttp2
+- component:curl:curl --requires--> library:nghttp2:libnghttp3
+- component:curl:curl --requires--> library:nghttp2:libngtcp2
+- library:libpsl:libpsl --requires--> library:gnu:libidn2
+- library:libpsl:libpsl --requires--> library:gnu:libunistring
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan
 - component:gnupg:gnupg --requires--> library:gnupg:libksba

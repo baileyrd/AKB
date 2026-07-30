@@ -32,6 +32,11 @@ model_refs:
   - library:gnu:libidn2
   - library:gnu:libtasn1
   - library:p11-glue:p11-kit
+  - library:libpsl:libpsl
+  - library:gnu:libunistring
+  - library:nghttp2:libnghttp2
+  - library:nghttp2:libnghttp3
+  - library:nghttp2:libngtcp2
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -60,6 +65,11 @@ evidence_refs:
   - evidence:gnu:libidn2-manual-2026-07-30
   - evidence:gnu:libtasn1-manual-2026-07-30
   - evidence:p11-glue:p11-kit-manual-2026-07-30
+  - evidence:libpsl:manual-2026-07-30
+  - evidence:gnu:libunistring-manual-2026-07-30
+  - evidence:nghttp2:libnghttp2-manual-2026-07-30
+  - evidence:nghttp2:libnghttp3-manual-2026-07-30
+  - evidence:nghttp2:libngtcp2-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -102,8 +112,11 @@ flowchart LR
 [libgpg-error](LIBGPG-ERROR.md), [libgcrypt](LIBGCRYPT.md),
 [libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md),
 [nPth](NPTH.md), [Nettle](NETTLE.md), [GnuTLS](GNUTLS.md),
-[GNU libidn2](GNU-LIBIDN2.md), [GNU Libtasn1](GNU-LIBTASN1.md), and
-[p11-kit](P11-KIT.md) are this volume's first per-library pages. The
+[GNU libidn2](GNU-LIBIDN2.md), [GNU Libtasn1](GNU-LIBTASN1.md),
+[p11-kit](P11-KIT.md), [libpsl](LIBPSL.md),
+[GNU libunistring](GNU-LIBUNISTRING.md), [libnghttp2](LIBNGHTTP2.md),
+[libnghttp3](LIBNGHTTP3.md), and [libngtcp2](LIBNGTCP2.md) are this
+volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -116,7 +129,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All twenty-eight pages are deliberately scoped to package/dependency-level
+All thirty-three pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -142,9 +155,21 @@ were themselves left as an explicitly open item on first publication;
 [GNU libidn2](GNU-LIBIDN2.md), [GNU Libtasn1](GNU-LIBTASN1.md), and
 [p11-kit](P11-KIT.md) close that item with three more pages and `requires`
 edges from `library:gnutls:gnutls`, following the dependency chain one
-level deeper than any other family in this volume has gone so far. These
-pages are a starting point for this volume, not a demonstration that its
-full evidence model is populated.
+level deeper than any other family in this volume has gone so far. The
+same pattern was then applied to [curl's](CURL.md) own directly-declared
+dependencies: [libpsl](LIBPSL.md), [GNU libunistring](GNU-LIBUNISTRING.md),
+[libnghttp2](LIBNGHTTP2.md), [libnghttp3](LIBNGHTTP3.md), and
+[libngtcp2](LIBNGTCP2.md) now each have pages and `requires` edges from
+`component:curl:curl`, plus their own inter-library edges where the
+catalog records them (libpsl on libidn2 and libunistring, p11-kit on
+libtasn1). One dependency was deliberately left as a prose-only mention
+rather than a graph edge: libidn2 is a dependency of `libcurl`, curl's own
+transfer library, not of the `curl` CLI package itself, so no `requires`
+edge from `component:curl:curl` to `library:gnu:libidn2` was added,
+recorded explicitly on [GNU libidn2's own page](GNU-LIBIDN2.md#reverse-dependencies)
+rather than silently added or silently omitted. These pages are a
+starting point for this volume, not a demonstration that its full
+evidence model is populated.
 
 ## Family navigation
 

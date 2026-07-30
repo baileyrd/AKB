@@ -7,6 +7,9 @@ model_refs:
   - library:gnu:libidn2
   - package:msys2:libidn2
   - library:gnutls:gnutls
+  - library:gnu:libunistring
+  - library:libpsl:libpsl
+  - component:curl:curl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -62,9 +65,9 @@ that; this page and its catalog package concern `libidn2` only).
 ## Dependencies
 
 The MSYS `package:msys2:libidn2` declares dependencies on `libintl`
-(gettext-based message translation) and `libunistring` (Unicode string
-processing) — both separate MSYS-environment sibling packages not yet
-given their own pages in this volume.
+(gettext-based message translation, not yet given its own page in this
+volume) and [libunistring](GNU-LIBUNISTRING.md) (Unicode string
+processing).
 
 ## Reverse Dependencies
 
@@ -144,3 +147,5 @@ methodology, also remain open.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GnuTLS](GNUTLS.md)
 - [curl](CURL.md)
+- [GNU libunistring](GNU-LIBUNISTRING.md)
+- [libpsl](LIBPSL.md)

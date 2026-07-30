@@ -1403,6 +1403,96 @@
         "role": "PKCS#11 module loading and coordination"
       },
       "evidence_refs": ["evidence:p11-glue:p11-kit-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libpsl:libpsl",
+      "kind": "library",
+      "name": "libpsl",
+      "summary": "A library for parsing and evaluating a domain name against Mozilla's Public Suffix List, packaged in the MSYS environment and depended on by both curl and libcurl for cookie-domain-scoping safety.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libpsl project",
+      "aliases": ["libpsl"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://github.com/rockdaboot/libpsl",
+        "packaged_as": "package:msys2:libpsl",
+        "role": "Public Suffix List parsing and evaluation"
+      },
+      "evidence_refs": ["evidence:libpsl:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libunistring",
+      "kind": "library",
+      "name": "GNU libunistring",
+      "summary": "A library for manipulating Unicode strings and C strings, packaged in the MSYS environment and depended on by curl, libcurl, libidn2, and libpsl for Unicode-aware string processing.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libunistring"],
+      "tags": ["library", "text-processing", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libunistring/",
+        "packaged_as": "package:msys2:libunistring",
+        "role": "Unicode-aware string manipulation"
+      },
+      "evidence_refs": ["evidence:gnu:libunistring-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nghttp2:libnghttp2",
+      "kind": "library",
+      "name": "libnghttp2",
+      "summary": "A reusable C library implementing the framing layer of HTTP/2, packaged in the MSYS environment and depended on by both curl and libcurl for HTTP/2 protocol support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "nghttp2 project",
+      "aliases": ["libnghttp2", "nghttp2"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://nghttp2.org/",
+        "packaged_as": "package:msys2:libnghttp2",
+        "role": "HTTP/2 protocol framing"
+      },
+      "evidence_refs": ["evidence:nghttp2:libnghttp2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nghttp2:libnghttp3",
+      "kind": "library",
+      "name": "libnghttp3",
+      "summary": "An HTTP/3 protocol library, packaged in the MSYS environment and depended on by both curl and libcurl for HTTP/3 protocol support, alongside libngtcp2's QUIC transport.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "nghttp2 project",
+      "aliases": ["libnghttp3"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://nghttp2.org/nghttp3",
+        "packaged_as": "package:msys2:libnghttp3",
+        "role": "HTTP/3 protocol implementation"
+      },
+      "evidence_refs": ["evidence:nghttp2:libnghttp3-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:nghttp2:libngtcp2",
+      "kind": "library",
+      "name": "libngtcp2",
+      "summary": "An implementation of the IETF QUIC transport protocol, packaged in the MSYS environment and depended on by both curl and libcurl to carry HTTP/3 traffic (via libnghttp3) over QUIC.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "nghttp2 project",
+      "aliases": ["libngtcp2"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://nghttp2.org/ngtcp2",
+        "packaged_as": "package:msys2:libngtcp2",
+        "role": "QUIC transport protocol implementation"
+      },
+      "evidence_refs": ["evidence:nghttp2:libngtcp2-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -4107,6 +4197,270 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-libpsl",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:libpsl:libpsl",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:libpsl:libpsl",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libpsl, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libpsl:libpsl",
+      "target": "package:msys2:libpsl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libunistring",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:libunistring",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libunistring-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:libunistring",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libunistring, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libunistring-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:libunistring",
+      "target": "package:msys2:libunistring",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libnghttp2",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:nghttp2:libnghttp2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libnghttp2-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:nghttp2:libnghttp2",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libnghttp2, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libnghttp2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:nghttp2:libnghttp2",
+      "target": "package:msys2:libnghttp2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libnghttp3",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:nghttp2:libnghttp3",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libnghttp3-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:nghttp2:libnghttp3",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libnghttp3, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libnghttp3-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:nghttp2:libnghttp3",
+      "target": "package:msys2:libnghttp3",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libngtcp2",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:nghttp2:libngtcp2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libngtcp2-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:nghttp2:libngtcp2",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libngtcp2, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libngtcp2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:nghttp2:libngtcp2",
+      "target": "package:msys2:libngtcp2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-libpsl",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:libpsl:libpsl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs correct cookie-domain-scoping decisions using the Public Suffix List.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-libunistring",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:gnu:libunistring",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode-aware string processing, for example in internationalized domain names.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-libnghttp2",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:nghttp2:libnghttp2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the HTTP/2 protocol.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-libnghttp3",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:nghttp2:libnghttp3",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the HTTP/3 protocol (which runs over QUIC rather than TCP).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-libngtcp2",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:nghttp2:libngtcp2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the QUIC transport protocol underlying HTTP/3, alongside libnghttp3.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-requires-libidn2",
+      "type": "requires",
+      "source": "library:libpsl:libpsl",
+      "target": "library:gnu:libidn2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA) handling during Public Suffix List matching.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-requires-libunistring",
+      "type": "requires",
+      "source": "library:libpsl:libpsl",
+      "target": "library:gnu:libunistring",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode-aware string handling during Public Suffix List matching.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -5269,6 +5623,56 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official p11-kit project page, matching the project_url recorded for package:msys2:libp11-kit in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libpsl:manual-2026-07-30",
+      "class": "primary",
+      "title": "libpsl (GitHub project page)",
+      "locator": "https://github.com/rockdaboot/libpsl",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libpsl project page, matching the project_url recorded for package:msys2:libpsl in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:libunistring-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU libunistring (official project page)",
+      "locator": "https://www.gnu.org/software/libunistring/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU libunistring project page, matching the project_url recorded for package:msys2:libunistring in the catalog snapshot."
+    },
+    {
+      "id": "evidence:nghttp2:libnghttp2-manual-2026-07-30",
+      "class": "primary",
+      "title": "nghttp2 project site (libnghttp2)",
+      "locator": "https://nghttp2.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official nghttp2 project site, matching the project_url recorded for package:msys2:libnghttp2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:nghttp2:libnghttp3-manual-2026-07-30",
+      "class": "primary",
+      "title": "nghttp3 project page",
+      "locator": "https://nghttp2.org/nghttp3",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official nghttp3 project page, matching the project_url recorded for package:msys2:libnghttp3 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:nghttp2:libngtcp2-manual-2026-07-30",
+      "class": "primary",
+      "title": "ngtcp2 project page",
+      "locator": "https://nghttp2.org/ngtcp2",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official ngtcp2 project page, matching the project_url recorded for package:msys2:libngtcp2 in the catalog snapshot."
     }
   ]
 }

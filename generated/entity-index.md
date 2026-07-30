@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
 | component:cmake:cmake | component | CMake | partial | 3 | 1 |
-| component:curl:curl | component | curl | partial | 3 | 2 |
+| component:curl:curl | component | curl | partial | 8 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 38 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 43 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 31 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -609,9 +609,10 @@
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
-| library:gnu:libidn2 | library | GNU libidn2 | partial | 2 | 2 |
+| library:gnu:libidn2 | library | GNU libidn2 | partial | 2 | 3 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
+| library:gnu:libunistring | library | GNU libunistring | partial | 2 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
 | library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
 | library:gnu:zlib | library | zlib | partial | 1 | 4 |
@@ -623,11 +624,15 @@
 | library:gnutls:gnutls | library | GnuTLS | partial | 5 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
+| library:libpsl:libpsl | library | libpsl | partial | 4 | 2 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 2 |
+| library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 2 |
+| library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 2 |
+| library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 2 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 3 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 2 | 1 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
@@ -903,11 +908,11 @@
 | package:msys2:libneon-devel | package | libneon-devel | verified | 5 | 0 |
 | package:msys2:libnettle | package | libnettle | verified | 3 | 3 |
 | package:msys2:libnettle-devel | package | libnettle-devel | verified | 5 | 2 |
-| package:msys2:libnghttp2 | package | libnghttp2 | verified | 3 | 4 |
+| package:msys2:libnghttp2 | package | libnghttp2 | verified | 3 | 5 |
 | package:msys2:libnghttp2-devel | package | libnghttp2-devel | verified | 7 | 1 |
-| package:msys2:libnghttp3 | package | libnghttp3 | verified | 3 | 3 |
+| package:msys2:libnghttp3 | package | libnghttp3 | verified | 3 | 4 |
 | package:msys2:libnghttp3-devel | package | libnghttp3-devel | verified | 3 | 1 |
-| package:msys2:libngtcp2 | package | libngtcp2 | verified | 4 | 3 |
+| package:msys2:libngtcp2 | package | libngtcp2 | verified | 4 | 4 |
 | package:msys2:libngtcp2-devel | package | libngtcp2-devel | verified | 4 | 1 |
 | package:msys2:libnpth | package | libnpth | verified | 3 | 2 |
 | package:msys2:libnpth-devel | package | libnpth-devel | verified | 3 | 0 |
@@ -927,7 +932,7 @@
 | package:msys2:libpcreposix | package | libpcreposix | verified | 3 | 2 |
 | package:msys2:libpipeline | package | libpipeline | verified | 3 | 2 |
 | package:msys2:libpipeline-devel | package | libpipeline-devel | verified | 3 | 0 |
-| package:msys2:libpsl | package | libpsl | verified | 4 | 4 |
+| package:msys2:libpsl | package | libpsl | verified | 4 | 5 |
 | package:msys2:libpsl-devel | package | libpsl-devel | verified | 5 | 1 |
 | package:msys2:libqrencode | package | libqrencode | verified | 2 | 2 |
 | package:msys2:libqrencode-devel | package | libqrencode-devel | verified | 3 | 0 |
@@ -952,7 +957,7 @@
 | package:msys2:libtool | package | libtool | verified | 4 | 2 |
 | package:msys2:libtre | package | libtre | verified | 5 | 2 |
 | package:msys2:libtre-devel | package | libtre-devel | verified | 5 | 0 |
-| package:msys2:libunistring | package | libunistring | verified | 3 | 10 |
+| package:msys2:libunistring | package | libunistring | verified | 3 | 11 |
 | package:msys2:libunistring-devel | package | libunistring-devel | verified | 4 | 1 |
 | package:msys2:libunrar | package | libunrar | verified | 3 | 1 |
 | package:msys2:libunrar-devel | package | libunrar-devel | verified | 3 | 0 |
@@ -16351,5 +16356,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 38 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 43 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

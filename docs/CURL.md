@@ -6,6 +6,11 @@ status: partial
 model_refs:
   - component:curl:curl
   - package:msys2:curl
+  - library:nghttp2:libnghttp2
+  - library:nghttp2:libnghttp3
+  - library:nghttp2:libngtcp2
+  - library:libpsl:libpsl
+  - library:gnu:libunistring
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -65,11 +70,11 @@ CLI tool documented in this batch, reflecting curl's multi-protocol design:
 | TLS/cryptography | `package:msys2:openssl` | Backs HTTPS and other TLS-secured transfers (`relationship:ssh-curl-git:curl-requires-openssl`). |
 | Transfer library | `package:msys2:libcurl` | The `curl` CLI links against `libcurl`, its own shared transfer library, the CLI/library split noted above. |
 | Certificate trust store | `package:msys2:ca-certificates` | Backs TLS certificate-chain verification against a trusted root store. |
-| HTTP/2 support | `package:msys2:libnghttp2` | Backs the HTTP/2 protocol. |
-| HTTP/3 support | `package:msys2:libnghttp3` | Backs the HTTP/3 protocol (which runs over QUIC rather than TCP). |
-| QUIC transport | `package:msys2:libngtcp2` | Backs the QUIC transport protocol underlying HTTP/3, alongside `libnghttp3` above. |
-| Public Suffix List | `package:msys2:libpsl` | Backs correct cookie-domain-scoping decisions using the Public Suffix List, preventing cookies from being set for overly broad domain suffixes. |
-| Unicode string handling | `package:msys2:libunistring` | Backs Unicode-aware string processing, for example in internationalized domain names. |
+| HTTP/2 support | `package:msys2:libnghttp2` | Backs the HTTP/2 protocol. Documented fully in [libnghttp2](LIBNGHTTP2.md). |
+| HTTP/3 support | `package:msys2:libnghttp3` | Backs the HTTP/3 protocol (which runs over QUIC rather than TCP). Documented fully in [libnghttp3](LIBNGHTTP3.md). |
+| QUIC transport | `package:msys2:libngtcp2` | Backs the QUIC transport protocol underlying HTTP/3, alongside `libnghttp3` above. Documented fully in [libngtcp2](LIBNGTCP2.md). |
+| Public Suffix List | `package:msys2:libpsl` | Backs correct cookie-domain-scoping decisions using the Public Suffix List, preventing cookies from being set for overly broad domain suffixes. Documented fully in [libpsl](LIBPSL.md). |
+| Unicode string handling | `package:msys2:libunistring` | Backs Unicode-aware string processing, for example in internationalized domain names. Documented fully in [GNU libunistring](GNU-LIBUNISTRING.md). |
 | Compression | `package:msys2:zlib` | Backs transparent decompression of `Content-Encoding: gzip`/`deflate` HTTP responses. |
 
 ## Reverse Dependencies
@@ -138,3 +143,8 @@ general version-qualified security review noted above.
 - [OpenSSL](OPENSSL.md)
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
 - [OpenSSH](OPENSSH.md)
+- [libnghttp2](LIBNGHTTP2.md)
+- [libnghttp3](LIBNGHTTP3.md)
+- [libngtcp2](LIBNGTCP2.md)
+- [libpsl](LIBPSL.md)
+- [GNU libunistring](GNU-LIBUNISTRING.md)

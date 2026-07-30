@@ -141,3 +141,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [libffi (MSYS)](LIBFFI-MSYS.md)
+- [libffi (UCRT64)](LIBFFI-UCRT64.md)

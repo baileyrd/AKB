@@ -7,6 +7,7 @@ model_refs:
   - library:mozilla:ca-certificates@ucrt64
   - package:msys2:mingw-w64-ucrt-x86_64-ca-certificates
   - library:curl:curl@ucrt64
+  - library:p11-glue:p11-kit@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:mozilla:ca-certificates-manual-2026-07-30
@@ -63,11 +64,11 @@ libraries read at runtime, the same non-code interface documented for
 ## Dependencies
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-ca-certificates`
-declares one `runtime-depends-on` edge: `mingw-w64-ucrt-x86_64-p11-kit`
-— a UCRT64-native p11-kit package not individually modeled in this
-knowledge base (this knowledge base documents
-[p11-kit (MSYS)](P11-KIT.md), a separate catalog entity), so no formal
-`requires` edge is added for that reason.
+declares one `runtime-depends-on` edge:
+[p11-kit (UCRT64)](P11-KIT-UCRT64.md)
+(`relationship:foundation-libraries:ca-certificates-ucrt64-requires-p11-kit-ucrt64`,
+added 2026-07-30 — closing an item this page had previously left
+explicitly unmodeled).
 
 ## Reverse Dependencies
 
@@ -134,10 +135,9 @@ Mozilla CA certificate policy page
 evidence record [ca-certificates (MSYS)](CA-CERTIFICATES.md) cites.
 Package identity, version, license, and the one modeled dependent edge
 are backed by the pacman catalog snapshot (`evidence:catalog:current`).
-Open, and explicitly out of scope for this page: the `p11-kit`
-(UCRT64) sub-dependency is not individually modeled in this knowledge
-base, the remaining recorded dependents not individually modeled, and
-header-level API surface / PE import/export-level evidence, per the
+Open, and explicitly out of scope for this page: the remaining
+recorded dependents not individually modeled, and header-level API
+surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -147,3 +147,4 @@ methodology.
 - [ca-certificates (MSYS)](CA-CERTIFICATES.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+- [p11-kit (UCRT64)](P11-KIT-UCRT64.md)

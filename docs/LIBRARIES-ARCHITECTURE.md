@@ -103,6 +103,10 @@ model_refs:
   - library:nghttp2:libnghttp2@ucrt64
   - library:nghttp2:libngtcp2@ucrt64
   - library:nghttp2:libnghttp3@ucrt64
+  - library:libffi:libffi@ucrt64
+  - library:gnu:libtasn1@ucrt64
+  - library:p11-glue:p11-kit@ucrt64
+  - library:gnutls:gnutls@ucrt64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -245,8 +249,12 @@ flowchart LR
 [libpsl (UCRT64)](LIBPSL-UCRT64.md),
 [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md),
 [libnghttp2 (UCRT64)](LIBNGHTTP2-UCRT64.md),
-[libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md), and
-[libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md) are
+[libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md),
+[libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md),
+[libffi (UCRT64)](LIBFFI-UCRT64.md),
+[GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md),
+[p11-kit (UCRT64)](P11-KIT-UCRT64.md), and
+[GnuTLS (UCRT64)](GNUTLS-UCRT64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -261,7 +269,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All ninety-nine pages are deliberately scoped to package/dependency-level
+All one hundred and three pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -631,9 +639,24 @@ own previously-unlinked optional dependency), and the HTTP/2, HTTP/3,
 and QUIC trio [libnghttp2 (UCRT64)](LIBNGHTTP2-UCRT64.md),
 [libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md), and
 [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md) (libngtcp2 itself depending
-on [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) for QUIC's TLS 1.3 handshake,
-with a UCRT64-native GnuTLS package as its unmodeled alternative TLS
-backend, recorded as an explicitly open item). These pages are a starting point for this
+on [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) for QUIC's TLS 1.3 handshake).
+A final batch closed that remaining open item: [GnuTLS (UCRT64)](GNUTLS-UCRT64.md),
+libngtcp2 (UCRT64)'s second declared TLS backend, with 31 recorded
+catalog dependents and eleven of its own twelve declared dependencies
+already modeled elsewhere in this volume — one of the most densely
+connected entities added this session. Closing it pulled in three more
+new UCRT64-native entities one level further down GnuTLS's own
+dependency chain: [libffi (UCRT64)](LIBFFI-UCRT64.md) (the third
+distinct libffi-named entity in this knowledge base),
+[GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md), and
+[p11-kit (UCRT64)](P11-KIT-UCRT64.md) — the latter also closing a
+second open item, [ca-certificates (UCRT64)'s](CA-CERTIFICATES-UCRT64.md)
+own previously-unmodeled p11-kit dependency. GnuTLS (UCRT64)'s reverse
+dependents include separate UCRT64-native `gnupg` and `emacs`
+packages, distinct catalog entities from this knowledge base's MSYS
+[GnuPG](GNUPG.md) and [GNU Emacs](GNU-EMACS.md) — flagged explicitly
+rather than conflated, the same MSYS/UCRT64 discipline maintained
+throughout this session. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

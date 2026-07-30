@@ -138,3 +138,4 @@ methodology, remain open.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GnuTLS](GNUTLS.md)
 - [p11-kit](P11-KIT.md)
+- [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md)

@@ -2681,6 +2681,78 @@
         "role": "HTTP/3 protocol implementation"
       },
       "evidence_refs": ["evidence:nghttp2:libnghttp3-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libffi:libffi@ucrt64",
+      "kind": "library",
+      "name": "libffi (UCRT64)",
+      "summary": "A portable, high-level foreign function interface library, packaged in the UCRT64 environment specifically and depended on by p11-kit (UCRT64), distinct from the separately versioned MSYS and CLANG64 libffi entities this knowledge base already documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libffi project",
+      "aliases": ["libffi"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://sourceware.org/libffi",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libffi",
+        "role": "foreign function interface"
+      },
+      "evidence_refs": ["evidence:libffi:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libtasn1@ucrt64",
+      "kind": "library",
+      "name": "GNU Libtasn1 (UCRT64)",
+      "summary": "An ASN.1 structure parser/DER encoder library, packaged in the UCRT64 environment specifically and depended on by GnuTLS (UCRT64) and p11-kit (UCRT64), distinct from the separately versioned MSYS libtasn1 this knowledge base's library:gnu:libtasn1 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libtasn1"],
+      "tags": ["library", "cryptography"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libtasn1/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libtasn1",
+        "role": "ASN.1/DER parsing"
+      },
+      "evidence_refs": ["evidence:gnu:libtasn1-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:p11-glue:p11-kit@ucrt64",
+      "kind": "library",
+      "name": "p11-kit (UCRT64)",
+      "summary": "A PKCS#11 module discovery/coordination library, packaged in the UCRT64 environment specifically and depended on by ca-certificates (UCRT64) and GnuTLS (UCRT64), distinct from the separately versioned MSYS p11-kit this knowledge base's library:p11-glue:p11-kit entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "p11-glue project",
+      "aliases": ["p11-kit"],
+      "tags": ["library", "cryptography"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://p11-glue.github.io/p11-glue/p11-kit.html",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-p11-kit",
+        "role": "PKCS#11 module discovery and coordination"
+      },
+      "evidence_refs": ["evidence:p11-glue:p11-kit-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnutls:gnutls@ucrt64",
+      "kind": "library",
+      "name": "GnuTLS (UCRT64)",
+      "summary": "GnuTLS, a library implementing TLS/SSL and related cryptographic protocols, packaged in the UCRT64 environment specifically and depended on by libngtcp2 (UCRT64) as an alternative TLS backend to OpenSSL, among 31 recorded catalog dependents (including separate UCRT64-native gnupg and emacs packages, distinct from this knowledge base's MSYS GnuPG and GNU Emacs entities), distinct from the separately versioned MSYS GnuTLS this knowledge base's library:gnutls:gnutls entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuTLS project",
+      "aliases": ["gnutls"],
+      "tags": ["library", "cryptography", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnutls.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gnutls",
+        "role": "TLS/SSL protocol implementation"
+      },
+      "evidence_refs": ["evidence:gnutls:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8980,7 +9052,199 @@
       "status": "verified",
       "confidence": "verified",
       "scope": "runtime",
-      "condition": "Backs QUIC's own TLS 1.3 handshake; this package also declares a dependency on a UCRT64-native GnuTLS package not individually modeled in this knowledge base.",
+      "condition": "Backs QUIC's own TLS 1.3 handshake as one of two declared TLS backends for this package.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libngtcp2-ucrt64-requires-gnutls-ucrt64",
+      "type": "requires",
+      "source": "library:nghttp2:libngtcp2@ucrt64",
+      "target": "library:gnutls:gnutls@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: this page had previously left this dependency unmodeled; GnuTLS (UCRT64) is the second of two declared TLS backends for this package alongside OpenSSL (UCRT64).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-brotli-ucrt64",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:google:brotli@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Brotli-compressed certificate support (RFC 8879).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-gettext",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-gmp",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs public-key cryptography's arbitrary-precision arithmetic.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-libidn2-ucrt64",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:gnu:libidn2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA) processing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-libtasn1-ucrt64",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:gnu:libtasn1@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs ASN.1/DER parsing for certificates.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-libunistring-ucrt64",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:gnu:libunistring@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode string processing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-libwinpthread",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:mingw-w64:libwinpthread",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs POSIX-threads-style threading support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-nettle",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:nettle:nettle",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs GnuTLS's own Nettle-based cryptographic primitives.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-p11-kit-ucrt64",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:p11-glue:p11-kit@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs PKCS#11 module support, for hardware security tokens and smart cards.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-zlib",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs compressed-certificate support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-ucrt64-requires-zstd",
+      "type": "requires",
+      "source": "library:gnutls:gnutls@ucrt64",
+      "target": "library:facebook:zstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Zstandard-compressed certificate support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ca-certificates-ucrt64-requires-p11-kit-ucrt64",
+      "type": "requires",
+      "source": "library:mozilla:ca-certificates@ucrt64",
+      "target": "library:p11-glue:p11-kit@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: this page had previously left this dependency unmodeled since no UCRT64-native p11-kit package was modeled at the time.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-ucrt64-requires-libtasn1-ucrt64",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit@ucrt64",
+      "target": "library:gnu:libtasn1@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs ASN.1/DER parsing for certificates.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-ucrt64-requires-libffi-ucrt64",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit@ucrt64",
+      "target": "library:libffi:libffi@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs p11-kit's foreign-function-interface needs for loading PKCS#11 modules.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-ucrt64-requires-gettext",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit@ucrt64",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

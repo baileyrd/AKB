@@ -5463,7 +5463,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `library:facebook:zstd@clang64`
 
@@ -5517,7 +5517,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `library:gnu:gmp`
 
@@ -5526,7 +5526,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `library:gnu:gmp@msys`
 
@@ -5571,7 +5571,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:libintl`
 
@@ -5609,6 +5609,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 3
 
+## `library:gnu:libtasn1@ucrt64`
+
+- Name: GNU Libtasn1 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
+
 ## `library:gnu:libunistring`
 
 - Name: GNU libunistring
@@ -5625,7 +5634,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:mpfr`
 
@@ -5688,7 +5697,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 11
+- Incoming relationships: 12
 
 ## `library:gnu:zlib@clang64`
 
@@ -5807,6 +5816,15 @@
 - Outgoing relationships: 9
 - Incoming relationships: 3
 
+## `library:gnutls:gnutls@ucrt64`
+
+- Name: GnuTLS (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 11
+- Incoming relationships: 1
+
 ## `library:google:brotli`
 
 - Name: Brotli
@@ -5823,7 +5841,7 @@
 - Status: `partial`
 - Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:google:cppdap`
 
@@ -5909,6 +5927,15 @@
 ## `library:libffi:libffi@msys`
 
 - Name: libffi (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:libffi:libffi@ucrt64`
+
+- Name: libffi (UCRT64)
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
@@ -6012,7 +6039,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:mingw-w64:libwinpthread@clang64`
 
@@ -6065,7 +6092,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 0
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `library:multiprecision:mpc`
@@ -6102,7 +6129,7 @@
 - Status: `partial`
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:nettle:nettle@msys`
 
@@ -6164,7 +6191,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 1
 
 ## `library:openssl:libopenssl`
@@ -6192,6 +6219,15 @@
 - Status: `partial`
 - Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
+- Incoming relationships: 2
+
+## `library:p11-glue:p11-kit@ucrt64`
+
+- Name: p11-kit (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:pcre:pcre`

@@ -78,14 +78,15 @@ string processing,
 ## Reverse Dependencies
 
 The catalog snapshot records 11 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-libidn2`. Two are now modeled in
+`package:msys2:mingw-w64-ucrt-x86_64-libidn2`. Three are now modeled in
 this knowledge base: [curl (UCRT64)](CURL-UCRT64.md)
-(`relationship:foundation-libraries:curl-ucrt64-requires-libidn2-ucrt64`)
-and [libpsl (UCRT64)](LIBPSL-UCRT64.md)
-(`relationship:foundation-libraries:libpsl-ucrt64-requires-libidn2-ucrt64`).
-The remaining recorded dependents (`gmime`, `gnutls` — a UCRT64-native
-GnuTLS package not individually modeled in this knowledge base —
-`msmtp`, `qemu`, `qemu-image-util`, `wget`, and `wget2`) are not
+(`relationship:foundation-libraries:curl-ucrt64-requires-libidn2-ucrt64`),
+[libpsl (UCRT64)](LIBPSL-UCRT64.md)
+(`relationship:foundation-libraries:libpsl-ucrt64-requires-libidn2-ucrt64`),
+and [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+(`relationship:foundation-libraries:gnutls-ucrt64-requires-libidn2-ucrt64`).
+The remaining recorded dependents (`gmime`, `msmtp`, `qemu`,
+`qemu-image-util`, `wget`, and `wget2`) are not
 individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -141,8 +142,7 @@ official GNU libidn2 project page
 license, and the recorded dependency/dependent edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open, and
 explicitly out of scope for this page: the remaining recorded
-dependents not individually modeled (including the UCRT64-native
-`gnutls` package), and header-level API surface / PE
+dependents not individually modeled, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -154,3 +154,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [libpsl (UCRT64)](LIBPSL-UCRT64.md)
 - [GNU libunistring (UCRT64)](GNU-LIBUNISTRING-UCRT64.md)
+- [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)

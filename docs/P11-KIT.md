@@ -162,3 +162,4 @@ methodology, also remain open.
 - [GNU Libtasn1](GNU-LIBTASN1.md)
 - [GNU libintl](GNU-LIBINTL.md)
 - [libffi (MSYS)](LIBFFI-MSYS.md)
+- [p11-kit (UCRT64)](P11-KIT-UCRT64.md)

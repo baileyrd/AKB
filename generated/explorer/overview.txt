@@ -624,6 +624,7 @@ Objects
 - library:gnu:libltdl (library): GNU Libltdl
 - library:gnu:libstdc++ (library): libstdc++
 - library:gnu:libtasn1 (library): GNU Libtasn1
+- library:gnu:libtasn1@ucrt64 (library): GNU Libtasn1 (UCRT64)
 - library:gnu:libunistring (library): GNU libunistring
 - library:gnu:libunistring@ucrt64 (library): libunistring (UCRT64)
 - library:gnu:mpfr (library): GNU MPFR
@@ -646,6 +647,7 @@ Objects
 - library:gnupg:npth (library): nPth (New Portable Threads)
 - library:gnupg:npth@msys (library): nPth (MSYS)
 - library:gnutls:gnutls (library): GnuTLS
+- library:gnutls:gnutls@ucrt64 (library): GnuTLS (UCRT64)
 - library:google:brotli (library): Brotli
 - library:google:brotli@ucrt64 (library): Brotli (UCRT64)
 - library:google:cppdap (library): cppdap
@@ -658,6 +660,7 @@ Objects
 - library:libexpat:expat@msys (library): Expat (MSYS)
 - library:libffi:libffi@clang64 (library): libffi (CLANG64)
 - library:libffi:libffi@msys (library): libffi (MSYS)
+- library:libffi:libffi@ucrt64 (library): libffi (UCRT64)
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
 - library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
@@ -689,6 +692,7 @@ Objects
 - library:openssl:libopenssl (library): libopenssl
 - library:openssl:openssl@ucrt64 (library): OpenSSL (UCRT64)
 - library:p11-glue:p11-kit (library): p11-kit
+- library:p11-glue:p11-kit@ucrt64 (library): p11-kit (UCRT64)
 - library:pcre:pcre (library): PCRE (MSYS)
 - library:pcre:pcre2 (library): PCRE2
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
@@ -16948,6 +16952,22 @@ Relationships
 - library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libidn2@ucrt64
 - library:gnu:libunistring@ucrt64 --requires--> library:gnu:libiconv
 - library:nghttp2:libngtcp2@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:nghttp2:libngtcp2@ucrt64 --requires--> library:gnutls:gnutls@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:google:brotli@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:gettext
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:gmp
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:libidn2@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:libtasn1@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:libunistring@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:mingw-w64:libwinpthread
+- library:gnutls:gnutls@ucrt64 --requires--> library:nettle:nettle
+- library:gnutls:gnutls@ucrt64 --requires--> library:p11-glue:p11-kit@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:zlib
+- library:gnutls:gnutls@ucrt64 --requires--> library:facebook:zstd
+- library:mozilla:ca-certificates@ucrt64 --requires--> library:p11-glue:p11-kit@ucrt64
+- library:p11-glue:p11-kit@ucrt64 --requires--> library:gnu:libtasn1@ucrt64
+- library:p11-glue:p11-kit@ucrt64 --requires--> library:libffi:libffi@ucrt64
+- library:p11-glue:p11-kit@ucrt64 --requires--> library:gnu:gettext
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

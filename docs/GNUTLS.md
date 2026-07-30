@@ -189,3 +189,4 @@ methodology, also remain open.
 - [GNU Libtasn1](GNU-LIBTASN1.md)
 - [GNU libintl](GNU-LIBINTL.md)
 - [p11-kit](P11-KIT.md)
+- [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)

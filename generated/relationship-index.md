@@ -76207,6 +76207,7 @@
 | relationship:foundation-libraries:brotli-uses-msys-runtime | uses-runtime | library:google:brotli | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:bzip2-requires-libbz2 | requires | component:bzip2:bzip2 | library:bzip2:libbz2 | verified |
 | relationship:foundation-libraries:ca-certificates-packaged-by-package | packaged-by | library:mozilla:ca-certificates | package:msys2:ca-certificates | verified |
+| relationship:foundation-libraries:ca-certificates-ucrt64-requires-p11-kit-ucrt64 | requires | library:mozilla:ca-certificates@ucrt64 | library:p11-glue:p11-kit@ucrt64 | verified |
 | relationship:foundation-libraries:clang-libs-packaged-by-package | packaged-by | library:llvm:clang-libs | package:msys2:mingw-w64-clang-x86_64-clang-libs | verified |
 | relationship:foundation-libraries:clang64-contains-clang-libs | contains | environment:msys2:clang64 | library:llvm:clang-libs | partial |
 | relationship:foundation-libraries:clang64-contains-llvm-libs | contains | environment:msys2:clang64 | library:llvm:llvm-libs | partial |
@@ -76245,6 +76246,17 @@
 | relationship:foundation-libraries:gnutls-requires-libidn2 | requires | library:gnutls:gnutls | library:gnu:libidn2 | verified |
 | relationship:foundation-libraries:gnutls-requires-libtasn1 | requires | library:gnutls:gnutls | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:gnutls-requires-p11-kit | requires | library:gnutls:gnutls | library:p11-glue:p11-kit | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-brotli-ucrt64 | requires | library:gnutls:gnutls@ucrt64 | library:google:brotli@ucrt64 | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-gettext | requires | library:gnutls:gnutls@ucrt64 | library:gnu:gettext | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-gmp | requires | library:gnutls:gnutls@ucrt64 | library:gnu:gmp | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-libidn2-ucrt64 | requires | library:gnutls:gnutls@ucrt64 | library:gnu:libidn2@ucrt64 | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-libtasn1-ucrt64 | requires | library:gnutls:gnutls@ucrt64 | library:gnu:libtasn1@ucrt64 | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-libunistring-ucrt64 | requires | library:gnutls:gnutls@ucrt64 | library:gnu:libunistring@ucrt64 | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-libwinpthread | requires | library:gnutls:gnutls@ucrt64 | library:mingw-w64:libwinpthread | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-nettle | requires | library:gnutls:gnutls@ucrt64 | library:nettle:nettle | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-p11-kit-ucrt64 | requires | library:gnutls:gnutls@ucrt64 | library:p11-glue:p11-kit@ucrt64 | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-zlib | requires | library:gnutls:gnutls@ucrt64 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:gnutls-ucrt64-requires-zstd | requires | library:gnutls:gnutls@ucrt64 | library:facebook:zstd | verified |
 | relationship:foundation-libraries:gnutls-uses-msys-runtime | uses-runtime | library:gnutls:gnutls | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-libs-packaged-by-package | packaged-by | library:h5l:heimdal-libs | package:msys2:heimdal-libs | verified |
 | relationship:foundation-libraries:heimdal-libs-requires-libopenssl | requires | library:h5l:heimdal-libs | library:openssl:libopenssl | verified |
@@ -76327,6 +76339,7 @@
 | relationship:foundation-libraries:libnghttp3-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp3 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libngtcp2-packaged-by-package | packaged-by | library:nghttp2:libngtcp2 | package:msys2:libngtcp2 | verified |
 | relationship:foundation-libraries:libngtcp2-requires-libopenssl | requires | library:nghttp2:libngtcp2 | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:libngtcp2-ucrt64-requires-gnutls-ucrt64 | requires | library:nghttp2:libngtcp2@ucrt64 | library:gnutls:gnutls@ucrt64 | verified |
 | relationship:foundation-libraries:libngtcp2-ucrt64-requires-openssl-ucrt64 | requires | library:nghttp2:libngtcp2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:libngtcp2-uses-msys-runtime | uses-runtime | library:nghttp2:libngtcp2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libpsl-packaged-by-package | packaged-by | library:libpsl:libpsl | package:msys2:libpsl | verified |
@@ -76420,6 +76433,9 @@
 | relationship:foundation-libraries:p11-kit-requires-libffi-msys | requires | library:p11-glue:p11-kit | library:libffi:libffi@msys | verified |
 | relationship:foundation-libraries:p11-kit-requires-libintl | requires | library:p11-glue:p11-kit | library:gnu:libintl | verified |
 | relationship:foundation-libraries:p11-kit-requires-libtasn1 | requires | library:p11-glue:p11-kit | library:gnu:libtasn1 | verified |
+| relationship:foundation-libraries:p11-kit-ucrt64-requires-gettext | requires | library:p11-glue:p11-kit@ucrt64 | library:gnu:gettext | verified |
+| relationship:foundation-libraries:p11-kit-ucrt64-requires-libffi-ucrt64 | requires | library:p11-glue:p11-kit@ucrt64 | library:libffi:libffi@ucrt64 | verified |
+| relationship:foundation-libraries:p11-kit-ucrt64-requires-libtasn1-ucrt64 | requires | library:p11-glue:p11-kit@ucrt64 | library:gnu:libtasn1@ucrt64 | verified |
 | relationship:foundation-libraries:p11-kit-uses-msys-runtime | uses-runtime | library:p11-glue:p11-kit | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre-packaged-by-package | packaged-by | library:pcre:pcre | package:msys2:libpcre | verified |
 | relationship:foundation-libraries:pcre-uses-msys-runtime | uses-runtime | library:pcre:pcre | runtime:msys2:msys-2.0.dll | partial |

@@ -68,12 +68,14 @@ The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-brotli` declares no
 ## Reverse Dependencies
 
 The catalog snapshot records 20 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-brotli`. One is now modeled in
+`package:msys2:mingw-w64-ucrt-x86_64-brotli`. Two are now modeled in
 this knowledge base: [curl (UCRT64)](CURL-UCRT64.md)
-(`relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64`).
-The remaining ~19 recorded dependents (a broad mix of UCRT64 packages
-including `arrow`, `freetype`, `gnutls`, `libheif`, `wget2`, and
-`wireshark`) are not individually modeled in this knowledge base; see
+(`relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64`)
+and [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+(`relationship:foundation-libraries:gnutls-ucrt64-requires-brotli-ucrt64`).
+The remaining ~18 recorded dependents (a broad mix of UCRT64 packages
+including `arrow`, `freetype`, `libheif`, `wget2`, and `wireshark`) are
+not individually modeled in this knowledge base; see
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -138,3 +140,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Brotli (MSYS)](BROTLI.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
+- [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)

@@ -140,3 +140,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [p11-kit](P11-KIT.md)
 - [libffi (CLANG64)](LIBFFI-CLANG64.md)
+- [libffi (UCRT64)](LIBFFI-UCRT64.md)

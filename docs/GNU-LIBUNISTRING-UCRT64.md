@@ -74,14 +74,15 @@ one `runtime-depends-on` edge: [GNU libiconv](GNU-LIBICONV.md)
 ## Reverse Dependencies
 
 The catalog snapshot records 6 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-libunistring`. Two are now
+`package:msys2:mingw-w64-ucrt-x86_64-libunistring`. Three are now
 modeled in this knowledge base:
 [GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md)
-(`relationship:foundation-libraries:libidn2-ucrt64-requires-libunistring-ucrt64`)
-and [libpsl (UCRT64)](LIBPSL-UCRT64.md)
-(`relationship:foundation-libraries:libpsl-ucrt64-requires-libunistring-ucrt64`).
-The remaining recorded dependents (`gnutls` — a UCRT64-native GnuTLS
-package not individually modeled in this knowledge base — `notcurses`,
+(`relationship:foundation-libraries:libidn2-ucrt64-requires-libunistring-ucrt64`),
+[libpsl (UCRT64)](LIBPSL-UCRT64.md)
+(`relationship:foundation-libraries:libpsl-ucrt64-requires-libunistring-ucrt64`),
+and [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+(`relationship:foundation-libraries:gnutls-ucrt64-requires-libunistring-ucrt64`).
+The remaining recorded dependents (`notcurses`,
 `qemu`, and `qemu-image-util`) are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -135,12 +136,11 @@ libunistring defect.
 Unicode string-processing scope is backed by the official libunistring
 project site (`evidence:gnu:libunistring-manual-2026-07-30`), the same
 evidence record [GNU libunistring (MSYS)](GNU-LIBUNISTRING.md) cites.
-Package identity, version, license, and the two modeled dependent
+Package identity, version, license, and the three modeled dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: the remaining recorded dependents not individually modeled
-(including the UCRT64-native `gnutls` package), and header-level API
-surface / PE import/export-level evidence, per the
+this page: the remaining recorded dependents not individually modeled,
+and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -150,4 +150,5 @@ methodology.
 - [GNU libunistring (MSYS)](GNU-LIBUNISTRING.md)
 - [GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md)
 - [libpsl (UCRT64)](LIBPSL-UCRT64.md)
+- [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
 - [GNU libiconv](GNU-LIBICONV.md)

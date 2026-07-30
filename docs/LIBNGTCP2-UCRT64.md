@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-ngtcp2
   - library:curl:curl@ucrt64
   - library:openssl:openssl@ucrt64
+  - library:gnutls:gnutls@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:nghttp2:libngtcp2-manual-2026-07-30
@@ -66,10 +67,11 @@ The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-ngtcp2` declares
 dependencies on [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) (QUIC's own TLS
 1.3 handshake,
 `relationship:foundation-libraries:libngtcp2-ucrt64-requires-openssl-ucrt64`)
-and `mingw-w64-ucrt-x86_64-gnutls` — a UCRT64-native GnuTLS package not
-individually modeled in this knowledge base (this knowledge base
-documents [GnuTLS (MSYS)](GNUTLS.md), a separate catalog entity), so no
-formal `requires` edge is added for that alternative TLS backend.
+and [GnuTLS (UCRT64)](GNUTLS-UCRT64.md) (the second of two declared
+TLS backends,
+`relationship:foundation-libraries:libngtcp2-ucrt64-requires-gnutls-ucrt64`,
+added 2026-07-30 — closing an item this page had previously left
+explicitly unmodeled).
 
 ## Reverse Dependencies
 
@@ -129,10 +131,8 @@ project page (`evidence:nghttp2:libngtcp2-manual-2026-07-30`), the same
 evidence record [libngtcp2 (MSYS)](LIBNGTCP2.md) cites. Package
 identity, version, license, and the recorded dependency/dependent edges
 are backed by the pacman catalog snapshot (`evidence:catalog:current`).
-Open, and explicitly out of scope for this page: the `gnutls` (UCRT64)
-alternative-TLS-backend sub-dependency is not individually modeled in
-this knowledge base, and header-level API surface / PE
-import/export-level evidence, per the
+Open, and explicitly out of scope for this page: header-level API
+surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -143,3 +143,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md)
+- [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)

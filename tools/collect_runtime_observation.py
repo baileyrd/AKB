@@ -21,6 +21,7 @@ PROBES = {
     "posix_to_windows_path": ("cygpath", "-w", "/usr/bin"),
     "windows_to_posix_path": ("cygpath", "-u", "C:/Windows"),
     "mount_table": ("mount",),
+    "proc_self_executable": ("readlink", "/proc/self/exe"),
 }
 
 

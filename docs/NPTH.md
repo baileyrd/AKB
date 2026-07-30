@@ -6,7 +6,7 @@ status: partial
 model_refs:
   - library:gnupg:npth
   - package:msys2:mingw-w64-ucrt-x86_64-npth
-  - component:gnupg:gnupg
+  - library:gnupg:npth@msys
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnupg:npth-manual-2026-07-30
@@ -19,11 +19,16 @@ last_verified: 2026-07-30
 ## Purpose
 
 nPth is GnuPG's own portable threading library, used internally for
-GnuPG's concurrent operations — a separate, project-owned alternative to
-depending on the platform's native threading library or a general-purpose
-one like [libwinpthread](LIBWINPTHREAD.md). This page documents its
-architectural role; see the [GnuPG project site](https://gnupg.org/) for
-background.
+GnuPG-family concurrent operations — a separate, project-owned
+alternative to depending on the platform's native threading library or a
+general-purpose one like [libwinpthread](LIBWINPTHREAD.md). This page
+documents the **UCRT64**-packaged build specifically; the MSYS-packaged
+`package:msys2:gnupg` component GnuPG.md documents actually depends on a
+differently named MSYS sibling package (`libnpth`), corrected 2026-07-30
+and documented on [nPth (MSYS)](NPTH-MSYS.md) — this page no longer
+claims a direct GnuPG dependency for that reason. See the
+[GnuPG project site](https://gnupg.org/) for background shared by both
+packages.
 
 ## Architectural Classification
 
@@ -64,11 +69,13 @@ libraries documented as the hub of
 ## Reverse Dependencies
 
 The snapshot records 2 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-npth`, including
-[GnuPG](GNUPG.md#dependencies) itself
-(`relationship:ssh-curl-git:gnupg-requires-npth`). See the
+`package:msys2:mingw-w64-ucrt-x86_64-npth` (its own `-devel` subpackage
+and one other). [GnuPG](GNUPG.md) is **not** among them — that was a
+pre-2026-07-30 modeling error, corrected in favor of
+[nPth (MSYS)](NPTH-MSYS.md#reverse-dependencies), which GnuPG's own
+MSYS-packaged catalog dependency actually targets. See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
-for the current full list.
+for the current full list of this UCRT64 package's actual dependents.
 
 ## Configuration
 
@@ -78,15 +85,17 @@ determined by the calling GnuPG component's own use of its threading API.
 ## Initialization and Execution Flow
 
 As a library, nPth has no independent process lifecycle: it initializes
-and executes within the GnuPG process that uses it for concurrent
-operations, the same general library-linkage model documented for
+and executes within the process that uses it for concurrent operations,
+the same general library-linkage model documented for
 [libgpg-error](LIBGPG-ERROR.md#initialization-and-execution-flow).
+[GnuPG's](GNUPG.md) own MSYS-packaged build links against
+[nPth (MSYS)](NPTH-MSYS.md) instead of this UCRT64 package.
 
 ## Runtime Behavior
 
-Given its narrow, GnuPG-internal scope, this page does not characterize
-nPth's runtime behavior beyond noting it backs GnuPG's own concurrency
-needs.
+Given its narrow, GnuPG-family-internal scope, this page does not
+characterize nPth's runtime behavior beyond noting it backs
+GnuPG-family concurrency needs generally.
 
 ## Compatibility and Variants
 
@@ -103,9 +112,9 @@ review has been performed for the recorded `1.8-1` version.
 
 ## Failure Modes and Diagnostics
 
-nPth itself has no user-facing CLI; concurrency-related issues in GnuPG
-components should be diagnosed against GnuPG's own behavior first, given
-this library's narrow internal role.
+nPth itself has no user-facing CLI; concurrency-related issues should be
+diagnosed against the linking program's own behavior first, given this
+library's narrow internal role.
 
 ## Evidence, Assumptions, and Open Questions
 
@@ -113,14 +122,20 @@ The internal-threading role is backed by the official GnuPG project site
 (`evidence:gnupg:npth-manual-2026-07-30`), matching the `project_url`
 already recorded for `package:msys2:mingw-w64-ucrt-x86_64-npth` in the
 catalog. Package identity, version, license, and the dependency edge are
-backed by the pacman catalog snapshot (`evidence:catalog:current`). Open,
-and explicitly out of scope for this page: header-level API surface and
-PE import/export-level evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+backed by the pacman catalog snapshot (`evidence:catalog:current`).
+Correction (2026-07-30): this page previously claimed a direct
+`component:gnupg:gnupg` dependency and cited
+`relationship:ssh-curl-git:gnupg-requires-npth` as evidence; that
+relationship's target has since been corrected to
+[nPth (MSYS)](NPTH-MSYS.md), since `package:msys2:gnupg` is an
+MSYS-environment package and this page's UCRT64 package was never its
+actual catalog-recorded dependency. Open, and explicitly out of scope for
+this page: header-level API surface and PE import/export-level evidence,
+per the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
-- [GnuPG](GNUPG.md)
+- [nPth (MSYS)](NPTH-MSYS.md)
 - [libwinpthread](LIBWINPTHREAD.md)

@@ -7,8 +7,7 @@ model_refs:
   - library:nettle:nettle
   - package:msys2:mingw-w64-ucrt-x86_64-nettle
   - library:gnu:gmp
-  - component:gnupg:gnupg
-  - component:gnu:emacs
+  - library:nettle:nettle@msys
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:nettle:manual-2026-07-30
@@ -20,13 +19,21 @@ last_verified: 2026-07-30
 
 ## Purpose
 
-Nettle is a low-level cryptographic library, and it already appears twice
-elsewhere in this knowledge base as a dependency: for
-[GnuPG](GNUPG.md#dependencies)'s `dirmngr` TLS connections (via GnuTLS)
-and for [GNU Emacs](GNU-EMACS.md#dependencies)'s Network Security
-Manager. This page documents its architectural role; see the
+Nettle is a low-level cryptographic library. This page documents the
+**UCRT64**-packaged build specifically; [GnuPG's](GNUPG.md) own
+MSYS-packaged direct dependency on a package literally named `nettle` is
+a separately versioned MSYS sibling package, documented 2026-07-30 on
+[Nettle (MSYS)](NETTLE-MSYS.md), not this UCRT64 package. GnuTLS's own
+Nettle use (backing both GnuPG's `dirmngr` TLS connections and GNU
+Emacs' Network Security Manager transitively) is via yet a third,
+differently named MSYS package, `libnettle`
+(`package:msys2:libnettle`), which [GnuTLS's own page](GNUTLS.md#dependencies)
+already declines to model as a formal graph edge for the same reason —
+none of this knowledge base's three Nettle-named entities
+(`library:nettle:nettle`, `library:nettle:nettle@msys`, and the
+unmodeled `libnettle`) should be conflated. See the
 [official Nettle project site](https://www.lysator.liu.se/~nisse/nettle)
-for the API reference.
+for the API reference shared by all three packages.
 
 ## Architectural Classification
 
@@ -68,12 +75,14 @@ public-key algorithms, documented fully in [GNU MP](GNU-GMP.md)).
 ## Reverse Dependencies
 
 The snapshot records 10 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-nettle`, including
-[GnuPG](GNUPG.md#dependencies) itself
-(`relationship:ssh-curl-git:gnupg-requires-nettle`) and, transitively,
-[GNU Emacs](GNU-EMACS.md#dependencies) via GnuTLS. See the
+`package:msys2:mingw-w64-ucrt-x86_64-nettle`. [GnuPG](GNUPG.md) is
+**not** among them — that was a pre-2026-07-30 modeling error, corrected
+in favor of [Nettle (MSYS)](NETTLE-MSYS.md#reverse-dependencies), which
+GnuPG's own MSYS-packaged catalog dependency actually targets. GNU
+Emacs' transitive path through GnuTLS also does not target this UCRT64
+package (see Purpose). See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
-for the current full list.
+for the current full list of this UCRT64 package's actual dependents.
 
 ## Configuration
 
@@ -102,10 +111,10 @@ enumerate them.
 
 ## Security Considerations
 
-As a cryptographic primitives library consumed transitively by both
-[GnuPG](GNUPG.md) and [GNU Emacs](GNU-EMACS.md)'s network security
-features, Nettle sits in a security-relevant position in this
-environment's dependency graph. See
+As a cryptographic primitives library in the Nettle family (see Purpose
+for the three distinct MSYS/UCRT64 packages sharing this name), Nettle
+sits in a security-relevant position for whatever program links against
+this specific UCRT64 build. See
 [Threat Model and Supply Chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md) for the
 project's general supply-chain posture; no version-qualified CVE review
 has been performed for the recorded `4.0-1` version.
@@ -113,9 +122,8 @@ has been performed for the recorded `4.0-1` version.
 ## Failure Modes and Diagnostics
 
 Nettle itself has no user-facing CLI; cryptographic-operation failures in
-a dependent (directly or via GnuTLS) should be triaged against that
-dependent's own documentation and, where applicable, GnuTLS's
-intermediary role before assuming a Nettle defect.
+a dependent should be triaged against that dependent's own documentation
+before assuming a Nettle defect.
 
 ## Evidence, Assumptions, and Open Questions
 
@@ -124,9 +132,19 @@ Nettle project site (`evidence:nettle:manual-2026-07-30`), matching the
 `project_url` already recorded for
 `package:msys2:mingw-w64-ucrt-x86_64-nettle` in the catalog. Package
 identity, version, license, and the GMP dependency edge are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: header-level API surface and PE
-import/export-level evidence, per the
+pacman catalog snapshot (`evidence:catalog:current`). Correction
+(2026-07-30): this page previously claimed a direct
+`component:gnupg:gnupg` dependency and cited
+`relationship:ssh-curl-git:gnupg-requires-nettle` as evidence; that
+relationship's target has since been corrected to
+[Nettle (MSYS)](NETTLE-MSYS.md), since `package:msys2:gnupg` is an
+MSYS-environment package and this page's UCRT64 package was never its
+actual catalog-recorded dependency. The GNU Emacs transitive-via-GnuTLS
+claim was also removed: GnuTLS's actual Nettle dependency is a third,
+unmodeled MSYS package (`libnettle`), distinct from both this page's
+UCRT64 package and [Nettle (MSYS)](NETTLE-MSYS.md)'s `nettle` package.
+Open, and explicitly out of scope for this page: header-level API
+surface and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -134,5 +152,5 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU MP (GMP)](GNU-GMP.md)
+- [Nettle (MSYS)](NETTLE-MSYS.md)
 - [GnuPG](GNUPG.md)
-- [GNU Emacs](GNU-EMACS.md)

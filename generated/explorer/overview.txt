@@ -616,10 +616,15 @@ Objects
 - library:gnu:termcap (library): GNU termcap
 - library:gnu:zlib (library): zlib
 - library:gnupg:libassuan (library): libassuan
+- library:gnupg:libassuan@msys (library): libassuan (MSYS)
 - library:gnupg:libgcrypt (library): libgcrypt
+- library:gnupg:libgcrypt@msys (library): libgcrypt (MSYS)
 - library:gnupg:libgpg-error (library): libgpg-error
+- library:gnupg:libgpg-error@msys (library): libgpg-error (MSYS)
 - library:gnupg:libksba (library): libksba
+- library:gnupg:libksba@msys (library): libksba (MSYS)
 - library:gnupg:npth (library): nPth (New Portable Threads)
+- library:gnupg:npth@msys (library): nPth (MSYS)
 - library:gnutls:gnutls (library): GnuTLS
 - library:google:cppdap (library): cppdap
 - library:h5l:heimdal (library): Heimdal
@@ -637,6 +642,7 @@ Objects
 - library:mingweditline:wineditline (library): WinEditLine
 - library:multiprecision:mpc (library): GNU MPC
 - library:nettle:nettle (library): Nettle
+- library:nettle:nettle@msys (library): Nettle (MSYS)
 - library:nghttp2:libnghttp2 (library): libnghttp2
 - library:nghttp2:libnghttp3 (library): libnghttp3
 - library:nghttp2:libngtcp2 (library): libngtcp2
@@ -16661,11 +16667,32 @@ Relationships
 - component:gnu:nano --requires--> library:darwinsys:file
 - library:gnu:readline --requires--> library:gnu:termcap
 - library:pcre:pcre2 --requires--> library:mingweditline:wineditline
-- component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
-- component:gnupg:gnupg --requires--> library:gnupg:libassuan
-- component:gnupg:gnupg --requires--> library:gnupg:libksba
-- component:gnupg:gnupg --requires--> library:gnupg:npth
-- component:gnupg:gnupg --requires--> library:nettle:nettle
+- environment:msys2:msys --contains--> library:gnupg:libgcrypt@msys
+- library:gnupg:libgcrypt@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libgcrypt@msys --packaged-by--> package:msys2:libgcrypt
+- environment:msys2:msys --contains--> library:gnupg:libassuan@msys
+- library:gnupg:libassuan@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libassuan@msys --packaged-by--> package:msys2:libassuan
+- environment:msys2:msys --contains--> library:gnupg:libksba@msys
+- library:gnupg:libksba@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libksba@msys --packaged-by--> package:msys2:libksba
+- environment:msys2:msys --contains--> library:gnupg:npth@msys
+- library:gnupg:npth@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:npth@msys --packaged-by--> package:msys2:libnpth
+- environment:msys2:msys --contains--> library:nettle:nettle@msys
+- library:nettle:nettle@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nettle:nettle@msys --packaged-by--> package:msys2:nettle
+- environment:msys2:msys --contains--> library:gnupg:libgpg-error@msys
+- library:gnupg:libgpg-error@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libgpg-error@msys --packaged-by--> package:msys2:libgpg-error
+- library:gnupg:libgcrypt@msys --requires--> library:gnupg:libgpg-error@msys
+- library:gnupg:libassuan@msys --requires--> library:gnupg:libgpg-error@msys
+- library:gnupg:libksba@msys --requires--> library:gnupg:libgpg-error@msys
+- component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
+- component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
+- component:gnupg:gnupg --requires--> library:gnupg:libksba@msys
+- component:gnupg:gnupg --requires--> library:gnupg:npth@msys
+- component:gnupg:gnupg --requires--> library:nettle:nettle@msys
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

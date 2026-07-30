@@ -6,6 +6,12 @@ status: partial
 model_refs:
   - component:gnupg:gnupg
   - package:msys2:gnupg
+  - library:gnupg:libgcrypt@msys
+  - library:gnupg:libassuan@msys
+  - library:gnupg:libksba@msys
+  - library:gnupg:npth@msys
+  - library:nettle:nettle@msys
+  - library:gnupg:libgpg-error@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -64,12 +70,12 @@ stack plus archive, terminal, and database libraries:
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Symmetric/public-key cryptography | `package:msys2:libgcrypt` | GnuPG's primary low-level cryptographic library, independent of OpenSSL's. |
-| Low-level crypto primitives | `package:msys2:nettle` | Backs additional cryptographic primitives, the same Nettle library documented as a GnuTLS dependency for [GNU Emacs](GNU-EMACS.md#dependencies). |
-| GnuPG error codes | `package:msys2:libgpg-error` | Shared error-code definitions used across the GnuPG project's own library stack. |
-| IPC between GnuPG components | `package:msys2:libassuan` | Backs the Assuan IPC protocol GnuPG uses for communication between `gpg`, `dirmngr`, and other GnuPG-family helper processes. |
-| Certificate/CMS handling | `package:msys2:libksba` | Backs X.509/CMS certificate parsing, used specifically by GnuPG's S/MIME support (`gpgsm`) despite GnuPG's primary focus being OpenPGP rather than X.509. |
-| Threading | `package:msys2:libnpth` | GnuPG's own portable threading library (New/Nth Pth), used internally for concurrent operations. |
+| Symmetric/public-key cryptography | `package:msys2:libgcrypt` | GnuPG's primary low-level cryptographic library, independent of OpenSSL's. Documented fully in [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libgcrypt](LIBGCRYPT.md) package, which GnuPG does not actually depend on. |
+| Low-level crypto primitives | `package:msys2:nettle` | Backs additional cryptographic primitives; a different MSYS-packaged catalog entity from the UCRT64 Nettle library documented as a GnuTLS dependency for [GNU Emacs](GNU-EMACS.md#dependencies). Documented fully in [Nettle (MSYS)](NETTLE-MSYS.md) — corrected 2026-07-30 from an earlier link to the UCRT64 [Nettle](NETTLE.md) package. |
+| GnuPG error codes | `package:msys2:libgpg-error` | Shared error-code definitions used across the GnuPG project's own library stack. Documented fully in [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md). |
+| IPC between GnuPG components | `package:msys2:libassuan` | Backs the Assuan IPC protocol GnuPG uses for communication between `gpg`, `dirmngr`, and other GnuPG-family helper processes. Documented fully in [libassuan (MSYS)](LIBASSUAN-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libassuan](LIBASSUAN.md) package. |
+| Certificate/CMS handling | `package:msys2:libksba` | Backs X.509/CMS certificate parsing, used specifically by GnuPG's S/MIME support (`gpgsm`) despite GnuPG's primary focus being OpenPGP rather than X.509. Documented fully in [libksba (MSYS)](LIBKSBA-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libksba](LIBKSBA.md) package. |
+| Threading | `package:msys2:libnpth` | GnuPG's own portable threading library (New/Nth Pth), used internally for concurrent operations. Documented fully in [nPth (MSYS)](NPTH-MSYS.md) — corrected 2026-07-30 from an earlier link to the UCRT64 [nPth](NPTH.md) package. |
 | TLS for network lookups | `package:msys2:libgnutls` | Backs `dirmngr`'s TLS-secured connections to key servers and OCSP responders — the network-facing exception to GnuPG's OpenSSL independence. Documented fully in [GnuTLS](GNUTLS.md). |
 | HTTP transfer library | `package:msys2:libcurl` | Backs `dirmngr`'s HTTP-based key-server and certificate-revocation lookups. |
 | Compression | `package:msys2:bzip2`, `package:msys2:libbz2`, `package:msys2:zlib` | Back compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support. |
@@ -142,7 +148,13 @@ official GnuPG project site (`evidence:gnupg:project-site-2026-07-30`),
 matching the `project_url` already recorded for `package:msys2:gnupg` in
 the catalog. Package identity, version, license, and all recorded
 dependency edges are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). No open items beyond the general
+(`evidence:catalog:current`). Correction (2026-07-30): five `requires`
+edges (`libgcrypt`, `libassuan`, `libksba`, `nPth`, `Nettle`) originally
+pointed to this knowledge base's UCRT64-packaged library entities for
+those names; since `package:msys2:gnupg` is itself an MSYS-environment
+package, its actual catalog-recorded dependencies are the separately
+versioned MSYS siblings, now corrected and documented on the `(MSYS)`
+pages linked in Dependencies above. No open items beyond the general
 version-qualified security review noted above.
 
 ## Related Objects
@@ -152,8 +164,9 @@ version-qualified security review noted above.
 - [curl](CURL.md)
 - [GNU Emacs](GNU-EMACS.md)
 - [GnuTLS](GNUTLS.md)
-- [libgcrypt](LIBGCRYPT.md)
-- [libassuan](LIBASSUAN.md)
-- [libksba](LIBKSBA.md)
-- [nPth](NPTH.md)
-- [Nettle](NETTLE.md)
+- [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md)
+- [libassuan (MSYS)](LIBASSUAN-MSYS.md)
+- [libksba (MSYS)](LIBKSBA-MSYS.md)
+- [nPth (MSYS)](NPTH-MSYS.md)
+- [Nettle (MSYS)](NETTLE-MSYS.md)
+- [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)

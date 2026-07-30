@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 48
+- Outgoing relationships: 54
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5535,6 +5535,15 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnupg:libassuan@msys`
+
+- Name: libassuan (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:gnupg:libgcrypt`
@@ -5544,6 +5553,15 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:libgcrypt-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnupg:libgcrypt@msys`
+
+- Name: libgcrypt (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgcrypt-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:gnupg:libgpg-error`
@@ -5555,6 +5573,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 4
 
+## `library:gnupg:libgpg-error@msys`
+
+- Name: libgpg-error (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 4
+
 ## `library:gnupg:libksba`
 
 - Name: libksba
@@ -5562,6 +5589,15 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnupg:libksba@msys`
+
+- Name: libksba (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:gnupg:npth`
@@ -5571,6 +5607,15 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnupg:npth@msys`
+
+- Name: nPth (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:gnutls:gnutls`
@@ -5720,6 +5765,15 @@
 ## `library:nettle:nettle`
 
 - Name: Nettle
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:nettle:nettle@msys`
+
+- Name: Nettle (MSYS)
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
@@ -7614,7 +7668,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libassuan-devel`
 
@@ -7893,7 +7947,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libgcrypt-devel`
 
@@ -7974,7 +8028,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:libgpg-error-devel`
 
@@ -8118,7 +8172,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:libksba-devel`
 
@@ -8307,7 +8361,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:libnpth-devel`
 
@@ -144072,7 +144126,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:nghttp2`
 
@@ -147285,7 +147339,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 48
+- Incoming relationships: 54
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

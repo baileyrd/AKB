@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 48 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 54 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 38 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -618,11 +618,16 @@
 | library:gnu:readline | library | GNU Readline | partial | 2 | 1 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 5 |
-| library:gnupg:libassuan | library | libassuan | partial | 2 | 2 |
-| library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 2 |
+| library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
+| library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
+| library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
+| library:gnupg:libgcrypt@msys | library | libgcrypt (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
-| library:gnupg:libksba | library | libksba | partial | 2 | 2 |
-| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 2 |
+| library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 2 | 4 |
+| library:gnupg:libksba | library | libksba | partial | 2 | 1 |
+| library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
+| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
+| library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 5 | 3 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 2 | 2 |
@@ -639,7 +644,8 @@
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
-| library:nettle:nettle | library | Nettle | partial | 2 | 2 |
+| library:nettle:nettle | library | Nettle | partial | 2 | 1 |
+| library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 2 | 2 |
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 2 |
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 2 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 2 |
@@ -849,7 +855,7 @@
 | package:msys2:libargp | package | libargp | verified | 2 | 2 |
 | package:msys2:libargp-devel | package | libargp-devel | verified | 3 | 0 |
 | package:msys2:libasprintf | package | libasprintf | verified | 3 | 1 |
-| package:msys2:libassuan | package | libassuan | verified | 4 | 4 |
+| package:msys2:libassuan | package | libassuan | verified | 4 | 5 |
 | package:msys2:libassuan-devel | package | libassuan-devel | verified | 4 | 1 |
 | package:msys2:libatomic_ops | package | libatomic_ops | verified | 2 | 1 |
 | package:msys2:libatomic_ops-devel | package | libatomic_ops-devel | verified | 3 | 0 |
@@ -880,7 +886,7 @@
 | package:msys2:libfido2-docs | package | libfido2-docs | verified | 3 | 0 |
 | package:msys2:libgc | package | libgc | verified | 3 | 4 |
 | package:msys2:libgc-devel | package | libgc-devel | verified | 3 | 1 |
-| package:msys2:libgcrypt | package | libgcrypt | verified | 3 | 4 |
+| package:msys2:libgcrypt | package | libgcrypt | verified | 3 | 5 |
 | package:msys2:libgcrypt-devel | package | libgcrypt-devel | verified | 4 | 1 |
 | package:msys2:libgdbm | package | libgdbm | verified | 7 | 5 |
 | package:msys2:libgdbm-devel | package | libgdbm-devel | verified | 4 | 0 |
@@ -889,7 +895,7 @@
 | package:msys2:libgit2-devel | package | libgit2-devel | verified | 6 | 0 |
 | package:msys2:libgnutls | package | libgnutls | verified | 11 | 11 |
 | package:msys2:libgnutls-devel | package | libgnutls-devel | verified | 7 | 0 |
-| package:msys2:libgpg-error | package | libgpg-error | verified | 4 | 6 |
+| package:msys2:libgpg-error | package | libgpg-error | verified | 4 | 7 |
 | package:msys2:libgpg-error-devel | package | libgpg-error-devel | verified | 4 | 4 |
 | package:msys2:libgpgme | package | libgpgme | verified | 5 | 6 |
 | package:msys2:libgpgme-devel | package | libgpgme-devel | verified | 5 | 0 |
@@ -905,7 +911,7 @@
 | package:msys2:libinih | package | libinih | verified | 3 | 2 |
 | package:msys2:libinih-devel | package | libinih-devel | verified | 3 | 0 |
 | package:msys2:libintl | package | libintl | verified | 4 | 59 |
-| package:msys2:libksba | package | libksba | verified | 4 | 2 |
+| package:msys2:libksba | package | libksba | verified | 4 | 3 |
 | package:msys2:libksba-devel | package | libksba-devel | verified | 4 | 0 |
 | package:msys2:libltdl | package | libltdl | verified | 2 | 2 |
 | package:msys2:liblz4 | package | liblz4 | verified | 3 | 7 |
@@ -926,7 +932,7 @@
 | package:msys2:libnghttp3-devel | package | libnghttp3-devel | verified | 3 | 1 |
 | package:msys2:libngtcp2 | package | libngtcp2 | verified | 4 | 4 |
 | package:msys2:libngtcp2-devel | package | libngtcp2-devel | verified | 4 | 1 |
-| package:msys2:libnpth | package | libnpth | verified | 3 | 2 |
+| package:msys2:libnpth | package | libnpth | verified | 3 | 3 |
 | package:msys2:libnpth-devel | package | libnpth-devel | verified | 3 | 0 |
 | package:msys2:libopenssl | package | libopenssl | verified | 2 | 27 |
 | package:msys2:libp11-kit | package | libp11-kit | verified | 5 | 4 |
@@ -16011,7 +16017,7 @@
 | package:msys2:ncurses-devel | package | ncurses-devel | verified | 3 | 3 |
 | package:msys2:neofetch | package | neofetch | verified | 3 | 0 |
 | package:msys2:neomutt | package | neomutt | verified | 11 | 0 |
-| package:msys2:nettle | package | nettle | verified | 3 | 1 |
+| package:msys2:nettle | package | nettle | verified | 3 | 2 |
 | package:msys2:nghttp2 | package | nghttp2 | verified | 5 | 0 |
 | package:msys2:ninja | package | ninja | verified | 3 | 2 |
 | package:msys2:ninja-vim | package | ninja-vim | verified | 4 | 1 |
@@ -16368,5 +16374,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 48 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 54 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

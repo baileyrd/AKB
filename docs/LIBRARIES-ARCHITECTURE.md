@@ -49,6 +49,12 @@ model_refs:
   - library:darwinsys:file
   - library:gnu:termcap
   - library:mingweditline:wineditline
+  - library:gnupg:libgcrypt@msys
+  - library:gnupg:libassuan@msys
+  - library:gnupg:libksba@msys
+  - library:gnupg:npth@msys
+  - library:nettle:nettle@msys
+  - library:gnupg:libgpg-error@msys
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -143,9 +149,12 @@ flowchart LR
 [libedit](LIBEDIT.md), [libxcrypt](LIBXCRYPT.md),
 [libfido2](LIBFIDO2.md), [Heimdal](HEIMDAL.md), [cppdap](CPPDAP.md),
 [JsonCpp](JSONCPP.md), [libarchive](LIBARCHIVE.md), [libuv](LIBUV.md),
-[RHash](RHASH.md), [file](FILE.md), [GNU termcap](GNU-TERMCAP.md), and
-[WinEditLine](WINEDITLINE.md) are this volume's first per-library pages.
-The
+[RHash](RHASH.md), [file](FILE.md), [GNU termcap](GNU-TERMCAP.md),
+[WinEditLine](WINEDITLINE.md), [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md),
+[libassuan (MSYS)](LIBASSUAN-MSYS.md), [libksba (MSYS)](LIBKSBA-MSYS.md),
+[nPth (MSYS)](NPTH-MSYS.md), [Nettle (MSYS)](NETTLE-MSYS.md), and
+[libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md) are this volume's first
+per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -158,7 +167,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All forty-five pages are deliberately scoped to package/dependency-level
+All fifty-one pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -227,8 +236,29 @@ Volume 5), [GNU termcap](GNU-TERMCAP.md) (GNU Readline's sole recorded
 dependency), and [WinEditLine](WINEDITLINE.md) (a [PCRE2](PCRE2.md)
 dependency, and the native-Windows-Console counterpart to
 [libedit](LIBEDIT.md), which targets the MSYS/POSIX-emulated terminal
-instead). These pages are a starting point for this volume, not a
-demonstration that its full evidence model is populated.
+instead). A final batch corrected a genuine pre-existing modeling error
+rather than adding new coverage: five `requires` edges from
+`component:gnupg:gnupg` (to `libgcrypt`, `libassuan`, `libksba`, `nPth`,
+and `Nettle`) had pointed at this volume's UCRT64-packaged entities for
+those names, when `package:msys2:gnupg` is itself an MSYS-environment
+package whose actual catalog-recorded dependencies are separately
+versioned MSYS sibling packages — in two cases (`libassuan`, `libksba`)
+a full major version apart. The five edges are now corrected to point at
+six new `(MSYS)`-suffixed pages
+([libgcrypt](LIBGCRYPT-MSYS.md), [libassuan](LIBASSUAN-MSYS.md),
+[libksba](LIBKSBA-MSYS.md), [nPth](NPTH-MSYS.md), [Nettle](NETTLE-MSYS.md),
+and [libgpg-error](LIBGPG-ERROR-MSYS.md), the last added because the
+other three depend on it in turn), and the five original UCRT64 pages
+were rewritten to remove their now-false GnuPG-dependency claims rather
+than silently left inconsistent with the corrected graph. This is the
+fourth and largest instance of the MSYS/UCRT64 conflation risk this
+volume has caught this session, after the SQLite mixup, the avoided
+libcurl mismatch, and GnuTLS's own careful environment check — this one
+was not caught before publication, only discovered afterward while
+investigating a follow-on batch, and is recorded as such rather than
+quietly corrected without a trace. These pages are a starting point for
+this volume, not a demonstration that its full evidence model is
+populated.
 
 ## Family navigation
 

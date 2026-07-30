@@ -7,7 +7,7 @@ model_refs:
   - library:gnupg:libgcrypt
   - package:msys2:mingw-w64-ucrt-x86_64-libgcrypt
   - library:gnupg:libgpg-error
-  - component:gnupg:gnupg
+  - library:gnupg:libgcrypt@msys
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnupg:libgcrypt-manual-2026-07-30
@@ -19,13 +19,14 @@ last_verified: 2026-07-30
 
 ## Purpose
 
-Libgcrypt is GnuPG's own general-purpose cryptographic library, and it is
-the primary low-level crypto library backing
-[GnuPG](GNUPG.md#dependencies) itself, already cited on that page as
-"GnuPG's primary cryptographic library, independent of OpenSSL's." This
-page documents its architectural role; see the
+Libgcrypt is GnuPG's own general-purpose cryptographic library. This page
+documents the **UCRT64**-packaged build specifically; the MSYS-packaged
+`package:msys2:gnupg` component GnuPG.md documents actually depends on a
+separately versioned MSYS sibling package, corrected 2026-07-30 and
+documented on [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md) — this page no longer
+claims a direct GnuPG dependency for that reason. See the
 [official libgcrypt project page](https://gnupg.org/software/libgcrypt/index.html)
-for the API reference.
+for the API reference shared by both packages.
 
 ## Architectural Classification
 
@@ -36,9 +37,11 @@ cites the UCRT64 build, `package:msys2:mingw-w64-ucrt-x86_64-libgcrypt`
 ## Responsibilities
 
 - Providing symmetric and public-key cryptographic primitives (cipher
-  algorithms, hash functions, random-number generation) for
-  [GnuPG](GNUPG.md) and other GnuPG-family software, deliberately
-  independent of [OpenSSL](OPENSSL.md), per
+  algorithms, hash functions, random-number generation) for GnuPG-family
+  software built against this UCRT64 packaging, deliberately independent
+  of [OpenSSL](OPENSSL.md). [GnuPG's](GNUPG.md) own MSYS-packaged build
+  depends on the separate [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md) package
+  instead, per
   [GnuPG's own Architectural Classification](GNUPG.md#architectural-classification).
 
 ## Boundaries
@@ -66,11 +69,13 @@ documented fully in [libgpg-error](LIBGPG-ERROR.md)).
 ## Reverse Dependencies
 
 The snapshot records 19 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-libgcrypt`, including
-[GnuPG](GNUPG.md#dependencies) itself
-(`relationship:ssh-curl-git:gnupg-requires-libgcrypt`). See the
+`package:msys2:mingw-w64-ucrt-x86_64-libgcrypt`. [GnuPG](GNUPG.md) is
+**not** among them — that was a pre-2026-07-30 modeling error, corrected
+in favor of [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md#reverse-dependencies),
+which GnuPG's own MSYS-packaged catalog dependency actually targets. See
+the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
-for the current full list.
+for the current full list of this UCRT64 package's actual dependents.
 
 ## Configuration
 
@@ -82,7 +87,9 @@ program.
 
 As a library, libgcrypt has no independent process lifecycle: it
 initializes and executes within the process of whatever program links
-against it — [GnuPG](GNUPG.md), for instance — the same model documented
+against it — some other UCRT64-built GnuPG-family software, for
+instance, though not [GnuPG](GNUPG.md) itself in this catalog snapshot
+(see Purpose) — the same model documented
 for [libgpg-error](LIBGPG-ERROR.md#initialization-and-execution-flow).
 
 ## Runtime Behavior
@@ -101,9 +108,9 @@ documentation.
 
 ## Security Considerations
 
-As GnuPG's primary cryptographic library, libgcrypt is itself
-security-critical infrastructure; a defect here would directly affect
-[GnuPG](GNUPG.md)'s encryption, decryption, and signing correctness. See
+As a cryptographic library in the GnuPG family, libgcrypt is itself
+security-critical infrastructure for whatever program links against this
+UCRT64 build. See
 [Threat Model and Supply Chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md) for the
 project's general supply-chain posture; no version-qualified CVE review
 has been performed for the recorded `1.12.2-2` version — a priority
@@ -112,19 +119,25 @@ candidate for one given its role.
 ## Failure Modes and Diagnostics
 
 Libgcrypt itself has no user-facing CLI; cryptographic operation failures
-in [GnuPG](GNUPG.md) should be checked against libgcrypt's own
-documented algorithm and key-size support before being treated as a
-GnuPG-specific defect.
+in a program linking against this UCRT64 build should be checked against
+libgcrypt's own documented algorithm and key-size support before being
+treated as a caller-specific defect.
 
 ## Evidence, Assumptions, and Open Questions
 
 The cryptographic-primitives role is backed by the official libgcrypt
 project page (`evidence:gnupg:libgcrypt-manual-2026-07-30`). Package
 identity, version, license, and the dependency edge are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: header-level API surface, PE
-import/export-level evidence, and whether this build enables
-FIPS-oriented self-tests, per the
+pacman catalog snapshot (`evidence:catalog:current`). Correction
+(2026-07-30): this page previously claimed a direct
+`component:gnupg:gnupg` dependency and cited
+`relationship:ssh-curl-git:gnupg-requires-libgcrypt` as evidence; that
+relationship's target has since been corrected to
+[libgcrypt (MSYS)](LIBGCRYPT-MSYS.md), since `package:msys2:gnupg` is an
+MSYS-environment package and this page's UCRT64 package was never its
+actual catalog-recorded dependency. Open, and explicitly out of scope for
+this page: header-level API surface, PE import/export-level evidence,
+and whether this build enables FIPS-oriented self-tests, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -132,5 +145,5 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libgpg-error](LIBGPG-ERROR.md)
-- [GnuPG](GNUPG.md)
+- [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md)
 - [OpenSSL](OPENSSL.md)

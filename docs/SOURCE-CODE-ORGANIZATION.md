@@ -59,6 +59,17 @@ an upstream-source → recipe → package archive → deployed artifact chain
 requires matching source retrieval, patch application, build, and archive
 evidence for the exact revision.
 
+## Bounded provenance slice: zlib
+
+On 2026-07-30, the retained MSYS2 `zlib/PKGBUILD` declared upstream
+`zlib-1.3.2.tar.xz` and SHA-256
+`d7a0654783a4da529d1bb793b7ad9c3318020af77667bcae35f95d0e42a792f3`.
+A local retrieval of that exact URL matched the declared digest. The same
+isolated installation contains `zlib 1.3.2-1` and `/usr/bin/msys-z.dll`.
+This establishes recipe-declared source retrieval and installed ownership as
+separate observations; it does not prove patch application, build execution,
+or byte identity between the retrieved source and the installed DLL.
+
 ## Related volumes
 
 - Volume 11: [Repository package inventory](REPOSITORY-PACKAGE-INVENTORY.md)

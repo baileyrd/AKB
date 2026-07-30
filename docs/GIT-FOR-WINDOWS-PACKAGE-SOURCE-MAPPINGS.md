@@ -55,4 +55,4 @@ that a component's presence must be proven from that specific artifact.
 
 - [Git for Windows boundary](GIT-FOR-WINDOWS-BOUNDARY.md)
 - [Git for Windows transport boundaries](GIT-FOR-WINDOWS-TRANSPORT-BOUNDARIES.md)
-- [Deep inventory snapshot manifest](DEEP-INVENTORY-SNAPSHOT-MANIFEST.md)
+- [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)

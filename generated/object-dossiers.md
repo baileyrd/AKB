@@ -17,7 +17,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:cmake:documentation-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `component:curl:curl`
@@ -134,7 +134,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gcc-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `component:gnu:gdb`
@@ -5445,7 +5445,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:facebook:zstd@clang64`
 
@@ -5499,7 +5499,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `library:gnu:gmp`
 
@@ -5543,7 +5543,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 4
 
 ## `library:gnu:libintl`
@@ -5571,7 +5571,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:libtasn1`
 
@@ -5589,7 +5589,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:mpfr`
 
@@ -5652,7 +5652,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `library:gnu:zlib@clang64`
 
@@ -5822,7 +5822,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 7
 - Incoming relationships: 2
 
 ## `library:libedit:libedit`
@@ -5841,7 +5841,7 @@
 - Status: `partial`
 - Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:libexpat:expat@msys`
 
@@ -5921,7 +5921,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:llvm:clang-libs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 3
 
 ## `library:llvm:libc++`
@@ -5940,7 +5940,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:llvm-libs-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:mingw-w64:libwinpthread`
 
@@ -6128,7 +6128,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:rhash:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:sqlite:sqlite3`
@@ -6146,8 +6146,8 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
-- Incoming relationships: 2
+- Outgoing relationships: 2
+- Incoming relationships: 3
 
 ## `library:tukaani:liblzma@clang64`
 

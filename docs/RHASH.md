@@ -7,6 +7,7 @@ model_refs:
   - library:rhash:rhash
   - package:msys2:mingw-w64-ucrt-x86_64-rhash
   - component:cmake:cmake
+  - library:gnu:gettext
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:rhash:manual-2026-07-30
@@ -66,7 +67,12 @@ existed.
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-rhash` declares a
 dependency on `mingw-w64-ucrt-x86_64-gettext-runtime` (gettext-based
-message translation runtime, not yet given its own page in this volume).
+message translation runtime). **Correction, 2026-07-30**: this section
+previously stated gettext-runtime was "not yet given its own page in
+this volume" — stale, since [GNU gettext](GNU-GETTEXT.md) already had
+its own page; the missing edge
+(`relationship:foundation-libraries:rhash-requires-gettext`) is now
+added.
 
 ## Reverse Dependencies
 
@@ -132,10 +138,8 @@ project page (`evidence:rhash:manual-2026-07-30`), matching the
 identity, version, and the recorded dependency/dependent edges are backed
 by the pacman catalog snapshot (`evidence:catalog:current`). Open:
 whether other native environments package RHash separately was not
-confirmed. Also explicitly out of scope for this page: the
-`gettext-runtime` sub-dependency is not individually modeled as a
-component in this knowledge base; header-level API surface and PE
-import/export-level evidence, per the
+confirmed. Also explicitly out of scope for this page: header-level
+API surface and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
@@ -144,3 +148,4 @@ methodology, also remain open.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [CMake](CMAKE.md)
 - [cppdap](CPPDAP.md)
+- [GNU gettext](GNU-GETTEXT.md)

@@ -82,7 +82,7 @@ The catalog snapshot records eleven `runtime-depends-on` edges for
 | --- | --- | --- |
 | Assembler/linker backend | `mingw-w64-ucrt-x86_64-binutils` | Invoked as GCC's backend for assembly and linking (`relationship:toolchain:gcc-invokes-binutils`), documented fully in [GNU Binutils](GNU-BINUTILS.md). |
 | Target C runtime and headers | `mingw-w64-ucrt-x86_64-crt`, `mingw-w64-ucrt-x86_64-headers` | The MinGW-w64 CRT and Windows API headers this build targets (UCRT for this environment). |
-| GCC's own runtime library | `mingw-w64-ucrt-x86_64-gcc-libs` | Runtime support library (`libgcc`) needed by any program this compiler produces. |
+| GCC's own runtime library | `mingw-w64-ucrt-x86_64-gcc-libs` | Runtime support library (`libgcc`) needed by any program this compiler produces. Documented fully in [libstdc++](LIBSTDCXX.md). |
 | Arbitrary-precision arithmetic | `mingw-w64-ucrt-x86_64-gmp`, `mingw-w64-ucrt-x86_64-mpfr`, `mingw-w64-ucrt-x86_64-mpc` | Back GCC's own internal arbitrary-precision arithmetic during compilation, such as constant folding (`claim:component:gcc:optimizer-arithmetic-libraries`). Documented fully in [GNU MP](GNU-GMP.md), [GNU MPFR](GNU-MPFR.md), and [GNU MPC](GNU-MPC.md). |
 | Loop optimization | `mingw-w64-ucrt-x86_64-isl` | Backs the Graphite loop-optimization framework (`claim:component:gcc:optimizer-arithmetic-libraries`). Documented fully in [isl](LIBISL.md). |
 | Windows application manifest | `mingw-w64-ucrt-x86_64-windows-default-manifest` | An MSYS2/MinGW-w64-specific package providing a default Windows application manifest embedded into produced executables. |
@@ -98,7 +98,10 @@ added
 `relationship:toolchain:gcc-requires-mpfr`,
 `relationship:toolchain:gcc-requires-mpc`,
 `relationship:toolchain:gcc-requires-isl`,
-`relationship:toolchain:gcc-requires-winpthreads`).
+`relationship:toolchain:gcc-requires-winpthreads`). A follow-on sweep
+caught a sixth: the `gcc-libs` (`libstdc++`) edge itself was also
+missing despite being named in this table since publication —
+`relationship:toolchain:gcc-requires-libstdcxx` is now added too.
 
 This package also `provides` a `mingw-w64-ucrt-x86_64-gcc-base` capability
 and `conflicts` with a separate `mingw-w64-ucrt-x86_64-gcc-rust` package —

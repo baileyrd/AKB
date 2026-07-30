@@ -65,9 +65,12 @@ both packages for different reasons.
 
 ## Dependencies
 
-The catalog snapshot records no `runtime-depends-on` edges for
-`package:msys2:mingw-w64-clang-x86_64-clang-libs` beyond standard
-toolchain runtime support.
+**Correction, 2026-07-30**: this section originally stated no
+`runtime-depends-on` edges existed for this package beyond standard
+toolchain support — that claim was false. The catalog snapshot records
+one: `mingw-w64-clang-x86_64-llvm-libs`, documented fully in
+[LLVM libraries](LLVM-LIBS.md)
+(`relationship:toolchain:clang-libs-requires-llvm-libs`).
 
 ## Reverse Dependencies
 

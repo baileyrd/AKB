@@ -16903,6 +16903,15 @@ Relationships
 - library:llvm:llvm-libs --requires--> library:gnome:libxml2@clang64
 - library:llvm:llvm-libs --requires--> library:gnu:zlib@clang64
 - library:llvm:llvm-libs --requires--> library:facebook:zstd@clang64
+- component:gnu:gcc --requires--> library:gnu:libstdc++
+- library:rhash:rhash --requires--> library:gnu:gettext
+- library:tukaani:liblzma --requires--> library:gnu:gettext
+- library:llvm:clang-libs --requires--> library:llvm:llvm-libs
+- library:gnu:libidn2 --requires--> library:gnu:libunistring
+- library:libarchive:libarchive --requires--> library:facebook:zstd
+- library:libarchive:libarchive --requires--> library:tukaani:liblzma
+- component:cmake:cmake --requires--> library:libexpat:expat
+- component:cmake:cmake --requires--> library:gnu:zlib
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

@@ -536,7 +536,33 @@ edges onto the already-modeled [libxml2 (CLANG64)](LIBXML2-CLANG64.md),
 [Zstandard (CLANG64)](LIBZSTD-CLANG64.md). Modeling libffi (CLANG64)
 also closed [libffi (MSYS)](LIBFFI-MSYS.md), p11-kit's own
 foreign-function-interface dependency that page had explicitly left
-unmodeled since its first publication. These pages are a starting point for this
+unmodeled since its first publication. A systematic pass comparing
+every already-modeled entity's catalog dependencies against its actual
+graph `requires` edges — extending the GCC/Binutils/Clang
+graph-completeness checks to the whole volume — surfaced nine more gaps
+without needing a single new page, all between entities already
+documented elsewhere in this knowledge base:
+[GCC's](GNU-GCC.md#dependencies) own `gcc-libs`/`libstdc++` edge (a
+sixth missing edge alongside the five found in the prior batch);
+[RHash](RHASH.md#dependencies) and [liblzma (UCRT64)](LIBLZMA.md#dependencies)
+both cited `gettext-runtime` as either stale ("not yet given its own
+page," when [GNU gettext](GNU-GETTEXT.md) already had one) or flatly
+false ("no dependencies," when the catalog records one); the same false
+"no dependencies" claim on [Clang libraries](CLANG-LIBS.md#dependencies)
+turned out to hide a real edge onto [LLVM libraries](LLVM-LIBS.md);
+[GNU libidn2's](GNU-LIBIDN2.md#dependencies) own prose named
+[libunistring](GNU-LIBUNISTRING.md) without a graph edge;
+[libarchive's](LIBARCHIVE.md#dependencies) own Dependencies section had
+explicitly declined edges to zstd and liblzma, reasoning only their
+MSYS CLI-tool siblings existed at the time — both UCRT64 library
+entities now exist, so the two declined edges are added; and
+[CMake's](CMAKE.md#dependencies) own table had marked its Expat and
+zlib rows "documented fully in" without either edge actually existing
+in the graph. Every affected page's Dependencies, Reverse Dependencies,
+Related Objects, and (where applicable) Evidence sections were updated
+to match, following the same correct-in-place discipline used
+throughout this session rather than silently patching the graph without
+a trace. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

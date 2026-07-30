@@ -11,6 +11,8 @@ model_refs:
   - library:libarchive:libarchive
   - library:libuv:libuv
   - library:rhash:rhash
+  - library:libexpat:expat
+  - library:gnu:zlib
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:cmake:documentation-2026-07-30
@@ -92,6 +94,14 @@ to a specific built-in CMake feature
 
 An optional dependency on `emacs` backs CMake's Emacs editing mode, per the
 package's own dependency note.
+
+**Correction, 2026-07-30**: the expat and zlib rows above were already
+marked "documented fully in" in this table since publication, but two
+of the ten edges (to Expat and zlib) had never actually been added to
+the graph — `relationship:toolchain:cmake-requires-expat` and
+`relationship:toolchain:cmake-requires-zlib` are now added to close the
+gap, matching the graph-completeness corrections found elsewhere in
+this volume this session.
 
 ## Reverse Dependencies
 

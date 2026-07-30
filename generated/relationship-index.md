@@ -76291,6 +76291,7 @@
 | relationship:foundation-libraries:libiconv-packaged-by-package | packaged-by | library:gnu:libiconv | package:msys2:mingw-w64-ucrt-x86_64-libiconv | verified |
 | relationship:foundation-libraries:libidn2-packaged-by-package | packaged-by | library:gnu:libidn2 | package:msys2:libidn2 | verified |
 | relationship:foundation-libraries:libidn2-requires-libintl | requires | library:gnu:libidn2 | library:gnu:libintl | verified |
+| relationship:foundation-libraries:libidn2-requires-libunistring | requires | library:gnu:libidn2 | library:gnu:libunistring | verified |
 | relationship:foundation-libraries:libidn2-uses-msys-runtime | uses-runtime | library:gnu:libidn2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libintl-packaged-by-package | packaged-by | library:gnu:libintl | package:msys2:libintl | verified |
 | relationship:foundation-libraries:libintl-requires-libiconv-msys | requires | library:gnu:libintl | library:gnu:libiconv@msys | verified |
@@ -76303,6 +76304,7 @@
 | relationship:foundation-libraries:libltdl-packaged-by-package | packaged-by | library:gnu:libltdl | package:msys2:libltdl | verified |
 | relationship:foundation-libraries:libltdl-uses-msys-runtime | uses-runtime | library:gnu:libltdl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:liblzma-packaged-by-package | packaged-by | library:tukaani:liblzma | package:msys2:mingw-w64-ucrt-x86_64-xz | verified |
+| relationship:foundation-libraries:liblzma-requires-gettext | requires | library:tukaani:liblzma | library:gnu:gettext | verified |
 | relationship:foundation-libraries:libnettle-msys-requires-libhogweed-msys | requires | library:nettle:libnettle@msys | library:nettle:libhogweed@msys | verified |
 | relationship:foundation-libraries:libnghttp2-packaged-by-package | packaged-by | library:nghttp2:libnghttp2 | package:msys2:libnghttp2 | verified |
 | relationship:foundation-libraries:libnghttp2-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp2 | runtime:msys2:msys-2.0.dll | partial |
@@ -76409,6 +76411,7 @@
 | relationship:foundation-libraries:readline-packaged-by-package | packaged-by | library:gnu:readline | package:msys2:mingw-w64-ucrt-x86_64-readline | verified |
 | relationship:foundation-libraries:readline-requires-termcap | requires | library:gnu:readline | library:gnu:termcap | verified |
 | relationship:foundation-libraries:rhash-packaged-by-package | packaged-by | library:rhash:rhash | package:msys2:mingw-w64-ucrt-x86_64-rhash | verified |
+| relationship:foundation-libraries:rhash-requires-gettext | requires | library:rhash:rhash | library:gnu:gettext | verified |
 | relationship:foundation-libraries:sqlite3-packaged-by-package | packaged-by | library:sqlite:sqlite3 | package:msys2:mingw-w64-ucrt-x86_64-sqlite3 | verified |
 | relationship:foundation-libraries:sqlite3-requires-zlib | requires | library:sqlite:sqlite3 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:termcap-packaged-by-package | packaged-by | library:gnu:termcap | package:msys2:mingw-w64-ucrt-x86_64-termcap | verified |
@@ -77099,6 +77102,7 @@
 | relationship:toolchain:binutils-requires-zlib | requires | component:gnu:binutils | library:gnu:zlib | verified |
 | relationship:toolchain:binutils-requires-zstd | requires | component:gnu:binutils | library:facebook:zstd | verified |
 | relationship:toolchain:clang-invokes-lld | invokes | component:llvm:clang | component:llvm:lld | verified |
+| relationship:toolchain:clang-libs-requires-llvm-libs | requires | library:llvm:clang-libs | library:llvm:llvm-libs | verified |
 | relationship:toolchain:clang-packaged-by-package | packaged-by | component:llvm:clang | package:msys2:mingw-w64-clang-x86_64-clang | verified |
 | relationship:toolchain:clang-requires-clang-libs | requires | component:llvm:clang | library:llvm:clang-libs | verified |
 | relationship:toolchain:clang-requires-winpthreads-clang64 | requires | component:llvm:clang | library:mingw-w64:winpthreads@clang64 | verified |
@@ -77108,15 +77112,18 @@
 | relationship:toolchain:cmake-invokes-ninja | invokes | component:cmake:cmake | component:ninja-build:ninja | verified |
 | relationship:toolchain:cmake-packaged-by-package | packaged-by | component:cmake:cmake | package:msys2:mingw-w64-ucrt-x86_64-cmake | verified |
 | relationship:toolchain:cmake-requires-cppdap | requires | component:cmake:cmake | library:google:cppdap | verified |
+| relationship:toolchain:cmake-requires-expat | requires | component:cmake:cmake | library:libexpat:expat | verified |
 | relationship:toolchain:cmake-requires-jsoncpp | requires | component:cmake:cmake | library:jsoncpp:jsoncpp | verified |
 | relationship:toolchain:cmake-requires-libarchive | requires | component:cmake:cmake | library:libarchive:libarchive | verified |
 | relationship:toolchain:cmake-requires-libuv | requires | component:cmake:cmake | library:libuv:libuv | verified |
 | relationship:toolchain:cmake-requires-pkgconf | requires | component:cmake:cmake | component:pkgconf:pkgconf | verified |
 | relationship:toolchain:cmake-requires-rhash | requires | component:cmake:cmake | library:rhash:rhash | verified |
+| relationship:toolchain:cmake-requires-zlib | requires | component:cmake:cmake | library:gnu:zlib | verified |
 | relationship:toolchain:gcc-invokes-binutils | invokes | component:gnu:gcc | component:gnu:binutils | verified |
 | relationship:toolchain:gcc-packaged-by-package | packaged-by | component:gnu:gcc | package:msys2:mingw-w64-ucrt-x86_64-gcc | verified |
 | relationship:toolchain:gcc-requires-gmp | requires | component:gnu:gcc | library:gnu:gmp | verified |
 | relationship:toolchain:gcc-requires-isl | requires | component:gnu:gcc | library:libisl:isl | verified |
+| relationship:toolchain:gcc-requires-libstdcxx | requires | component:gnu:gcc | library:gnu:libstdc++ | verified |
 | relationship:toolchain:gcc-requires-mpc | requires | component:gnu:gcc | library:multiprecision:mpc | verified |
 | relationship:toolchain:gcc-requires-mpfr | requires | component:gnu:gcc | library:gnu:mpfr | verified |
 | relationship:toolchain:gcc-requires-winpthreads | requires | component:gnu:gcc | library:mingw-w64:winpthreads | verified |
@@ -77134,6 +77141,8 @@
 | relationship:toolchain:gdb-requires-xxhash | requires | component:gnu:gdb | library:xxhash:xxhash | verified |
 | relationship:toolchain:gdb-requires-zlib | requires | component:gnu:gdb | library:gnu:zlib | verified |
 | relationship:toolchain:gdb-requires-zstd | requires | component:gnu:gdb | library:facebook:zstd | verified |
+| relationship:toolchain:libarchive-requires-liblzma | requires | library:libarchive:libarchive | library:tukaani:liblzma | verified |
+| relationship:toolchain:libarchive-requires-zstd | requires | library:libarchive:libarchive | library:facebook:zstd | verified |
 | relationship:toolchain:lld-compatible-with-binutils | compatible-with | component:llvm:lld | component:gnu:binutils | partial |
 | relationship:toolchain:lld-packaged-by-package | packaged-by | component:llvm:lld | package:msys2:mingw-w64-clang-x86_64-lld | verified |
 | relationship:toolchain:lld-requires-llvm-libs | requires | component:llvm:lld | library:llvm:llvm-libs | verified |

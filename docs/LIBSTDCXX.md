@@ -82,7 +82,12 @@ targeting it in this snapshot — larger than
 [zlib](ZLIB.md#reverse-dependencies)'s 299, the largest recorded in this
 knowledge base. This is a directly observed fact, not an inference: nearly
 every C/C++ program built with GCC in this environment needs the runtime
-libraries this package bundles. See
+libraries this package bundles. One is now modeled in this knowledge
+base: [GCC](GNU-GCC.md#dependencies) itself
+(`relationship:toolchain:gcc-requires-libstdcxx`, added 2026-07-30 to
+close a gap in [GCC's own dependency table](GNU-GCC.md#dependencies),
+which had cited this package by name without a corresponding graph
+edge). See
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 

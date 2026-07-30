@@ -68,7 +68,10 @@ that; this page and its catalog package concern `libidn2` only).
 The MSYS `package:msys2:libidn2` declares dependencies on
 [GNU libintl](GNU-LIBINTL.md) (gettext-based message translation,
 `relationship:foundation-libraries:libidn2-requires-libintl`) and
-[libunistring](GNU-LIBUNISTRING.md) (Unicode string processing).
+[libunistring](GNU-LIBUNISTRING.md) (Unicode string processing,
+`relationship:foundation-libraries:libidn2-requires-libunistring`,
+added 2026-07-30 to close a gap this page's own prose had left without
+a corresponding graph edge).
 
 ## Reverse Dependencies
 

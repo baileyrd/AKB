@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-xz
   - component:gnu:gdb
   - library:tukaani:liblzma@clang64
+  - library:gnu:gettext
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:tukaani:xz-library-manual-2026-07-30
@@ -67,18 +68,27 @@ trace to the same upstream Tukaani project.
 
 ## Dependencies
 
-The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-xz` declares no
-`runtime-depends-on` edges beyond standard toolchain runtime support.
+**Correction, 2026-07-30**: this section originally stated no
+`runtime-depends-on` edges existed for this package beyond standard
+toolchain support — that claim was false. The catalog snapshot records
+one: `mingw-w64-ucrt-x86_64-gettext-runtime` (gettext-based message
+translation, NLS), documented fully in
+[GNU gettext](GNU-GETTEXT.md)
+(`relationship:foundation-libraries:liblzma-requires-gettext`).
 
 ## Reverse Dependencies
 
 The catalog snapshot records 42 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-xz`. One is already modeled in this
+`package:msys2:mingw-w64-ucrt-x86_64-xz`. Two are already modeled in this
 knowledge base: `package:msys2:mingw-w64-ucrt-x86_64-gdb`
-(`relationship:toolchain:gdb-requires-liblzma`). The remaining ~41
-recorded dependents (a broad mix of UCRT64 packages such as `gimp`,
-`graphicsmagick`, and `htslib`) are not individually modeled in this
-knowledge base; see the
+(`relationship:toolchain:gdb-requires-liblzma`) and
+`package:msys2:mingw-w64-ucrt-x86_64-libarchive`
+(`relationship:toolchain:libarchive-requires-liblzma`, added 2026-07-30
+to close a gap in
+[libarchive's own dependency table](LIBARCHIVE.md#dependencies)). The
+remaining ~40 recorded dependents (a broad mix of UCRT64 packages such
+as `gimp`, `graphicsmagick`, and `htslib`) are not individually modeled
+in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -148,3 +158,5 @@ methodology.
 - [Zstandard (library)](LIBZSTD.md)
 - [liblzma (CLANG64)](LIBLZMA-CLANG64.md)
 - [LLDB](LLDB.md)
+- [GNU gettext](GNU-GETTEXT.md)
+- [libarchive](LIBARCHIVE.md)

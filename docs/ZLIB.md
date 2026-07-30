@@ -151,6 +151,7 @@ this library's unusually wide blast radius.
 - [libc++](LIBCXX.md)
 - [GNU Gzip](GNU-GZIP.md)
 - [libarchive](LIBARCHIVE.md)
+- [CMake](CMAKE.md)
 - [GNU GCC](GNU-GCC.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)

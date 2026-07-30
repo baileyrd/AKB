@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:libngtcp2
   - component:curl:curl
   - library:nghttp2:libnghttp3
+  - library:openssl:libopenssl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -64,15 +65,19 @@ appeared by package name in
 ## Dependencies
 
 The MSYS `package:msys2:libngtcp2` declares dependencies on `gcc-libs` and
-`libopenssl` — the OpenSSL **runtime library** package
-(`package:msys2:libopenssl`), used here for QUIC's own TLS 1.3 handshake.
-This is a distinct catalog entity from `package:msys2:openssl`, the CLI
-package [OpenSSL's own page](OPENSSL.md) documents (`component:openssl:openssl`);
-no formal dependency edge to `component:openssl:openssl` is added for that
-reason, the same package/environment-style distinction already applied
-throughout this volume, here between a CLI package and its own separately
-packaged runtime library rather than between MSYS and native
-environments.
+[libopenssl](LIBOPENSSL.md) — the OpenSSL **runtime library** package
+(`package:msys2:libopenssl`,
+`relationship:foundation-libraries:libngtcp2-requires-libopenssl`), used
+here for QUIC's own TLS 1.3 handshake. **Correction, 2026-07-30**: this
+page originally left libopenssl unmodeled and declined to add a formal
+dependency edge to it; [libopenssl](LIBOPENSSL.md) now has its own page,
+and the edge is added here. This is a distinct catalog entity from
+`package:msys2:openssl`, the CLI package [OpenSSL's own page](OPENSSL.md)
+documents (`component:openssl:openssl`); no formal dependency edge to
+`component:openssl:openssl` is added for that reason, the same
+package/environment-style distinction already applied throughout this
+volume, here between a CLI package and its own separately packaged
+runtime library rather than between MSYS and native environments.
 
 ## Reverse Dependencies
 
@@ -138,12 +143,9 @@ the `project_url` already recorded for `package:msys2:libngtcp2` in the
 catalog. Package identity, version, and the recorded dependency/dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: the `libopenssl` runtime-library sub-dependency is not individually
-modeled as a component in this knowledge base (distinct from the
-`openssl` CLI component OPENSSL.md documents); header-level API surface
-and PE import/export-level evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology, also remain open.
+page: header-level API surface and PE import/export-level evidence, per
+the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology.
 
 ## Related Objects
 
@@ -152,3 +154,4 @@ methodology, also remain open.
 - [libnghttp2](LIBNGHTTP2.md)
 - [libnghttp3](LIBNGHTTP3.md)
 - [OpenSSL](OPENSSL.md)
+- [libopenssl](LIBOPENSSL.md)

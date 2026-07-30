@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:heimdal-libs
   - library:h5l:heimdal
   - library:libxcrypt:libxcrypt
+  - library:openssl:libopenssl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -65,12 +66,19 @@ CLI/library split pattern, not a duplicate of the same functionality.
 
 ## Dependencies
 
-The catalog snapshot records dependencies for `package:msys2:heimdal-libs`
-not individually enumerated on this page; this page's scope is limited
-to confirming and documenting the [Heimdal](HEIMDAL.md) dependency
-relationship. `package:msys2:libxcrypt` is among its recorded reverse
-dependents' own dependency set, per this page's Reverse Dependencies
-below, reflecting the broader `crypt()`-family hashing ecosystem
+The catalog snapshot records a `runtime-depends-on` edge from
+`package:msys2:heimdal-libs` to `package:msys2:libopenssl` — OpenSSL's
+own runtime library, backing Heimdal's use of OpenSSL cryptographic
+primitives alongside its Kerberos implementation, documented fully in
+[libopenssl](LIBOPENSSL.md)
+(`relationship:foundation-libraries:heimdal-libs-requires-libopenssl`).
+Beyond that edge, the remainder of this package's own dependencies are
+not individually enumerated on this page; this page's scope is
+otherwise limited to confirming and documenting the
+[Heimdal](HEIMDAL.md) dependency relationship. `package:msys2:libxcrypt`
+is among its recorded reverse dependents' own dependency set, per this
+page's Reverse Dependencies below, reflecting the broader
+`crypt()`-family hashing ecosystem
 [libxcrypt's own page](LIBXCRYPT.md#reverse-dependencies) documents.
 
 ## Reverse Dependencies
@@ -133,12 +141,12 @@ be checked against heimdal-libs' own error reporting.
 Kerberos V5 runtime implementation scope is backed by the official
 Heimdal project page (`evidence:h5l:heimdal-manual-2026-07-30`), the
 same evidence record [Heimdal's own page](HEIMDAL.md) cites. Package
-identity, version, and the modeled dependency edge are backed by the
+identity, version, and the modeled dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open: whether
 other native environments package heimdal-libs separately was not
 confirmed. Also explicitly out of scope for this page: this package's
-own sub-dependencies, and header-level API surface / PE
-import/export-level evidence, per the
+remaining sub-dependencies beyond libopenssl, and header-level API
+surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -147,3 +155,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Heimdal](HEIMDAL.md)
 - [OpenSSH](OPENSSH.md)
+- [libopenssl](LIBOPENSSL.md)

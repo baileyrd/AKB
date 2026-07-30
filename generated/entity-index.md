@@ -41,7 +41,7 @@
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
 | component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
 | component:openssh:openssh | component | OpenSSH | partial | 7 | 2 |
-| component:openssl:openssl | component | OpenSSL | partial | 2 | 5 |
+| component:openssl:openssl | component | OpenSSL | partial | 3 | 5 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
 | component:tukaani:xz | component | XZ Utils | partial | 3 | 1 |
@@ -646,7 +646,7 @@
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
-| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 2 | 2 |
+| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 3 | 2 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 5 | 2 |
 | library:libedit:libedit | library | libedit | partial | 2 | 2 |
@@ -671,7 +671,8 @@
 | library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 3 | 2 |
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 3 |
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 3 |
-| library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 3 |
+| library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
+| library:openssl:libopenssl | library | libopenssl | partial | 0 | 3 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 4 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |

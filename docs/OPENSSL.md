@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:openssl:openssl
   - package:msys2:openssl
+  - library:openssl:libopenssl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -61,7 +62,8 @@ snapshot, a deliberate architectural separation covered under
 
 The catalog snapshot records one `runtime-depends-on` edge for
 `package:msys2:openssl`: `package:msys2:libopenssl`, its own shared
-cryptography library (the CLI/library split noted above). Optional
+cryptography library (the CLI/library split noted above). Documented
+fully in [libopenssl](LIBOPENSSL.md). Optional
 dependencies on `ca-certificates` and `perl` support certificate-chain
 verification and OpenSSL's Perl-based test/build tooling, respectively.
 
@@ -142,3 +144,4 @@ confirmed.
 - [OpenSSH](OPENSSH.md)
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
 - [GnuPG](GNUPG.md)
+- [libopenssl](LIBOPENSSL.md)

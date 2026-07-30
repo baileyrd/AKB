@@ -341,7 +341,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 5
 
 ## `component:p7zip:p7zip`
@@ -5786,7 +5786,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:jsoncpp:jsoncpp`
@@ -6011,7 +6011,16 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
+- Incoming relationships: 3
+
+## `library:openssl:libopenssl`
+
+- Name: libopenssl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
 - Incoming relationships: 3
 
 ## `library:p11-glue:p11-kit`

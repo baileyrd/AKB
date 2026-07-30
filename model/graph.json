@@ -2321,6 +2321,24 @@
         "role": "public-key cryptography primitives"
       },
       "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:openssl:libopenssl",
+      "kind": "library",
+      "name": "libopenssl",
+      "summary": "The OpenSSL runtime library package, packaged in the MSYS environment specifically and split from the openssl CLI package — depended on by openssl itself, Heimdal runtime libraries, and libngtcp2 for TLS 1.3 support, among 27 total recorded catalog dependents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "OpenSSL Project",
+      "aliases": ["libopenssl"],
+      "tags": ["library", "cryptography", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://openssl-library.org",
+        "packaged_as": "package:msys2:libopenssl",
+        "role": "TLS/SSL protocol implementation and cryptographic primitives"
+      },
+      "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -7997,6 +8015,42 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "A direct catalog dependency alongside Emacs' transitive libnettle/GnuTLS dependency chain, per the catalog snapshot.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssl-requires-libopenssl",
+      "type": "requires",
+      "source": "component:openssl:openssl",
+      "target": "library:openssl:libopenssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "The openssl CLI package is split from and links against libopenssl, its shared runtime library, the same library/CLI split pattern documented for bzip2 and XZ Utils.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-libs-requires-libopenssl",
+      "type": "requires",
+      "source": "library:h5l:heimdal-libs",
+      "target": "library:openssl:libopenssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Heimdal's own use of OpenSSL cryptographic primitives alongside its Kerberos implementation.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libngtcp2-requires-libopenssl",
+      "type": "requires",
+      "source": "library:nghttp2:libngtcp2",
+      "target": "library:openssl:libopenssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: this page had previously left libopenssl explicitly unmodeled; used here as ngtcp2's TLS 1.3 backend for QUIC's handshake.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

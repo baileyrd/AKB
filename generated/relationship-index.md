@@ -76235,6 +76235,7 @@
 | relationship:foundation-libraries:gnutls-requires-p11-kit | requires | library:gnutls:gnutls | library:p11-glue:p11-kit | verified |
 | relationship:foundation-libraries:gnutls-uses-msys-runtime | uses-runtime | library:gnutls:gnutls | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-libs-packaged-by-package | packaged-by | library:h5l:heimdal-libs | package:msys2:heimdal-libs | verified |
+| relationship:foundation-libraries:heimdal-libs-requires-libopenssl | requires | library:h5l:heimdal-libs | library:openssl:libopenssl | verified |
 | relationship:foundation-libraries:heimdal-libs-uses-msys-runtime | uses-runtime | library:h5l:heimdal-libs | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-packaged-by-package | packaged-by | library:h5l:heimdal | package:msys2:heimdal | verified |
 | relationship:foundation-libraries:heimdal-requires-heimdal-libs | requires | library:h5l:heimdal | library:h5l:heimdal-libs | verified |
@@ -76308,6 +76309,7 @@
 | relationship:foundation-libraries:libnghttp3-packaged-by-package | packaged-by | library:nghttp2:libnghttp3 | package:msys2:libnghttp3 | verified |
 | relationship:foundation-libraries:libnghttp3-uses-msys-runtime | uses-runtime | library:nghttp2:libnghttp3 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libngtcp2-packaged-by-package | packaged-by | library:nghttp2:libngtcp2 | package:msys2:libngtcp2 | verified |
+| relationship:foundation-libraries:libngtcp2-requires-libopenssl | requires | library:nghttp2:libngtcp2 | library:openssl:libopenssl | verified |
 | relationship:foundation-libraries:libngtcp2-uses-msys-runtime | uses-runtime | library:nghttp2:libngtcp2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libpsl-packaged-by-package | packaged-by | library:libpsl:libpsl | package:msys2:libpsl | verified |
 | relationship:foundation-libraries:libpsl-requires-libidn2 | requires | library:libpsl:libpsl | library:gnu:libidn2 | verified |
@@ -77081,6 +77083,7 @@
 | relationship:ssh-curl-git:openssh-requires-openssl | requires | component:openssh:openssh | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:openssh-uses-msys-runtime | uses-runtime | component:openssh:openssh | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:openssl-packaged-by-package | packaged-by | component:openssl:openssl | package:msys2:openssl | verified |
+| relationship:ssh-curl-git:openssl-requires-libopenssl | requires | component:openssl:openssl | library:openssl:libopenssl | verified |
 | relationship:ssh-curl-git:openssl-uses-msys-runtime | uses-runtime | component:openssl:openssl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:toolchain:binutils-packaged-by-package | packaged-by | component:gnu:binutils | package:msys2:mingw-w64-ucrt-x86_64-binutils | verified |
 | relationship:toolchain:binutils-requires-gettext | requires | component:gnu:binutils | library:gnu:gettext | verified |

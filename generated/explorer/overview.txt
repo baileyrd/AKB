@@ -669,6 +669,7 @@ Objects
 - library:nghttp2:libnghttp2 (library): libnghttp2
 - library:nghttp2:libnghttp3 (library): libnghttp3
 - library:nghttp2:libngtcp2 (library): libngtcp2
+- library:openssl:libopenssl (library): libopenssl
 - library:p11-glue:p11-kit (library): p11-kit
 - library:pcre:pcre (library): PCRE (MSYS)
 - library:pcre:pcre2 (library): PCRE2
@@ -16876,6 +16877,9 @@ Relationships
 - library:nettle:libhogweed@msys --requires--> library:gnu:gmp@msys
 - library:gnutls:gnutls --requires--> library:nettle:libnettle@msys
 - component:gnu:emacs --requires--> library:nettle:libhogweed@msys
+- component:openssl:openssl --requires--> library:openssl:libopenssl
+- library:h5l:heimdal-libs --requires--> library:openssl:libopenssl
+- library:nghttp2:libngtcp2 --requires--> library:openssl:libopenssl
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

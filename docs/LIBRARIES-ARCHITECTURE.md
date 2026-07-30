@@ -83,6 +83,7 @@ model_refs:
   - library:gnu:mpfr@msys
   - library:nettle:libnettle@msys
   - library:nettle:libhogweed@msys
+  - library:openssl:libopenssl
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -209,7 +210,7 @@ flowchart LR
 [ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md),
 [Zstandard (MSYS library)](LIBZSTD-MSYS.md), [libbz2](LIBBZ2.md),
 [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md), [libnettle (MSYS)](LIBNETTLE-MSYS.md),
-and [Hogweed (MSYS)](LIBHOGWEED-MSYS.md) are
+[Hogweed (MSYS)](LIBHOGWEED-MSYS.md), and [libopenssl](LIBOPENSSL.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -224,7 +225,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All seventy-nine pages are deliberately scoped to package/dependency-level
+All eighty pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -465,7 +466,17 @@ place rather than left standing, the same discipline applied to every
 other conflation this session has caught. [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
 also picked up a `requires` edge onto [GNU MP (MSYS)](GNU-GMP-MSYS.md)
 for its own arbitrary-precision arithmetic needs, its fourth modeled
-reverse dependent alongside GnuTLS, Coreutils, and MPFR. These pages are
+reverse dependent alongside GnuTLS, Coreutils, and MPFR. A final batch
+closed [libopenssl](LIBOPENSSL.md), the OpenSSL runtime library split
+from [the openssl CLI package](OPENSSL.md) — explicitly flagged as
+not-yet-modeled on both [Heimdal runtime libraries'](HEIMDAL-LIBS.md)
+and [libngtcp2's](LIBNGTCP2.md) own pages before this page existed, and
+the widest reverse-dependency footprint of any library added in this
+batch at 27 recorded catalog dependents. Modeling it closed
+[libngtcp2's](LIBNGTCP2.md#dependencies) own previously-declined
+dependency edge (corrected in place, 2026-07-30) in addition to picking
+up the split-package edge from [openssl](OPENSSL.md) itself and a third
+edge from [Heimdal runtime libraries](HEIMDAL-LIBS.md). These pages are
 a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

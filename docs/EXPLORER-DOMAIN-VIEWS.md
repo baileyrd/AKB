@@ -1,7 +1,7 @@
 ---
-id: doc:volume-18:explorer-domain-views
+id: doc:volume-10:explorer-domain-views
 title: Explorer Domain Views
-volume: 18
+volume: 10
 status: partial
 model_refs: []
 evidence_refs: []

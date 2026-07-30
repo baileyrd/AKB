@@ -1,7 +1,7 @@
 ---
-id: doc:volume-18:explorer-stable-routes
+id: doc:volume-10:explorer-stable-routes
 title: Explorer Stable Object Routes
-volume: 18
+volume: 10
 status: partial
 model_refs: []
 evidence_refs: []

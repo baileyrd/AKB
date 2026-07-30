@@ -1,7 +1,7 @@
 ---
-id: doc:volume-18:explorer-search-and-navigation
+id: doc:volume-10:explorer-search-and-navigation
 title: Explorer Search, Filters, and Navigation
-volume: 18
+volume: 10
 status: partial
 model_refs: []
 evidence_refs: []

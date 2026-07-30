@@ -7,6 +7,8 @@ model_refs:
   - component:tukaani:xz
   - package:msys2:xz
   - library:gnu:libintl
+  - library:tukaani:liblzma@msys
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -64,8 +66,8 @@ The catalog snapshot records three `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| LZMA2 codec | `package:msys2:liblzma` | The `xz` CLI links against `liblzma`, its shared codec library, following the same library/CLI split pattern documented for [bzip2](BZIP2.md#dependencies). |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| LZMA2 codec | `package:msys2:liblzma` | The `xz` CLI links against `liblzma`, its shared codec library, following the same library/CLI split pattern documented for [bzip2](BZIP2.md#dependencies). Documented fully in [liblzma (MSYS)](LIBLZMA-MSYS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 
 ## Reverse Dependencies
@@ -139,3 +141,5 @@ environment.
 - [GNU Gzip](GNU-GZIP.md)
 - [bzip2](BZIP2.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [liblzma (MSYS)](LIBLZMA-MSYS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

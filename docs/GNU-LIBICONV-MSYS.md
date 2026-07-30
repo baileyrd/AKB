@@ -80,7 +80,7 @@ The catalog snapshot records no `runtime-depends-on` edges for
 The catalog snapshot records 59 relationships targeting
 `package:msys2:libiconv` — tied with [GNU libintl's](GNU-LIBINTL.md) own
 count as the widest MSYS-only reverse-dependency footprint found this
-session. Six are already modeled in this knowledge base:
+session. Seven are already modeled in this knowledge base:
 `package:msys2:libgnutls`
 (`relationship:foundation-libraries:gnutls-msys-requires-libiconv-msys`),
 `package:msys2:gnupg`
@@ -91,9 +91,12 @@ session. Six are already modeled in this knowledge base:
 (`relationship:foundation-libraries:libintl-requires-libiconv-msys`),
 `package:msys2:libunistring`
 (`relationship:foundation-libraries:libunistring-requires-libiconv-msys`),
-and `package:msys2:libgpg-error`
-(`relationship:foundation-libraries:libgpg-error-msys-requires-libiconv-msys`).
-The remaining ~53 recorded dependents (`binutils`, `bison`, `git`'s own
+`package:msys2:libgpg-error`
+(`relationship:foundation-libraries:libgpg-error-msys-requires-libiconv-msys`),
+and `package:msys2:xz`
+(`relationship:archive-compression:xz-requires-libiconv-msys`, added
+2026-07-30, documented fully in [XZ Utils](XZ-UTILS.md)).
+The remaining ~52 recorded dependents (`binutils`, `bison`, `git`'s own
 build tooling, and many others) are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -167,3 +170,4 @@ methodology.
 - [GNU libintl](GNU-LIBINTL.md)
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
+- [XZ Utils](XZ-UTILS.md)

@@ -107,6 +107,7 @@ model_refs:
   - library:gnu:libtasn1@ucrt64
   - library:p11-glue:p11-kit@ucrt64
   - library:gnutls:gnutls@ucrt64
+  - library:tukaani:liblzma@msys
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -253,8 +254,9 @@ flowchart LR
 [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md),
 [libffi (UCRT64)](LIBFFI-UCRT64.md),
 [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md),
-[p11-kit (UCRT64)](P11-KIT-UCRT64.md), and
-[GnuTLS (UCRT64)](GNUTLS-UCRT64.md) are
+[p11-kit (UCRT64)](P11-KIT-UCRT64.md),
+[GnuTLS (UCRT64)](GNUTLS-UCRT64.md), and
+[liblzma (MSYS)](LIBLZMA-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -269,7 +271,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and three pages are deliberately scoped to package/dependency-level
+All one hundred and four pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -678,7 +680,18 @@ of that page which had only noted libxcrypt among heimdal-libs'
 [libarchive's](LIBARCHIVE.md#dependencies) own declined OpenSSL
 (UCRT64) edge, closed now that page exists; and
 [ncurses (UCRT64)'s](NCURSES-UCRT64.md#dependencies) own PCRE2 (UCRT64)
-edge. These pages are a starting point for this
+edge. A final batch found one genuinely new entity while re-checking
+this same audit: `package:msys2:liblzma`, a distinct MSYS catalog
+package cited on both [XZ Utils'](XZ-UTILS.md#dependencies) own
+dependency table (the split library half of the `xz` CLI) and
+[file's](FILE.md#dependencies) own page (explicitly flagged as "not
+individually modeled" since first publication) — closing the last item
+that page had left open. [liblzma (MSYS)](LIBLZMA-MSYS.md) is the
+third distinct liblzma-named catalog entity in this knowledge base
+alongside [liblzma (UCRT64)](LIBLZMA.md) and
+[liblzma (CLANG64)](LIBLZMA-CLANG64.md); modeling it also closed
+[XZ Utils'](XZ-UTILS.md#dependencies) own long-cited-but-unlinked
+`libiconv` sub-dependency in the same pass. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

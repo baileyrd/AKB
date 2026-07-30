@@ -701,6 +701,7 @@ Objects
 - library:sqlite:sqlite3 (library): SQLite
 - library:tukaani:liblzma (library): liblzma (XZ Utils library)
 - library:tukaani:liblzma@clang64 (library): liblzma (XZ Utils library, CLANG64)
+- library:tukaani:liblzma@msys (library): liblzma (MSYS)
 - library:unicode:icu (library): ICU (International Components for Unicode)
 - library:xxhash:xxhash (library): xxHash
 - library:yubico:libfido2 (library): libfido2
@@ -16978,6 +16979,9 @@ Relationships
 - library:h5l:heimdal-libs --requires--> library:libxcrypt:libxcrypt
 - library:libarchive:libarchive --requires--> library:openssl:openssl@ucrt64
 - library:gnu:ncurses@ucrt64 --requires--> library:pcre:pcre2
+- component:tukaani:xz --requires--> library:tukaani:liblzma@msys
+- component:tukaani:xz --requires--> library:gnu:libiconv@msys
+- library:darwinsys:file --requires--> library:tukaani:liblzma@msys
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

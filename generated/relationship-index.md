@@ -33,7 +33,9 @@
 | relationship:archive-compression:unzip-packaged-by-package | packaged-by | component:info-zip:unzip | package:msys2:unzip | verified |
 | relationship:archive-compression:unzip-uses-msys-runtime | uses-runtime | component:info-zip:unzip | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:xz-packaged-by-package | packaged-by | component:tukaani:xz | package:msys2:xz | verified |
+| relationship:archive-compression:xz-requires-libiconv-msys | requires | component:tukaani:xz | library:gnu:libiconv@msys | verified |
 | relationship:archive-compression:xz-requires-libintl | requires | component:tukaani:xz | library:gnu:libintl | verified |
+| relationship:archive-compression:xz-requires-liblzma-msys | requires | component:tukaani:xz | library:tukaani:liblzma@msys | verified |
 | relationship:archive-compression:xz-uses-msys-runtime | uses-runtime | component:tukaani:xz | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:zip-packaged-by-package | packaged-by | component:info-zip:zip | package:msys2:zip | verified |
 | relationship:archive-compression:zip-uses-msys-runtime | uses-runtime | component:info-zip:zip | runtime:msys2:msys-2.0.dll | partial |
@@ -76231,6 +76233,7 @@
 | relationship:foundation-libraries:expat-packaged-by-package | packaged-by | library:libexpat:expat | package:msys2:mingw-w64-ucrt-x86_64-expat | verified |
 | relationship:foundation-libraries:file-packaged-by-package | packaged-by | library:darwinsys:file | package:msys2:file | verified |
 | relationship:foundation-libraries:file-requires-libbz2 | requires | library:darwinsys:file | library:bzip2:libbz2 | verified |
+| relationship:foundation-libraries:file-requires-liblzma-msys | requires | library:darwinsys:file | library:tukaani:liblzma@msys | verified |
 | relationship:foundation-libraries:file-requires-libzstd | requires | library:darwinsys:file | library:facebook:zstd@msys-lib | verified |
 | relationship:foundation-libraries:file-requires-zlib-msys | requires | library:darwinsys:file | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:file-uses-msys-runtime | uses-runtime | library:darwinsys:file | runtime:msys2:msys-2.0.dll | partial |

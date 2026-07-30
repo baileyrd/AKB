@@ -2753,6 +2753,24 @@
         "role": "TLS/SSL protocol implementation"
       },
       "evidence_refs": ["evidence:gnutls:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:tukaani:liblzma@msys",
+      "kind": "library",
+      "name": "liblzma (MSYS)",
+      "summary": "The compression library underlying XZ Utils, packaged in the MSYS environment specifically and split from the xz CLI package, also depended on by file for identifying files inside xz/LZMA-compressed containers.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Tukaani project",
+      "aliases": ["liblzma", "xz"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://tukaani.org/xz/",
+        "packaged_as": "package:msys2:liblzma",
+        "role": "LZMA/xz compression"
+      },
+      "evidence_refs": ["evidence:tukaani:xz-library-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -9365,6 +9383,42 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs ncurses' own regular-expression support, closing a sub-dependency this page had previously left unenumerated.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:xz-requires-liblzma-msys",
+      "type": "requires",
+      "source": "component:tukaani:xz",
+      "target": "library:tukaani:liblzma@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "The xz CLI is split from and links against liblzma, its shared compression library, the same library/CLI split pattern documented for bzip2.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:archive-compression:xz-requires-libiconv-msys",
+      "type": "requires",
+      "source": "component:tukaani:xz",
+      "target": "library:gnu:libiconv@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs portable multibyte/character-set handling, closing a sub-dependency this page's own table had cited by name without a corresponding graph edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:file-requires-liblzma-msys",
+      "type": "requires",
+      "source": "library:darwinsys:file",
+      "target": "library:tukaani:liblzma@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs identifying files inside xz/LZMA-compressed containers, closing an item this page had previously left explicitly unmodeled.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     }

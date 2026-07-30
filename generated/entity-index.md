@@ -44,7 +44,7 @@
 | component:openssl:openssl | component | OpenSSL | partial | 3 | 6 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
-| component:tukaani:xz | component | XZ Utils | partial | 3 | 1 |
+| component:tukaani:xz | component | XZ Utils | partial | 5 | 1 |
 | component:vim:vim | component | Vim | partial | 5 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
@@ -609,7 +609,7 @@
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
 | library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 12 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
-| library:darwinsys:file | library | file | partial | 5 | 2 |
+| library:darwinsys:file | library | file | partial | 6 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 7 |
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
@@ -620,7 +620,7 @@
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
-| library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 7 |
+| library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 8 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 17 |
@@ -704,6 +704,7 @@
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
 | library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |
+| library:tukaani:liblzma@msys | library | liblzma (MSYS) | partial | 0 | 2 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
 | library:yubico:libfido2 | library | libfido2 | partial | 4 | 2 |

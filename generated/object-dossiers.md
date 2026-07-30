@@ -368,7 +368,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:vim:vim`
@@ -5453,7 +5453,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:darwinsys:file-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 6
 - Incoming relationships: 2
 
 ## `library:facebook:zstd`
@@ -5553,7 +5553,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `library:gnu:libidn2`
 
@@ -6301,6 +6301,15 @@
 - Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
 - Incoming relationships: 1
+
+## `library:tukaani:liblzma@msys`
+
+- Name: liblzma (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
 
 ## `library:unicode:icu`
 

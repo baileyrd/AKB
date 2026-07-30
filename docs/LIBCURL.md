@@ -16,6 +16,10 @@ model_refs:
   - library:libpsl:libpsl
   - library:gnu:libunistring
   - library:gnu:zlib@msys
+  - library:google:brotli
+  - library:mozilla:ca-certificates
+  - library:libssh2:libssh2
+  - library:facebook:zstd@msys-lib
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -90,10 +94,15 @@ gets a `requires` edge as well. An eighth, [zlib (MSYS)](ZLIB-MSYS.md)
 `relationship:foundation-libraries:libcurl-requires-zlib-msys`), closes
 an item this page previously declined to model — distinct from this
 knowledge base's UCRT64 and CLANG64 zlib entities, now given its own
-page. The remaining four — `package:msys2:brotli`,
-`package:msys2:ca-certificates`, `package:msys2:libssh2`, and
-`package:msys2:libzstd` — are not individually modeled as components in
-this knowledge base.
+page. The remaining four now also have pages and `requires` edges of
+their own: [Brotli](BROTLI.md) (`package:msys2:brotli`,
+`Content-Encoding: br` support), [ca-certificates](CA-CERTIFICATES.md)
+(`package:msys2:ca-certificates`, TLS trust-store data, also a direct
+dependency of the `curl` CLI package itself), [libssh2](LIBSSH2.md)
+(`package:msys2:libssh2`, `sftp://`/`scp://` support), and
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md) (`package:msys2:libzstd`,
+`Content-Encoding: zstd` support) — closing every one of libcurl's
+twelve declared dependencies to a page of its own.
 
 ## Reverse Dependencies
 
@@ -166,12 +175,9 @@ Protocol and API semantics are backed by the official curl project site
 upstream project. Package identity, version, and the recorded
 dependency/dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for this
-page: the `brotli`, `ca-certificates`, `libssh2`, and `libzstd`
-sub-dependencies are not individually modeled as components in this
-knowledge base; header-level API surface and PE import/export-level
-evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology, also remain open.
+page: header-level API surface and PE import/export-level evidence, per
+the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology.
 
 ## Related Objects
 
@@ -186,3 +192,7 @@ methodology, also remain open.
 - [libpsl](LIBPSL.md)
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [Brotli](BROTLI.md)
+- [ca-certificates](CA-CERTIFICATES.md)
+- [libssh2](LIBSSH2.md)
+- [Zstandard (MSYS library)](LIBZSTD-MSYS.md)

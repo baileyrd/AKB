@@ -6,7 +6,7 @@
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
 | component:cmake:cmake | component | CMake | partial | 8 | 1 |
-| component:curl:curl | component | curl | partial | 10 | 2 |
+| component:curl:curl | component | curl | partial | 11 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 8 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 67 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 71 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -605,10 +605,11 @@
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
-| library:curl:libcurl | library | libcurl | partial | 10 | 3 |
-| library:darwinsys:file | library | file | partial | 3 | 2 |
+| library:curl:libcurl | library | libcurl | partial | 14 | 3 |
+| library:darwinsys:file | library | file | partial | 4 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 4 |
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 2 |
+| library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
@@ -640,6 +641,7 @@
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 8 | 3 |
+| library:google:brotli | library | Brotli | partial | 2 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 2 | 2 |
@@ -650,6 +652,7 @@
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 2 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
+| library:libssh2:libssh2 | library | libssh2 | partial | 2 | 2 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 3 |
 | library:llvm:clang-libs | library | Clang libraries | partial | 1 | 3 |
@@ -658,6 +661,7 @@
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
+| library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 3 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 1 |
 | library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 2 | 2 |
@@ -719,7 +723,7 @@
 | package:msys2:bison | package | bison | verified | 5 | 1 |
 | package:msys2:bisonc++ | package | bisonc++ | verified | 3 | 0 |
 | package:msys2:breezy | package | breezy | verified | 8 | 0 |
-| package:msys2:brotli | package | brotli | verified | 3 | 2 |
+| package:msys2:brotli | package | brotli | verified | 3 | 3 |
 | package:msys2:brotli-devel | package | brotli-devel | verified | 3 | 1 |
 | package:msys2:brotli-testdata | package | brotli-testdata | verified | 2 | 0 |
 | package:msys2:bsdcpio | package | bsdcpio | verified | 11 | 3 |
@@ -727,7 +731,7 @@
 | package:msys2:btyacc | package | btyacc | verified | 2 | 0 |
 | package:msys2:busybox | package | busybox | verified | 2 | 0 |
 | package:msys2:bzip2 | package | bzip2 | verified | 3 | 6 |
-| package:msys2:ca-certificates | package | ca-certificates | verified | 8 | 7 |
+| package:msys2:ca-certificates | package | ca-certificates | verified | 8 | 8 |
 | package:msys2:cargo-c | package | cargo-c | verified | 8 | 0 |
 | package:msys2:cargo-edit | package | cargo-edit | verified | 3 | 0 |
 | package:msys2:ccache | package | ccache | verified | 9 | 0 |
@@ -986,7 +990,7 @@
 | package:msys2:libsqlite-devel | package | libsqlite-devel | verified | 5 | 3 |
 | package:msys2:libssh | package | libssh | verified | 4 | 1 |
 | package:msys2:libssh-devel | package | libssh-devel | verified | 4 | 0 |
-| package:msys2:libssh2 | package | libssh2 | verified | 5 | 6 |
+| package:msys2:libssh2 | package | libssh2 | verified | 5 | 7 |
 | package:msys2:libssh2-devel | package | libssh2-devel | verified | 5 | 1 |
 | package:msys2:libtasn1 | package | libtasn1 | verified | 3 | 4 |
 | package:msys2:libtasn1-devel | package | libtasn1-devel | verified | 3 | 1 |
@@ -1014,7 +1018,7 @@
 | package:msys2:libxxhash-devel | package | libxxhash-devel | verified | 3 | 0 |
 | package:msys2:libyaml | package | libyaml | verified | 2 | 5 |
 | package:msys2:libyaml-devel | package | libyaml-devel | verified | 3 | 0 |
-| package:msys2:libzstd | package | libzstd | verified | 3 | 24 |
+| package:msys2:libzstd | package | libzstd | verified | 3 | 25 |
 | package:msys2:libzstd-devel | package | libzstd-devel | verified | 3 | 1 |
 | package:msys2:lld | package | lld | verified | 4 | 0 |
 | package:msys2:llvm | package | llvm | verified | 3 | 2 |
@@ -16394,5 +16398,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 67 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 70 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

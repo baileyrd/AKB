@@ -75,6 +75,10 @@ model_refs:
   - library:pjk:libcbor
   - library:h5l:heimdal-libs
   - library:gnu:zlib@msys
+  - library:google:brotli
+  - library:mozilla:ca-certificates
+  - library:libssh2:libssh2
+  - library:facebook:zstd@msys-lib
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -130,6 +134,9 @@ evidence_refs:
   - evidence:xxhash:manual-2026-07-30
   - evidence:tukaani:xz-library-manual-2026-07-30
   - evidence:pjk:libcbor-manual-2026-07-30
+  - evidence:google:brotli-manual-2026-07-30
+  - evidence:mozilla:ca-certificates-manual-2026-07-30
+  - evidence:libssh2:manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -193,9 +200,11 @@ flowchart LR
 [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md), [GNU MP (MSYS)](GNU-GMP-MSYS.md),
 [Expat (MSYS)](EXPAT-MSYS.md), [libxml2 (MSYS)](LIBXML2-MSYS.md),
 [zlib (CLANG64)](ZLIB-CLANG64.md), [Zstandard (CLANG64)](LIBZSTD-CLANG64.md),
-[libcbor](LIBCBOR.md), [Heimdal runtime libraries](HEIMDAL-LIBS.md), and
-[zlib (MSYS)](ZLIB-MSYS.md) are this volume's first per-library pages.
-The
+[libcbor](LIBCBOR.md), [Heimdal runtime libraries](HEIMDAL-LIBS.md),
+[zlib (MSYS)](ZLIB-MSYS.md), [Brotli](BROTLI.md),
+[ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md), and
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md) are this volume's first
+per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -208,7 +217,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All seventy-one pages are deliberately scoped to package/dependency-level
+All seventy-five pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -394,12 +403,20 @@ dependents, six already documented in this knowledge base
 ([curl](CURL.md), [GNU Emacs](GNU-EMACS.md), [GnuPG](GNUPG.md),
 [libcurl](LIBCURL.md), [libfido2](LIBFIDO2.md), and [file](FILE.md)),
 matching [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)'s own six-dependent
-fan-in as the widest found this session. This knowledge base now
-documents three separately versioned zlib catalog entities (MSYS,
-UCRT64, CLANG64) and three separately versioned Zstandard entities
-(the same three environments), each cross-linked to the others rather
-than conflated. These pages are a starting point for this volume, not a
-demonstration that its full evidence model is populated.
+fan-in as the widest found this session. A final batch closed
+[libcurl's](LIBCURL.md) last four remaining declared dependencies,
+completing full coverage of all twelve: [Brotli](BROTLI.md)
+(`Content-Encoding: br`), [ca-certificates](CA-CERTIFICATES.md) (TLS
+trust-store data, also a direct [curl](CURL.md) CLI dependency in its
+own right), [libssh2](LIBSSH2.md) (`sftp://`/`scp://` support), and
+[Zstandard (MSYS library)](LIBZSTD-MSYS.md) (`Content-Encoding: zstd`,
+also a [file](FILE.md) dependency, closing another item that page had
+left open). This knowledge base now documents three separately
+versioned zlib catalog entities (MSYS, UCRT64, CLANG64) and four
+separately versioned Zstandard entities (an MSYS CLI tool plus MSYS,
+UCRT64, and CLANG64 library packages), each cross-linked to the others
+rather than conflated. These pages are a starting point for this
+volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation
 

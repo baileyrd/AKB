@@ -13,6 +13,7 @@ model_refs:
   - library:gnu:libunistring
   - library:curl:libcurl
   - library:gnu:zlib@msys
+  - library:mozilla:ca-certificates
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -71,7 +72,7 @@ CLI tool documented in this batch, reflecting curl's multi-protocol design:
 | --- | --- | --- |
 | TLS/cryptography | `package:msys2:openssl` | Backs HTTPS and other TLS-secured transfers (`relationship:ssh-curl-git:curl-requires-openssl`). |
 | Transfer library | `package:msys2:libcurl` | The `curl` CLI links against `libcurl`, its own shared transfer library, the CLI/library split noted above. Documented fully in [libcurl](LIBCURL.md). |
-| Certificate trust store | `package:msys2:ca-certificates` | Backs TLS certificate-chain verification against a trusted root store. |
+| Certificate trust store | `package:msys2:ca-certificates` | Backs TLS certificate-chain verification against a trusted root store. Documented fully in [ca-certificates](CA-CERTIFICATES.md). |
 | HTTP/2 support | `package:msys2:libnghttp2` | Backs the HTTP/2 protocol. Documented fully in [libnghttp2](LIBNGHTTP2.md). |
 | HTTP/3 support | `package:msys2:libnghttp3` | Backs the HTTP/3 protocol (which runs over QUIC rather than TCP). Documented fully in [libnghttp3](LIBNGHTTP3.md). |
 | QUIC transport | `package:msys2:libngtcp2` | Backs the QUIC transport protocol underlying HTTP/3, alongside `libnghttp3` above. Documented fully in [libngtcp2](LIBNGTCP2.md). |
@@ -152,3 +153,4 @@ general version-qualified security review noted above.
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libcurl](LIBCURL.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [ca-certificates](CA-CERTIFICATES.md)

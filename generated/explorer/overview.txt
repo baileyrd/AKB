@@ -606,6 +606,7 @@ Objects
 - library:darwinsys:file (library): file
 - library:facebook:zstd (library): Zstandard (library)
 - library:facebook:zstd@clang64 (library): Zstandard (CLANG64)
+- library:facebook:zstd@msys-lib (library): Zstandard (MSYS library)
 - library:gnome:libxml2 (library): libxml2
 - library:gnome:libxml2@msys (library): libxml2 (MSYS)
 - library:gnu:gettext (library): GNU gettext
@@ -637,6 +638,7 @@ Objects
 - library:gnupg:npth (library): nPth (New Portable Threads)
 - library:gnupg:npth@msys (library): nPth (MSYS)
 - library:gnutls:gnutls (library): GnuTLS
+- library:google:brotli (library): Brotli
 - library:google:cppdap (library): cppdap
 - library:h5l:heimdal (library): Heimdal
 - library:h5l:heimdal-libs (library): Heimdal runtime libraries
@@ -647,6 +649,7 @@ Objects
 - library:libexpat:expat@msys (library): Expat (MSYS)
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
+- library:libssh2:libssh2 (library): libssh2
 - library:libuv:libuv (library): libuv
 - library:libxcrypt:libxcrypt (library): libxcrypt
 - library:llvm:clang-libs (library): Clang libraries
@@ -655,6 +658,7 @@ Objects
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:winpthreads (library): winpthreads
 - library:mingweditline:wineditline (library): WinEditLine
+- library:mozilla:ca-certificates (library): ca-certificates
 - library:multiprecision:mpc (library): GNU MPC
 - library:nettle:nettle (library): Nettle
 - library:nettle:nettle@msys (library): Nettle (MSYS)
@@ -16834,6 +16838,23 @@ Relationships
 - library:curl:libcurl --requires--> library:gnu:zlib@msys
 - library:yubico:libfido2 --requires--> library:gnu:zlib@msys
 - library:darwinsys:file --requires--> library:gnu:zlib@msys
+- environment:msys2:msys --contains--> library:google:brotli
+- library:google:brotli --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:google:brotli --packaged-by--> package:msys2:brotli
+- environment:msys2:msys --contains--> library:mozilla:ca-certificates
+- library:mozilla:ca-certificates --packaged-by--> package:msys2:ca-certificates
+- environment:msys2:msys --contains--> library:libssh2:libssh2
+- library:libssh2:libssh2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libssh2:libssh2 --packaged-by--> package:msys2:libssh2
+- environment:msys2:msys --contains--> library:facebook:zstd@msys-lib
+- library:facebook:zstd@msys-lib --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:facebook:zstd@msys-lib --packaged-by--> package:msys2:libzstd
+- library:curl:libcurl --requires--> library:google:brotli
+- library:curl:libcurl --requires--> library:mozilla:ca-certificates
+- component:curl:curl --requires--> library:mozilla:ca-certificates
+- library:curl:libcurl --requires--> library:libssh2:libssh2
+- library:curl:libcurl --requires--> library:facebook:zstd@msys-lib
+- library:darwinsys:file --requires--> library:facebook:zstd@msys-lib
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
 - component:gnupg:gnupg --requires--> library:gnupg:libksba@msys

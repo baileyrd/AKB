@@ -123,3 +123,4 @@ above.
 - [XZ Utils](XZ-UTILS.md)
 - [LZ4](LZ4.md)
 - [Zstandard (library)](LIBZSTD.md)
+- [Zstandard (MSYS library)](LIBZSTD-MSYS.md)

@@ -156,3 +156,4 @@ methodology.
 - [GDB](GNU-GDB.md)
 - [zlib](ZLIB.md)
 - [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)
+- [Zstandard (MSYS library)](LIBZSTD-MSYS.md)

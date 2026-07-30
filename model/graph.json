@@ -2177,6 +2177,78 @@
         "role": "DEFLATE compression"
       },
       "evidence_refs": ["evidence:zlib:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:google:brotli",
+      "kind": "library",
+      "name": "Brotli",
+      "summary": "The Brotli compression library, packaged in the MSYS environment and depended on by libcurl for HTTP Content-Encoding: br compressed response support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Google",
+      "aliases": ["brotli"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://github.com/google/brotli",
+        "packaged_as": "package:msys2:brotli",
+        "role": "Brotli compression"
+      },
+      "evidence_refs": ["evidence:google:brotli-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mozilla:ca-certificates",
+      "kind": "library",
+      "name": "ca-certificates",
+      "summary": "A curated bundle of common Certificate Authority root certificates, packaged in the MSYS environment and depended on by curl and libcurl to back TLS certificate-chain verification against a trusted root store.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Mozilla",
+      "aliases": ["ca-certificates"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+        "packaged_as": "package:msys2:ca-certificates",
+        "role": "trusted CA root certificate bundle"
+      },
+      "evidence_refs": ["evidence:mozilla:ca-certificates-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libssh2:libssh2",
+      "kind": "library",
+      "name": "libssh2",
+      "summary": "A client-side C library implementing the SSH2 protocol, packaged in the MSYS environment and depended on by libcurl to back the sftp:// and scp:// URL schemes.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libssh2 project",
+      "aliases": ["libssh2"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://libssh2.org/",
+        "packaged_as": "package:msys2:libssh2",
+        "role": "client-side SSH2 protocol implementation"
+      },
+      "evidence_refs": ["evidence:libssh2:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:facebook:zstd@msys-lib",
+      "kind": "library",
+      "name": "Zstandard (MSYS library)",
+      "summary": "The Zstandard compression library runtime package, packaged in the MSYS environment specifically and depended on by libcurl and file, distinct from both the MSYS zstd CLI tool package and this knowledge base's UCRT64/CLANG64 Zstandard library entities.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Meta (Facebook)",
+      "aliases": ["libzstd"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://facebook.github.io/zstd/",
+        "packaged_as": "package:msys2:libzstd",
+        "role": "Zstandard compression"
+      },
+      "evidence_refs": ["evidence:facebook:zstd-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -7449,6 +7521,210 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-brotli",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:google:brotli",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:brotli-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:google:brotli",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:brotli-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:google:brotli",
+      "target": "package:msys2:brotli",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-ca-certificates",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:mozilla:ca-certificates",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ca-certificates-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:mozilla:ca-certificates",
+      "target": "package:msys2:ca-certificates",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libssh2",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:libssh2:libssh2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libssh2-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:libssh2:libssh2",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libssh2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libssh2:libssh2",
+      "target": "package:msys2:libssh2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libzstd",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:facebook:zstd@msys-lib",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libzstd-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:facebook:zstd@msys-lib",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libzstd-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:facebook:zstd@msys-lib",
+      "target": "package:msys2:libzstd",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-brotli",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:google:brotli",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP Content-Encoding: br compressed response support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-ca-certificates",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:mozilla:ca-certificates",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs TLS certificate-chain verification against a trusted root store.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:curl-requires-ca-certificates",
+      "type": "requires",
+      "source": "component:curl:curl",
+      "target": "library:mozilla:ca-certificates",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs TLS certificate-chain verification against a trusted root store.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libssh2",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:libssh2:libssh2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the sftp:// and scp:// URL schemes.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libcurl-requires-libzstd",
+      "type": "requires",
+      "source": "library:curl:libcurl",
+      "target": "library:facebook:zstd@msys-lib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP Content-Encoding: zstd compressed response support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:file-requires-libzstd",
+      "type": "requires",
+      "source": "library:darwinsys:file",
+      "target": "library:facebook:zstd@msys-lib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs identifying files inside zstd-compressed containers.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -8861,6 +9137,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official libcbor project page, matching the project_url recorded for package:msys2:libcbor in the catalog snapshot."
+    },
+    {
+      "id": "evidence:google:brotli-manual-2026-07-30",
+      "class": "primary",
+      "title": "Brotli (GitHub project page)",
+      "locator": "https://github.com/google/brotli",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Brotli project page, matching the project_url recorded for package:msys2:brotli in the catalog snapshot."
+    },
+    {
+      "id": "evidence:mozilla:ca-certificates-manual-2026-07-30",
+      "class": "primary",
+      "title": "Mozilla CA Certificate Program",
+      "locator": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Mozilla CA Certificate Program page, matching the project_url recorded for package:msys2:ca-certificates in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libssh2:manual-2026-07-30",
+      "class": "primary",
+      "title": "libssh2 (official project site)",
+      "locator": "https://libssh2.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libssh2 project site, matching the project_url recorded for package:msys2:libssh2 in the catalog snapshot."
     }
   ]
 }

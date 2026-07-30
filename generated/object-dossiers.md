@@ -26,7 +26,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 11
 - Incoming relationships: 2
 
 ## `component:git:git`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 67
+- Outgoing relationships: 71
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5417,7 +5417,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 14
 - Incoming relationships: 3
 
 ## `library:darwinsys:file`
@@ -5426,7 +5426,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:darwinsys:file-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `library:facebook:zstd`
@@ -5446,6 +5446,15 @@
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:facebook:zstd@msys-lib`
+
+- Name: Zstandard (MSYS library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnome:libxml2`
 
@@ -5726,6 +5735,15 @@
 - Outgoing relationships: 8
 - Incoming relationships: 3
 
+## `library:google:brotli`
+
+- Name: Brotli
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:google:cppdap`
 
 - Name: cppdap
@@ -5816,6 +5834,15 @@
 - Outgoing relationships: 4
 - Incoming relationships: 3
 
+## `library:libssh2:libssh2`
+
+- Name: libssh2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:libuv:libuv`
 
 - Name: libuv
@@ -5887,6 +5914,15 @@
 - Evidence: evidence:mingweditline:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:mozilla:ca-certificates`
+
+- Name: ca-certificates
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
 
 ## `library:multiprecision:mpc`
 
@@ -6444,7 +6480,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:brotli-devel`
 
@@ -6516,7 +6552,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:cargo-c`
 
@@ -8847,7 +8883,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:libssh2-devel`
 
@@ -9099,7 +9135,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 24
+- Incoming relationships: 25
 
 ## `package:msys2:libzstd-devel`
 
@@ -147519,7 +147555,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 67
+- Incoming relationships: 70
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

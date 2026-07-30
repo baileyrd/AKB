@@ -606,7 +606,9 @@ Objects
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:gmp (library): GNU MP (GMP)
 - library:gnu:libiconv (library): GNU libiconv
+- library:gnu:libidn2 (library): GNU libidn2
 - library:gnu:libstdc++ (library): libstdc++
+- library:gnu:libtasn1 (library): GNU Libtasn1
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:readline (library): GNU Readline
 - library:gnu:zlib (library): zlib
@@ -623,6 +625,7 @@ Objects
 - library:mingw-w64:winpthreads (library): winpthreads
 - library:multiprecision:mpc (library): GNU MPC
 - library:nettle:nettle (library): Nettle
+- library:p11-glue:p11-kit (library): p11-kit
 - library:pcre:pcre2 (library): PCRE2
 - library:sqlite:sqlite3 (library): SQLite
 - library:unicode:icu (library): ICU (International Components for Unicode)
@@ -16561,6 +16564,19 @@ Relationships
 - library:gnutls:gnutls --packaged-by--> package:msys2:libgnutls
 - component:gnupg:gnupg --requires--> library:gnutls:gnutls
 - component:gnu:emacs --requires--> library:gnutls:gnutls
+- environment:msys2:msys --contains--> library:gnu:libidn2
+- library:gnu:libidn2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libidn2 --packaged-by--> package:msys2:libidn2
+- environment:msys2:msys --contains--> library:gnu:libtasn1
+- library:gnu:libtasn1 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libtasn1 --packaged-by--> package:msys2:libtasn1
+- environment:msys2:msys --contains--> library:p11-glue:p11-kit
+- library:p11-glue:p11-kit --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:p11-glue:p11-kit --packaged-by--> package:msys2:libp11-kit
+- library:gnutls:gnutls --requires--> library:gnu:libidn2
+- library:gnutls:gnutls --requires--> library:gnu:libtasn1
+- library:gnutls:gnutls --requires--> library:p11-glue:p11-kit
+- library:p11-glue:p11-kit --requires--> library:gnu:libtasn1
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan
 - component:gnupg:gnupg --requires--> library:gnupg:libksba

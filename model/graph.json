@@ -1349,6 +1349,60 @@
         "role": "TLS/SSL and related cryptographic protocols"
       },
       "evidence_refs": ["evidence:gnutls:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libidn2",
+      "kind": "library",
+      "name": "GNU libidn2",
+      "summary": "An implementation of the IDNA2008, Punycode, and TR46 internationalized domain name specifications, packaged in the MSYS environment and depended on by both GnuTLS and libcurl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libidn2"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libidn/#libidn2",
+        "packaged_as": "package:msys2:libidn2",
+        "role": "internationalized domain name (IDNA) processing"
+      },
+      "evidence_refs": ["evidence:gnu:libidn2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libtasn1",
+      "kind": "library",
+      "name": "GNU Libtasn1",
+      "summary": "A library for Abstract Syntax Notation One (ASN.1) and Distinguished Encoding Rules (DER) manipulation, packaged in the MSYS environment and depended on by both GnuTLS and libp11-kit for certificate structure parsing.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["libtasn1"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libtasn1/",
+        "packaged_as": "package:msys2:libtasn1",
+        "role": "ASN.1/DER encoding and decoding"
+      },
+      "evidence_refs": ["evidence:gnu:libtasn1-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:p11-glue:p11-kit",
+      "kind": "library",
+      "name": "p11-kit",
+      "summary": "A library that provides a way to load and enumerate PKCS#11 modules, plus a standard configuration for sharing them between applications, packaged in the MSYS environment and depended on by GnuTLS for hardware-token/smart-card support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "p11-glue project",
+      "aliases": ["p11-kit", "libp11-kit"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://p11-glue.freedesktop.org/p11-kit.html",
+        "packaged_as": "package:msys2:libp11-kit",
+        "role": "PKCS#11 module loading and coordination"
+      },
+      "evidence_refs": ["evidence:p11-glue:p11-kit-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -3897,6 +3951,162 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-libidn2",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:libidn2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:libidn2",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libidn2, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:libidn2",
+      "target": "package:msys2:libidn2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libtasn1",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:gnu:libtasn1",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libtasn1-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:gnu:libtasn1",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libtasn1, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libtasn1-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:libtasn1",
+      "target": "package:msys2:libtasn1",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-p11-kit",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:p11-glue:p11-kit",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:p11-glue:p11-kit",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of p11-kit, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:p11-glue:p11-kit",
+      "target": "package:msys2:libp11-kit",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-requires-libidn2",
+      "type": "requires",
+      "source": "library:gnutls:gnutls",
+      "target": "library:gnu:libidn2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA) processing for TLS server-name handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-requires-libtasn1",
+      "type": "requires",
+      "source": "library:gnutls:gnutls",
+      "target": "library:gnu:libtasn1",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs ASN.1/DER parsing of X.509 certificate structures.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gnutls-requires-p11-kit",
+      "type": "requires",
+      "source": "library:gnutls:gnutls",
+      "target": "library:p11-glue:p11-kit",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs PKCS#11 hardware-token/smart-card support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-requires-libtasn1",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit",
+      "target": "library:gnu:libtasn1",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs ASN.1/DER parsing used by p11-kit's own certificate-related PKCS#11 operations.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -5029,6 +5239,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GnuTLS project site, matching the project_url recorded for package:msys2:libgnutls in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:libidn2-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU libidn2 (official project page)",
+      "locator": "https://www.gnu.org/software/libidn/#libidn2",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU libidn2 project page, matching the project_url recorded for package:msys2:libidn2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:libtasn1-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU Libtasn1 (official project page)",
+      "locator": "https://www.gnu.org/software/libtasn1/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU Libtasn1 project page, matching the project_url recorded for package:msys2:libtasn1 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:p11-glue:p11-kit-manual-2026-07-30",
+      "class": "primary",
+      "title": "p11-kit (official project page)",
+      "locator": "https://p11-glue.freedesktop.org/p11-kit.html",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official p11-kit project page, matching the project_url recorded for package:msys2:libp11-kit in the catalog snapshot."
     }
   ]
 }

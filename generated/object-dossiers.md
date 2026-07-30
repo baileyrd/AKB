@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 35
+- Outgoing relationships: 38
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5447,6 +5447,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 3
 
+## `library:gnu:libidn2`
+
+- Name: GNU libidn2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:gnu:libstdc++`
 
 - Name: libstdc++
@@ -5455,6 +5464,15 @@
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:gnu:libtasn1`
+
+- Name: GNU Libtasn1
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:mpfr`
 
@@ -5534,7 +5552,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `library:libexpat:expat`
@@ -5598,6 +5616,15 @@
 - Status: `partial`
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:p11-glue:p11-kit`
+
+- Name: p11-kit
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:pcre:pcre2`
@@ -7893,7 +7920,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:libidn2-devel`
 
@@ -8154,7 +8181,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libp11-kit-devel`
 
@@ -8451,7 +8478,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libtasn1-devel`
 
@@ -147105,7 +147132,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 35
+- Incoming relationships: 38
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

@@ -8,6 +8,9 @@ model_refs:
   - package:msys2:libgnutls
   - component:gnupg:gnupg
   - component:gnu:emacs
+  - library:gnu:libidn2
+  - library:gnu:libtasn1
+  - library:p11-glue:p11-kit
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -70,16 +73,23 @@ TLS specifically for HTTPS-based key-server lookups.
 ## Dependencies
 
 The MSYS `package:msys2:libgnutls` declares dependencies on `gcc-libs`,
-`libidn2` (internationalized domain name support), `libiconv`, `libintl`,
-`gmp`, `libnettle`, `libp11-kit` (PKCS#11 module support, for hardware
-security tokens and smart cards), `libtasn1` (ASN.1/DER parsing for
-certificates), and `zlib` — all separate MSYS-environment sibling
-packages. This page does not add formal dependency edges to this
-knowledge base's existing `library:gnu:gmp`, `library:nettle:nettle`, or
-`library:gnu:zlib` entities, because those are the UCRT64-packaged
-versions of the same-named libraries, not this MSYS package's actual
-dependencies — the same package/environment distinction this page's own
-Architectural Classification section makes about GnuTLS itself.
+[libidn2](GNU-LIBIDN2.md) (internationalized domain name support),
+`libiconv`, `libintl`, `gmp`, `libnettle`,
+[p11-kit](P11-KIT.md) (PKCS#11 module support, for hardware security
+tokens and smart cards), [libtasn1](GNU-LIBTASN1.md) (ASN.1/DER parsing
+for certificates), and `zlib` — all separate MSYS-environment sibling
+packages. Three of these (libidn2, p11-kit, libtasn1) now have their own
+pages and explicit `requires` edges from `library:gnutls:gnutls` in the
+model graph
+(`relationship:foundation-libraries:gnutls-requires-libidn2`,
+`relationship:foundation-libraries:gnutls-requires-p11-kit`,
+`relationship:foundation-libraries:gnutls-requires-libtasn1`); this page
+does not add formal dependency edges to this knowledge base's existing
+`library:gnu:gmp`, `library:nettle:nettle`, or `library:gnu:zlib`
+entities, because those are the UCRT64-packaged versions of the
+same-named libraries, not this MSYS package's actual dependencies — the
+same package/environment distinction this page's own Architectural
+Classification section makes about GnuTLS itself.
 
 ## Reverse Dependencies
 
@@ -145,10 +155,10 @@ TLS protocol implementation is backed by the official GnuTLS project site
 recorded for `package:msys2:libgnutls` in the catalog. Package identity,
 version, license, and the two confirmed dependent relationships are backed
 by the pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: this package's own sub-dependencies
-(libidn2, libp11-kit, libtasn1, and others) are not individually modeled
-as components in this knowledge base; header-level API surface and PE
-import/export-level evidence, per the
+explicitly out of scope for this page: this package's remaining
+sub-dependencies (`gcc-libs`, `libiconv`, `libintl`) are not individually
+modeled as components in this knowledge base; header-level API surface
+and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
@@ -159,3 +169,6 @@ methodology, also remain open.
 - [GNU Emacs](GNU-EMACS.md)
 - [OpenSSL](OPENSSL.md)
 - [Nettle](NETTLE.md)
+- [GNU libidn2](GNU-LIBIDN2.md)
+- [GNU Libtasn1](GNU-LIBTASN1.md)
+- [p11-kit](P11-KIT.md)

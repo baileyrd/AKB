@@ -29,6 +29,9 @@ model_refs:
   - library:gnupg:npth
   - library:nettle:nettle
   - library:gnutls:gnutls
+  - library:gnu:libidn2
+  - library:gnu:libtasn1
+  - library:p11-glue:p11-kit
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -54,6 +57,9 @@ evidence_refs:
   - evidence:gnupg:npth-manual-2026-07-30
   - evidence:nettle:manual-2026-07-30
   - evidence:gnutls:manual-2026-07-30
+  - evidence:gnu:libidn2-manual-2026-07-30
+  - evidence:gnu:libtasn1-manual-2026-07-30
+  - evidence:p11-glue:p11-kit-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -95,8 +101,9 @@ flowchart LR
 [winpthreads](WINPTHREADS.md), [PCRE2](PCRE2.md),
 [libgpg-error](LIBGPG-ERROR.md), [libgcrypt](LIBGCRYPT.md),
 [libassuan](LIBASSUAN.md), [libksba](LIBKSBA.md),
-[nPth](NPTH.md), [Nettle](NETTLE.md), and [GnuTLS](GNUTLS.md) are this
-volume's first per-library pages. The
+[nPth](NPTH.md), [Nettle](NETTLE.md), [GnuTLS](GNUTLS.md),
+[GNU libidn2](GNU-LIBIDN2.md), [GNU Libtasn1](GNU-LIBTASN1.md), and
+[p11-kit](P11-KIT.md) are this volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -109,7 +116,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All twenty-five pages are deliberately scoped to package/dependency-level
+All twenty-eight pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -130,8 +137,14 @@ each of them, rather than the dependencies living only in
 [GnuPG's](GNUPG.md) own prose table. [GnuTLS](GNUTLS.md) closes a second
 such loop into `component:gnu:emacs`, whose
 [dependency table](GNU-EMACS.md#dependencies) already cited it by package
-name before this page existed. These pages are a starting point for this
-volume, not a demonstration that its full evidence model is populated.
+name before this page existed. [GnuTLS's](GNUTLS.md) own sub-dependencies
+were themselves left as an explicitly open item on first publication;
+[GNU libidn2](GNU-LIBIDN2.md), [GNU Libtasn1](GNU-LIBTASN1.md), and
+[p11-kit](P11-KIT.md) close that item with three more pages and `requires`
+edges from `library:gnutls:gnutls`, following the dependency chain one
+level deeper than any other family in this volume has gone so far. These
+pages are a starting point for this volume, not a demonstration that its
+full evidence model is populated.
 
 ## Family navigation
 

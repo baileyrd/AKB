@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 35 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 38 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 31 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -609,7 +609,9 @@
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
+| library:gnu:libidn2 | library | GNU libidn2 | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
+| library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
 | library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
 | library:gnu:zlib | library | zlib | partial | 1 | 4 |
@@ -618,7 +620,7 @@
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 2 |
-| library:gnutls:gnutls | library | GnuTLS | partial | 2 | 3 |
+| library:gnutls:gnutls | library | GnuTLS | partial | 5 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
@@ -626,6 +628,7 @@
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 2 |
+| library:p11-glue:p11-kit | library | p11-kit | partial | 3 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 2 | 1 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
@@ -880,7 +883,7 @@
 | package:msys2:libiconv-devel | package | libiconv-devel | verified | 4 | 10 |
 | package:msys2:libidn | package | libidn | verified | 3 | 3 |
 | package:msys2:libidn-devel | package | libidn-devel | verified | 3 | 0 |
-| package:msys2:libidn2 | package | libidn2 | verified | 4 | 9 |
+| package:msys2:libidn2 | package | libidn2 | verified | 4 | 10 |
 | package:msys2:libidn2-devel | package | libidn2-devel | verified | 3 | 3 |
 | package:msys2:libinih | package | libinih | verified | 3 | 2 |
 | package:msys2:libinih-devel | package | libinih-devel | verified | 3 | 0 |
@@ -909,7 +912,7 @@
 | package:msys2:libnpth | package | libnpth | verified | 3 | 2 |
 | package:msys2:libnpth-devel | package | libnpth-devel | verified | 3 | 0 |
 | package:msys2:libopenssl | package | libopenssl | verified | 2 | 27 |
-| package:msys2:libp11-kit | package | libp11-kit | verified | 5 | 3 |
+| package:msys2:libp11-kit | package | libp11-kit | verified | 5 | 4 |
 | package:msys2:libp11-kit-devel | package | libp11-kit-devel | verified | 3 | 1 |
 | package:msys2:libpcap | package | libpcap | verified | 3 | 1 |
 | package:msys2:libpcap-devel | package | libpcap-devel | verified | 3 | 0 |
@@ -942,7 +945,7 @@
 | package:msys2:libssh-devel | package | libssh-devel | verified | 4 | 0 |
 | package:msys2:libssh2 | package | libssh2 | verified | 5 | 6 |
 | package:msys2:libssh2-devel | package | libssh2-devel | verified | 5 | 1 |
-| package:msys2:libtasn1 | package | libtasn1 | verified | 3 | 3 |
+| package:msys2:libtasn1 | package | libtasn1 | verified | 3 | 4 |
 | package:msys2:libtasn1-devel | package | libtasn1-devel | verified | 3 | 1 |
 | package:msys2:libtirpc | package | libtirpc | verified | 3 | 1 |
 | package:msys2:libtirpc-devel | package | libtirpc-devel | verified | 3 | 0 |
@@ -16348,5 +16351,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 35 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 38 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

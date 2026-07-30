@@ -7,6 +7,7 @@ model_refs:
   - library:mingw-w64:libwinpthread
   - package:msys2:mingw-w64-ucrt-x86_64-libwinpthread
   - library:mingw-w64:winpthreads
+  - component:gnu:binutils
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:mingw-w64:libwinpthread-manual-2026-07-30
@@ -72,7 +73,13 @@ reverse-dependency count recorded in this knowledge base, behind only
 [zlib](ZLIB.md#reverse-dependencies)'s 299 and
 [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167, reflecting that
 nearly any multithreaded program built in this environment links against
-it. See the
+it. One is now modeled in this knowledge base:
+[GNU Binutils](GNU-BINUTILS.md#dependencies)
+(`relationship:toolchain:binutils-requires-libwinpthread`, added
+2026-07-30 to close a gap in
+[Binutils' own dependency table](GNU-BINUTILS.md#dependencies), which
+had cited this package by name without a corresponding graph edge). See
+the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -139,4 +146,5 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [winpthreads](WINPTHREADS.md)
 - [GCC](GNU-GCC.md)
+- [GNU Binutils](GNU-BINUTILS.md)
 - [libstdc++](LIBSTDCXX.md)

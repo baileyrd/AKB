@@ -7,6 +7,7 @@ model_refs:
   - library:mingw-w64:winpthreads
   - package:msys2:mingw-w64-ucrt-x86_64-winpthreads
   - library:mingw-w64:libwinpthread
+  - component:gnu:gcc
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:mingw-w64:libwinpthread-manual-2026-07-30
@@ -74,7 +75,12 @@ inference, though not conclusive on its own.
 ## Reverse Dependencies
 
 The snapshot records **5** relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-winpthreads` — dramatically fewer
+`package:msys2:mingw-w64-ucrt-x86_64-winpthreads`, one of which is now
+modeled in this knowledge base: [GCC](GNU-GCC.md#dependencies)
+(`relationship:toolchain:gcc-requires-winpthreads`, added 2026-07-30 to
+close a gap in [GCC's own dependency table](GNU-GCC.md#dependencies),
+which had cited this package by name without a corresponding graph edge)
+— dramatically fewer overall
 than [libwinpthread](LIBWINPTHREAD.md#reverse-dependencies)'s 152, which
 is itself circumstantial support for a runtime-vs-development-package
 split (most consumers need the runtime at execution time; far fewer
@@ -146,4 +152,5 @@ warrants it, not just adding new claims.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libwinpthread](LIBWINPTHREAD.md)
+- [GCC](GNU-GCC.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)

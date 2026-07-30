@@ -8053,6 +8053,78 @@
       "condition": "Corrected 2026-07-30: this page had previously left libopenssl explicitly unmodeled; used here as ngtcp2's TLS 1.3 backend for QUIC's handshake.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-gmp",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:gnu:gmp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Corrected 2026-07-30: this page's own Dependencies table had cited gmp/mpfr/mpc/isl/winpthreads by package name without corresponding graph edges, unlike its already-modeled zlib/zstd edges; added to close the gap. Backs GCC's own internal arbitrary-precision arithmetic during compilation, such as constant folding.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-mpfr",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:gnu:mpfr",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs GCC's own internal arbitrary-precision arithmetic during compilation, such as constant folding.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-mpc",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:multiprecision:mpc",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs GCC's own internal arbitrary-precision arithmetic during compilation, such as constant folding.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-isl",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:libisl:isl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs the Graphite loop-optimization framework.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:gcc-requires-winpthreads",
+      "type": "requires",
+      "source": "component:gnu:gcc",
+      "target": "library:mingw-w64:winpthreads",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs POSIX-threads-style threading support for programs produced by this compiler.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:binutils-requires-libwinpthread",
+      "type": "requires",
+      "source": "component:gnu:binutils",
+      "target": "library:mingw-w64:libwinpthread",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Corrected 2026-07-30: this page's own Dependencies table had cited libwinpthread by package name without a corresponding graph edge, unlike its already-modeled zlib/zstd/gettext edges; added to close the gap. Backs POSIX-threads-style threading support in the built binutils tools themselves.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [

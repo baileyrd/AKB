@@ -9,6 +9,7 @@ model_refs:
   - library:facebook:zstd
   - library:gnu:zlib
   - library:gnu:gettext
+  - library:mingw-w64:libwinpthread
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:binutils-manual-2026-07-30
@@ -68,8 +69,15 @@ The catalog snapshot records four `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Native-language messages | `mingw-w64-ucrt-x86_64-gettext-runtime` | gettext-based message translation (NLS) for this native-environment build. Documented fully in [GNU gettext](GNU-GETTEXT.md). |
-| Threading | `mingw-w64-ucrt-x86_64-libwinpthread` | Backs POSIX-threads-style threading support in the built binutils tools themselves. |
+| Threading | `mingw-w64-ucrt-x86_64-libwinpthread` | Backs POSIX-threads-style threading support in the built binutils tools themselves. Documented fully in [libwinpthread](LIBWINPTHREAD.md). |
 | Compressed debug sections | `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back `--compress-debug-sections=zlib` and the newer `=zstd` compression modes respectively (`claim:component:binutils:compressed-debug-sections`). Documented fully in [zlib](ZLIB.md) and [Zstandard (library)](LIBZSTD.md). |
+
+**Correction, 2026-07-30**: the libwinpthread dependency above was cited
+by package name in this table since this page's first publication, but
+had never been backed by a corresponding `requires` graph edge the way
+the zlib/zstd/gettext edges were —
+`relationship:toolchain:binutils-requires-libwinpthread` is now added to
+close the gap.
 
 ## Reverse Dependencies
 
@@ -147,3 +155,4 @@ the general version-qualified security review noted above.
 - [GNU gettext](GNU-GETTEXT.md)
 - [zlib](ZLIB.md)
 - [Zstandard (library)](LIBZSTD.md)
+- [libwinpthread](LIBWINPTHREAD.md)

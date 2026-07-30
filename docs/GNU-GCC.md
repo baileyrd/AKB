@@ -8,6 +8,11 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-gcc
   - library:facebook:zstd
   - library:gnu:zlib
+  - library:gnu:gmp
+  - library:gnu:mpfr
+  - library:multiprecision:mpc
+  - library:libisl:isl
+  - library:mingw-w64:winpthreads
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:gcc-manual-2026-07-30
@@ -78,11 +83,22 @@ The catalog snapshot records eleven `runtime-depends-on` edges for
 | Assembler/linker backend | `mingw-w64-ucrt-x86_64-binutils` | Invoked as GCC's backend for assembly and linking (`relationship:toolchain:gcc-invokes-binutils`), documented fully in [GNU Binutils](GNU-BINUTILS.md). |
 | Target C runtime and headers | `mingw-w64-ucrt-x86_64-crt`, `mingw-w64-ucrt-x86_64-headers` | The MinGW-w64 CRT and Windows API headers this build targets (UCRT for this environment). |
 | GCC's own runtime library | `mingw-w64-ucrt-x86_64-gcc-libs` | Runtime support library (`libgcc`) needed by any program this compiler produces. |
-| Arbitrary-precision arithmetic | `mingw-w64-ucrt-x86_64-gmp`, `mingw-w64-ucrt-x86_64-mpfr`, `mingw-w64-ucrt-x86_64-mpc` | Back GCC's own internal arbitrary-precision arithmetic during compilation, such as constant folding (`claim:component:gcc:optimizer-arithmetic-libraries`). |
-| Loop optimization | `mingw-w64-ucrt-x86_64-isl` | Backs the Graphite loop-optimization framework (`claim:component:gcc:optimizer-arithmetic-libraries`). |
+| Arbitrary-precision arithmetic | `mingw-w64-ucrt-x86_64-gmp`, `mingw-w64-ucrt-x86_64-mpfr`, `mingw-w64-ucrt-x86_64-mpc` | Back GCC's own internal arbitrary-precision arithmetic during compilation, such as constant folding (`claim:component:gcc:optimizer-arithmetic-libraries`). Documented fully in [GNU MP](GNU-GMP.md), [GNU MPFR](GNU-MPFR.md), and [GNU MPC](GNU-MPC.md). |
+| Loop optimization | `mingw-w64-ucrt-x86_64-isl` | Backs the Graphite loop-optimization framework (`claim:component:gcc:optimizer-arithmetic-libraries`). Documented fully in [isl](LIBISL.md). |
 | Windows application manifest | `mingw-w64-ucrt-x86_64-windows-default-manifest` | An MSYS2/MinGW-w64-specific package providing a default Windows application manifest embedded into produced executables. |
-| Threading | `mingw-w64-ucrt-x86_64-winpthreads` | Backs POSIX-threads-style threading support for produced programs. |
+| Threading | `mingw-w64-ucrt-x86_64-winpthreads` | Backs POSIX-threads-style threading support for produced programs. Documented fully in [winpthreads](WINPTHREADS.md). |
 | Compression | `mingw-w64-ucrt-x86_64-zlib`, `mingw-w64-ucrt-x86_64-zstd` | Back compressed debug-section support, the same rationale documented for [GNU Binutils](GNU-BINUTILS.md#dependencies). Documented fully in [zlib](ZLIB.md) and [Zstandard (library)](LIBZSTD.md). |
+
+**Correction, 2026-07-30**: the gmp/mpfr/mpc/isl/winpthreads dependencies
+above were cited by package name in this table since this page's first
+publication, but had never been backed by corresponding `requires` graph
+edges the way the zlib/zstd edges were — the five missing edges are now
+added
+(`relationship:toolchain:gcc-requires-gmp`,
+`relationship:toolchain:gcc-requires-mpfr`,
+`relationship:toolchain:gcc-requires-mpc`,
+`relationship:toolchain:gcc-requires-isl`,
+`relationship:toolchain:gcc-requires-winpthreads`).
 
 This package also `provides` a `mingw-w64-ucrt-x86_64-gcc-base` capability
 and `conflicts` with a separate `mingw-w64-ucrt-x86_64-gcc-rust` package —
@@ -164,3 +180,8 @@ the general version-qualified security review noted above.
 - [Runtime Environments](RUNTIME-ENVIRONMENTS.md)
 - [zlib](ZLIB.md)
 - [Zstandard (library)](LIBZSTD.md)
+- [GNU MP](GNU-GMP.md)
+- [GNU MPFR](GNU-MPFR.md)
+- [GNU MPC](GNU-MPC.md)
+- [isl](LIBISL.md)
+- [winpthreads](WINPTHREADS.md)

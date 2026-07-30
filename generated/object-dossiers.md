@@ -71,7 +71,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:binutils-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `component:gnu:coreutils`
@@ -134,7 +134,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:gcc-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `component:gnu:gdb`
@@ -5499,7 +5499,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `library:gnu:gmp@msys`
 
@@ -5589,7 +5589,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:mpfr@msys`
 
@@ -5841,7 +5841,7 @@
 - Status: `partial`
 - Evidence: evidence:libisl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:libpsl:libpsl`
 
@@ -5913,7 +5913,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:mingw-w64:winpthreads`
 
@@ -5922,7 +5922,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:mingweditline:wineditline`
 
@@ -5949,7 +5949,7 @@
 - Status: `partial`
 - Evidence: evidence:multiprecision:mpc-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:nettle:libhogweed@msys`
 

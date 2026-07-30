@@ -16880,6 +16880,12 @@ Relationships
 - component:openssl:openssl --requires--> library:openssl:libopenssl
 - library:h5l:heimdal-libs --requires--> library:openssl:libopenssl
 - library:nghttp2:libngtcp2 --requires--> library:openssl:libopenssl
+- component:gnu:gcc --requires--> library:gnu:gmp
+- component:gnu:gcc --requires--> library:gnu:mpfr
+- component:gnu:gcc --requires--> library:multiprecision:mpc
+- component:gnu:gcc --requires--> library:libisl:isl
+- component:gnu:gcc --requires--> library:mingw-w64:winpthreads
+- component:gnu:binutils --requires--> library:mingw-w64:libwinpthread
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

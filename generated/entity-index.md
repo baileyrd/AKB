@@ -11,14 +11,14 @@
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
 | component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
-| component:gnu:binutils | component | GNU Binutils | partial | 4 | 3 |
+| component:gnu:binutils | component | GNU Binutils | partial | 5 | 3 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 5 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 7 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 3 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 5 | 1 |
-| component:gnu:gcc | component | GCC | partial | 4 | 1 |
+| component:gnu:gcc | component | GCC | partial | 9 | 1 |
 | component:gnu:gdb | component | GDB | partial | 11 | 1 |
 | component:gnu:grep | component | GNU Grep | partial | 4 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
@@ -614,7 +614,7 @@
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 2 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 3 |
-| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 6 |
+| library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 7 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 5 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 7 |
@@ -624,7 +624,7 @@
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 4 |
-| library:gnu:mpfr | library | GNU MPFR | partial | 2 | 3 |
+| library:gnu:mpfr | library | GNU MPFR | partial | 2 | 4 |
 | library:gnu:mpfr@msys | library | GNU MPFR (MSYS) | partial | 1 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 3 |
@@ -652,7 +652,7 @@
 | library:libedit:libedit | library | libedit | partial | 2 | 2 |
 | library:libexpat:expat | library | Expat | partial | 1 | 3 |
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 2 |
-| library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
+| library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 2 | 2 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
@@ -660,11 +660,11 @@
 | library:llvm:clang-libs | library | Clang libraries | partial | 1 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 1 | 3 |
-| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
-| library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
+| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 3 |
+| library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 3 |
-| library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
+| library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
 | library:nettle:libhogweed@msys | library | libhogweed | partial | 1 | 2 |
 | library:nettle:libnettle@msys | library | libnettle | partial | 1 | 2 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 1 |

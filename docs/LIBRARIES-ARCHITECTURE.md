@@ -476,8 +476,21 @@ batch at 27 recorded catalog dependents. Modeling it closed
 [libngtcp2's](LIBNGTCP2.md#dependencies) own previously-declined
 dependency edge (corrected in place, 2026-07-30) in addition to picking
 up the split-package edge from [openssl](OPENSSL.md) itself and a third
-edge from [Heimdal runtime libraries](HEIMDAL-LIBS.md). These pages are
-a starting point for this
+edge from [Heimdal runtime libraries](HEIMDAL-LIBS.md). A final pass
+added no new pages but closed six missing graph edges found by
+re-checking every already-modeled library's own dependents' prose
+against the graph: [GCC's](GNU-GCC.md#dependencies) own dependency table
+had cited `gmp`, `mpfr`, `mpc`, `isl`, and `winpthreads` by package name
+since this page's first publication, each already backed by its own
+page in this volume, but only its zlib/zstd edges had ever been added as
+formal `requires` relationships — the five missing edges are now added.
+[GNU Binutils'](GNU-BINUTILS.md#dependencies) own table had the same gap
+for its `libwinpthread` dependency, alongside its already-modeled
+zlib/zstd/gettext edges — that sixth edge is now added too. Both
+corrections are recorded in place on the affected pages
+(GNU-GCC.md, GNU-BINUTILS.md, GNU-GMP.md, GNU-MPFR.md, GNU-MPC.md,
+LIBISL.md, WINPTHREADS.md, LIBWINPTHREAD.md) rather than silently
+patched. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

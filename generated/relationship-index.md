@@ -77087,6 +77087,7 @@
 | relationship:ssh-curl-git:openssl-uses-msys-runtime | uses-runtime | component:openssl:openssl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:toolchain:binutils-packaged-by-package | packaged-by | component:gnu:binutils | package:msys2:mingw-w64-ucrt-x86_64-binutils | verified |
 | relationship:toolchain:binutils-requires-gettext | requires | component:gnu:binutils | library:gnu:gettext | verified |
+| relationship:toolchain:binutils-requires-libwinpthread | requires | component:gnu:binutils | library:mingw-w64:libwinpthread | verified |
 | relationship:toolchain:binutils-requires-zlib | requires | component:gnu:binutils | library:gnu:zlib | verified |
 | relationship:toolchain:binutils-requires-zstd | requires | component:gnu:binutils | library:facebook:zstd | verified |
 | relationship:toolchain:clang-invokes-lld | invokes | component:llvm:clang | component:llvm:lld | verified |
@@ -77105,6 +77106,11 @@
 | relationship:toolchain:cmake-requires-rhash | requires | component:cmake:cmake | library:rhash:rhash | verified |
 | relationship:toolchain:gcc-invokes-binutils | invokes | component:gnu:gcc | component:gnu:binutils | verified |
 | relationship:toolchain:gcc-packaged-by-package | packaged-by | component:gnu:gcc | package:msys2:mingw-w64-ucrt-x86_64-gcc | verified |
+| relationship:toolchain:gcc-requires-gmp | requires | component:gnu:gcc | library:gnu:gmp | verified |
+| relationship:toolchain:gcc-requires-isl | requires | component:gnu:gcc | library:libisl:isl | verified |
+| relationship:toolchain:gcc-requires-mpc | requires | component:gnu:gcc | library:multiprecision:mpc | verified |
+| relationship:toolchain:gcc-requires-mpfr | requires | component:gnu:gcc | library:gnu:mpfr | verified |
+| relationship:toolchain:gcc-requires-winpthreads | requires | component:gnu:gcc | library:mingw-w64:winpthreads | verified |
 | relationship:toolchain:gcc-requires-zlib | requires | component:gnu:gcc | library:gnu:zlib | verified |
 | relationship:toolchain:gcc-requires-zstd | requires | component:gnu:gcc | library:facebook:zstd | verified |
 | relationship:toolchain:gdb-packaged-by-package | packaged-by | component:gnu:gdb | package:msys2:mingw-w64-ucrt-x86_64-gdb | verified |

@@ -5,7 +5,7 @@ volume: 20
 status: partial
 model_refs: []
 evidence_refs: []
-last_verified: 2026-07-29
+last_verified: 2026-07-30
 ---
 
 # Twenty-Volume Coverage Ledger
@@ -41,8 +41,11 @@ remain distinguishable from reviewed architecture.
 
 ## Current evidence boundary
 
-The local-only model has direct installed-artifact evidence for a bounded
-MSYS/UCRT64 installation and full repository-file ownership evidence. It does
+The local-only evidence includes full repository-file ownership plus a
+hash-verified expanded installed-artifact snapshot across the isolated MSYS2
+installation. Its standalone typed overlay contains 48,299 entities and
+54,993 relationships; it remains separate from the multi-million-object
+ownership projection to stay within workstation-safe memory limits. It does
 not prove universal runtime behavior, source-to-payload byte identity, or
 complete artifact coverage for every repository package. Those distinctions
 are intentional and remain completion gates for the relevant rows above.

@@ -17,7 +17,8 @@ bounded by a three-second timeout and does not perform package installation,
 network activity, or configuration changes.
 
 The collector also records bounded, read-only observations of `uname`, MSYS
-`cygpath` conversion in both directions, and the MSYS mount table. Output is
+`cygpath` conversion in both directions, the MSYS mount table, and the
+executing process's `/proc/self/exe` link. Output is
 limited to 8,000 characters per probe. These probes describe the MSYS
 shell/runtime executing the collector even when its selected `MSYSTEM` is a
 native environment; they are not evidence of native UCRT64/MinGW runtime

@@ -332,7 +332,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:openssh:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 7
 - Incoming relationships: 2
 
 ## `component:openssl:openssl`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 43
+- Outgoing relationships: 47
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -5564,6 +5564,24 @@
 - Outgoing relationships: 5
 - Incoming relationships: 3
 
+## `library:h5l:heimdal`
+
+- Name: Heimdal
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:libedit:libedit`
+
+- Name: libedit
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libedit:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:libexpat:expat`
 
 - Name: Expat
@@ -5589,6 +5607,15 @@
 - Status: `partial`
 - Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
+- Incoming relationships: 2
+
+## `library:libxcrypt:libxcrypt`
+
+- Name: libxcrypt
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libxcrypt:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:llvm:libc++`
@@ -5698,6 +5725,15 @@
 - Evidence: evidence:unicode:icu-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 1
+
+## `library:yubico:libfido2`
+
+- Name: libfido2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
 
 ## `package:msys2:ack`
 
@@ -7191,7 +7227,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:heimdal-devel`
 
@@ -7668,7 +7704,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libedit-devel`
 
@@ -7740,7 +7776,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libfido2-devel`
 
@@ -8667,7 +8703,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `package:msys2:libxcrypt-devel`
 
@@ -147177,7 +147213,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 43
+- Incoming relationships: 47
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

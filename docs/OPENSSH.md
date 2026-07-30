@@ -6,6 +6,10 @@ status: partial
 model_refs:
   - component:openssh:openssh
   - package:msys2:openssh
+  - library:libedit:libedit
+  - library:libxcrypt:libxcrypt
+  - library:yubico:libfido2
+  - library:h5l:heimdal
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -61,10 +65,10 @@ The catalog snapshot records five `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Cryptographic primitives | `package:msys2:openssl` | Backs the underlying encryption, key exchange, and hashing OpenSSH uses rather than implementing independently (`relationship:ssh-curl-git:openssh-requires-openssl`). |
-| Kerberos/GSSAPI authentication | `package:msys2:heimdal` | Backs optional GSSAPI-based authentication (Kerberos single sign-on), a documented OpenSSH authentication method beyond password/public-key. |
-| Line editing | `package:msys2:libedit` | Backs interactive line editing in tools such as `sftp`'s command prompt. |
-| Password/crypt hashing | `package:msys2:libxcrypt` | Backs local password-based authentication checks, the same `crypt()`-family hashing rationale documented for [Vim](VIM.md#dependencies)'s encryption feature. |
-| Hardware security keys | `package:msys2:libfido2` | Backs FIDO2/U2F hardware security key support for public-key authentication, a modern OpenSSH authentication method. |
+| Kerberos/GSSAPI authentication | `package:msys2:heimdal` | Backs optional GSSAPI-based authentication (Kerberos single sign-on), a documented OpenSSH authentication method beyond password/public-key. Documented fully in [Heimdal](HEIMDAL.md). |
+| Line editing | `package:msys2:libedit` | Backs interactive line editing in tools such as `sftp`'s command prompt. Documented fully in [libedit](LIBEDIT.md). |
+| Password/crypt hashing | `package:msys2:libxcrypt` | Backs local password-based authentication checks, the same `crypt()`-family hashing rationale documented for [Vim](VIM.md#dependencies)'s encryption feature. Documented fully in [libxcrypt](LIBXCRYPT.md). |
+| Hardware security keys | `package:msys2:libfido2` | Backs FIDO2/U2F hardware security key support for public-key authentication, a modern OpenSSH authentication method. Documented fully in [libfido2](LIBFIDO2.md). |
 
 ## Reverse Dependencies
 
@@ -134,3 +138,7 @@ items beyond the general version-qualified security review noted above.
 - [OpenSSL](OPENSSL.md)
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
 - [curl](CURL.md)
+- [libedit](LIBEDIT.md)
+- [libxcrypt](LIBXCRYPT.md)
+- [libfido2](LIBFIDO2.md)
+- [Heimdal](HEIMDAL.md)

@@ -76203,11 +76203,17 @@
 | relationship:foundation-libraries:gnutls-requires-libtasn1 | requires | library:gnutls:gnutls | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:gnutls-requires-p11-kit | requires | library:gnutls:gnutls | library:p11-glue:p11-kit | verified |
 | relationship:foundation-libraries:gnutls-uses-msys-runtime | uses-runtime | library:gnutls:gnutls | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:heimdal-packaged-by-package | packaged-by | library:h5l:heimdal | package:msys2:heimdal | verified |
+| relationship:foundation-libraries:heimdal-uses-msys-runtime | uses-runtime | library:h5l:heimdal | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:icu-packaged-by-package | packaged-by | library:unicode:icu | package:msys2:mingw-w64-ucrt-x86_64-icu | verified |
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
 | relationship:foundation-libraries:isl-requires-gmp | requires | library:libisl:isl | library:gnu:gmp | verified |
 | relationship:foundation-libraries:libassuan-packaged-by-package | packaged-by | library:gnupg:libassuan | package:msys2:mingw-w64-ucrt-x86_64-libassuan | verified |
 | relationship:foundation-libraries:libassuan-requires-libgpg-error | requires | library:gnupg:libassuan | library:gnupg:libgpg-error | verified |
+| relationship:foundation-libraries:libedit-packaged-by-package | packaged-by | library:libedit:libedit | package:msys2:libedit | verified |
+| relationship:foundation-libraries:libedit-uses-msys-runtime | uses-runtime | library:libedit:libedit | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libfido2-packaged-by-package | packaged-by | library:yubico:libfido2 | package:msys2:libfido2 | verified |
+| relationship:foundation-libraries:libfido2-uses-msys-runtime | uses-runtime | library:yubico:libfido2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgcrypt-packaged-by-package | packaged-by | library:gnupg:libgcrypt | package:msys2:mingw-w64-ucrt-x86_64-libgcrypt | verified |
 | relationship:foundation-libraries:libgcrypt-requires-libgpg-error | requires | library:gnupg:libgcrypt | library:gnupg:libgpg-error | verified |
 | relationship:foundation-libraries:libgpg-error-packaged-by-package | packaged-by | library:gnupg:libgpg-error | package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | verified |
@@ -76231,6 +76237,8 @@
 | relationship:foundation-libraries:libunistring-packaged-by-package | packaged-by | library:gnu:libunistring | package:msys2:libunistring | verified |
 | relationship:foundation-libraries:libunistring-uses-msys-runtime | uses-runtime | library:gnu:libunistring | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libwinpthread-packaged-by-package | packaged-by | library:mingw-w64:libwinpthread | package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | verified |
+| relationship:foundation-libraries:libxcrypt-packaged-by-package | packaged-by | library:libxcrypt:libxcrypt | package:msys2:libxcrypt | verified |
+| relationship:foundation-libraries:libxcrypt-uses-msys-runtime | uses-runtime | library:libxcrypt:libxcrypt | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libxml2-packaged-by-package | packaged-by | library:gnome:libxml2 | package:msys2:mingw-w64-ucrt-x86_64-libxml2 | verified |
 | relationship:foundation-libraries:libxml2-requires-libiconv | requires | library:gnome:libxml2 | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:libxml2-requires-zlib | requires | library:gnome:libxml2 | library:gnu:zlib | verified |
@@ -76240,6 +76248,9 @@
 | relationship:foundation-libraries:mpfr-packaged-by-package | packaged-by | library:gnu:mpfr | package:msys2:mingw-w64-ucrt-x86_64-mpfr | verified |
 | relationship:foundation-libraries:mpfr-requires-gmp | requires | library:gnu:mpfr | library:gnu:gmp | verified |
 | relationship:foundation-libraries:msys-contains-gnutls | contains | environment:msys2:msys | library:gnutls:gnutls | partial |
+| relationship:foundation-libraries:msys-contains-heimdal | contains | environment:msys2:msys | library:h5l:heimdal | partial |
+| relationship:foundation-libraries:msys-contains-libedit | contains | environment:msys2:msys | library:libedit:libedit | partial |
+| relationship:foundation-libraries:msys-contains-libfido2 | contains | environment:msys2:msys | library:yubico:libfido2 | partial |
 | relationship:foundation-libraries:msys-contains-libidn2 | contains | environment:msys2:msys | library:gnu:libidn2 | partial |
 | relationship:foundation-libraries:msys-contains-libnghttp2 | contains | environment:msys2:msys | library:nghttp2:libnghttp2 | partial |
 | relationship:foundation-libraries:msys-contains-libnghttp3 | contains | environment:msys2:msys | library:nghttp2:libnghttp3 | partial |
@@ -76247,6 +76258,7 @@
 | relationship:foundation-libraries:msys-contains-libpsl | contains | environment:msys2:msys | library:libpsl:libpsl | partial |
 | relationship:foundation-libraries:msys-contains-libtasn1 | contains | environment:msys2:msys | library:gnu:libtasn1 | partial |
 | relationship:foundation-libraries:msys-contains-libunistring | contains | environment:msys2:msys | library:gnu:libunistring | partial |
+| relationship:foundation-libraries:msys-contains-libxcrypt | contains | environment:msys2:msys | library:libxcrypt:libxcrypt | partial |
 | relationship:foundation-libraries:msys-contains-p11-kit | contains | environment:msys2:msys | library:p11-glue:p11-kit | partial |
 | relationship:foundation-libraries:nettle-packaged-by-package | packaged-by | library:nettle:nettle | package:msys2:mingw-w64-ucrt-x86_64-nettle | verified |
 | relationship:foundation-libraries:nettle-requires-gmp | requires | library:nettle:nettle | library:gnu:gmp | verified |
@@ -76886,6 +76898,10 @@
 | relationship:ssh-curl-git:msys-contains-openssh | contains | environment:msys2:msys | component:openssh:openssh | partial |
 | relationship:ssh-curl-git:msys-contains-openssl | contains | environment:msys2:msys | component:openssl:openssl | partial |
 | relationship:ssh-curl-git:openssh-packaged-by-package | packaged-by | component:openssh:openssh | package:msys2:openssh | verified |
+| relationship:ssh-curl-git:openssh-requires-heimdal | requires | component:openssh:openssh | library:h5l:heimdal | verified |
+| relationship:ssh-curl-git:openssh-requires-libedit | requires | component:openssh:openssh | library:libedit:libedit | verified |
+| relationship:ssh-curl-git:openssh-requires-libfido2 | requires | component:openssh:openssh | library:yubico:libfido2 | verified |
+| relationship:ssh-curl-git:openssh-requires-libxcrypt | requires | component:openssh:openssh | library:libxcrypt:libxcrypt | verified |
 | relationship:ssh-curl-git:openssh-requires-openssl | requires | component:openssh:openssh | component:openssl:openssl | verified |
 | relationship:ssh-curl-git:openssh-uses-msys-runtime | uses-runtime | component:openssh:openssh | runtime:msys2:msys-2.0.dll | partial |
 | relationship:ssh-curl-git:openssl-packaged-by-package | packaged-by | component:openssl:openssl | package:msys2:openssl | verified |

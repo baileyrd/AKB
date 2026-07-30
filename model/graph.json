@@ -1493,6 +1493,78 @@
         "role": "QUIC transport protocol implementation"
       },
       "evidence_refs": ["evidence:nghttp2:libngtcp2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libedit:libedit",
+      "kind": "library",
+      "name": "libedit",
+      "summary": "An autotool- and libtoolized port of the NetBSD Editline library, providing readline-style interactive line editing, packaged in the MSYS environment and depended on by OpenSSH for sftp's command prompt.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libedit project (NetBSD Editline port)",
+      "aliases": ["libedit", "editline"],
+      "tags": ["library", "gnu-userland"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.thrysoee.dk/editline/",
+        "packaged_as": "package:msys2:libedit",
+        "role": "interactive line editing"
+      },
+      "evidence_refs": ["evidence:libedit:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libxcrypt:libxcrypt",
+      "kind": "library",
+      "name": "libxcrypt",
+      "summary": "A modern library for one-way hashing of passwords (the crypt() family), packaged in the MSYS environment and depended on by OpenSSH for local password-based authentication checks.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libxcrypt project",
+      "aliases": ["libxcrypt"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://github.com/besser82/libxcrypt/",
+        "packaged_as": "package:msys2:libxcrypt",
+        "role": "one-way password hashing (crypt())"
+      },
+      "evidence_refs": ["evidence:libxcrypt:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:yubico:libfido2",
+      "kind": "library",
+      "name": "libfido2",
+      "summary": "A library implementing the FIDO2/U2F protocols, including communication with hardware security keys over USB, packaged in the MSYS environment and depended on by OpenSSH for FIDO2-based public-key authentication.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yubico",
+      "aliases": ["libfido2"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://developers.yubico.com/libfido2/",
+        "packaged_as": "package:msys2:libfido2",
+        "role": "FIDO2/U2F hardware security key support"
+      },
+      "evidence_refs": ["evidence:yubico:libfido2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:h5l:heimdal",
+      "kind": "library",
+      "name": "Heimdal",
+      "summary": "An implementation of the Kerberos V5 protocol and libraries, packaged in the MSYS environment and depended on by OpenSSH for optional GSSAPI-based (Kerberos single sign-on) authentication.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Heimdal Project",
+      "aliases": ["heimdal"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.h5l.org/",
+        "packaged_as": "package:msys2:heimdal",
+        "role": "Kerberos V5 / GSSAPI authentication"
+      },
+      "evidence_refs": ["evidence:h5l:heimdal-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -4461,6 +4533,198 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-libedit",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:libedit:libedit",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libedit-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:libedit:libedit",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libedit, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libedit-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libedit:libedit",
+      "target": "package:msys2:libedit",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libxcrypt",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:libxcrypt:libxcrypt",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libxcrypt-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:libxcrypt:libxcrypt",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libxcrypt, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libxcrypt-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libxcrypt:libxcrypt",
+      "target": "package:msys2:libxcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-libfido2",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:yubico:libfido2",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:yubico:libfido2",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of libfido2, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:yubico:libfido2",
+      "target": "package:msys2:libfido2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:msys-contains-heimdal",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:h5l:heimdal",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:h5l:heimdal",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of heimdal, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:h5l:heimdal",
+      "target": "package:msys2:heimdal",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-requires-libedit",
+      "type": "requires",
+      "source": "component:openssh:openssh",
+      "target": "library:libedit:libedit",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs interactive line editing in tools such as sftp's command prompt.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-requires-libxcrypt",
+      "type": "requires",
+      "source": "component:openssh:openssh",
+      "target": "library:libxcrypt:libxcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs local password-based authentication checks.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-requires-libfido2",
+      "type": "requires",
+      "source": "component:openssh:openssh",
+      "target": "library:yubico:libfido2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs FIDO2/U2F hardware security key support for public-key authentication.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:openssh-requires-heimdal",
+      "type": "requires",
+      "source": "component:openssh:openssh",
+      "target": "library:h5l:heimdal",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs optional GSSAPI-based authentication (Kerberos single sign-on).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -5673,6 +5937,46 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official ngtcp2 project page, matching the project_url recorded for package:msys2:libngtcp2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libedit:manual-2026-07-30",
+      "class": "primary",
+      "title": "libedit / NetBSD Editline (official project page)",
+      "locator": "https://www.thrysoee.dk/editline/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libedit project page, matching the project_url recorded for package:msys2:libedit in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libxcrypt:manual-2026-07-30",
+      "class": "primary",
+      "title": "libxcrypt (GitHub project page)",
+      "locator": "https://github.com/besser82/libxcrypt/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libxcrypt project page, matching the project_url recorded for package:msys2:libxcrypt in the catalog snapshot."
+    },
+    {
+      "id": "evidence:yubico:libfido2-manual-2026-07-30",
+      "class": "primary",
+      "title": "libfido2 (official Yubico developer page)",
+      "locator": "https://developers.yubico.com/libfido2/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libfido2 project page, matching the project_url recorded for package:msys2:libfido2 in the catalog snapshot."
+    },
+    {
+      "id": "evidence:h5l:heimdal-manual-2026-07-30",
+      "class": "primary",
+      "title": "Heimdal Kerberos 5 (official project page)",
+      "locator": "https://www.h5l.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Heimdal project page, matching the project_url recorded for package:msys2:heimdal in the catalog snapshot."
     }
   ]
 }

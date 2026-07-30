@@ -37,6 +37,10 @@ model_refs:
   - library:nghttp2:libnghttp2
   - library:nghttp2:libnghttp3
   - library:nghttp2:libngtcp2
+  - library:libedit:libedit
+  - library:libxcrypt:libxcrypt
+  - library:yubico:libfido2
+  - library:h5l:heimdal
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -70,6 +74,10 @@ evidence_refs:
   - evidence:nghttp2:libnghttp2-manual-2026-07-30
   - evidence:nghttp2:libnghttp3-manual-2026-07-30
   - evidence:nghttp2:libngtcp2-manual-2026-07-30
+  - evidence:libedit:manual-2026-07-30
+  - evidence:libxcrypt:manual-2026-07-30
+  - evidence:yubico:libfido2-manual-2026-07-30
+  - evidence:h5l:heimdal-manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -115,7 +123,9 @@ flowchart LR
 [GNU libidn2](GNU-LIBIDN2.md), [GNU Libtasn1](GNU-LIBTASN1.md),
 [p11-kit](P11-KIT.md), [libpsl](LIBPSL.md),
 [GNU libunistring](GNU-LIBUNISTRING.md), [libnghttp2](LIBNGHTTP2.md),
-[libnghttp3](LIBNGHTTP3.md), and [libngtcp2](LIBNGTCP2.md) are this
+[libnghttp3](LIBNGHTTP3.md), [libngtcp2](LIBNGTCP2.md),
+[libedit](LIBEDIT.md), [libxcrypt](LIBXCRYPT.md),
+[libfido2](LIBFIDO2.md), and [Heimdal](HEIMDAL.md) are this
 volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
@@ -129,7 +139,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All thirty-three pages are deliberately scoped to package/dependency-level
+All thirty-seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -167,8 +177,15 @@ rather than a graph edge: libidn2 is a dependency of `libcurl`, curl's own
 transfer library, not of the `curl` CLI package itself, so no `requires`
 edge from `component:curl:curl` to `library:gnu:libidn2` was added,
 recorded explicitly on [GNU libidn2's own page](GNU-LIBIDN2.md#reverse-dependencies)
-rather than silently added or silently omitted. These pages are a
-starting point for this volume, not a demonstration that its full
+rather than silently added or silently omitted. The same
+directly-declared-dependency pattern was applied a third time to
+[OpenSSH's](OPENSSH.md) remaining uncovered dependencies:
+[libedit](LIBEDIT.md), [libxcrypt](LIBXCRYPT.md),
+[libfido2](LIBFIDO2.md), and [Heimdal](HEIMDAL.md) now each have pages
+and `requires` edges from `component:openssh:openssh`, closing every
+dependency edge in OpenSSH's own table to a page of its own except
+[OpenSSL](OPENSSL.md), which already had one from Volume 5. These pages
+are a starting point for this volume, not a demonstration that its full
 evidence model is populated.
 
 ## Family navigation

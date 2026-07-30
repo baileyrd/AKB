@@ -619,9 +619,12 @@ Objects
 - library:gnupg:libksba (library): libksba
 - library:gnupg:npth (library): nPth (New Portable Threads)
 - library:gnutls:gnutls (library): GnuTLS
+- library:h5l:heimdal (library): Heimdal
+- library:libedit:libedit (library): libedit
 - library:libexpat:expat (library): Expat
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
+- library:libxcrypt:libxcrypt (library): libxcrypt
 - library:llvm:libc++ (library): libc++
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:winpthreads (library): winpthreads
@@ -634,6 +637,7 @@ Objects
 - library:pcre:pcre2 (library): PCRE2
 - library:sqlite:sqlite3 (library): SQLite
 - library:unicode:icu (library): ICU (International Components for Unicode)
+- library:yubico:libfido2 (library): libfido2
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -16604,6 +16608,22 @@ Relationships
 - component:curl:curl --requires--> library:nghttp2:libngtcp2
 - library:libpsl:libpsl --requires--> library:gnu:libidn2
 - library:libpsl:libpsl --requires--> library:gnu:libunistring
+- environment:msys2:msys --contains--> library:libedit:libedit
+- library:libedit:libedit --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libedit:libedit --packaged-by--> package:msys2:libedit
+- environment:msys2:msys --contains--> library:libxcrypt:libxcrypt
+- library:libxcrypt:libxcrypt --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libxcrypt:libxcrypt --packaged-by--> package:msys2:libxcrypt
+- environment:msys2:msys --contains--> library:yubico:libfido2
+- library:yubico:libfido2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:yubico:libfido2 --packaged-by--> package:msys2:libfido2
+- environment:msys2:msys --contains--> library:h5l:heimdal
+- library:h5l:heimdal --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:h5l:heimdal --packaged-by--> package:msys2:heimdal
+- component:openssh:openssh --requires--> library:libedit:libedit
+- component:openssh:openssh --requires--> library:libxcrypt:libxcrypt
+- component:openssh:openssh --requires--> library:yubico:libfido2
+- component:openssh:openssh --requires--> library:h5l:heimdal
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan
 - component:gnupg:gnupg --requires--> library:gnupg:libksba

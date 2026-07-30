@@ -40,7 +40,7 @@
 | component:mesonbuild:meson | component | Meson | partial | 3 | 1 |
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
 | component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
-| component:openssh:openssh | component | OpenSSH | partial | 3 | 2 |
+| component:openssh:openssh | component | OpenSSH | partial | 7 | 2 |
 | component:openssl:openssl | component | OpenSSL | partial | 2 | 4 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
@@ -65,7 +65,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 43 | 799 |
+| environment:msys2:msys | environment | MSYS | planned | 47 | 799 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 31 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -622,9 +622,12 @@
 | library:gnupg:libksba | library | libksba | partial | 2 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 5 | 3 |
+| library:h5l:heimdal | library | Heimdal | partial | 2 | 2 |
+| library:libedit:libedit | library | libedit | partial | 2 | 2 |
 | library:libexpat:expat | library | Expat | partial | 1 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 2 |
+| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 2 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
@@ -637,6 +640,7 @@
 | library:pcre:pcre2 | library | PCRE2 | partial | 2 | 1 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
+| library:yubico:libfido2 | library | libfido2 | partial | 2 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -802,7 +806,7 @@
 | package:msys2:guile-mqtt | package | guile-mqtt | verified | 4 | 0 |
 | package:msys2:gyp | package | gyp | verified | 4 | 0 |
 | package:msys2:gzip | package | gzip | verified | 4 | 6 |
-| package:msys2:heimdal | package | heimdal | verified | 3 | 2 |
+| package:msys2:heimdal | package | heimdal | verified | 3 | 3 |
 | package:msys2:heimdal-devel | package | heimdal-devel | verified | 7 | 1 |
 | package:msys2:heimdal-libs | package | heimdal-libs | verified | 7 | 4 |
 | package:msys2:help2man | package | help2man | verified | 4 | 0 |
@@ -855,7 +859,7 @@
 | package:msys2:libcurl-devel | package | libcurl-devel | verified | 13 | 0 |
 | package:msys2:libdb | package | libdb | verified | 3 | 3 |
 | package:msys2:libdb-devel | package | libdb-devel | verified | 3 | 1 |
-| package:msys2:libedit | package | libedit | verified | 3 | 4 |
+| package:msys2:libedit | package | libedit | verified | 3 | 5 |
 | package:msys2:libedit-devel | package | libedit-devel | verified | 4 | 1 |
 | package:msys2:libevent | package | libevent | verified | 4 | 3 |
 | package:msys2:libevent-devel | package | libevent-devel | verified | 4 | 1 |
@@ -863,7 +867,7 @@
 | package:msys2:libexpat-devel | package | libexpat-devel | verified | 3 | 3 |
 | package:msys2:libffi | package | libffi | verified | 2 | 8 |
 | package:msys2:libffi-devel | package | libffi-devel | verified | 3 | 1 |
-| package:msys2:libfido2 | package | libfido2 | verified | 5 | 3 |
+| package:msys2:libfido2 | package | libfido2 | verified | 5 | 4 |
 | package:msys2:libfido2-devel | package | libfido2-devel | verified | 3 | 1 |
 | package:msys2:libfido2-docs | package | libfido2-docs | verified | 3 | 0 |
 | package:msys2:libgc | package | libgc | verified | 3 | 4 |
@@ -966,7 +970,7 @@
 | package:msys2:libuv | package | libuv | verified | 3 | 2 |
 | package:msys2:libuv-devel | package | libuv-devel | verified | 3 | 0 |
 | package:msys2:libwebsockets | package | libwebsockets | verified | 4 | 1 |
-| package:msys2:libxcrypt | package | libxcrypt | verified | 2 | 19 |
+| package:msys2:libxcrypt | package | libxcrypt | verified | 2 | 20 |
 | package:msys2:libxcrypt-devel | package | libxcrypt-devel | verified | 3 | 4 |
 | package:msys2:libxml2 | package | libxml2 | verified | 5 | 12 |
 | package:msys2:libxml2-devel | package | libxml2-devel | verified | 6 | 2 |
@@ -16356,5 +16360,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 43 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 47 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

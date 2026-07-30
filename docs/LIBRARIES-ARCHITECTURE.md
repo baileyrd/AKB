@@ -46,6 +46,9 @@ model_refs:
   - library:libarchive:libarchive
   - library:libuv:libuv
   - library:rhash:rhash
+  - library:darwinsys:file
+  - library:gnu:termcap
+  - library:mingweditline:wineditline
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -88,6 +91,9 @@ evidence_refs:
   - evidence:libarchive:manual-2026-07-30
   - evidence:libuv:manual-2026-07-30
   - evidence:rhash:manual-2026-07-30
+  - evidence:darwinsys:file-manual-2026-07-30
+  - evidence:gnu:termcap-manual-2026-07-30
+  - evidence:mingweditline:manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -137,7 +143,9 @@ flowchart LR
 [libedit](LIBEDIT.md), [libxcrypt](LIBXCRYPT.md),
 [libfido2](LIBFIDO2.md), [Heimdal](HEIMDAL.md), [cppdap](CPPDAP.md),
 [JsonCpp](JSONCPP.md), [libarchive](LIBARCHIVE.md), [libuv](LIBUV.md),
-and [RHash](RHASH.md) are this volume's first per-library pages. The
+[RHash](RHASH.md), [file](FILE.md), [GNU termcap](GNU-TERMCAP.md), and
+[WinEditLine](WINEDITLINE.md) are this volume's first per-library pages.
+The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -150,7 +158,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All forty-two pages are deliberately scoped to package/dependency-level
+All forty-five pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -212,7 +220,14 @@ table rather than a Volume 5 MSYS component's, following the same
 `contains`/`packaged-by` pattern (without a `uses-runtime` edge to
 `msys-2.0.dll`) already established for [libstdc++](LIBSTDCXX.md),
 [Expat](EXPAT.md), and the other native libraries earlier in this
-volume. These pages are a starting point for this volume, not a
+volume. A final small batch mopped up three remaining single-dependency
+items already named by package elsewhere in this knowledge base but
+never modeled: [file](FILE.md) (a [GNU Nano](GNU-NANO.md) dependency,
+Volume 5), [GNU termcap](GNU-TERMCAP.md) (GNU Readline's sole recorded
+dependency), and [WinEditLine](WINEDITLINE.md) (a [PCRE2](PCRE2.md)
+dependency, and the native-Windows-Console counterpart to
+[libedit](LIBEDIT.md), which targets the MSYS/POSIX-emulated terminal
+instead). These pages are a starting point for this volume, not a
 demonstration that its full evidence model is populated.
 
 ## Family navigation

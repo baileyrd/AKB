@@ -188,7 +188,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:nano-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnu:ncurses`
@@ -557,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 47
+- Outgoing relationships: 48
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 36
+- Outgoing relationships: 38
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5411,6 +5411,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 1
 
+## `library:darwinsys:file`
+
+- Name: file
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:darwinsys:file-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:gnome:libxml2`
 
 - Name: libxml2
@@ -5498,8 +5507,17 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 1
+
+## `library:gnu:termcap`
+
+- Name: GNU termcap
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:termcap-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:zlib`
 
@@ -5681,6 +5699,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:mingweditline:wineditline`
+
+- Name: WinEditLine
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingweditline:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
 ## `library:multiprecision:mpc`
 
 - Name: GNU MPC
@@ -5741,7 +5768,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 2
 
 ## `library:rhash:rhash`
@@ -6831,7 +6858,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:filesystem`
 
@@ -111177,7 +111204,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-tesseract-data-afr`
 
@@ -114867,7 +114894,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-winfile`
 
@@ -147258,7 +147285,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 47
+- Incoming relationships: 48
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

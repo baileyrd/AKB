@@ -137,3 +137,4 @@ methodology.
 - [OpenSSH](OPENSSH.md)
 - [GNU Readline](GNU-READLINE.md)
 - [ncurses](NCURSES.md)
+- [WinEditLine](WINEDITLINE.md)

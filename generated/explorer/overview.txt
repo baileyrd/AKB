@@ -602,6 +602,7 @@ Objects
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - library:boost:boost (library): Boost
+- library:darwinsys:file (library): file
 - library:gnome:libxml2 (library): libxml2
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:gmp (library): GNU MP (GMP)
@@ -612,6 +613,7 @@ Objects
 - library:gnu:libunistring (library): GNU libunistring
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:readline (library): GNU Readline
+- library:gnu:termcap (library): GNU termcap
 - library:gnu:zlib (library): zlib
 - library:gnupg:libassuan (library): libassuan
 - library:gnupg:libgcrypt (library): libgcrypt
@@ -632,6 +634,7 @@ Objects
 - library:llvm:libc++ (library): libc++
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:winpthreads (library): winpthreads
+- library:mingweditline:wineditline (library): WinEditLine
 - library:multiprecision:mpc (library): GNU MPC
 - library:nettle:nettle (library): Nettle
 - library:nghttp2:libnghttp2 (library): libnghttp2
@@ -16648,6 +16651,16 @@ Relationships
 - library:libarchive:libarchive --requires--> library:gnu:libiconv
 - library:libarchive:libarchive --requires--> library:pcre:pcre2
 - library:libarchive:libarchive --requires--> library:gnu:zlib
+- environment:msys2:msys --contains--> library:darwinsys:file
+- library:darwinsys:file --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:darwinsys:file --packaged-by--> package:msys2:file
+- environment:msys2:ucrt64 --contains--> library:gnu:termcap
+- library:gnu:termcap --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-termcap
+- environment:msys2:ucrt64 --contains--> library:mingweditline:wineditline
+- library:mingweditline:wineditline --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-wineditline
+- component:gnu:nano --requires--> library:darwinsys:file
+- library:gnu:readline --requires--> library:gnu:termcap
+- library:pcre:pcre2 --requires--> library:mingweditline:wineditline
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan
 - component:gnupg:gnupg --requires--> library:gnupg:libksba

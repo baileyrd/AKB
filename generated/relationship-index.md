@@ -76186,6 +76186,7 @@
 | relationship:editors-pagers-terminals:msys-contains-ncurses | contains | environment:msys2:msys | component:gnu:ncurses | partial |
 | relationship:editors-pagers-terminals:msys-contains-vim | contains | environment:msys2:msys | component:vim:vim | partial |
 | relationship:editors-pagers-terminals:nano-packaged-by-package | packaged-by | component:gnu:nano | package:msys2:nano | verified |
+| relationship:editors-pagers-terminals:nano-requires-file | requires | component:gnu:nano | library:darwinsys:file | verified |
 | relationship:editors-pagers-terminals:nano-uses-msys-runtime | uses-runtime | component:gnu:nano | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:nano-uses-ncurses | requires | component:gnu:nano | component:gnu:ncurses | verified |
 | relationship:editors-pagers-terminals:ncurses-packaged-by-package | packaged-by | component:gnu:ncurses | package:msys2:ncurses | verified |
@@ -76196,6 +76197,8 @@
 | relationship:foundation-libraries:boost-packaged-by-package | packaged-by | library:boost:boost | package:msys2:mingw-w64-ucrt-x86_64-boost | verified |
 | relationship:foundation-libraries:cppdap-packaged-by-package | packaged-by | library:google:cppdap | package:msys2:mingw-w64-ucrt-x86_64-cppdap | verified |
 | relationship:foundation-libraries:expat-packaged-by-package | packaged-by | library:libexpat:expat | package:msys2:mingw-w64-ucrt-x86_64-expat | verified |
+| relationship:foundation-libraries:file-packaged-by-package | packaged-by | library:darwinsys:file | package:msys2:file | verified |
+| relationship:foundation-libraries:file-uses-msys-runtime | uses-runtime | library:darwinsys:file | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:gettext-packaged-by-package | packaged-by | library:gnu:gettext | package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | verified |
 | relationship:foundation-libraries:gettext-requires-libiconv | requires | library:gnu:gettext | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:gmp-packaged-by-package | packaged-by | library:gnu:gmp | package:msys2:mingw-w64-ucrt-x86_64-gmp | verified |
@@ -76255,6 +76258,7 @@
 | relationship:foundation-libraries:mpc-requires-mpfr | requires | library:multiprecision:mpc | library:gnu:mpfr | verified |
 | relationship:foundation-libraries:mpfr-packaged-by-package | packaged-by | library:gnu:mpfr | package:msys2:mingw-w64-ucrt-x86_64-mpfr | verified |
 | relationship:foundation-libraries:mpfr-requires-gmp | requires | library:gnu:mpfr | library:gnu:gmp | verified |
+| relationship:foundation-libraries:msys-contains-file | contains | environment:msys2:msys | library:darwinsys:file | partial |
 | relationship:foundation-libraries:msys-contains-gnutls | contains | environment:msys2:msys | library:gnutls:gnutls | partial |
 | relationship:foundation-libraries:msys-contains-heimdal | contains | environment:msys2:msys | library:h5l:heimdal | partial |
 | relationship:foundation-libraries:msys-contains-libedit | contains | environment:msys2:msys | library:libedit:libedit | partial |
@@ -76275,11 +76279,14 @@
 | relationship:foundation-libraries:p11-kit-requires-libtasn1 | requires | library:p11-glue:p11-kit | library:gnu:libtasn1 | verified |
 | relationship:foundation-libraries:p11-kit-uses-msys-runtime | uses-runtime | library:p11-glue:p11-kit | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |
+| relationship:foundation-libraries:pcre2-requires-wineditline | requires | library:pcre:pcre2 | library:mingweditline:wineditline | verified |
 | relationship:foundation-libraries:pcre2-requires-zlib | requires | library:pcre:pcre2 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:readline-packaged-by-package | packaged-by | library:gnu:readline | package:msys2:mingw-w64-ucrt-x86_64-readline | verified |
+| relationship:foundation-libraries:readline-requires-termcap | requires | library:gnu:readline | library:gnu:termcap | verified |
 | relationship:foundation-libraries:rhash-packaged-by-package | packaged-by | library:rhash:rhash | package:msys2:mingw-w64-ucrt-x86_64-rhash | verified |
 | relationship:foundation-libraries:sqlite3-packaged-by-package | packaged-by | library:sqlite:sqlite3 | package:msys2:mingw-w64-ucrt-x86_64-sqlite3 | verified |
 | relationship:foundation-libraries:sqlite3-requires-zlib | requires | library:sqlite:sqlite3 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:termcap-packaged-by-package | packaged-by | library:gnu:termcap | package:msys2:mingw-w64-ucrt-x86_64-termcap | verified |
 | relationship:foundation-libraries:ucrt64-contains-boost | contains | environment:msys2:ucrt64 | library:boost:boost | partial |
 | relationship:foundation-libraries:ucrt64-contains-cppdap | contains | environment:msys2:ucrt64 | library:google:cppdap | partial |
 | relationship:foundation-libraries:ucrt64-contains-expat | contains | environment:msys2:ucrt64 | library:libexpat:expat | partial |
@@ -76305,8 +76312,11 @@
 | relationship:foundation-libraries:ucrt64-contains-readline | contains | environment:msys2:ucrt64 | library:gnu:readline | partial |
 | relationship:foundation-libraries:ucrt64-contains-rhash | contains | environment:msys2:ucrt64 | library:rhash:rhash | partial |
 | relationship:foundation-libraries:ucrt64-contains-sqlite3 | contains | environment:msys2:ucrt64 | library:sqlite:sqlite3 | partial |
+| relationship:foundation-libraries:ucrt64-contains-termcap | contains | environment:msys2:ucrt64 | library:gnu:termcap | partial |
+| relationship:foundation-libraries:ucrt64-contains-wineditline | contains | environment:msys2:ucrt64 | library:mingweditline:wineditline | partial |
 | relationship:foundation-libraries:ucrt64-contains-winpthreads | contains | environment:msys2:ucrt64 | library:mingw-w64:winpthreads | partial |
 | relationship:foundation-libraries:ucrt64-contains-zlib | contains | environment:msys2:ucrt64 | library:gnu:zlib | partial |
+| relationship:foundation-libraries:wineditline-packaged-by-package | packaged-by | library:mingweditline:wineditline | package:msys2:mingw-w64-ucrt-x86_64-wineditline | verified |
 | relationship:foundation-libraries:winpthreads-packaged-by-package | packaged-by | library:mingw-w64:winpthreads | package:msys2:mingw-w64-ucrt-x86_64-winpthreads | verified |
 | relationship:foundation-libraries:winpthreads-requires-libwinpthread | requires | library:mingw-w64:winpthreads | library:mingw-w64:libwinpthread | verified |
 | relationship:foundation-libraries:zlib-packaged-by-package | packaged-by | library:gnu:zlib | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |

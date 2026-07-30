@@ -7,6 +7,7 @@ model_refs:
   - library:pcre:pcre2
   - package:msys2:mingw-w64-ucrt-x86_64-pcre2
   - library:gnu:zlib
+  - library:mingweditline:wineditline
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:pcre:pcre2-manual-2026-07-30
@@ -65,7 +66,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs `pcre2grep`'s support for searching gzip-compressed files, the same `zgrep`-style composition pattern documented for [GNU Gzip](GNU-GZIP.md#dependencies). |
-| Interactive line editing | `mingw-w64-ucrt-x86_64-wineditline` | Backs interactive line editing in the bundled `pcre2test` tool, a Windows port of the BSD editline library serving a comparable role to [GNU Readline](GNU-READLINE.md) elsewhere in this volume (`claim:library:pcre2-wineditline-interactive-tool`). |
+| Interactive line editing | `mingw-w64-ucrt-x86_64-wineditline` | Backs interactive line editing in the bundled `pcre2test` tool, a Windows port of the BSD editline library serving a comparable role to [GNU Readline](GNU-READLINE.md) elsewhere in this volume (`claim:library:pcre2-wineditline-interactive-tool`). Documented fully in [WinEditLine](WINEDITLINE.md). |
 | Compression (bzip2) | `mingw-w64-ucrt-x86_64-bzip2` | Backs `pcre2grep`'s support for searching bzip2-compressed files; this is a separate UCRT64 `bzip2` package, distinct from the MSYS-environment `bzip2` component already documented in Volume 5. |
 
 ## Reverse Dependencies
@@ -142,3 +143,4 @@ methodology.
 - [GNU Readline](GNU-READLINE.md)
 - [zlib](ZLIB.md)
 - [libarchive](LIBARCHIVE.md)
+- [WinEditLine](WINEDITLINE.md)

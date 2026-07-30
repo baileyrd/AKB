@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-ucrt-x86_64-readline
   - component:gnu:gdb
   - component:gnupg:gnupg
+  - library:gnu:termcap
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gnu:readline-manual-2026-07-30
@@ -65,7 +66,7 @@ this knowledge base depend on both simultaneously (for example,
 
 The catalog snapshot records one `runtime-depends-on` edge for
 `package:msys2:mingw-w64-ucrt-x86_64-readline`:
-`mingw-w64-ucrt-x86_64-termcap`, the terminal-capability database Readline
+[GNU termcap](GNU-TERMCAP.md), the terminal-capability database Readline
 uses to determine cursor-movement and editing escape sequences for the
 active terminal — a narrower, more specific dependency than
 [ncurses](NCURSES.md)'s fuller terminal-capability library, reflecting
@@ -143,3 +144,4 @@ methodology.
 - [ncurses](NCURSES.md)
 - [GDB](GNU-GDB.md)
 - [GnuPG](GNUPG.md)
+- [GNU termcap](GNU-TERMCAP.md)

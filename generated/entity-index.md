@@ -24,7 +24,7 @@
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
 | component:gnu:libtool | component | GNU Libtool | partial | 2 | 1 |
 | component:gnu:make | component | GNU Make | partial | 2 | 1 |
-| component:gnu:nano | component | GNU Nano | partial | 3 | 1 |
+| component:gnu:nano | component | GNU Nano | partial | 4 | 1 |
 | component:gnu:ncurses | component | ncurses | partial | 2 | 5 |
 | component:gnu:sed | component | GNU Sed | partial | 2 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 2 | 1 |
@@ -65,8 +65,8 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 47 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 36 | 3899 |
+| environment:msys2:msys | environment | MSYS | planned | 48 | 799 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 38 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -605,6 +605,7 @@
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
+| library:darwinsys:file | library | file | partial | 2 | 2 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
@@ -614,7 +615,8 @@
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 2 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
-| library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
+| library:gnu:readline | library | GNU Readline | partial | 2 | 1 |
+| library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 5 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 2 |
@@ -635,13 +637,14 @@
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 1 |
+| library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 1 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 2 |
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 2 |
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 2 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 2 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 3 | 2 |
-| library:pcre:pcre2 | library | PCRE2 | partial | 2 | 2 |
+| library:pcre:pcre2 | library | PCRE2 | partial | 3 | 2 |
 | library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
@@ -762,7 +765,7 @@
 | package:msys2:expect | package | expect | verified | 3 | 1 |
 | package:msys2:fcode-utils | package | fcode-utils | verified | 2 | 0 |
 | package:msys2:fido2-tools | package | fido2-tools | verified | 3 | 0 |
-| package:msys2:file | package | file | verified | 7 | 8 |
+| package:msys2:file | package | file | verified | 7 | 9 |
 | package:msys2:filesystem | package | filesystem | verified | 2 | 2 |
 | package:msys2:findutils | package | findutils | verified | 4 | 7 |
 | package:msys2:fish | package | fish | verified | 7 | 1 |
@@ -12356,7 +12359,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-teensy-loader-cli | package | mingw-w64-ucrt-x86_64-teensy-loader-cli | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-template-glib | package | mingw-w64-ucrt-x86_64-template-glib | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-templates-parser | package | mingw-w64-ucrt-x86_64-templates-parser | verified | 3 | 2 |
-| package:msys2:mingw-w64-ucrt-x86_64-termcap | package | mingw-w64-ucrt-x86_64-termcap | verified | 3 | 1 |
+| package:msys2:mingw-w64-ucrt-x86_64-termcap | package | mingw-w64-ucrt-x86_64-termcap | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-tesseract-data-afr | package | mingw-w64-ucrt-x86_64-tesseract-data-afr | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-tesseract-data-amh | package | mingw-w64-ucrt-x86_64-tesseract-data-amh | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-tesseract-data-ara | package | mingw-w64-ucrt-x86_64-tesseract-data-ara | verified | 2 | 0 |
@@ -12766,7 +12769,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-win7appid | package | mingw-w64-ucrt-x86_64-win7appid | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-windows-default-manifest | package | mingw-w64-ucrt-x86_64-windows-default-manifest | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-wined3d | package | mingw-w64-ucrt-x86_64-wined3d | verified | 3 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-wineditline | package | mingw-w64-ucrt-x86_64-wineditline | verified | 2 | 3 |
+| package:msys2:mingw-w64-ucrt-x86_64-wineditline | package | mingw-w64-ucrt-x86_64-wineditline | verified | 2 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-winfile | package | mingw-w64-ucrt-x86_64-winfile | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-winico | package | mingw-w64-ucrt-x86_64-winico | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-winpthreads | package | mingw-w64-ucrt-x86_64-winpthreads | verified | 4 | 6 |
@@ -16365,5 +16368,5 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 47 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 48 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

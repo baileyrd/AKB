@@ -1655,6 +1655,60 @@
         "role": "multi-algorithm hash-sum computation"
       },
       "evidence_refs": ["evidence:rhash:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:darwinsys:file",
+      "kind": "library",
+      "name": "file",
+      "summary": "A file-type identification utility and library, packaged in the MSYS environment and depended on by GNU Nano to help select a syntax-highlighting rule set for files without a recognized extension.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Ian Darwin / file project",
+      "aliases": ["file", "libmagic"],
+      "tags": ["library", "gnu-userland"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.darwinsys.com/file/",
+        "packaged_as": "package:msys2:file",
+        "role": "file-type identification"
+      },
+      "evidence_refs": ["evidence:darwinsys:file-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:termcap",
+      "kind": "library",
+      "name": "GNU termcap",
+      "summary": "A terminal feature (capability) database library, packaged per native environment (UCRT64 shown here) and depended on by GNU Readline to determine cursor-movement and editing escape sequences for the active terminal.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["termcap"],
+      "tags": ["library", "gnu-userland"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/termutils/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-termcap",
+        "role": "terminal capability database"
+      },
+      "evidence_refs": ["evidence:gnu:termcap-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mingweditline:wineditline",
+      "kind": "library",
+      "name": "WinEditLine",
+      "summary": "An EditLine API implementation for the native Windows Console, packaged per native environment (UCRT64 shown here) and depended on by PCRE2 to back interactive line editing in its bundled pcre2test tool.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "mingweditline project",
+      "aliases": ["wineditline"],
+      "tags": ["library", "gnu-userland"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://mingweditline.sourceforge.io/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-wineditline",
+        "role": "interactive line editing for native Windows console programs"
+      },
+      "evidence_refs": ["evidence:mingweditline:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -5043,6 +5097,126 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:msys-contains-file",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "library:darwinsys:file",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:file-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "library:darwinsys:file",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of file, not to any separately packaged native (UCRT64/CLANG64) build.",
+      "properties": {},
+      "evidence_refs": ["evidence:msys2:environments-2026-07-28"]
+    },
+    {
+      "id": "relationship:foundation-libraries:file-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:darwinsys:file",
+      "target": "package:msys2:file",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-termcap",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnu:termcap",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:termcap-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:gnu:termcap",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-termcap",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-wineditline",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:mingweditline:wineditline",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:wineditline-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:mingweditline:wineditline",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-wineditline",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:editors-pagers-terminals:nano-requires-file",
+      "type": "requires",
+      "source": "component:gnu:nano",
+      "target": "library:darwinsys:file",
+      "status": "verified",
+      "confidence": "medium",
+      "scope": "runtime",
+      "condition": "Likely used to help select a syntax-highlighting rule set for files without a recognized extension; this specific mechanism is a plausible but not manual-confirmed explanation.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:readline-requires-termcap",
+      "type": "requires",
+      "source": "library:gnu:readline",
+      "target": "library:gnu:termcap",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs terminal-capability lookup to determine cursor-movement and editing escape sequences for the active terminal.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-requires-wineditline",
+      "type": "requires",
+      "source": "library:pcre:pcre2",
+      "target": "library:mingweditline:wineditline",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Backs interactive line editing in the bundled pcre2test tool.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -6345,6 +6519,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official RHash project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-rhash in the catalog snapshot."
+    },
+    {
+      "id": "evidence:darwinsys:file-manual-2026-07-30",
+      "class": "primary",
+      "title": "file (official project page)",
+      "locator": "https://www.darwinsys.com/file/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official file project page, matching the project_url recorded for package:msys2:file in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:termcap-manual-2026-07-30",
+      "class": "primary",
+      "title": "GNU termcap / termutils (official project page)",
+      "locator": "https://www.gnu.org/software/termutils/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GNU termutils project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-termcap in the catalog snapshot."
+    },
+    {
+      "id": "evidence:mingweditline:manual-2026-07-30",
+      "class": "primary",
+      "title": "WinEditLine (official project page)",
+      "locator": "https://mingweditline.sourceforge.io/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official WinEditLine project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-wineditline in the catalog snapshot."
     }
   ]
 }

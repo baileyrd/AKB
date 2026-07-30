@@ -34,9 +34,10 @@ last_verified: 2026-07-30
 
 On 2026-07-30, a self-cleaning collector compiled a fixed one-line C program
 inside the selected isolated environment and then attempted to execute the
-temporary PE output. UCRT64 GCC, CLANG64 Clang, and MINGW64 GCC each compiled
-and executed successfully on this x86_64 host. The UCRT64 output was a
-126,188-byte x86_64 PE. Raw observations remain local-only.
+temporary PE output. UCRT64 GCC, CLANG64 Clang, MINGW64 GCC, and MINGW32 GCC
+each compiled and executed successfully on this x86_64 host. The UCRT64
+output was a 126,188-byte x86_64 PE; the MINGW32 output was a 114,626-byte x86
+PE. Raw observations remain local-only.
 
 This proves only the exact compiler/environment/source combination and empty
 program workflow. It does not establish ABI compatibility, effective project

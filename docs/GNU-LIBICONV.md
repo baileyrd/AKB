@@ -140,3 +140,4 @@ methodology.
 - [GNU gettext](GNU-GETTEXT.md)
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [zlib](ZLIB.md)
+- [libarchive](LIBARCHIVE.md)

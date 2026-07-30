@@ -133,5 +133,6 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libxml2](LIBXML2.md)
 - [CMake](CMAKE.md)
+- [libarchive](LIBARCHIVE.md)
 - [GDB](GNU-GDB.md)
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)

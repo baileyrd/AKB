@@ -5,7 +5,7 @@
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 2 | 1 |
-| component:cmake:cmake | component | CMake | partial | 3 | 1 |
+| component:cmake:cmake | component | CMake | partial | 8 | 1 |
 | component:curl:curl | component | curl | partial | 8 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
 | component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
@@ -66,7 +66,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
 | environment:msys2:msys | environment | MSYS | planned | 47 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 31 | 3899 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 36 | 3899 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -608,25 +608,29 @@
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 1 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 5 |
-| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 3 |
+| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 4 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 2 | 3 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 2 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 2 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 2 |
 | library:gnu:readline | library | GNU Readline | partial | 1 | 1 |
-| library:gnu:zlib | library | zlib | partial | 1 | 4 |
+| library:gnu:zlib | library | zlib | partial | 1 | 5 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 2 |
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 5 | 3 |
+| library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 2 | 2 |
+| library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
+| library:libarchive:libarchive | library | libarchive | partial | 5 | 2 |
 | library:libedit:libedit | library | libedit | partial | 2 | 2 |
-| library:libexpat:expat | library | Expat | partial | 1 | 1 |
+| library:libexpat:expat | library | Expat | partial | 1 | 2 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 1 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 2 |
+| library:libuv:libuv | library | libuv | partial | 1 | 2 |
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 2 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 2 |
@@ -637,7 +641,8 @@
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 2 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 2 | 2 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 3 | 2 |
-| library:pcre:pcre2 | library | PCRE2 | partial | 2 | 1 |
+| library:pcre:pcre2 | library | PCRE2 | partial | 2 | 2 |
+| library:rhash:rhash | library | RHash | partial | 1 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:yubico:libfido2 | library | libfido2 | partial | 2 | 2 |
@@ -9248,7 +9253,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-cp2k | package | mingw-w64-ucrt-x86_64-cp2k | verified | 13 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-cppcheck | package | mingw-w64-ucrt-x86_64-cppcheck | verified | 6 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-cppcoro | package | mingw-w64-ucrt-x86_64-cppcoro | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-cppdap | package | mingw-w64-ucrt-x86_64-cppdap | verified | 3 | 1 |
+| package:msys2:mingw-w64-ucrt-x86_64-cppdap | package | mingw-w64-ucrt-x86_64-cppdap | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-cppreference-qt | package | mingw-w64-ucrt-x86_64-cppreference-qt | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-cpptest | package | mingw-w64-ucrt-x86_64-cpptest | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-cppunit | package | mingw-w64-ucrt-x86_64-cppunit | verified | 2 | 0 |
@@ -9767,7 +9772,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-json-fortran | package | mingw-w64-ucrt-x86_64-json-fortran | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-json-glib | package | mingw-w64-ucrt-x86_64-json-glib | verified | 4 | 16 |
 | package:msys2:mingw-w64-ucrt-x86_64-json-schema-validator | package | mingw-w64-ucrt-x86_64-json-schema-validator | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-jsoncpp | package | mingw-w64-ucrt-x86_64-jsoncpp | verified | 3 | 6 |
+| package:msys2:mingw-w64-ucrt-x86_64-jsoncpp | package | mingw-w64-ucrt-x86_64-jsoncpp | verified | 3 | 7 |
 | package:msys2:mingw-w64-ucrt-x86_64-jsonnet | package | mingw-w64-ucrt-x86_64-jsonnet | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-jsonrpc-glib | package | mingw-w64-ucrt-x86_64-jsonrpc-glib | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-jsonrpc-glib-docs | package | mingw-w64-ucrt-x86_64-jsonrpc-glib-docs | verified | 2 | 0 |
@@ -9909,7 +9914,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libadwaita | package | mingw-w64-ucrt-x86_64-libadwaita | verified | 9 | 6 |
 | package:msys2:mingw-w64-ucrt-x86_64-libaec | package | mingw-w64-ucrt-x86_64-libaec | verified | 2 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-libao | package | mingw-w64-ucrt-x86_64-libao | verified | 3 | 2 |
-| package:msys2:mingw-w64-ucrt-x86_64-libarchive | package | mingw-w64-ucrt-x86_64-libarchive | verified | 12 | 22 |
+| package:msys2:mingw-w64-ucrt-x86_64-libarchive | package | mingw-w64-ucrt-x86_64-libarchive | verified | 12 | 23 |
 | package:msys2:mingw-w64-ucrt-x86_64-libaribcaption | package | mingw-w64-ucrt-x86_64-libaribcaption | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libart_lgpl | package | mingw-w64-ucrt-x86_64-libart_lgpl | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libass | package | mingw-w64-ucrt-x86_64-libass | verified | 8 | 6 |
@@ -10226,7 +10231,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libusbmuxd | package | mingw-w64-ucrt-x86_64-libusbmuxd | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libutf8proc | package | mingw-w64-ucrt-x86_64-libutf8proc | verified | 2 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-libutp | package | mingw-w64-ucrt-x86_64-libutp | verified | 2 | 3 |
-| package:msys2:mingw-w64-ucrt-x86_64-libuv | package | mingw-w64-ucrt-x86_64-libuv | verified | 2 | 6 |
+| package:msys2:mingw-w64-ucrt-x86_64-libuv | package | mingw-w64-ucrt-x86_64-libuv | verified | 2 | 7 |
 | package:msys2:mingw-w64-ucrt-x86_64-libva | package | mingw-w64-ucrt-x86_64-libva | verified | 2 | 5 |
 | package:msys2:mingw-w64-ucrt-x86_64-libva-utils | package | mingw-w64-ucrt-x86_64-libva-utils | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libvips | package | mingw-w64-ucrt-x86_64-libvips | verified | 31 | 0 |
@@ -12084,7 +12089,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-repgrep | package | mingw-w64-ucrt-x86_64-repgrep | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-restbed | package | mingw-w64-ucrt-x86_64-restbed | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-restic | package | mingw-w64-ucrt-x86_64-restic | verified | 2 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-rhash | package | mingw-w64-ucrt-x86_64-rhash | verified | 3 | 1 |
+| package:msys2:mingw-w64-ucrt-x86_64-rhash | package | mingw-w64-ucrt-x86_64-rhash | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-rime-bopomofo | package | mingw-w64-ucrt-x86_64-rime-bopomofo | verified | 4 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-rime-cangjie | package | mingw-w64-ucrt-x86_64-rime-cangjie | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-rime-double-pinyin | package | mingw-w64-ucrt-x86_64-rime-double-pinyin | verified | 4 | 0 |

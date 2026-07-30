@@ -141,3 +141,4 @@ methodology.
 - [less](LESS.md)
 - [GNU Readline](GNU-READLINE.md)
 - [zlib](ZLIB.md)
+- [libarchive](LIBARCHIVE.md)

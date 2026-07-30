@@ -41,6 +41,11 @@ model_refs:
   - library:libxcrypt:libxcrypt
   - library:yubico:libfido2
   - library:h5l:heimdal
+  - library:google:cppdap
+  - library:jsoncpp:jsoncpp
+  - library:libarchive:libarchive
+  - library:libuv:libuv
+  - library:rhash:rhash
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -78,6 +83,11 @@ evidence_refs:
   - evidence:libxcrypt:manual-2026-07-30
   - evidence:yubico:libfido2-manual-2026-07-30
   - evidence:h5l:heimdal-manual-2026-07-30
+  - evidence:google:cppdap-manual-2026-07-30
+  - evidence:jsoncpp:manual-2026-07-30
+  - evidence:libarchive:manual-2026-07-30
+  - evidence:libuv:manual-2026-07-30
+  - evidence:rhash:manual-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -125,8 +135,9 @@ flowchart LR
 [GNU libunistring](GNU-LIBUNISTRING.md), [libnghttp2](LIBNGHTTP2.md),
 [libnghttp3](LIBNGHTTP3.md), [libngtcp2](LIBNGTCP2.md),
 [libedit](LIBEDIT.md), [libxcrypt](LIBXCRYPT.md),
-[libfido2](LIBFIDO2.md), and [Heimdal](HEIMDAL.md) are this
-volume's first per-library pages. The
+[libfido2](LIBFIDO2.md), [Heimdal](HEIMDAL.md), [cppdap](CPPDAP.md),
+[JsonCpp](JSONCPP.md), [libarchive](LIBARCHIVE.md), [libuv](LIBUV.md),
+and [RHash](RHASH.md) are this volume's first per-library pages. The
 first pair resolved the "C++ library" row the
 [Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md) left open; the rest are
 foundational libraries cited by dependency rationale across dozens of
@@ -139,7 +150,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All thirty-seven pages are deliberately scoped to package/dependency-level
+All forty-two pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -184,9 +195,25 @@ directly-declared-dependency pattern was applied a third time to
 [libfido2](LIBFIDO2.md), and [Heimdal](HEIMDAL.md) now each have pages
 and `requires` edges from `component:openssh:openssh`, closing every
 dependency edge in OpenSSH's own table to a page of its own except
-[OpenSSL](OPENSSL.md), which already had one from Volume 5. These pages
-are a starting point for this volume, not a demonstration that its full
-evidence model is populated.
+[OpenSSL](OPENSSL.md), which already had one from Volume 5. The same
+pattern crossed volumes for the first time in this batch:
+[CMake's](CMAKE.md) own dependency table (Volume 8) named
+[cppdap](CPPDAP.md), [JsonCpp](JSONCPP.md), [libarchive](LIBARCHIVE.md),
+[libuv](LIBUV.md), and [RHash](RHASH.md) by package without pages of
+their own; all five are now modeled here in Volume 6, each with a
+`requires` edge from `component:cmake:cmake`, and
+[libarchive's](LIBARCHIVE.md) own UCRT64 sub-dependencies close a further
+loop onto four libraries this volume already documented
+([Expat](EXPAT.md), [GNU libiconv](GNU-LIBICONV.md), [PCRE2](PCRE2.md),
+[zlib](ZLIB.md)), each of which now lists libarchive as a reverse
+dependent in its own Related Objects. These five are also this volume's
+first UCRT64-native library pages sourced from a cross-volume dependency
+table rather than a Volume 5 MSYS component's, following the same
+`contains`/`packaged-by` pattern (without a `uses-runtime` edge to
+`msys-2.0.dll`) already established for [libstdc++](LIBSTDCXX.md),
+[Expat](EXPAT.md), and the other native libraries earlier in this
+volume. These pages are a starting point for this volume, not a
+demonstration that its full evidence model is populated.
 
 ## Family navigation
 

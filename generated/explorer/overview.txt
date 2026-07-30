@@ -619,11 +619,15 @@ Objects
 - library:gnupg:libksba (library): libksba
 - library:gnupg:npth (library): nPth (New Portable Threads)
 - library:gnutls:gnutls (library): GnuTLS
+- library:google:cppdap (library): cppdap
 - library:h5l:heimdal (library): Heimdal
+- library:jsoncpp:jsoncpp (library): JsonCpp
+- library:libarchive:libarchive (library): libarchive
 - library:libedit:libedit (library): libedit
 - library:libexpat:expat (library): Expat
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
+- library:libuv:libuv (library): libuv
 - library:libxcrypt:libxcrypt (library): libxcrypt
 - library:llvm:libc++ (library): libc++
 - library:mingw-w64:libwinpthread (library): libwinpthread
@@ -635,6 +639,7 @@ Objects
 - library:nghttp2:libngtcp2 (library): libngtcp2
 - library:p11-glue:p11-kit (library): p11-kit
 - library:pcre:pcre2 (library): PCRE2
+- library:rhash:rhash (library): RHash
 - library:sqlite:sqlite3 (library): SQLite
 - library:unicode:icu (library): ICU (International Components for Unicode)
 - library:yubico:libfido2 (library): libfido2
@@ -16624,6 +16629,25 @@ Relationships
 - component:openssh:openssh --requires--> library:libxcrypt:libxcrypt
 - component:openssh:openssh --requires--> library:yubico:libfido2
 - component:openssh:openssh --requires--> library:h5l:heimdal
+- environment:msys2:ucrt64 --contains--> library:google:cppdap
+- library:google:cppdap --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-cppdap
+- environment:msys2:ucrt64 --contains--> library:jsoncpp:jsoncpp
+- library:jsoncpp:jsoncpp --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-jsoncpp
+- environment:msys2:ucrt64 --contains--> library:libarchive:libarchive
+- library:libarchive:libarchive --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libarchive
+- environment:msys2:ucrt64 --contains--> library:libuv:libuv
+- library:libuv:libuv --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libuv
+- environment:msys2:ucrt64 --contains--> library:rhash:rhash
+- library:rhash:rhash --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-rhash
+- component:cmake:cmake --requires--> library:google:cppdap
+- component:cmake:cmake --requires--> library:jsoncpp:jsoncpp
+- component:cmake:cmake --requires--> library:libarchive:libarchive
+- component:cmake:cmake --requires--> library:libuv:libuv
+- component:cmake:cmake --requires--> library:rhash:rhash
+- library:libarchive:libarchive --requires--> library:libexpat:expat
+- library:libarchive:libarchive --requires--> library:gnu:libiconv
+- library:libarchive:libarchive --requires--> library:pcre:pcre2
+- library:libarchive:libarchive --requires--> library:gnu:zlib
 - component:gnupg:gnupg --requires--> library:gnupg:libgcrypt
 - component:gnupg:gnupg --requires--> library:gnupg:libassuan
 - component:gnupg:gnupg --requires--> library:gnupg:libksba

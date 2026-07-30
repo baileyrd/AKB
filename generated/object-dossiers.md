@@ -17,7 +17,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:cmake:documentation-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `component:curl:curl`
@@ -566,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 31
+- Outgoing relationships: 36
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5445,7 +5445,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:libidn2`
 
@@ -5508,7 +5508,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnupg:libassuan`
 
@@ -5564,6 +5564,15 @@
 - Outgoing relationships: 5
 - Incoming relationships: 3
 
+## `library:google:cppdap`
+
+- Name: cppdap
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:cppdap-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
 ## `library:h5l:heimdal`
 
 - Name: Heimdal
@@ -5571,6 +5580,24 @@
 - Status: `partial`
 - Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:jsoncpp:jsoncpp`
+
+- Name: JsonCpp
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:jsoncpp:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:libarchive:libarchive`
+
+- Name: libarchive
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `library:libedit:libedit`
@@ -5589,7 +5616,7 @@
 - Status: `partial`
 - Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:libisl:isl`
 
@@ -5607,6 +5634,15 @@
 - Status: `partial`
 - Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
+- Incoming relationships: 2
+
+## `library:libuv:libuv`
+
+- Name: libuv
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libuv:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
 - Incoming relationships: 2
 
 ## `library:libxcrypt:libxcrypt`
@@ -5706,7 +5742,16 @@
 - Status: `partial`
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
+
+## `library:rhash:rhash`
+
+- Name: RHash
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:rhash:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
 
 ## `library:sqlite:sqlite3`
 
@@ -83205,7 +83250,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cppreference-qt`
 
@@ -87876,7 +87921,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-jsonnet`
 
@@ -89154,7 +89199,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 22
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libaribcaption`
 
@@ -92007,7 +92052,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libva`
 
@@ -108729,7 +108774,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-rime-bopomofo`
 

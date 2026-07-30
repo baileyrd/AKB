@@ -1565,6 +1565,96 @@
         "role": "Kerberos V5 / GSSAPI authentication"
       },
       "evidence_refs": ["evidence:h5l:heimdal-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:google:cppdap",
+      "kind": "library",
+      "name": "cppdap",
+      "summary": "A C++ library implementing the Debug Adapter Protocol (DAP), packaged per native environment (UCRT64 shown here) and depended on by CMake to back its --debugger DAP server for debugging CMakeLists.txt script execution.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Google",
+      "aliases": ["cppdap"],
+      "tags": ["library", "developer-tools"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://github.com/google/cppdap",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-cppdap",
+        "role": "Debug Adapter Protocol implementation"
+      },
+      "evidence_refs": ["evidence:google:cppdap-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:jsoncpp:jsoncpp",
+      "kind": "library",
+      "name": "JsonCpp",
+      "summary": "A C++ library for reading and writing JSON, packaged per native environment (UCRT64 shown here) and depended on by CMake to back its JSON-based file-api and CMakePresets.json/CMakeUserPresets.json support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "open-source-parsers project",
+      "aliases": ["jsoncpp"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://github.com/open-source-parsers/jsoncpp",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-jsoncpp",
+        "role": "JSON parsing and serialization"
+      },
+      "evidence_refs": ["evidence:jsoncpp:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libarchive:libarchive",
+      "kind": "library",
+      "name": "libarchive",
+      "summary": "A multi-format archive and compression library, packaged per native environment (UCRT64 shown here) and depended on by CMake to back file(ARCHIVE_CREATE)/file(ARCHIVE_EXTRACT) and CPack's archive-format generator.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libarchive project",
+      "aliases": ["libarchive"],
+      "tags": ["library", "archive"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://www.libarchive.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libarchive",
+        "role": "multi-format archive reading and writing"
+      },
+      "evidence_refs": ["evidence:libarchive:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libuv:libuv",
+      "kind": "library",
+      "name": "libuv",
+      "summary": "A cross-platform asynchronous I/O library, packaged per native environment (UCRT64 shown here) and depended on by CMake for internal asynchronous I/O, historically introduced for CMake's server mode.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libuv project",
+      "aliases": ["libuv"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://libuv.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libuv",
+        "role": "cross-platform asynchronous I/O"
+      },
+      "evidence_refs": ["evidence:libuv:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:rhash:rhash",
+      "kind": "library",
+      "name": "RHash",
+      "summary": "A library and utility for computing hash sums across many algorithms, packaged per native environment (UCRT64 shown here) and depended on by CMake to back its file(MD5)/file(SHA256)-style hashing commands.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "RHash project",
+      "aliases": ["rhash", "librhash"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://sourceforge.net/projects/rhash/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-rhash",
+        "role": "multi-algorithm hash-sum computation"
+      },
+      "evidence_refs": ["evidence:rhash:manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -4725,6 +4815,234 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:ucrt64-contains-cppdap",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:google:cppdap",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:cppdap-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:google:cppdap",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-cppdap",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-jsoncpp",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:jsoncpp:jsoncpp",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:jsoncpp-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:jsoncpp:jsoncpp",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-jsoncpp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libarchive",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:libarchive:libarchive",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libarchive:libarchive",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libarchive",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-libuv",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:libuv:libuv",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libuv-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:libuv:libuv",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libuv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ucrt64-contains-rhash",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:rhash:rhash",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:rhash-packaged-by-package",
+      "type": "packaged-by",
+      "source": "library:rhash:rhash",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-rhash",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-cppdap",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "library:google:cppdap",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs CMake's --debugger DAP server, letting IDEs debug CMakeLists.txt script execution itself.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-jsoncpp",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "library:jsoncpp:jsoncpp",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs CMake's JSON-based file-api and CMakePresets.json/CMakeUserPresets.json support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-libarchive",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "library:libarchive:libarchive",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs file(ARCHIVE_CREATE)/file(ARCHIVE_EXTRACT) and CPack's archive-format generator.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-libuv",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "library:libuv:libuv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs internal asynchronous I/O, historically introduced for CMake's server mode.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:cmake-requires-rhash",
+      "type": "requires",
+      "source": "component:cmake:cmake",
+      "target": "library:rhash:rhash",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "build",
+      "condition": "Backs file(MD5)/file(SHA256)-style hashing commands across multiple algorithms.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-expat",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:libexpat:expat",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs XML-format handling for archive formats that embed XML metadata (such as PAX/tar extended headers).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-libiconv",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for archive entry filenames and metadata.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-pcre2",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:pcre:pcre2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs regular-expression matching used in archive entry filtering.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-zlib",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs DEFLATE-based archive formats (zip, gzip-compressed tar).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:ssh-curl-git:gnupg-requires-libgcrypt",
       "type": "requires",
       "source": "component:gnupg:gnupg",
@@ -5977,6 +6295,56 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Heimdal project page, matching the project_url recorded for package:msys2:heimdal in the catalog snapshot."
+    },
+    {
+      "id": "evidence:google:cppdap-manual-2026-07-30",
+      "class": "primary",
+      "title": "cppdap (GitHub project page)",
+      "locator": "https://github.com/google/cppdap",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official cppdap project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-cppdap in the catalog snapshot."
+    },
+    {
+      "id": "evidence:jsoncpp:manual-2026-07-30",
+      "class": "primary",
+      "title": "JsonCpp (GitHub project page)",
+      "locator": "https://github.com/open-source-parsers/jsoncpp",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official JsonCpp project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-jsoncpp in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libarchive:manual-2026-07-30",
+      "class": "primary",
+      "title": "libarchive (official project site)",
+      "locator": "https://www.libarchive.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libarchive project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libarchive in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libuv:manual-2026-07-30",
+      "class": "primary",
+      "title": "libuv (official project site)",
+      "locator": "https://libuv.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official libuv project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-libuv in the catalog snapshot."
+    },
+    {
+      "id": "evidence:rhash:manual-2026-07-30",
+      "class": "primary",
+      "title": "RHash (SourceForge project page)",
+      "locator": "https://sourceforge.net/projects/rhash/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official RHash project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-rhash in the catalog snapshot."
     }
   ]
 }

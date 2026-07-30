@@ -6,6 +6,11 @@ status: partial
 model_refs:
   - component:cmake:cmake
   - package:msys2:mingw-w64-ucrt-x86_64-cmake
+  - library:google:cppdap
+  - library:jsoncpp:jsoncpp
+  - library:libarchive:libarchive
+  - library:libuv:libuv
+  - library:rhash:rhash
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:cmake:documentation-2026-07-30
@@ -74,16 +79,16 @@ to a specific built-in CMake feature
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Debug Adapter Protocol | `mingw-w64-ucrt-x86_64-cppdap` | Backs CMake's `--debugger` DAP server, letting IDEs debug `CMakeLists.txt` script execution itself. |
+| Debug Adapter Protocol | `mingw-w64-ucrt-x86_64-cppdap` | Backs CMake's `--debugger` DAP server, letting IDEs debug `CMakeLists.txt` script execution itself. Documented fully in [cppdap](CPPDAP.md). |
 | Network downloads | `mingw-w64-ucrt-x86_64-curl` | Backs `file(DOWNLOAD)` and `ExternalProject`'s network-fetch operations, the same library documented fully in [curl](CURL.md). |
-| XML parsing | `mingw-w64-ucrt-x86_64-expat` | Backs XML-format handling used by some CMake generators and CTest/CDash reporting. |
-| JSON support | `mingw-w64-ucrt-x86_64-jsoncpp` | Backs CMake's JSON-based file-api and `CMakePresets.json`/`CMakeUserPresets.json` support. |
-| Archive creation/extraction | `mingw-w64-ucrt-x86_64-libarchive` | Backs `file(ARCHIVE_CREATE)`/`file(ARCHIVE_EXTRACT)` and CPack's archive-format generator. |
-| Asynchronous I/O | `mingw-w64-ucrt-x86_64-libuv` | Backs internal asynchronous I/O, historically introduced for CMake's server mode and retained for other async operations. |
+| XML parsing | `mingw-w64-ucrt-x86_64-expat` | Backs XML-format handling used by some CMake generators and CTest/CDash reporting. Documented fully in [Expat](EXPAT.md). |
+| JSON support | `mingw-w64-ucrt-x86_64-jsoncpp` | Backs CMake's JSON-based file-api and `CMakePresets.json`/`CMakeUserPresets.json` support. Documented fully in [JsonCpp](JSONCPP.md). |
+| Archive creation/extraction | `mingw-w64-ucrt-x86_64-libarchive` | Backs `file(ARCHIVE_CREATE)`/`file(ARCHIVE_EXTRACT)` and CPack's archive-format generator. Documented fully in [libarchive](LIBARCHIVE.md). |
+| Asynchronous I/O | `mingw-w64-ucrt-x86_64-libuv` | Backs internal asynchronous I/O, historically introduced for CMake's server mode and retained for other async operations. Documented fully in [libuv](LIBUV.md). |
 | Build backend | `mingw-w64-ucrt-x86_64-ninja` | Invoked as CMake's generated backend in this environment (`relationship:toolchain:cmake-invokes-ninja`), documented fully in [Ninja](NINJA.md). |
 | Dependency discovery | `mingw-w64-ucrt-x86_64-pkgconf` | Backs `find_package`'s pkg-config search mode, documented fully in [pkgconf](PKGCONF.md). |
-| File hashing | `mingw-w64-ucrt-x86_64-rhash` | Backs `file(MD5)`/`file(SHA256)`-style hashing commands across multiple algorithms. |
-| Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs compression used internally by the archive and networking features above. |
+| File hashing | `mingw-w64-ucrt-x86_64-rhash` | Backs `file(MD5)`/`file(SHA256)`-style hashing commands across multiple algorithms. Documented fully in [RHash](RHASH.md). |
+| Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs compression used internally by the archive and networking features above. Documented fully in [zlib](ZLIB.md). |
 
 An optional dependency on `emacs` backs CMake's Emacs editing mode, per the
 package's own dependency note.
@@ -166,3 +171,8 @@ general version-qualified security review noted above.
 - [pkgconf](PKGCONF.md)
 - [Meson](MESON.md)
 - [curl](CURL.md)
+- [cppdap](CPPDAP.md)
+- [JsonCpp](JSONCPP.md)
+- [libarchive](LIBARCHIVE.md)
+- [libuv](LIBUV.md)
+- [RHash](RHASH.md)

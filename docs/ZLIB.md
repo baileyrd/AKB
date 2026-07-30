@@ -150,3 +150,4 @@ this library's unusually wide blast radius.
 - [libstdc++](LIBSTDCXX.md)
 - [libc++](LIBCXX.md)
 - [GNU Gzip](GNU-GZIP.md)
+- [libarchive](LIBARCHIVE.md)

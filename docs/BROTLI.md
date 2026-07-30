@@ -93,9 +93,9 @@ dependency.
 
 ## Compatibility and Variants
 
-Whether other native environments (UCRT64, CLANG64, i686) in this
-catalog package Brotli separately was not confirmed while writing this
-page; this is recorded as an open item rather than assumed either way.
+A UCRT64-native Brotli build does exist in this catalog snapshot,
+documented on [Brotli (UCRT64)](BROTLI-UCRT64.md); whether CLANG64 or
+i686 also package it separately remains an open item.
 
 ## Security Considerations
 
@@ -120,8 +120,8 @@ Brotli compression scope is backed by the official Brotli project page
 already recorded for `package:msys2:brotli` in the catalog. Package
 identity, version, and the modeled dependent edge are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open: whether
-other native environments package Brotli separately was not confirmed.
-Also explicitly out of scope for this page: header-level API surface
+CLANG64 or i686 also package Brotli separately was not confirmed. Also
+explicitly out of scope for this page: header-level API surface
 and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -132,3 +132,4 @@ methodology.
 - [libcurl](LIBCURL.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
+- [Brotli (UCRT64)](BROTLI-UCRT64.md)

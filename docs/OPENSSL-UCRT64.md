@@ -7,6 +7,7 @@ model_refs:
   - library:openssl:openssl@ucrt64
   - package:msys2:mingw-w64-ucrt-x86_64-openssl
   - library:curl:curl@ucrt64
+  - library:libssh2:libssh2@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
@@ -84,10 +85,12 @@ dependencies receive elsewhere in this volume (for example,
 
 The catalog snapshot records 124 relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-openssl` — the widest
-reverse-dependency footprint of any library added in this batch. One is
+reverse-dependency footprint of any library added this session. Two are
 now modeled in this knowledge base: [curl (UCRT64)](CURL-UCRT64.md)
-(`relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64`).
-The remaining ~123 recorded dependents (a broad mix of UCRT64 packages
+(`relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64`)
+and [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
+(`relationship:foundation-libraries:libssh2-ucrt64-requires-openssl-ucrt64`).
+The remaining ~122 recorded dependents (a broad mix of UCRT64 packages
 including `arrow`, `cyrus-sasl`, `freerdp`, `git` (a separate
 UCRT64-native git package, distinct from this knowledge base's MSYS
 [Git](GIT-MSYS-PACKAGE.md) entity), and `python`) are not individually
@@ -171,3 +174,4 @@ methodology.
 - [OpenSSL (MSYS)](OPENSSL.md)
 - [libopenssl (MSYS)](LIBOPENSSL.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
+- [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)

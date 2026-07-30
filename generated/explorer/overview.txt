@@ -603,6 +603,7 @@ Objects
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - library:boost:boost (library): Boost
 - library:bzip2:libbz2 (library): libbz2
+- library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
 - library:curl:curl@ucrt64 (library): curl (UCRT64)
 - library:curl:libcurl (library): libcurl
 - library:darwinsys:file (library): file
@@ -644,6 +645,7 @@ Objects
 - library:gnupg:npth@msys (library): nPth (MSYS)
 - library:gnutls:gnutls (library): GnuTLS
 - library:google:brotli (library): Brotli
+- library:google:brotli@ucrt64 (library): Brotli (UCRT64)
 - library:google:cppdap (library): cppdap
 - library:h5l:heimdal (library): Heimdal
 - library:h5l:heimdal-libs (library): Heimdal runtime libraries
@@ -657,6 +659,7 @@ Objects
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libpsl:libpsl (library): libpsl
 - library:libssh2:libssh2 (library): libssh2
+- library:libssh2:libssh2@ucrt64 (library): libssh2 (UCRT64)
 - library:libuv:libuv (library): libuv
 - library:libxcrypt:libxcrypt (library): libxcrypt
 - library:llvm:clang-libs (library): Clang libraries
@@ -16918,6 +16921,11 @@ Relationships
 - library:curl:curl@ucrt64 --requires--> library:gnu:zlib
 - library:curl:curl@ucrt64 --requires--> library:facebook:zstd
 - library:curl:curl@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:google:brotli@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:libssh2:libssh2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:c-ares:c-ares@ucrt64
+- library:libssh2:libssh2@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:libssh2:libssh2@ucrt64 --requires--> library:gnu:zlib
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

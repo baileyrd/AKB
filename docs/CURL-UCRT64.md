@@ -10,6 +10,9 @@ model_refs:
   - library:gnu:zlib
   - library:facebook:zstd
   - library:openssl:openssl@ucrt64
+  - library:google:brotli@ucrt64
+  - library:libssh2:libssh2@ucrt64
+  - library:c-ares:c-ares@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:curl:project-site-2026-07-30
@@ -70,34 +73,35 @@ groups.
 ## Dependencies
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-curl` declares twelve
-`runtime-depends-on` edges. Three are UCRT64-packaged sibling libraries
+`runtime-depends-on` edges. Six are UCRT64-packaged sibling libraries
 this knowledge base already documents, so this page adds explicit
 `requires` edges for them: [zlib](ZLIB.md) (HTTP
 `Content-Encoding: gzip`/`deflate` support,
 `relationship:foundation-libraries:curl-ucrt64-requires-zlib`),
 [Zstandard (library)](LIBZSTD.md) (HTTP `Content-Encoding: zstd`
 support, `relationship:foundation-libraries:curl-ucrt64-requires-zstd`),
-and [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) (HTTPS/TLS support,
-`relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64`,
-added 2026-07-30 — the widest reverse-dependency footprint of any
-library added in that batch at 124 recorded dependents).
-The remaining nine — `mingw-w64-ucrt-x86_64-c-ares`,
-`mingw-w64-ucrt-x86_64-brotli`, `mingw-w64-ucrt-x86_64-libidn2`,
+[OpenSSL (UCRT64)](OPENSSL-UCRT64.md) (HTTPS/TLS support,
+`relationship:foundation-libraries:curl-ucrt64-requires-openssl-ucrt64`
+— the widest reverse-dependency footprint of any library added this
+session at 124 recorded dependents),
+[Brotli (UCRT64)](BROTLI-UCRT64.md) (HTTP `Content-Encoding: br`
+support, `relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64`),
+[libssh2 (UCRT64)](LIBSSH2-UCRT64.md) (`sftp://`/`scp://` support,
+`relationship:foundation-libraries:curl-ucrt64-requires-libssh2-ucrt64`),
+and [c-ares (UCRT64)](C-ARES-UCRT64.md) (asynchronous DNS resolution,
+`relationship:foundation-libraries:curl-ucrt64-requires-c-ares-ucrt64`
+— the first page in this knowledge base for any c-ares package).
+The remaining six — `mingw-w64-ucrt-x86_64-libidn2`,
 `mingw-w64-ucrt-x86_64-libpsl`, `mingw-w64-ucrt-x86_64-ca-certificates`,
-`mingw-w64-ucrt-x86_64-libssh2`,
 `mingw-w64-ucrt-x86_64-nghttp2`, `mingw-w64-ucrt-x86_64-ngtcp2`, and
-`mingw-w64-ucrt-x86_64-nghttp3` — are UCRT64-native packages distinct
-from the MSYS-environment packages this knowledge base's existing
-[Brotli](BROTLI.md), [GNU libidn2](GNU-LIBIDN2.md), [libpsl](LIBPSL.md),
-[ca-certificates](CA-CERTIFICATES.md), [libssh2](LIBSSH2.md),
-[libnghttp2](LIBNGHTTP2.md),
+`mingw-w64-ucrt-x86_64-nghttp3` — remain UCRT64-native packages
+distinct from the MSYS-environment packages this knowledge base's
+existing [GNU libidn2](GNU-LIBIDN2.md), [libpsl](LIBPSL.md),
+[ca-certificates](CA-CERTIFICATES.md), [libnghttp2](LIBNGHTTP2.md),
 [libngtcp2](LIBNGTCP2.md), and [libnghttp3](LIBNGHTTP3.md) pages
-document (those are all MSYS-environment siblings, not this UCRT64
-package's own dependencies), and `c-ares` (asynchronous DNS resolution)
-is not modeled anywhere in this knowledge base yet — so no formal
-`requires` edges are added for the remaining nine, the same
-package/environment distinction applied consistently throughout this
-volume.
+document, so no formal `requires` edges are added for the remaining
+six, the same package/environment distinction applied consistently
+throughout this volume.
 
 ## Reverse Dependencies
 
@@ -169,8 +173,7 @@ recorded for `package:msys2:mingw-w64-ucrt-x86_64-curl` in the catalog.
 Package identity, version, license, and the modeled dependency/dependent
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: the nine remaining sub-dependencies not individually modeled
-(including `c-ares`, not modeled anywhere in this knowledge base yet),
+this page: the six remaining sub-dependencies not individually modeled,
 the ~66 remaining recorded reverse dependents not individually modeled,
 and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -185,3 +188,6 @@ methodology.
 - [zlib](ZLIB.md)
 - [Zstandard (library)](LIBZSTD.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+- [Brotli (UCRT64)](BROTLI-UCRT64.md)
+- [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
+- [c-ares (UCRT64)](C-ARES-UCRT64.md)

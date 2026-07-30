@@ -100,9 +100,9 @@ exercised only when a curl/libcurl-based transfer targets an
 
 ## Compatibility and Variants
 
-Whether other native environments (UCRT64, CLANG64, i686) in this
-catalog package libssh2 separately was not confirmed while writing this
-page; this is recorded as an open item rather than assumed either way.
+A UCRT64-native libssh2 build does exist in this catalog snapshot,
+documented on [libssh2 (UCRT64)](LIBSSH2-UCRT64.md); whether CLANG64 or
+i686 also package it separately remains an open item.
 
 ## Security Considerations
 
@@ -127,8 +127,8 @@ libssh2 project site (`evidence:libssh2:manual-2026-07-30`), matching
 the `project_url` already recorded for `package:msys2:libssh2` in the
 catalog. Package identity, version, and the modeled dependent edge are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
-Open: whether other native environments package libssh2 separately was
-not confirmed. Also explicitly out of scope for this page: this
+Open: whether CLANG64 or i686 also package libssh2 separately was not
+confirmed. Also explicitly out of scope for this page: this
 package's own sub-dependencies, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -139,3 +139,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libcurl](LIBCURL.md)
 - [OpenSSH](OPENSSH.md)
+- [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)

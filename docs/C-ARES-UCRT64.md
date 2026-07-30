@@ -1,0 +1,135 @@
+---
+id: doc:volume-6:c-ares-ucrt64
+title: c-ares (UCRT64)
+volume: 6
+status: partial
+model_refs:
+  - library:c-ares:c-ares@ucrt64
+  - package:msys2:mingw-w64-ucrt-x86_64-c-ares
+  - library:curl:curl@ucrt64
+  - environment:msys2:ucrt64
+evidence_refs:
+  - evidence:c-ares:project-site-2026-07-30
+  - evidence:catalog:current
+last_verified: 2026-07-30
+---
+
+# c-ares (UCRT64)
+
+## Purpose
+
+c-ares is an asynchronous DNS-request and name-resolution library,
+depended on by [curl (UCRT64)](CURL-UCRT64.md), closing one of the
+sub-dependencies that page's own Dependencies section had left
+explicitly unmodeled — this is the first page in this knowledge base
+for any c-ares package, in any environment. See the
+[official c-ares project site](https://c-ares.org/) for the full
+reference.
+
+## Architectural Classification
+
+`library:c-ares:c-ares@ucrt64` is packaged in the UCRT64 environment as
+`package:msys2:mingw-w64-ucrt-x86_64-c-ares` (version `1.34.8-1` in the
+current catalog snapshot, license `MIT`). No MSYS- or CLANG64-packaged
+c-ares sibling was found in this catalog snapshot, so unlike several
+other libraries documented in this volume, this is currently the sole
+catalog entity for this project.
+
+## Responsibilities
+
+- Providing asynchronous DNS request and name-resolution functionality,
+  consumed by [curl (UCRT64)](CURL-UCRT64.md#dependencies) for
+  non-blocking DNS lookups during network transfers.
+
+## Boundaries
+
+c-ares implements DNS resolution specifically, as an alternative to a
+program's platform DNS resolver calls (which are typically blocking);
+it does not implement any transfer protocol itself — that remains
+[curl (UCRT64)'s](CURL-UCRT64.md) own responsibility, with c-ares
+serving only the name-resolution step.
+
+## Interfaces
+
+- A C API (`ares_init`, `ares_gethostbyname`, `ares_getaddrinfo`, and
+  related functions) for asynchronous DNS queries, per the
+  documentation.
+
+## Dependencies
+
+The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-c-ares` declares no
+`runtime-depends-on` edges beyond standard toolchain runtime support.
+
+## Reverse Dependencies
+
+The catalog snapshot records 10 relationships targeting
+`package:msys2:mingw-w64-ucrt-x86_64-c-ares`. One is now modeled in
+this knowledge base: [curl (UCRT64)](CURL-UCRT64.md)
+(`relationship:foundation-libraries:curl-ucrt64-requires-c-ares-ucrt64`).
+The remaining ~9 recorded dependents (`arrow`, `grpc`, `mosquitto`,
+`nodejs`, `python-pycares`, `wireshark`, and others) are not
+individually modeled in this knowledge base; see the
+[reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
+for the current full list.
+
+## Configuration
+
+c-ares reads the platform's standard DNS resolver configuration
+(`/etc/resolv.conf` equivalent or Windows resolver settings) by
+default, rather than requiring its own dedicated configuration file.
+
+## Initialization and Execution Flow
+
+As a library, c-ares has no independent process lifecycle: it
+initializes and executes within the process of whatever program links
+against it — [curl (UCRT64)](CURL-UCRT64.md) in this dependency chain.
+As a native MinGW-w64 library, this process model is Windows-facing
+directly rather than mediated by `msys-2.0.dll`.
+
+## Runtime Behavior
+
+c-ares's asynchronous resolution model means DNS lookups do not block
+the calling program's main execution thread; a consuming program must
+poll or integrate c-ares's own event-loop hooks to drive queries to
+completion, per the documentation.
+
+## Compatibility and Variants
+
+Whether other native/MSYS environments in this catalog package c-ares
+separately was not confirmed while writing this page; this is recorded
+as an open item rather than assumed either way.
+
+## Security Considerations
+
+DNS resolution is a documented general source of spoofing and
+cache-poisoning risk at the protocol level; this page does not assert
+this specific package version's mitigations. See
+[Threat Model and Supply Chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md) for
+the project's general supply-chain posture; no version-qualified CVE
+review has been performed for the recorded `1.34.8-1` version.
+
+## Failure Modes and Diagnostics
+
+A curl DNS-resolution failure should be checked against c-ares's own
+error codes (`ARES_ENOTFOUND` and related) before being treated as a
+curl defect.
+
+## Evidence, Assumptions, and Open Questions
+
+Asynchronous DNS resolution scope is backed by the official c-ares
+project site (`evidence:c-ares:project-site-2026-07-30`), matching the
+`project_url` already recorded for
+`package:msys2:mingw-w64-ucrt-x86_64-c-ares` in the catalog. Package
+identity, version, license, and the one modeled dependent edge are
+backed by the pacman catalog snapshot (`evidence:catalog:current`).
+Open: whether other environments package c-ares separately was not
+confirmed. Also explicitly out of scope for this page: the ~9 remaining
+recorded dependents not individually modeled, and header-level API
+surface / PE import/export-level evidence, per the
+[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology.
+
+## Related Objects
+
+- [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
+- [curl (UCRT64)](CURL-UCRT64.md)

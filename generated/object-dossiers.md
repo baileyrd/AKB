@@ -5420,13 +5420,22 @@
 - Outgoing relationships: 0
 - Incoming relationships: 5
 
+## `library:c-ares:c-ares@ucrt64`
+
+- Name: c-ares (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:c-ares:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:curl:curl@ucrt64`
 
 - Name: curl (UCRT64)
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `library:curl:libcurl`
@@ -5661,7 +5670,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `library:gnu:zlib@clang64`
 
@@ -5789,6 +5798,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 2
 
+## `library:google:brotli@ucrt64`
+
+- Name: Brotli (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:google:cppdap`
 
 - Name: cppdap
@@ -5905,6 +5923,15 @@
 - Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:libssh2:libssh2@ucrt64`
+
+- Name: libssh2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
 
 ## `library:libuv:libuv`
 
@@ -6093,7 +6120,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:p11-glue:p11-kit`
 

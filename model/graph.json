@@ -2501,6 +2501,60 @@
         "role": "TLS/SSL protocol implementation and cryptographic primitives"
       },
       "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:google:brotli@ucrt64",
+      "kind": "library",
+      "name": "Brotli (UCRT64)",
+      "summary": "The Brotli compression library, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) for HTTP Content-Encoding: br compressed response support, distinct from the separately versioned MSYS Brotli this knowledge base's library:google:brotli entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Google",
+      "aliases": ["brotli"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://github.com/google/brotli",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-brotli",
+        "role": "Brotli compression"
+      },
+      "evidence_refs": ["evidence:google:brotli-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libssh2:libssh2@ucrt64",
+      "kind": "library",
+      "name": "libssh2 (UCRT64)",
+      "summary": "A client-side C library implementing the SSH2 protocol, packaged in the UCRT64 environment specifically and depended on by curl (UCRT64) to back the sftp:// and scp:// URL schemes, distinct from the separately versioned MSYS libssh2 this knowledge base's library:libssh2:libssh2 entity documents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libssh2 project",
+      "aliases": ["libssh2"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://libssh2.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libssh2",
+        "role": "client-side SSH2 protocol implementation"
+      },
+      "evidence_refs": ["evidence:libssh2:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:c-ares:c-ares@ucrt64",
+      "kind": "library",
+      "name": "c-ares (UCRT64)",
+      "summary": "An asynchronous DNS-request and name-resolution library, packaged in the UCRT64 environment and depended on by curl (UCRT64) for asynchronous DNS lookups — not modeled anywhere else in this knowledge base yet.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "c-ares project",
+      "aliases": ["c-ares"],
+      "tags": ["library", "networking"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://c-ares.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-c-ares",
+        "role": "asynchronous DNS resolution"
+      },
+      "evidence_refs": ["evidence:c-ares:project-site-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -8563,6 +8617,66 @@
       "condition": "Backs HTTPS and other TLS-secured transfers, closing one of the ten sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:google:brotli@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP Content-Encoding: br compressed response support, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-libssh2-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:libssh2:libssh2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the sftp:// and scp:// URL schemes, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:curl-ucrt64-requires-c-ares-ucrt64",
+      "type": "requires",
+      "source": "library:curl:curl@ucrt64",
+      "target": "library:c-ares:c-ares@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs asynchronous DNS resolution, closing one of the sub-dependencies curl (UCRT64)'s own page had left explicitly unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libssh2-ucrt64-requires-openssl-ucrt64",
+      "type": "requires",
+      "source": "library:libssh2:libssh2@ucrt64",
+      "target": "library:openssl:openssl@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs SSH2's own cryptographic primitives (key exchange, ciphers, MACs).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libssh2-ucrt64-requires-zlib",
+      "type": "requires",
+      "source": "library:libssh2:libssh2@ucrt64",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs SSH2's optional zlib-based transport compression.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -9957,6 +10071,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official libffi project site, matching the project_url recorded for package:msys2:libffi and package:msys2:mingw-w64-clang-x86_64-libffi in the catalog snapshot."
+    },
+    {
+      "id": "evidence:c-ares:project-site-2026-07-30",
+      "class": "primary",
+      "title": "c-ares (official project site)",
+      "locator": "https://c-ares.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official c-ares project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-c-ares in the catalog snapshot."
     }
   ]
 }

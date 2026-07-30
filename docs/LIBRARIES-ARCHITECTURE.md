@@ -93,6 +93,9 @@ model_refs:
   - library:libffi:libffi@clang64
   - library:curl:curl@ucrt64
   - library:openssl:openssl@ucrt64
+  - library:google:brotli@ucrt64
+  - library:libssh2:libssh2@ucrt64
+  - library:c-ares:c-ares@ucrt64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -152,6 +155,7 @@ evidence_refs:
   - evidence:mozilla:ca-certificates-manual-2026-07-30
   - evidence:libssh2:manual-2026-07-30
   - evidence:libffi:project-site-2026-07-30
+  - evidence:c-ares:project-site-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -226,8 +230,9 @@ flowchart LR
 [winpthreads (CLANG64)](WINPTHREADS-CLANG64.md),
 [libwinpthread (CLANG64)](LIBWINPTHREAD-CLANG64.md),
 [libffi (MSYS)](LIBFFI-MSYS.md), [libffi (CLANG64)](LIBFFI-CLANG64.md),
-[curl (UCRT64)](CURL-UCRT64.md), and
-[OpenSSL (UCRT64)](OPENSSL-UCRT64.md) are
+[curl (UCRT64)](CURL-UCRT64.md), [OpenSSL (UCRT64)](OPENSSL-UCRT64.md), [Brotli (UCRT64)](BROTLI-UCRT64.md),
+[libssh2 (UCRT64)](LIBSSH2-UCRT64.md), and
+[c-ares (UCRT64)](C-ARES-UCRT64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -242,7 +247,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All eighty-nine pages are deliberately scoped to package/dependency-level
+All ninety-two pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -589,12 +594,19 @@ closed a stale open item on
 [libopenssl's own page](LIBOPENSSL.md#compatibility-and-variants),
 which had stated no native OpenSSL package existed in this snapshot at
 all — true only for the *split* `libopenssl` naming, not for OpenSSL
-generally. Nine of curl (UCRT64)'s own twelve declared dependencies
-remain unmodeled (eight are UCRT64-native siblings of
-already-documented MSYS libraries — Brotli, GNU libidn2, libpsl,
-ca-certificates, libssh2, libnghttp2, libngtcp2, and libnghttp3 — and
-one, `c-ares`, is not modeled anywhere in this knowledge base yet),
-recorded as an explicitly open item on
+generally. A further batch closed three more of curl (UCRT64)'s open
+dependencies: [Brotli (UCRT64)](BROTLI-UCRT64.md) and
+[libssh2 (UCRT64)](LIBSSH2-UCRT64.md) (UCRT64-native siblings of
+already-documented MSYS libraries, following the same MSYS/UCRT64
+sibling pattern used throughout this volume — libssh2 (UCRT64) itself
+picked up two more edges onto [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) and
+[zlib](ZLIB.md)), and [c-ares (UCRT64)](C-ARES-UCRT64.md), an
+asynchronous DNS-resolution library and the first page in this
+knowledge base for any c-ares package in any environment. Six of curl
+(UCRT64)'s own twelve declared dependencies remain unmodeled (GNU
+libidn2, libpsl, ca-certificates, libnghttp2, libngtcp2, and
+libnghttp3, all UCRT64-native siblings of already-documented MSYS
+libraries), recorded as an explicitly open item on
 [curl (UCRT64)'s own page](CURL-UCRT64.md#dependencies) rather than
 silently assumed complete. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.

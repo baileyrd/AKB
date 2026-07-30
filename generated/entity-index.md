@@ -8,7 +8,7 @@
 | component:curl:curl | component | curl | partial | 3 | 2 |
 | component:git:git | component | Git (MSYS2 package) | partial | 5 | 1 |
 | component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
-| component:gnu:binutils | component | GNU Binutils | partial | 1 | 2 |
+| component:gnu:binutils | component | GNU Binutils | partial | 1 | 3 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 2 | 1 |
 | component:gnu:cpio | component | GNU Cpio | partial | 2 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
@@ -27,6 +27,9 @@
 | component:greenwood:less | component | less | partial | 3 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 2 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 2 | 1 |
+| component:llvm:clang | component | Clang | partial | 2 | 1 |
+| component:llvm:lld | component | LLD | partial | 2 | 2 |
+| component:llvm:lldb | component | LLDB | partial | 1 | 1 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
@@ -50,7 +53,7 @@
 | dll:windows:msys-curl-4.dll | dll | msys-curl-4.dll | verified | 0 | 1 |
 | dll:windows:msys-z.dll | dll | msys-z.dll | verified | 0 | 1 |
 | ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
-| environment:msys2:clang64 | environment | CLANG64 | partial | 0 | 3823 |
+| environment:msys2:clang64 | environment | CLANG64 | partial | 3 | 3823 |
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
@@ -4950,7 +4953,7 @@
 | package:msys2:mingw-w64-clang-x86_64-civetweb | package | mingw-w64-clang-x86_64-civetweb | verified | 4 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-cjose | package | mingw-w64-clang-x86_64-cjose | verified | 4 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-cjson | package | mingw-w64-clang-x86_64-cjson | verified | 2 | 3 |
-| package:msys2:mingw-w64-clang-x86_64-clang | package | mingw-w64-clang-x86_64-clang | verified | 10 | 12 |
+| package:msys2:mingw-w64-clang-x86_64-clang | package | mingw-w64-clang-x86_64-clang | verified | 10 | 13 |
 | package:msys2:mingw-w64-clang-x86_64-clang-21 | package | mingw-w64-clang-x86_64-clang-21 | verified | 8 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-clang-analyzer | package | mingw-w64-clang-x86_64-clang-analyzer | verified | 4 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-clang-libs | package | mingw-w64-clang-x86_64-clang-libs | verified | 3 | 17 |
@@ -5991,9 +5994,9 @@
 | package:msys2:mingw-w64-clang-x86_64-live-photo-conv | package | mingw-w64-clang-x86_64-live-photo-conv | verified | 16 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-llama.cpp | package | mingw-w64-clang-x86_64-llama.cpp | verified | 5 | 1 |
 | package:msys2:mingw-w64-clang-x86_64-llama.qtcreator | package | mingw-w64-clang-x86_64-llama.qtcreator | verified | 4 | 0 |
-| package:msys2:mingw-w64-clang-x86_64-lld | package | mingw-w64-clang-x86_64-lld | verified | 5 | 5 |
+| package:msys2:mingw-w64-clang-x86_64-lld | package | mingw-w64-clang-x86_64-lld | verified | 5 | 6 |
 | package:msys2:mingw-w64-clang-x86_64-lld-21 | package | mingw-w64-clang-x86_64-lld-21 | verified | 2 | 0 |
-| package:msys2:mingw-w64-clang-x86_64-lldb | package | mingw-w64-clang-x86_64-lldb | verified | 8 | 4 |
+| package:msys2:mingw-w64-clang-x86_64-lldb | package | mingw-w64-clang-x86_64-lldb | verified | 8 | 5 |
 | package:msys2:mingw-w64-clang-x86_64-lldb-mi | package | mingw-w64-clang-x86_64-lldb-mi | verified | 4 | 0 |
 | package:msys2:mingw-w64-clang-x86_64-llvm | package | mingw-w64-clang-x86_64-llvm | verified | 4 | 2 |
 | package:msys2:mingw-w64-clang-x86_64-llvm-21 | package | mingw-w64-clang-x86_64-llvm-21 | verified | 2 | 1 |

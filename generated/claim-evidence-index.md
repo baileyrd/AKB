@@ -16,6 +16,8 @@
 | claim:component:git:nano-fallback-editor | component:git:git | inference | high | evidence:catalog:current |
 | claim:component:gzip:wrapper-scripts | component:gnu:gzip | inference | high | evidence:catalog:current |
 | claim:component:less:pcre-search | component:greenwood:less | inference | high | evidence:catalog:current |
+| claim:component:lld:provides-binutils-capability | component:llvm:lld | fact | verified | evidence:catalog:current |
+| claim:component:lldb:python-scripting | component:llvm:lldb | inference | high | evidence:catalog:current |
 | claim:component:lz4:self-versioned-dependency | component:lz4:lz4 | inference | medium | evidence:catalog:current |
 | claim:component:ncurses:hub | component:gnu:ncurses | observation | verified | evidence:catalog:current |
 | claim:component:vim:perl-integration | component:vim:vim | inference | high | evidence:catalog:current |

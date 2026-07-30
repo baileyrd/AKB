@@ -76770,9 +76770,17 @@
 | relationship:ssh-curl-git:openssl-packaged-by-package | packaged-by | component:openssl:openssl | package:msys2:openssl | verified |
 | relationship:ssh-curl-git:openssl-uses-msys-runtime | uses-runtime | component:openssl:openssl | runtime:msys2:msys-2.0.dll | partial |
 | relationship:toolchain:binutils-packaged-by-package | packaged-by | component:gnu:binutils | package:msys2:mingw-w64-ucrt-x86_64-binutils | verified |
+| relationship:toolchain:clang-invokes-lld | invokes | component:llvm:clang | component:llvm:lld | verified |
+| relationship:toolchain:clang-packaged-by-package | packaged-by | component:llvm:clang | package:msys2:mingw-w64-clang-x86_64-clang | verified |
+| relationship:toolchain:clang64-contains-clang | contains | environment:msys2:clang64 | component:llvm:clang | partial |
+| relationship:toolchain:clang64-contains-lld | contains | environment:msys2:clang64 | component:llvm:lld | partial |
+| relationship:toolchain:clang64-contains-lldb | contains | environment:msys2:clang64 | component:llvm:lldb | partial |
 | relationship:toolchain:gcc-invokes-binutils | invokes | component:gnu:gcc | component:gnu:binutils | verified |
 | relationship:toolchain:gcc-packaged-by-package | packaged-by | component:gnu:gcc | package:msys2:mingw-w64-ucrt-x86_64-gcc | verified |
 | relationship:toolchain:gdb-packaged-by-package | packaged-by | component:gnu:gdb | package:msys2:mingw-w64-ucrt-x86_64-gdb | verified |
+| relationship:toolchain:lld-compatible-with-binutils | compatible-with | component:llvm:lld | component:gnu:binutils | partial |
+| relationship:toolchain:lld-packaged-by-package | packaged-by | component:llvm:lld | package:msys2:mingw-w64-clang-x86_64-lld | verified |
+| relationship:toolchain:lldb-packaged-by-package | packaged-by | component:llvm:lldb | package:msys2:mingw-w64-clang-x86_64-lldb | verified |
 | relationship:toolchain:ucrt64-contains-binutils | contains | environment:msys2:ucrt64 | component:gnu:binutils | partial |
 | relationship:toolchain:ucrt64-contains-gcc | contains | environment:msys2:ucrt64 | component:gnu:gcc | partial |
 | relationship:toolchain:ucrt64-contains-gdb | contains | environment:msys2:ucrt64 | component:gnu:gdb | partial |

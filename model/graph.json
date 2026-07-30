@@ -701,6 +701,60 @@
         "role": "debugger"
       },
       "evidence_refs": ["evidence:gnu:gdb-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:llvm:clang",
+      "kind": "component",
+      "name": "Clang",
+      "summary": "The C language family frontend for LLVM, packaged per native environment (CLANG64 shown here) as the default compiler driver for LLVM-oriented MinGW-w64 targets.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": ["clang", "clang++", "cc"],
+      "tags": ["toolchain", "compiler", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://clang.llvm.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-clang",
+        "role": "compiler driver"
+      },
+      "evidence_refs": ["evidence:llvm:clang-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:llvm:lld",
+      "kind": "component",
+      "name": "LLD",
+      "summary": "The LLVM linker, packaged per native environment (CLANG64 shown here) as Clang's default backend linker.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": ["lld", "ld.lld"],
+      "tags": ["toolchain", "linker", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://lld.llvm.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-lld",
+        "role": "linker"
+      },
+      "evidence_refs": ["evidence:llvm:lld-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "component:llvm:lldb",
+      "kind": "component",
+      "name": "LLDB",
+      "summary": "The LLVM debugger, packaged per native environment (CLANG64 shown here) as the default debugger for LLVM-oriented environments.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": ["lldb"],
+      "tags": ["toolchain", "debugger", "component"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://lldb.llvm.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-lldb",
+        "role": "debugger"
+      },
+      "evidence_refs": ["evidence:llvm:lldb-manual-2026-07-30", "evidence:catalog:current"]
     }
   ],
   "relationships": [
@@ -2035,6 +2089,102 @@
       "condition": "GCC's driver invokes the assembler (as) and linker (ld) as backend subprocesses.",
       "properties": {},
       "evidence_refs": ["evidence:gnu:gcc-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang64-contains-clang",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "component:llvm:clang",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:llvm:clang",
+      "target": "package:msys2:mingw-w64-clang-x86_64-clang",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang64-contains-lld",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "component:llvm:lld",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lld-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:llvm:lld",
+      "target": "package:msys2:mingw-w64-clang-x86_64-lld",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang64-contains-lldb",
+      "type": "contains",
+      "source": "environment:msys2:clang64",
+      "target": "component:llvm:lldb",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lldb-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:llvm:lldb",
+      "target": "package:msys2:mingw-w64-clang-x86_64-lldb",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:clang-invokes-lld",
+      "type": "invokes",
+      "source": "component:llvm:clang",
+      "target": "component:llvm:lld",
+      "status": "verified",
+      "confidence": "high",
+      "scope": "build",
+      "condition": "Clang's driver invokes LLD as its default backend linker in this environment.",
+      "properties": {},
+      "evidence_refs": ["evidence:llvm:clang-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:toolchain:lld-compatible-with-binutils",
+      "type": "compatible-with",
+      "source": "component:llvm:lld",
+      "target": "component:gnu:binutils",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "packaging",
+      "condition": "The MSYS2 lld package declares that it provides the binutils virtual capability in the CLANG64 environment (claim:component:lld:provides-binutils-capability); this is a packaging-level substitutability claim, not a guarantee of identical linker features or output behavior, per the Toolchain Role Model's boundary note.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [
@@ -2254,6 +2404,26 @@
       "statement": "GDB's dependency on python backs its Python scripting API (pretty-printers, gdb.execute), and its optional dependency on python-pygments backs syntax-highlighted source-code display.",
       "classification": "inference",
       "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:lldb:python-scripting",
+      "subject": "component:llvm:lldb",
+      "statement": "LLDB's dependency on python backs its Python scripting API, the same scripting-extensibility pattern documented for GDB.",
+      "classification": "inference",
+      "confidence": "high",
+      "valid_from": "2026-07-29",
+      "valid_to": null,
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "claim:component:lld:provides-binutils-capability",
+      "subject": "component:llvm:lld",
+      "statement": "The MSYS2 lld package declares that it provides the binutils virtual capability in the CLANG64 environment, letting packages that depend on a generic binutils-like toolchain resolve against LLD instead of GNU Binutils.",
+      "classification": "fact",
+      "confidence": "verified",
       "valid_from": "2026-07-29",
       "valid_to": null,
       "evidence_refs": ["evidence:catalog:current"]
@@ -2589,6 +2759,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Debugger project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-gdb in the catalog snapshot."
+    },
+    {
+      "id": "evidence:llvm:clang-manual-2026-07-30",
+      "class": "primary",
+      "title": "Clang Documentation",
+      "locator": "https://clang.llvm.org/docs/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Clang documentation index. Used for the compiler-driver model and default backend-linker invocation. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:llvm:lld-manual-2026-07-30",
+      "class": "primary",
+      "title": "LLD (official project site)",
+      "locator": "https://lld.llvm.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official LLD project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-lld in the catalog snapshot."
+    },
+    {
+      "id": "evidence:llvm:lldb-manual-2026-07-30",
+      "class": "primary",
+      "title": "LLDB (official project site)",
+      "locator": "https://lldb.llvm.org/",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official LLDB project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-lldb in the catalog snapshot."
     }
   ]
 }

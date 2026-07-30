@@ -45,7 +45,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:binutils-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `component:gnu:coreutils`
 
@@ -207,6 +207,33 @@
 - Status: `partial`
 - Evidence: evidence:info-zip:zip-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:llvm:clang`
+
+- Name: Clang
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:clang-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:llvm:lld`
+
+- Name: LLD
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:lld-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `component:llvm:lldb`
+
+- Name: LLDB
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `component:lz4:lz4`
@@ -422,7 +449,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 0
+- Outgoing relationships: 3
 - Incoming relationships: 3823
 
 ## `environment:msys2:clangarm64`
@@ -44523,7 +44550,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-21`
 
@@ -53892,7 +53919,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-lld-21`
 
@@ -53910,7 +53937,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-lldb-mi`
 

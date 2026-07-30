@@ -24,6 +24,9 @@ Objects
 - component:greenwood:less (component): less
 - component:info-zip:unzip (component): Info-ZIP UnZip
 - component:info-zip:zip (component): Info-ZIP Zip
+- component:llvm:clang (component): Clang
+- component:llvm:lld (component): LLD
+- component:llvm:lldb (component): LLDB
 - component:lz4:lz4 (component): LZ4
 - component:lzip:lzip (component): Lzip
 - component:mintty:mintty (component): mintty
@@ -16424,6 +16427,14 @@ Relationships
 - environment:msys2:ucrt64 --contains--> component:gnu:gdb
 - component:gnu:gdb --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gdb
 - component:gnu:gcc --invokes--> component:gnu:binutils
+- environment:msys2:clang64 --contains--> component:llvm:clang
+- component:llvm:clang --packaged-by--> package:msys2:mingw-w64-clang-x86_64-clang
+- environment:msys2:clang64 --contains--> component:llvm:lld
+- component:llvm:lld --packaged-by--> package:msys2:mingw-w64-clang-x86_64-lld
+- environment:msys2:clang64 --contains--> component:llvm:lldb
+- component:llvm:lldb --packaged-by--> package:msys2:mingw-w64-clang-x86_64-lldb
+- component:llvm:clang --invokes--> component:llvm:lld
+- component:llvm:lld --compatible-with--> component:gnu:binutils
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

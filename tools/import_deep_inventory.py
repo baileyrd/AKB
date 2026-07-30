@@ -616,6 +616,24 @@ def verify_inventory(directory: Path) -> dict[str, Any]:
     }
 
 
+def project_inventory(directory: Path, output: Path) -> dict[str, Any]:
+    """Write one typed local projection without reading or replacing CURRENT."""
+    manifest, records = verify_input(directory)
+    generated_at = datetime.fromisoformat(
+        manifest["generated_at"].replace("Z", "+00:00")
+    ).astimezone(timezone.utc)
+    snapshot_id = generated_at.strftime("%Y%m%dT%H%M%SZ") + "-" + sha_manifest(manifest)[:12]
+    projection, unresolved = build_projection(manifest, records, snapshot_id)
+    write_json(output, projection)
+    return {
+        "snapshot": snapshot_id,
+        "entities": len(projection["entities"]),
+        "relationships": len(projection["relationships"]),
+        "unresolved": len(unresolved),
+        "output": str(output),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("inventory_directory", type=Path)
@@ -624,18 +642,22 @@ def main() -> int:
         "--verify-only", action="store_true",
         help="validate manifest hashes and records without changing the current projection",
     )
+    parser.add_argument(
+        "--projection-output", type=Path,
+        help="write a standalone typed projection without reading or replacing the current projection",
+    )
     args = parser.parse_args()
     try:
         directory = args.inventory_directory.resolve()
-        result = (
-            verify_inventory(directory)
-            if args.verify_only
-            else import_inventory(directory, args.accumulate)
-        )
+        if args.verify_only and args.projection_output:
+            raise InventoryImportError("--verify-only and --projection-output cannot be combined")
+        result = (verify_inventory(directory) if args.verify_only else
+                  project_inventory(directory, args.projection_output) if args.projection_output else
+                  import_inventory(directory, args.accumulate))
     except (InventoryImportError, OSError, ValueError, KeyError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
-    prefix = "Verified" if args.verify_only else "Imported"
+    prefix = "Verified" if args.verify_only else "Projected" if args.projection_output else "Imported"
     print(prefix + " " + ", ".join(f"{key}={value}" for key, value in result.items()))
     return 0
 

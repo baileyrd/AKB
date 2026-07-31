@@ -5,7 +5,7 @@ volume: 20
 status: partial
 model_refs: []
 evidence_refs: []
-last_verified: 2026-07-30
+last_verified: 2026-07-31
 ---
 
 # Handoff Requirement Traceability
@@ -23,7 +23,7 @@ template alone is not sufficient.
 | GNU, toolchain, pacman, Git for Windows documentation | Partial | Dedicated role and boundary documents; per-component pages with responsibilities, boundaries, interfaces, dependencies, and primary evidence now exist for every GNU-userland tool (29, Volume 5), every toolchain tool (14, Volume 8), and every documented library (104, Volume 6, one — zlib — additionally carrying full family-classification evidence); Git for Windows' three canonical pages (Volume 9) now carry controlled local launcher, PATH-resolution, and PE-import observations rather than methodology text alone | Per-component pages of the same depth for pacman/repository internals (Volume 7) remain undone (no pacman installation is available in the current authoring environment to observe); Git for Windows still lacks per-component pages of the GNU-userland/toolchain depth, only page-level controlled observations |
 | Interactive Explorer | Partial | Stable routes, search, filters, dependency navigation | Zoomable graphical exploration and complete populated object categories |
 | Level 0–7 linked diagram hierarchy | Partial | Eight linked, route-tested SVGs spanning Levels 0–7 and generated dossiers for every composed object | Diagrams and dossiers are navigation aids; substantive per-object evidence-qualified drill-down coverage remains incomplete |
-| Every major claim traceable to evidence | Partial | Source registry, snapshot manifest, and [generated claim/evidence index](../generated/claim-evidence-index.md), now covering 39 claims (fact/observation/inference-classified) and 116 evidence records — the original 6 bounded environment facts, per-component dependency-to-feature claims across Volumes 5, 6, and 8, and controlled local observations now covering Volumes 2, 3, and 9 as well | Claim coverage for authored narrative outside those volumes, and per-object citations for Volumes 4, 7, and beyond |
+| Every major claim traceable to evidence | Partial | Source registry, snapshot manifest, and [generated claim/evidence index](../generated/claim-evidence-index.md), now covering 39 claims (fact/observation/inference-classified) and 115 evidence records — the original 6 bounded environment facts, per-component dependency-to-feature claims across Volumes 5, 6, and 8, and controlled local observations now covering Volumes 2, 3, 9, 11, 16, 17, and 18 as well | Claim coverage for authored narrative outside those volumes, and per-object citations for Volumes 4, 7, and beyond |
 | Security, performance, upgrade, and operations | Partial | Dedicated authored documents and refresh policy | Measured operational history and requirement-specific evidence |
 
 ## Acceptance rule

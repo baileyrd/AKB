@@ -6,8 +6,9 @@ status: partial
 model_refs:
   - runtime:msys2:msys-2.0.dll
   - environment:msys2:msys
-evidence_refs: []
-last_verified: 2026-07-28
+evidence_refs:
+  - evidence:msys-runtime:git-for-windows-comparative-observation-2026-07-30
+last_verified: 2026-07-30
 ---
 
 # MSYS Runtime Initialization Model
@@ -48,6 +49,17 @@ Detailed ordering for mount setup, path conversion tables, signal machinery,
 fork emulation, and pseudo-terminal setup requires version-qualified runtime
 source analysis and controlled observations. Those are tracked as follow-on
 runtime-model work rather than inferred here.
+
+A 2026-07-30 observation confirmed `msys-2.0.dll` is not a single
+knowledge-base-wide constant: the isolated MSYS2 installation's copy
+reports runtime `3.6.10`, while Git for Windows ships its own, separately
+versioned `3.6.9-b4195d69.x86_64` copy at
+`C:\Program Files\Git\usr\bin\msys-2.0.dll` (hash-recorded). "A program
+depends on `msys-2.0.dll`" is therefore an incomplete claim on its own;
+see the
+[behavior map's comparative observation](MSYS-RUNTIME-BEHAVIOR-MAP.md#comparative-observation-git-for-windows-bundled-msys-runtime)
+for which specific copy a given process resolves and what measurably
+differs between them.
 
 ## Related Views
 

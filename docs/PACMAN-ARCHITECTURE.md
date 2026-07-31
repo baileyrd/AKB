@@ -5,7 +5,8 @@ volume: 7
 status: partial
 model_refs:
   - ecosystem:msys2:msys2
-evidence_refs: []
+evidence_refs:
+  - evidence:catalog:current
 last_verified: 2026-07-30
 ---
 
@@ -52,6 +53,17 @@ standard hook directory contained no hook files at that instant.
 This is configuration and retained-state evidence only. It does not establish
 mirror availability, signature verification outcomes, transaction behavior, or
 the behavior of absent/custom hooks.
+
+## Sync database hash evidence
+
+`evidence:catalog:current`'s own manifest records the exact SHA-256 of each
+of the six retrieved repository databases (`msys.db`, `ucrt64.db`,
+`clang64.db`, `clangarm64.db`, `mingw64.db`, `mingw32.db`) at the retrieval
+time this page's `evidence_refs` already cite — the "Sync databases" row's
+"hash the exact database bytes" evidence, not previously cross-linked from
+here. The same manifest records `pacman_version` as an empty string: the
+collector did not capture the pacman version that produced these databases,
+an honest, already-flagged gap rather than an inferred value.
 
 ## Related Views
 

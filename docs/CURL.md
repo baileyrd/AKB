@@ -80,6 +80,14 @@ CLI tool documented in this batch, reflecting curl's multi-protocol design:
 | Unicode string handling | `package:msys2:libunistring` | Backs Unicode-aware string processing, for example in internationalized domain names. Documented fully in [GNU libunistring](GNU-LIBUNISTRING.md). |
 | Compression | `package:msys2:zlib` | Backs transparent decompression of `Content-Encoding: gzip`/`deflate` HTTP responses. Documented fully in [zlib (MSYS)](ZLIB-MSYS.md). |
 
+A 2026-07-29 byte-level PE-import parse of `/usr/bin/curl.exe` confirms
+two of these edges directly rather than only at the catalog-declared
+level: it imports `msys-curl-4.dll` (the split transfer library edge
+above) and `msys-z.dll` (the zlib edge above), plus `msys-2.0.dll`
+(confirming this build is MSYS-dependent) and `kernel32.dll`. See
+[Package-to-File Inventory](PACKAGE-FILE-INVENTORY.md#worked-examples-archive-payload-observation-beyond-the-installed-subset)
+for the full import list.
+
 ## Reverse Dependencies
 
 The snapshot records 8 relationships targeting `package:msys2:curl`. See

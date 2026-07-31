@@ -10717,6 +10717,16 @@
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:akb-process:zlib-upstream-build-2026-07-31",
+      "class": "observed",
+      "title": "zlib 1.3.2 upstream source build reaching compile, link, and execution under a real UCRT64 GCC toolchain",
+      "locator": "local build, C:\\msys64 (winget-installed), zlib-1.3.2.tar.gz from https://zlib.net/fossils/",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "1.3.2",
+      "integrity": "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16",
+      "notes": "A second, independently-scoped build exercise for docs/BUILD-ARTIFACT-FLOW-MAPPINGS.md, distinct from the recipe/patch-based attempt documented in docs/SOURCE-CODE-ORGANIZATION.md#bounded-provenance-slice-zlib (which failed compiling gzlib.c under GCC 15.3.0; that attempt has no formal evidence record, only inline prose). This exercise compiled the upstream zlib-1.3.2.tar.gz release archive (not the recipe-declared .tar.xz, no recipe patches applied) via zlib's own win32/Makefile.gcc using a freshly winget-installed MSYS2 (C:\\msys64) and its UCRT64 GCC 16.1.0. gzlib.c compiled cleanly (exit 0); the full build succeeded (libz.a SHA-256 32817246efa3ca6570fee1995a4108ef2e7e712fb97f49bf17466ee5ee6f22d4, libz.dll.a SHA-256 6480b10caf0fa033319b2494b2bc1e638d5d975015facbe9381953a167349ac7, zlib1.dll SHA-256 4a4363adc2c9c96e6c96d4bb6167aa326918ef96924eb84639e60026d3860ef5). Running the bundled example.exe reached this knowledge base's first execution-stage observation for any build attempt: three checks passed (version string, uncompress, gzread) but a real 'gzseek error, pos=6, gztell=14' functional-test failure occurred, exit status 1 -- reported as observed, not omitted. Separately, running the same C:\\msys64-built gcc.exe as a child process of Git for Windows' own distinct msys-2.0.dll runtime (this session's normal shell) reproducibly failed with 'Cannot create temporary file in C:\\Windows\\: Permission denied'; the identical command succeeded only when invoked through C:\\msys64's own bash.exe. Neither this attempt nor the recipe-based one establishes that the MSYS2-packaged zlib1.dll reproduces from source."
+    },
+    {
       "id": "evidence:zlib:ucrt64-archive-analysis-2026-07-29",
       "class": "observed",
       "title": "zlib (UCRT64) package-archive static analysis",

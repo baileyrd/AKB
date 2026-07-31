@@ -69,11 +69,12 @@ from this entity in this knowledge base.
 
 ## Reverse Dependencies
 
-The catalog snapshot records 41 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 41 relationships;
+the catalog snapshot actually records **42** targeting
 `package:msys2:mingw-w64-clang-x86_64-xz`. One is now modeled in this
 knowledge base: [LLDB](LLDB.md)
 (`relationship:foundation-libraries:lldb-requires-liblzma-clang64`).
-The remaining ~40 recorded dependents (a broad mix of CLANG64 packages
+The remaining ~41 recorded dependents (a broad mix of CLANG64 packages
 including `boost-libs`, `imagemagick`, `libarchive`, `qemu`, and
 `rustup`) are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -129,7 +130,7 @@ project page (`evidence:tukaani:xz-library-manual-2026-07-30`), the
 same evidence record [liblzma (UCRT64)](LIBLZMA.md) cites. Package
 identity, version, and the one modeled dependent edge are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: the ~40 remaining recorded
+explicitly out of scope for this page: the ~41 remaining recorded
 dependents not individually modeled, this package's own
 gettext-runtime sub-dependency, and header-level API surface / PE
 import/export-level evidence, per the

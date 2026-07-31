@@ -84,8 +84,11 @@ knowledge base and remains unmodeled.
 targeting it in this snapshot — larger than
 [ncurses](NCURSES.md#reverse-dependencies)'s 40 and
 [OpenSSL](OPENSSL.md#reverse-dependencies)'s 21, though smaller than
-[zlib](ZLIB.md#reverse-dependencies)'s 299, the largest recorded in this
-knowledge base. This is a directly observed fact, not an inference: nearly
+[zlib](ZLIB.md#reverse-dependencies)'s 299, the largest recorded among
+this knowledge base's modeled components and libraries (`generated/reverse-dependency-impact.json`'s
+full, undocumented-package-inclusive view records several higher counts,
+e.g. Python at 965 — see [zlib](ZLIB.md#reverse-dependencies)'s own
+2026-07-30 correction for detail). This is a directly observed fact, not an inference: nearly
 every C/C++ program built with GCC in this environment needs the runtime
 libraries this package bundles. Six are now modeled in this knowledge
 base: [GCC](GNU-GCC.md#dependencies) itself

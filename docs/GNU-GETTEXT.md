@@ -87,7 +87,7 @@ incompatible with this split runtime/tools packaging).
 The snapshot records **141** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` — a substantial
 dependent count, exceeding [GNU libiconv](GNU-LIBICONV.md#reverse-dependencies)'s
-82 but smaller than [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167 and
+81 but smaller than [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167 and
 [zlib](ZLIB.md#reverse-dependencies)'s 299. One is now modeled in this
 knowledge base: [libgpg-error](LIBGPG-ERROR.md#dependencies)
 (`relationship:foundation-libraries:libgpg-error-requires-gettext`,

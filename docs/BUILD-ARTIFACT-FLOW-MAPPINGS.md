@@ -3,9 +3,10 @@ id: doc:volume-14:build-artifact-flow-mappings
 title: Generated Artifact and Build-Flow Mappings
 volume: 14
 status: partial
-model_refs: []
+model_refs:
+  - library:gnu:zlib
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # Generated Artifact and Build-Flow Mappings
@@ -65,8 +66,29 @@ flowchart LR
 5. Import only verified observations so all graph facts reference their
    snapshot and retain unresolved mappings where proof is incomplete.
 
+## Worked example: zlib, reaching and stopping at Compile and link
+
+[Source code organization](SOURCE-CODE-ORGANIZATION.md#bounded-provenance-slice-zlib)
+already records a controlled local build attempt that exercises three of
+this table's stages, previously not cross-linked from here:
+
+| Stage | What was actually done |
+| --- | --- |
+| Source selection | The retained `zlib/PKGBUILD` declared `zlib-1.3.2.tar.xz` and a SHA-256; a local retrieval of that exact URL matched the declared digest — Source selection evidence, not proof the installed DLL was built from it (see the linked page's own caveat). |
+| Configuration | The recipe's two local patches matched their declared SHA-256 values and were verified before application. |
+| Build graph / Compile and link | A controlled local build applied both patches successfully, then **failed** compiling `gzlib.c` under MSYS GCC `15.3.0`, which referenced `lseek` without a visible declaration — a version-qualified failed-build observation, not evidence the recipe or installed DLL is invalid. |
+| Install staging / Package archive / Installed files | Not reached by this attempt; the installed `zlib 1.3.2-1` and `/usr/bin/msys-z.dll` observed separately are ownership evidence only, per this table's own "Do not infer" column — this attempt does not connect them to the failed local build. |
+
+This is exactly the failure mode Canonical Mapping Rule 5 anticipates:
+the attempt stopped mid-pipeline, so no reproducibility comparison over
+qualified output hashes is possible here, and none is claimed. It
+remains this knowledge base's only concrete instance of this page's
+methodology; every other documented package/library still has only the
+abstract stage table above, no worked attempt.
+
 ## Related Views
 
 - [Build system role model](BUILD-SYSTEM-ROLE-MODEL.md)
 - [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md)
 - [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)
+- [Source code organization](SOURCE-CODE-ORGANIZATION.md)

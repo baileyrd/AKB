@@ -71,7 +71,8 @@ runtime support.
 
 ## Reverse Dependencies
 
-The catalog snapshot records 285 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 285 relationships;
+the catalog snapshot actually records **287** targeting
 `package:msys2:mingw-w64-clang-x86_64-zlib`. Four are already modeled
 in this knowledge base: `package:msys2:mingw-w64-clang-x86_64-lld`
 (`relationship:toolchain:lld-requires-zlib-clang64`),
@@ -85,7 +86,7 @@ no-dependencies claim), and `package:msys2:mingw-w64-clang-x86_64-libxml2`
 added 2026-07-30 to close a gap in
 [libxml2 (CLANG64)'s own dependency table](LIBXML2-CLANG64.md#dependencies),
 which had cited this package by name without a corresponding graph
-edge). The remaining ~281 recorded dependents (a broad mix of CLANG64
+edge). The remaining ~283 recorded dependents (a broad mix of CLANG64
 packages) are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -135,7 +136,7 @@ before being treated as an LLD or LLDB defect.
 
 DEFLATE compression scope is backed by the official zlib project site
 (`evidence:zlib:manual-2026-07-30`), the same evidence record
-[zlib (UCRT64)](ZLIB.md) cites. Package identity, version, and the two
+[zlib (UCRT64)](ZLIB.md) cites. Package identity, version, and the four
 modeled dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
 this page: the ~283 remaining recorded dependents not individually

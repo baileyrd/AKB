@@ -25,8 +25,12 @@ last_verified: 2026-07-30
 
 Zlib implements the DEFLATE compression algorithm behind gzip, PKZIP, and
 countless other formats and libraries, and — per this snapshot — it is the
-single most-depended-upon package in this entire knowledge base. This page
-documents its architectural centrality; see the
+most-depended-upon package among the components and libraries this
+knowledge base actually models (`claim:library:zlib-hub`), not the
+highest reverse-dependency count in the full generated catalog view,
+where several undocumented packages (Python, glib2, Qt6, Perl) exceed
+it — see Reverse Dependencies below. This page documents its
+architectural centrality; see the
 [official zlib manual](https://www.zlib.net/manual.html) for the API
 reference.
 
@@ -110,10 +114,19 @@ consistent with zlib's small, self-contained, widely portable design.
 
 The snapshot records **299** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-zlib` — the largest reverse-dependency
-count recorded anywhere in this knowledge base
+count of any *modeled* component or library in this knowledge base
 (`claim:library:zlib-hub`), exceeding [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s
-167 and far exceeding [ncurses](NCURSES.md#reverse-dependencies)'s 40. This
-reflects DEFLATE compression's use as a near-universal building block
+167 and far exceeding [ncurses](NCURSES.md#reverse-dependencies)'s 40.
+**Correction, 2026-07-30**: this is not the largest count in the full
+generated catalog view — `generated/reverse-dependency-impact.json`
+itself records `mingw-w64-ucrt-x86_64-python` at 965, `glib2` at 186, and
+several other undocumented packages above zlib's 297
+`runtime-depends-on`-only count; no page in this knowledge base yet
+documents Python, glib2, Qt6, or Perl, so the claim's own careful
+scoping ("among all components and libraries modeled in this knowledge
+base") was accurate, but the surrounding prose previously dropped that
+qualifier. This reflects DEFLATE compression's use as a near-universal
+building block
 across compilers ([GCC](GNU-GCC.md), [Clang](CLANG.md), [LLD](LLD.md)),
 build systems ([CMake](CMAKE.md)), network transfer
 ([curl (UCRT64)](CURL-UCRT64.md)), version control

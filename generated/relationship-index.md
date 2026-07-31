@@ -76386,6 +76386,10 @@
 | relationship:foundation-libraries:libxml2-packaged-by-package | packaged-by | library:gnome:libxml2 | package:msys2:mingw-w64-ucrt-x86_64-libxml2 | verified |
 | relationship:foundation-libraries:libxml2-requires-libiconv | requires | library:gnome:libxml2 | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:libxml2-requires-zlib | requires | library:gnome:libxml2 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:libz-a-implements-zlib | implements | static-library:gnu:libz.a | library:gnu:zlib | verified |
+| relationship:foundation-libraries:libz-a-packaged-by-package | packaged-by | static-library:gnu:libz.a | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
+| relationship:foundation-libraries:libz-dll-a-packaged-by-package | packaged-by | import-library:gnu:libz.dll.a | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
+| relationship:foundation-libraries:libz-dll-a-wraps-zlib1-dll | wraps | import-library:gnu:libz.dll.a | dll:gnu:zlib1.dll | verified |
 | relationship:foundation-libraries:libzstd-packaged-by-package | packaged-by | library:facebook:zstd@msys-lib | package:msys2:libzstd | verified |
 | relationship:foundation-libraries:libzstd-uses-msys-runtime | uses-runtime | library:facebook:zstd@msys-lib | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:lldb-requires-liblzma-clang64 | requires | component:llvm:lldb | library:tukaani:liblzma@clang64 | verified |
@@ -76511,9 +76515,15 @@
 | relationship:foundation-libraries:winpthreads-requires-libwinpthread | requires | library:mingw-w64:winpthreads | library:mingw-w64:libwinpthread | verified |
 | relationship:foundation-libraries:xxhash-packaged-by-package | packaged-by | library:xxhash:xxhash | package:msys2:mingw-w64-ucrt-x86_64-xxhash | verified |
 | relationship:foundation-libraries:zlib-clang64-packaged-by-package | packaged-by | library:gnu:zlib@clang64 | package:msys2:mingw-w64-clang-x86_64-zlib | verified |
+| relationship:foundation-libraries:zlib-exposes-headers | exposes | library:gnu:zlib | header-set:gnu:zlib-headers | verified |
+| relationship:foundation-libraries:zlib-headers-packaged-by-package | packaged-by | header-set:gnu:zlib-headers | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
 | relationship:foundation-libraries:zlib-msys-packaged-by-package | packaged-by | library:gnu:zlib@msys | package:msys2:zlib | verified |
 | relationship:foundation-libraries:zlib-msys-uses-msys-runtime | uses-runtime | library:gnu:zlib@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:zlib-packaged-by-package | packaged-by | library:gnu:zlib | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
+| relationship:foundation-libraries:zlib-pc-documents-zlib | documents | pkg-config-module:gnu:zlib-pc | library:gnu:zlib | verified |
+| relationship:foundation-libraries:zlib-pc-packaged-by-package | packaged-by | pkg-config-module:gnu:zlib-pc | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
+| relationship:foundation-libraries:zlib1-dll-implements-zlib | implements | dll:gnu:zlib1.dll | library:gnu:zlib | verified |
+| relationship:foundation-libraries:zlib1-dll-packaged-by-package | packaged-by | dll:gnu:zlib1.dll | package:msys2:mingw-w64-ucrt-x86_64-zlib | verified |
 | relationship:foundation-libraries:zstd-clang64-packaged-by-package | packaged-by | library:facebook:zstd@clang64 | package:msys2:mingw-w64-clang-x86_64-zstd | verified |
 | relationship:foundation-libraries:zstd-packaged-by-package | packaged-by | library:facebook:zstd | package:msys2:mingw-w64-ucrt-x86_64-zstd | verified |
 | relationship:gnu-userland:bash-packaged-by-package | packaged-by | component:gnu:bash | package:msys2:bash | verified |

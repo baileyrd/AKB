@@ -955,6 +955,111 @@
       "evidence_refs": ["evidence:zlib:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "header-set:gnu:zlib-headers",
+      "kind": "header-set",
+      "name": "zlib headers (UCRT64)",
+      "summary": "The two public headers shipped by the UCRT64 zlib package: zlib.h (the API surface) and zconf.h (platform configuration zlib.h includes).",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Jean-loup Gailly and Mark Adler",
+      "aliases": [],
+      "tags": ["header-set", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "members": ["/ucrt64/include/zlib.h", "/ucrt64/include/zconf.h"],
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zlib"
+      },
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "pkg-config-module:gnu:zlib-pc",
+      "kind": "pkg-config-module",
+      "name": "zlib.pc (UCRT64)",
+      "summary": "The pkg-config module describing zlib's UCRT64 consumption surface: -I/ucrt64/include for compilation, -L/ucrt64/lib -lz for linking, no further pkg-config requires.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Jean-loup Gailly and Mark Adler",
+      "aliases": [],
+      "tags": ["pkg-config-module", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/lib/pkgconfig/zlib.pc",
+        "cflags": ["-I/ucrt64/include"],
+        "libs": ["-L/ucrt64/lib", "-lz"],
+        "reported_version": "1.3.2",
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zlib"
+      },
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "static-library:gnu:libz.a",
+      "kind": "static-library",
+      "name": "libz.a (UCRT64)",
+      "summary": "The UCRT64 static archive implementing zlib, with 15 object members covering the same source units (deflate.o, inflate.o, gz*.o, and related) as the recipe-declared 1.3.2 source tree.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Jean-loup Gailly and Mark Adler",
+      "aliases": [],
+      "tags": ["static-library", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/lib/libz.a",
+        "size_bytes": 115694,
+        "member_count": 15,
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zlib"
+      },
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "import-library:gnu:libz.dll.a",
+      "kind": "import-library",
+      "name": "libz.dll.a (UCRT64)",
+      "summary": "The UCRT64 import archive providing the link-time binding surface for zlib1.dll; its 116 members are per-export thunk objects rather than the library's own compiled implementation.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Jean-loup Gailly and Mark Adler",
+      "aliases": [],
+      "tags": ["import-library", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/lib/libz.dll.a",
+        "size_bytes": 70902,
+        "member_count": 116,
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zlib"
+      },
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "dll:gnu:zlib1.dll",
+      "kind": "dll",
+      "name": "zlib1.dll (UCRT64)",
+      "summary": "The deployable UCRT64 zlib runtime DLL: 114 recorded exports and 9 imported system DLLs, eight from the api-ms-win-crt-* UCRT split plus kernel32.dll, with no imported dependency on any other MSYS2-packaged library.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Jean-loup Gailly and Mark Adler",
+      "aliases": [],
+      "tags": ["dll", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/bin/zlib1.dll",
+        "size_bytes": 127291,
+        "export_count": 114,
+        "imported_dlls": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-private-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll"
+        ],
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zlib"
+      },
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
       "id": "library:gnu:libiconv",
       "kind": "library",
       "name": "GNU libiconv",
@@ -9517,6 +9622,126 @@
       "condition": "Declared as a CLANG64 sibling package only when this page was written, before zlib had a CLANG64 library page; zlib (CLANG64) now documents that package, so the edge is added.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-exposes-headers",
+      "type": "exposes",
+      "source": "library:gnu:zlib",
+      "target": "header-set:gnu:zlib-headers",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "family-classification",
+      "condition": "First application of the library family classification methodology (docs/LIBRARY-FAMILY-CLASSIFICATION.md) to any library in this knowledge base, added 2026-07-30.",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-pc-documents-zlib",
+      "type": "documents",
+      "source": "pkg-config-module:gnu:zlib-pc",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "family-classification",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libz-a-implements-zlib",
+      "type": "implements",
+      "source": "static-library:gnu:libz.a",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "family-classification",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib1-dll-implements-zlib",
+      "type": "implements",
+      "source": "dll:gnu:zlib1.dll",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "family-classification",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libz-dll-a-wraps-zlib1-dll",
+      "type": "wraps",
+      "source": "import-library:gnu:libz.dll.a",
+      "target": "dll:gnu:zlib1.dll",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "family-classification",
+      "condition": "Distinguishes the import library's 116 per-export thunk members from the static library's 15 compiled-implementation members, per Classification Rule 4.",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-headers-packaged-by-package",
+      "type": "packaged-by",
+      "source": "header-set:gnu:zlib-headers",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib-pc-packaged-by-package",
+      "type": "packaged-by",
+      "source": "pkg-config-module:gnu:zlib-pc",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libz-a-packaged-by-package",
+      "type": "packaged-by",
+      "source": "static-library:gnu:libz.a",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libz-dll-a-packaged-by-package",
+      "type": "packaged-by",
+      "source": "import-library:gnu:libz.dll.a",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
+    },
+    {
+      "id": "relationship:foundation-libraries:zlib1-dll-packaged-by-package",
+      "type": "packaged-by",
+      "source": "dll:gnu:zlib1.dll",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
     }
   ],
   "claims": [
@@ -10381,6 +10606,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:zlib:ucrt64-archive-analysis-2026-07-29",
+      "class": "observed",
+      "title": "zlib (UCRT64) package-archive static analysis",
+      "locator": "work/artifact-sample/ucrt-zlib-inventory/inventory-manifest.json",
+      "retrieved_at": "2026-07-29T12:26:57.386899Z",
+      "upstream_version": "1.3.2-1",
+      "integrity": "841401182976d2f9e17e5c0ebaac51f2a8014140ea53d67625e91c8fb3c85ea0",
+      "notes": "Collected by tools/analyze_package_archive.py 0.4.0 from ucrt-zlib.pkg.tar.zst (integrity is that source archive's SHA-256), applying the library family classification methodology to zlib for the first time in this knowledge base. Local-only per docs/LOCAL-EVIDENCE-RETENTION.md, not staged as a raw artifact; reproducible by re-running the collector against the same archive. Recorded 11 owned artifacts (two headers, one pkg-config module, one static library, one import library, one DLL, plus five package metadata/doc files), 114 PE exports, 9 PE-imported system DLLs, and 131 static/import-archive members, all package-attributed to mingw-w64-ucrt-x86_64-zlib with zero collector warnings."
     },
     {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",

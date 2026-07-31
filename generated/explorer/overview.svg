@@ -2,84 +2,84 @@
 <title id="title">AKB architecture graph overview</title>
 <desc id="description">A bounded overview of the composed architecture graph. Each labeled node is a keyboard-focusable link to its object detail. Use overview.txt for a complete textual relationship list.</desc>
 <style>.edge{stroke:#667085;stroke-width:1}.node{fill:#eef4ff;stroke:#0645ad}.label{font:11px system-ui,sans-serif;fill:#111}</style>
-<line class="edge" x1="70" y1="630" x2="570" y2="630"><title>contains</title></line>
-<line class="edge" x1="70" y1="630" x2="670" y2="630"><title>contains</title></line>
-<line class="edge" x1="70" y1="630" x2="170" y2="630"><title>contains</title></line>
-<line class="edge" x1="70" y1="630" x2="270" y2="630"><title>contains</title></line>
-<line class="edge" x1="70" y1="630" x2="470" y2="630"><title>contains</title></line>
-<line class="edge" x1="70" y1="630" x2="370" y2="630"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="670" y2="70"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="70" y2="150"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="70" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="670" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="570" y2="150"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="470" y2="150"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="770" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="170" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="70" y2="70"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="70" y2="470"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="270" y2="470"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="370" y2="310"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="270" y2="310"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="670" y2="390"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="70" y2="390"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="170" y2="150"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="770" y2="310"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="270" y2="150"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="370" y2="150"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="170" y2="310"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="270" y2="390"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="470" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="570" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="170" y2="470"><title>contains</title></line>
+<line class="edge" x1="170" y1="630" x2="670" y2="630"><title>contains</title></line>
+<line class="edge" x1="170" y1="630" x2="770" y2="630"><title>contains</title></line>
+<line class="edge" x1="170" y1="630" x2="270" y2="630"><title>contains</title></line>
+<line class="edge" x1="170" y1="630" x2="370" y2="630"><title>contains</title></line>
+<line class="edge" x1="170" y1="630" x2="570" y2="630"><title>contains</title></line>
+<line class="edge" x1="170" y1="630" x2="470" y2="630"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="670" y2="70"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="70" y2="150"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="70" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="670" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="570" y2="150"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="470" y2="150"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="770" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="170" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="70" y2="70"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="70" y2="470"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="270" y2="470"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="370" y2="310"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="270" y2="310"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="670" y2="390"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="70" y2="390"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="170" y2="150"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="770" y2="310"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="270" y2="150"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="370" y2="150"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="170" y2="310"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="270" y2="390"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="470" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="570" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="170" y2="470"><title>contains</title></line>
 <line class="edge" x1="370" y1="150" x2="570" y2="230"><title>requires</title></line>
 <line class="edge" x1="170" y1="310" x2="570" y2="230"><title>requires</title></line>
 <line class="edge" x1="470" y1="230" x2="570" y2="230"><title>requires</title></line>
 <line class="edge" x1="170" y1="470" x2="570" y2="230"><title>requires</title></line>
-<line class="edge" x1="570" y1="630" x2="470" y2="390"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="270" y2="70"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="370" y2="70"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="70" y2="310"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="570" y2="390"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="470" y2="390"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="270" y2="70"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="370" y2="70"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="70" y2="310"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="570" y2="390"><title>contains</title></line>
 <line class="edge" x1="370" y1="70" x2="270" y2="70"><title>requires</title></line>
 <line class="edge" x1="370" y1="70" x2="470" y2="390"><title>requires</title></line>
 <line class="edge" x1="370" y1="70" x2="570" y2="390"><title>requires</title></line>
 <line class="edge" x1="270" y1="70" x2="570" y2="390"><title>requires</title></line>
 <line class="edge" x1="470" y1="390" x2="570" y2="390"><title>requires</title></line>
-<line class="edge" x1="670" y1="630" x2="670" y2="150"><title>contains</title></line>
-<line class="edge" x1="670" y1="630" x2="770" y2="70"><title>contains</title></line>
-<line class="edge" x1="670" y1="630" x2="770" y2="150"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="670" y2="150"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="770" y2="70"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="770" y2="150"><title>contains</title></line>
 <line class="edge" x1="670" y1="150" x2="770" y2="70"><title>invokes</title></line>
-<line class="edge" x1="170" y1="630" x2="470" y2="310"><title>contains</title></line>
-<line class="edge" x1="170" y1="630" x2="570" y2="310"><title>contains</title></line>
-<line class="edge" x1="170" y1="630" x2="670" y2="310"><title>contains</title></line>
+<line class="edge" x1="270" y1="630" x2="470" y2="310"><title>contains</title></line>
+<line class="edge" x1="270" y1="630" x2="570" y2="310"><title>contains</title></line>
+<line class="edge" x1="270" y1="630" x2="670" y2="310"><title>contains</title></line>
 <line class="edge" x1="470" y1="310" x2="570" y2="310"><title>invokes</title></line>
 <line class="edge" x1="570" y1="310" x2="770" y2="70"><title>compatible-with</title></line>
-<line class="edge" x1="670" y1="630" x2="170" y2="70"><title>contains</title></line>
-<line class="edge" x1="670" y1="630" x2="170" y2="390"><title>contains</title></line>
-<line class="edge" x1="670" y1="630" x2="370" y2="390"><title>contains</title></line>
-<line class="edge" x1="670" y1="630" x2="770" y2="390"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="170" y2="70"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="170" y2="390"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="370" y2="390"><title>contains</title></line>
+<line class="edge" x1="770" y1="630" x2="770" y2="390"><title>contains</title></line>
 <line class="edge" x1="170" y1="70" x2="370" y2="390"><title>invokes</title></line>
 <line class="edge" x1="170" y1="390" x2="370" y2="390"><title>invokes</title></line>
 <line class="edge" x1="170" y1="70" x2="770" y2="390"><title>requires</title></line>
 <line class="edge" x1="170" y1="390" x2="770" y2="390"><title>requires</title></line>
-<line class="edge" x1="570" y1="630" x2="470" y2="70"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="570" y2="70"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="270" y2="230"><title>contains</title></line>
-<line class="edge" x1="570" y1="630" x2="370" y2="230"><title>contains</title></line>
-<line class="edge" x1="770" y1="630" x2="470" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="170" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="470" y2="470"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="370" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="770" y1="630" x2="770" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="770" y1="630" x2="570" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="270" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="770" y1="630" x2="670" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="70" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="470" y2="550"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="570" y2="470"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="770" y2="470"><title>imports-dll</title></line>
-<line class="edge" x1="370" y1="470" x2="670" y2="470"><title>imports-dll</title></line>
+<line class="edge" x1="670" y1="630" x2="470" y2="70"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="570" y2="70"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="270" y2="230"><title>contains</title></line>
+<line class="edge" x1="670" y1="630" x2="370" y2="230"><title>contains</title></line>
+<line class="edge" x1="70" y1="710" x2="570" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="270" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="570" y2="470"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="470" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="70" y1="710" x2="70" y2="630"><title>imports-dll</title></line>
+<line class="edge" x1="70" y1="710" x2="670" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="370" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="70" y1="710" x2="770" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="170" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="570" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="670" y2="470"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="70" y2="550"><title>imports-dll</title></line>
+<line class="edge" x1="470" y1="470" x2="770" y2="470"><title>imports-dll</title></line>
 <a href="index.html#/object/component%3Abzip2%3Abzip2" aria-label="bzip2 (component:bzip2:bzip2)">
 <rect class="node" x="28" y="54" width="84" height="32" rx="4" tabindex="0"><title>bzip2: component:bzip2:bzip2</title></rect>
 <text class="label" x="70" y="74" text-anchor="middle">bzip2</text>
@@ -252,152 +252,152 @@
 <rect class="node" x="228" y="454" width="84" height="32" rx="4" tabindex="0"><title>Zstandard (zstd): component:zstd:zstd</title></rect>
 <text class="label" x="270" y="474" text-anchor="middle">Zstandard (zs</text>
 </a>
+<a href="index.html#/object/dll%3Agnu%3Azlib1.dll" aria-label="zlib1.dll (UCRT64) (dll:gnu:zlib1.dll)">
+<rect class="node" x="328" y="454" width="84" height="32" rx="4" tabindex="0"><title>zlib1.dll (UCRT64): dll:gnu:zlib1.dll</title></rect>
+<text class="label" x="370" y="474" text-anchor="middle">zlib1.dll (UC</text>
+</a>
 <a href="index.html#/object/dll%3Amsys2%3A%2Fucrt64%2Fbin%2Fzlib1.dll" aria-label="/ucrt64/bin/zlib1.dll (dll:msys2:/ucrt64/bin/zlib1.dll)">
-<rect class="node" x="328" y="454" width="84" height="32" rx="4" tabindex="0"><title>/ucrt64/bin/zlib1.dll: dll:msys2:/ucrt64/bin/zlib1.dll</title></rect>
-<text class="label" x="370" y="474" text-anchor="middle">/ucrt64/bin/z</text>
+<rect class="node" x="428" y="454" width="84" height="32" rx="4" tabindex="0"><title>/ucrt64/bin/zlib1.dll: dll:msys2:/ucrt64/bin/zlib1.dll</title></rect>
+<text class="label" x="470" y="474" text-anchor="middle">/ucrt64/bin/z</text>
 </a>
 <a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-convert-l1-1-0.dll" aria-label="api-ms-win-crt-convert-l1-1-0.dll (dll:windows:api-ms-win-crt-convert-l1-1-0.dll)">
-<rect class="node" x="428" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-convert-l1-1-0.dll: dll:windows:api-ms-win-crt-convert-l1-1-0.dll</title></rect>
-<text class="label" x="470" y="474" text-anchor="middle">api-ms-win-cr</text>
-</a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-heap-l1-1-0.dll" aria-label="api-ms-win-crt-heap-l1-1-0.dll (dll:windows:api-ms-win-crt-heap-l1-1-0.dll)">
-<rect class="node" x="528" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-heap-l1-1-0.dll: dll:windows:api-ms-win-crt-heap-l1-1-0.dll</title></rect>
+<rect class="node" x="528" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-convert-l1-1-0.dll: dll:windows:api-ms-win-crt-convert-l1-1-0.dll</title></rect>
 <text class="label" x="570" y="474" text-anchor="middle">api-ms-win-cr</text>
 </a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-locale-l1-1-0.dll" aria-label="api-ms-win-crt-locale-l1-1-0.dll (dll:windows:api-ms-win-crt-locale-l1-1-0.dll)">
-<rect class="node" x="628" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-locale-l1-1-0.dll: dll:windows:api-ms-win-crt-locale-l1-1-0.dll</title></rect>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-heap-l1-1-0.dll" aria-label="api-ms-win-crt-heap-l1-1-0.dll (dll:windows:api-ms-win-crt-heap-l1-1-0.dll)">
+<rect class="node" x="628" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-heap-l1-1-0.dll: dll:windows:api-ms-win-crt-heap-l1-1-0.dll</title></rect>
 <text class="label" x="670" y="474" text-anchor="middle">api-ms-win-cr</text>
 </a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-private-l1-1-0.dll" aria-label="api-ms-win-crt-private-l1-1-0.dll (dll:windows:api-ms-win-crt-private-l1-1-0.dll)">
-<rect class="node" x="728" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-private-l1-1-0.dll: dll:windows:api-ms-win-crt-private-l1-1-0.dll</title></rect>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-locale-l1-1-0.dll" aria-label="api-ms-win-crt-locale-l1-1-0.dll (dll:windows:api-ms-win-crt-locale-l1-1-0.dll)">
+<rect class="node" x="728" y="454" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-locale-l1-1-0.dll: dll:windows:api-ms-win-crt-locale-l1-1-0.dll</title></rect>
 <text class="label" x="770" y="474" text-anchor="middle">api-ms-win-cr</text>
 </a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-runtime-l1-1-0.dll" aria-label="api-ms-win-crt-runtime-l1-1-0.dll (dll:windows:api-ms-win-crt-runtime-l1-1-0.dll)">
-<rect class="node" x="28" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-runtime-l1-1-0.dll: dll:windows:api-ms-win-crt-runtime-l1-1-0.dll</title></rect>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-private-l1-1-0.dll" aria-label="api-ms-win-crt-private-l1-1-0.dll (dll:windows:api-ms-win-crt-private-l1-1-0.dll)">
+<rect class="node" x="28" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-private-l1-1-0.dll: dll:windows:api-ms-win-crt-private-l1-1-0.dll</title></rect>
 <text class="label" x="70" y="554" text-anchor="middle">api-ms-win-cr</text>
 </a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-stdio-l1-1-0.dll" aria-label="api-ms-win-crt-stdio-l1-1-0.dll (dll:windows:api-ms-win-crt-stdio-l1-1-0.dll)">
-<rect class="node" x="128" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-stdio-l1-1-0.dll: dll:windows:api-ms-win-crt-stdio-l1-1-0.dll</title></rect>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-runtime-l1-1-0.dll" aria-label="api-ms-win-crt-runtime-l1-1-0.dll (dll:windows:api-ms-win-crt-runtime-l1-1-0.dll)">
+<rect class="node" x="128" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-runtime-l1-1-0.dll: dll:windows:api-ms-win-crt-runtime-l1-1-0.dll</title></rect>
 <text class="label" x="170" y="554" text-anchor="middle">api-ms-win-cr</text>
 </a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-string-l1-1-0.dll" aria-label="api-ms-win-crt-string-l1-1-0.dll (dll:windows:api-ms-win-crt-string-l1-1-0.dll)">
-<rect class="node" x="228" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-string-l1-1-0.dll: dll:windows:api-ms-win-crt-string-l1-1-0.dll</title></rect>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-stdio-l1-1-0.dll" aria-label="api-ms-win-crt-stdio-l1-1-0.dll (dll:windows:api-ms-win-crt-stdio-l1-1-0.dll)">
+<rect class="node" x="228" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-stdio-l1-1-0.dll: dll:windows:api-ms-win-crt-stdio-l1-1-0.dll</title></rect>
 <text class="label" x="270" y="554" text-anchor="middle">api-ms-win-cr</text>
 </a>
-<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-utility-l1-1-0.dll" aria-label="api-ms-win-crt-utility-l1-1-0.dll (dll:windows:api-ms-win-crt-utility-l1-1-0.dll)">
-<rect class="node" x="328" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-utility-l1-1-0.dll: dll:windows:api-ms-win-crt-utility-l1-1-0.dll</title></rect>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-string-l1-1-0.dll" aria-label="api-ms-win-crt-string-l1-1-0.dll (dll:windows:api-ms-win-crt-string-l1-1-0.dll)">
+<rect class="node" x="328" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-string-l1-1-0.dll: dll:windows:api-ms-win-crt-string-l1-1-0.dll</title></rect>
 <text class="label" x="370" y="554" text-anchor="middle">api-ms-win-cr</text>
 </a>
+<a href="index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-utility-l1-1-0.dll" aria-label="api-ms-win-crt-utility-l1-1-0.dll (dll:windows:api-ms-win-crt-utility-l1-1-0.dll)">
+<rect class="node" x="428" y="534" width="84" height="32" rx="4" tabindex="0"><title>api-ms-win-crt-utility-l1-1-0.dll: dll:windows:api-ms-win-crt-utility-l1-1-0.dll</title></rect>
+<text class="label" x="470" y="554" text-anchor="middle">api-ms-win-cr</text>
+</a>
 <a href="index.html#/object/dll%3Awindows%3Akernel32.dll" aria-label="kernel32.dll (dll:windows:kernel32.dll)">
-<rect class="node" x="428" y="534" width="84" height="32" rx="4" tabindex="0"><title>kernel32.dll: dll:windows:kernel32.dll</title></rect>
-<text class="label" x="470" y="554" text-anchor="middle">kernel32.dll</text>
+<rect class="node" x="528" y="534" width="84" height="32" rx="4" tabindex="0"><title>kernel32.dll: dll:windows:kernel32.dll</title></rect>
+<text class="label" x="570" y="554" text-anchor="middle">kernel32.dll</text>
 </a>
 <a href="index.html#/object/dll%3Awindows%3Amsys-2.0.dll" aria-label="msys-2.0.dll (dll:windows:msys-2.0.dll)">
-<rect class="node" x="528" y="534" width="84" height="32" rx="4" tabindex="0"><title>msys-2.0.dll: dll:windows:msys-2.0.dll</title></rect>
-<text class="label" x="570" y="554" text-anchor="middle">msys-2.0.dll</text>
+<rect class="node" x="628" y="534" width="84" height="32" rx="4" tabindex="0"><title>msys-2.0.dll: dll:windows:msys-2.0.dll</title></rect>
+<text class="label" x="670" y="554" text-anchor="middle">msys-2.0.dll</text>
 </a>
 <a href="index.html#/object/dll%3Awindows%3Amsys-curl-4.dll" aria-label="msys-curl-4.dll (dll:windows:msys-curl-4.dll)">
-<rect class="node" x="628" y="534" width="84" height="32" rx="4" tabindex="0"><title>msys-curl-4.dll: dll:windows:msys-curl-4.dll</title></rect>
-<text class="label" x="670" y="554" text-anchor="middle">msys-curl-4.d</text>
+<rect class="node" x="728" y="534" width="84" height="32" rx="4" tabindex="0"><title>msys-curl-4.dll: dll:windows:msys-curl-4.dll</title></rect>
+<text class="label" x="770" y="554" text-anchor="middle">msys-curl-4.d</text>
 </a>
 <a href="index.html#/object/dll%3Awindows%3Amsys-z.dll" aria-label="msys-z.dll (dll:windows:msys-z.dll)">
-<rect class="node" x="728" y="534" width="84" height="32" rx="4" tabindex="0"><title>msys-z.dll: dll:windows:msys-z.dll</title></rect>
-<text class="label" x="770" y="554" text-anchor="middle">msys-z.dll</text>
+<rect class="node" x="28" y="614" width="84" height="32" rx="4" tabindex="0"><title>msys-z.dll: dll:windows:msys-z.dll</title></rect>
+<text class="label" x="70" y="634" text-anchor="middle">msys-z.dll</text>
 </a>
 <a href="index.html#/object/ecosystem%3Amsys2%3Amsys2" aria-label="MSYS2 (ecosystem:msys2:msys2)">
-<rect class="node" x="28" y="614" width="84" height="32" rx="4" tabindex="0"><title>MSYS2: ecosystem:msys2:msys2</title></rect>
-<text class="label" x="70" y="634" text-anchor="middle">MSYS2</text>
+<rect class="node" x="128" y="614" width="84" height="32" rx="4" tabindex="0"><title>MSYS2: ecosystem:msys2:msys2</title></rect>
+<text class="label" x="170" y="634" text-anchor="middle">MSYS2</text>
 </a>
 <a href="index.html#/object/environment%3Amsys2%3Aclang64" aria-label="CLANG64 (environment:msys2:clang64)">
-<rect class="node" x="128" y="614" width="84" height="32" rx="4" tabindex="0"><title>CLANG64: environment:msys2:clang64</title></rect>
-<text class="label" x="170" y="634" text-anchor="middle">CLANG64</text>
+<rect class="node" x="228" y="614" width="84" height="32" rx="4" tabindex="0"><title>CLANG64: environment:msys2:clang64</title></rect>
+<text class="label" x="270" y="634" text-anchor="middle">CLANG64</text>
 </a>
 <a href="index.html#/object/environment%3Amsys2%3Aclangarm64" aria-label="CLANGARM64 (environment:msys2:clangarm64)">
-<rect class="node" x="228" y="614" width="84" height="32" rx="4" tabindex="0"><title>CLANGARM64: environment:msys2:clangarm64</title></rect>
-<text class="label" x="270" y="634" text-anchor="middle">CLANGARM64</text>
+<rect class="node" x="328" y="614" width="84" height="32" rx="4" tabindex="0"><title>CLANGARM64: environment:msys2:clangarm64</title></rect>
+<text class="label" x="370" y="634" text-anchor="middle">CLANGARM64</text>
 </a>
 <a href="index.html#/object/environment%3Amsys2%3Amingw32" aria-label="MINGW32 (environment:msys2:mingw32)">
-<rect class="node" x="328" y="614" width="84" height="32" rx="4" tabindex="0"><title>MINGW32: environment:msys2:mingw32</title></rect>
-<text class="label" x="370" y="634" text-anchor="middle">MINGW32</text>
+<rect class="node" x="428" y="614" width="84" height="32" rx="4" tabindex="0"><title>MINGW32: environment:msys2:mingw32</title></rect>
+<text class="label" x="470" y="634" text-anchor="middle">MINGW32</text>
 </a>
 <a href="index.html#/object/environment%3Amsys2%3Amingw64" aria-label="MINGW64 (environment:msys2:mingw64)">
-<rect class="node" x="428" y="614" width="84" height="32" rx="4" tabindex="0"><title>MINGW64: environment:msys2:mingw64</title></rect>
-<text class="label" x="470" y="634" text-anchor="middle">MINGW64</text>
+<rect class="node" x="528" y="614" width="84" height="32" rx="4" tabindex="0"><title>MINGW64: environment:msys2:mingw64</title></rect>
+<text class="label" x="570" y="634" text-anchor="middle">MINGW64</text>
 </a>
 <a href="index.html#/object/environment%3Amsys2%3Amsys" aria-label="MSYS (environment:msys2:msys)">
-<rect class="node" x="528" y="614" width="84" height="32" rx="4" tabindex="0"><title>MSYS: environment:msys2:msys</title></rect>
-<text class="label" x="570" y="634" text-anchor="middle">MSYS</text>
+<rect class="node" x="628" y="614" width="84" height="32" rx="4" tabindex="0"><title>MSYS: environment:msys2:msys</title></rect>
+<text class="label" x="670" y="634" text-anchor="middle">MSYS</text>
 </a>
 <a href="index.html#/object/environment%3Amsys2%3Aucrt64" aria-label="UCRT64 (environment:msys2:ucrt64)">
-<rect class="node" x="628" y="614" width="84" height="32" rx="4" tabindex="0"><title>UCRT64: environment:msys2:ucrt64</title></rect>
-<text class="label" x="670" y="634" text-anchor="middle">UCRT64</text>
+<rect class="node" x="728" y="614" width="84" height="32" rx="4" tabindex="0"><title>UCRT64: environment:msys2:ucrt64</title></rect>
+<text class="label" x="770" y="634" text-anchor="middle">UCRT64</text>
 </a>
 <a href="index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fcurl.exe" aria-label="/usr/bin/curl.exe (executable:msys2:/usr/bin/curl.exe)">
-<rect class="node" x="728" y="614" width="84" height="32" rx="4" tabindex="0"><title>/usr/bin/curl.exe: executable:msys2:/usr/bin/curl.exe</title></rect>
-<text class="label" x="770" y="634" text-anchor="middle">/usr/bin/curl</text>
+<rect class="node" x="28" y="694" width="84" height="32" rx="4" tabindex="0"><title>/usr/bin/curl.exe: executable:msys2:/usr/bin/curl.exe</title></rect>
+<text class="label" x="70" y="714" text-anchor="middle">/usr/bin/curl</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2F.buildinfo" aria-label="/.BUILDINFO (filesystem-path:msys2:/.buildinfo)">
-<rect class="node" x="28" y="694" width="84" height="32" rx="4" tabindex="0"><title>/.BUILDINFO: filesystem-path:msys2:/.buildinfo</title></rect>
-<text class="label" x="70" y="714" text-anchor="middle">/.BUILDINFO</text>
+<rect class="node" x="128" y="694" width="84" height="32" rx="4" tabindex="0"><title>/.BUILDINFO: filesystem-path:msys2:/.buildinfo</title></rect>
+<text class="label" x="170" y="714" text-anchor="middle">/.BUILDINFO</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2F.mtree" aria-label="/.MTREE (filesystem-path:msys2:/.mtree)">
-<rect class="node" x="128" y="694" width="84" height="32" rx="4" tabindex="0"><title>/.MTREE: filesystem-path:msys2:/.mtree</title></rect>
-<text class="label" x="170" y="714" text-anchor="middle">/.MTREE</text>
+<rect class="node" x="228" y="694" width="84" height="32" rx="4" tabindex="0"><title>/.MTREE: filesystem-path:msys2:/.mtree</title></rect>
+<text class="label" x="270" y="714" text-anchor="middle">/.MTREE</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2F.pkginfo" aria-label="/.PKGINFO (filesystem-path:msys2:/.pkginfo)">
-<rect class="node" x="228" y="694" width="84" height="32" rx="4" tabindex="0"><title>/.PKGINFO: filesystem-path:msys2:/.pkginfo</title></rect>
-<text class="label" x="270" y="714" text-anchor="middle">/.PKGINFO</text>
+<rect class="node" x="328" y="694" width="84" height="32" rx="4" tabindex="0"><title>/.PKGINFO: filesystem-path:msys2:/.pkginfo</title></rect>
+<text class="label" x="370" y="714" text-anchor="middle">/.PKGINFO</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fucrt64%2Fshare%2Flicenses%2Fzlib%2Flicense" aria-label="/ucrt64/share/licenses/zlib/LICENSE (filesystem-path:msys2:/ucrt64/share/licenses/zlib/license)">
-<rect class="node" x="328" y="694" width="84" height="32" rx="4" tabindex="0"><title>/ucrt64/share/licenses/zlib/LICENSE: filesystem-path:msys2:/ucrt64/share/licenses/zlib/license</title></rect>
-<text class="label" x="370" y="714" text-anchor="middle">/ucrt64/share</text>
-</a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fucrt64%2Fshare%2Fman%2Fman3%2Fzlib.3.gz" aria-label="/ucrt64/share/man/man3/zlib.3.gz (filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz)">
-<rect class="node" x="428" y="694" width="84" height="32" rx="4" tabindex="0"><title>/ucrt64/share/man/man3/zlib.3.gz: filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz</title></rect>
+<rect class="node" x="428" y="694" width="84" height="32" rx="4" tabindex="0"><title>/ucrt64/share/licenses/zlib/LICENSE: filesystem-path:msys2:/ucrt64/share/licenses/zlib/license</title></rect>
 <text class="label" x="470" y="714" text-anchor="middle">/ucrt64/share</text>
 </a>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fucrt64%2Fshare%2Fman%2Fman3%2Fzlib.3.gz" aria-label="/ucrt64/share/man/man3/zlib.3.gz (filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz)">
+<rect class="node" x="528" y="694" width="84" height="32" rx="4" tabindex="0"><title>/ucrt64/share/man/man3/zlib.3.gz: filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz</title></rect>
+<text class="label" x="570" y="714" text-anchor="middle">/ucrt64/share</text>
+</a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fbin%2Fwcurl" aria-label="/usr/bin/wcurl (filesystem-path:msys2:/usr/bin/wcurl)">
-<rect class="node" x="528" y="694" width="84" height="32" rx="4" tabindex="0"><title>/usr/bin/wcurl: filesystem-path:msys2:/usr/bin/wcurl</title></rect>
-<text class="label" x="570" y="714" text-anchor="middle">/usr/bin/wcur</text>
+<rect class="node" x="628" y="694" width="84" height="32" rx="4" tabindex="0"><title>/usr/bin/wcurl: filesystem-path:msys2:/usr/bin/wcurl</title></rect>
+<text class="label" x="670" y="714" text-anchor="middle">/usr/bin/wcur</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Faclocal%2Flibcurl.m4" aria-label="/usr/share/aclocal/libcurl.m4 (filesystem-path:msys2:/usr/share/aclocal/libcurl.m4)">
-<rect class="node" x="628" y="694" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/aclocal/libcurl.m4: filesystem-path:msys2:/usr/share/aclocal/libcurl.m4</title></rect>
-<text class="label" x="670" y="714" text-anchor="middle">/usr/share/ac</text>
+<rect class="node" x="728" y="694" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/aclocal/libcurl.m4: filesystem-path:msys2:/usr/share/aclocal/libcurl.m4</title></rect>
+<text class="label" x="770" y="714" text-anchor="middle">/usr/share/ac</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Flicenses%2Fcurl%2Fcopying" aria-label="/usr/share/licenses/curl/COPYING (filesystem-path:msys2:/usr/share/licenses/curl/copying)">
-<rect class="node" x="728" y="694" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/licenses/curl/COPYING: filesystem-path:msys2:/usr/share/licenses/curl/copying</title></rect>
-<text class="label" x="770" y="714" text-anchor="middle">/usr/share/li</text>
+<rect class="node" x="28" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/licenses/curl/COPYING: filesystem-path:msys2:/usr/share/licenses/curl/copying</title></rect>
+<text class="label" x="70" y="794" text-anchor="middle">/usr/share/li</text>
 </a>
 <a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fcurl-config.1.gz" aria-label="/usr/share/man/man1/curl-config.1.gz (filesystem-path:msys2:/usr/share/man/man1/curl-config.1.gz)">
-<rect class="node" x="28" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man1/curl-config.1.gz: filesystem-path:msys2:/usr/share/man/man1/curl-config.1.gz</title></rect>
-<text class="label" x="70" y="794" text-anchor="middle">/usr/share/ma</text>
-</a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fcurl.1.gz" aria-label="/usr/share/man/man1/curl.1.gz (filesystem-path:msys2:/usr/share/man/man1/curl.1.gz)">
-<rect class="node" x="128" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man1/curl.1.gz: filesystem-path:msys2:/usr/share/man/man1/curl.1.gz</title></rect>
+<rect class="node" x="128" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man1/curl-config.1.gz: filesystem-path:msys2:/usr/share/man/man1/curl-config.1.gz</title></rect>
 <text class="label" x="170" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fwcurl.1.gz" aria-label="/usr/share/man/man1/wcurl.1.gz (filesystem-path:msys2:/usr/share/man/man1/wcurl.1.gz)">
-<rect class="node" x="228" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man1/wcurl.1.gz: filesystem-path:msys2:/usr/share/man/man1/wcurl.1.gz</title></rect>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fcurl.1.gz" aria-label="/usr/share/man/man1/curl.1.gz (filesystem-path:msys2:/usr/share/man/man1/curl.1.gz)">
+<rect class="node" x="228" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man1/curl.1.gz: filesystem-path:msys2:/usr/share/man/man1/curl.1.gz</title></rect>
 <text class="label" x="270" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_cleanup.3.gz" aria-label="/usr/share/man/man3/curl_easy_cleanup.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_cleanup.3.gz)">
-<rect class="node" x="328" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_cleanup.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_cleanup.3.gz</title></rect>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fwcurl.1.gz" aria-label="/usr/share/man/man1/wcurl.1.gz (filesystem-path:msys2:/usr/share/man/man1/wcurl.1.gz)">
+<rect class="node" x="328" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man1/wcurl.1.gz: filesystem-path:msys2:/usr/share/man/man1/wcurl.1.gz</title></rect>
 <text class="label" x="370" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_duphandle.3.gz" aria-label="/usr/share/man/man3/curl_easy_duphandle.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz)">
-<rect class="node" x="428" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_duphandle.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz</title></rect>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_cleanup.3.gz" aria-label="/usr/share/man/man3/curl_easy_cleanup.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_cleanup.3.gz)">
+<rect class="node" x="428" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_cleanup.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_cleanup.3.gz</title></rect>
 <text class="label" x="470" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_escape.3.gz" aria-label="/usr/share/man/man3/curl_easy_escape.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_escape.3.gz)">
-<rect class="node" x="528" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_escape.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_escape.3.gz</title></rect>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_duphandle.3.gz" aria-label="/usr/share/man/man3/curl_easy_duphandle.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz)">
+<rect class="node" x="528" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_duphandle.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz</title></rect>
 <text class="label" x="570" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_getinfo.3.gz" aria-label="/usr/share/man/man3/curl_easy_getinfo.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_getinfo.3.gz)">
-<rect class="node" x="628" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_getinfo.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_getinfo.3.gz</title></rect>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_escape.3.gz" aria-label="/usr/share/man/man3/curl_easy_escape.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_escape.3.gz)">
+<rect class="node" x="628" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_escape.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_escape.3.gz</title></rect>
 <text class="label" x="670" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
-<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_header.3.gz" aria-label="/usr/share/man/man3/curl_easy_header.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_header.3.gz)">
-<rect class="node" x="728" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_header.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_header.3.gz</title></rect>
+<a href="index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_getinfo.3.gz" aria-label="/usr/share/man/man3/curl_easy_getinfo.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_getinfo.3.gz)">
+<rect class="node" x="728" y="774" width="84" height="32" rx="4" tabindex="0"><title>/usr/share/man/man3/curl_easy_getinfo.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_getinfo.3.gz</title></rect>
 <text class="label" x="770" y="794" text-anchor="middle">/usr/share/ma</text>
 </a>
 </svg>

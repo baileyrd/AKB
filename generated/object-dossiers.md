@@ -389,6 +389,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `dll:gnu:zlib1.dll`
+
+- Name: zlib1.dll (UCRT64)
+- Kind: `dll`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `dll:msys2:/ucrt64/bin/zlib1.dll`
 
 - Name: /ucrt64/bin/zlib1.dll
@@ -5375,6 +5384,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `header-set:gnu:zlib-headers`
+
+- Name: zlib headers (UCRT64)
+- Kind: `header-set`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
 ## `header:msys2:/ucrt64/include/zconf.h`
 
 - Name: /ucrt64/include/zconf.h
@@ -5392,6 +5410,15 @@
 - Evidence: evidence:inventory:current
 - Outgoing relationships: 0
 - Incoming relationships: 1
+
+## `import-library:gnu:libz.dll.a`
+
+- Name: libz.dll.a (UCRT64)
+- Kind: `import-library`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 0
 
 ## `import-library:msys2:/ucrt64/lib/libz.dll.a`
 
@@ -5696,8 +5723,8 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
-- Incoming relationships: 12
+- Outgoing relationships: 2
+- Incoming relationships: 15
 
 ## `library:gnu:zlib@clang64`
 
@@ -116217,7 +116244,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 300
+- Incoming relationships: 305
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zlib-ng`
 
@@ -147737,6 +147764,15 @@
 - Outgoing relationships: 4
 - Incoming relationships: 5
 
+## `pkg-config-module:gnu:zlib-pc`
+
+- Name: zlib.pc (UCRT64)
+- Kind: `pkg-config-module`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 0
+
 ## `pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc`
 
 - Name: /ucrt64/lib/pkgconfig/zlib.pc
@@ -147817,6 +147853,15 @@
 - Evidence: none recorded
 - Outgoing relationships: 0
 - Incoming relationships: 70
+
+## `static-library:gnu:libz.a`
+
+- Name: libz.a (UCRT64)
+- Kind: `static-library`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 0
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

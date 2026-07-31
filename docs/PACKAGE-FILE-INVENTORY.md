@@ -6,8 +6,10 @@ status: partial
 model_refs:
   - library:gnu:zlib
   - library:curl:libcurl
-evidence_refs: []
-last_verified: 2026-07-30
+  - library:facebook:zstd
+evidence_refs:
+  - evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Package-to-File Inventory Model
@@ -93,13 +95,33 @@ artifact analysis" rows above:
   distinct from the package-level `requires` edges elsewhere in this
   knowledge base).
 
-Both are local-only per
+A third package archive was downloaded and statically analyzed the same
+way on 2026-07-31:
+
+- **zstd (UCRT64)**,
+  `mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst` (retrieved from
+  `https://mirror.msys2.org/mingw/ucrt64/`, SHA-256
+  `dbdb8427280046a2b41697780aa4c52983b708082b0da4755951dc3bea96ca89`) —
+  18 owned artifacts: headers (`zstd.h`, `zdict.h`, `zstd_errors.h`), a
+  CMake package config set, a pkg-config module, both the static
+  (`libzstd.a`) and import (`libzstd.dll.a`) libraries, the runtime
+  `libzstd.dll` (598 PE exports, 11 imported system `api-ms-win-crt-*`
+  DLLs plus `kernel32.dll`), and two executables, `zstd.exe` and
+  `pzstd.exe`. Both executables' own PE imports list `libzstd.dll` by
+  name — direct byte-level confirmation that the CLI tools link the
+  package's own shared library dynamically rather than statically, a
+  fact not otherwise recorded in this knowledge base's package-level
+  `requires` edges. `pzstd.exe` additionally imports `libgcc_s_seh-1.dll`,
+  `libstdc++-6.dll`, and `libwinpthread-1.dll` (it is the C++,
+  multi-threaded parallel-Zstandard variant); `zstd.exe` does not.
+
+All three are local-only per
 [Local-Only Evidence Retention](LOCAL-EVIDENCE-RETENTION.md), not staged
 as raw artifacts, and reproducible by re-running the collector against
-the same archives. This is byte-level PE-import evidence for two
+the same archives. This is byte-level PE-import evidence for three
 packages beyond the isolated installed subset; it does not establish
 family-classification-level detail for curl (no `-devel` archive was
-analyzed) or extend beyond these two packages.
+analyzed) or extend beyond these three packages.
 
 ## Related Views
 

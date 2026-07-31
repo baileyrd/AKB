@@ -10708,6 +10708,16 @@
       "notes": "Code-level correction to docs/THREAT-MODEL-AND-SUPPLY-CHAIN.md's Generated projections control, previously described only as 'atomic current-view replacement'. Confirmed: every import_*.py module that writes CURRENT calls its own verify_input/validation step first and raises before any write on failure (e.g. import_package_catalog.py's import_catalog() calls verify_input() before build_catalog()/write_json(CURRENT, ...); a hash/field/count mismatch raises before CURRENT is touched) -- genuine transaction-level atomicity. Not confirmed, and likely false as literally stated: the CURRENT write itself (write_json's path.write_text) is a direct in-place write; no os.replace or rename-based swap was found guarding any CURRENT write across the codebase, so a process interruption during that specific write could corrupt current.json/current/. Documentation-only correction; implementing an actual os.replace-based atomic swap would be a production import-pipeline code change, out of scope here."
     },
     {
+      "id": "evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31",
+      "class": "observed",
+      "title": "Static PE-import/export analysis of the zstd (UCRT64) package archive",
+      "locator": "https://mirror.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "1.5.7-2",
+      "integrity": "dbdb8427280046a2b41697780aa4c52983b708082b0da4755951dc3bea96ca89",
+      "notes": "Third worked example (after zlib UCRT64 and curl MSYS) for docs/PACKAGE-FILE-INVENTORY.md's archive-payload observation section. tools/analyze_package_archive.py statically analyzed the downloaded archive: 18 owned artifacts (headers, CMake config, pkg-config module, static libzstd.a, import libzstd.dll.a, runtime libzstd.dll with 598 PE exports and 11 imported system api-ms-win-crt-*/kernel32 DLLs, plus zstd.exe and pzstd.exe). Both executables' own PE imports name libzstd.dll directly, confirming dynamic (not static) linkage against the package's own shared library at the byte level; pzstd.exe additionally imports libgcc_s_seh-1.dll/libstdc++-6.dll/libwinpthread-1.dll (the C++, multi-threaded pzstd variant), zstd.exe does not. Local-only per docs/LOCAL-EVIDENCE-RETENTION.md; the archive itself was not staged in this repository. Single-package, single-version byte-level evidence; does not extend to CLANG64/MSYS zstd builds or other versions."
+    },
+    {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",
       "class": "primary",
       "title": "GNU libiconv (official project page)",

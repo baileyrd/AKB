@@ -10628,6 +10628,16 @@
       "notes": "Controlled local observation of this workstation's Git for Windows installation, host path C:\\Program Files\\Git. Integrity is git.exe's own SHA-256 (mingw64/bin/git.exe, 4383048 bytes). Recorded launcher-artifact presence and hashes for git-bash.exe, usr/bin/bash.exe (GNU bash 5.3.15(1)-release), usr/bin/mintty.exe, usr/bin/ssh.exe (OpenSSH_10.3p1, OpenSSL 3.5.7), and mingw64/bin/curl.exe (curl 8.21.0, libcurl/8.21.0 Schannel zlib/1.3.2). Recorded that ssh/curl command resolution is shell-context-dependent, not a fixed distribution property: a Git Bash session's PATH prepends /mingw64/bin and /usr/bin ahead of the inherited Windows PATH, resolving both to the bundled copies, while a plain PowerShell/cmd session's inherited PATH places C:\\Windows\\System32\\ and \\OpenSSH\\ earlier, resolving both to the Windows-provided copies (OpenSSH_for_Windows_9.5p2 with LibreSSL 3.8.2, and curl 8.21.0 (Windows) libcurl/8.21.0 with a different compiled-in feature set). Local-only per docs/LOCAL-EVIDENCE-RETENTION.md, not staged as a raw artifact; reproducible on any Git for Windows installation of the same release. This is single-workstation, single-session evidence; it does not establish behavior for other installations, Windows versions, or PATH configurations."
     },
     {
+      "id": "evidence:windows:host-boundary-observation-2026-07-30",
+      "class": "observed",
+      "title": "Windows host edition, filesystem, and symlink-privilege observation",
+      "locator": "local CIM/filesystem probe, non-elevated session",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": "10.0.26200",
+      "integrity": null,
+      "notes": "Controlled local observation from a non-elevated PowerShell session, closing the specific WMI-denial gap the prior 2026-07-30 host-boundary observation recorded (docs/WINDOWS-PLATFORM-BOUNDARIES.md): a different execution context's CIM query succeeded where the automated collector's was denied by host access policy, itself evidence that the restriction is context-specific, not host-wide. Get-CimInstance Win32_OperatingSystem reported 'Microsoft Windows 11 Home', version 10.0.26200, 64-bit, BuildNumber 26200. Get-Volume on the C: drive reported FileSystemType NTFS, HealthStatus Healthy. A disposable temp-directory probe found New-Item -ItemType SymbolicLink failed with 'Administrator privilege required for this operation' in this non-elevated session, and a mixed-case filename lookup matched its lowercase counterpart, confirming default NTFS case-insensitive lookup on this volume. This is single-host, single-session, non-elevated evidence only; it does not establish edition/filesystem/privilege facts for an elevated session, a different Windows edition, or a different volume's case-sensitivity flag (settable per-directory on this NTFS version)."
+    },
+    {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",
       "class": "primary",
       "title": "GNU libiconv (official project page)",

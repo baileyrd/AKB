@@ -72,15 +72,19 @@ explicitly unmodeled).
 
 ## Reverse Dependencies
 
-The catalog snapshot records 10 relationships targeting
-`package:msys2:mingw-w64-ucrt-x86_64-ca-certificates`. One is now
+**Correction, 2026-07-30**: this page previously stated 10 relationships;
+the catalog snapshot actually records **12** targeting
+`package:msys2:mingw-w64-ucrt-x86_64-ca-certificates`, including two
+previously omitted from the named list below (`curl-gnutls` and
+`openssl`, alongside `libressl`, which was also omitted). One is now
 modeled in this knowledge base: [curl (UCRT64)](CURL-UCRT64.md)
 (`relationship:foundation-libraries:curl-ucrt64-requires-ca-certificates-ucrt64`).
 The remaining recorded dependents (`git` — a separate UCRT64-native
 git package, distinct from this knowledge base's MSYS
 [Git](GIT-MSYS-PACKAGE.md) entity — `mono`, `neon`,
-`perl-lwp-protocol-https`, `pidgin`, `python-httplib2`, `qca-qt5`, and
-`qca-qt6`) are not individually modeled in this knowledge base; see
+`perl-lwp-protocol-https`, `pidgin`, `python-httplib2`, `qca-qt5`,
+`qca-qt6`, `curl-gnutls`, `libressl`, and `openssl`) are not
+individually modeled in this knowledge base; see
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 

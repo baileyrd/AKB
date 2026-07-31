@@ -47,6 +47,7 @@
 | component:tukaani:xz | component | XZ Utils | partial | 5 | 1 |
 | component:vim:vim | component | Vim | partial | 5 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 2 | 1 |
+| dll:facebook:libzstd.dll | dll | libzstd.dll (UCRT64) | verified | 0 | 0 |
 | dll:gnu:zlib1.dll | dll | zlib1.dll (UCRT64) | verified | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
@@ -602,9 +603,11 @@
 | filesystem-path:msys2:/usr/share/man/man3/libcurl-url.3.gz | filesystem-path | /usr/share/man/man3/libcurl-url.3.gz | verified | 0 | 1 |
 | filesystem-path:msys2:/usr/share/man/man3/libcurl-ws.3.gz | filesystem-path | /usr/share/man/man3/libcurl-ws.3.gz | verified | 0 | 1 |
 | filesystem-path:msys2:/usr/share/man/man3/libcurl.3.gz | filesystem-path | /usr/share/man/man3/libcurl.3.gz | verified | 0 | 1 |
+| header-set:facebook:zstd-headers | header-set | zstd headers (UCRT64) | verified | 0 | 0 |
 | header-set:gnu:zlib-headers | header-set | zlib headers (UCRT64) | verified | 1 | 1 |
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
+| import-library:facebook:libzstd.dll.a | import-library | libzstd.dll.a (UCRT64) | verified | 0 | 0 |
 | import-library:gnu:libz.dll.a | import-library | libz.dll.a (UCRT64) | verified | 2 | 0 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
@@ -16422,6 +16425,7 @@
 | package:msys2:zsh | package | zsh | verified | 6 | 1 |
 | package:msys2:zsh-doc | package | zsh-doc | verified | 2 | 0 |
 | package:msys2:zstd | package | zstd | verified | 4 | 5 |
+| pkg-config-module:facebook:zstd-pc | pkg-config-module | libzstd.pc (UCRT64) | verified | 0 | 0 |
 | pkg-config-module:gnu:zlib-pc | pkg-config-module | zlib.pc (UCRT64) | verified | 2 | 0 |
 | pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc | pkg-config-module | /ucrt64/lib/pkgconfig/zlib.pc | verified | 0 | 1 |
 | platform:microsoft:windows | platform | Microsoft Windows | partial | 0 | 1 |
@@ -16432,5 +16436,6 @@
 | repository:msys2:msys | repository | msys | verified | 0 | 798 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
 | runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 70 |
+| static-library:facebook:libzstd.a | static-library | libzstd.a (UCRT64) | verified | 0 | 0 |
 | static-library:gnu:libz.a | static-library | libz.a (UCRT64) | verified | 2 | 0 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

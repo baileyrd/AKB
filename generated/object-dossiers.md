@@ -389,6 +389,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `dll:facebook:libzstd.dll`
+
+- Name: libzstd.dll (UCRT64)
+- Kind: `dll`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `dll:gnu:zlib1.dll`
 
 - Name: zlib1.dll (UCRT64)
@@ -5384,6 +5393,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `header-set:facebook:zstd-headers`
+
+- Name: zstd headers (UCRT64)
+- Kind: `header-set`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `header-set:gnu:zlib-headers`
 
 - Name: zlib headers (UCRT64)
@@ -5410,6 +5428,15 @@
 - Evidence: evidence:inventory:current
 - Outgoing relationships: 0
 - Incoming relationships: 1
+
+## `import-library:facebook:libzstd.dll.a`
+
+- Name: libzstd.dll.a (UCRT64)
+- Kind: `import-library`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
 
 ## `import-library:gnu:libz.dll.a`
 
@@ -147764,6 +147791,15 @@
 - Outgoing relationships: 4
 - Incoming relationships: 5
 
+## `pkg-config-module:facebook:zstd-pc`
+
+- Name: libzstd.pc (UCRT64)
+- Kind: `pkg-config-module`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `pkg-config-module:gnu:zlib-pc`
 
 - Name: zlib.pc (UCRT64)
@@ -147853,6 +147889,15 @@
 - Evidence: none recorded
 - Outgoing relationships: 0
 - Incoming relationships: 70
+
+## `static-library:facebook:libzstd.a`
+
+- Name: libzstd.a (UCRT64)
+- Kind: `static-library`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
 
 ## `static-library:gnu:libz.a`
 

@@ -3,9 +3,16 @@ id: doc:volume-11:library-family-classification
 title: Library Family Classification Model
 volume: 11
 status: partial
-model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+model_refs:
+  - library:gnu:zlib
+  - header-set:gnu:zlib-headers
+  - pkg-config-module:gnu:zlib-pc
+  - static-library:gnu:libz.a
+  - import-library:gnu:libz.dll.a
+  - dll:gnu:zlib1.dll
+evidence_refs:
+  - evidence:zlib:ucrt64-archive-analysis-2026-07-29
+last_verified: 2026-07-30
 ---
 
 # Library Family Classification Model
@@ -56,6 +63,18 @@ flowchart LR
 3. Compare declared names, imported targets, exports, and ownership evidence.
 4. Record supported family membership plus confidence and unresolved ambiguity.
 5. Use explicit ABI or runtime observations before making compatibility claims.
+
+## Worked Example
+
+[zlib](ZLIB.md#family-classification) is, as of 2026-07-30, the first
+library in this knowledge base to have this methodology fully applied: a
+package-archive static analysis recorded its header set, `pkg-config`
+module, static library, import library, and runtime DLL as five separate
+typed entities, each linked to `library:gnu:zlib` and to their shared
+package via the relationship types this document's diagram implies
+(`exposes`, `documents`, `implements`, `wraps`, `packaged-by`). The
+remaining 103 documented library pages have not yet received this
+treatment.
 
 ## Related Views
 

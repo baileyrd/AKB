@@ -7,9 +7,15 @@ model_refs:
   - library:gnu:zlib
   - package:msys2:mingw-w64-ucrt-x86_64-zlib
   - environment:msys2:ucrt64
+  - header-set:gnu:zlib-headers
+  - pkg-config-module:gnu:zlib-pc
+  - static-library:gnu:libz.a
+  - import-library:gnu:libz.dll.a
+  - dll:gnu:zlib1.dll
 evidence_refs:
   - evidence:zlib:manual-2026-07-30
   - evidence:catalog:current
+  - evidence:zlib:ucrt64-archive-analysis-2026-07-29
 last_verified: 2026-07-30
 ---
 
@@ -31,11 +37,14 @@ UCRT64 build, `package:msys2:mingw-w64-ucrt-x86_64-zlib` (version
 `1.3.2-2` in the current catalog snapshot, license `Zlib` — the
 library's own short, permissive license, distinct from the GPL/LGPL
 licensing common elsewhere in this knowledge base), authored by Jean-loup
-Gailly and Mark Adler. This page is scoped to Volume 6's
-package/dependency-level evidence; the fuller
+Gailly and Mark Adler. **Update, 2026-07-30**: the fuller
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology (headers, `pkg-config`/CMake metadata, PE import/export
-analysis) has not been applied here and remains open.
+analysis) is now applied here — the first library in this knowledge base
+to receive it — via a static analysis of the package archive itself; see
+Interfaces and Evidence below. The other 103 documented library pages do
+not yet have this fuller treatment and remain scoped to
+package/dependency-level evidence only.
 
 ## Responsibilities
 
@@ -56,9 +65,39 @@ other compression algorithms documented elsewhere in this knowledge base.
 
 - A C API (`deflate()`/`inflate()` and the higher-level `gzread()`/`gzwrite()`
   family) for in-process compression and decompression, consumed by
-  linking, per the manual. This page does not enumerate the header-level
-  surface; that belongs to
+  linking, per the manual. This page does not enumerate the full
+  header-level surface; that belongs to
   [Header and Development-Metadata Indexes](HEADER-AND-METADATA-INDEXES.md).
+
+## Family Classification
+
+A 2026-07-29 static analysis of the UCRT64 package archive
+(`ucrt-zlib.pkg.tar.zst`) recorded all six member types the
+[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology distinguishes, each now a separate typed entity in this
+knowledge base's graph:
+
+- **Headers** — `header-set:gnu:zlib-headers`: `zlib.h` and `zconf.h`
+  (`/ucrt64/include/`).
+- **`pkg-config` module** — `pkg-config-module:gnu:zlib-pc`: `zlib.pc`
+  declares `-I/ucrt64/include` and `-L/ucrt64/lib -lz`, with no further
+  `Requires:`.
+- **Static library** — `static-library:gnu:libz.a`: 15 object members
+  (`deflate.o`, `inflate.o`, the `gz*.o` family, and related), the
+  library's own compiled implementation.
+- **Import library** — `import-library:gnu:libz.dll.a`: 116 members —
+  per-export link-time thunks for the DLL below, not a second copy of the
+  implementation (Classification Rule 4).
+- **Runtime DLL** — `dll:gnu:zlib1.dll`: 114 recorded exports and 9
+  imported system DLLs (eight `api-ms-win-crt-*` UCRT split DLLs plus
+  `kernel32.dll`) — no imported dependency on any other MSYS2-packaged
+  library, consistent with the empty Dependencies table below.
+
+All six are attributed to the same
+`package:msys2:mingw-w64-ucrt-x86_64-zlib` package ownership. This
+establishes classification evidence only — which artifacts exist and how
+they relate structurally — not source-to-binary byte identity or ABI
+compatibility across versions, per Classification Rule 5.
 
 ## Dependencies
 
@@ -139,11 +178,15 @@ The compression model is backed by the official zlib manual
 recorded for `package:msys2:mingw-w64-ucrt-x86_64-zlib` in the catalog.
 Package identity, version, license, and the reverse-dependency count are
 backed by the pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:zlib-hub`. Open, and explicitly out of scope for this page:
-header-level API surface and PE import/export-level evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology; no version-qualified CVE review has been performed despite
-this library's unusually wide blast radius.
+`claim:library:zlib-hub`. The Family Classification section above is
+backed by a local, hash-verified package-archive static analysis
+(`evidence:zlib:ucrt64-archive-analysis-2026-07-29`), local-only per
+[Local-Only Evidence Retention](LOCAL-EVIDENCE-RETENTION.md) and
+reproducible by re-running `tools/analyze_package_archive.py` against the
+same archive. Still open: no version-qualified CVE review has been
+performed despite this library's unusually wide blast radius; the family
+classification applied here has not yet been applied to the other 103
+documented library pages.
 
 ## Related Objects
 

@@ -44,6 +44,7 @@ Objects
 - component:tukaani:xz (component): XZ Utils
 - component:vim:vim (component): Vim
 - component:zstd:zstd (component): Zstandard (zstd)
+- dll:gnu:zlib1.dll (dll): zlib1.dll (UCRT64)
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
 - dll:windows:api-ms-win-crt-heap-l1-1-0.dll (dll): api-ms-win-crt-heap-l1-1-0.dll
@@ -598,8 +599,10 @@ Objects
 - filesystem-path:msys2:/usr/share/man/man3/libcurl-url.3.gz (filesystem-path): /usr/share/man/man3/libcurl-url.3.gz
 - filesystem-path:msys2:/usr/share/man/man3/libcurl-ws.3.gz (filesystem-path): /usr/share/man/man3/libcurl-ws.3.gz
 - filesystem-path:msys2:/usr/share/man/man3/libcurl.3.gz (filesystem-path): /usr/share/man/man3/libcurl.3.gz
+- header-set:gnu:zlib-headers (header-set): zlib headers (UCRT64)
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
+- import-library:gnu:libz.dll.a (import-library): libz.dll.a (UCRT64)
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - library:boost:boost (library): Boost
 - library:bzip2:libbz2 (library): libbz2
@@ -16416,6 +16419,7 @@ Objects
 - package:msys2:zsh (package): zsh
 - package:msys2:zsh-doc (package): zsh-doc
 - package:msys2:zstd (package): zstd
+- pkg-config-module:gnu:zlib-pc (pkg-config-module): zlib.pc (UCRT64)
 - pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc (pkg-config-module): /ucrt64/lib/pkgconfig/zlib.pc
 - platform:microsoft:windows (platform): Microsoft Windows
 - repository:msys2:clang64 (repository): clang64
@@ -16425,6 +16429,7 @@ Objects
 - repository:msys2:msys (repository): msys
 - repository:msys2:ucrt64 (repository): ucrt64
 - runtime:msys2:msys-2.0.dll (runtime): msys-2.0.dll
+- static-library:gnu:libz.a (static-library): libz.a (UCRT64)
 - static-library:msys2:/ucrt64/lib/libz.a (static-library): /ucrt64/lib/libz.a
 
 Relationships
@@ -16990,6 +16995,16 @@ Relationships
 - library:jsoncpp:jsoncpp --requires--> library:gnu:libstdc++
 - library:gnu:termcap --requires--> library:gnu:libstdc++
 - library:gnome:libxml2@clang64 --requires--> library:gnu:zlib@clang64
+- library:gnu:zlib --exposes--> header-set:gnu:zlib-headers
+- pkg-config-module:gnu:zlib-pc --documents--> library:gnu:zlib
+- static-library:gnu:libz.a --implements--> library:gnu:zlib
+- dll:gnu:zlib1.dll --implements--> library:gnu:zlib
+- import-library:gnu:libz.dll.a --wraps--> dll:gnu:zlib1.dll
+- header-set:gnu:zlib-headers --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
+- pkg-config-module:gnu:zlib-pc --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
+- static-library:gnu:libz.a --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
+- import-library:gnu:libz.dll.a --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
+- dll:gnu:zlib1.dll --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

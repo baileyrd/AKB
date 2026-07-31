@@ -60,7 +60,11 @@ The catalog snapshot records two `runtime-depends-on` edges for
 `package:msys2:mingw-w64-ucrt-x86_64-libgpg-error`:
 `mingw-w64-ucrt-x86_64-cc-libs` (low-level compiler runtime support) and
 `mingw-w64-ucrt-x86_64-gettext-runtime` (backing localized error-string
-output, documented fully in [GNU gettext](GNU-GETTEXT.md)).
+output, documented fully in [GNU gettext](GNU-GETTEXT.md)). The gettext
+edge is now modeled in this knowledge base
+(`relationship:foundation-libraries:libgpg-error-requires-gettext`,
+added 2026-07-30 — this page's own prose had named it without a
+corresponding graph edge).
 
 ## Reverse Dependencies
 

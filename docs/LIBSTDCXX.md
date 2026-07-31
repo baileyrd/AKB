@@ -71,7 +71,12 @@ snapshot: `mingw-w64-ucrt-x86_64-libwinpthread` (threading support) and
 `mingw-w64-ucrt-x86_64-cc-libs` virtual capability, which
 [libc++](LIBCXX.md#dependencies) in this same environment depends on for
 low-level compiler runtime support even when a project chooses libc++ over
-libstdc++ (`claim:library:libcxx-cc-libs-capability`).
+libstdc++ (`claim:library:libcxx-cc-libs-capability`). The
+libwinpthread edge is now modeled in this knowledge base
+(`relationship:foundation-libraries:libstdcxx-requires-libwinpthread`,
+added 2026-07-30 — this page's own prose had named it without a
+corresponding graph edge); tzdata has no library page in this
+knowledge base and remains unmodeled.
 
 ## Reverse Dependencies
 
@@ -82,12 +87,18 @@ targeting it in this snapshot — larger than
 [zlib](ZLIB.md#reverse-dependencies)'s 299, the largest recorded in this
 knowledge base. This is a directly observed fact, not an inference: nearly
 every C/C++ program built with GCC in this environment needs the runtime
-libraries this package bundles. One is now modeled in this knowledge
+libraries this package bundles. Six are now modeled in this knowledge
 base: [GCC](GNU-GCC.md#dependencies) itself
 (`relationship:toolchain:gcc-requires-libstdcxx`, added 2026-07-30 to
 close a gap in [GCC's own dependency table](GNU-GCC.md#dependencies),
 which had cited this package by name without a corresponding graph
-edge). See
+edge), plus [libassuan](LIBASSUAN.md#dependencies),
+[nPth](NPTH.md#dependencies), [cppdap](CPPDAP.md#dependencies),
+[JsonCpp](JSONCPP.md#dependencies), and
+[GNU termcap](GNU-TERMCAP.md#dependencies), each of which had declared
+this dependency in prose (as `gcc-libs`) without a graph edge, four of
+them previously reasoned as "not distinct enough to warrant its own
+page" — a rationale this page's own existence now supersedes. See
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 

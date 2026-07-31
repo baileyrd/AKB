@@ -5498,7 +5498,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 0
+- Outgoing relationships: 1
 - Incoming relationships: 2
 
 ## `library:gnome:libxml2@msys`
@@ -5517,7 +5517,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `library:gnu:gmp`
 
@@ -5597,8 +5597,8 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
-- Incoming relationships: 3
+- Outgoing relationships: 2
+- Incoming relationships: 8
 
 ## `library:gnu:libtasn1`
 
@@ -5687,7 +5687,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:termcap-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:gnu:zlib`
@@ -5706,7 +5706,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:zlib@msys`
 
@@ -5723,7 +5723,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `library:gnupg:libassuan@msys`
@@ -5759,7 +5759,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 4
 
 ## `library:gnupg:libgpg-error@msys`
@@ -5795,7 +5795,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 1
 
 ## `library:gnupg:npth@msys`
@@ -5849,7 +5849,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:google:cppdap-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:h5l:heimdal`
@@ -5876,7 +5876,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:jsoncpp:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:libarchive:libarchive`
@@ -6039,7 +6039,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:mingw-w64:libwinpthread@clang64`
 

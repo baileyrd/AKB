@@ -64,7 +64,11 @@ The catalog snapshot records one `runtime-depends-on` edge for
 `package:msys2:mingw-w64-ucrt-x86_64-npth`:
 `mingw-w64-ucrt-x86_64-gcc-libs`, the standard GCC-toolchain runtime
 libraries documented as the hub of
-[libstdc++'s dependents](LIBSTDCXX.md#reverse-dependencies).
+[libstdc++'s dependents](LIBSTDCXX.md#reverse-dependencies). This edge
+is now modeled in this knowledge base
+(`relationship:foundation-libraries:npth-requires-libstdcxx`, added
+2026-07-30 — this page's own prose had named it without a corresponding
+graph edge).
 
 ## Reverse Dependencies
 

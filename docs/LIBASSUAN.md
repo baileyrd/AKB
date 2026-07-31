@@ -67,7 +67,11 @@ The catalog snapshot records two `runtime-depends-on` edges for
 `mingw-w64-ucrt-x86_64-gcc-libs` (GCC's bundled runtime support, the same
 package documented as the hub of [libstdc++](LIBSTDCXX.md#dependencies))
 and `mingw-w64-ucrt-x86_64-libgpg-error` (the shared error-code
-vocabulary documented fully in [libgpg-error](LIBGPG-ERROR.md)).
+vocabulary documented fully in [libgpg-error](LIBGPG-ERROR.md)). The
+gcc-libs edge is now modeled in this knowledge base
+(`relationship:foundation-libraries:libassuan-requires-libstdcxx`, added
+2026-07-30 — this page's own prose had named it without a corresponding
+graph edge).
 
 ## Reverse Dependencies
 

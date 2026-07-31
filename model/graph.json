@@ -9421,6 +9421,102 @@
       "condition": "Backs identifying files inside xz/LZMA-compressed containers, closing an item this page had previously left explicitly unmodeled.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libstdcxx-requires-libwinpthread",
+      "type": "requires",
+      "source": "library:gnu:libstdc++",
+      "target": "library:mingw-w64:libwinpthread",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "The bundling package mingw-w64-ucrt-x86_64-gcc-libs records this runtime-depends-on edge for threading support; this page's prose already named it but the graph edge was missing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgpg-error-requires-gettext",
+      "type": "requires",
+      "source": "library:gnupg:libgpg-error",
+      "target": "library:gnu:gettext",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "The catalog snapshot records this runtime-depends-on edge for localized error-string output; this page's prose already named it but the graph edge was missing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libassuan-requires-libstdcxx",
+      "type": "requires",
+      "source": "library:gnupg:libassuan",
+      "target": "library:gnu:libstdc++",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "The catalog snapshot records this runtime-depends-on edge onto gcc-libs; this page's prose already named it but the graph edge was missing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:npth-requires-libstdcxx",
+      "type": "requires",
+      "source": "library:gnupg:npth",
+      "target": "library:gnu:libstdc++",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "The catalog snapshot records this runtime-depends-on edge onto gcc-libs; this page's prose already named it but the graph edge was missing.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:cppdap-requires-libstdcxx",
+      "type": "requires",
+      "source": "library:google:cppdap",
+      "target": "library:gnu:libstdc++",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Declared as gcc-libs only when this page was written, before gcc-libs had its own library page; libstdc++ now documents that package, so the edge is added.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:jsoncpp-requires-libstdcxx",
+      "type": "requires",
+      "source": "library:jsoncpp:jsoncpp",
+      "target": "library:gnu:libstdc++",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Declared as gcc-libs only when this page was written, before gcc-libs had its own library page; libstdc++ now documents that package, so the edge is added.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:termcap-requires-libstdcxx",
+      "type": "requires",
+      "source": "library:gnu:termcap",
+      "target": "library:gnu:libstdc++",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Declared as gcc-libs only when this page was written, before gcc-libs had its own library page; libstdc++ now documents that package, so the edge is added.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64",
+      "type": "requires",
+      "source": "library:gnome:libxml2@clang64",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "linkage",
+      "condition": "Declared as a CLANG64 sibling package only when this page was written, before zlib had a CLANG64 library page; zlib (CLANG64) now documents that package, so the edge is added.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
     }
   ],
   "claims": [

@@ -70,8 +70,11 @@ MSYS/UCRT64/CLANG64 sibling groups.
 The CLANG64 `package:msys2:mingw-w64-clang-x86_64-libxml2` declares
 dependencies on `mingw-w64-clang-x86_64-libiconv` and
 `mingw-w64-clang-x86_64-zlib` — both CLANG64-environment sibling
-packages, not individually modeled as separate dependency edges from
-this entity in this knowledge base.
+packages. The zlib edge is now modeled in this knowledge base
+(`relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64`,
+added 2026-07-30, since [zlib (CLANG64)](ZLIB-CLANG64.md) now documents
+that package); libiconv has no CLANG64 library page in this knowledge
+base and remains unmodeled.
 
 ## Reverse Dependencies
 

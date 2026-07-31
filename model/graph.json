@@ -10638,6 +10638,16 @@
       "notes": "Third invocation-context observation for docs/GIT-FOR-WINDOWS-TRANSPORT-BOUNDARIES.md, extending the 2026-07-30 Git-Bash-vs-PowerShell comparison. cmd.exe resolved ssh/curl identically to the PowerShell session (System32 OpenSSH/curl), not as a distinct third behavior. Direct PATH inspection explains why: C:\\Program Files\\Git\\mingw64\\bin is absent from the base Windows user PATH entirely (only Git\\cmd and Git\\usr\\bin are present), while C:\\Windows\\System32\\OpenSSH\\ precedes Git\\usr\\bin in that PATH. cmd.exe and PowerShell share this base PATH; Git Bash's distinct resolution is specifically its own shell-launch machinery augmenting PATH with Git\\mingw64\\bin for its session, not a general property of 'PowerShell vs Git Bash'. Single-workstation, single-PATH-configuration evidence."
     },
     {
+      "id": "evidence:akb-process:zstd-signature-verification-2026-07-31",
+      "class": "observed",
+      "title": "GPG signature verification of the zstd (UCRT64) package archive",
+      "locator": "local gpg --verify against mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst.sig, key fetched from hkps://keyserver.ubuntu.com",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "1.5.7-2",
+      "integrity": "5F944B027F7FE2091985AA2EFA11531AA0AA7F57",
+      "notes": "Controlled local observation for docs/PACMAN-REPOSITORY-TRUST-MODEL.md's Keyring and signatures row, independent of a pacman installation (none available in this authoring environment). Downloaded the archive and its detached .sig from the official mirror; gpg --verify reported a Good signature from RSA key 5F944B027F7FE2091985AA2EFA11531AA0AA7F57, 'Christoph Reiter (MSYS2 development key) <reiter.christoph@gmail.com>', after fetching that key from a public keyserver. Explicitly not the same trust chain pacman itself uses: gpg warned the key is not certified with a trusted signature, since it was fetched ad hoc rather than through pacman's own msys2-keyring package and local trust database. Establishes archive-signature validity for one package/version against one keyserver-sourced key on one date only."
+    },
+    {
       "id": "evidence:windows:host-boundary-observation-2026-07-30",
       "class": "observed",
       "title": "Windows host edition, filesystem, and symlink-privilege observation",

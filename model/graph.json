@@ -10658,6 +10658,16 @@
       "notes": "Controlled local observation of Git for Windows' own bundled msys-2.0.dll (C:\\Program Files\\Git\\usr\\bin\\msys-2.0.dll, 3368543 bytes, integrity is its SHA-256), a second, distinct MSYS distribution from the isolated MSYS2 installation docs/MSYS-RUNTIME-BEHAVIOR-MAP.md already records (runtime 3.6.10 there vs 3.6.9-b4195d69.x86_64 here). uname -a reported 'MINGW64_NT-10.0-26200 ... 3.6.9-b4195d69.x86_64 2026-06-06 17:49 UTC x86_64 Msys', tying this observation to the same host build (26200) evidence:windows:host-boundary-observation-2026-07-30 recorded. Process lifecycle, exec, and USR1 signal probes reproduced the isolated installation's status-0 outcomes. The symlink probe diverged materially: with MSYS and CYGWIN environment variables unset (default), 'ln -s realfile.txt linkfile.txt' exited 0 but stat reported linkfile.txt as a regular file (not a symlink), containing a full copy of realfile.txt's bytes; Get-Item at the Windows API level confirmed Attributes=Archive with no ReparsePoint flag and no LinkType. This is a full-content-copy fallback, not merely the isolated installation's narrower 'test -L returns non-zero while the target is still readable' discrepancy -- a concrete instance of this page's own Evidence Gaps caveat that one installation's observation is not general MSYS symlink-parity evidence. Consistent with evidence:windows:host-boundary-observation-2026-07-30's finding that native symlink creation requires elevation in this non-elevated session. The probe used a self-cleaned temporary directory and is single-workstation, single-session evidence only."
     },
     {
+      "id": "evidence:msys-runtime:fork-emulation-observation-2026-07-31",
+      "class": "observed",
+      "title": "Git for Windows bundled MSYS runtime fork() emulation observation",
+      "locator": "local Git Bash probe, non-elevated session, C:\\Program Files\\Git",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "3.6.9-b4195d69.x86_64",
+      "integrity": null,
+      "notes": "Controlled local observation closing part of the previously open fork() emulation gap in docs/MSYS-RUNTIME-BEHAVIOR-MAP.md. A backgrounded subshell '( ... ) &' reported the same $$ as its parent (standard POSIX shell semantics: $$ identifies the originating shell) but a different $BASHPID (parent 1648, subshell 1650), and 'ps -ef' confirmed the subshell's own children carried PPID 1648. This is direct evidence of a real OS-level process fork for the subshell, not a single-process simulation. The top-level bash process's own PPID reported as 1, the standard MSYS/Cygwin convention for a parent that is not itself a POSIX-tracked MSYS process, not evidence of orphaning. Single-installation, single-session evidence for Git for Windows' bundled runtime only; does not establish fork() behavior for the isolated MSYS2 installation or vfork()/posix_spawn() code paths."
+    },
+    {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",
       "class": "primary",
       "title": "GNU libiconv (official project page)",

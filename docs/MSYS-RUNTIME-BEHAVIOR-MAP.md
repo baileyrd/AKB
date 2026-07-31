@@ -7,7 +7,8 @@ model_refs:
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
   - evidence:msys-runtime:git-for-windows-comparative-observation-2026-07-30
-last_verified: 2026-07-30
+  - evidence:msys-runtime:fork-emulation-observation-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # MSYS Runtime Behavior Architecture Map
@@ -85,6 +86,28 @@ This is also consistent with
 [Windows platform boundaries](WINDOWS-PLATFORM-BOUNDARIES.md#controlled-local-host-observation)'s
 finding that native symlink creation requires elevation in this same
 non-elevated session — the runtime's fallback path, not a defect.
+
+## Controlled fork() emulation observation
+
+On 2026-07-31, a targeted probe closed part of this page's previously
+open `fork()` emulation gap. In Git for Windows' bundled bash, a
+backgrounded subshell (`( ... ) &`) reported the *same* `$$` value as
+its parent — expected, standard POSIX shell semantics where `$$`
+identifies the originating shell rather than the literal subshell
+process — but a *different* `$BASHPID` value (parent `1648`, subshell
+`1650`), and a follow-up `ps -ef` confirmed the subshell's children
+carried `PPID 1648`, correctly chaining back to the parent shell. This
+is direct evidence that this MSYS runtime performs a real OS-level
+process fork for a subshell, not a simulated/single-process emulation
+of one. Separately, the top-level bash process itself reported its own
+`PPID` as `1` — the well-known MSYS/Cygwin convention for a parent
+process that isn't itself a POSIX-tracked MSYS process (here, the
+launching Windows/Claude Code host process), not evidence of an actual
+orphaned or init-owned process. This is single-installation,
+single-session evidence for Git for Windows' bundled runtime
+specifically; it does not establish `fork()` emulation behavior for the
+isolated MSYS2 installation's runtime or for `vfork()`/`posix_spawn()`
+code paths not exercised by this probe.
 
 ## Related Views
 

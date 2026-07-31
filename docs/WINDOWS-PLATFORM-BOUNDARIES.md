@@ -6,7 +6,8 @@ status: partial
 model_refs:
   - ecosystem:msys2:msys2
   - runtime:msys2:msys-2.0.dll
-evidence_refs: []
+evidence_refs:
+  - evidence:windows:host-boundary-observation-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -45,8 +46,29 @@ behavior generally.
 On 2026-07-30, non-privileged host APIs reported Windows NT `10.0.26200.8973`
 on x64, with `C:\Windows\system32` as the system directory. Console output
 was redirected in the automated collection context. WMI operating-system and
-volume queries were denied by host access policy, so this observation does not
-claim filesystem type, edition, or management-API behavior.
+volume queries were denied by host access policy in that specific
+context, so that observation did not claim filesystem type, edition, or
+management-API behavior.
+
+A second 2026-07-30 observation, from a different (non-elevated, interactive)
+session on the same host, found the WMI/CIM restriction did not reproduce —
+itself evidence that the earlier denial was a property of the automated
+collector's execution context, not the host generally.
+`Get-CimInstance Win32_OperatingSystem` reported edition
+`Microsoft Windows 11 Home`, version `10.0.26200`, build `26200`, 64-bit.
+`Get-Volume` on the `C:` drive reported filesystem `NTFS`, health
+`Healthy`. A disposable temp-directory probe found
+`New-Item -ItemType SymbolicLink` failed with "Administrator privilege
+required for this operation" in this non-elevated session — a
+directly relevant boundary for MSYS2's own symlink emulation strategy,
+covered further in the [MSYS runtime behavior map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
+— and a mixed-case filename lookup matched its lowercase counterpart,
+confirming this volume's default case-insensitive behavior. All of this
+remains single-host, single-session evidence: it does not establish
+edition, filesystem, or symlink-privilege facts for an elevated session,
+a different Windows edition, or a volume with case-sensitivity enabled
+per directory (settable independently of this default on this NTFS
+version).
 
 ## Interface map
 

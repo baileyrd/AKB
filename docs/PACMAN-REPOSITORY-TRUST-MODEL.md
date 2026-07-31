@@ -65,5 +65,5 @@ flowchart LR
 ## Related Views
 
 - [Pacman architecture and transaction model](PACMAN-ARCHITECTURE.md)
-- [Deep inventory snapshot manifest](DEEP-INVENTORY-SNAPSHOT-MANIFEST.md)
+- [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)
 - [Self-updating knowledge base](SELF-UPDATING-KNOWLEDGE-BASE.md)

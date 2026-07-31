@@ -2,6 +2,393 @@
 
 > Generated from the composed model; each heading is a stable object documentation anchor.
 
+## `component:bzip2:bzip2`
+
+- Name: bzip2
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:cmake:cmake`
+
+- Name: CMake
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:cmake:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 11
+- Incoming relationships: 1
+
+## `component:curl:curl`
+
+- Name: curl
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 11
+- Incoming relationships: 2
+
+## `component:git:git`
+
+- Name: Git (MSYS2 package)
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:git:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 8
+- Incoming relationships: 1
+
+## `component:gnu:autoconf`
+
+- Name: GNU Autoconf
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:autoconf-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:automake`
+
+- Name: GNU Automake
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:automake-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:bash`
+
+- Name: GNU Bash
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:bash-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:binutils`
+
+- Name: GNU Binutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:binutils-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 3
+
+## `component:gnu:coreutils`
+
+- Name: GNU Coreutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:coreutils-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
+## `component:gnu:cpio`
+
+- Name: GNU Cpio
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:cpio-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:ed`
+
+- Name: GNU Ed
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:ed-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:emacs`
+
+- Name: GNU Emacs
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 7
+- Incoming relationships: 1
+
+## `component:gnu:findutils`
+
+- Name: GNU Findutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:findutils-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:gnu:gawk`
+
+- Name: GNU Awk (gawk)
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gawk-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
+## `component:gnu:gcc`
+
+- Name: GCC
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gcc-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 10
+- Incoming relationships: 1
+
+## `component:gnu:gdb`
+
+- Name: GDB
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gdb-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 12
+- Incoming relationships: 1
+
+## `component:gnu:grep`
+
+- Name: GNU Grep
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:grep-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 1
+
+## `component:gnu:gzip`
+
+- Name: GNU Gzip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:gzip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:gnu:libtool`
+
+- Name: GNU Libtool
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:libtool-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:gnu:make`
+
+- Name: GNU Make
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:make-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:gnu:nano`
+
+- Name: GNU Nano
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:nano-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
+## `component:gnu:ncurses`
+
+- Name: ncurses
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 6
+
+## `component:gnu:sed`
+
+- Name: GNU Sed
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:sed-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:gnu:tar`
+
+- Name: GNU Tar
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:tar-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:gnupg:gnupg`
+
+- Name: GnuPG
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 14
+- Incoming relationships: 1
+
+## `component:greenwood:less`
+
+- Name: less
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:less:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 1
+
+## `component:info-zip:unzip`
+
+- Name: Info-ZIP UnZip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:info-zip:unzip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:info-zip:zip`
+
+- Name: Info-ZIP Zip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:info-zip:zip-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:llvm:clang`
+
+- Name: Clang
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:clang-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 1
+
+## `component:llvm:lld`
+
+- Name: LLD
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:lld-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 2
+
+## `component:llvm:lldb`
+
+- Name: LLDB
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 6
+- Incoming relationships: 1
+
+## `component:lz4:lz4`
+
+- Name: LZ4
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:lzip:lzip`
+
+- Name: Lzip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:lzip:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:mesonbuild:meson`
+
+- Name: Meson
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:mesonbuild:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `component:mintty:mintty`
+
+- Name: mintty
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:mintty:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:ninja-build:ninja`
+
+- Name: Ninja
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:ninja-build:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `component:openssh:openssh`
+
+- Name: OpenSSH
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:openssh:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 7
+- Incoming relationships: 2
+
+## `component:openssl:openssl`
+
+- Name: OpenSSL
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 6
+
+## `component:p7zip:p7zip`
+
+- Name: p7zip
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:p7zip:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `component:pkgconf:pkgconf`
+
+- Name: pkgconf
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:pkgconf:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `component:tukaani:xz`
+
+- Name: XZ Utils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
+## `component:vim:vim`
+
+- Name: Vim
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:vim:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
+## `component:zstd:zstd`
+
+- Name: Zstandard (zstd)
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:zstd:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `dll:msys2:/ucrt64/bin/zlib1.dll`
 
 - Name: /ucrt64/bin/zlib1.dll
@@ -134,7 +521,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 0
+- Outgoing relationships: 8
 - Incoming relationships: 3823
 
 ## `environment:msys2:clangarm64`
@@ -170,7 +557,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 1
+- Outgoing relationships: 71
 - Incoming relationships: 799
 
 ## `environment:msys2:ucrt64`
@@ -179,7 +566,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 0
+- Outgoing relationships: 41
 - Incoming relationships: 3899
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5015,6 +5402,942 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:boost:boost`
+
+- Name: Boost
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:boost:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:bzip2:libbz2`
+
+- Name: libbz2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 5
+
+## `library:c-ares:c-ares@ucrt64`
+
+- Name: c-ares (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:c-ares:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:curl:curl@ucrt64`
+
+- Name: curl (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 12
+- Incoming relationships: 1
+
+## `library:curl:libcurl`
+
+- Name: libcurl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 14
+- Incoming relationships: 3
+
+## `library:darwinsys:file`
+
+- Name: file
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:darwinsys:file-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 6
+- Incoming relationships: 2
+
+## `library:facebook:zstd`
+
+- Name: Zstandard (library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 7
+
+## `library:facebook:zstd@clang64`
+
+- Name: Zstandard (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `library:facebook:zstd@msys-lib`
+
+- Name: Zstandard (MSYS library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:gnome:libxml2`
+
+- Name: libxml2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `library:gnome:libxml2@clang64`
+
+- Name: libxml2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
+
+## `library:gnome:libxml2@msys`
+
+- Name: libxml2 (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 2
+
+## `library:gnu:gettext`
+
+- Name: GNU gettext
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 9
+
+## `library:gnu:gmp`
+
+- Name: GNU MP (GMP)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 8
+
+## `library:gnu:gmp@msys`
+
+- Name: GNU MP (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 5
+
+## `library:gnu:libiconv`
+
+- Name: GNU libiconv
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 8
+
+## `library:gnu:libiconv@msys`
+
+- Name: GNU libiconv (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 8
+
+## `library:gnu:libidn2`
+
+- Name: GNU libidn2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 4
+
+## `library:gnu:libidn2@ucrt64`
+
+- Name: GNU libidn2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 3
+
+## `library:gnu:libintl`
+
+- Name: GNU libintl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libintl-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 17
+
+## `library:gnu:libltdl`
+
+- Name: GNU Libltdl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtool-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:gnu:libstdc++`
+
+- Name: libstdc++
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `library:gnu:libtasn1`
+
+- Name: GNU Libtasn1
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:gnu:libtasn1@ucrt64`
+
+- Name: GNU Libtasn1 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
+
+## `library:gnu:libunistring`
+
+- Name: GNU libunistring
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 5
+
+## `library:gnu:libunistring@ucrt64`
+
+- Name: libunistring (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
+
+## `library:gnu:mpfr`
+
+- Name: GNU MPFR
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 4
+
+## `library:gnu:mpfr@msys`
+
+- Name: GNU MPFR (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnu:ncurses@ucrt64`
+
+- Name: ncurses (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnu:readline`
+
+- Name: GNU Readline
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:gnu:readline@msys`
+
+- Name: GNU Readline (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:readline-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 4
+
+## `library:gnu:termcap`
+
+- Name: GNU termcap
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:termcap-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:gnu:zlib`
+
+- Name: zlib
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 12
+
+## `library:gnu:zlib@clang64`
+
+- Name: zlib (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
+## `library:gnu:zlib@msys`
+
+- Name: zlib (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 10
+
+## `library:gnupg:libassuan`
+
+- Name: libassuan
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnupg:libassuan@msys`
+
+- Name: libassuan (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:gnupg:libgcrypt`
+
+- Name: libgcrypt
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgcrypt-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnupg:libgcrypt@msys`
+
+- Name: libgcrypt (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgcrypt-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:gnupg:libgpg-error`
+
+- Name: libgpg-error
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
+## `library:gnupg:libgpg-error@msys`
+
+- Name: libgpg-error (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 4
+
+## `library:gnupg:libksba`
+
+- Name: libksba
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:gnupg:libksba@msys`
+
+- Name: libksba (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:gnupg:npth`
+
+- Name: nPth (New Portable Threads)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnupg:npth@msys`
+
+- Name: nPth (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:gnutls:gnutls`
+
+- Name: GnuTLS
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 10
+- Incoming relationships: 3
+
+## `library:gnutls:gnutls@ucrt64`
+
+- Name: GnuTLS (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 11
+- Incoming relationships: 1
+
+## `library:google:brotli`
+
+- Name: Brotli
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:google:brotli@ucrt64`
+
+- Name: Brotli (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
+
+## `library:google:cppdap`
+
+- Name: cppdap
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:cppdap-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:h5l:heimdal`
+
+- Name: Heimdal
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:h5l:heimdal-libs`
+
+- Name: Heimdal runtime libraries
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 2
+
+## `library:jsoncpp:jsoncpp`
+
+- Name: JsonCpp
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:jsoncpp:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:libarchive:libarchive`
+
+- Name: libarchive
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 8
+- Incoming relationships: 2
+
+## `library:libedit:libedit`
+
+- Name: libedit
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libedit:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:libexpat:expat`
+
+- Name: Expat
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
+## `library:libexpat:expat@msys`
+
+- Name: Expat (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:libffi:libffi@clang64`
+
+- Name: libffi (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:libffi:libffi@msys`
+
+- Name: libffi (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:libffi:libffi@ucrt64`
+
+- Name: libffi (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:libisl:isl`
+
+- Name: isl (Integer Set Library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libisl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:libpsl:libpsl`
+
+- Name: libpsl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 3
+
+## `library:libpsl:libpsl@ucrt64`
+
+- Name: libpsl (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 1
+
+## `library:libssh2:libssh2`
+
+- Name: libssh2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 2
+
+## `library:libssh2:libssh2@ucrt64`
+
+- Name: libssh2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:libuv:libuv`
+
+- Name: libuv
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libuv:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:libxcrypt:libxcrypt`
+
+- Name: libxcrypt
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libxcrypt:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 4
+
+## `library:llvm:clang-libs`
+
+- Name: Clang libraries
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:llvm:clang-libs-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:llvm:libc++`
+
+- Name: libc++
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:llvm:libcxx-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:llvm:llvm-libs`
+
+- Name: LLVM libraries
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:llvm:llvm-libs-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 4
+
+## `library:mingw-w64:libwinpthread`
+
+- Name: libwinpthread
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
+## `library:mingw-w64:libwinpthread@clang64`
+
+- Name: libwinpthread (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:mingw-w64:winpthreads`
+
+- Name: winpthreads
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:mingw-w64:winpthreads@clang64`
+
+- Name: winpthreads (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:mingweditline:wineditline`
+
+- Name: WinEditLine
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingweditline:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:mozilla:ca-certificates`
+
+- Name: ca-certificates
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 4
+
+## `library:mozilla:ca-certificates@ucrt64`
+
+- Name: ca-certificates (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:multiprecision:mpc`
+
+- Name: GNU MPC
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:multiprecision:mpc-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:nettle:libhogweed@msys`
+
+- Name: libhogweed
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:nettle:libnettle@msys`
+
+- Name: libnettle
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:nettle:nettle`
+
+- Name: Nettle
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:nettle:nettle@msys`
+
+- Name: Nettle (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:nghttp2:libnghttp2`
+
+- Name: libnghttp2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:nghttp2:libnghttp2@ucrt64`
+
+- Name: libnghttp2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:nghttp2:libnghttp3`
+
+- Name: libnghttp3
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp3-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:nghttp2:libnghttp3@ucrt64`
+
+- Name: libnghttp3 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp3-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:nghttp2:libngtcp2`
+
+- Name: libngtcp2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 3
+
+## `library:nghttp2:libngtcp2@ucrt64`
+
+- Name: libngtcp2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:openssl:libopenssl`
+
+- Name: libopenssl
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 3
+
+## `library:openssl:openssl@ucrt64`
+
+- Name: OpenSSL (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 4
+
+## `library:p11-glue:p11-kit`
+
+- Name: p11-kit
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 5
+- Incoming relationships: 2
+
+## `library:p11-glue:p11-kit@ucrt64`
+
+- Name: p11-kit (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 2
+
+## `library:pcre:pcre`
+
+- Name: PCRE (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:pcre:pcre2`
+
+- Name: PCRE2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 3
+
+## `library:pcre:pcre2@msys`
+
+- Name: PCRE2 (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:pjk:libcbor`
+
+- Name: libcbor
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pjk:libcbor-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:rhash:rhash`
+
+- Name: RHash
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:rhash:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:sqlite:sqlite3`
+
+- Name: SQLite
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:sqlite:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
+## `library:tukaani:liblzma`
+
+- Name: liblzma (XZ Utils library)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 3
+
+## `library:tukaani:liblzma@clang64`
+
+- Name: liblzma (XZ Utils library, CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:tukaani:liblzma@msys`
+
+- Name: liblzma (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
+
+## `library:unicode:icu`
+
+- Name: ICU (International Components for Unicode)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:unicode:icu-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:xxhash:xxhash`
+
+- Name: xxHash
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:xxhash:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
+
+## `library:yubico:libfido2`
+
+- Name: libfido2
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 2
+
 ## `package:msys2:ack`
 
 - Name: ack
@@ -5184,7 +6507,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:autoconf2.72`
 
@@ -5220,7 +6543,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:automake1.11`
 
@@ -5337,7 +6660,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 46
+- Incoming relationships: 47
 
 ## `package:msys2:bash-completion`
 
@@ -5418,7 +6741,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:brotli-devel`
 
@@ -5481,7 +6804,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:ca-certificates`
 
@@ -5490,7 +6813,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:cargo-c`
 
@@ -5670,7 +6993,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:cpio`
 
@@ -5679,7 +7002,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:cppdap`
 
@@ -5724,7 +7047,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 543
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:cvs`
 
@@ -5967,7 +7290,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:editorconfig-vim`
 
@@ -6003,7 +7326,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:enscript`
 
@@ -6066,7 +7389,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:filesystem`
 
@@ -6084,7 +7407,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:fish`
 
@@ -6147,7 +7470,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:gcc`
 
@@ -6255,7 +7578,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:git-crypt`
 
@@ -6327,7 +7650,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:gmp-devel`
 
@@ -6381,7 +7704,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:gnutls`
 
@@ -6426,7 +7749,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:grml-zsh-config`
 
@@ -6498,7 +7821,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:heimdal`
 
@@ -6507,7 +7830,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:heimdal-devel`
 
@@ -6525,7 +7848,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:help2man`
 
@@ -6759,7 +8082,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:lftp`
 
@@ -6822,7 +8145,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libassuan-devel`
 
@@ -6930,7 +8253,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:libcbor-devel`
 
@@ -6948,7 +8271,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:libcurl-devel`
 
@@ -6984,7 +8307,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libedit-devel`
 
@@ -7020,7 +8343,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `package:msys2:libexpat-devel`
 
@@ -7056,7 +8379,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libfido2-devel`
 
@@ -7101,7 +8424,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libgcrypt-devel`
 
@@ -7164,7 +8487,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `package:msys2:libgnutls-devel`
 
@@ -7182,7 +8505,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:libgpg-error-devel`
 
@@ -7245,7 +8568,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 59
+- Incoming relationships: 60
 
 ## `package:msys2:libiconv-devel`
 
@@ -7281,7 +8604,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:libidn2-devel`
 
@@ -7317,7 +8640,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 59
+- Incoming relationships: 60
 
 ## `package:msys2:libksba`
 
@@ -7326,7 +8649,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:libksba-devel`
 
@@ -7344,7 +8667,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:liblz4`
 
@@ -7461,7 +8784,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libnghttp2-devel`
 
@@ -7479,7 +8802,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libnghttp3-devel`
 
@@ -7497,7 +8820,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libngtcp2-devel`
 
@@ -7515,7 +8838,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:libnpth-devel`
 
@@ -7542,7 +8865,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libp11-kit-devel`
 
@@ -7578,7 +8901,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:libpcre16`
 
@@ -7614,7 +8937,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:libpcre2posix`
 
@@ -7677,7 +9000,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:libpsl-devel`
 
@@ -7713,7 +9036,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 25
+- Incoming relationships: 26
 
 ## `package:msys2:libreadline-devel`
 
@@ -7821,7 +9144,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:libssh2-devel`
 
@@ -7839,7 +9162,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:libtasn1-devel`
 
@@ -7875,7 +9198,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:libtre`
 
@@ -7902,7 +9225,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `package:msys2:libunistring-devel`
 
@@ -7983,7 +9306,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `package:msys2:libxcrypt-devel`
 
@@ -8001,7 +9324,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:libxml2-devel`
 
@@ -8073,7 +9396,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 24
+- Incoming relationships: 25
 
 ## `package:msys2:libzstd-devel`
 
@@ -8163,7 +9486,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:lzip`
 
@@ -8172,7 +9495,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:lzop`
 
@@ -8199,7 +9522,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:man-db`
 
@@ -44235,7 +45558,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-21`
 
@@ -44262,7 +45585,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 17
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-tools-extra`
 
@@ -53604,7 +54927,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-lld-21`
 
@@ -53622,7 +54945,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-lldb-mi`
 
@@ -53658,7 +54981,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 22
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-clang-x86_64-llvm-openmp`
 
@@ -76536,7 +77859,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 287
+- Incoming relationships: 288
 
 ## `package:msys2:mingw-w64-clang-x86_64-zlib-ng`
 
@@ -76599,7 +77922,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 86
+- Incoming relationships: 87
 
 ## `package:msys2:mingw-w64-clang-x86_64-zug`
 
@@ -81216,7 +82539,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-bitwise`
 
@@ -81306,7 +82629,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 18
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-boost-libs`
 
@@ -82098,7 +83421,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmake-bootstrap`
 
@@ -82485,7 +83808,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cppreference-qt`
 
@@ -83745,7 +85068,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 38
+- Incoming relationships: 39
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-expresscpp`
 
@@ -84465,7 +85788,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-ada`
 
@@ -84501,7 +85824,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 167
+- Incoming relationships: 168
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-lto-dump`
 
@@ -84546,7 +85869,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gdb-multiarch`
 
@@ -84744,7 +86067,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 141
+- Incoming relationships: 142
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gettext-tools`
 
@@ -85275,7 +86598,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 71
+- Incoming relationships: 72
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gmsh`
 
@@ -86697,7 +88020,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 46
+- Incoming relationships: 47
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-id3lib`
 
@@ -86895,7 +88218,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-iso-codes`
 
@@ -87156,7 +88479,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-jsonnet`
 
@@ -88434,7 +89757,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 22
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libaribcaption`
 
@@ -88470,7 +89793,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libatomic_ops`
 
@@ -88605,7 +89928,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libcaca`
 
@@ -89118,7 +90441,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgd`
 
@@ -89316,7 +90639,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgphoto2`
 
@@ -89460,7 +90783,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 82
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libicsneo`
 
@@ -89694,7 +91017,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-liblangtag`
 
@@ -91287,7 +92610,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libva`
 
@@ -91458,7 +92781,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 152
+- Incoming relationships: 153
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libwmf`
 
@@ -91566,7 +92889,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 128
+- Incoming relationships: 129
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libxml2-docs`
 
@@ -92601,7 +93924,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-meson-python`
 
@@ -92934,7 +94257,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpdecimal`
 
@@ -92961,7 +94284,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 33
+- Incoming relationships: 34
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpg123`
 
@@ -93393,7 +94716,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nettle3`
 
@@ -93519,7 +94842,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nlohmann-json`
 
@@ -93618,7 +94941,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nsis`
 
@@ -94770,7 +96093,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 35
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pdal`
 
@@ -96399,7 +97722,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-planarity`
 
@@ -107919,7 +109242,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 36
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-readosm`
 
@@ -108009,7 +109332,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-rime-bopomofo`
 
@@ -109764,7 +111087,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 49
+- Incoming relationships: 50
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sqlite3mc`
 
@@ -110412,7 +111735,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-tesseract-data-afr`
 
@@ -114102,7 +115425,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-winfile`
 
@@ -114129,7 +115452,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-winpthreads-stub`
 
@@ -114660,7 +115983,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-xz`
 
@@ -114669,7 +115992,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 43
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-yajl`
 
@@ -114894,7 +116217,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 299
+- Incoming relationships: 300
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zlib-ng`
 
@@ -114957,7 +116280,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 94
+- Incoming relationships: 95
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zug`
 
@@ -142947,7 +144270,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mksh`
 
@@ -143199,7 +144522,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:nano-syntax-highlighting`
 
@@ -143244,7 +144567,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 40
+- Incoming relationships: 41
 
 ## `package:msys2:ncurses-devel`
 
@@ -143280,7 +144603,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:nghttp2`
 
@@ -143370,7 +144693,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:openssl`
 
@@ -143379,7 +144702,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:openssl-devel`
 
@@ -143415,7 +144738,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:pacman`
 
@@ -145764,7 +147087,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 14
+- Incoming relationships: 15
 
 ## `package:msys2:setconf`
 
@@ -145908,7 +147231,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:task`
 
@@ -146124,7 +147447,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:upx`
 
@@ -146169,7 +147492,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:vimpager`
 
@@ -146304,7 +147627,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:yasm`
 
@@ -146358,7 +147681,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `package:msys2:zlib`
 
@@ -146367,7 +147690,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 60
+- Incoming relationships: 61
 
 ## `package:msys2:zlib-devel`
 
@@ -146412,7 +147735,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc`
 
@@ -146493,7 +147816,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 70
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

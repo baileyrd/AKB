@@ -1,6 +1,49 @@
 AKB architecture graph overview
 
 Objects
+- component:bzip2:bzip2 (component): bzip2
+- component:cmake:cmake (component): CMake
+- component:curl:curl (component): curl
+- component:git:git (component): Git (MSYS2 package)
+- component:gnu:autoconf (component): GNU Autoconf
+- component:gnu:automake (component): GNU Automake
+- component:gnu:bash (component): GNU Bash
+- component:gnu:binutils (component): GNU Binutils
+- component:gnu:coreutils (component): GNU Coreutils
+- component:gnu:cpio (component): GNU Cpio
+- component:gnu:ed (component): GNU Ed
+- component:gnu:emacs (component): GNU Emacs
+- component:gnu:findutils (component): GNU Findutils
+- component:gnu:gawk (component): GNU Awk (gawk)
+- component:gnu:gcc (component): GCC
+- component:gnu:gdb (component): GDB
+- component:gnu:grep (component): GNU Grep
+- component:gnu:gzip (component): GNU Gzip
+- component:gnu:libtool (component): GNU Libtool
+- component:gnu:make (component): GNU Make
+- component:gnu:nano (component): GNU Nano
+- component:gnu:ncurses (component): ncurses
+- component:gnu:sed (component): GNU Sed
+- component:gnu:tar (component): GNU Tar
+- component:gnupg:gnupg (component): GnuPG
+- component:greenwood:less (component): less
+- component:info-zip:unzip (component): Info-ZIP UnZip
+- component:info-zip:zip (component): Info-ZIP Zip
+- component:llvm:clang (component): Clang
+- component:llvm:lld (component): LLD
+- component:llvm:lldb (component): LLDB
+- component:lz4:lz4 (component): LZ4
+- component:lzip:lzip (component): Lzip
+- component:mesonbuild:meson (component): Meson
+- component:mintty:mintty (component): mintty
+- component:ninja-build:ninja (component): Ninja
+- component:openssh:openssh (component): OpenSSH
+- component:openssl:openssl (component): OpenSSL
+- component:p7zip:p7zip (component): p7zip
+- component:pkgconf:pkgconf (component): pkgconf
+- component:tukaani:xz (component): XZ Utils
+- component:vim:vim (component): Vim
+- component:zstd:zstd (component): Zstandard (zstd)
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
 - dll:windows:api-ms-win-crt-heap-l1-1-0.dll (dll): api-ms-win-crt-heap-l1-1-0.dll
@@ -558,6 +601,110 @@ Objects
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
+- library:boost:boost (library): Boost
+- library:bzip2:libbz2 (library): libbz2
+- library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
+- library:curl:curl@ucrt64 (library): curl (UCRT64)
+- library:curl:libcurl (library): libcurl
+- library:darwinsys:file (library): file
+- library:facebook:zstd (library): Zstandard (library)
+- library:facebook:zstd@clang64 (library): Zstandard (CLANG64)
+- library:facebook:zstd@msys-lib (library): Zstandard (MSYS library)
+- library:gnome:libxml2 (library): libxml2
+- library:gnome:libxml2@clang64 (library): libxml2 (CLANG64)
+- library:gnome:libxml2@msys (library): libxml2 (MSYS)
+- library:gnu:gettext (library): GNU gettext
+- library:gnu:gmp (library): GNU MP (GMP)
+- library:gnu:gmp@msys (library): GNU MP (MSYS)
+- library:gnu:libiconv (library): GNU libiconv
+- library:gnu:libiconv@msys (library): GNU libiconv (MSYS)
+- library:gnu:libidn2 (library): GNU libidn2
+- library:gnu:libidn2@ucrt64 (library): GNU libidn2 (UCRT64)
+- library:gnu:libintl (library): GNU libintl
+- library:gnu:libltdl (library): GNU Libltdl
+- library:gnu:libstdc++ (library): libstdc++
+- library:gnu:libtasn1 (library): GNU Libtasn1
+- library:gnu:libtasn1@ucrt64 (library): GNU Libtasn1 (UCRT64)
+- library:gnu:libunistring (library): GNU libunistring
+- library:gnu:libunistring@ucrt64 (library): libunistring (UCRT64)
+- library:gnu:mpfr (library): GNU MPFR
+- library:gnu:mpfr@msys (library): GNU MPFR (MSYS)
+- library:gnu:ncurses@ucrt64 (library): ncurses (UCRT64)
+- library:gnu:readline (library): GNU Readline
+- library:gnu:readline@msys (library): GNU Readline (MSYS)
+- library:gnu:termcap (library): GNU termcap
+- library:gnu:zlib (library): zlib
+- library:gnu:zlib@clang64 (library): zlib (CLANG64)
+- library:gnu:zlib@msys (library): zlib (MSYS)
+- library:gnupg:libassuan (library): libassuan
+- library:gnupg:libassuan@msys (library): libassuan (MSYS)
+- library:gnupg:libgcrypt (library): libgcrypt
+- library:gnupg:libgcrypt@msys (library): libgcrypt (MSYS)
+- library:gnupg:libgpg-error (library): libgpg-error
+- library:gnupg:libgpg-error@msys (library): libgpg-error (MSYS)
+- library:gnupg:libksba (library): libksba
+- library:gnupg:libksba@msys (library): libksba (MSYS)
+- library:gnupg:npth (library): nPth (New Portable Threads)
+- library:gnupg:npth@msys (library): nPth (MSYS)
+- library:gnutls:gnutls (library): GnuTLS
+- library:gnutls:gnutls@ucrt64 (library): GnuTLS (UCRT64)
+- library:google:brotli (library): Brotli
+- library:google:brotli@ucrt64 (library): Brotli (UCRT64)
+- library:google:cppdap (library): cppdap
+- library:h5l:heimdal (library): Heimdal
+- library:h5l:heimdal-libs (library): Heimdal runtime libraries
+- library:jsoncpp:jsoncpp (library): JsonCpp
+- library:libarchive:libarchive (library): libarchive
+- library:libedit:libedit (library): libedit
+- library:libexpat:expat (library): Expat
+- library:libexpat:expat@msys (library): Expat (MSYS)
+- library:libffi:libffi@clang64 (library): libffi (CLANG64)
+- library:libffi:libffi@msys (library): libffi (MSYS)
+- library:libffi:libffi@ucrt64 (library): libffi (UCRT64)
+- library:libisl:isl (library): isl (Integer Set Library)
+- library:libpsl:libpsl (library): libpsl
+- library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
+- library:libssh2:libssh2 (library): libssh2
+- library:libssh2:libssh2@ucrt64 (library): libssh2 (UCRT64)
+- library:libuv:libuv (library): libuv
+- library:libxcrypt:libxcrypt (library): libxcrypt
+- library:llvm:clang-libs (library): Clang libraries
+- library:llvm:libc++ (library): libc++
+- library:llvm:llvm-libs (library): LLVM libraries
+- library:mingw-w64:libwinpthread (library): libwinpthread
+- library:mingw-w64:libwinpthread@clang64 (library): libwinpthread (CLANG64)
+- library:mingw-w64:winpthreads (library): winpthreads
+- library:mingw-w64:winpthreads@clang64 (library): winpthreads (CLANG64)
+- library:mingweditline:wineditline (library): WinEditLine
+- library:mozilla:ca-certificates (library): ca-certificates
+- library:mozilla:ca-certificates@ucrt64 (library): ca-certificates (UCRT64)
+- library:multiprecision:mpc (library): GNU MPC
+- library:nettle:libhogweed@msys (library): libhogweed
+- library:nettle:libnettle@msys (library): libnettle
+- library:nettle:nettle (library): Nettle
+- library:nettle:nettle@msys (library): Nettle (MSYS)
+- library:nghttp2:libnghttp2 (library): libnghttp2
+- library:nghttp2:libnghttp2@ucrt64 (library): libnghttp2 (UCRT64)
+- library:nghttp2:libnghttp3 (library): libnghttp3
+- library:nghttp2:libnghttp3@ucrt64 (library): libnghttp3 (UCRT64)
+- library:nghttp2:libngtcp2 (library): libngtcp2
+- library:nghttp2:libngtcp2@ucrt64 (library): libngtcp2 (UCRT64)
+- library:openssl:libopenssl (library): libopenssl
+- library:openssl:openssl@ucrt64 (library): OpenSSL (UCRT64)
+- library:p11-glue:p11-kit (library): p11-kit
+- library:p11-glue:p11-kit@ucrt64 (library): p11-kit (UCRT64)
+- library:pcre:pcre (library): PCRE (MSYS)
+- library:pcre:pcre2 (library): PCRE2
+- library:pcre:pcre2@msys (library): PCRE2 (MSYS)
+- library:pjk:libcbor (library): libcbor
+- library:rhash:rhash (library): RHash
+- library:sqlite:sqlite3 (library): SQLite
+- library:tukaani:liblzma (library): liblzma (XZ Utils library)
+- library:tukaani:liblzma@clang64 (library): liblzma (XZ Utils library, CLANG64)
+- library:tukaani:liblzma@msys (library): liblzma (MSYS)
+- library:unicode:icu (library): ICU (International Components for Unicode)
+- library:xxhash:xxhash (library): xxHash
+- library:yubico:libfido2 (library): libfido2
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -16289,6 +16436,552 @@ Relationships
 - ecosystem:msys2:msys2 --contains--> environment:msys2:clangarm64
 - ecosystem:msys2:msys2 --contains--> environment:msys2:mingw64
 - ecosystem:msys2:msys2 --contains--> environment:msys2:mingw32
+- environment:msys2:msys --contains--> component:gnu:bash
+- environment:msys2:msys --contains--> component:gnu:coreutils
+- component:gnu:bash --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:coreutils --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:bash --packaged-by--> package:msys2:bash
+- component:gnu:coreutils --packaged-by--> package:msys2:coreutils
+- environment:msys2:msys --contains--> component:gnu:grep
+- component:gnu:grep --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:grep --packaged-by--> package:msys2:grep
+- environment:msys2:msys --contains--> component:gnu:sed
+- component:gnu:sed --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:sed --packaged-by--> package:msys2:sed
+- environment:msys2:msys --contains--> component:gnu:gawk
+- component:gnu:gawk --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:gawk --packaged-by--> package:msys2:gawk
+- environment:msys2:msys --contains--> component:gnu:findutils
+- component:gnu:findutils --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:findutils --packaged-by--> package:msys2:findutils
+- environment:msys2:msys --contains--> component:gnu:tar
+- component:gnu:tar --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:tar --packaged-by--> package:msys2:tar
+- environment:msys2:msys --contains--> component:gnu:gzip
+- component:gnu:gzip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:gzip --packaged-by--> package:msys2:gzip
+- environment:msys2:msys --contains--> component:bzip2:bzip2
+- component:bzip2:bzip2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:bzip2:bzip2 --packaged-by--> package:msys2:bzip2
+- environment:msys2:msys --contains--> component:tukaani:xz
+- component:tukaani:xz --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:tukaani:xz --packaged-by--> package:msys2:xz
+- environment:msys2:msys --contains--> component:zstd:zstd
+- component:zstd:zstd --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:zstd:zstd --packaged-by--> package:msys2:zstd
+- environment:msys2:msys --contains--> component:info-zip:zip
+- component:info-zip:zip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:info-zip:zip --packaged-by--> package:msys2:zip
+- environment:msys2:msys --contains--> component:info-zip:unzip
+- component:info-zip:unzip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:info-zip:unzip --packaged-by--> package:msys2:unzip
+- environment:msys2:msys --contains--> component:p7zip:p7zip
+- component:p7zip:p7zip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:p7zip:p7zip --packaged-by--> package:msys2:p7zip
+- environment:msys2:msys --contains--> component:lzip:lzip
+- component:lzip:lzip --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:lzip:lzip --packaged-by--> package:msys2:lzip
+- environment:msys2:msys --contains--> component:gnu:cpio
+- component:gnu:cpio --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:cpio --packaged-by--> package:msys2:cpio
+- environment:msys2:msys --contains--> component:lz4:lz4
+- component:lz4:lz4 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:lz4:lz4 --packaged-by--> package:msys2:lz4
+- environment:msys2:msys --contains--> component:gnu:ed
+- component:gnu:ed --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:ed --packaged-by--> package:msys2:ed
+- environment:msys2:msys --contains--> component:gnu:emacs
+- component:gnu:emacs --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:emacs --packaged-by--> package:msys2:emacs
+- environment:msys2:msys --contains--> component:greenwood:less
+- component:greenwood:less --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:greenwood:less --packaged-by--> package:msys2:less
+- environment:msys2:msys --contains--> component:mintty:mintty
+- component:mintty:mintty --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:mintty:mintty --packaged-by--> package:msys2:mintty
+- environment:msys2:msys --contains--> component:gnu:nano
+- component:gnu:nano --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:nano --packaged-by--> package:msys2:nano
+- environment:msys2:msys --contains--> component:gnu:ncurses
+- component:gnu:ncurses --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:ncurses --packaged-by--> package:msys2:ncurses
+- environment:msys2:msys --contains--> component:vim:vim
+- component:vim:vim --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:vim:vim --packaged-by--> package:msys2:vim
+- component:gnu:emacs --requires--> component:gnu:ncurses
+- component:greenwood:less --requires--> component:gnu:ncurses
+- component:gnu:nano --requires--> component:gnu:ncurses
+- component:vim:vim --requires--> component:gnu:ncurses
+- environment:msys2:msys --contains--> component:openssh:openssh
+- component:openssh:openssh --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:openssh:openssh --packaged-by--> package:msys2:openssh
+- environment:msys2:msys --contains--> component:curl:curl
+- component:curl:curl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:curl:curl --packaged-by--> package:msys2:curl
+- environment:msys2:msys --contains--> component:git:git
+- component:git:git --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:git:git --packaged-by--> package:msys2:git
+- environment:msys2:msys --contains--> component:gnupg:gnupg
+- component:gnupg:gnupg --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnupg:gnupg --packaged-by--> package:msys2:gnupg
+- environment:msys2:msys --contains--> component:openssl:openssl
+- component:openssl:openssl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:openssl:openssl --packaged-by--> package:msys2:openssl
+- component:git:git --requires--> component:curl:curl
+- component:git:git --requires--> component:openssh:openssh
+- component:git:git --requires--> component:openssl:openssl
+- component:curl:curl --requires--> component:openssl:openssl
+- component:openssh:openssh --requires--> component:openssl:openssl
+- environment:msys2:ucrt64 --contains--> component:gnu:gcc
+- component:gnu:gcc --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gcc
+- environment:msys2:ucrt64 --contains--> component:gnu:binutils
+- component:gnu:binutils --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-binutils
+- environment:msys2:ucrt64 --contains--> component:gnu:gdb
+- component:gnu:gdb --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gdb
+- component:gnu:gcc --invokes--> component:gnu:binutils
+- environment:msys2:clang64 --contains--> component:llvm:clang
+- component:llvm:clang --packaged-by--> package:msys2:mingw-w64-clang-x86_64-clang
+- environment:msys2:clang64 --contains--> component:llvm:lld
+- component:llvm:lld --packaged-by--> package:msys2:mingw-w64-clang-x86_64-lld
+- environment:msys2:clang64 --contains--> component:llvm:lldb
+- component:llvm:lldb --packaged-by--> package:msys2:mingw-w64-clang-x86_64-lldb
+- component:llvm:clang --invokes--> component:llvm:lld
+- component:llvm:lld --compatible-with--> component:gnu:binutils
+- environment:msys2:ucrt64 --contains--> component:cmake:cmake
+- component:cmake:cmake --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-cmake
+- environment:msys2:ucrt64 --contains--> component:mesonbuild:meson
+- component:mesonbuild:meson --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-meson
+- environment:msys2:ucrt64 --contains--> component:ninja-build:ninja
+- component:ninja-build:ninja --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-ninja
+- environment:msys2:ucrt64 --contains--> component:pkgconf:pkgconf
+- component:pkgconf:pkgconf --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-pkgconf
+- component:cmake:cmake --invokes--> component:ninja-build:ninja
+- component:mesonbuild:meson --invokes--> component:ninja-build:ninja
+- component:cmake:cmake --requires--> component:pkgconf:pkgconf
+- component:mesonbuild:meson --requires--> component:pkgconf:pkgconf
+- environment:msys2:msys --contains--> component:gnu:autoconf
+- component:gnu:autoconf --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:autoconf --packaged-by--> package:msys2:autoconf2.71
+- environment:msys2:msys --contains--> component:gnu:automake
+- component:gnu:automake --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:automake --packaged-by--> package:msys2:automake-wrapper
+- environment:msys2:msys --contains--> component:gnu:libtool
+- component:gnu:libtool --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:libtool --packaged-by--> package:msys2:libtool
+- environment:msys2:msys --contains--> component:gnu:make
+- component:gnu:make --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:make --packaged-by--> package:msys2:make
+- environment:msys2:ucrt64 --contains--> library:gnu:libstdc++
+- library:gnu:libstdc++ --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gcc-libs
+- environment:msys2:ucrt64 --contains--> library:llvm:libc++
+- environment:msys2:clang64 --contains--> library:llvm:libc++
+- library:llvm:libc++ --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libc++
+- library:llvm:libc++ --compatible-with--> library:gnu:libstdc++
+- environment:msys2:ucrt64 --contains--> library:gnu:zlib
+- library:gnu:zlib --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zlib
+- environment:msys2:ucrt64 --contains--> library:gnu:libiconv
+- library:gnu:libiconv --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libiconv
+- environment:msys2:ucrt64 --contains--> library:gnu:gettext
+- library:gnu:gettext --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime
+- library:gnu:gettext --requires--> library:gnu:libiconv
+- environment:msys2:ucrt64 --contains--> library:libexpat:expat
+- library:libexpat:expat --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-expat
+- environment:msys2:ucrt64 --contains--> library:gnome:libxml2
+- library:gnome:libxml2 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libxml2
+- library:gnome:libxml2 --requires--> library:gnu:libiconv
+- library:gnome:libxml2 --requires--> library:gnu:zlib
+- environment:msys2:ucrt64 --contains--> library:unicode:icu
+- library:unicode:icu --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-icu
+- environment:msys2:ucrt64 --contains--> library:boost:boost
+- library:boost:boost --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-boost
+- environment:msys2:ucrt64 --contains--> library:sqlite:sqlite3
+- library:sqlite:sqlite3 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-sqlite3
+- library:sqlite:sqlite3 --requires--> library:gnu:zlib
+- environment:msys2:ucrt64 --contains--> library:gnu:readline
+- library:gnu:readline --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-readline
+- environment:msys2:ucrt64 --contains--> library:gnu:gmp
+- library:gnu:gmp --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gmp
+- environment:msys2:ucrt64 --contains--> library:gnu:mpfr
+- library:gnu:mpfr --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-mpfr
+- library:gnu:mpfr --requires--> library:gnu:gmp
+- environment:msys2:ucrt64 --contains--> library:multiprecision:mpc
+- library:multiprecision:mpc --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-mpc
+- library:multiprecision:mpc --requires--> library:gnu:gmp
+- library:multiprecision:mpc --requires--> library:gnu:mpfr
+- environment:msys2:ucrt64 --contains--> library:libisl:isl
+- library:libisl:isl --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-isl
+- library:libisl:isl --requires--> library:gnu:gmp
+- environment:msys2:ucrt64 --contains--> library:mingw-w64:libwinpthread
+- library:mingw-w64:libwinpthread --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libwinpthread
+- environment:msys2:ucrt64 --contains--> library:mingw-w64:winpthreads
+- library:mingw-w64:winpthreads --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-winpthreads
+- library:mingw-w64:winpthreads --requires--> library:mingw-w64:libwinpthread
+- environment:msys2:ucrt64 --contains--> library:pcre:pcre2
+- library:pcre:pcre2 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-pcre2
+- library:pcre:pcre2 --requires--> library:gnu:zlib
+- environment:msys2:ucrt64 --contains--> library:gnupg:libgpg-error
+- library:gnupg:libgpg-error --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:libgcrypt
+- library:gnupg:libgcrypt --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libgcrypt
+- library:gnupg:libgcrypt --requires--> library:gnupg:libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:libassuan
+- library:gnupg:libassuan --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libassuan
+- library:gnupg:libassuan --requires--> library:gnupg:libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:libksba
+- library:gnupg:libksba --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libksba
+- library:gnupg:libksba --requires--> library:gnupg:libgpg-error
+- environment:msys2:ucrt64 --contains--> library:gnupg:npth
+- library:gnupg:npth --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-npth
+- environment:msys2:ucrt64 --contains--> library:nettle:nettle
+- library:nettle:nettle --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-nettle
+- library:nettle:nettle --requires--> library:gnu:gmp
+- environment:msys2:msys --contains--> library:gnutls:gnutls
+- library:gnutls:gnutls --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnutls:gnutls --packaged-by--> package:msys2:libgnutls
+- component:gnupg:gnupg --requires--> library:gnutls:gnutls
+- component:gnu:emacs --requires--> library:gnutls:gnutls
+- environment:msys2:msys --contains--> library:gnu:libidn2
+- library:gnu:libidn2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libidn2 --packaged-by--> package:msys2:libidn2
+- environment:msys2:msys --contains--> library:gnu:libtasn1
+- library:gnu:libtasn1 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libtasn1 --packaged-by--> package:msys2:libtasn1
+- environment:msys2:msys --contains--> library:p11-glue:p11-kit
+- library:p11-glue:p11-kit --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:p11-glue:p11-kit --packaged-by--> package:msys2:libp11-kit
+- library:gnutls:gnutls --requires--> library:gnu:libidn2
+- library:gnutls:gnutls --requires--> library:gnu:libtasn1
+- library:gnutls:gnutls --requires--> library:p11-glue:p11-kit
+- library:p11-glue:p11-kit --requires--> library:gnu:libtasn1
+- environment:msys2:msys --contains--> library:libpsl:libpsl
+- library:libpsl:libpsl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libpsl:libpsl --packaged-by--> package:msys2:libpsl
+- environment:msys2:msys --contains--> library:gnu:libunistring
+- library:gnu:libunistring --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libunistring --packaged-by--> package:msys2:libunistring
+- environment:msys2:msys --contains--> library:nghttp2:libnghttp2
+- library:nghttp2:libnghttp2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nghttp2:libnghttp2 --packaged-by--> package:msys2:libnghttp2
+- environment:msys2:msys --contains--> library:nghttp2:libnghttp3
+- library:nghttp2:libnghttp3 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nghttp2:libnghttp3 --packaged-by--> package:msys2:libnghttp3
+- environment:msys2:msys --contains--> library:nghttp2:libngtcp2
+- library:nghttp2:libngtcp2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nghttp2:libngtcp2 --packaged-by--> package:msys2:libngtcp2
+- component:curl:curl --requires--> library:libpsl:libpsl
+- component:curl:curl --requires--> library:gnu:libunistring
+- component:curl:curl --requires--> library:nghttp2:libnghttp2
+- component:curl:curl --requires--> library:nghttp2:libnghttp3
+- component:curl:curl --requires--> library:nghttp2:libngtcp2
+- library:libpsl:libpsl --requires--> library:gnu:libidn2
+- library:libpsl:libpsl --requires--> library:gnu:libunistring
+- environment:msys2:msys --contains--> library:libedit:libedit
+- library:libedit:libedit --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libedit:libedit --packaged-by--> package:msys2:libedit
+- environment:msys2:msys --contains--> library:libxcrypt:libxcrypt
+- library:libxcrypt:libxcrypt --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libxcrypt:libxcrypt --packaged-by--> package:msys2:libxcrypt
+- environment:msys2:msys --contains--> library:yubico:libfido2
+- library:yubico:libfido2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:yubico:libfido2 --packaged-by--> package:msys2:libfido2
+- environment:msys2:msys --contains--> library:h5l:heimdal
+- library:h5l:heimdal --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:h5l:heimdal --packaged-by--> package:msys2:heimdal
+- component:openssh:openssh --requires--> library:libedit:libedit
+- component:openssh:openssh --requires--> library:libxcrypt:libxcrypt
+- component:openssh:openssh --requires--> library:yubico:libfido2
+- component:openssh:openssh --requires--> library:h5l:heimdal
+- environment:msys2:ucrt64 --contains--> library:google:cppdap
+- library:google:cppdap --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-cppdap
+- environment:msys2:ucrt64 --contains--> library:jsoncpp:jsoncpp
+- library:jsoncpp:jsoncpp --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-jsoncpp
+- environment:msys2:ucrt64 --contains--> library:libarchive:libarchive
+- library:libarchive:libarchive --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libarchive
+- environment:msys2:ucrt64 --contains--> library:libuv:libuv
+- library:libuv:libuv --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libuv
+- environment:msys2:ucrt64 --contains--> library:rhash:rhash
+- library:rhash:rhash --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-rhash
+- component:cmake:cmake --requires--> library:google:cppdap
+- component:cmake:cmake --requires--> library:jsoncpp:jsoncpp
+- component:cmake:cmake --requires--> library:libarchive:libarchive
+- component:cmake:cmake --requires--> library:libuv:libuv
+- component:cmake:cmake --requires--> library:rhash:rhash
+- library:libarchive:libarchive --requires--> library:libexpat:expat
+- library:libarchive:libarchive --requires--> library:gnu:libiconv
+- library:libarchive:libarchive --requires--> library:pcre:pcre2
+- library:libarchive:libarchive --requires--> library:gnu:zlib
+- environment:msys2:msys --contains--> library:darwinsys:file
+- library:darwinsys:file --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:darwinsys:file --packaged-by--> package:msys2:file
+- environment:msys2:ucrt64 --contains--> library:gnu:termcap
+- library:gnu:termcap --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-termcap
+- environment:msys2:ucrt64 --contains--> library:mingweditline:wineditline
+- library:mingweditline:wineditline --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-wineditline
+- component:gnu:nano --requires--> library:darwinsys:file
+- library:gnu:readline --requires--> library:gnu:termcap
+- library:pcre:pcre2 --requires--> library:mingweditline:wineditline
+- environment:msys2:msys --contains--> library:gnupg:libgcrypt@msys
+- library:gnupg:libgcrypt@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libgcrypt@msys --packaged-by--> package:msys2:libgcrypt
+- environment:msys2:msys --contains--> library:gnupg:libassuan@msys
+- library:gnupg:libassuan@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libassuan@msys --packaged-by--> package:msys2:libassuan
+- environment:msys2:msys --contains--> library:gnupg:libksba@msys
+- library:gnupg:libksba@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libksba@msys --packaged-by--> package:msys2:libksba
+- environment:msys2:msys --contains--> library:gnupg:npth@msys
+- library:gnupg:npth@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:npth@msys --packaged-by--> package:msys2:libnpth
+- environment:msys2:msys --contains--> library:nettle:nettle@msys
+- library:nettle:nettle@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:nettle:nettle@msys --packaged-by--> package:msys2:nettle
+- environment:msys2:msys --contains--> library:gnupg:libgpg-error@msys
+- library:gnupg:libgpg-error@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnupg:libgpg-error@msys --packaged-by--> package:msys2:libgpg-error
+- library:gnupg:libgcrypt@msys --requires--> library:gnupg:libgpg-error@msys
+- library:gnupg:libassuan@msys --requires--> library:gnupg:libgpg-error@msys
+- library:gnupg:libksba@msys --requires--> library:gnupg:libgpg-error@msys
+- environment:msys2:msys --contains--> library:gnu:libintl
+- library:gnu:libintl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libintl --packaged-by--> package:msys2:libintl
+- component:gnu:coreutils --requires--> library:gnu:libintl
+- component:gnu:findutils --requires--> library:gnu:libintl
+- component:gnu:gawk --requires--> library:gnu:libintl
+- component:gnu:grep --requires--> library:gnu:libintl
+- component:gnu:sed --requires--> library:gnu:libintl
+- component:gnu:nano --requires--> library:gnu:libintl
+- component:vim:vim --requires--> library:gnu:libintl
+- component:tukaani:xz --requires--> library:gnu:libintl
+- component:gnu:tar --requires--> library:gnu:libintl
+- component:gnu:make --requires--> library:gnu:libintl
+- component:git:git --requires--> library:gnu:libintl
+- component:gnupg:gnupg --requires--> library:gnu:libintl
+- library:gnutls:gnutls --requires--> library:gnu:libintl
+- library:gnupg:libgpg-error@msys --requires--> library:gnu:libintl
+- library:gnu:libidn2 --requires--> library:gnu:libintl
+- library:p11-glue:p11-kit --requires--> library:gnu:libintl
+- component:vim:vim --requires--> library:libxcrypt:libxcrypt
+- environment:msys2:msys --contains--> library:curl:libcurl
+- library:curl:libcurl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:curl:libcurl --packaged-by--> package:msys2:libcurl
+- component:curl:curl --requires--> library:curl:libcurl
+- component:gnupg:gnupg --requires--> library:curl:libcurl
+- library:curl:libcurl --requires--> library:gnu:libidn2
+- library:curl:libcurl --requires--> library:nghttp2:libnghttp2
+- library:curl:libcurl --requires--> library:nghttp2:libnghttp3
+- library:curl:libcurl --requires--> library:nghttp2:libngtcp2
+- library:curl:libcurl --requires--> library:libpsl:libpsl
+- library:curl:libcurl --requires--> library:gnu:libunistring
+- library:curl:libcurl --requires--> component:openssl:openssl
+- environment:msys2:msys --contains--> library:pcre:pcre2@msys
+- library:pcre:pcre2@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:pcre:pcre2@msys --packaged-by--> package:msys2:libpcre2_8
+- environment:msys2:msys --contains--> library:pcre:pcre
+- library:pcre:pcre --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:pcre:pcre --packaged-by--> package:msys2:libpcre
+- component:git:git --requires--> library:pcre:pcre2@msys
+- component:greenwood:less --requires--> library:pcre:pcre2@msys
+- component:gnu:grep --requires--> library:pcre:pcre
+- environment:msys2:msys --contains--> library:gnu:readline@msys
+- library:gnu:readline@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:readline@msys --packaged-by--> package:msys2:libreadline
+- library:gnu:readline@msys --requires--> component:gnu:ncurses
+- component:gnupg:gnupg --requires--> library:gnu:readline@msys
+- component:gnu:gawk --requires--> library:gnu:readline@msys
+- environment:msys2:msys --contains--> library:gnu:libltdl
+- library:gnu:libltdl --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libltdl --packaged-by--> package:msys2:libltdl
+- component:gnu:libtool --requires--> library:gnu:libltdl
+- environment:msys2:ucrt64 --contains--> library:facebook:zstd
+- library:facebook:zstd --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-zstd
+- component:gnu:gcc --requires--> library:facebook:zstd
+- component:gnu:gcc --requires--> library:gnu:zlib
+- component:gnu:binutils --requires--> library:facebook:zstd
+- component:gnu:binutils --requires--> library:gnu:zlib
+- component:gnu:binutils --requires--> library:gnu:gettext
+- environment:msys2:clang64 --contains--> library:llvm:llvm-libs
+- library:llvm:llvm-libs --packaged-by--> package:msys2:mingw-w64-clang-x86_64-llvm-libs
+- component:llvm:lld --requires--> library:llvm:llvm-libs
+- component:llvm:lldb --requires--> library:llvm:llvm-libs
+- environment:msys2:clang64 --contains--> library:llvm:clang-libs
+- library:llvm:clang-libs --packaged-by--> package:msys2:mingw-w64-clang-x86_64-clang-libs
+- component:llvm:clang --requires--> library:llvm:clang-libs
+- component:llvm:lldb --requires--> library:llvm:clang-libs
+- environment:msys2:ucrt64 --contains--> library:xxhash:xxhash
+- library:xxhash:xxhash --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-xxhash
+- environment:msys2:ucrt64 --contains--> library:tukaani:liblzma
+- library:tukaani:liblzma --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-xz
+- component:gnu:gdb --requires--> library:libexpat:expat
+- component:gnu:gdb --requires--> library:gnu:gmp
+- component:gnu:gdb --requires--> library:gnu:mpfr
+- component:gnu:gdb --requires--> library:gnu:libiconv
+- component:gnu:gdb --requires--> library:gnu:readline
+- component:gnu:gdb --requires--> library:gnu:gettext
+- component:gnu:gdb --requires--> library:gnu:zlib
+- component:gnu:gdb --requires--> library:facebook:zstd
+- component:gnu:gdb --requires--> library:xxhash:xxhash
+- component:gnu:gdb --requires--> library:tukaani:liblzma
+- environment:msys2:msys --contains--> library:gnu:libiconv@msys
+- library:gnu:libiconv@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:libiconv@msys --packaged-by--> package:msys2:libiconv
+- environment:msys2:msys --contains--> library:gnu:gmp@msys
+- library:gnu:gmp@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:gmp@msys --packaged-by--> package:msys2:gmp
+- environment:msys2:msys --contains--> library:libexpat:expat@msys
+- library:libexpat:expat@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libexpat:expat@msys --packaged-by--> package:msys2:libexpat
+- environment:msys2:msys --contains--> library:gnome:libxml2@msys
+- library:gnome:libxml2@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnome:libxml2@msys --packaged-by--> package:msys2:libxml2
+- library:gnutls:gnutls --requires--> library:gnu:libiconv@msys
+- library:gnutls:gnutls --requires--> library:gnu:gmp@msys
+- component:gnupg:gnupg --requires--> library:gnu:libiconv@msys
+- component:gnu:coreutils --requires--> library:gnu:libiconv@msys
+- component:gnu:coreutils --requires--> library:gnu:gmp@msys
+- library:gnu:libintl --requires--> library:gnu:libiconv@msys
+- library:gnu:libunistring --requires--> library:gnu:libiconv@msys
+- library:gnupg:libgpg-error@msys --requires--> library:gnu:libiconv@msys
+- component:git:git --requires--> library:libexpat:expat@msys
+- component:gnu:emacs --requires--> library:gnome:libxml2@msys
+- environment:msys2:clang64 --contains--> library:gnu:zlib@clang64
+- library:gnu:zlib@clang64 --packaged-by--> package:msys2:mingw-w64-clang-x86_64-zlib
+- environment:msys2:clang64 --contains--> library:facebook:zstd@clang64
+- library:facebook:zstd@clang64 --packaged-by--> package:msys2:mingw-w64-clang-x86_64-zstd
+- environment:msys2:msys --contains--> library:pjk:libcbor
+- library:pjk:libcbor --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:pjk:libcbor --packaged-by--> package:msys2:libcbor
+- environment:msys2:msys --contains--> library:h5l:heimdal-libs
+- library:h5l:heimdal-libs --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:h5l:heimdal-libs --packaged-by--> package:msys2:heimdal-libs
+- component:llvm:lld --requires--> library:gnu:zlib@clang64
+- component:llvm:lld --requires--> library:facebook:zstd@clang64
+- component:llvm:lldb --requires--> library:gnu:zlib@clang64
+- library:yubico:libfido2 --requires--> library:pjk:libcbor
+- library:h5l:heimdal --requires--> library:h5l:heimdal-libs
+- environment:msys2:msys --contains--> library:gnu:zlib@msys
+- library:gnu:zlib@msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:gnu:zlib@msys --packaged-by--> package:msys2:zlib
+- component:curl:curl --requires--> library:gnu:zlib@msys
+- component:gnu:emacs --requires--> library:gnu:zlib@msys
+- component:gnupg:gnupg --requires--> library:gnu:zlib@msys
+- library:curl:libcurl --requires--> library:gnu:zlib@msys
+- library:yubico:libfido2 --requires--> library:gnu:zlib@msys
+- library:darwinsys:file --requires--> library:gnu:zlib@msys
+- environment:msys2:msys --contains--> library:google:brotli
+- library:google:brotli --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:google:brotli --packaged-by--> package:msys2:brotli
+- environment:msys2:msys --contains--> library:mozilla:ca-certificates
+- library:mozilla:ca-certificates --packaged-by--> package:msys2:ca-certificates
+- environment:msys2:msys --contains--> library:libssh2:libssh2
+- library:libssh2:libssh2 --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:libssh2:libssh2 --packaged-by--> package:msys2:libssh2
+- environment:msys2:msys --contains--> library:facebook:zstd@msys-lib
+- library:facebook:zstd@msys-lib --uses-runtime--> runtime:msys2:msys-2.0.dll
+- library:facebook:zstd@msys-lib --packaged-by--> package:msys2:libzstd
+- library:curl:libcurl --requires--> library:google:brotli
+- library:curl:libcurl --requires--> library:mozilla:ca-certificates
+- component:curl:curl --requires--> library:mozilla:ca-certificates
+- library:curl:libcurl --requires--> library:libssh2:libssh2
+- library:curl:libcurl --requires--> library:facebook:zstd@msys-lib
+- library:darwinsys:file --requires--> library:facebook:zstd@msys-lib
+- component:gnupg:gnupg --requires--> library:gnupg:libgcrypt@msys
+- component:gnupg:gnupg --requires--> library:gnupg:libassuan@msys
+- component:gnupg:gnupg --requires--> library:gnupg:libksba@msys
+- component:gnupg:gnupg --requires--> library:gnupg:npth@msys
+- component:gnupg:gnupg --requires--> library:nettle:nettle@msys
+- component:bzip2:bzip2 --requires--> library:bzip2:libbz2
+- library:darwinsys:file --requires--> library:bzip2:libbz2
+- component:gnupg:gnupg --requires--> library:bzip2:libbz2
+- component:info-zip:zip --requires--> library:bzip2:libbz2
+- component:info-zip:unzip --requires--> library:bzip2:libbz2
+- component:gnu:gawk --requires--> library:gnu:mpfr@msys
+- library:gnu:mpfr@msys --requires--> library:gnu:gmp@msys
+- library:nettle:nettle@msys --requires--> library:nettle:libnettle@msys
+- library:nettle:libnettle@msys --requires--> library:nettle:libhogweed@msys
+- library:nettle:libhogweed@msys --requires--> library:gnu:gmp@msys
+- library:gnutls:gnutls --requires--> library:nettle:libnettle@msys
+- component:gnu:emacs --requires--> library:nettle:libhogweed@msys
+- component:openssl:openssl --requires--> library:openssl:libopenssl
+- library:h5l:heimdal-libs --requires--> library:openssl:libopenssl
+- library:nghttp2:libngtcp2 --requires--> library:openssl:libopenssl
+- component:gnu:gcc --requires--> library:gnu:gmp
+- component:gnu:gcc --requires--> library:gnu:mpfr
+- component:gnu:gcc --requires--> library:multiprecision:mpc
+- component:gnu:gcc --requires--> library:libisl:isl
+- component:gnu:gcc --requires--> library:mingw-w64:winpthreads
+- component:gnu:binutils --requires--> library:mingw-w64:libwinpthread
+- component:gnu:gdb --requires--> library:gnu:ncurses@ucrt64
+- component:llvm:lldb --requires--> library:gnome:libxml2@clang64
+- component:llvm:lldb --requires--> library:tukaani:liblzma@clang64
+- component:llvm:clang --requires--> library:mingw-w64:winpthreads@clang64
+- library:mingw-w64:winpthreads@clang64 --requires--> library:mingw-w64:libwinpthread@clang64
+- library:p11-glue:p11-kit --requires--> library:libffi:libffi@msys
+- library:llvm:llvm-libs --requires--> library:libffi:libffi@clang64
+- library:llvm:llvm-libs --requires--> library:gnome:libxml2@clang64
+- library:llvm:llvm-libs --requires--> library:gnu:zlib@clang64
+- library:llvm:llvm-libs --requires--> library:facebook:zstd@clang64
+- component:gnu:gcc --requires--> library:gnu:libstdc++
+- library:rhash:rhash --requires--> library:gnu:gettext
+- library:tukaani:liblzma --requires--> library:gnu:gettext
+- library:llvm:clang-libs --requires--> library:llvm:llvm-libs
+- library:gnu:libidn2 --requires--> library:gnu:libunistring
+- library:libarchive:libarchive --requires--> library:facebook:zstd
+- library:libarchive:libarchive --requires--> library:tukaani:liblzma
+- component:cmake:cmake --requires--> library:libexpat:expat
+- component:cmake:cmake --requires--> library:gnu:zlib
+- component:cmake:cmake --requires--> library:curl:curl@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:gnu:zlib
+- library:curl:curl@ucrt64 --requires--> library:facebook:zstd
+- library:curl:curl@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:google:brotli@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:libssh2:libssh2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:c-ares:c-ares@ucrt64
+- library:libssh2:libssh2@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:libssh2:libssh2@ucrt64 --requires--> library:gnu:zlib
+- library:curl:curl@ucrt64 --requires--> library:gnu:libidn2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:libpsl:libpsl@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:mozilla:ca-certificates@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:nghttp2:libnghttp2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:nghttp2:libngtcp2@ucrt64
+- library:curl:curl@ucrt64 --requires--> library:nghttp2:libnghttp3@ucrt64
+- library:gnu:libidn2@ucrt64 --requires--> library:gnu:libiconv
+- library:gnu:libidn2@ucrt64 --requires--> library:gnu:gettext
+- library:gnu:libidn2@ucrt64 --requires--> library:gnu:libunistring@ucrt64
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libiconv
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:gettext
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libunistring@ucrt64
+- library:libpsl:libpsl@ucrt64 --requires--> library:gnu:libidn2@ucrt64
+- library:gnu:libunistring@ucrt64 --requires--> library:gnu:libiconv
+- library:nghttp2:libngtcp2@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:nghttp2:libngtcp2@ucrt64 --requires--> library:gnutls:gnutls@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:google:brotli@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:gettext
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:gmp
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:libidn2@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:libtasn1@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:libunistring@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:mingw-w64:libwinpthread
+- library:gnutls:gnutls@ucrt64 --requires--> library:nettle:nettle
+- library:gnutls:gnutls@ucrt64 --requires--> library:p11-glue:p11-kit@ucrt64
+- library:gnutls:gnutls@ucrt64 --requires--> library:gnu:zlib
+- library:gnutls:gnutls@ucrt64 --requires--> library:facebook:zstd
+- library:mozilla:ca-certificates@ucrt64 --requires--> library:p11-glue:p11-kit@ucrt64
+- library:p11-glue:p11-kit@ucrt64 --requires--> library:gnu:libtasn1@ucrt64
+- library:p11-glue:p11-kit@ucrt64 --requires--> library:libffi:libffi@ucrt64
+- library:p11-glue:p11-kit@ucrt64 --requires--> library:gnu:gettext
+- library:gnutls:gnutls --requires--> library:gnu:zlib@msys
+- library:libssh2:libssh2 --requires--> library:gnu:zlib@msys
+- library:libssh2:libssh2 --requires--> library:mozilla:ca-certificates
+- library:libssh2:libssh2 --requires--> component:openssl:openssl
+- library:gnome:libxml2@msys --requires--> library:gnu:readline@msys
+- library:gnome:libxml2@msys --requires--> library:gnu:zlib@msys
+- library:h5l:heimdal-libs --requires--> library:libedit:libedit
+- library:h5l:heimdal-libs --requires--> library:libxcrypt:libxcrypt
+- library:libarchive:libarchive --requires--> library:openssl:openssl@ucrt64
+- library:gnu:ncurses@ucrt64 --requires--> library:pcre:pcre2
+- component:tukaani:xz --requires--> library:tukaani:liblzma@msys
+- component:tukaani:xz --requires--> library:gnu:libiconv@msys
+- library:darwinsys:file --requires--> library:tukaani:liblzma@msys
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

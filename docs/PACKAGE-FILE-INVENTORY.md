@@ -3,9 +3,11 @@ id: doc:volume-11:package-file-inventory
 title: Package-to-File Inventory Model
 volume: 11
 status: partial
-model_refs: []
+model_refs:
+  - library:gnu:zlib
+  - library:curl:libcurl
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # Package-to-File Inventory Model
@@ -67,6 +69,37 @@ py -3 tools/import_repository_file_db.py C:\cache\msys.files `
     --repository msys --output work\files-inventory
 py -3 tools/import_deep_inventory.py work\files-inventory --accumulate
 ```
+
+## Worked examples: archive payload observation beyond the installed subset
+
+Two package archives (not the isolated installed subset) were statically
+analyzed with `tools/analyze_package_archive.py` on 2026-07-29, each a
+concrete instance of the "Archive payload observation" and "Static
+artifact analysis" rows above:
+
+- **zlib (UCRT64)**, `ucrt-zlib.pkg.tar.zst` — 11 owned artifacts (headers,
+  pkg-config module, static/import libraries, and the runtime DLL), 114 PE
+  exports, 9 PE-imported system DLLs; the full family-classification
+  worked example on [zlib](ZLIB.md#family-classification).
+- **curl (MSYS)**, `curl.pkg.tar.zst` — 532 owned artifacts (`/usr/bin/curl.exe`
+  plus 531 documentation/support files, no `-devel` headers or static
+  library in this base package), 0 PE exports (it is an executable, not
+  a DLL), and 4 PE-imported DLLs: `kernel32.dll` (one symbol),
+  `msys-2.0.dll` (79 symbols — confirming this build is MSYS-dependent,
+  not native), `msys-curl-4.dll` (58 symbols — the split transfer
+  library [libcurl](LIBCURL.md) documents), and `msys-z.dll` (`inflate`,
+  `inflateEnd`, `inflateInit2_` — the MSYS build of
+  [zlib](ZLIB.md), confirming a real, byte-level DEFLATE dependency
+  distinct from the package-level `requires` edges elsewhere in this
+  knowledge base).
+
+Both are local-only per
+[Local-Only Evidence Retention](LOCAL-EVIDENCE-RETENTION.md), not staged
+as raw artifacts, and reproducible by re-running the collector against
+the same archives. This is byte-level PE-import evidence for two
+packages beyond the isolated installed subset; it does not establish
+family-classification-level detail for curl (no `-devel` archive was
+analyzed) or extend beyond these two packages.
 
 ## Related Views
 

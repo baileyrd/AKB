@@ -11,7 +11,8 @@ model_refs:
   - component:gnu:gcc
   - component:llvm:clang
   - library:gnu:zlib
-evidence_refs: []
+evidence_refs:
+  - evidence:windows:host-boundary-observation-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -50,9 +51,16 @@ date: every compiler, linker, debugger, and build-system tool identified
 for Layer 6, and every shell/coreutils/archive/editor/network tool
 identified for Layer 7, now has an individually evidence-backed page.
 Layers 1–3 (Windows kernel/API services and the MSYS runtime) remain the
-shallowest layers, gated on controlled observations rather than
-desk-researchable documentation — see each linked page's own evidence
-boundary.
+shallowest layers by that per-object-page measure, but each now carries at
+least one controlled, version-qualified local observation rather than
+desk-researchable documentation alone: Layer 1/2's
+[Windows platform boundaries](WINDOWS-PLATFORM-BOUNDARIES.md) page
+records host edition, filesystem type, and symlink-privilege facts from
+two separate observation sessions on this workstation, and Layer 3's
+[MSYS runtime behavior map](MSYS-RUNTIME-BEHAVIOR-MAP.md) records
+process/exec/signal/symlink probe outcomes from the isolated MSYS2
+installation. Neither approaches Layers 6/7's per-object page depth; see
+each linked page's own evidence boundary for what remains unobserved.
 
 ## Boundaries
 

@@ -5,7 +5,7 @@ volume: 17
 status: partial
 model_refs: []
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # AKB Performance Experiments and Hot Paths
@@ -23,6 +23,30 @@ Reports include entity/relationship/claim/evidence counts and minimum/median
 milliseconds. Store comparison reports with the exact commit, Python version,
 host characteristics, repetition count, and refresh snapshot. The command is
 an experiment, not a CI performance gate: wall-clock thresholds vary by host.
+
+## Recorded benchmark history
+
+No comparison report had been stored here before this entry. On
+2026-07-30, `py -3 tools/benchmark_akb.py --repetitions 10` ran against
+commit `554c5ee`, Python `3.11.15`, host `Windows-11-10.0.26200-SP0`
+(`Intel64 Family 6 Model 197 Stepping 2`), against the composed graph's
+then-current 16,430 entities / 77,233 relationships / 39 claims / 106
+evidence records — the tracked-only composed graph (`model/catalog`,
+`model/graph.json`), not the much larger local-only deep-inventory
+overlay some hosts additionally carry, which this benchmark does not
+measure:
+
+| Operation | Minimum (ms) | Median (ms) |
+| --- | ---: | ---: |
+| `validate` | 604.441 | 668.974 |
+| `generate-indexes` | 914.109 | 936.937 |
+| `build-explorer` | 580.849 | 593.913 |
+
+This is a single host, single commit, ten-repetition sample. It
+establishes a first comparison baseline for these three hot paths on the
+tracked-only composed graph; it does not establish trend, regression
+detection, or behavior on a host with a larger local-only overlay
+attached.
 
 ## Current Optimization Boundaries
 

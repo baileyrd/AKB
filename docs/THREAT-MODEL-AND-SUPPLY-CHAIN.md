@@ -6,6 +6,7 @@ status: partial
 model_refs: []
 evidence_refs:
   - evidence:akb-process:recipe-no-execution-code-review-2026-07-31
+  - evidence:akb-process:projection-write-atomicity-code-review-2026-07-31
 last_verified: 2026-07-31
 ---
 
@@ -22,7 +23,7 @@ claim or replace a previously verified projection.
 | Mirror and repository transfer | Tampered, stale, or inconsistent metadata | Snapshot hashes, retrieval identity, pacman verification boundary | Mirror-divergence monitoring and alerting |
 | Catalog/deep-inventory streams | Truncation, path traversal, schema abuse, parser failure | Required streams, hashes/counts, normalized paths, bounded parsers | Adversarial corpus and fuzz testing |
 | Package recipes | Shell-side effects or dynamic-value misinterpretation | Static parsing only; PKGBUILDs never execute | Expanded dynamic-field coverage and source checksum retrieval |
-| Generated projections | Partial import replacing trustworthy state | Validation before atomic current-view replacement | Cross-process locking and recovery drills |
+| Generated projections | Partial import replacing trustworthy state | Validation-before-write transaction boundary (a failed import never touches the current projection); the individual `CURRENT`-file write itself is not an OS-level atomic rename, see verification below | An `os.replace`-based atomic file swap, cross-process locking, and recovery drills |
 | Explorer / generated documents | Script or markup injection from names or metadata | HTML escaping and static generation | Browser security headers when hosted |
 | Credentials and local configuration | Secret leakage through collection or evidence | Sanitization rules; credential stores excluded | Automated secret-scanning gate for snapshots |
 | Refresh automation | Privilege abuse or task tampering | Explicit task registration and inspectable command | Least-privilege service account guidance |
@@ -121,6 +122,40 @@ that might touch recipe text (for example, any future collector or
 importer added under this or a different extension point), and — per the
 row's own "Remaining assurance need" — does not cover the still-open
 work of expanding dynamic-field coverage or retrieving source checksums.
+
+## Measured control verification: Generated projections replacement
+
+A 2026-07-31 code inspection of `tools/import_package_catalog.py`,
+`tools/import_deep_inventory.py`, and the other `import_*.py` modules
+that write to a `CURRENT` path examined what "Validation before atomic
+current-view replacement" actually means in this codebase, since the
+phrase is ambiguous between two different guarantees:
+
+- **Confirmed**: every importer calls its own `verify_input`/validation
+  step first and raises before any write on failure (for example,
+  `import_package_catalog.py`'s `import_catalog()` calls `verify_input()`
+  at the top of the function; a hash mismatch, missing field, or count
+  mismatch raises `CatalogError` before `build_catalog()` or any
+  `write_json(CURRENT, ...)` call is reached). This is genuine
+  transaction-level atomicity: a failed import never touches the current
+  projection at all.
+- **Not confirmed, and likely not true as literally stated**: the write
+  to `CURRENT` itself (`write_json()`'s `path.write_text(...)`) is a
+  direct, in-place write, not a temp-file-plus-`os.replace()` pattern.
+  No occurrence of `os.replace` or an equivalent rename-based swap was
+  found guarding any `CURRENT` write in this codebase. This means an
+  interruption (process kill, power loss) during that specific write
+  call could leave a truncated or corrupted `current.json`/`current/`
+  file — a real, narrow gap between the documented control and the
+  code, distinct from the transaction-level guarantee that is genuinely
+  implemented.
+
+This corrects rather than merely confirms the row's existing-control
+description: "atomic" accurately describes the validate-then-write
+transaction boundary, not the individual file-write operation. Closing
+the file-write-level gap (an actual `os.replace`-based swap) would be a
+production code change to the import pipeline and is out of scope for
+this documentation-only pass.
 
 ## Response and Review
 

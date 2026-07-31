@@ -5,7 +5,7 @@
 - Entities: **16430**
 - Entities with evidence: **16427**
 - Claims: **39**
-- Evidence records: **112**
+- Evidence records: **113**
 
 | Entity status | Count |
 | --- | ---: |

@@ -121,7 +121,12 @@ build systems ([CMake](CMAKE.md)), network transfer
 ([GNU Tar](GNU-TAR.md)'s optional codec linkage question flagged on that
 page) across this environment. See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
-for the current full list.
+for the current full list. That page's worked example uses zlib to show
+this **299** figure alongside two narrower, differently-scoped counts: 297
+`runtime-depends-on`-only catalog edges, and 34 byte-level PE importers
+observed on one bounded installation
+(`generated/binary-dependency-graph.json`) — the same
+`dll:gnu:zlib1.dll` this page's Family Classification section documents.
 
 ## Configuration
 

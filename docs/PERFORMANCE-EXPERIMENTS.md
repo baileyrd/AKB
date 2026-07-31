@@ -4,8 +4,9 @@ title: AKB Performance Experiments and Hot Paths
 volume: 17
 status: partial
 model_refs: []
-evidence_refs: []
-last_verified: 2026-07-30
+evidence_refs:
+  - evidence:akb-process:performance-benchmark-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # AKB Performance Experiments and Hot Paths
@@ -47,6 +48,24 @@ establishes a first comparison baseline for these three hot paths on the
 tracked-only composed graph; it does not establish trend, regression
 detection, or behavior on a host with a larger local-only overlay
 attached.
+
+A second same-host sample, on 2026-07-31 against commit `ba14e63`
+(16,430 entities / 77,233 relationships / 39 claims / 110 evidence
+records — one more evidence record than the first sample, otherwise the
+same tracked-only composed graph shape), found all three operations
+within roughly 1-3% of the first sample's minimum/median:
+
+| Operation | Minimum (ms) | Median (ms) |
+| --- | ---: | ---: |
+| `validate` | 609.447 | 677.861 |
+| `generate-indexes` | 911.794 | 946.869 |
+| `build-explorer` | 582.391 | 594.465 |
+
+Two same-host samples six commits apart is evidence of run-to-run
+stability on this host, not yet a regression-detection trend line: a
+real trend requires more samples across commits that materially change
+hot-path code, or a host/graph-size sweep, neither of which has been
+performed.
 
 ## Current Optimization Boundaries
 

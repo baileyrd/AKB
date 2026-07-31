@@ -4,8 +4,9 @@ title: AKB Threat Model and Supply-Chain Analysis
 volume: 16
 status: partial
 model_refs: []
-evidence_refs: []
-last_verified: 2026-07-30
+evidence_refs:
+  - evidence:akb-process:recipe-no-execution-code-review-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # AKB Threat Model and Supply-Chain Analysis
@@ -93,6 +94,33 @@ not cover every possible injection vector (URL-fragment routing, SVG
 `<title>` content beyond what was tested, or a future code change that
 bypasses `esc`/`html.escape`), and should be re-run after any change to
 `tools/build_explorer.py` or its generated client-side script.
+
+## Measured control verification: Package recipes never execute
+
+A 2026-07-31 direct code inspection (not a black-box test) of the two
+real functions that touch PKGBUILD text verified the "Static parsing
+only; PKGBUILDs never execute" control for the Package recipes row
+above:
+
+- `tools/deep_inventory.py`'s `parse_pkgbuild()` (the function
+  `tools/collect_recipe_tree.py`'s collector actually calls) reads the
+  PKGBUILD file with `Path.read_text()` and extracts every field with
+  `re.search`/`re.findall` against that string; it contains no `exec`,
+  `eval`, `subprocess`, `os.system`, or any other code-execution call
+  operating on PKGBUILD content anywhere in its body.
+- `tools/collect_recipe_tree.py` does call `subprocess.run` exactly
+  once, but for `git -C <root> rev-parse HEAD` — reading the checked-out
+  tree's own revision, not interpreting any PKGBUILD's shell syntax.
+- `tools/import_recipe_tree.py`, which consumes the collector's output,
+  contains no execution call either; it only validates and imports the
+  already-statically-parsed JSON records `parse_pkgbuild()` produced.
+
+This confirms the control as implemented today, for these three files at
+this commit; it does not constitute a general audit of every code path
+that might touch recipe text (for example, any future collector or
+importer added under this or a different extension point), and — per the
+row's own "Remaining assurance need" — does not cover the still-open
+work of expanding dynamic-field coverage or retrieving source checksums.
 
 ## Response and Review
 

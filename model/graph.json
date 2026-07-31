@@ -10688,6 +10688,16 @@
       "notes": "Second same-host, ten-repetition benchmark sample of docs/PERFORMANCE-EXPERIMENTS.md's three hot paths (validate, generate-indexes, build-explorer) against the tracked-only composed graph (16,430 entities/77,233 relationships/39 claims/110 evidence), six commits after the first 2026-07-30 sample at commit 554c5ee. All three operations landed within roughly 1-3% of the first sample's minimum/median, evidence of run-to-run stability on this host across a small commit range, not a regression-detection trend line -- that requires more samples across hot-path-affecting commits or a host/graph-size sweep, neither performed here."
     },
     {
+      "id": "evidence:akb-process:recipe-no-execution-code-review-2026-07-31",
+      "class": "observed",
+      "title": "Code inspection: PKGBUILD recipes are never executed by the collector/importer",
+      "locator": "tools/deep_inventory.py:parse_pkgbuild, tools/collect_recipe_tree.py, tools/import_recipe_tree.py",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "025e214",
+      "integrity": null,
+      "notes": "Direct code-level verification of docs/THREAT-MODEL-AND-SUPPLY-CHAIN.md's Package recipes control ('Static parsing only; PKGBUILDs never execute'). tools/deep_inventory.py's parse_pkgbuild() reads PKGBUILD text via Path.read_text() and extracts fields with re.search/re.findall only -- no exec/eval/subprocess/os.system call operates on PKGBUILD content anywhere in that function. tools/collect_recipe_tree.py's one subprocess.run call runs 'git -C <root> rev-parse HEAD' (reading the checked-out tree's revision), not interpreting any PKGBUILD. tools/import_recipe_tree.py performs no execution, only validation/import of the already-parsed JSON records. Confirms the control for these three files at this commit only; does not audit every current or future code path that might touch recipe text, and does not close the row's still-open dynamic-field-coverage or source-checksum-retrieval assurance needs."
+    },
+    {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",
       "class": "primary",
       "title": "GNU libiconv (official project page)",

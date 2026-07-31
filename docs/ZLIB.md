@@ -46,9 +46,10 @@ Gailly and Mark Adler. **Update, 2026-07-30**: the fuller
 methodology (headers, `pkg-config`/CMake metadata, PE import/export
 analysis) is now applied here — the first library in this knowledge base
 to receive it — via a static analysis of the package archive itself; see
-Interfaces and Evidence below. The other 103 documented library pages do
-not yet have this fuller treatment and remain scoped to
-package/dependency-level evidence only.
+Interfaces and Evidence below. **Update, 2026-07-31**: a second library,
+[zstd (UCRT64)](LIBZSTD.md#family-classification), now has this same
+treatment. The other 102 documented library pages do not yet have it
+and remain scoped to package/dependency-level evidence only.
 
 ## Responsibilities
 

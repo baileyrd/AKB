@@ -109,6 +109,19 @@ specifically; it does not establish `fork()` emulation behavior for the
 isolated MSYS2 installation's runtime or for `vfork()`/`posix_spawn()`
 code paths not exercised by this probe.
 
+## Partial console/terminal-device observation
+
+The same 2026-07-31 session found `MSYSTEM=MINGW64` (this shell was
+launched selecting the MINGW64 environment, not the MSYS default) and
+`TERM=xterm-256color`. `[ -t 1 ]` (stdout) reported false — stdout is
+not attached to a console device in this specific automated harness
+invocation — while `[ -t 0 ]`/`tty` behavior on stdin indicated it was
+still console-attached at shell start. This is a narrow, honest partial
+observation of this one process's console-device plumbing; it is not a
+ConPTY allocation test, does not exercise interactive terminal
+resizing/signal (`SIGWINCH`) behavior, and does not close the "Terminal
+integration tests" evidence this row's Concern column still calls for.
+
 ## Related Views
 
 - [Runtime initialization](MSYS-RUNTIME-INITIALIZATION.md)

@@ -37,7 +37,7 @@ remain distinguishable from reviewed architecture.
 | 17 Performance | [Performance experiments](PERFORMANCE-EXPERIMENTS.md) | Partial | Reassigned canonical volume placement and retained benchmark history |
 | 18 Developer Guide | [Developer/operator workflows](DEVELOPER-OPERATOR-WORKFLOWS.md) and explorer guidance | Partial | Canonical developer guide split from operations material |
 | 19 Operations Guide | [Upgrade/rollback/repair/migration](UPGRADE-ROLLBACK-REPAIR-MIGRATION.md) | Partial | Canonical operations guide and observed operational exercises |
-| 20 Reference Appendices | [Terminology](TERMINOLOGY-AND-BOUNDARIES.md), [requirements traceability](REQUIREMENTS-TRACEABILITY.md), local-retention and evidence documentation | Partial | Requirement-by-requirement completion evidence |
+| 20 Reference Appendices | [Terminology](TERMINOLOGY-AND-BOUNDARIES.md), [requirements traceability](REQUIREMENTS-TRACEABILITY.md), local-retention and evidence documentation | Partial | A 2026-07-30 refresh corrected stale figures in the requirements traceability matrix (claim/evidence counts had drifted to roughly a third of the current 39 claims / 116 evidence records; the Volume 6 row still said "first five foundational libraries" against a now-104-page reality) and updated its remaining-work column to name the volumes still lacking per-object citations; requirement-by-requirement completion evidence for the still-`Partial` rows remains open |
 
 ## Current evidence boundary
 

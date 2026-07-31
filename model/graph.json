@@ -10698,6 +10698,16 @@
       "notes": "Direct code-level verification of docs/THREAT-MODEL-AND-SUPPLY-CHAIN.md's Package recipes control ('Static parsing only; PKGBUILDs never execute'). tools/deep_inventory.py's parse_pkgbuild() reads PKGBUILD text via Path.read_text() and extracts fields with re.search/re.findall only -- no exec/eval/subprocess/os.system call operates on PKGBUILD content anywhere in that function. tools/collect_recipe_tree.py's one subprocess.run call runs 'git -C <root> rev-parse HEAD' (reading the checked-out tree's revision), not interpreting any PKGBUILD. tools/import_recipe_tree.py performs no execution, only validation/import of the already-parsed JSON records. Confirms the control for these three files at this commit only; does not audit every current or future code path that might touch recipe text, and does not close the row's still-open dynamic-field-coverage or source-checksum-retrieval assurance needs."
     },
     {
+      "id": "evidence:akb-process:projection-write-atomicity-code-review-2026-07-31",
+      "class": "observed",
+      "title": "Code inspection: CURRENT-projection writes are validate-then-write but not OS-level atomic",
+      "locator": "tools/import_package_catalog.py:import_catalog, tools/import_deep_inventory.py:import_inventory",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "53e9881",
+      "integrity": null,
+      "notes": "Code-level correction to docs/THREAT-MODEL-AND-SUPPLY-CHAIN.md's Generated projections control, previously described only as 'atomic current-view replacement'. Confirmed: every import_*.py module that writes CURRENT calls its own verify_input/validation step first and raises before any write on failure (e.g. import_package_catalog.py's import_catalog() calls verify_input() before build_catalog()/write_json(CURRENT, ...); a hash/field/count mismatch raises before CURRENT is touched) -- genuine transaction-level atomicity. Not confirmed, and likely false as literally stated: the CURRENT write itself (write_json's path.write_text) is a direct in-place write; no os.replace or rename-based swap was found guarding any CURRENT write across the codebase, so a process interruption during that specific write could corrupt current.json/current/. Documentation-only correction; implementing an actual os.replace-based atomic swap would be a production import-pipeline code change, out of scope here."
+    },
+    {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",
       "class": "primary",
       "title": "GNU libiconv (official project page)",

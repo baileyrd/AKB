@@ -8,6 +8,7 @@ model_refs:
 evidence_refs:
   - evidence:msys-runtime:git-for-windows-comparative-observation-2026-07-30
   - evidence:msys-runtime:fork-emulation-observation-2026-07-31
+  - evidence:msys-runtime:cross-installation-toolchain-observation-2026-07-31
 last_verified: 2026-07-31
 ---
 
@@ -86,6 +87,34 @@ This is also consistent with
 [Windows platform boundaries](WINDOWS-PLATFORM-BOUNDARIES.md#controlled-local-host-observation)'s
 finding that native symlink creation requires elevation in this same
 non-elevated session — the runtime's fallback path, not a defect.
+
+## Cross-installation toolchain execution observation
+
+A 2026-07-31 session installed a genuinely new, third MSYS2 distribution
+on this host (`C:\msys64`, via `winget install MSYS2.MSYS2`) — distinct
+from both installations above. `uname -a` reported the identical version
+string as Git for Windows' bundled runtime,
+`3.6.9-b4195d69.x86_64`, but the two `msys-2.0.dll` files are
+confirmed **not** byte-identical: `C:\msys64\usr\bin\msys-2.0.dll` is
+3,366,529 bytes (SHA-256
+`80817f159a33b8f641e6a15de73d1efcc9af3a7557a69121e4798c99930152f1`)
+versus Git for Windows' 3,368,543 bytes (SHA-256
+`2ea49553e4c03055dcf1c4a2bef54668081a07663fba283f4b34cf70f2157191`) — the
+same nominal upstream version tag does not imply the same build.
+
+Separately, a native UCRT64 `gcc.exe` built by this new installation's
+own toolchain was run as a child process of Git for Windows' bash (this
+session's ordinary shell) and reproducibly failed with `Cannot create
+temporary file in C:\Windows\: Permission denied`; the identical
+command succeeded when run as a child of `C:\msys64`'s own
+`bash.exe` instead. This is concrete evidence that a native toolchain
+binary's environment-variable expectations (here, temp-directory
+resolution) are tied to the specific MSYS runtime instance that spawned
+it, not portable across any msys-2.0.dll-providing shell on the same
+host — a distinct divergence from the symlink-fallback one above, in a
+different subsystem (process/environment setup rather than filesystem).
+See [Build artifact and flow mappings](BUILD-ARTIFACT-FLOW-MAPPINGS.md#worked-example-zlib-a-second-attempt-reaching-compile-link-and-execution)
+for the full build exercise this was found during.
 
 ## Controlled fork() emulation observation
 

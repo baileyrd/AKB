@@ -10717,6 +10717,16 @@
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:msys-runtime:cross-installation-toolchain-observation-2026-07-31",
+      "class": "observed",
+      "title": "Cross-installation MSYS runtime and toolchain-execution observation (C:\\msys64 vs Git for Windows)",
+      "locator": "local host observation, C:\\msys64\\usr\\bin\\msys-2.0.dll vs C:\\Program Files\\Git\\usr\\bin\\msys-2.0.dll",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "3.6.9-b4195d69.x86_64",
+      "integrity": "80817f159a33b8f641e6a15de73d1efcc9af3a7557a69121e4798c99930152f1",
+      "notes": "Third MSYS2 distribution installed on this host (C:\\msys64, via winget install MSYS2.MSYS2), compared against the already-documented Git for Windows bundled runtime. uname -a reports the identical version string (3.6.9-b4195d69.x86_64) for both, but the msys-2.0.dll files are confirmed not byte-identical: C:\\msys64's is 3,366,529 bytes (SHA-256 80817f159a33b8f641e6a15de73d1efcc9af3a7557a69121e4798c99930152f1) vs Git for Windows' 3,368,543 bytes (SHA-256 2ea49553e4c03055dcf1c4a2bef54668081a07663fba283f4b34cf70f2157191) -- matching version tags do not imply matching builds. Separately, a native UCRT64 gcc.exe built by C:\\msys64's own toolchain reproducibly failed with 'Cannot create temporary file in C:\\Windows\\: Permission denied' when run as a child process of Git for Windows' bash, but succeeded when run as a child of C:\\msys64's own bash.exe -- evidence that a native toolchain binary's environment expectations are tied to its spawning MSYS runtime instance specifically, not portable across any msys-2.0.dll-providing shell on the host."
+    },
+    {
       "id": "evidence:akb-process:zlib-upstream-build-2026-07-31",
       "class": "observed",
       "title": "zlib 1.3.2 upstream source build reaching compile, link, and execution under a real UCRT64 GCC toolchain",

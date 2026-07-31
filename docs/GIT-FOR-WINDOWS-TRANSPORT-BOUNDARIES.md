@@ -8,7 +8,8 @@ model_refs:
   - library:gnu:zlib
 evidence_refs:
   - evidence:git-for-windows:local-installation-observation-2026-07-30
-last_verified: 2026-07-30
+  - evidence:git-for-windows:cmd-exe-shell-context-observation-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Git for Windows Transport, Credentials, and DLL Boundaries
@@ -72,6 +73,23 @@ feature set (no `brotli`/`zstd`/`libssh2`/`libidn2` in the system build).
 This is directly observed, single-workstation evidence: it does not
 establish which resolution order any other installation, shell, or script
 invocation will use.
+
+A third invocation context, `cmd.exe`, was observed on 2026-07-31 to
+resolve identically to the PowerShell session above, not as a distinct
+third behavior: `where ssh` listed `C:\Windows\System32\OpenSSH\ssh.exe`
+first (matching PowerShell's resolution, `OpenSSH_for_Windows_9.5p2,
+LibreSSL 3.8.2`), and `where curl`/`curl --version` resolved only to
+`C:\Windows\System32\curl.exe`. Direct `PATH` inspection explains why:
+`C:\Program Files\Git\mingw64\bin` (where Git for Windows' own `curl.exe`
+lives) is absent from the base Windows user `PATH` entirely — only
+`Git\cmd` and `Git\usr\bin` are present — while `C:\Windows\System32\OpenSSH\`
+precedes `Git\usr\bin` in that same `PATH`. `cmd.exe` and PowerShell share
+this base `PATH`; Git Bash's distinct resolution in the table above is not
+a property of "PowerShell vs. Git Bash" as two arbitrary shells, but of
+Git Bash's own shell-launch machinery augmenting `PATH` with
+`Git\mingw64\bin` for its session specifically, which the base Windows
+environment does not do. This remains single-workstation evidence for
+this one `PATH` configuration.
 
 **Credential helper** (sanitized, per Decision Rule 2): `git config
 --show-origin --get credential.helper` reported `manager`, sourced from

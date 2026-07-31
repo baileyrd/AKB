@@ -13,7 +13,8 @@ model_refs:
 evidence_refs:
   - evidence:facebook:zstd-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+  - evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Zstandard (library)
@@ -63,6 +64,46 @@ snapshot.
 
 - A C API (`ZSTD_compress`, `ZSTD_decompress`, and streaming variants)
   for Zstandard compression and decompression, per the documentation.
+
+## Family Classification
+
+A 2026-07-31 static analysis of the UCRT64 package archive
+(`mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst`, downloaded from
+the official mirror, SHA-256
+`dbdb8427280046a2b41697780aa4c52983b708082b0da4755951dc3bea96ca89`)
+recorded all six member types the
+[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
+methodology distinguishes, each now a separate typed entity in this
+knowledge base's graph — the second library after [zlib](ZLIB.md#family-classification)
+to carry this full worked example:
+
+- **Headers** — `header-set:facebook:zstd-headers`: `zstd.h` (the API
+  surface), `zstd_errors.h`, and `zdict.h` (`/ucrt64/include/`).
+- **`pkg-config` module** — `pkg-config-module:facebook:zstd-pc`:
+  `libzstd.pc` declares `-I/ucrt64/include` and `-L/ucrt64/lib -lzstd`,
+  with no further `Requires:`.
+- **Static library** — `static-library:facebook:libzstd.a`: 37 object
+  members, the library's own compiled implementation.
+- **Import library** — `import-library:facebook:libzstd.dll.a`: 600
+  members — per-export link-time thunks for the DLL below (roughly
+  matching its 598 exports), not a second copy of the implementation
+  (Classification Rule 4).
+- **Runtime DLL** — `dll:facebook:libzstd.dll`: 598 recorded exports and
+  11 imported system DLLs (ten `api-ms-win-crt-*` UCRT split DLLs plus
+  `kernel32.dll`) — no imported dependency on any other MSYS2-packaged
+  library, consistent with the empty Dependencies table below.
+- **Executables** (not part of the six family-classification member
+  types, but co-owned by the same package archive): `zstd.exe` and
+  `pzstd.exe` both import `libzstd.dll` by name — direct byte-level
+  confirmation that the CLI tools link the package's own shared library
+  dynamically, per the archive-payload worked example already cited on
+  [Package-to-File Inventory](PACKAGE-FILE-INVENTORY.md#worked-examples-archive-payload-observation-beyond-the-installed-subset).
+
+All five family-classification entities are attributed to the same
+`package:msys2:mingw-w64-ucrt-x86_64-zstd` package ownership. This
+establishes classification evidence only — which artifacts exist and
+how they relate structurally — not source-to-binary byte identity or
+ABI compatibility across versions, per Classification Rule 5.
 
 ## Dependencies
 
@@ -146,13 +187,13 @@ project site (`evidence:facebook:zstd-manual-2026-07-30`), matching the
 `project_url` already recorded for
 `package:msys2:mingw-w64-ucrt-x86_64-zstd` in the catalog. Package
 identity, version, and the two modeled dependent edges are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: the ~92 remaining recorded
-dependents not individually modeled, the separate CLANG64-packaged zstd
-library ([LLD](LLD.md)/[LLDB](LLDB.md) dependency), and header-level API
-surface / PE import/export-level evidence, per the
-[Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
-methodology.
+pacman catalog snapshot (`evidence:catalog:current`). Header-level API
+surface and PE import/export-level evidence, previously out of scope,
+are now covered by the 2026-07-31 archive analysis
+(`evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31`) cited
+in Family Classification above. Still open: the ~92 remaining recorded
+dependents not individually modeled and the separate CLANG64-packaged
+zstd library ([LLD](LLD.md)/[LLDB](LLDB.md) dependency).
 
 ## Related Objects
 

@@ -44,6 +44,7 @@ Objects
 - component:tukaani:xz (component): XZ Utils
 - component:vim:vim (component): Vim
 - component:zstd:zstd (component): Zstandard (zstd)
+- dll:facebook:libzstd.dll (dll): libzstd.dll (UCRT64)
 - dll:gnu:zlib1.dll (dll): zlib1.dll (UCRT64)
 - dll:msys2:/ucrt64/bin/zlib1.dll (dll): /ucrt64/bin/zlib1.dll
 - dll:windows:api-ms-win-crt-convert-l1-1-0.dll (dll): api-ms-win-crt-convert-l1-1-0.dll
@@ -599,9 +600,11 @@ Objects
 - filesystem-path:msys2:/usr/share/man/man3/libcurl-url.3.gz (filesystem-path): /usr/share/man/man3/libcurl-url.3.gz
 - filesystem-path:msys2:/usr/share/man/man3/libcurl-ws.3.gz (filesystem-path): /usr/share/man/man3/libcurl-ws.3.gz
 - filesystem-path:msys2:/usr/share/man/man3/libcurl.3.gz (filesystem-path): /usr/share/man/man3/libcurl.3.gz
+- header-set:facebook:zstd-headers (header-set): zstd headers (UCRT64)
 - header-set:gnu:zlib-headers (header-set): zlib headers (UCRT64)
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
+- import-library:facebook:libzstd.dll.a (import-library): libzstd.dll.a (UCRT64)
 - import-library:gnu:libz.dll.a (import-library): libz.dll.a (UCRT64)
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
 - library:boost:boost (library): Boost
@@ -16419,6 +16422,7 @@ Objects
 - package:msys2:zsh (package): zsh
 - package:msys2:zsh-doc (package): zsh-doc
 - package:msys2:zstd (package): zstd
+- pkg-config-module:facebook:zstd-pc (pkg-config-module): libzstd.pc (UCRT64)
 - pkg-config-module:gnu:zlib-pc (pkg-config-module): zlib.pc (UCRT64)
 - pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc (pkg-config-module): /ucrt64/lib/pkgconfig/zlib.pc
 - platform:microsoft:windows (platform): Microsoft Windows
@@ -16429,6 +16433,7 @@ Objects
 - repository:msys2:msys (repository): msys
 - repository:msys2:ucrt64 (repository): ucrt64
 - runtime:msys2:msys-2.0.dll (runtime): msys-2.0.dll
+- static-library:facebook:libzstd.a (static-library): libzstd.a (UCRT64)
 - static-library:gnu:libz.a (static-library): libz.a (UCRT64)
 - static-library:msys2:/ucrt64/lib/libz.a (static-library): /ucrt64/lib/libz.a
 

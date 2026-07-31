@@ -3,9 +3,14 @@ id: doc:volume-13:reverse-dependency-impact-analysis
 title: Reverse Dependency and Impact Analysis Model
 volume: 13
 status: partial
-model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+model_refs:
+  - library:gnu:zlib
+  - dll:gnu:zlib1.dll
+  - package:msys2:mingw-w64-ucrt-x86_64-zlib
+evidence_refs:
+  - evidence:catalog:current
+  - evidence:inventory:20260729T232435Z-f22b2b35e873
+last_verified: 2026-07-30
 ---
 
 # Reverse Dependency and Impact Analysis Model
@@ -54,6 +59,63 @@ flowchart LR
 4. Include derived reverse consumers, unresolved records, and confidence.
 5. Prioritize candidates for controlled rebuild, ABI comparison, or runtime
    validation rather than presenting graph reachability as a defect result.
+
+## Generated Views
+
+Two of the five edge families above are already backed by reproducible
+generated views, previously produced but not linked from this page:
+
+- [`generated/reverse-dependency-impact.json`](../generated/reverse-dependency-impact.json)
+  — package runtime dependency edges, one entry per package with its
+  `declared_consumers` list, snapshot-qualified via its own `snapshot`
+  field. Built by `tools/build_catalog_views.py` from
+  `evidence:catalog:current`.
+- [`generated/binary-dependency-graph.json`](../generated/binary-dependency-graph.json)
+  and [`generated/binary-dependency-report.md`](../generated/binary-dependency-report.md)
+  — PE DLL import edges (3,058 as of this snapshot) with named-symbol and
+  ordinal-import counts and derived reverse-importer counts per DLL. Built
+  by `tools/import_deep_inventory.py` from a bounded installed-artifact
+  snapshot (`evidence:inventory:20260729T232435Z-f22b2b35e873`); scope is
+  that installation only, not every environment or package this knowledge
+  base documents.
+
+The Recipe build/check dependency and Metadata requirement edge families
+have no corresponding generated view yet.
+
+## Worked Example: zlib
+
+Querying [zlib](ZLIB.md)'s reverse dependents through three different edge
+families in this table, on the same package, produces three different and
+individually correct numbers — the concrete case Analysis Rules 2 and 5
+describe:
+
+- **299** — every edge in `work/official-catalog/dependency-edges.csv`
+  targeting `mingw-w64-ucrt-x86_64-zlib`, the figure
+  [zlib's own page](ZLIB.md#reverse-dependencies) cites. This mixes two
+  dependency classes.
+- **297** — the `declared_consumers` count in
+  `generated/reverse-dependency-impact.json` for the same package,
+  because that view's own stated scope is
+  "declared runtime package dependencies only" and so excludes the
+  catalog's 2 `optional-depends-on` edges. Partitioning by edge type (Rule
+  2) recovers the difference: 297 `runtime-depends-on` + 2
+  `optional-depends-on` = 299.
+- **34** — the count of `imports-dll` edges in
+  `generated/binary-dependency-graph.json` targeting
+  `dll:gnu:zlib1.dll`'s installed-artifact counterpart
+  (`dll:msys2:/ucrt64/bin/zlib1.dll`) — Binutils and GCC toolchain
+  executables (`ld.exe`, `objdump.exe`, `cc1plus.exe`, and 31 others) on
+  the one bounded installation this snapshot observed. This is
+  byte-level PE import evidence, a categorically different and much
+  narrower claim than a catalog-declared package dependency (per the
+  table above): it proves an observed import table entry on this
+  specific installation, not every UCRT64 install, and not that removing
+  zlib would break these 34 binaries at load or run time (per Rule 4).
+
+None of the three numbers is wrong; each answers a differently-scoped
+question, which is why Rule 5 requires keeping catalog dependency changes
+and binary-import changes separately attributable rather than collapsing
+them into one "N things depend on zlib" figure.
 
 ## Related Views
 

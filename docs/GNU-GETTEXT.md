@@ -88,7 +88,13 @@ The snapshot records **141** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` — a substantial
 dependent count, exceeding [GNU libiconv](GNU-LIBICONV.md#reverse-dependencies)'s
 82 but smaller than [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167 and
-[zlib](ZLIB.md#reverse-dependencies)'s 299. See the
+[zlib](ZLIB.md#reverse-dependencies)'s 299. One is now modeled in this
+knowledge base: [libgpg-error](LIBGPG-ERROR.md#dependencies)
+(`relationship:foundation-libraries:libgpg-error-requires-gettext`,
+added 2026-07-30 to close a gap in
+[libgpg-error's own dependency table](LIBGPG-ERROR.md#dependencies),
+which had cited this package by name without a corresponding graph
+edge). See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 

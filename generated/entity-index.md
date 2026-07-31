@@ -614,9 +614,9 @@
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 3 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
-| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 0 | 2 |
+| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 1 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
-| library:gnu:gettext | library | GNU gettext | partial | 2 | 9 |
+| library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
@@ -625,7 +625,7 @@
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 17 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
-| library:gnu:libstdc++ | library | libstdc++ | partial | 1 | 3 |
+| library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 8 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libtasn1@ucrt64 | library | GNU Libtasn1 (UCRT64) | partial | 0 | 2 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 5 |
@@ -635,28 +635,28 @@
 | library:gnu:ncurses@ucrt64 | library | ncurses (UCRT64) | partial | 1 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
-| library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
+| library:gnu:termcap | library | GNU termcap | partial | 2 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
-| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 4 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 5 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 10 |
-| library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
+| library:gnupg:libassuan | library | libassuan | partial | 3 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
 | library:gnupg:libgcrypt@msys | library | libgcrypt (MSYS) | partial | 3 | 2 |
-| library:gnupg:libgpg-error | library | libgpg-error | partial | 1 | 4 |
+| library:gnupg:libgpg-error | library | libgpg-error | partial | 2 | 4 |
 | library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 4 | 4 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 1 |
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
-| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
+| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 2 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 10 | 3 |
 | library:gnutls:gnutls@ucrt64 | library | GnuTLS (UCRT64) | partial | 11 | 1 |
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
-| library:google:cppdap | library | cppdap | partial | 1 | 2 |
+| library:google:cppdap | library | cppdap | partial | 2 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 5 | 2 |
-| library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
+| library:jsoncpp:jsoncpp | library | JsonCpp | partial | 2 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
 | library:libedit:libedit | library | libedit | partial | 2 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 4 |
@@ -674,7 +674,7 @@
 | library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
-| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 4 |
+| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 5 |
 | library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |

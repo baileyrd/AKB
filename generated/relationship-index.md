@@ -76216,6 +76216,7 @@
 | relationship:foundation-libraries:clang64-contains-zlib | contains | environment:msys2:clang64 | library:gnu:zlib@clang64 | partial |
 | relationship:foundation-libraries:clang64-contains-zstd | contains | environment:msys2:clang64 | library:facebook:zstd@clang64 | partial |
 | relationship:foundation-libraries:cppdap-packaged-by-package | packaged-by | library:google:cppdap | package:msys2:mingw-w64-ucrt-x86_64-cppdap | verified |
+| relationship:foundation-libraries:cppdap-requires-libstdcxx | requires | library:google:cppdap | library:gnu:libstdc++ | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-brotli-ucrt64 | requires | library:curl:curl@ucrt64 | library:google:brotli@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-c-ares-ucrt64 | requires | library:curl:curl@ucrt64 | library:c-ares:c-ares@ucrt64 | verified |
 | relationship:foundation-libraries:curl-ucrt64-requires-ca-certificates-ucrt64 | requires | library:curl:curl@ucrt64 | library:mozilla:ca-certificates@ucrt64 | verified |
@@ -76274,6 +76275,7 @@
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
 | relationship:foundation-libraries:isl-requires-gmp | requires | library:libisl:isl | library:gnu:gmp | verified |
 | relationship:foundation-libraries:jsoncpp-packaged-by-package | packaged-by | library:jsoncpp:jsoncpp | package:msys2:mingw-w64-ucrt-x86_64-jsoncpp | verified |
+| relationship:foundation-libraries:jsoncpp-requires-libstdcxx | requires | library:jsoncpp:jsoncpp | library:gnu:libstdc++ | verified |
 | relationship:foundation-libraries:libarchive-packaged-by-package | packaged-by | library:libarchive:libarchive | package:msys2:mingw-w64-ucrt-x86_64-libarchive | verified |
 | relationship:foundation-libraries:libarchive-requires-expat | requires | library:libarchive:libarchive | library:libexpat:expat | verified |
 | relationship:foundation-libraries:libarchive-requires-libiconv | requires | library:libarchive:libarchive | library:gnu:libiconv | verified |
@@ -76284,6 +76286,7 @@
 | relationship:foundation-libraries:libassuan-msys-uses-msys-runtime | uses-runtime | library:gnupg:libassuan@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libassuan-packaged-by-package | packaged-by | library:gnupg:libassuan | package:msys2:mingw-w64-ucrt-x86_64-libassuan | verified |
 | relationship:foundation-libraries:libassuan-requires-libgpg-error | requires | library:gnupg:libassuan | library:gnupg:libgpg-error | verified |
+| relationship:foundation-libraries:libassuan-requires-libstdcxx | requires | library:gnupg:libassuan | library:gnu:libstdc++ | verified |
 | relationship:foundation-libraries:libcbor-packaged-by-package | packaged-by | library:pjk:libcbor | package:msys2:libcbor | verified |
 | relationship:foundation-libraries:libcbor-uses-msys-runtime | uses-runtime | library:pjk:libcbor | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libcurl-packaged-by-package | packaged-by | library:curl:libcurl | package:msys2:libcurl | verified |
@@ -76315,6 +76318,7 @@
 | relationship:foundation-libraries:libgpg-error-msys-requires-libintl | requires | library:gnupg:libgpg-error@msys | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libgpg-error-msys-uses-msys-runtime | uses-runtime | library:gnupg:libgpg-error@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgpg-error-packaged-by-package | packaged-by | library:gnupg:libgpg-error | package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | verified |
+| relationship:foundation-libraries:libgpg-error-requires-gettext | requires | library:gnupg:libgpg-error | library:gnu:gettext | verified |
 | relationship:foundation-libraries:libhogweed-msys-requires-gmp-msys | requires | library:nettle:libhogweed@msys | library:gnu:gmp@msys | verified |
 | relationship:foundation-libraries:libiconv-msys-packaged-by-package | packaged-by | library:gnu:libiconv@msys | package:msys2:libiconv | verified |
 | relationship:foundation-libraries:libiconv-msys-uses-msys-runtime | uses-runtime | library:gnu:libiconv@msys | runtime:msys2:msys-2.0.dll | partial |
@@ -76363,6 +76367,7 @@
 | relationship:foundation-libraries:libssh2-ucrt64-requires-openssl-ucrt64 | requires | library:libssh2:libssh2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:libssh2-ucrt64-requires-zlib | requires | library:libssh2:libssh2@ucrt64 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:libssh2-uses-msys-runtime | uses-runtime | library:libssh2:libssh2 | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libstdcxx-requires-libwinpthread | requires | library:gnu:libstdc++ | library:mingw-w64:libwinpthread | verified |
 | relationship:foundation-libraries:libtasn1-packaged-by-package | packaged-by | library:gnu:libtasn1 | package:msys2:libtasn1 | verified |
 | relationship:foundation-libraries:libtasn1-uses-msys-runtime | uses-runtime | library:gnu:libtasn1 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libunistring-packaged-by-package | packaged-by | library:gnu:libunistring | package:msys2:libunistring | verified |
@@ -76373,6 +76378,7 @@
 | relationship:foundation-libraries:libwinpthread-packaged-by-package | packaged-by | library:mingw-w64:libwinpthread | package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | verified |
 | relationship:foundation-libraries:libxcrypt-packaged-by-package | packaged-by | library:libxcrypt:libxcrypt | package:msys2:libxcrypt | verified |
 | relationship:foundation-libraries:libxcrypt-uses-msys-runtime | uses-runtime | library:libxcrypt:libxcrypt | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64 | requires | library:gnome:libxml2@clang64 | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:libxml2-msys-packaged-by-package | packaged-by | library:gnome:libxml2@msys | package:msys2:libxml2 | verified |
 | relationship:foundation-libraries:libxml2-msys-requires-readline-msys | requires | library:gnome:libxml2@msys | library:gnu:readline@msys | verified |
 | relationship:foundation-libraries:libxml2-msys-requires-zlib-msys | requires | library:gnome:libxml2@msys | library:gnu:zlib@msys | verified |
@@ -76440,6 +76446,7 @@
 | relationship:foundation-libraries:npth-msys-packaged-by-package | packaged-by | library:gnupg:npth@msys | package:msys2:libnpth | verified |
 | relationship:foundation-libraries:npth-msys-uses-msys-runtime | uses-runtime | library:gnupg:npth@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:npth-packaged-by-package | packaged-by | library:gnupg:npth | package:msys2:mingw-w64-ucrt-x86_64-npth | verified |
+| relationship:foundation-libraries:npth-requires-libstdcxx | requires | library:gnupg:npth | library:gnu:libstdc++ | verified |
 | relationship:foundation-libraries:p11-kit-packaged-by-package | packaged-by | library:p11-glue:p11-kit | package:msys2:libp11-kit | verified |
 | relationship:foundation-libraries:p11-kit-requires-libffi-msys | requires | library:p11-glue:p11-kit | library:libffi:libffi@msys | verified |
 | relationship:foundation-libraries:p11-kit-requires-libintl | requires | library:p11-glue:p11-kit | library:gnu:libintl | verified |
@@ -76465,6 +76472,7 @@
 | relationship:foundation-libraries:sqlite3-packaged-by-package | packaged-by | library:sqlite:sqlite3 | package:msys2:mingw-w64-ucrt-x86_64-sqlite3 | verified |
 | relationship:foundation-libraries:sqlite3-requires-zlib | requires | library:sqlite:sqlite3 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:termcap-packaged-by-package | packaged-by | library:gnu:termcap | package:msys2:mingw-w64-ucrt-x86_64-termcap | verified |
+| relationship:foundation-libraries:termcap-requires-libstdcxx | requires | library:gnu:termcap | library:gnu:libstdc++ | verified |
 | relationship:foundation-libraries:ucrt64-contains-boost | contains | environment:msys2:ucrt64 | library:boost:boost | partial |
 | relationship:foundation-libraries:ucrt64-contains-cppdap | contains | environment:msys2:ucrt64 | library:google:cppdap | partial |
 | relationship:foundation-libraries:ucrt64-contains-expat | contains | environment:msys2:ucrt64 | library:libexpat:expat | partial |

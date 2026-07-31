@@ -16982,6 +16982,14 @@ Relationships
 - component:tukaani:xz --requires--> library:tukaani:liblzma@msys
 - component:tukaani:xz --requires--> library:gnu:libiconv@msys
 - library:darwinsys:file --requires--> library:tukaani:liblzma@msys
+- library:gnu:libstdc++ --requires--> library:mingw-w64:libwinpthread
+- library:gnupg:libgpg-error --requires--> library:gnu:gettext
+- library:gnupg:libassuan --requires--> library:gnu:libstdc++
+- library:gnupg:npth --requires--> library:gnu:libstdc++
+- library:google:cppdap --requires--> library:gnu:libstdc++
+- library:jsoncpp:jsoncpp --requires--> library:gnu:libstdc++
+- library:gnu:termcap --requires--> library:gnu:libstdc++
+- library:gnome:libxml2@clang64 --requires--> library:gnu:zlib@clang64
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

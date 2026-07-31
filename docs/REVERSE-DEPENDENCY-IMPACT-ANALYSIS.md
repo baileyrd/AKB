@@ -10,7 +10,8 @@ model_refs:
 evidence_refs:
   - evidence:catalog:current
   - evidence:inventory:20260729T232435Z-f22b2b35e873
-last_verified: 2026-07-30
+  - evidence:akb-process:zstd-recipe-import-exercise-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Reverse Dependency and Impact Analysis Model
@@ -80,7 +81,41 @@ generated views, previously produced but not linked from this page:
   base documents.
 
 The Recipe build/check dependency and Metadata requirement edge families
-have no corresponding generated view yet.
+have no corresponding generated view yet — not because the import logic
+is missing, but because it has never resolved a real edge, as the
+2026-07-31 controlled exercise below demonstrates.
+
+### Controlled exercise: why the Recipe build/check edge family is still empty
+
+`tools/import_deep_inventory.py`'s `build_projection()` already contains
+working code to emit `build-depends-on` and `check-depends-on`
+relationships from a recipe's `makedepends`/`checkdepends` fields (the
+same function `tools/import_recipe_tree.py` calls). On 2026-07-31 this
+was exercised end to end against one real recipe, not a synthetic
+fixture: the current `mingw-w64-zstd/PKGBUILD` was downloaded from the
+official `https://github.com/msys2/MINGW-packages` tree, run through
+`tools/collect_recipe_tree.py`, then `tools/import_recipe_tree.py`.
+
+The result was one `build-recipe` entity and **zero** relationships —
+every one of its 5 package-name/dependency references (`pkgname`,
+`depends`, and 3 `makedepends` entries) landed in `unresolved.json`
+instead, because each one is the literal, unexpanded string
+`${MINGW_PACKAGE_PREFIX}-...` in the source text. Per
+[Package recipes never execute](THREAT-MODEL-AND-SUPPLY-CHAIN.md#measured-control-verification-package-recipes-never-execute),
+`parse_pkgbuild()` deliberately never evaluates shell variables — the
+same static-parsing-only property that makes recipe collection safe
+also means `MINGW_PACKAGE_PREFIX` (`mingw-w64-ucrt-x86_64`, `mingw-w64-clang64`,
+etc., normally substituted per target environment at build time) is
+never resolved to a real package ID. This is the concrete, root-caused
+reason the edge family has stayed empty: it is
+[Package recipes](THREAT-MODEL-AND-SUPPLY-CHAIN.md)'s own documented
+"Expanded dynamic-field coverage" assurance need surfacing here as a
+missing generated view, not two independent gaps. This one-recipe,
+local-only (per [Local-Only Evidence Retention](LOCAL-EVIDENCE-RETENTION.md),
+not staged in this repository) result does not establish the outcome
+for every recipe — a recipe with a literal (non-templated) dependency
+name would resolve normally — only that this specific, common templating
+pattern defeats resolution as designed.
 
 ## Worked Example: zlib
 

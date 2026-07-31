@@ -10648,6 +10648,16 @@
       "notes": "Controlled local observation for docs/PACMAN-REPOSITORY-TRUST-MODEL.md's Keyring and signatures row, independent of a pacman installation (none available in this authoring environment). Downloaded the archive and its detached .sig from the official mirror; gpg --verify reported a Good signature from RSA key 5F944B027F7FE2091985AA2EFA11531AA0AA7F57, 'Christoph Reiter (MSYS2 development key) <reiter.christoph@gmail.com>', after fetching that key from a public keyserver. Explicitly not the same trust chain pacman itself uses: gpg warned the key is not certified with a trusted signature, since it was fetched ad hoc rather than through pacman's own msys2-keyring package and local trust database. Establishes archive-signature validity for one package/version against one keyserver-sourced key on one date only."
     },
     {
+      "id": "evidence:akb-process:zstd-recipe-import-exercise-2026-07-31",
+      "class": "observed",
+      "title": "End-to-end recipe collector/importer exercise against a real PKGBUILD (zstd)",
+      "locator": "local disposable directory, tools/collect_recipe_tree.py + tools/import_recipe_tree.py against https://github.com/msys2/MINGW-packages/blob/master/mingw-w64-zstd/PKGBUILD",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Controlled exercise for docs/REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md's Recipe build/check dependency edge family. Downloaded the real, current mingw-w64-zstd/PKGBUILD and ran it through the actual collector and importer (tools/import_deep_inventory.py's build_projection(), which already contains build-depends-on/check-depends-on edge-emission code). Result: one build-recipe entity, zero relationships -- all 5 package-name/dependency references (pkgname, depends, 3 makedepends entries) landed in unresolved.json because each is the literal unexpanded string ${MINGW_PACKAGE_PREFIX}-... in the source text. parse_pkgbuild() deliberately never evaluates shell variables (the same static-parsing-only property verified safe in evidence:akb-process:recipe-no-execution-code-review-2026-07-31), so this templating pattern defeats dependency resolution by design. Root-causes why this edge family has stayed empty, connecting it to the Package recipes control's own 'Expanded dynamic-field coverage' assurance need. Local-only per docs/LOCAL-EVIDENCE-RETENTION.md, not staged in this repository; single-recipe evidence, does not establish the outcome for recipes with literal (non-templated) dependency names."
+    },
+    {
       "id": "evidence:windows:host-boundary-observation-2026-07-30",
       "class": "observed",
       "title": "Windows host edition, filesystem, and symlink-privilege observation",

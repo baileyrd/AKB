@@ -66,8 +66,16 @@ ca-certificates-specific API.
 
 ## Dependencies
 
-The catalog snapshot records no `runtime-depends-on` edges for
-`package:msys2:ca-certificates`.
+**Correction, 2026-07-30**: this page previously claimed the catalog
+snapshot records no `runtime-depends-on` edges for
+`package:msys2:ca-certificates`. That was wrong: it records six —
+`bash`, `coreutils`, `findutils`, `openssl`, `p11-kit`, and `sed`. These
+read as installation/packaging-script dependencies of the
+`ca-certificates` package itself (a certificate bundle, not executable
+code) rather than something consuming ca-certificates' trust store the
+way [curl](CURL.md), [libcurl](LIBCURL.md), and [libssh2](LIBSSH2.md) do
+in Reverse Dependencies below; this page does not further characterize
+what each of the six edges represents.
 
 ## Reverse Dependencies
 

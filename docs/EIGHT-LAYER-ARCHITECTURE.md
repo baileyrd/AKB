@@ -11,7 +11,8 @@ model_refs:
   - component:gnu:gcc
   - component:llvm:clang
   - library:gnu:zlib
-evidence_refs: []
+evidence_refs:
+  - evidence:windows:host-boundary-observation-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -43,16 +44,23 @@ flowchart TB
 | 5 | pacman, repositories, metadata, transactions | 7 and 11 | [Pacman architecture](PACMAN-ARCHITECTURE.md), [Pacman repository trust model](PACMAN-REPOSITORY-TRUST-MODEL.md), [Repository package inventory](REPOSITORY-PACKAGE-INVENTORY.md) |
 | 6 | GCC, LLVM, linkers, build systems, recipes | 8 and 14 | [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md) (14 per-tool pages: [GCC](GNU-GCC.md), [Clang](CLANG.md), [GNU Binutils](GNU-BINUTILS.md), [LLD](LLD.md), [GDB](GNU-GDB.md), [LLDB](LLDB.md), [CMake](CMAKE.md), [Meson](MESON.md), [Ninja](NINJA.md), [pkgconf](PKGCONF.md), the Autotools family), [Build system role model](BUILD-SYSTEM-ROLE-MODEL.md), [Build-artifact flow mappings](BUILD-ARTIFACT-FLOW-MAPPINGS.md) |
 | 7 | Shells, GNU tools, Git, libraries, development tools | 5, 6, and 9 | [GNU userland role model](GNU-USERLAND-ROLE-MODEL.md) (29 per-tool pages: [Bash](GNU-BASH.md), [Coreutils](GNU-COREUTILS.md), archive/compression tools, editors/pagers/terminals, [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md), and more), [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md) ([zlib](ZLIB.md), [libstdc++](LIBSTDCXX.md), [libc++](LIBCXX.md), [GNU libiconv](GNU-LIBICONV.md), [GNU gettext](GNU-GETTEXT.md)) |
-| 8 | Human and automated consumers of built/runtime artifacts | 1, 18, and 19 | [Developer/operator workflows](DEVELOPER-OPERATOR-WORKFLOWS.md) |
+| 8 | Human and automated consumers of built/runtime artifacts | 1, 18, and 19 | [Developer workflow](DEVELOPER-WORKFLOW.md), [Operator refresh workflow](OPERATOR-REFRESH-WORKFLOW.md) |
 
 Layers 6 and 7 carry the deepest drill-downs in this knowledge base to
 date: every compiler, linker, debugger, and build-system tool identified
 for Layer 6, and every shell/coreutils/archive/editor/network tool
 identified for Layer 7, now has an individually evidence-backed page.
 Layers 1–3 (Windows kernel/API services and the MSYS runtime) remain the
-shallowest layers, gated on controlled observations rather than
-desk-researchable documentation — see each linked page's own evidence
-boundary.
+shallowest layers by that per-object-page measure, but each now carries at
+least one controlled, version-qualified local observation rather than
+desk-researchable documentation alone: Layer 1/2's
+[Windows platform boundaries](WINDOWS-PLATFORM-BOUNDARIES.md) page
+records host edition, filesystem type, and symlink-privilege facts from
+two separate observation sessions on this workstation, and Layer 3's
+[MSYS runtime behavior map](MSYS-RUNTIME-BEHAVIOR-MAP.md) records
+process/exec/signal/symlink probe outcomes from the isolated MSYS2
+installation. Neither approaches Layers 6/7's per-object page depth; see
+each linked page's own evidence boundary for what remains unobserved.
 
 ## Boundaries
 

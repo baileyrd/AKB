@@ -66,7 +66,7 @@ that a concept is defined once and referenced elsewhere by stable object ID.
 
 ## Dependencies
 
-The catalog snapshot records eleven `runtime-depends-on` edges for
+The catalog snapshot records fourteen `runtime-depends-on` edges for
 `package:msys2:git` — the largest dependency footprint of any single
 component documented across this entire volume, spanning both transport
 backends and Git's Perl-scripted subcommands:

@@ -69,10 +69,12 @@ GDB inspects and controls target processes; it does not build them (that is
 
 ## Dependencies
 
-The catalog snapshot records eleven `runtime-depends-on` edges for
+The catalog snapshot records twelve `runtime-depends-on` edges for
 `package:msys2:mingw-w64-ucrt-x86_64-gdb` — the richest dependency set of
 any toolchain component documented so far, each mapping to a specific
-debugger feature:
+debugger feature (a thirteenth, `python-pygments`, is an
+`optional-depends-on` edge, listed below but not counted in that
+figure):
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |

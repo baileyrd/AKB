@@ -1060,6 +1060,115 @@
       "evidence_refs": ["evidence:zlib:ucrt64-archive-analysis-2026-07-29"]
     },
     {
+      "id": "header-set:facebook:zstd-headers",
+      "kind": "header-set",
+      "name": "zstd headers (UCRT64)",
+      "summary": "The three public headers shipped by the UCRT64 zstd package: zstd.h (the API surface), zstd_errors.h (error-code enumeration), and zdict.h (the dictionary-training API).",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Meta (Facebook)",
+      "aliases": [],
+      "tags": ["header-set", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "members": ["/ucrt64/include/zstd.h", "/ucrt64/include/zstd_errors.h", "/ucrt64/include/zdict.h"],
+        "size_bytes": {"zstd.h": 181748, "zstd_errors.h": 4278, "zdict.h": 26516},
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zstd"
+      },
+      "evidence_refs": ["evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31"]
+    },
+    {
+      "id": "pkg-config-module:facebook:zstd-pc",
+      "kind": "pkg-config-module",
+      "name": "libzstd.pc (UCRT64)",
+      "summary": "The pkg-config module describing zstd's UCRT64 consumption surface: -I/ucrt64/include for compilation, -L/ucrt64/lib -lzstd for linking, no further pkg-config requires.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Meta (Facebook)",
+      "aliases": [],
+      "tags": ["pkg-config-module", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/lib/pkgconfig/libzstd.pc",
+        "size_bytes": 469,
+        "cflags": ["-I/ucrt64/include"],
+        "libs": ["-L/ucrt64/lib", "-lzstd"],
+        "reported_version": "1.5.7",
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zstd"
+      },
+      "evidence_refs": ["evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31"]
+    },
+    {
+      "id": "static-library:facebook:libzstd.a",
+      "kind": "static-library",
+      "name": "libzstd.a (UCRT64)",
+      "summary": "The UCRT64 static archive implementing zstd, with 37 object members covering the library's compiled implementation.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Meta (Facebook)",
+      "aliases": [],
+      "tags": ["static-library", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/lib/libzstd.a",
+        "size_bytes": 1351002,
+        "member_count": 37,
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zstd"
+      },
+      "evidence_refs": ["evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31"]
+    },
+    {
+      "id": "import-library:facebook:libzstd.dll.a",
+      "kind": "import-library",
+      "name": "libzstd.dll.a (UCRT64)",
+      "summary": "The UCRT64 import archive providing the link-time binding surface for libzstd.dll; its 600 members are per-export thunk objects rather than the library's own compiled implementation, roughly matching the DLL's 598 recorded exports.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Meta (Facebook)",
+      "aliases": [],
+      "tags": ["import-library", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/lib/libzstd.dll.a",
+        "size_bytes": 407114,
+        "member_count": 600,
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zstd"
+      },
+      "evidence_refs": ["evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31"]
+    },
+    {
+      "id": "dll:facebook:libzstd.dll",
+      "kind": "dll",
+      "name": "libzstd.dll (UCRT64)",
+      "summary": "The deployable UCRT64 zstd runtime DLL: 598 recorded exports and 11 imported system DLLs, ten from the api-ms-win-crt-* UCRT split plus kernel32.dll, with no imported dependency on any other MSYS2-packaged library.",
+      "status": "verified",
+      "confidence": "verified",
+      "authority": "Meta (Facebook)",
+      "aliases": [],
+      "tags": ["dll", "family-classification"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "path": "/ucrt64/bin/libzstd.dll",
+        "size_bytes": 1217412,
+        "export_count": 598,
+        "imported_dlls": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-filesystem-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-private-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll"
+        ],
+        "package": "package:msys2:mingw-w64-ucrt-x86_64-zstd"
+      },
+      "evidence_refs": ["evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31"]
+    },
+    {
       "id": "library:gnu:libiconv",
       "kind": "library",
       "name": "GNU libiconv",

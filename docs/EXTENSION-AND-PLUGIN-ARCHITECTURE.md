@@ -56,12 +56,25 @@ a fixed `const: "1.0.0"` (any incompatible collector change would require
 bumping that constant and the importer that validates against it), and
 `model/graph.json`'s `schema_version` and both vocabulary files' `version`
 fields follow semver (currently `0.1.0` across all three). As of this
-snapshot, however, none of these version fields has ever been bumped in
-this repository's history — there is no exercised migration case to point
-to yet, only the designed mechanism. This is stated plainly rather than
-inferred from the mechanism's existence: a compatibility rule that has
-never been exercised is not the same evidence as one that has survived a
-real breaking change.
+snapshot, none of these version fields has ever been bumped in this
+repository's history — there is no exercised *migration* case to point to
+yet, only the designed mechanism.
+
+The narrower *rejection* half of the mechanism was exercised directly on
+2026-07-30, however: `tools/import_deep_inventory.py`'s and
+`tools/import_runtime_observation.py`'s real `verify_input`/
+`load_observation` functions were each called against a synthetic,
+non-committed manifest declaring an incompatible `schema_version`
+(`"2.0.0"` and `"0.9.0"` respectively). Both correctly raised their
+importer's own error rather than accepting the input; the same
+importers, given the matching `"1.0.0"` version and otherwise-incomplete
+data, passed the version gate and failed only at the next validation
+step (missing required files/fields) — confirming the gate discriminates
+by version rather than always rejecting. This proves the guard rejects
+an incompatible version when presented with one; it does not prove a
+real forward migration (old-format data transformed to a new schema
+without loss) has ever been exercised, which remains the open item this
+section originally flagged.
 
 ## Lifecycle
 

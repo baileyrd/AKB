@@ -10,9 +10,16 @@ model_refs:
   - static-library:gnu:libz.a
   - import-library:gnu:libz.dll.a
   - dll:gnu:zlib1.dll
+  - library:facebook:zstd
+  - header-set:facebook:zstd-headers
+  - pkg-config-module:facebook:zstd-pc
+  - static-library:facebook:libzstd.a
+  - import-library:facebook:libzstd.dll.a
+  - dll:facebook:libzstd.dll
 evidence_refs:
   - evidence:zlib:ucrt64-archive-analysis-2026-07-29
-last_verified: 2026-07-30
+  - evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Library Family Classification Model
@@ -64,16 +71,23 @@ flowchart LR
 4. Record supported family membership plus confidence and unresolved ambiguity.
 5. Use explicit ABI or runtime observations before making compatibility claims.
 
-## Worked Example
+## Worked Examples
 
-[zlib](ZLIB.md#family-classification) is, as of 2026-07-30, the first
+[zlib](ZLIB.md#family-classification) was, as of 2026-07-30, the first
 library in this knowledge base to have this methodology fully applied: a
 package-archive static analysis recorded its header set, `pkg-config`
 module, static library, import library, and runtime DLL as five separate
 typed entities, each linked to `library:gnu:zlib` and to their shared
 package via the relationship types this document's diagram implies
-(`exposes`, `documents`, `implements`, `wraps`, `packaged-by`). The
-remaining 103 documented library pages have not yet received this
+(`exposes`, `documents`, `implements`, `wraps`, `packaged-by`).
+
+A 2026-07-31 update applied the identical methodology to
+[zstd (UCRT64)](LIBZSTD.md#family-classification), reusing the archive
+already downloaded for a Volume 11 worked example rather than a fresh
+collection: `header-set:facebook:zstd-headers`,
+`pkg-config-module:facebook:zstd-pc`, `static-library:facebook:libzstd.a`,
+`import-library:facebook:libzstd.dll.a`, and `dll:facebook:libzstd.dll`.
+The remaining 102 documented library pages have not yet received this
 treatment.
 
 ## Related Views

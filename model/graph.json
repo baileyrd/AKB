@@ -10638,6 +10638,16 @@
       "notes": "Controlled local observation from a non-elevated PowerShell session, closing the specific WMI-denial gap the prior 2026-07-30 host-boundary observation recorded (docs/WINDOWS-PLATFORM-BOUNDARIES.md): a different execution context's CIM query succeeded where the automated collector's was denied by host access policy, itself evidence that the restriction is context-specific, not host-wide. Get-CimInstance Win32_OperatingSystem reported 'Microsoft Windows 11 Home', version 10.0.26200, 64-bit, BuildNumber 26200. Get-Volume on the C: drive reported FileSystemType NTFS, HealthStatus Healthy. A disposable temp-directory probe found New-Item -ItemType SymbolicLink failed with 'Administrator privilege required for this operation' in this non-elevated session, and a mixed-case filename lookup matched its lowercase counterpart, confirming default NTFS case-insensitive lookup on this volume. This is single-host, single-session, non-elevated evidence only; it does not establish edition/filesystem/privilege facts for an elevated session, a different Windows edition, or a different volume's case-sensitivity flag (settable per-directory on this NTFS version)."
     },
     {
+      "id": "evidence:windows:host-registry-security-networking-observation-2026-07-31",
+      "class": "observed",
+      "title": "Windows host registry, Authenticode signature, and networking observation",
+      "locator": "local registry/Authenticode/netsh probe, non-elevated session",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "2.55.0.3",
+      "integrity": null,
+      "notes": "Controlled local observation from a non-elevated interactive session, covering the Registry, Security, and Networking rows of docs/WINDOWS-PLATFORM-BOUNDARIES.md's boundary table for the first time. Registry: HKLM:\\SOFTWARE\\GitForWindows exists with InstallPath=C:\\Program Files\\Git, CurrentVersion=2.55.0.3, LibexecPath=C:\\Program Files\\Git\\mingw64\\libexec\\git-core. Security: Get-AuthenticodeSignature on Git\\cmd\\git.exe and Git\\mingw64\\bin\\git.exe both reported Status=Valid, signer 'CN=Johannes Schindelin, O=Johannes Schindelin, L=Bruehl, C=DE'; the signing certificate's own NotAfter date (2026-07-11) precedes this observation date, and the signature remains Valid via Authenticode timestamping rather than current-time certificate validity. Networking: HTTP_PROXY/HTTPS_PROXY were unset and 'netsh winhttp show proxy' reported direct access, no proxy server configured. This is single-host, single-session, non-elevated evidence for one application (Git for Windows) only; it does not survey MSYS2 pacman package signatures, other applications' registry footprints, or any other host's network configuration."
+    },
+    {
       "id": "evidence:msys-runtime:git-for-windows-comparative-observation-2026-07-30",
       "class": "observed",
       "title": "Git for Windows bundled MSYS runtime comparative observation",

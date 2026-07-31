@@ -8,7 +8,8 @@ model_refs:
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
   - evidence:windows:host-boundary-observation-2026-07-30
-last_verified: 2026-07-30
+  - evidence:windows:host-registry-security-networking-observation-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Windows Platform Boundaries for MSYS2
@@ -69,6 +70,46 @@ edition, filesystem, or symlink-privilege facts for an elevated session,
 a different Windows edition, or a volume with case-sensitivity enabled
 per directory (settable independently of this default on this NTFS
 version).
+
+## Registry, security, and networking observation
+
+A third 2026-07-31 observation, from the same non-elevated interactive
+session, covers three previously unobserved rows above:
+
+- **Registry**: `HKLM:\SOFTWARE\GitForWindows` exists and records
+  `InstallPath` = `C:\Program Files\Git`, `CurrentVersion` = `2.55.0.3`,
+  and `LibexecPath` = `C:\Program Files\Git\mingw64\libexec\git-core`.
+  The registry's `CurrentVersion` string (`2.55.0.3`) differs in format
+  from `git --version`'s own report (`2.55.0.windows.3`, per
+  [Git for Windows boundary](GIT-FOR-WINDOWS-BOUNDARY.md)) — the same
+  release, two different version-string conventions, not a version
+  mismatch. This is registry evidence for one application (Git for
+  Windows) only, not a general MSYS2-registry-integration survey.
+- **Security**: `Get-AuthenticodeSignature` on both
+  `Git\cmd\git.exe` and `Git\mingw64\bin\git.exe` reported `Status:
+  Valid`, `StatusMessage: Signature verified`, signer `CN=Johannes
+  Schindelin, O=Johannes Schindelin, L=Bruehl, C=DE` — the real-world
+  Git for Windows maintainer. The signing certificate's own `NotAfter`
+  date (2026-07-11) is *before* this observation date (2026-07-31);
+  Windows still reports the signature `Valid` because Authenticode
+  timestamping validates against the time of signing, not the time of
+  verification — a real, version-qualified fact about this build's
+  certificate lifecycle, not a claim that expired-certificate signing
+  is universally trusted. No MSYS2 pacman package signature was checked
+  here; that remains
+  [pacman repository trust model](PACMAN-REPOSITORY-TRUST-MODEL.md)'s
+  separate, still-undischarged scope.
+- **Networking**: `HTTP_PROXY`/`HTTPS_PROXY` were unset in this session,
+  and `netsh winhttp show proxy` reported "Direct access (no proxy
+  server)" for the system-wide WinHTTP proxy configuration. This
+  establishes the transport-configuration context for this one host and
+  session only; it does not characterize TLS handshake behavior or any
+  other host's network configuration.
+
+Console/ConPTY remains the only row in the table above with no
+controlled observation of any kind — a genuine terminal/PTY test matrix
+requires interactive session instrumentation this collection method
+does not attempt.
 
 ## Interface map
 

@@ -5,7 +5,7 @@ volume: 16
 status: partial
 model_refs: []
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-07-30
 ---
 
 # AKB Threat Model and Supply-Chain Analysis
@@ -52,6 +52,47 @@ flowchart LR
    signed package or source commit is not proof of runtime behavior.
 6. Escalate unresolved dependency, ambiguous DLL, parser-warning, and source
    drift records as coverage limits rather than filling gaps with inference.
+
+## Measured control verification: Explorer script/markup injection
+
+No entity in the current authored `model/graph.json` contains an HTML
+metacharacter (`<`, `>`, `&`, `"`) in its `name` or `summary`, so the
+"HTML escaping and static generation" control for the Explorer row above
+has never actually been exercised by this repository's own real data. On
+2026-07-30, it was exercised directly against `tools/build_explorer.py`'s
+own `build()` function (not a reimplementation) using synthetic,
+non-committed test entities — an XSS-shaped name
+(`<script>alert(1)</script>`) and a quote-breaking id
+(`component:test:"onmouseover="alert(1)`) — run through a temporary
+output directory, never staged in this repository:
+
+- The generated `index.html` and `overview.svg` contained the
+  HTML-entity-escaped form (`&lt;script&gt;...`) and did not contain the
+  raw, unescaped payload as a live tag or attribute break-out.
+- The one raw-substring match in `index.html` was the payload appearing
+  inside the page's embedded `const data = {...}` JSON blob, itself
+  inside a `<script>` tag; Python's `json.dumps` escapes the `/` in
+  `</script>` to `<\/script>`, the standard, correct mitigation that
+  prevents a JSON string value from prematurely closing that script
+  block.
+- That same generated page's client-side JavaScript defines its own
+  `esc()` function
+  (`value => String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))`)
+  and applies it to every entity name/id/kind/status value before
+  inserting it via `innerHTML` in the hash-routed dynamic views (search
+  results, per-object dossier, breadcrumbs, relationship lists) —
+  confirming the escaping control operates at both the static-generation
+  layer (Python, `html.escape`) and the client-rendering layer
+  (JavaScript, `esc`), independently.
+- `overview.txt` is plain text, not rendered as HTML, so it was not
+  escaped and this is not itself a finding.
+
+This verifies the control functions correctly against the specific
+payloads tested; it does not constitute a general security audit, does
+not cover every possible injection vector (URL-fragment routing, SVG
+`<title>` content beyond what was tested, or a future code change that
+bypasses `esc`/`html.escape`), and should be re-run after any change to
+`tools/build_explorer.py` or its generated client-side script.
 
 ## Response and Review
 

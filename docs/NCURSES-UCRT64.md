@@ -76,14 +76,15 @@ this knowledge base.
 
 ## Reverse Dependencies
 
-The catalog snapshot records 11 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 11 relationships;
+the catalog snapshot actually records **13** targeting
 `package:msys2:mingw-w64-ucrt-x86_64-ncurses` — dramatically fewer than
 [ncurses (MSYS)](NCURSES.md#reverse-dependencies)'s 40, reflecting that
 most UCRT64-native programs are GUI-oriented rather than terminal-UI
 programs, unlike the broad MSYS-environment interactive-tool ecosystem.
 One is now modeled in this knowledge base: [GDB](GNU-GDB.md)
 (`relationship:toolchain:gdb-requires-ncurses-ucrt64`). The remaining
-~10 recorded dependents (`avrdude`, `bitwise`, `global`, `gnucobol`,
+~12 recorded dependents (`avrdude`, `bitwise`, `global`, `gnucobol`,
 `notcurses`, `python`, and others) are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)

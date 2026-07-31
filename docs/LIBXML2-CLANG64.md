@@ -78,7 +78,8 @@ base and remains unmodeled.
 
 ## Reverse Dependencies
 
-The catalog snapshot records 126 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 126 relationships;
+the catalog snapshot actually records **128** targeting
 `package:msys2:mingw-w64-clang-x86_64-libxml2` — the widest
 reverse-dependency footprint of any library added in this batch. Two
 are now modeled in this knowledge base: [LLDB](LLDB.md)
@@ -86,7 +87,7 @@ are now modeled in this knowledge base: [LLDB](LLDB.md)
 [LLVM libraries](LLVM-LIBS.md)
 (`relationship:foundation-libraries:llvm-libs-requires-libxml2-clang64`,
 correcting that page's own prior incorrect no-dependencies claim). The
-remaining ~124 recorded dependents (a broad mix of CLANG64 packages
+remaining ~126 recorded dependents (a broad mix of CLANG64 packages
 including `libarchive`, `gdal`, and `imagemagick`) are not individually
 modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -138,9 +139,9 @@ being treated as an LLDB defect.
 XML parsing library scope is backed by the official libxml2 project
 wiki (`evidence:gnome:libxml2-manual-2026-07-30`), the same evidence
 record [libxml2 (UCRT64)](LIBXML2.md) cites. Package identity, version,
-license, and the one modeled dependent edge are backed by the pacman
+license, and the two modeled dependent edges are backed by the pacman
 catalog snapshot (`evidence:catalog:current`). Open, and explicitly out
-of scope for this page: the ~125 remaining recorded dependents not
+of scope for this page: the ~126 remaining recorded dependents not
 individually modeled, this package's own libiconv/zlib sub-dependencies,
 and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)

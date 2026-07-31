@@ -10668,6 +10668,16 @@
       "notes": "Controlled local observation closing part of the previously open fork() emulation gap in docs/MSYS-RUNTIME-BEHAVIOR-MAP.md. A backgrounded subshell '( ... ) &' reported the same $$ as its parent (standard POSIX shell semantics: $$ identifies the originating shell) but a different $BASHPID (parent 1648, subshell 1650), and 'ps -ef' confirmed the subshell's own children carried PPID 1648. This is direct evidence of a real OS-level process fork for the subshell, not a single-process simulation. The top-level bash process's own PPID reported as 1, the standard MSYS/Cygwin convention for a parent that is not itself a POSIX-tracked MSYS process, not evidence of orphaning. The same session also recorded a partial console/terminal-device observation: MSYSTEM=MINGW64, TERM=xterm-256color, and stdout ([ -t 1 ]) not attached to a console device in this specific automated harness invocation while stdin was console-attached at shell start -- a narrow plumbing fact, not a ConPTY allocation or interactive-terminal (SIGWINCH/resize) test. Single-installation, single-session evidence for Git for Windows' bundled runtime only; does not establish fork() behavior for the isolated MSYS2 installation or vfork()/posix_spawn() code paths."
     },
     {
+      "id": "evidence:akb-process:developer-workflow-observed-run-2026-07-31",
+      "class": "observed",
+      "title": "AKB developer change workflow observed run (PR #123)",
+      "locator": "https://github.com/baileyrd/AKB/pull/123",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "998bbf6",
+      "integrity": null,
+      "notes": "Single, genuinely observed exercise of the documented AKB Developer Change Workflow (docs/DEVELOPER-WORKFLOW.md), using PR #123 (branch observe-console-terminal-device) as the worked example: branched from synced main at 2da50e0, authored doc/model-only changes, validated/tested/generated in a disposable git worktree (16,430 entities/77,233 relationships/39 claims/109 evidence clean-checkout baseline; 65/65 unittest discover tests passed), pushed, opened PR #123, watched the validate CI check go pending to pass, squash-merged with branch deletion, and fast-forwarded local main to 998bbf6. Documents specific, honest deviations from the written steps (non-agent/-prefixed branch name, individual generator invocations instead of `tools/akb.py all`, no `git diff --check`, non-draft PR, squash merge). Single-run, single-operator evidence for one small documentation change only; does not exercise a build/generator-code change, a failing-CI recovery path, or a multi-committer review cycle."
+    },
+    {
       "id": "evidence:gnu:libiconv-manual-2026-07-30",
       "class": "primary",
       "title": "GNU libiconv (official project page)",

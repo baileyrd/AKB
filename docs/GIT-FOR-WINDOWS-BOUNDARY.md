@@ -5,7 +5,8 @@ volume: 9
 status: partial
 model_refs:
   - ecosystem:msys2:msys2
-evidence_refs: []
+evidence_refs:
+  - evidence:git-for-windows:local-installation-observation-2026-07-30
 last_verified: 2026-07-30
 ---
 
@@ -37,11 +38,22 @@ share a pacman-managed lifecycle with one.
 On 2026-07-30, the installed command resolved to
 `C:\Program Files\Git\cmd\git.exe`, reporting Git for Windows
 `2.55.0.windows.3`; the bundled Bash resolved to
-`C:\Program Files\Git\usr\bin\bash.exe`. In the same host command context,
-`ssh.exe` and `curl.exe` resolved to Windows system locations, not the Git for
-Windows tree. This is local executable-resolution evidence only; it does not
-establish launcher behavior, transport selection, DLL loading, or bundled
-component versions not directly observed.
+`C:\Program Files\Git\usr\bin\bash.exe`. In that same PowerShell host
+command context, `ssh.exe` and `curl.exe` resolved to Windows system
+locations, not the Git for Windows tree — but this is a PATH-ordering
+effect of that specific shell context, not a fixed property of the
+distribution: a follow-up observation from a Git Bash session found both
+commands resolving to the bundled `Git\usr\bin\ssh.exe` and
+`Git\mingw64\bin\curl.exe` instead, each a genuinely different binary
+(different OpenSSH release, different TLS library, different compiled
+curl feature set) from its system-resolved counterpart. See
+[Launcher and Shell Startup](GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md#controlled-local-installation-observation)
+and
+[Transport, Credentials, and DLL Boundaries](GIT-FOR-WINDOWS-TRANSPORT-BOUNDARIES.md#controlled-local-installation-observation)
+for the full comparison. This remains local executable-resolution
+evidence only; it does not establish launcher behavior, transport
+selection, or bundled component versions for any invocation context not
+directly observed.
 
 ## Related Views
 

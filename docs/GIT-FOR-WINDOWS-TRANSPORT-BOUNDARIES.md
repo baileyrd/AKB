@@ -3,9 +3,12 @@ id: doc:volume-9:git-for-windows-transport-boundaries
 title: Git for Windows Transport, Credentials, and DLL Boundaries
 volume: 9
 status: partial
-model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+model_refs:
+  - ecosystem:msys2:msys2
+  - library:gnu:zlib
+evidence_refs:
+  - evidence:git-for-windows:local-installation-observation-2026-07-30
+last_verified: 2026-07-30
 ---
 
 # Git for Windows Transport, Credentials, and DLL Boundaries
@@ -49,6 +52,48 @@ particular installation.
 3. Record only sanitized effective configuration and its origin.
 4. Collect binary and DLL evidence for that executable before attributing a
    startup or transport failure to the distribution.
+
+## Controlled local installation observation
+
+On 2026-07-30, `ssh.exe` and `curl.exe` resolved to genuinely different
+binaries depending on invoking shell context — not the same executable
+observed from two vantage points. Per the launcher-path evidence in
+[Launcher and Shell Startup](GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md#controlled-local-installation-observation):
+
+| Command | Git Bash session | PowerShell session |
+| --- | --- | --- |
+| `ssh` | `Git\usr\bin\ssh.exe`, `OpenSSH_10.3p1, OpenSSL 3.5.7` | `Windows\System32\OpenSSH\ssh.exe`, `OpenSSH_for_Windows_9.5p2, LibreSSL 3.8.2` |
+| `curl` | `Git\mingw64\bin\curl.exe`, `curl 8.21.0 (x86_64-w64-mingw32) libcurl/8.21.0 Schannel zlib/1.3.2 brotli/1.2.0 zstd/1.5.7 libidn2/2.3.8 libpsl/0.21.5 libssh2/1.11.1 WinLDAP` | `Windows\System32\curl.exe`, `curl 8.21.0 (Windows) libcurl/8.21.0 Schannel zlib/1.3.2 WinIDN WinLDAP` |
+
+Both `ssh` implementations report distinct OpenSSH releases *and* distinct
+underlying TLS libraries (OpenSSL vs. LibreSSL); both `curl` builds report
+the identical `8.21.0` version number yet a materially different compiled
+feature set (no `brotli`/`zstd`/`libssh2`/`libidn2` in the system build).
+This is directly observed, single-workstation evidence: it does not
+establish which resolution order any other installation, shell, or script
+invocation will use.
+
+**Credential helper** (sanitized, per Decision Rule 2): `git config
+--show-origin --get credential.helper` reported `manager`, sourced from
+`file:C:/Program Files/Git/etc/gitconfig` — Git Credential Manager,
+selected at the distribution-default configuration layer on this
+installation. No credential store contents were accessed.
+
+**DLL loader**: a direct PE-import parse of `mingw64\bin\git.exe`
+(4,383,048 bytes, SHA-256
+`1a0043555d254618f2d56c936c3d9a1fbfb878bc878416a133c346bc7835eda9`,
+`tools/deep_inventory.py`'s own `parse_pe`) recorded 10 imported DLLs:
+`advapi32.dll`, `kernel32.dll`, `msvcrt.dll`, `ntdll.dll`, `user32.dll`,
+and `ws2_32.dll` (Windows system DLLs), plus `libiconv-2.dll`,
+`libintl-8.dll`, `libpcre2-8-0.dll`, and `zlib1.dll` — MSYS-derived
+shared libraries bundled directly into the native `git.exe`, not the
+Git-for-Windows-packaged [zlib (UCRT64)](ZLIB.md) or MSYS2 pacman-managed
+zlib this knowledge base otherwise documents. This is the first
+byte-level confirmation in this knowledge base of
+[Git for Windows boundary](GIT-FOR-WINDOWS-BOUNDARY.md)'s claim that the
+distribution "incorporat[es] MSYS-derived tooling"; it establishes an
+import-table fact for this one binary and version only, not a general
+DLL-compatibility or loader-resolution claim.
 
 ## Related Views
 

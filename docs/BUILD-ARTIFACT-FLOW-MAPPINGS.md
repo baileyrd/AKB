@@ -5,8 +5,9 @@ volume: 14
 status: partial
 model_refs:
   - library:gnu:zlib
-evidence_refs: []
-last_verified: 2026-07-30
+evidence_refs:
+  - evidence:akb-process:zlib-upstream-build-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Generated Artifact and Build-Flow Mappings
@@ -81,9 +82,38 @@ this table's stages, previously not cross-linked from here:
 
 This is exactly the failure mode Canonical Mapping Rule 5 anticipates:
 the attempt stopped mid-pipeline, so no reproducibility comparison over
-qualified output hashes is possible here, and none is claimed. It
-remains this knowledge base's only concrete instance of this page's
-methodology; every other documented package/library still has only the
+qualified output hashes is possible here, and none is claimed.
+
+## Worked example: zlib, a second attempt reaching Compile, link, and execution
+
+A 2026-07-31 session installed a real MSYS2 environment (`C:\msys64`,
+via `winget install MSYS2.MSYS2`) and a real UCRT64 GCC toolchain
+(`gcc.exe (Rev5, Built by MSYS2 project) 16.1.0`) on this host, neither
+of which was available for the attempt above. This is a **separate,
+independently-scoped build exercise, not a retry of the same recipe**:
+it compiles the upstream `zlib-1.3.2.tar.gz` release archive (SHA-256
+`bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16`,
+downloaded fresh from `zlib.net`) using zlib's own bundled
+`win32/Makefile.gcc`, without the MSYS2 recipe's two patches or its
+actual build script — a different source distribution format (`.tar.gz`
+vs. the recipe-declared `.tar.xz`) and a different, newer GCC than the
+recipe-pinned toolchain. It answers "does zlib 1.3.2 compile with a
+current GCC 16.1.0 via its own build system," not "does the MSYS2
+recipe build succeed now."
+
+| Stage | What was actually done |
+| --- | --- |
+| Compile and link | `gzlib.c` — the specific file that failed under GCC `15.3.0` above — compiled cleanly under GCC `16.1.0` (exit 0). The full `win32/Makefile.gcc` build then succeeded end to end: `libz.a` (SHA-256 `32817246efa3ca6570fee1995a4108ef2e7e712fb97f49bf17466ee5ee6f22d4`), `libz.dll.a` (SHA-256 `6480b10caf0fa033319b2494b2bc1e638d5d975015facbe9381953a167349ac7`), `zlib1.dll` (SHA-256 `4a4363adc2c9c96e6c96d4bb6167aa326918ef96924eb84639e60026d3860ef5`), and the bundled test executables `example.exe`/`minigzip.exe` all built — the full family-classification artifact set this knowledge base already models for the UCRT64-packaged build (per [zlib's Family Classification](ZLIB.md#family-classification)), here as freshly-built rather than package-archive-extracted bytes. |
+| Execution | Running `example.exe` reached the Runtime Behavior stage this knowledge base has not previously exercised for any package: it printed `zlib version 1.3.2 = 0x1320, compile flags = 0x65`, `uncompress(): hello, hello!`, and `gzread(): hello, hello!` (three passing checks), but also `gzseek error, pos=6, gztell=14` and exited with status 1 — a genuine, reproducible functional-test failure in zlib's own bundled self-test on this specific build, not fabricated or omitted to present a clean success. |
+| Cross-runtime finding | The identical build command failed with `Cannot create temporary file in C:\Windows\: Permission denied` when the newly-installed `C:\msys64`-built `gcc.exe` was invoked as a child process of Git for Windows' own, separate `msys-2.0.dll` runtime (the shell this whole session otherwise runs in); it succeeded only when invoked through `C:\msys64\usr\bin\bash.exe` — its own matching runtime. Reproduced twice. This is environment/runtime-boundary evidence distinct from the zlib build itself: running one MSYS2 installation's native toolchain binaries as a child of a *different* MSYS2 installation's shell runtime is not equivalent to running them under their own. |
+
+Together with the first attempt, this knowledge base now has two
+differently-scoped worked build attempts for the same library: one that
+stopped at a compile failure using the exact recipe/patches/toolchain
+pin, and one that reached execution using upstream source and a current
+toolchain but outside the recipe's exact build path. Neither
+individually proves the MSYS2-packaged `zlib1.dll` reproduces from
+source; every other documented package/library still has only the
 abstract stage table above, no worked attempt.
 
 ## Related Views

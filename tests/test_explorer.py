@@ -21,7 +21,7 @@ class ExplorerTests(unittest.TestCase):
     def test_build_includes_all_entity_routes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             graph = EXPLORER.load_graph()
-            index, svg, text = EXPLORER.build(graph, Path(directory))
+            index, d3_file, svg, text = EXPLORER.build(graph, Path(directory))
             rendered = index.read_text(encoding="utf-8")
             rendered_svg = svg.read_text(encoding="utf-8")
             rendered_text = text.read_text(encoding="utf-8")
@@ -44,6 +44,15 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn('role="img"', rendered_svg)
         self.assertIn('<desc id="description">', rendered_svg)
         self.assertIn('tabindex="0"', rendered_svg)
+        self.assertTrue(d3_file.is_file())
+        self.assertIn('<script src="d3.v7.min.js"></script>', rendered)
+        self.assertIn("d3.forceSimulation", rendered)
+        self.assertIn("function renderGraph", rendered)
+        self.assertIn("graphNodeRoute", rendered)
+        self.assertIn("graphViewRoute", rendered)
+        self.assertIn("View in graph", rendered)
+        self.assertIn("__all__", rendered)
+        self.assertIn("GRAPH_NODE_CAP", rendered)
 
     def test_large_graph_build_is_bounded_and_complete(self) -> None:
         entities = [
@@ -60,7 +69,7 @@ class ExplorerTests(unittest.TestCase):
         ]
         started = time.perf_counter()
         with tempfile.TemporaryDirectory() as directory:
-            index, svg, text = EXPLORER.build(
+            index, d3_file, svg, text = EXPLORER.build(
                 {"entities": entities, "relationships": relationships}, Path(directory)
             )
             rendered = index.read_text(encoding="utf-8")
@@ -70,6 +79,18 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn(EXPLORER.route_for(entities[-1]["id"]), rendered)
         self.assertIn(entities[-1]["id"], fallback)
         self.assertLess(svg_text.count('<rect '), 81)
+        self.assertTrue(d3_file.is_file())
+
+    def test_vendor_d3_source_file_exists_and_is_named_correctly(self) -> None:
+        self.assertTrue(EXPLORER.VENDOR_D3.is_file())
+        first_line = EXPLORER.VENDOR_D3.read_text(encoding="utf-8").split("\n", 1)[0]
+        self.assertIn("d3js.org", first_line)
+
+    def test_vendor_d3_is_copied_byte_identical(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            graph = EXPLORER.load_graph()
+            _, d3_file, _, _ = EXPLORER.build(graph, Path(directory))
+            self.assertEqual(d3_file.read_bytes(), EXPLORER.VENDOR_D3.read_bytes())
 
 
 if __name__ == "__main__":

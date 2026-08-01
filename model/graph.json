@@ -10717,6 +10717,16 @@
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:akb-process:operator-refresh-workflow-observed-run-2026-07-31",
+      "class": "observed",
+      "title": "Operator refresh workflow observed run: partial success against a new MSYS2 installation",
+      "locator": "local execution, C:\\msys64, tools/collect_runtime_observation.py + tools/import_runtime_observation.py",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "First real exercise of docs/OPERATOR-REFRESH-WORKFLOW.md against a genuinely new MSYS2 installation (C:\\msys64, winget-installed). tools/Update-Akb.ps1 as a whole did not complete: its first step, catalog-msys2-packages.ps1, throws a reproducible 'Cannot bind argument to parameter Lines because it is an empty string' error specific to this automated harness when processing the full ~15,700-package pacman -Si dump; a debug probe confirmed the underlying data was a valid, fully-populated 301,336-element array immediately before the failing call, isolating this to a harness/tooling limitation, not a pacman or data defect. The runtime-observation sub-step was exercised independently (run through the new installation's own shell to avoid the cross-runtime execution issue in evidence:msys-runtime:cross-installation-toolchain-observation-2026-07-31) and succeeded completely: collect_runtime_observation.py --environment ucrt64 --behavior produced a full observation (real tool identity, uname, mount table, behavior probes), and import_runtime_observation.py imported it successfully as snapshot runtime-ucrt64-7aebd17a225e. Local-only per docs/LOCAL-EVIDENCE-RETENTION.md, not staged in this repository. Deep-inventory collection and a full unblocked Update-Akb.ps1 run remain unexercised."
+    },
+    {
       "id": "evidence:akb-process:pacman-transaction-hook-cache-observation-2026-07-31",
       "class": "observed",
       "title": "Controlled pacman transaction, hook, cache, and local-database observation (C:\\msys64)",

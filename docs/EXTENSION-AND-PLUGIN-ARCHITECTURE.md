@@ -4,8 +4,9 @@ title: Extension and Plugin Architecture
 volume: 15
 status: partial
 model_refs: []
-evidence_refs: []
-last_verified: 2026-07-30
+evidence_refs:
+  - evidence:akb-process:runtime-observation-schema-migration-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Extension and Plugin Architecture
@@ -71,10 +72,32 @@ importers, given the matching `"1.0.0"` version and otherwise-incomplete
 data, passed the version gate and failed only at the next validation
 step (missing required files/fields) — confirming the gate discriminates
 by version rather than always rejecting. This proves the guard rejects
-an incompatible version when presented with one; it does not prove a
-real forward migration (old-format data transformed to a new schema
-without loss) has ever been exercised, which remains the open item this
-section originally flagged.
+an incompatible version when presented with one.
+
+**Update, 2026-07-31**: the other half of the mechanism — a real
+forward migration, old-format data transformed to a new schema without
+loss — has now been exercised, closing this section's previously open
+item. `model/schema/runtime-observation.schema.json`'s `schema_version`
+was bumped from a pinned `const: "1.0.0"` to `enum: ["1.0.0", "1.1.0"]`,
+declaring two previously-undeclared fields (`probes`, `behavior_probes`)
+that `tools/collect_runtime_observation.py` has always emitted but the
+1.0.0 schema never formally listed (a real, independently-discovered
+schema-drift bug this migration also fixes). `tools/import_runtime_observation.py`'s
+new `migrate_to_current_schema()` accepts both versions: a 1.1.0 document
+passes through unchanged; a 1.0.0 document has its `schema_version`
+rewritten to `1.1.0` and gains a default `probes: {}` only if the field
+is absent, with every other field preserved exactly. This was verified
+two ways: `tests/test_runtime_observation.py` gained four new tests
+(migrating a 1.0.0 document without `probes`, migrating one that
+already has real `probes` data, passing a 1.1.0 document through
+unchanged, and rejecting an unsupported version), and the real CLI
+(`python tools/import_runtime_observation.py`) was run against a
+synthetic 1.0.0 fixture, confirming the imported projection's
+`schema_version` reads `1.1.0` and `probes` reads `{}` with all other
+fields — including `notes` and `tools` — byte-identical to the input.
+This exercises one schema/importer pair; the deep-inventory schema and
+`model/graph.json`'s own `schema_version` still have never been bumped
+in this repository's history.
 
 ## Lifecycle
 

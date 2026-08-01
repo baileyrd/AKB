@@ -100,8 +100,8 @@ def behavior_probe_observation(script: str) -> dict[str, object]:
 def collect(environment: str, behavior: bool = False) -> dict[str, object]:
     """Capture only explicit allow-listed variables and tool identity metadata."""
     result: dict[str, object] = {
-        "schema_version": "1.0.0",
-        "collector_version": "0.4.0",
+        "schema_version": "1.1.0",
+        "collector_version": "0.5.0",
         "observed_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "environment": environment,
         "host": {"system": platform.system(), "machine": platform.machine(), "release": platform.release()},

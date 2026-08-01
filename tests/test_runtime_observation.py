@@ -100,6 +100,49 @@ class RuntimeObservationTests(unittest.TestCase):
             with self.assertRaises(IMPORTER.RuntimeObservationError):
                 IMPORTER.load_observation(path)
 
+    def test_load_migrates_1_0_0_observation_without_probes(self) -> None:
+        value = self.fixture()
+        self.assertNotIn("probes", value)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "observation.json"
+            path.write_text(json.dumps(value), encoding="utf-8")
+            migrated = IMPORTER.load_observation(path)
+        self.assertEqual(migrated["schema_version"], "1.1.0")
+        self.assertEqual(migrated["probes"], {})
+        for key, original_value in value.items():
+            if key == "schema_version":
+                continue
+            self.assertEqual(migrated[key], original_value, f"field {key!r} was not preserved by migration")
+
+    def test_load_migrates_1_0_0_observation_with_existing_probes(self) -> None:
+        value = self.fixture()
+        value["probes"] = {"uname": {"executed": True, "found": True, "output": "example", "returncode": 0}}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "observation.json"
+            path.write_text(json.dumps(value), encoding="utf-8")
+            migrated = IMPORTER.load_observation(path)
+        self.assertEqual(migrated["schema_version"], "1.1.0")
+        self.assertEqual(migrated["probes"], value["probes"])
+
+    def test_load_passes_through_1_1_0_observation_unchanged(self) -> None:
+        value = self.fixture()
+        value["schema_version"] = "1.1.0"
+        value["probes"] = {"uname": {"executed": True, "found": True, "output": "example", "returncode": 0}}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "observation.json"
+            path.write_text(json.dumps(value), encoding="utf-8")
+            loaded = IMPORTER.load_observation(path)
+        self.assertEqual(loaded, value)
+
+    def test_unsupported_schema_version_is_rejected(self) -> None:
+        value = self.fixture()
+        value["schema_version"] = "2.0.0"
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "observation.json"
+            path.write_text(json.dumps(value), encoding="utf-8")
+            with self.assertRaises(IMPORTER.RuntimeObservationError):
+                IMPORTER.load_observation(path)
+
     def test_merge_retains_distinct_environment_observations(self) -> None:
         first = IMPORTER.projection(self.fixture())
         second_value = self.fixture(); second_value["environment"] = "msys"

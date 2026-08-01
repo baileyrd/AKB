@@ -10717,6 +10717,16 @@
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:akb-process:runtime-observation-schema-migration-2026-07-31",
+      "class": "observed",
+      "title": "Real forward schema migration exercise (runtime-observation 1.0.0 to 1.1.0)",
+      "locator": "model/schema/runtime-observation.schema.json, tools/import_runtime_observation.py:migrate_to_current_schema, tests/test_runtime_observation.py",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "1.1.0",
+      "integrity": null,
+      "notes": "Closes docs/EXTENSION-AND-PLUGIN-ARCHITECTURE.md's previously-open 'no exercised migration case' gap. Bumped runtime-observation.schema.json's schema_version from a pinned const 1.0.0 to enum [1.0.0, 1.1.0], formally declaring the probes and behavior_probes fields the collector has always emitted but the 1.0.0 schema never listed (a real, independently-discovered schema-drift bug this migration also fixes). import_runtime_observation.py's new migrate_to_current_schema() accepts both versions: a 1.1.0 document passes through unchanged; a 1.0.0 document is rewritten to schema_version 1.1.0 and gains a default probes: {} only if absent, all other fields preserved exactly. Verified via 4 new unit tests (tests/test_runtime_observation.py) and a real CLI run (python tools/import_runtime_observation.py) against a synthetic 1.0.0 fixture, confirming the imported projection's schema_version reads 1.1.0, probes reads {}, and every other field (notes, tools) is byte-identical to the input. Exercises one schema/importer pair only; model/graph.json's own schema_version and the deep-inventory schema have never been bumped in this repository's history."
+    },
+    {
       "id": "evidence:akb-process:operator-refresh-workflow-observed-run-2026-07-31",
       "class": "observed",
       "title": "Operator refresh workflow observed run: partial success against a new MSYS2 installation",

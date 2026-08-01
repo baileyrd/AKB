@@ -25,6 +25,7 @@ class ExplorerTests(unittest.TestCase):
             rendered = index.read_text(encoding="utf-8")
             rendered_svg = svg.read_text(encoding="utf-8")
             rendered_text = text.read_text(encoding="utf-8")
+            d3_file_exists = d3_file.is_file()
         for item in graph["entities"]:
             self.assertIn(EXPLORER.route_for(item["id"]), rendered)
             self.assertIn(item["id"], rendered_text)
@@ -44,7 +45,7 @@ class ExplorerTests(unittest.TestCase):
         self.assertIn('role="img"', rendered_svg)
         self.assertIn('<desc id="description">', rendered_svg)
         self.assertIn('tabindex="0"', rendered_svg)
-        self.assertTrue(d3_file.is_file())
+        self.assertTrue(d3_file_exists)
         self.assertIn('<script src="d3.v7.min.js"></script>', rendered)
         self.assertIn("d3.forceSimulation", rendered)
         self.assertIn("function renderGraph", rendered)
@@ -75,11 +76,12 @@ class ExplorerTests(unittest.TestCase):
             rendered = index.read_text(encoding="utf-8")
             fallback = text.read_text(encoding="utf-8")
             svg_text = svg.read_text(encoding="utf-8")
+            d3_file_exists = d3_file.is_file()
         self.assertLess(time.perf_counter() - started, 10.0)
         self.assertIn(EXPLORER.route_for(entities[-1]["id"]), rendered)
         self.assertIn(entities[-1]["id"], fallback)
         self.assertLess(svg_text.count('<rect '), 81)
-        self.assertTrue(d3_file.is_file())
+        self.assertTrue(d3_file_exists)
 
     def test_vendor_d3_source_file_exists_and_is_named_correctly(self) -> None:
         self.assertTrue(EXPLORER.VENDOR_D3.is_file())

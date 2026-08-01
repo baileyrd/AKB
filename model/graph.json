@@ -10717,6 +10717,16 @@
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:akb-process:interactive-graph-view-2026-07-31",
+      "class": "observed",
+      "title": "Interactive, zoomable graph view added to the generated explorer",
+      "locator": "tools/build_explorer.py, tools/vendor/d3.v7.min.js, tests/test_explorer.py",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "d3@7.9.0",
+      "integrity": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "notes": "Closes Volume 10's previously open 'zoomable graphical exploration' gap. Vendors D3 v7.9.0 (ISC licensed, from https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js, SHA-256 recorded) into tools/vendor/d3.v7.min.js, copied byte-identical into generated/explorer/d3.v7.min.js on every build so the explorer stays offline-capable. Adds a real canvas-rendered force-directed graph with pan/zoom/drag: a bounded per-view mode (#/graph/<view>, reusing the explorer's existing kind-scoped views) and a seed-and-expand neighborhood mode (#/graph-node/<id>) capped at 800 nodes to keep the layout readable and responsive, since the full ~16,000-entity/77,000-relationship graph is too dense for one unscoped render. Verified via JS --check syntax validation of the actual generated (escaped) script and new tests/test_explorer.py assertions (vendored file copied byte-identical, real D3 API calls present in output). Not yet visually verified in a live browser session -- no connected browser tooling was available in this authoring environment -- so genuine interactive behavior (layout convergence, drag responsiveness, zoom/pan smoothness at this node count) remains unverified beyond code-level inspection."
+    },
+    {
       "id": "evidence:akb-process:runtime-observation-schema-migration-2026-07-31",
       "class": "observed",
       "title": "Real forward schema migration exercise (runtime-observation 1.0.0 to 1.1.0)",

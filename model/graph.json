@@ -10717,6 +10717,16 @@
       "notes": "Official zlib manual. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:akb-process:pacman-transaction-hook-cache-observation-2026-07-31",
+      "class": "observed",
+      "title": "Controlled pacman transaction, hook, cache, and local-database observation (C:\\msys64)",
+      "locator": "C:\\msys64\\var\\log\\pacman.log, C:\\msys64\\var\\cache\\pacman\\pkg\\, pacman -Qi make",
+      "retrieved_at": "2026-07-31T00:00:00Z",
+      "upstream_version": "6.1.0",
+      "integrity": null,
+      "notes": "Real transaction/hook/cache/local-database evidence from a genuinely new MSYS2 installation (C:\\msys64, winget-installed), distinct from the 'isolated MSYS installation' this page's 2026-07-30 section describes (not present in this session). pacman.log records two real ALPM transactions this session ran (mingw-w64-ucrt-x86_64-gcc, 17 packages including its dependency chain, 8 seconds; make, 1 package) plus the original installer's own 91-package base transaction from 2026-06-11, and a real hook firing (texinfo-install.hook) immediately after the make transaction. The package cache holds 36 real files (archives plus .sig signatures), 71.68 MiB, spanning build dates 2023-09-15 through 2026-07-31. pacman -Qi make reports Install Reason: Explicitly installed, Install Date, and Validated By: Signature. pacman --version reports Pacman v6.1.0, directly answering what evidence:catalog:current's own manifest left as an empty pacman_version field (that specific tracked manifest predates this installation and was not regenerated from it, due to a separate, unrelated collector-harness limitation on the full pacman -Si dump). Single-host, single-session evidence; does not establish upgrade, rollback, or repair behavior."
+    },
+    {
       "id": "evidence:msys-runtime:cross-installation-toolchain-observation-2026-07-31",
       "class": "observed",
       "title": "Cross-installation MSYS runtime and toolchain-execution observation (C:\\msys64 vs Git for Windows)",

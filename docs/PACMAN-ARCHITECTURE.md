@@ -7,7 +7,8 @@ model_refs:
   - ecosystem:msys2:msys2
 evidence_refs:
   - evidence:catalog:current
-last_verified: 2026-07-30
+  - evidence:akb-process:pacman-transaction-hook-cache-observation-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Pacman Architecture and Transaction Model
@@ -64,6 +65,58 @@ time this page's `evidence_refs` already cite — the "Sync databases" row's
 here. The same manifest records `pacman_version` as an empty string: the
 collector did not capture the pacman version that produced these databases,
 an honest, already-flagged gap rather than an inferred value.
+
+## Controlled transaction, hook, and cache observation
+
+On 2026-07-31, a genuinely new MSYS2 installation (`C:\msys64`, via
+`winget install MSYS2.MSYS2`) — distinct from the "isolated MSYS
+installation" referenced above, which is not present on this host in
+this session — provided real, version-qualified evidence for three rows
+this page's table had marked "Operational behavior requiring controlled
+observation" without a worked example:
+
+- **Transaction**: `C:\msys64\var\log\pacman.log` records real
+  `[ALPM] transaction started`/`installed <pkg> (<version>)`/
+  `transaction completed` entries for two controlled transactions this
+  session actually ran: installing `mingw-w64-ucrt-x86_64-gcc` (17
+  packages, including its full dependency chain — `binutils`, `crt`,
+  `headers`, `gmp`, `isl`, `mpfr`, `mpc`, `winpthreads`, and others —
+  completing in 8 seconds) and `make` (1 package). The log also
+  retains the original installer's own initial `base` group transaction
+  from 2026-06-11 (91 packages).
+- **Hooks**: the same log shows a real ALPM hook actually firing —
+  `running 'texinfo-install.hook'...` — immediately after the `make`
+  installation's `transaction completed` line, direct evidence of the
+  post-transaction hook mechanism executing, not just a hook file's
+  static presence.
+- **Cache**: `C:\msys64\var\cache\pacman\pkg\` contains 36 real
+  retained files (package archives plus their `.sig` signatures) for
+  71.68 MiB total, spanning build dates from 2023-09-15 through
+  2026-07-31 — direct evidence the cache retains historical package
+  versions, not only the most recently installed ones.
+- **Local database**: `pacman -Qi make` reports `Install Reason:
+  Explicitly installed`, `Install Date: Fri Jul 31 18:51:18 2026`, and
+  `Validated By: Signature` — the same signature-validation mechanism
+  independently exercised via `gpg` in
+  [Pacman repository and trust model](PACMAN-REPOSITORY-TRUST-MODEL.md#controlled-local-signature-verification),
+  now also confirmed as pacman's own recorded verification outcome for
+  a real local transaction.
+- **`pacman_version`**: this installation's own `pacman --version`
+  reports `Pacman v6.1.0`, directly answering what the
+  `evidence:catalog:current` manifest's own empty `pacman_version`
+  field left uncaptured — though that specific tracked manifest was
+  produced by an earlier collection run against a different
+  installation and has not itself been regenerated from this one: a full
+  `tools/catalog-msys2-packages.ps1` run against this installation's
+  complete ~15,700-package `pacman -Si` dump hit a reproducible
+  parameter-binding failure specific to this automated harness
+  (confirmed unrelated to pacman or the data itself — a debug check
+  immediately before the failing call verified a valid, fully-populated
+  result array), not a pacman defect.
+
+This is single-host, single-session evidence for this one installation
+and these two specific transactions; it does not establish upgrade,
+rollback, or repair behavior, which remain untested.
 
 ## Related Views
 

@@ -179,6 +179,10 @@
       {
         "type": "min_observed_packages",
         "count": 100
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Extract PE imports, exports, subsystem, architecture, and debug metadata": [
@@ -186,6 +190,10 @@
         "type": "min_inventory_entities_of_kind",
         "kind": "dll",
         "count": 100
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Extract static/import archive members": [
@@ -198,6 +206,10 @@
         "type": "min_inventory_entities_of_kind",
         "kind": "import-library",
         "count": 25
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Index headers, pkg-config files, and CMake metadata": [
@@ -210,6 +222,10 @@
         "type": "min_inventory_entities_of_kind",
         "kind": "pkg-config-module",
         "count": 25
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Record artifact checksums, versions, retrieval dates, and licenses": [
@@ -233,6 +249,10 @@
         "type": "min_lines",
         "path": "generated/binary-dependency-report.md",
         "lines": 200
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Resolve recipe source checksums against downloaded upstream payloads": [
@@ -245,6 +265,10 @@
       {
         "type": "min_observed_packages",
         "count": 100
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "L0 ecosystem context": [
@@ -509,6 +533,10 @@
       {
         "type": "min_observed_packages",
         "count": 100
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Binary-to-DLL dependency graph": [
@@ -520,6 +548,10 @@
         "type": "min_lines",
         "path": "generated/binary-dependency-report.md",
         "lines": 200
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Header and metadata indexes": [
@@ -531,6 +563,10 @@
         "type": "min_lines",
         "path": "generated/development-artifact-catalog.md",
         "lines": 200
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEEP-INVENTORY-BLOCKER.md"
       }
     ],
     "Library family classification": [

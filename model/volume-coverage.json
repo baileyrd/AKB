@@ -54,7 +54,7 @@
     },
     "11": {
       "state": "partial",
-      "rationale": "The repository-to-package inventory is directly observed across 15,711 packages and 6 repositories, which is the strongest observational base in the knowledge base. The package-to-file inventory beneath it covers 2 packages."
+      "rationale": "The repository-to-package inventory is directly observed across 15,711 packages and 6 repositories, which is the strongest observational base in the knowledge base. The package-to-file inventory beneath it covers 2. That gap is blocked rather than undone - it needs a Windows host with MSYS2 installed - and docs/DEEP-INVENTORY-BLOCKER.md states the cause, the six statements elsewhere that are qualified by it, and the command that would close it."
     },
     "12": {
       "state": "planned",

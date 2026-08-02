@@ -44,6 +44,23 @@ The collection *pipeline* is built and tested. Its *coverage* is 2 of
 `package_payload_coverage.percent` = 0.013), so the extraction items below
 are cleared: the capability exists, the extraction has not been performed.
 
+**BLOCKED — needs a Windows host with MSYS2 installed.** The six unchecked
+items in this increment, and the three in Increment 5 that project their
+output, are not undone work in the ordinary sense. They are the only items
+on this roadmap that cannot be closed from this environment at all.
+`tools/Collect-AkbDeepInventory.ps1` asks `<Msys2Root>\usr\bin\pacman.exe`
+which files each installed package owns and then reads those files' PE
+headers. That needs a Windows machine with MSYS2 actually installed and the
+packages of interest present — properties of a host, not dependencies that
+could be added. Every session this knowledge base has run in has been a
+Linux container.
+
+[The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md) states this
+once, names the six statements elsewhere in the knowledge base that are
+currently qualified by it, and gives the single command that would close
+it. The nine items stay unchecked deliberately: ticking them would remove
+the largest remaining gap here from the backlog while it is entirely open.
+
 - [x] Register official upstream sources
 - [x] Discover and ingest enabled repository package metadata through pacman
 - [x] Preserve content-addressed catalog snapshots and integrity manifests
@@ -152,8 +169,12 @@ say so.
 - [x] Reverse dependency and impact analysis
 - [x] Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories
 
-The three cleared items are gated on Increment 1's extraction work:
-`generated/binary-dependency-report.md` is 22 lines and
+**The three cleared items are BLOCKED behind Increment 1's extraction
+work**, which needs a Windows host with MSYS2 installed — see
+[The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md). They are
+projections of data that collection would produce, so closing them first
+would mean generating reports over two packages and calling the ecosystem
+covered. `generated/binary-dependency-report.md` is 22 lines and
 `generated/development-artifact-catalog.md` is 11 lines, both covering the
 same two packages.
 

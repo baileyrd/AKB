@@ -28,7 +28,7 @@ remain distinguishable from reviewed architecture.
 | 8 Toolchains | [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md), [GCC](GNU-GCC.md), [GNU Binutils](GNU-BINUTILS.md), [GDB](GNU-GDB.md), [Clang](CLANG.md), [LLD](LLD.md), [LLDB](LLDB.md), [CMake](CMAKE.md), [Meson](MESON.md), [Ninja](NINJA.md), [pkgconf](PKGCONF.md), [GNU Autoconf](GNU-AUTOCONF.md), [GNU Automake](GNU-AUTOMAKE.md), [GNU Libtool](GNU-LIBTOOL.md), [GNU Make](GNU-MAKE.md), [LLVM](LLVM.md) | `partial` | Every toolchain-tool group and role-model row identified for this volume now has evidence-backed per-tool pages (15 tools, plus the C++ library row resolved via Volume 6's libstdc++/libc++ pages); observed build outputs beyond the existing bounded compile/execute probe remain. The LLVM umbrella page was added 2026-08-02: Clang, LLD, and LLDB each had a page while the infrastructure they are built on had none. Its measured content is the MSYS2 packaging split — `llvm` as a metapackage pinning `llvm-libs` and `llvm-tools`, and the MSYS and native sides on different major versions. What the `llvm-tools` package installs is listed from upstream rather than observed, because no package file manifest has been collected |
 | 9 Git for Windows | [Distribution boundary](GIT-FOR-WINDOWS-BOUNDARY.md), [launcher/startup](GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md), [transport boundaries](GIT-FOR-WINDOWS-TRANSPORT-BOUNDARIES.md), [package/source mappings](GIT-FOR-WINDOWS-PACKAGE-SOURCE-MAPPINGS.md), [Git Bash and MSYS interaction](GIT-FOR-WINDOWS-GIT-BASH.md), [credential manager](GIT-FOR-WINDOWS-CREDENTIAL-MANAGER.md), [HTTP transport](GIT-FOR-WINDOWS-HTTP-TRANSPORT.md), [DLL loading](GIT-FOR-WINDOWS-DLL-LOADING.md) | `partial` | 8 pages (was 4). The three charter terms that appeared in zero pages — MSYS interaction, HTTP transport, credential manager — each have one, grounded in gitforwindows.org, gitcredentials(7), and git-config. The HTTP page records the openssl/schannel trust-store divergence, which is the distribution's most consequential Windows-specific behavior. Remaining: no controlled observation of any Git for Windows installation; Git Credential Manager's repository was unreachable from the collection environment so its internals are unverified; no PE import analysis of any shipped binary, which is what the DLL-loading page needs to move past mechanism; and no capture of which TLS backend or credential helper an installation actually uses |
 | 10 Interactive Architecture Explorer | [Explorer hierarchy](DIAGRAM-HIERARCHY.md), generated explorer routes, [zoomable graph](EXPLORER-ZOOMABLE-GRAPH.md) | `partial` | Zoomable graph rendering added 2026-08-02 at route `#/graph/<id>`, dependency-free — the SVG viewBox is the whole zoom model — with button and keyboard equivalents for every pointer gesture and a complete textual equivalent below each figure. Remaining: demonstrated populated deep-object views, and prose depth; this volume still has the lowest words-per-page figure in the knowledge base |
-| 11 Package Catalog | [Repository package inventory](REPOSITORY-PACKAGE-INVENTORY.md), [package file inventory](PACKAGE-FILE-INVENTORY.md), [binary graph](BINARY-DLL-DEPENDENCY-GRAPH.md) | `partial` | Direct artifact collection for more than the isolated installed subset |
+| 11 Package Catalog | [Repository package inventory](REPOSITORY-PACKAGE-INVENTORY.md), [package file inventory](PACKAGE-FILE-INVENTORY.md), [binary graph](BINARY-DLL-DEPENDENCY-GRAPH.md), [the deep-inventory blocker](DEEP-INVENTORY-BLOCKER.md) | `partial` | The nine unchecked roadmap items behind this volume's depth are **blocked, not neglected**: they need a Windows host with MSYS2 installed, which this knowledge base has never had. Stated once in [the blocker page](DEEP-INVENTORY-BLOCKER.md) as of 2026-08-02, with the six statements elsewhere that are qualified by it and the single command that would close it. Direct artifact collection for more than the isolated installed subset |
 | 12 Source Code Organization | [Source code organization](SOURCE-CODE-ORGANIZATION.md), recipe-tree collectors, and [Git for Windows package/source mappings](GIT-FOR-WINDOWS-PACKAGE-SOURCE-MAPPINGS.md) | `planned` | Package-to-source-to-artifact proof |
 | 13 Dependency Analysis | [Reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md) | `partial` | Broader resolved binary/metadata dependency observations |
 | 14 Build Systems | [Build-system role model](BUILD-SYSTEM-ROLE-MODEL.md), [artifact flow mappings](BUILD-ARTIFACT-FLOW-MAPPINGS.md) | `partial` | Reproducible observed build pipeline and patch/output mapping |
@@ -76,7 +76,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 8 | Toolchains | `partial` | 16 | 223 | 13,469 | 842 | 22 | 66 |
 | 9 | Git for Windows | `partial` | 8 | 73 | 3,950 | 494 | 6 | 4 |
 | 10 | Interactive Architecture Explorer | `partial` | 9 | 19 | 2,136 | 237 | 0 | 4 |
-| 11 | Package Catalog | `partial` | 8 | 20 | 3,016 | 377 | 0 | 0 |
+| 11 | Package Catalog | `partial` | 9 | 28 | 3,890 | 432 | 2 | 3 |
 | 12 | Source Code Organization | `planned` | 2 | 5 | 596 | 298 | 0 | 0 |
 | 13 | Dependency Analysis | `partial` | 1 | 3 | 406 | 406 | 0 | 0 |
 | 14 | Build Systems | `partial` | 2 | 5 | 776 | 388 | 0 | 9 |
@@ -85,13 +85,13 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 17 | Performance | `inferred` | 1 | 8 | 2,224 | 2,224 | 5 | 7 |
 | 18 | Developer Guide | `inferred` | 5 | 42 | 5,261 | 1,052 | 13 | 10 |
 | 19 | Operations Guide | `partial` | 3 | 18 | 1,796 | 599 | 0 | 0 |
-| 20 | Reference Appendices | `partial` | 9 | 48 | 14,325 | 1,592 | 1 | 0 |
-| | **Total** | | **301** | **3,716** | **205,069** | | | |
+| 20 | Reference Appendices | `partial` | 9 | 48 | 14,383 | 1,598 | 1 | 0 |
+| | **Total** | | **302** | **3,724** | **206,001** | | | |
 
 ### What the numbers say
 
-- Volume 6 (Libraries) holds 164 of 301 pages and 55.0% of all prose.
-- 9 volumes cite no evidence record on any page: 1, 10, 11, 12, 13, 14, 15, 16, 19. Their claims are authored rather than sourced.
+- Volume 6 (Libraries) holds 164 of 302 pages and 54.8% of all prose.
+- 8 volumes cite no evidence record on any page: 1, 10, 12, 13, 14, 15, 16, 19. Their claims are authored rather than sourced.
 - Volume 10 (Interactive Architecture Explorer) has the lowest prose density at 237 words per page.
 - 3 of the charter's 8 coverage states are in use. Unused: `unknown`, `not-applicable`, `verified`, `deprecated`, `superseded`.
 
@@ -130,7 +130,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 
 **10 Interactive Architecture Explorer — `partial`.** Eight pages averaging fewer than two second-level headings each - the thinnest prose density in the knowledge base. The explorer itself is built and tested; the volume documenting it is not written to the same standard.
 
-**11 Package Catalog — `partial`.** The repository-to-package inventory is directly observed across 15,711 packages and 6 repositories, which is the strongest observational base in the knowledge base. The package-to-file inventory beneath it covers 2 packages.
+**11 Package Catalog — `partial`.** The repository-to-package inventory is directly observed across 15,711 packages and 6 repositories, which is the strongest observational base in the knowledge base. The package-to-file inventory beneath it covers 2. That gap is blocked rather than undone - it needs a Windows host with MSYS2 installed - and docs/DEEP-INVENTORY-BLOCKER.md states the cause, the six statements elsewhere that are qualified by it, and the command that would close it.
 
 **12 Source Code Organization — `planned`.** Two pages totalling under 600 words, citing no evidence. The volume names its subject - where architectural elements are implemented upstream - and does not yet address it. Recorded as planned rather than partial because there is no substantive material to be partial about.
 

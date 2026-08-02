@@ -83,6 +83,18 @@ class ObjectFactsTests(unittest.TestCase):
         self.assertEqual(bof.cell("a|b"), "a\\|b")
         self.assertEqual(bof.cell("a\nb"), "a b")
 
+    def test_a_page_can_opt_out(self):
+        """A page that cites objects illustratively must be able to decline.
+
+        DEEP-INVENTORY-BLOCKER.md is about a constraint and cites two example
+        packages; a facts table headed with the first of them would announce
+        the wrong subject.
+        """
+        page = ROOT / "docs" / "DEEP-INVENTORY-BLOCKER.md"
+        text = page.read_text(encoding="utf-8")
+        self.assertIsNotNone(bof.OPT_OUT.search(text), "opt-out key removed")
+        self.assertNotIn(bof.BEGIN, text, "opt-out did not take effect")
+
     def test_rebuild_is_a_no_op(self):
         """CI regenerates before `git diff --exit-code`."""
         changed = bof.build(self.graph, write=False)

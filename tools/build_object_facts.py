@@ -33,6 +33,12 @@ END = "<!-- END GENERATED object-facts -->"
 
 MODEL_REFS = re.compile(r"^model_refs:\s*\n((?:[ \t]+-[ \t]+.*\n)+)", re.M)
 
+# A page may opt out with `object_facts: skip` in its frontmatter. That is for
+# pages which reference objects *illustratively* rather than being about one:
+# a page about a constraint may cite two example packages without either being
+# its subject, and a facts table headed with the first of them would mislead.
+OPT_OUT = re.compile(r"^object_facts:\s*skip\s*$", re.M)
+
 # Catalog properties worth surfacing, in the order they are shown.
 PACKAGE_FIELDS = (
     ("version", "Version"),
@@ -203,7 +209,7 @@ def build(graph: dict, docs: Path = DOCS, write: bool = True) -> list[Path]:
     written = []
     for path in sorted(docs.glob("*.md")):
         text = path.read_text(encoding="utf-8")
-        subject = primary_ref(text, entities)
+        subject = None if OPT_OUT.search(text) else primary_ref(text, entities)
         block = facts(subject, entities, evidence, claims) if subject else None
         if block is None:
             if BEGIN in text and END in text:

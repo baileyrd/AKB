@@ -119,6 +119,15 @@ def check(assertion, graph, inventory_kinds):
             f"need {assertion['min_files']}"
         )
 
+    if kind == "no_three_segment_claim_ids":
+        import json as _json
+        graph_raw = _json.loads((ROOT / "model" / "graph.json").read_text(encoding="utf-8"))
+        offenders = [c["id"] for c in graph_raw.get("claims", []) if len(c["id"].split(":")) < 4]
+        return not offenders, (
+            f"{len(offenders)} claim ids still use three segments"
+            + (f" (e.g. {offenders[0]})" if offenders else "")
+        )
+
     if kind == "term_in_docs":
         actual = len(docs_containing(assertion["term"]))
         return actual >= assertion["min_files"], (
@@ -226,6 +235,7 @@ class RoadmapClaimTests(unittest.TestCase):
                         "min_inventory_entities_of_kind",
                         "explorer_view_nonempty",
                         "min_observed_packages",
+                        "no_three_segment_claim_ids",
                     },
                     f"{text}: unknown assertion type {assertion['type']}",
                 )

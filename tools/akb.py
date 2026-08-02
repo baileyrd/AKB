@@ -107,6 +107,17 @@ def validate() -> dict[str, int]:
         if claim["subject"] not in known_entities:
             errors.append(f"{claim['id']}: unknown subject {claim['subject']}")
 
+    # `properties` is free-form, so identifier-valued properties are not
+    # covered by the checks above and a typo in one would pass silently.
+    # packaged_as is the one that carries architectural weight: it binds a
+    # library or component to the catalog package that ships it.
+    for entity in entities:
+        packaged_as = (entity.get("properties") or {}).get("packaged_as")
+        if packaged_as and packaged_as not in known_entities:
+            errors.append(
+                f"{entity['id']}: packaged_as does not resolve: {packaged_as}"
+            )
+
     if errors:
         raise ValidationError("\n".join(errors))
 

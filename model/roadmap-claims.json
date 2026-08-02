@@ -11,7 +11,8 @@
     "min_graph_entities_of_kind": "composed graph has at least count entities of kind",
     "min_inventory_entities_of_kind": "model/inventory/current.json has at least count entities of kind",
     "explorer_view_nonempty": "the named tools/build_explorer.py view resolves to at least one entity",
-    "min_observed_packages": "generated/coverage-assessment.json package_payload_coverage.observed_packages >= count"
+    "min_observed_packages": "generated/coverage-assessment.json package_payload_coverage.observed_packages >= count",
+    "no_three_segment_claim_ids": "model/graph.json contains no claim whose id has fewer than four colon-separated segments"
   },
   "items": {
     "Governing charter": [
@@ -799,12 +800,6 @@
         "min_files": 1
       }
     ],
-    "Enforce the model schemas with jsonschema": [
-      {
-        "type": "path_exists",
-        "path": "tests/test_schema_conformance.py"
-      }
-    ],
     "Enforce roadmap claims against evidence": [
       {
         "type": "path_exists",
@@ -841,6 +836,25 @@
         "type": "term_in_docs",
         "term": "Not started",
         "min_files": 1
+      }
+    ],
+    "Enforce the model schemas in CI": [
+      {
+        "type": "path_exists",
+        "path": "tools/schema_check.py"
+      },
+      {
+        "type": "path_exists",
+        "path": "tests/test_schema_conformance.py"
+      },
+      {
+        "type": "path_exists",
+        "path": "charter/adr/0002-dependency-free-schema-checking.md"
+      }
+    ],
+    "Normalise the nine three-segment claim identifiers": [
+      {
+        "type": "no_three_segment_claim_ids"
       }
     ]
   }

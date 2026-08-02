@@ -3,7 +3,12 @@
   "$id": "https://architecture.example/schema/msys2-akb/architecture-graph.schema.json",
   "title": "MSYS2 AKB Architecture Graph",
   "type": "object",
-  "required": ["schema_version", "snapshot", "entities", "relationships"],
+  "required": [
+    "schema_version",
+    "snapshot",
+    "entities",
+    "relationships"
+  ],
   "additionalProperties": false,
   "properties": {
     "schema_version": {
@@ -15,20 +20,28 @@
     },
     "entities": {
       "type": "array",
-      "items": {"$ref": "#/$defs/entity"}
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
     },
     "relationships": {
       "type": "array",
-      "items": {"$ref": "#/$defs/relationship"}
+      "items": {
+        "$ref": "#/$defs/relationship"
+      }
     },
     "claims": {
       "type": "array",
-      "items": {"$ref": "#/$defs/claim"},
+      "items": {
+        "$ref": "#/$defs/claim"
+      },
       "default": []
     },
     "evidence": {
       "type": "array",
-      "items": {"$ref": "#/$defs/evidence"},
+      "items": {
+        "$ref": "#/$defs/evidence"
+      },
       "default": []
     }
   },
@@ -49,42 +62,86 @@
       ]
     },
     "confidence": {
-      "enum": ["unknown", "low", "medium", "high", "verified"]
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high",
+        "verified"
+      ]
     },
     "snapshot": {
       "type": "object",
-      "required": ["id", "observed_at"],
+      "required": [
+        "id",
+        "observed_at"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": {"type": "string", "minLength": 1},
-        "observed_at": {"type": "string", "format": "date-time"},
-        "description": {"type": "string"},
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        },
         "upstream_versions": {
           "type": "object",
-          "additionalProperties": {"type": "string"}
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       }
     },
     "entity": {
       "type": "object",
-      "required": ["id", "kind", "name", "status"],
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "status"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": {"$ref": "#/$defs/id"},
-        "kind": {"type": "string", "minLength": 1},
-        "name": {"type": "string", "minLength": 1},
-        "summary": {"type": "string"},
-        "status": {"$ref": "#/$defs/status"},
-        "confidence": {"$ref": "#/$defs/confidence"},
-        "authority": {"type": "string"},
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "authority": {
+          "type": "string"
+        },
         "aliases": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "uniqueItems": true
         },
         "tags": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "uniqueItems": true
         },
         "applicability": {
@@ -97,71 +154,171 @@
         },
         "evidence_refs": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "uniqueItems": true
         }
       }
     },
     "relationship": {
       "type": "object",
-      "required": ["id", "type", "source", "target", "status"],
+      "required": [
+        "id",
+        "type",
+        "source",
+        "target",
+        "status"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": {"$ref": "#/$defs/id"},
-        "type": {"type": "string", "minLength": 1},
-        "source": {"$ref": "#/$defs/id"},
-        "target": {"$ref": "#/$defs/id"},
-        "status": {"$ref": "#/$defs/status"},
-        "confidence": {"$ref": "#/$defs/confidence"},
-        "scope": {"type": "string"},
-        "condition": {"type": "string"},
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/id"
+        },
+        "target": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "$ref": "#/$defs/status"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
         "properties": {
           "type": "object",
           "additionalProperties": true
         },
         "evidence_refs": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "uniqueItems": true
         }
       }
     },
     "claim": {
       "type": "object",
-      "required": ["id", "subject", "statement", "classification", "confidence"],
+      "required": [
+        "id",
+        "subject",
+        "statement",
+        "classification",
+        "confidence"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": {"$ref": "#/$defs/id"},
-        "subject": {"$ref": "#/$defs/id"},
-        "statement": {"type": "string", "minLength": 1},
-        "classification": {"enum": ["fact", "observation", "inference"]},
-        "confidence": {"$ref": "#/$defs/confidence"},
-        "valid_from": {"type": ["string", "null"]},
-        "valid_to": {"type": ["string", "null"]},
+        "id": {
+          "$ref": "#/$defs/claimId"
+        },
+        "subject": {
+          "$ref": "#/$defs/id"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "classification": {
+          "enum": [
+            "fact",
+            "observation",
+            "inference"
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "valid_from": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valid_to": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "evidence_refs": {
           "type": "array",
-          "items": {"type": "string"},
+          "items": {
+            "type": "string"
+          },
           "minItems": 1
         }
       }
     },
     "evidence": {
       "type": "object",
-      "required": ["id", "class", "title", "locator", "retrieved_at"],
+      "required": [
+        "id",
+        "class",
+        "title",
+        "locator",
+        "retrieved_at"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": {"type": "string", "minLength": 1},
-        "class": {
-          "enum": ["primary", "derived", "observed", "secondary", "inference"]
+        "id": {
+          "type": "string",
+          "minLength": 1
         },
-        "title": {"type": "string", "minLength": 1},
-        "locator": {"type": "string", "minLength": 1},
-        "retrieved_at": {"type": "string", "format": "date-time"},
-        "upstream_version": {"type": ["string", "null"]},
-        "integrity": {"type": ["string", "null"]},
-        "notes": {"type": "string"}
+        "class": {
+          "enum": [
+            "primary",
+            "derived",
+            "observed",
+            "secondary",
+            "inference"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "upstream_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "integrity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
       }
+    },
+    "claimId": {
+      "type": "string",
+      "description": "Claim identifier. Two conventions are in use and both are accepted here: the dominant four-segment claim:<kind>:<subject>:<aspect> (30 claims) and a three-segment claim:<kind>:<subject-and-aspect> (9 claims, all Volume 6 library claims added later, which merged subject and aspect into one segment). The four-segment form is preferred because it keeps subject and aspect separable. Normalising the nine is deferred rather than done: 33 claim identifiers are cited by name in documentation prose and renaming would break those citations. Recorded as an open item rather than silently blessed.",
+      "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9._/-]+:[a-z0-9._/@+-]+(:[a-z0-9._/@+-]+)?$"
     }
   }
 }
-

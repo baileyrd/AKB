@@ -208,8 +208,20 @@ into `docs/`; all 253 pages are hand-authored.
 
 - [ ] Generate mechanical object-page sections from the composed model
 - [x] Validate documentation pages in `tools/akb.py`
-- [ ] Enforce the model schemas with jsonschema
+- [x] Enforce the model schemas in CI
 - [x] Enforce roadmap claims against evidence
+- [ ] Normalise the nine three-segment claim identifiers
+
+**Schema enforcement closed 2026-08-02.** The item read "with jsonschema";
+that package is unavailable here and the repository has no dependency
+manifest and no CI install step. `tools/schema_check.py` implements the
+measured subset of JSON Schema the three schemas actually use and rejects
+anything outside it, so the deliverable — schemas enforced on every push —
+is unchanged while the zero-dependency property is kept. Recorded as
+[ADR 0002](charter/adr/0002-dependency-free-schema-checking.md) rather than
+silently reworded. Running the schemas for the first time found that 30
+claim identifiers use four segments and 9 use three; the nine are the
+outliers and normalising them is added above rather than blessed.
 
 ## Increment 12 — Volume balance
 

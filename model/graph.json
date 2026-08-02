@@ -973,6 +973,42 @@
       "evidence_refs": ["evidence:gnupg:libksba-manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:openssl:openssl@clang64",
+      "kind": "library",
+      "name": "OpenSSL (CLANG64)",
+      "summary": "The OpenSSL TLS/cryptography library, packaged in the CLANG64 environment with zero own catalog dependencies and 121 recorded reverse dependents, the widest reverse-dependency footprint of any library added this session.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "OpenSSL project",
+      "aliases": ["openssl"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.openssl.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-openssl",
+        "role": "TLS/SSL and general-purpose cryptography"
+      },
+      "evidence_refs": ["evidence:openssl:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libssh2:libssh2@clang64",
+      "kind": "library",
+      "name": "libssh2 (CLANG64)",
+      "summary": "The libssh2 SSH client library, packaged in the CLANG64 environment and linking against two libraries already documented in this knowledge base (OpenSSL, zlib, both CLANG64), consumed by the CLANG64 sibling of curl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libssh2 project",
+      "aliases": ["libssh2"],
+      "tags": ["library", "network", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.libssh2.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libssh2",
+        "role": "SSH2 protocol client library"
+      },
+      "evidence_refs": ["evidence:libssh2:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8975,6 +9011,30 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libssh2-clang64-requires-openssl-clang64",
+      "type": "requires",
+      "source": "library:libssh2:libssh2@clang64",
+      "target": "library:openssl:openssl@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the cryptographic and TLS-adjacent primitives (key exchange, ciphers, MACs) libssh2's own SSH2 protocol implementation uses.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libssh2-clang64-requires-zlib-clang64",
+      "type": "requires",
+      "source": "library:libssh2:libssh2@clang64",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs libssh2's optional zlib-based SSH2 transport compression.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

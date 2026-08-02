@@ -648,7 +648,7 @@
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
-| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 5 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 6 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@clang64 | library | libassuan (CLANG64) | partial | 1 | 0 |
@@ -688,6 +688,7 @@
 | library:libpsl:libpsl@clang64 | library | libpsl (CLANG64) | partial | 4 | 0 |
 | library:libpsl:libpsl@ucrt64 | library | libpsl (UCRT64) | partial | 4 | 1 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
+| library:libssh2:libssh2@clang64 | library | libssh2 (CLANG64) | partial | 2 | 0 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 7 |
@@ -718,6 +719,7 @@
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
 | library:oberhumer:liblzo2@msys | library | LZO | partial | 0 | 0 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
+| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 1 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 1 |

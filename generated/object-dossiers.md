@@ -5805,7 +5805,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:gnu:zlib@msys`
 
@@ -6158,6 +6158,15 @@
 - Outgoing relationships: 5
 - Incoming relationships: 2
 
+## `library:libssh2:libssh2@clang64`
+
+- Name: libssh2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 0
+
 ## `library:libssh2:libssh2@ucrt64`
 
 - Name: libssh2 (UCRT64)
@@ -6427,6 +6436,15 @@
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
 - Incoming relationships: 6
+
+## `library:openssl:openssl@clang64`
+
+- Name: OpenSSL (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:openssl:openssl@ucrt64`
 

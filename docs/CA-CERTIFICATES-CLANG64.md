@@ -149,3 +149,4 @@ dependents are not individually modeled in this knowledge base.
 - [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
 - [ca-certificates (MSYS)](CA-CERTIFICATES.md)
 - [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
+- [OpenSSL (CLANG64)](OPENSSL-CLANG64.md)

@@ -179,3 +179,4 @@ methodology.
 - [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
 - [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
 - [libarchive](LIBARCHIVE.md)
+- [OpenSSL (CLANG64)](OPENSSL-CLANG64.md)

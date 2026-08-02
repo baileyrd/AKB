@@ -76397,6 +76397,8 @@
 | relationship:foundation-libraries:libserf-requires-apr-util | requires | library:apache:libserf@msys | library:apache:apr-util@msys | verified |
 | relationship:foundation-libraries:libserf-requires-libopenssl | requires | library:apache:libserf@msys | library:openssl:libopenssl | verified |
 | relationship:foundation-libraries:libserf-requires-zlib | requires | library:apache:libserf@msys | library:gnu:zlib@msys | verified |
+| relationship:foundation-libraries:libssh2-clang64-requires-openssl-clang64 | requires | library:libssh2:libssh2@clang64 | library:openssl:openssl@clang64 | verified |
+| relationship:foundation-libraries:libssh2-clang64-requires-zlib-clang64 | requires | library:libssh2:libssh2@clang64 | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:libssh2-packaged-by-package | packaged-by | library:libssh2:libssh2 | package:msys2:libssh2 | verified |
 | relationship:foundation-libraries:libssh2-requires-ca-certificates | requires | library:libssh2:libssh2 | library:mozilla:ca-certificates | verified |
 | relationship:foundation-libraries:libssh2-requires-openssl | requires | library:libssh2:libssh2 | component:openssl:openssl | verified |

@@ -157,3 +157,4 @@ methodology.
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [ca-certificates](CA-CERTIFICATES.md)
 - [OpenSSL](OPENSSL.md)
+- [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)

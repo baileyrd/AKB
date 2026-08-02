@@ -685,6 +685,7 @@ Objects
 - library:libpsl:libpsl@clang64 (library): libpsl (CLANG64)
 - library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
 - library:libssh2:libssh2 (library): libssh2
+- library:libssh2:libssh2@clang64 (library): libssh2 (CLANG64)
 - library:libssh2:libssh2@ucrt64 (library): libssh2 (UCRT64)
 - library:libuv:libuv (library): libuv
 - library:libxcrypt:libxcrypt (library): libxcrypt
@@ -715,6 +716,7 @@ Objects
 - library:nghttp2:libngtcp2@ucrt64 (library): libngtcp2 (UCRT64)
 - library:oberhumer:liblzo2@msys (library): LZO
 - library:openssl:libopenssl (library): libopenssl
+- library:openssl:openssl@clang64 (library): OpenSSL (CLANG64)
 - library:openssl:openssl@ucrt64 (library): OpenSSL (UCRT64)
 - library:p11-glue:p11-kit (library): p11-kit
 - library:p11-glue:p11-kit@clang64 (library): p11-kit (CLANG64)
@@ -16930,6 +16932,8 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:libssh2:libssh2@clang64 --requires--> library:openssl:openssl@clang64
+- library:libssh2:libssh2@clang64 --requires--> library:gnu:zlib@clang64
 - library:gnupg:libgpg-error@clang64 --requires--> library:gnu:gettext@clang64
 - library:gnupg:libgcrypt@clang64 --requires--> library:gnupg:libgpg-error@clang64
 - library:gnupg:libassuan@clang64 --requires--> library:gnupg:libgpg-error@clang64

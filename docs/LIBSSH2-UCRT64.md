@@ -147,3 +147,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [zlib](ZLIB.md)
+- [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)

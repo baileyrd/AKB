@@ -210,7 +210,7 @@ mechanism.
 - [x] Layer, package, library, runtime, toolchain, and repository views
 - [x] Accessible SVG and textual fallbacks
 - [x] Large-graph performance tests
-- [ ] Graphical zoomable graph rendering in the explorer page
+- [x] Graphical zoomable graph rendering in the explorer page
 
 **Closed 2026-08-02.** The `layers` and `toolchains` views had resolved to
 zero objects: `toolchains` projected only by an entity `kind` the graph
@@ -222,6 +222,34 @@ views resolve — `toolchains` to 17 objects, `layers` to 8 — and the six
 diagram hyperlinks that dead-ended in `toolchains` are live.
 `tests/test_diagrams.py` now fails the build if any diagram links to a view
 that renders nothing.
+
+**Zoomable rendering closed 2026-08-02.** Route `#/graph/<object-id>`
+renders one object's dependency neighbourhood as an interactive SVG, linked
+from every object detail page. The explorer's only picture until now was
+`overview.svg` — a fixed-size snapshot of the first eighty objects with no
+way to look closer at any of them.
+
+The SVG `viewBox` is the entire zoom implementation: pan and zoom are
+arithmetic on four numbers, so there is no layout library and no transform
+matrix to keep in step with hit-testing. That follows from the
+zero-dependency posture recorded in ADR 0002. Zoom is clamped between one
+eighth and four times the base width, because an unclamped viewBox lets a
+user lose the figure with no indication of the way back.
+
+Every pointer gesture has a button and a key: scroll or **Zoom in/out** or
+<kbd>+</kbd>/<kbd>-</kbd>, drag or arrow keys, **Reset view** or
+<kbd>0</kbd>. Wheel zoom anchors at the pointer; button and key zoom anchor
+at the centre. A complete textual equivalent sits below every figure — the
+same data as ordinary links, unbounded where the figure is bounded to
+fourteen neighbours per side, with the omission disclosed in the caption.
+
+`tests/test_explorer_graph.py` holds ten properties, including that no
+external script, CDN reference, `import()`, or `require()` reaches the
+page. The interaction was additionally exercised in headless Chromium
+during development: zooming narrowed the viewBox, <kbd>ArrowRight</kbd>
+panned it, <kbd>0</kbd> restored it exactly, and forty consecutive
+zoom-outs stopped at the clamp. That was a development check rather than a
+CI test — the suite must run with Python alone.
 
 ## Increment 8 — Assurance and operations
 

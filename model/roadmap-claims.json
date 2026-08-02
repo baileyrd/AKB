@@ -709,8 +709,17 @@
     ],
     "Graphical zoomable graph rendering in the explorer page": [
       {
+        "type": "path_exists",
+        "path": "tests/test_explorer_graph.py"
+      },
+      {
         "type": "term_in_docs",
-        "term": "viewBox",
+        "term": "zoomable",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "#/graph/",
         "min_files": 1
       }
     ],

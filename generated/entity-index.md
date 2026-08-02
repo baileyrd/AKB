@@ -605,14 +605,14 @@
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
-| library:bzip2:libbz2 | library | libbz2 | partial | 0 | 5 |
+| library:bzip2:libbz2 | library | libbz2 | partial | 0 | 6 |
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
 | library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 12 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
 | library:darwinsys:file | library | file | partial | 6 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 7 |
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
-| library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 4 |
+| library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 5 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 1 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
@@ -620,7 +620,7 @@
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
-| library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 13 |
+| library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 14 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 18 |
@@ -638,7 +638,7 @@
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 5 |
-| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 10 |
+| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 11 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -658,9 +658,10 @@
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 5 | 2 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
+| library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
 | library:libedit:libedit | library | libedit | partial | 2 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 4 |
-| library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 2 |
+| library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 3 |
 | library:libffi:libffi@clang64 | library | libffi (CLANG64) | partial | 0 | 1 |
 | library:libffi:libffi@msys | library | libffi (MSYS) | partial | 0 | 1 |
 | library:libffi:libffi@ucrt64 | library | libffi (UCRT64) | partial | 0 | 1 |
@@ -674,7 +675,7 @@
 | library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
-| library:lz4:liblz4 | library | liblz4 | partial | 0 | 0 |
+| library:lz4:liblz4 | library | liblz4 | partial | 0 | 1 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 5 |
 | library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
@@ -693,7 +694,7 @@
 | library:nghttp2:libnghttp3@ucrt64 | library | libnghttp3 (UCRT64) | partial | 0 | 1 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
-| library:openssl:libopenssl | library | libopenssl | partial | 0 | 3 |
+| library:openssl:libopenssl | library | libopenssl | partial | 0 | 4 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
@@ -705,7 +706,7 @@
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
 | library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |
-| library:tukaani:liblzma@msys | library | liblzma (MSYS) | partial | 0 | 2 |
+| library:tukaani:liblzma@msys | library | liblzma (MSYS) | partial | 0 | 3 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
 | library:yubico:libfido2 | library | libfido2 | partial | 4 | 2 |

@@ -164,3 +164,4 @@ methodology.
 - [Heimdal runtime libraries](HEIMDAL-LIBS.md)
 - [libngtcp2](LIBNGTCP2.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

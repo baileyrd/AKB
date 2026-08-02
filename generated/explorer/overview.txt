@@ -655,6 +655,7 @@ Objects
 - library:h5l:heimdal-libs (library): Heimdal runtime libraries
 - library:jsoncpp:jsoncpp (library): JsonCpp
 - library:libarchive:libarchive (library): libarchive
+- library:libarchive:libarchive@msys (library): libarchive (MSYS)
 - library:libedit:libedit (library): libedit
 - library:libexpat:expat (library): Expat
 - library:libexpat:expat@msys (library): Expat (MSYS)
@@ -16895,6 +16896,14 @@ Relationships
 - component:gnupg:gnupg --requires--> library:bzip2:libbz2
 - component:info-zip:zip --requires--> library:bzip2:libbz2
 - component:info-zip:unzip --requires--> library:bzip2:libbz2
+- library:libarchive:libarchive@msys --requires--> library:bzip2:libbz2
+- library:libarchive:libarchive@msys --requires--> library:libexpat:expat@msys
+- library:libarchive:libarchive@msys --requires--> library:gnu:libiconv@msys
+- library:libarchive:libarchive@msys --requires--> library:lz4:liblz4
+- library:libarchive:libarchive@msys --requires--> library:tukaani:liblzma@msys
+- library:libarchive:libarchive@msys --requires--> library:openssl:libopenssl
+- library:libarchive:libarchive@msys --requires--> library:facebook:zstd@msys-lib
+- library:libarchive:libarchive@msys --requires--> library:gnu:zlib@msys
 - component:gnu:gawk --requires--> library:gnu:mpfr@msys
 - library:gnu:mpfr@msys --requires--> library:gnu:gmp@msys
 - library:nettle:nettle@msys --requires--> library:nettle:libnettle@msys

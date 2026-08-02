@@ -139,3 +139,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Expat (UCRT64)](EXPAT.md)
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

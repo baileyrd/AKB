@@ -173,9 +173,11 @@ project site (`evidence:libarchive:manual-2026-07-30`), matching the
 `project_url` already recorded for
 `package:msys2:mingw-w64-ucrt-x86_64-libarchive` in the catalog. Package
 identity, version, and the recorded dependency/dependent edges are backed
-by the pacman catalog snapshot (`evidence:catalog:current`). Open:
-whether other native environments package libarchive separately was not
-confirmed. Also explicitly out of scope for this page: the six
+by the pacman catalog snapshot (`evidence:catalog:current`). **Update,
+2026-08-02**: the MSYS environment does package libarchive separately —
+see [libarchive (MSYS)](LIBARCHIVE-MSYS.md), a distinct catalog entity
+now modeled in this knowledge base with its own, wider dependency set.
+Also explicitly out of scope for this page: the six
 UCRT64-native compression/crypto sub-dependencies not individually
 modeled as separate components in this knowledge base, and header-level
 API surface plus PE import/export-level evidence, per the
@@ -186,6 +188,7 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [CMake](CMAKE.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
 - [Expat](EXPAT.md)
 - [GNU libiconv](GNU-LIBICONV.md)
 - [PCRE2](PCRE2.md)

@@ -451,6 +451,24 @@
       "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:libarchive:libarchive@msys",
+      "kind": "library",
+      "name": "libarchive (MSYS)",
+      "summary": "The MSYS-environment build of the multi-format archive and compression library, a distinct catalog package from the UCRT64 libarchive already documented in this knowledge base, with the widest real dependency footprint of any single MSYS library modeled to date (libbz2, libexpat, libiconv, liblz4, liblzma, libopenssl, libzstd, and zlib).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libarchive project",
+      "aliases": ["libarchive"],
+      "tags": ["library", "archive"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.libarchive.org/",
+        "packaged_as": "package:msys2:libarchive",
+        "role": "multi-format archive reading and writing"
+      },
+      "evidence_refs": ["evidence:libarchive:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8381,6 +8399,102 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Needed to extract entries compressed with the bzip2 method within .zip archives.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-libbz2",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:bzip2:libbz2",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the bzip2 compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-expat",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:libexpat:expat@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs XML parsing for libarchive's xar and other XML-based archive format support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-libiconv",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:gnu:libiconv@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for archive entry filenames and metadata across encodings.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-liblz4",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:lz4:liblz4",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the LZ4 compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-liblzma",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:tukaani:liblzma@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the XZ/LZMA compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-libopenssl",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:openssl:libopenssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs cryptographic hashing and encrypted-archive support (e.g. RAR encryption checks, digest-based archive verification).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-libzstd",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:facebook:zstd@msys-lib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the Zstandard compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-msys-requires-zlib",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@msys",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the gzip/DEFLATE compression filter within libarchive's supported archive formats, the same role zlib plays for libcurl and GnuPG.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

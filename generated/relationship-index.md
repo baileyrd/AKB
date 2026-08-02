@@ -76276,6 +76276,14 @@
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
 | relationship:foundation-libraries:isl-requires-gmp | requires | library:libisl:isl | library:gnu:gmp | verified |
 | relationship:foundation-libraries:jsoncpp-packaged-by-package | packaged-by | library:jsoncpp:jsoncpp | package:msys2:mingw-w64-ucrt-x86_64-jsoncpp | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-expat | requires | library:libarchive:libarchive@msys | library:libexpat:expat@msys | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-libbz2 | requires | library:libarchive:libarchive@msys | library:bzip2:libbz2 | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-libiconv | requires | library:libarchive:libarchive@msys | library:gnu:libiconv@msys | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-liblz4 | requires | library:libarchive:libarchive@msys | library:lz4:liblz4 | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-liblzma | requires | library:libarchive:libarchive@msys | library:tukaani:liblzma@msys | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-libopenssl | requires | library:libarchive:libarchive@msys | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-libzstd | requires | library:libarchive:libarchive@msys | library:facebook:zstd@msys-lib | verified |
+| relationship:foundation-libraries:libarchive-msys-requires-zlib | requires | library:libarchive:libarchive@msys | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libarchive-packaged-by-package | packaged-by | library:libarchive:libarchive | package:msys2:mingw-w64-ucrt-x86_64-libarchive | verified |
 | relationship:foundation-libraries:libarchive-requires-expat | requires | library:libarchive:libarchive | library:libexpat:expat | verified |
 | relationship:foundation-libraries:libarchive-requires-libiconv | requires | library:libarchive:libarchive | library:gnu:libiconv | verified |

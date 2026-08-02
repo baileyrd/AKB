@@ -44,6 +44,8 @@ model_refs:
   - library:google:cppdap
   - library:jsoncpp:jsoncpp
   - library:libarchive:libarchive
+  - library:libarchive:libarchive@msys
+  - library:lz4:liblz4
   - library:libuv:libuv
   - library:rhash:rhash
   - library:darwinsys:file
@@ -148,6 +150,7 @@ evidence_refs:
   - evidence:google:cppdap-manual-2026-07-30
   - evidence:jsoncpp:manual-2026-07-30
   - evidence:libarchive:manual-2026-07-30
+  - evidence:lz4:manual-2026-07-30
   - evidence:libuv:manual-2026-07-30
   - evidence:rhash:manual-2026-07-30
   - evidence:darwinsys:file-manual-2026-07-30
@@ -168,7 +171,7 @@ evidence_refs:
   - evidence:libssh2:manual-2026-07-30
   - evidence:libffi:project-site-2026-07-30
   - evidence:c-ares:project-site-2026-07-30
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # MSYS2 Library Architecture
@@ -255,8 +258,9 @@ flowchart LR
 [libffi (UCRT64)](LIBFFI-UCRT64.md),
 [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md),
 [p11-kit (UCRT64)](P11-KIT-UCRT64.md),
-[GnuTLS (UCRT64)](GNUTLS-UCRT64.md), and
-[liblzma (MSYS)](LIBLZMA-MSYS.md) are
+[GnuTLS (UCRT64)](GNUTLS-UCRT64.md),
+[liblzma (MSYS)](LIBLZMA-MSYS.md), [liblz4 (MSYS)](LIBLZ4-MSYS.md), and
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -271,7 +275,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and four pages are deliberately scoped to package/dependency-level
+All one hundred and six pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -715,7 +719,25 @@ this session; and [libxml2 (CLANG64)'s](LIBXML2-CLANG64.md#dependencies)
 own zlib edge had been incorrectly grouped with its still-unmodeled
 libiconv sub-dependency and declined, when zlib (CLANG64) was in fact
 already modeled; and [GNU Cpio's](GNU-CPIO.md#dependencies) own
-`libintl` edge, cited by name but never graphed. These pages are a starting point for this
+`libintl` edge, cited by name but never graphed. A subsequent audit
+re-run confirmed no further edges remained (the only unmodeled catalog
+dependencies left anywhere in the volume are `gcc-libs` boilerplate
+rows, excluded by policy), so the next two additions came from the
+split-library/CLI pattern instead: [liblz4 (MSYS)](LIBLZ4-MSYS.md), a
+genuinely distinct MSYS package from [LZ4](LZ4.md)'s own CLI (Volume 5)
+with 7 recorded reverse dependents, none yet modeled; and
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md), a separate catalog entity from
+this volume's earlier UCRT64 [libarchive](LIBARCHIVE.md) page, which
+closed its own **update** on that page's prior open question ("whether
+other native environments package libarchive separately") and, at eight
+non-boilerplate dependency edges in a single pass, has the widest real
+dependency footprint of any MSYS library modeled to date — pulling
+together [libbz2](LIBBZ2.md), [Expat (MSYS)](EXPAT-MSYS.md),
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md),
+[liblz4 (MSYS)](LIBLZ4-MSYS.md), [liblzma (MSYS)](LIBLZMA-MSYS.md),
+[libopenssl](LIBOPENSSL.md), [libzstd (MSYS)](LIBZSTD-MSYS.md), and
+[zlib (MSYS)](ZLIB-MSYS.md), each of which now lists it as a reverse
+dependent. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

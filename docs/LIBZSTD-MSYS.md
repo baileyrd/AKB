@@ -154,3 +154,4 @@ methodology.
 - [Zstandard (MSYS CLI tool)](ZSTD.md)
 - [libcurl](LIBCURL.md)
 - [file](FILE.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

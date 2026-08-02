@@ -169,3 +169,4 @@ methodology.
 - [PCRE (MSYS)](PCRE-MSYS.md)
 - [PCRE2 (MSYS)](PCRE2-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

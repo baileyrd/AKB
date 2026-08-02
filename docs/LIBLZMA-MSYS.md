@@ -146,3 +146,4 @@ methodology.
 - [file](FILE.md)
 - [liblzma (UCRT64)](LIBLZMA.md)
 - [liblzma (CLANG64)](LIBLZMA-CLANG64.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

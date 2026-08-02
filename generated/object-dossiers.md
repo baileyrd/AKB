@@ -5418,7 +5418,7 @@
 - Status: `partial`
 - Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:c-ares:c-ares@ucrt64`
 
@@ -5481,7 +5481,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnome:libxml2`
 
@@ -5553,7 +5553,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `library:gnu:libidn2`
 
@@ -5715,7 +5715,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `library:gnupg:libassuan`
 
@@ -5888,6 +5888,15 @@
 - Outgoing relationships: 8
 - Incoming relationships: 2
 
+## `library:libarchive:libarchive@msys`
+
+- Name: libarchive (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 8
+- Incoming relationships: 0
+
 ## `library:libedit:libedit`
 
 - Name: libedit
@@ -5913,7 +5922,7 @@
 - Status: `partial`
 - Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:libffi:libffi@clang64`
 
@@ -6039,7 +6048,7 @@
 - Status: `partial`
 - Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:mingw-w64:libwinpthread`
 
@@ -6210,7 +6219,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:openssl:openssl@ucrt64`
 
@@ -6318,7 +6327,7 @@
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:unicode:icu`
 

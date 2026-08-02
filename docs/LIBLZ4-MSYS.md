@@ -70,12 +70,14 @@ per this volume's established boilerplate-dependency policy (see
 ## Reverse Dependencies
 
 The catalog snapshot records 7 relationships targeting
-`package:msys2:liblz4`: `bsdcpio`, `bsdtar`, `libarchive` (the MSYS
-package — a distinct catalog entity from this knowledge base's
-UCRT64-modeled [LibArchive](LIBARCHIVE.md)), `liblz4-devel`, `rsync`,
-`squashfs-tools`, and `subversion`. None of these seven are currently
-modeled as entities in this knowledge base, so no `requires` edges are
-recorded from this batch; see the
+`package:msys2:liblz4`: `bsdcpio`, `bsdtar`,
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md) — a distinct catalog entity
+from this knowledge base's UCRT64-modeled [LibArchive](LIBARCHIVE.md),
+now itself modeled with a `requires` edge back to this page
+(`relationship:foundation-libraries:libarchive-msys-requires-liblz4`,
+added 2026-08-02) — `liblz4-devel`, `rsync`, `squashfs-tools`, and
+`subversion`. The remaining six of seven are not currently modeled as
+entities in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -126,9 +128,11 @@ The compression model is backed by the official LZ4 project site
 [LZ4](LZ4.md) cites. Package identity, version, license, and the
 seven recorded (but not individually modeled) reverse dependents are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
-Open: whether any of the seven reverse dependents (particularly
-`libarchive` (MSYS) and `subversion`) warrant their own pages in a
-future batch, per this volume's ongoing gap-closing methodology.
+**Update, 2026-08-02**: one of the seven reverse dependents,
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md), is now modeled (see Reverse
+Dependencies above). Open: whether the remaining six (particularly
+`subversion`) warrant their own pages in a future batch, per this
+volume's ongoing gap-closing methodology.
 
 ## Related Objects
 
@@ -137,3 +141,4 @@ future batch, per this volume's ongoing gap-closing methodology.
 - [libbz2](LIBBZ2.md)
 - [libzstd (MSYS)](LIBZSTD-MSYS.md)
 - [liblzma (MSYS)](LIBLZMA-MSYS.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

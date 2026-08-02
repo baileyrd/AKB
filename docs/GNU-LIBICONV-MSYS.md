@@ -183,6 +183,7 @@ methodology.
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
 - [XZ Utils](XZ-UTILS.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
 - [GNU Grep](GNU-GREP.md)
 - [GNU Findutils](GNU-FINDUTILS.md)
 - [GNU Tar](GNU-TAR.md)

@@ -95,7 +95,11 @@ The catalog snapshot records two `runtime-depends-on` edges for
 `mingw-w64-ucrt-x86_64-gcc-libs` (GCC's bundled runtime support, the same
 package documented as the hub of [libstdc++](LIBSTDCXX.md#dependencies))
 and `mingw-w64-ucrt-x86_64-libgpg-error` (the shared error-code
-vocabulary documented fully in [libgpg-error](LIBGPG-ERROR.md)).
+vocabulary documented fully in [libgpg-error](LIBGPG-ERROR.md)). The
+gcc-libs edge is now modeled in this knowledge base
+(`relationship:foundation-libraries:libassuan-requires-libstdcxx`, added
+2026-07-30 — this page's own prose had named it without a corresponding
+graph edge).
 
 ## Reverse Dependencies
 
@@ -179,12 +183,14 @@ methodology.
 ```mermaid
 flowchart LR
     subject["libassuan"]
-    d0["libgpg-error"]
+    d0["libstdc++"]
     subject -->|requires| d0
+    d1["libgpg-error"]
+    subject -->|requires| d1
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `library:gnupg:libassuan` in the composed graph: 0 dependents and 1 dependency.
+Dependencies and dependents of `library:gnupg:libassuan` in the composed graph: 0 dependents and 2 dependencies.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

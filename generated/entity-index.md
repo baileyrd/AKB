@@ -50,6 +50,8 @@
 | component:tukaani:xz | component | XZ Utils | partial | 5 | 1 |
 | component:vim:vim | component | Vim | partial | 6 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 3 | 1 |
+| dll:facebook:libzstd.dll | dll | libzstd.dll (UCRT64) | verified | 0 | 0 |
+| dll:gnu:zlib1.dll | dll | zlib1.dll (UCRT64) | verified | 2 | 1 |
 | dll:msys2:/ucrt64/bin/zlib1.dll | dll | /ucrt64/bin/zlib1.dll | verified | 9 | 1 |
 | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | dll | api-ms-win-crt-convert-l1-1-0.dll | verified | 0 | 1 |
 | dll:windows:api-ms-win-crt-heap-l1-1-0.dll | dll | api-ms-win-crt-heap-l1-1-0.dll | verified | 0 | 1 |
@@ -604,8 +606,12 @@
 | filesystem-path:msys2:/usr/share/man/man3/libcurl-url.3.gz | filesystem-path | /usr/share/man/man3/libcurl-url.3.gz | verified | 0 | 1 |
 | filesystem-path:msys2:/usr/share/man/man3/libcurl-ws.3.gz | filesystem-path | /usr/share/man/man3/libcurl-ws.3.gz | verified | 0 | 1 |
 | filesystem-path:msys2:/usr/share/man/man3/libcurl.3.gz | filesystem-path | /usr/share/man/man3/libcurl.3.gz | verified | 0 | 1 |
+| header-set:facebook:zstd-headers | header-set | zstd headers (UCRT64) | verified | 0 | 0 |
+| header-set:gnu:zlib-headers | header-set | zlib headers (UCRT64) | verified | 1 | 1 |
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
+| import-library:facebook:libzstd.dll.a | import-library | libzstd.dll.a (UCRT64) | verified | 0 | 0 |
+| import-library:gnu:libz.dll.a | import-library | libz.dll.a (UCRT64) | verified | 2 | 0 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
 | layer:msys2:1-windows-kernel-services | layer | Layer 1 — Windows kernel, security, process, and storage services | partial | 1 | 1 |
 | layer:msys2:2-windows-user-mode-apis | layer | Layer 2 — Windows user-mode APIs, console, filesystem, and loader | partial | 0 | 1 |
@@ -653,7 +659,7 @@
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 20 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
-| library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 4 |
+| library:gnu:libstdc++ | library | libstdc++ | partial | 3 | 9 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libtasn1@clang64 | library | GNU Libtasn1 (CLANG64) | partial | 0 | 2 |
 | library:gnu:libtasn1@ucrt64 | library | GNU Libtasn1 (UCRT64) | partial | 0 | 2 |
@@ -667,11 +673,11 @@
 | library:gnu:ncurses@ucrt64 | library | ncurses (UCRT64) | partial | 1 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
-| library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 15 |
+| library:gnu:termcap | library | GNU termcap | partial | 2 | 2 |
+| library:gnu:zlib | library | zlib | partial | 2 | 18 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 11 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
-| library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
+| library:gnupg:libassuan | library | libassuan | partial | 3 | 1 |
 | library:gnupg:libassuan@clang64 | library | libassuan (CLANG64) | partial | 1 | 0 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 3 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -684,7 +690,7 @@
 | library:gnupg:libksba | library | libksba | partial | 2 | 1 |
 | library:gnupg:libksba@clang64 | library | libksba (CLANG64) | partial | 1 | 0 |
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
-| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
+| library:gnupg:npth | library | nPth (New Portable Threads) | partial | 2 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 10 | 3 |
 | library:gnutls:gnutls@clang64 | library | GnuTLS (CLANG64) | partial | 11 | 1 |
@@ -692,11 +698,11 @@
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
 | library:google:brotli@clang64 | library | Brotli (CLANG64) | partial | 0 | 2 |
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
-| library:google:cppdap | library | cppdap | partial | 1 | 2 |
+| library:google:cppdap | library | cppdap | partial | 2 | 2 |
 | library:google:googletest | library | GoogleTest | partial | 1 | 1 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 3 |
-| library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
+| library:jsoncpp:jsoncpp | library | JsonCpp | partial | 2 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 11 | 2 |
 | library:libarchive:libarchive@clang64 | library | libarchive (CLANG64) | partial | 10 | 0 |
 | library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
@@ -725,7 +731,7 @@
 | library:lz4:liblz4 | library | liblz4 | partial | 0 | 1 |
 | library:lz4:lz4@clang64 | library | LZ4 (CLANG64) | partial | 0 | 1 |
 | library:lz4:lz4@ucrt64 | library | LZ4 (UCRT64) | partial | 0 | 1 |
-| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 5 |
+| library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 6 |
 | library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
@@ -12987,7 +12993,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-zint-qt | package | mingw-w64-ucrt-x86_64-zint-qt | verified | 10 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zix | package | mingw-w64-ucrt-x86_64-zix | verified | 8 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-zizmor | package | mingw-w64-ucrt-x86_64-zizmor | verified | 3 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-zlib | package | mingw-w64-ucrt-x86_64-zlib | verified | 16 | 358 |
+| package:msys2:mingw-w64-ucrt-x86_64-zlib | package | mingw-w64-ucrt-x86_64-zlib | verified | 16 | 363 |
 | package:msys2:mingw-w64-ucrt-x86_64-zlib-ng | package | mingw-w64-ucrt-x86_64-zlib-ng | verified | 5 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-zlib-ng-compat | package | mingw-w64-ucrt-x86_64-zlib-ng-compat | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-zoitechat | package | mingw-w64-ucrt-x86_64-zoitechat | verified | 24 | 0 |
@@ -16490,6 +16496,8 @@
 | package:msys2:zsh | package | zsh | verified | 13 | 12 |
 | package:msys2:zsh-doc | package | zsh-doc | verified | 9 | 0 |
 | package:msys2:zstd | package | zstd | verified | 7 | 5 |
+| pkg-config-module:facebook:zstd-pc | pkg-config-module | libzstd.pc (UCRT64) | verified | 0 | 0 |
+| pkg-config-module:gnu:zlib-pc | pkg-config-module | zlib.pc (UCRT64) | verified | 2 | 0 |
 | pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc | pkg-config-module | /ucrt64/lib/pkgconfig/zlib.pc | verified | 0 | 1 |
 | platform:microsoft:windows | platform | Microsoft Windows | partial | 0 | 2 |
 | repository:msys2:clang64 | repository | clang64 | verified | 0 | 3823 |
@@ -16499,6 +16507,8 @@
 | repository:msys2:msys | repository | msys | verified | 0 | 799 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3899 |
 | runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 8 | 73 |
+| static-library:facebook:libzstd.a | static-library | libzstd.a (UCRT64) | verified | 0 | 0 |
+| static-library:gnu:libz.a | static-library | libz.a (UCRT64) | verified | 2 | 0 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |
 | subsystem:msys2:environment-manager | subsystem | Environment Manager | partial | 0 | 1 |
 | subsystem:msys2:filesystem-layer | subsystem | Filesystem Layer | partial | 0 | 1 |

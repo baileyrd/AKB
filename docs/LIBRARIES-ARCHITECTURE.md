@@ -14,47 +14,6 @@ model_refs:
   - library:unicode:icu
   - library:boost:boost
   - library:sqlite:sqlite3
-  - library:sqlite:libsqlite@msys
-  - library:sasl:libsasl@msys
-  - library:rpm:popt@msys
-  - library:oberhumer:liblzo2@msys
-  - library:apache:apr@msys
-  - library:apache:apr-util@msys
-  - library:apache:libserf@msys
-  - library:gnupg:libgpgme@msys
-  - library:gnu:gmp@clang64
-  - library:gnu:mpfr@clang64
-  - library:nettle:nettle@clang64
-  - library:libisl:isl@clang64
-  - library:multiprecision:mpc@clang64
-  - library:google:brotli@clang64
-  - library:c-ares:c-ares@clang64
-  - library:gnu:libiconv@clang64
-  - library:gnu:gettext@clang64
-  - library:gnu:libtasn1@clang64
-  - library:p11-glue:p11-kit@clang64
-  - library:mozilla:ca-certificates@clang64
-  - library:gnu:libunistring@clang64
-  - library:gnu:libidn2@clang64
-  - library:libpsl:libpsl@clang64
-  - library:gnupg:libgpg-error@clang64
-  - library:gnupg:libgcrypt@clang64
-  - library:gnupg:libassuan@clang64
-  - library:gnupg:libksba@clang64
-  - library:openssl:openssl@clang64
-  - library:libssh2:libssh2@clang64
-  - library:bzip2:bzip2@clang64
-  - library:blake2:libb2@clang64
-  - library:lz4:lz4@clang64
-  - library:mingweditline:wineditline@clang64
-  - library:libexpat:expat@clang64
-  - library:pcre:pcre2@clang64
-  - library:libarchive:libarchive@clang64
-  - library:nghttp2:libnghttp2@clang64
-  - library:nghttp2:libnghttp3@clang64
-  - library:gnutls:gnutls@clang64
-  - library:nghttp2:libngtcp2@clang64
-  - library:curl:curl@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -85,8 +44,6 @@ model_refs:
   - library:google:cppdap
   - library:jsoncpp:jsoncpp
   - library:libarchive:libarchive
-  - library:libarchive:libarchive@msys
-  - library:lz4:liblz4
   - library:libuv:libuv
   - library:rhash:rhash
   - library:darwinsys:file
@@ -108,7 +65,6 @@ model_refs:
   - library:llvm:llvm-libs
   - library:llvm:clang-libs
   - library:xxhash:xxhash
-  - library:xxhash:xxhash@msys
   - library:tukaani:liblzma
   - library:gnu:libiconv@msys
   - library:gnu:gmp@msys
@@ -152,14 +108,6 @@ model_refs:
   - library:p11-glue:p11-kit@ucrt64
   - library:gnutls:gnutls@ucrt64
   - library:tukaani:liblzma@msys
-  - library:bzip2:bzip2@ucrt64
-  - library:lz4:lz4@ucrt64
-  - library:gnu:ncurses@clang64
-  - library:pjk:libcbor@ucrt64
-  - library:pjk:libcbor@clang64
-  - library:yubico:libfido2@ucrt64
-  - library:yubico:libfido2@clang64
-  - library:blake2:libb2@ucrt64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -178,7 +126,6 @@ evidence_refs:
   - evidence:libisl:manual-2026-07-30
   - evidence:mingw-w64:libwinpthread-manual-2026-07-30
   - evidence:pcre:pcre2-manual-2026-07-30
-  - evidence:blake2:project-site-2026-08-02
   - evidence:gnupg:libgpg-error-manual-2026-07-30
   - evidence:gnupg:libgcrypt-manual-2026-07-30
   - evidence:gnupg:libassuan-manual-2026-07-30
@@ -201,7 +148,6 @@ evidence_refs:
   - evidence:google:cppdap-manual-2026-07-30
   - evidence:jsoncpp:manual-2026-07-30
   - evidence:libarchive:manual-2026-07-30
-  - evidence:lz4:manual-2026-07-30
   - evidence:libuv:manual-2026-07-30
   - evidence:rhash:manual-2026-07-30
   - evidence:darwinsys:file-manual-2026-07-30
@@ -222,14 +168,7 @@ evidence_refs:
   - evidence:libssh2:manual-2026-07-30
   - evidence:libffi:project-site-2026-07-30
   - evidence:c-ares:project-site-2026-07-30
-  - evidence:cyrusimap:libsasl-manual-2026-08-02
-  - evidence:rpm:popt-manual-2026-08-02
-  - evidence:oberhumer:lzo-manual-2026-08-02
-  - evidence:apache:apr-manual-2026-08-02
-  - evidence:apache:serf-manual-2026-08-02
-  - evidence:gnupg:gpgme-manual-2026-08-02
-  - evidence:mozilla:ca-certificates-manual-2026-07-30
-last_verified: 2026-08-02
+last_verified: 2026-07-30
 ---
 
 # MSYS2 Library Architecture
@@ -348,54 +287,8 @@ flowchart LR
 [libffi (UCRT64)](LIBFFI-UCRT64.md),
 [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md),
 [p11-kit (UCRT64)](P11-KIT-UCRT64.md),
-[GnuTLS (UCRT64)](GNUTLS-UCRT64.md),
-[liblzma (MSYS)](LIBLZMA-MSYS.md), [liblz4 (MSYS)](LIBLZ4-MSYS.md),
-[libarchive (MSYS)](LIBARCHIVE-MSYS.md),
-[xxHash (MSYS)](XXHASH-MSYS.md),
-[libsqlite (MSYS)](LIBSQLITE-MSYS.md),
-[libsasl (MSYS)](LIBSASL-MSYS.md),
-[popt (MSYS)](POPT-MSYS.md),
-[LZO (MSYS)](LIBLZO2-MSYS.md), [APR](APR-MSYS.md),
-[APR-util](APR-UTIL-MSYS.md), [Serf](LIBSERF-MSYS.md),
-[GPGME (MSYS)](LIBGPGME-MSYS.md),
-[GMP (CLANG64)](GNU-GMP-CLANG64.md),
-[GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md),
-[Nettle (CLANG64)](NETTLE-CLANG64.md),
-[isl (CLANG64)](LIBISL-CLANG64.md),
-[GNU MPC (CLANG64)](GNU-MPC-CLANG64.md),
-[Brotli (CLANG64)](BROTLI-CLANG64.md),
-[c-ares (CLANG64)](C-ARES-CLANG64.md),
-[GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md),
-[GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md),
-[GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md),
-[p11-kit (CLANG64)](P11-KIT-CLANG64.md),
-[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md),
-[GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md),
-[GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md),
-[libpsl (CLANG64)](LIBPSL-CLANG64.md),
-[libgpg-error (CLANG64)](LIBGPG-ERROR-CLANG64.md),
-[libgcrypt (CLANG64)](LIBGCRYPT-CLANG64.md),
-[libassuan (CLANG64)](LIBASSUAN-CLANG64.md),
-[libksba (CLANG64)](LIBKSBA-CLANG64.md),
-[OpenSSL (CLANG64)](OPENSSL-CLANG64.md),
-[libssh2 (CLANG64)](LIBSSH2-CLANG64.md),
-[bzip2 (CLANG64)](BZIP2-CLANG64.md),
-[BLAKE2 (libb2) (CLANG64)](LIBB2-CLANG64.md),
-[LZ4 (CLANG64)](LZ4-CLANG64.md),
-[WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md),
-[Expat (CLANG64)](EXPAT-CLANG64.md),
-[PCRE2 (CLANG64)](PCRE2-CLANG64.md),
-[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md),
-[libnghttp2 (CLANG64)](LIBNGHTTP2-CLANG64.md),
-[libnghttp3 (CLANG64)](LIBNGHTTP3-CLANG64.md),
-[GnuTLS (CLANG64)](GNUTLS-CLANG64.md),
-[libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md),
-[curl (CLANG64)](CURL-CLANG64.md),
-[bzip2 (UCRT64)](BZIP2-UCRT64.md), [LZ4 (UCRT64)](LZ4-UCRT64.md),
-[ncurses (CLANG64)](NCURSES-CLANG64.md), [libcbor (UCRT64)](LIBCBOR-UCRT64.md),
-[libcbor (CLANG64)](LIBCBOR-CLANG64.md), [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md),
-[libfido2 (CLANG64)](LIBFIDO2-CLANG64.md), and
-[BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md) are
+[GnuTLS (UCRT64)](GNUTLS-UCRT64.md), and
+[liblzma (MSYS)](LIBLZMA-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -404,13 +297,17 @@ foundational libraries cited by dependency rationale across dozens of
 pages elsewhere in this knowledge base (character-set conversion, NLS,
 DEFLATE compression, XML parsing) that had not yet been given pages of
 their own. zlib's 299 recorded reverse dependents make it the
-most-depended-upon package identified anywhere in this knowledge base to
-date (`claim:library:zlib:hub`). One cross-package mixup was caught and
+most-depended-upon package among the components and libraries this
+knowledge base actually models, to date (`claim:library:zlib:hub`) —
+not the highest count in the full generated catalog view, where several
+undocumented packages (Python, glib2, Qt6) exceed it; see
+[zlib](ZLIB.md#reverse-dependencies)'s own 2026-07-30 correction. One
+cross-package mixup was caught and
 corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and fifty-seven pages are deliberately scoped to package/dependency-level
+All one hundred and four pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -830,265 +727,7 @@ third distinct liblzma-named catalog entity in this knowledge base
 alongside [liblzma (UCRT64)](LIBLZMA.md) and
 [liblzma (CLANG64)](LIBLZMA-CLANG64.md); modeling it also closed
 [XZ Utils'](XZ-UTILS.md#dependencies) own long-cited-but-unlinked
-`libiconv` sub-dependency in the same pass. A further re-run of the
-volume-wide audit closed eleven more edges between entities already
-documented elsewhere in this knowledge base — no new pages: five
-already-modeled MSYS components
-([GNU Grep](GNU-GREP.md#dependencies), [GNU Findutils](GNU-FINDUTILS.md#dependencies),
-[GNU Tar](GNU-TAR.md#dependencies), [GNU Emacs](GNU-EMACS.md#dependencies),
-and [Vim](VIM.md#dependencies)) had each cited
-[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md) by name without a
-corresponding graph edge, closing the same class of gap found earlier
-for [XZ Utils](XZ-UTILS.md); [Zstandard (MSYS CLI tool)'s](ZSTD.md#dependencies)
-own split-library edge onto [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
-was similarly unlinked; [GnuPG's](GNUPG.md#dependencies) own
-`libgpg-error` edge and [libgpg-error's](LIBGPG-ERROR.md#dependencies)
-own `gettext` edge were both cited with "documented fully in" links
-that had no backing graph edge — the former also corrected a stale note
-on [libgpg-error (MSYS)'s](LIBGPG-ERROR-MSYS.md#reverse-dependencies)
-own page, which had explicitly declined to model GnuPG as a direct
-dependent; [libstdc++'s](LIBSTDCXX.md#dependencies) own documented
-`libwinpthread` dependency was missing its edge, the same
-graph-completeness class as the GCC/Binutils/Clang findings earlier
-this session; and [libxml2 (CLANG64)'s](LIBXML2-CLANG64.md#dependencies)
-own zlib edge had been incorrectly grouped with its still-unmodeled
-libiconv sub-dependency and declined, when zlib (CLANG64) was in fact
-already modeled; and [GNU Cpio's](GNU-CPIO.md#dependencies) own
-`libintl` edge, cited by name but never graphed. A subsequent audit
-re-run confirmed no further edges remained (the only unmodeled catalog
-dependencies left anywhere in the volume are `gcc-libs` boilerplate
-rows, excluded by policy), so the next two additions came from the
-split-library/CLI pattern instead: [liblz4 (MSYS)](LIBLZ4-MSYS.md), a
-genuinely distinct MSYS package from [LZ4](LZ4.md)'s own CLI (Volume 5)
-with 7 recorded reverse dependents, none yet modeled; and
-[libarchive (MSYS)](LIBARCHIVE-MSYS.md), a separate catalog entity from
-this volume's earlier UCRT64 [libarchive](LIBARCHIVE.md) page, which
-closed its own **update** on that page's prior open question ("whether
-other native environments package libarchive separately") and, at eight
-non-boilerplate dependency edges in a single pass, has the widest real
-dependency footprint of any MSYS library modeled to date — pulling
-together [libbz2](LIBBZ2.md), [Expat (MSYS)](EXPAT-MSYS.md),
-[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md),
-[liblz4 (MSYS)](LIBLZ4-MSYS.md), [liblzma (MSYS)](LIBLZMA-MSYS.md),
-[libopenssl](LIBOPENSSL.md), [libzstd (MSYS)](LIBZSTD-MSYS.md), and
-[zlib (MSYS)](ZLIB-MSYS.md), each of which now lists it as a reverse
-dependent. A third split-library candidate followed directly from
-liblz4's own reverse-dependency list: [xxHash (MSYS)](XXHASH-MSYS.md),
-a distinct catalog entity from this volume's earlier UCRT64
-[xxHash](XXHASH.md) page (GDB's dependency) and from the separate MSYS
-`xxhash` CLI package, with zero own dependencies and four
-not-yet-modeled reverse dependents (`ccache`, `libxxhash-devel`,
-`rsync`, `xxhash`); it closes [xxHash's](XXHASH.md) own prior open
-question about whether other environments package it separately. A
-scan of the remaining unmodeled reverse dependents of the split-library
-additions above then found a second gap of the citation kind rather
-than the split-library kind: [libsqlite (MSYS)](LIBSQLITE-MSYS.md) —
-zero own dependencies, 14 reverse dependents — had been cited by name
-on both [GnuPG's](GNUPG.md#dependencies) and
-[Heimdal runtime libraries'](HEIMDAL-LIBS.md#dependencies) own
-dependency tables without a corresponding graph edge or page of its
-own; both edges are now added, and [SQLite (UCRT64)'s](SQLITE3.md#boundaries)
-own page (which had already flagged the MSYS/UCRT64 distinction by
-name) now links to it directly. [libsqlite's](LIBSQLITE-MSYS.md) own
-reverse-dependency list then surfaced a fourth full-coverage candidate:
-[libsasl (MSYS)](LIBSASL-MSYS.md), the Cyrus SASL authentication
-library, whose four own catalog dependencies (libxcrypt, libopenssl,
-Heimdal runtime libraries, libsqlite (MSYS)) were all already modeled
-entities, letting this addition close its complete dependency footprint
-in one pass, the same full-coverage pattern
-[libarchive (MSYS)](LIBARCHIVE-MSYS.md) demonstrated earlier this
-batch. A fifth full-coverage candidate followed the same discovery
-path: [popt (MSYS)](POPT-MSYS.md), an RPM-project command-line option
-parser consumed by `rsync` (not yet a modeled entity), whose two own
-catalog dependencies — [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md) and
-[GNU libintl](GNU-LIBINTL.md) — were both already modeled, closing its
-full dependency footprint in one pass. A final split-library candidate
-closed out the compression-codec sweep begun with liblz4:
-[LZO (MSYS)](LIBLZO2-MSYS.md), a fast-decompression codec library
-consumed by `lzop` and `squashfs-tools` (neither yet a modeled
-entity), with only the `gcc-libs` boilerplate row as its own recorded
-dependency. A final chain closed out Subversion's own remaining
-uncited dependencies in one batch: [APR](APR-MSYS.md) (Apache Portable
-Runtime, full 1/1 coverage via [libxcrypt](LIBXCRYPT.md)),
-[APR-util](APR-UTIL-MSYS.md) (3 of 4 catalog edges modeled — APR,
-[libsqlite (MSYS)](LIBSQLITE-MSYS.md), libxcrypt — with the fourth,
-`package:msys2:expat`, deliberately declined as a distinct catalog
-package from this volume's already-modeled
-[Expat (MSYS)](EXPAT-MSYS.md), the same `pcre`/`pcre2` meta-package
-precedent already established for [libbz2](LIBBZ2.md)), and
-[Serf](LIBSERF-MSYS.md) (full 3/3 coverage via APR-util,
-[libopenssl](LIBOPENSSL.md), and [zlib (MSYS)](ZLIB-MSYS.md)) — none of
-which have `subversion` itself as a modeled entity yet, so all three
-pages explicitly flag it as an open item rather than fabricating a
-`requires` edge to an unmodeled component. A stale note was also caught
-in passing: [Expat (MSYS)'s](EXPAT-MSYS.md#reverse-dependencies) own
-reverse-dependency list had listed `libarchive` among its
-not-individually-modeled dependents, when
-[libarchive (MSYS)](LIBARCHIVE-MSYS.md) was in fact already modeled
-elsewhere in this knowledge base — corrected in place. A final citation
-sweep across all `docs/*.md` files for unmodeled `package:msys2:*`
-references (the same method that surfaced libsqlite) found one more
-genuine gap: `package:msys2:libgpgme` had been cited as an unmodeled
-reverse dependent on both
-[libassuan (MSYS)'s](LIBASSUAN-MSYS.md#reverse-dependencies) and
-[libgpg-error (MSYS)'s](LIBGPG-ERROR-MSYS.md#reverse-dependencies) own
-pages. [GPGME (MSYS)](LIBGPGME-MSYS.md) closes it with full 3/3
-dependency coverage (GnuPG, libassuan (MSYS), libgpg-error (MSYS), all
-already modeled), the sixth full-coverage addition this session. A
-third discovery vector was then tried: a systematic MSYS/UCRT64/CLANG64
-triple-coverage scan across every packaged library base name, comparing
-which environments the catalog actually packages against which are
-modeled here. This surfaced a genuinely large number of pre-existing,
-already-flagged "whether other environments package X separately was
-not confirmed" open items — a much broader undertaking than the
-targeted gap-closing this batch otherwise performed, and out of scope
-for a single pass. One bounded, high-leverage item was pulled from it:
-[GMP (CLANG64)](GNU-GMP-CLANG64.md), a zero-dependency library with 60
-reverse dependents, several of which are the CLANG64 siblings of
-libraries this volume already documents as MSYS/UCRT64 entities
-([GNU MPFR](GNU-MPFR.md), [GNU MPC](GNU-MPC.md), [isl](LIBISL.md),
-[Nettle](NETTLE.md)) — each now flagged as a concrete candidate for a
-future batch rather than added speculatively. One of those candidates
-was closed immediately: [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md),
-whose sole non-boilerplate dependency, GMP (CLANG64), had just been
-modeled in the same batch, giving it full 1/1 coverage on arrival —
-the seventh full-coverage addition this session. A second GMP
-(CLANG64) candidate closed the same way:
-[Nettle (CLANG64)](NETTLE-CLANG64.md), whose sole non-boilerplate
-dependency is also GMP (CLANG64), the eighth full-coverage addition.
-A third followed immediately: [isl (CLANG64)](LIBISL-CLANG64.md),
-whose sole catalog dependency turned out to be GMP alone (not GMP+MPFR
-as initially assumed), giving it full 1/1 coverage on the same
-pattern — the ninth full-coverage addition this session. The
-last candidate, [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md), closed the
-same batch with full 2/2 coverage (GMP and MPFR, both CLANG64), the
-tenth full-coverage addition this session — completing every
-concrete future-batch candidate the GMP (CLANG64) chain flagged. The
-triple-environment scan was then applied more broadly: two more
-zero-dependency CLANG64 siblings of already-modeled UCRT64 libraries
-were added, [Brotli (CLANG64)](BROTLI-CLANG64.md) and
-[c-ares (CLANG64)](C-ARES-CLANG64.md), each trivially at full coverage
-with no catalog dependencies of their own. Adding
-[c-ares (CLANG64)](C-ARES-CLANG64.md) also corrected a now-stale claim
-on [c-ares (UCRT64)'s](C-ARES-UCRT64.md) own page, which had
-originally and correctly stated no CLANG64 sibling existed at the time
-it was written. A deeper chain followed the same vector: scoping
-[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) required
-walking its full dependency tree first — `ca-certificates` →
-`p11-kit` → {`gettext-runtime`, `libffi` (already modeled),
-`libtasn1`} → `libiconv` — five CLANG64 entities in total, four newly
-modeled ([GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md),
-[GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md),
-[GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md), and
-[p11-kit (CLANG64)](P11-KIT-CLANG64.md)) alongside
-[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) itself, each
-closing full dependency coverage as its own prerequisites were modeled
-in sequence — mirroring the same scope-first-then-build discipline
-used for the earlier APR/APR-util/Serf (MSYS) chain. A post-batch
-audit re-run then found two further edges this chain had
-retroactively unlocked, no new pages needed: both
-[libxml2 (CLANG64)](LIBXML2-CLANG64.md#dependencies) and
-[liblzma (CLANG64)](LIBLZMA-CLANG64.md#dependencies) had each left
-their own libiconv/gettext-runtime sub-dependency explicitly unmodeled
-pending those libraries' own pages, which this batch supplied. A second chain
-was scoped and built the same way, reusing the same
-[GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md) and
-[GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md) base already modeled
-this batch: [GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md)
-→ [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md) →
-[libpsl (CLANG64)](LIBPSL-CLANG64.md), all three closing full
-dependency coverage in sequence. A third chain closed the GnuPG
-crypto-stack for CLANG64, mirroring the UCRT64 and MSYS versions of
-the same four-library cluster already documented earlier in this
-volume: [libgpg-error (CLANG64)](LIBGPG-ERROR-CLANG64.md) (1/1,
-reusing [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)) as the base,
-with [libgcrypt (CLANG64)](LIBGCRYPT-CLANG64.md),
-[libassuan (CLANG64)](LIBASSUAN-CLANG64.md), and
-[libksba (CLANG64)](LIBKSBA-CLANG64.md) each depending solely on it
-(1/1 coverage apiece). As with the UCRT64 siblings' own pages, each
-CLANG64 page explicitly distinguishes its own reverse-dependent
-CLANG64-native `gnupg` package from this knowledge base's
-MSYS-packaged `component:gnupg:gnupg` entity, rather than conflating
-them. A fourth chain closed
-[OpenSSL (CLANG64)](OPENSSL-CLANG64.md) — zero own dependencies, 121
-reverse dependents, the widest footprint of any library added this
-batch — unblocking [libssh2 (CLANG64)](LIBSSH2-CLANG64.md) (2/2:
-OpenSSL and [zlib (CLANG64)](ZLIB-CLANG64.md), already modeled) in the
-same pass. A follow-up batch then closed the rest of the
-[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) cluster entirely: five
-more zero-dependency base libraries —
-[bzip2 (CLANG64)](BZIP2-CLANG64.md),
-[BLAKE2 (libb2) (CLANG64)](LIBB2-CLANG64.md) (the first BLAKE2-family
-entity modeled in this knowledge base),
-[LZ4 (CLANG64)](LZ4-CLANG64.md),
-[WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md), and
-[Expat (CLANG64)](EXPAT-CLANG64.md) — then
-[PCRE2 (CLANG64)](PCRE2-CLANG64.md) (3/3: bzip2, WinEditLine, zlib),
-and finally [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) itself,
-closing all ten of its own catalog dependencies (bzip2, Expat, BLAKE2,
-GNU libiconv, LZ4, OpenSSL, PCRE2, liblzma, zlib, Zstandard) in a
-single pass — the widest single-pass dependency closure of any library
-added this session. A final batch then closed `curl` (CLANG64) itself: two more
-zero-dependency HTTP/2 and HTTP/3 protocol libraries
-([libnghttp2](LIBNGHTTP2-CLANG64.md),
-[libnghttp3](LIBNGHTTP3-CLANG64.md)), then
-[GnuTLS (CLANG64)](GNUTLS-CLANG64.md) — 11/11 catalog dependencies, all
-already modeled across this session's GMP-chain, ca-certificates-chain,
-and GnuPG-crypto-stack CLANG64 batches — and
-[libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md) (2/2: GnuTLS and OpenSSL,
-its two selectable QUIC TLS backends), before
-[curl (CLANG64)](CURL-CLANG64.md) itself closed all twelve of its own
-catalog dependencies in a single pass, completing the CLANG64
-network-transfer library cluster entirely and mirroring the same
-full-coverage milestone [curl (UCRT64)](CURL-UCRT64.md#dependencies)
-and [libcurl (MSYS)](LIBCURL.md#dependencies) reached earlier this
-session. A follow-on correction batch fixed a genuine false claim
-rather than adding coverage: [ca-certificates'](CA-CERTIFICATES.md#dependencies)
-own Dependencies section had stated the catalog recorded no
-`runtime-depends-on` edges at all, when it in fact records six — two
-now modeled as `requires` edges onto [OpenSSL](OPENSSL.md) and
-[p11-kit](P11-KIT.md), the remaining four being out-of-scope CLI-tool
-citations consistent with this volume's existing policy. The p11-kit
-edge itself was found via a fresh triple-environment scan that flagged
-`package:msys2:p11-kit` — a distinct, thin CLI/meta-package from the
-already-modeled `package:msys2:libp11-kit` — as unmodeled; rather than
-add a new entity for it (the same declined-meta-package precedent
-already established for `pcre`/`pcre2` and `expat`/`libexpat`), its one
-real dependent relationship was modeled directly from ca-certificates
-onto the existing p11-kit library entity. A re-run of the
-catalog-vs-graph audit then found two more citation-only gaps:
-[libedit's](LIBEDIT.md#dependencies) own `ncurses` dependency and
-[libfido2's](LIBFIDO2.md#dependencies) own `openssl` dependency were
-both already cited by package name but never given formal `requires`
-edges — the latter correcting libfido2's own prior stated rationale for
-declining to model it, which did not hold up against this volume's
-established practice. A further batch closed three more real gaps the
-triple-environment scan surfaced: [bzip2 (UCRT64)](BZIP2-UCRT64.md) and
-[LZ4 (UCRT64)](LZ4-UCRT64.md), both previously cited by package name on
-[PCRE2's](PCRE2.md#dependencies) and/or
-[libarchive's](LIBARCHIVE.md#dependencies) own dependency tables but
-explicitly left unmodeled ("not individually modeled as their own
-library entities," now corrected), and
-[ncurses (CLANG64)](NCURSES-CLANG64.md), completing the ncurses
-MSYS/UCRT64/CLANG64 sibling triple this volume had left partially
-covered since [ncurses (UCRT64)](NCURSES-UCRT64.md) was first added. A
-final batch of this session completed the libfido2 sibling triple the
-same way: [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md) and
-[libfido2 (CLANG64)](LIBFIDO2-CLANG64.md), each depending on OpenSSL
-and zlib (both already modeled for their own environments) and a new
-per-environment [libcbor (UCRT64)](LIBCBOR-UCRT64.md)/
-[libcbor (CLANG64)](LIBCBOR-CLANG64.md) pair added specifically to
-unblock them — closing an item
-[libfido2's](LIBFIDO2.md#architectural-classification) own page had
-flagged as an existing-but-unmodeled native sibling since first
-publication. A last item closed
-[libarchive's](LIBARCHIVE.md#dependencies) own final declined UCRT64
-dependency: [BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md), reaching full
-10/10 catalog dependency coverage for that package and also correcting
-a stale claim on [BLAKE2 (libb2) (CLANG64)'s](LIBB2-CLANG64.md#architectural-classification)
-own page, which had stated no UCRT64 sibling existed.
-These
-pages are a starting point for this
+`libiconv` sub-dependency in the same pass. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation
@@ -1130,12 +769,22 @@ flowchart LR
     subject["libstdc++"]
     u0["GCC"]
     u0 -->|requires| subject
+    u1["GNU termcap"]
+    u1 -->|requires| subject
+    u2["libassuan"]
+    u2 -->|requires| subject
+    u3["nPth (New Portable Threads)"]
+    u3 -->|requires| subject
+    u4["cppdap"]
+    u4 -->|requires| subject
+    u5["JsonCpp"]
+    u5 -->|requires| subject
     d0["libwinpthread"]
     subject -->|requires| d0
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `library:gnu:libstdc++` in the composed graph: 1 dependent and 1 dependency.
+Dependencies and dependents of `library:gnu:libstdc++` in the composed graph: 6 dependents and 1 dependency.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

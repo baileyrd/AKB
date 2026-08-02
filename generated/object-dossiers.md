@@ -416,6 +416,24 @@
 - Outgoing relationships: 3
 - Incoming relationships: 1
 
+## `dll:facebook:libzstd.dll`
+
+- Name: libzstd.dll (UCRT64)
+- Kind: `dll`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
+## `dll:gnu:zlib1.dll`
+
+- Name: zlib1.dll (UCRT64)
+- Kind: `dll`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 1
+
 ## `dll:msys2:/ucrt64/bin/zlib1.dll`
 
 - Name: /ucrt64/bin/zlib1.dll
@@ -5402,6 +5420,24 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `header-set:facebook:zstd-headers`
+
+- Name: zstd headers (UCRT64)
+- Kind: `header-set`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
+## `header-set:gnu:zlib-headers`
+
+- Name: zlib headers (UCRT64)
+- Kind: `header-set`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
 ## `header:msys2:/ucrt64/include/zconf.h`
 
 - Name: /ucrt64/include/zconf.h
@@ -5419,6 +5455,24 @@
 - Evidence: evidence:inventory:current
 - Outgoing relationships: 0
 - Incoming relationships: 1
+
+## `import-library:facebook:libzstd.dll.a`
+
+- Name: libzstd.dll.a (UCRT64)
+- Kind: `import-library`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
+## `import-library:gnu:libz.dll.a`
+
+- Name: libz.dll.a (UCRT64)
+- Kind: `import-library`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 0
 
 ## `import-library:msys2:/ucrt64/lib/libz.dll.a`
 
@@ -5849,8 +5903,8 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
-- Incoming relationships: 4
+- Outgoing relationships: 3
+- Incoming relationships: 9
 
 ## `library:gnu:libtasn1`
 
@@ -5975,7 +6029,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:termcap-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:gnu:zlib`
@@ -5984,8 +6038,8 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
-- Incoming relationships: 15
+- Outgoing relationships: 2
+- Incoming relationships: 18
 
 ## `library:gnu:zlib@clang64`
 
@@ -6011,7 +6065,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `library:gnupg:libassuan@clang64`
@@ -6128,7 +6182,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:npth-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 1
 
 ## `library:gnupg:npth@msys`
@@ -6200,7 +6254,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:google:cppdap-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:google:googletest`
@@ -6236,7 +6290,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:jsoncpp:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:libarchive:libarchive`
@@ -6498,7 +6552,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:mingw-w64:libwinpthread@clang64`
 
@@ -116856,7 +116910,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 358
+- Incoming relationships: 363
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zlib-ng`
 
@@ -148376,6 +148430,24 @@
 - Outgoing relationships: 7
 - Incoming relationships: 5
 
+## `pkg-config-module:facebook:zstd-pc`
+
+- Name: libzstd.pc (UCRT64)
+- Kind: `pkg-config-module`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
+## `pkg-config-module:gnu:zlib-pc`
+
+- Name: zlib.pc (UCRT64)
+- Kind: `pkg-config-module`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 0
+
 ## `pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc`
 
 - Name: /ucrt64/lib/pkgconfig/zlib.pc
@@ -148456,6 +148528,24 @@
 - Evidence: none recorded
 - Outgoing relationships: 8
 - Incoming relationships: 73
+
+## `static-library:facebook:libzstd.a`
+
+- Name: libzstd.a (UCRT64)
+- Kind: `static-library`
+- Status: `verified`
+- Evidence: evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
+## `static-library:gnu:libz.a`
+
+- Name: libz.a (UCRT64)
+- Kind: `static-library`
+- Status: `verified`
+- Evidence: evidence:zlib:ucrt64-archive-analysis-2026-07-29
+- Outgoing relationships: 2
+- Incoming relationships: 0
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

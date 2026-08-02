@@ -95,8 +95,11 @@ terminal programs that depend on ncurses instead.
 
 The UCRT64 `package:msys2:mingw-w64-ucrt-x86_64-termcap` declares a
 dependency on `mingw-w64-ucrt-x86_64-gcc-libs` only — the GCC runtime
-support libraries, not a library-family dependency distinct enough to
-warrant its own page in this volume.
+support libraries. This page originally reasoned gcc-libs was not a
+library-family dependency distinct enough to warrant its own page;
+[libstdc++](LIBSTDCXX.md) now documents that package, so the edge is
+modeled (`relationship:foundation-libraries:termcap-requires-libstdcxx`,
+added 2026-07-30).
 
 ## Reverse Dependencies
 
@@ -174,10 +177,12 @@ flowchart LR
     subject["GNU termcap"]
     u0["GNU Readline"]
     u0 -->|requires| subject
+    d0["libstdc++"]
+    subject -->|requires| d0
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `library:gnu:termcap` in the composed graph: 1 dependent and 0 dependencies.
+Dependencies and dependents of `library:gnu:termcap` in the composed graph: 1 dependent and 1 dependency.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

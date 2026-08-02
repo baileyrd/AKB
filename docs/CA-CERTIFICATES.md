@@ -10,7 +10,7 @@ model_refs:
   - library:curl:libcurl
   - library:libssh2:libssh2
   - environment:msys2:msys
-last_verified: 2026-08-02
+last_verified: 2026-07-30
 evidence_refs:
   - evidence:mozilla:ca-certificates-manual-2026-07-30
   - evidence:catalog:current
@@ -94,22 +94,16 @@ ca-certificates-specific API.
 
 ## Dependencies
 
-**Correction, 2026-08-02**: this section previously stated the catalog
-recorded no `runtime-depends-on` edges for `package:msys2:ca-certificates`
-— false; the catalog records six, `bash`, `coreutils`, `findutils`,
-`openssl`, `p11-kit`, and `sed`. The four CLI-tool dependencies
-(`bash`, `coreutils`, `findutils`, `sed`) are out of this volume's
-scope, matching this volume's policy of not modeling Volume 5
-component dependency-table rows as Volume 6 library edges. The
-remaining two are now modeled:
-[OpenSSL](OPENSSL.md) (`relationship:foundation-libraries:ca-certificates-requires-openssl-msys`
-— backs certificate-bundle processing this package's own install-time
-hooks perform; the exact mechanism was not confirmed) and
-[p11-kit](P11-KIT.md) (`relationship:foundation-libraries:ca-certificates-requires-p11-kit-msys`
-— backs trust-anchor registration and coordination through the p11-kit
-PKCS#11 trust module, the same rationale already documented for the
-[UCRT64](CA-CERTIFICATES-UCRT64.md#dependencies) and
-[CLANG64](CA-CERTIFICATES-CLANG64.md#dependencies) siblings).
+**Correction, 2026-07-30**: this page previously claimed the catalog
+snapshot records no `runtime-depends-on` edges for
+`package:msys2:ca-certificates`. That was wrong: it records six —
+`bash`, `coreutils`, `findutils`, `openssl`, `p11-kit`, and `sed`. These
+read as installation/packaging-script dependencies of the
+`ca-certificates` package itself (a certificate bundle, not executable
+code) rather than something consuming ca-certificates' trust store the
+way [curl](CURL.md), [libcurl](LIBCURL.md), and [libssh2](LIBSSH2.md) do
+in Reverse Dependencies below; this page does not further characterize
+what each of the six edges represents.
 
 ## Reverse Dependencies
 

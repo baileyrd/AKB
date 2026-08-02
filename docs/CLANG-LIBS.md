@@ -102,11 +102,12 @@ one: `mingw-w64-clang-x86_64-llvm-libs`, documented fully in
 
 ## Reverse Dependencies
 
-The catalog snapshot records 13 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 13 relationships;
+the catalog snapshot actually records **17** targeting
 `package:msys2:mingw-w64-clang-x86_64-clang-libs`: `package:msys2:mingw-w64-clang-x86_64-clang`
 (`relationship:toolchain:clang-requires-clang-libs` in this knowledge
 base's graph), `package:msys2:mingw-w64-clang-x86_64-lldb`
-(`relationship:toolchain:lldb-requires-clang-libs`), and a further ~11
+(`relationship:toolchain:lldb-requires-clang-libs`), and a further ~15
 packages (such as `castxml`, `clazy`, `doxygen`, and `include-what-you-use`)
 not individually modeled in this knowledge base.
 

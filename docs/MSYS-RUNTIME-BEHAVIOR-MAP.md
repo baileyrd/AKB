@@ -6,7 +6,6 @@ status: partial
 model_refs:
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
-  - evidence:msys2:runtime-behavior-probes-2026-07-30
 last_verified: 2026-08-02
 ---
 
@@ -81,6 +80,97 @@ The collector has a five-second bound per probe and creates/removes only a
 fresh temporary directory for the symlink check. See the
 [runtime observation contract](RUNTIME-OBSERVATION-CONTRACT.md) for the
 command and retention boundary.
+
+## Comparative observation: Git for Windows' bundled MSYS runtime
+
+On 2026-07-30, the same probe battery was run manually against a second,
+distinct MSYS distribution on the same host: Git for Windows' own bundled
+`msys-2.0.dll` (`C:\Program Files\Git\usr\bin\msys-2.0.dll`, 3,368,543
+bytes). `uname -a` reported runtime `3.6.9-b4195d69.x86_64` — a different
+version from the isolated MSYS2 installation's `3.6.10` above, confirming
+these are genuinely separate MSYS runtime deployments, not the same
+binary observed twice.
+
+| Probe | Observed outcome | Compared to the isolated installation above |
+| --- | --- | --- |
+| Process lifecycle | Background child ran; `wait` exit status 0 | Same outcome |
+| Shell `exec` | Replaced shell emitted `exec-ok`, status 0 | Same outcome |
+| Signal delivery | A `USR1` trap fired, status 0 | Same outcome |
+| Filesystem symlink | `ln -s` exited 0, but `stat` reported a **regular file** containing a full copy of the target's bytes, not a symlink; confirmed at the Windows API level (`Attributes=Archive`, no `ReparsePoint` flag, no `LinkType`) | **Diverges**: a full-content-copy fallback, not merely the isolated installation's narrower "`test -L` false while still readable through it" discrepancy |
+
+Both `MSYS` and `CYGWIN` environment variables were unset (default) for
+this probe. The symlink divergence is a concrete instance of this page's
+own Evidence Gaps caveat: MSYS symlink fallback behavior is
+installation/configuration-dependent (see the `winsymlinks` mode family),
+so neither observation generalizes to "MSYS symlinks behave as X" without
+naming the specific distribution, version, and environment configuration.
+This is also consistent with
+[Windows platform boundaries](WINDOWS-PLATFORM-BOUNDARIES.md#controlled-local-host-observation)'s
+finding that native symlink creation requires elevation in this same
+non-elevated session — the runtime's fallback path, not a defect.
+
+## Cross-installation toolchain execution observation
+
+A 2026-07-31 session installed a genuinely new, third MSYS2 distribution
+on this host (`C:\msys64`, via `winget install MSYS2.MSYS2`) — distinct
+from both installations above. `uname -a` reported the identical version
+string as Git for Windows' bundled runtime,
+`3.6.9-b4195d69.x86_64`, but the two `msys-2.0.dll` files are
+confirmed **not** byte-identical: `C:\msys64\usr\bin\msys-2.0.dll` is
+3,366,529 bytes (SHA-256
+`80817f159a33b8f641e6a15de73d1efcc9af3a7557a69121e4798c99930152f1`)
+versus Git for Windows' 3,368,543 bytes (SHA-256
+`2ea49553e4c03055dcf1c4a2bef54668081a07663fba283f4b34cf70f2157191`) — the
+same nominal upstream version tag does not imply the same build.
+
+Separately, a native UCRT64 `gcc.exe` built by this new installation's
+own toolchain was run as a child process of Git for Windows' bash (this
+session's ordinary shell) and reproducibly failed with `Cannot create
+temporary file in C:\Windows\: Permission denied`; the identical
+command succeeded when run as a child of `C:\msys64`'s own
+`bash.exe` instead. This is concrete evidence that a native toolchain
+binary's environment-variable expectations (here, temp-directory
+resolution) are tied to the specific MSYS runtime instance that spawned
+it, not portable across any msys-2.0.dll-providing shell on the same
+host — a distinct divergence from the symlink-fallback one above, in a
+different subsystem (process/environment setup rather than filesystem).
+See [Build artifact and flow mappings](BUILD-ARTIFACT-FLOW-MAPPINGS.md#worked-example-zlib-a-second-attempt-reaching-compile-link-and-execution)
+for the full build exercise this was found during.
+
+## Controlled fork() emulation observation
+
+On 2026-07-31, a targeted probe closed part of this page's previously
+open `fork()` emulation gap. In Git for Windows' bundled bash, a
+backgrounded subshell (`( ... ) &`) reported the *same* `$$` value as
+its parent — expected, standard POSIX shell semantics where `$$`
+identifies the originating shell rather than the literal subshell
+process — but a *different* `$BASHPID` value (parent `1648`, subshell
+`1650`), and a follow-up `ps -ef` confirmed the subshell's children
+carried `PPID 1648`, correctly chaining back to the parent shell. This
+is direct evidence that this MSYS runtime performs a real OS-level
+process fork for a subshell, not a simulated/single-process emulation
+of one. Separately, the top-level bash process itself reported its own
+`PPID` as `1` — the well-known MSYS/Cygwin convention for a parent
+process that isn't itself a POSIX-tracked MSYS process (here, the
+launching Windows/Claude Code host process), not evidence of an actual
+orphaned or init-owned process. This is single-installation,
+single-session evidence for Git for Windows' bundled runtime
+specifically; it does not establish `fork()` emulation behavior for the
+isolated MSYS2 installation's runtime or for `vfork()`/`posix_spawn()`
+code paths not exercised by this probe.
+
+## Partial console/terminal-device observation
+
+The same 2026-07-31 session found `MSYSTEM=MINGW64` (this shell was
+launched selecting the MINGW64 environment, not the MSYS default) and
+`TERM=xterm-256color`. `[ -t 1 ]` (stdout) reported false — stdout is
+not attached to a console device in this specific automated harness
+invocation — while `[ -t 0 ]`/`tty` behavior on stdin indicated it was
+still console-attached at shell start. This is a narrow, honest partial
+observation of this one process's console-device plumbing; it is not a
+ConPTY allocation test, does not exercise interactive terminal
+resizing/signal (`SIGWINCH`) behavior, and does not close the "Terminal
+integration tests" evidence this row's Concern column still calls for.
 
 ## Related Views
 

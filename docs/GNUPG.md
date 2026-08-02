@@ -97,7 +97,7 @@ appearing in this "security tools" grouping.
 
 ## Dependencies
 
-The catalog snapshot records fourteen `runtime-depends-on` edges for
+The catalog snapshot records sixteen `runtime-depends-on` edges for
 `package:msys2:gnupg` — the widest dependency footprint of any component
 documented in this volume, spanning its own independent cryptographic
 stack plus archive, terminal, and database libraries:

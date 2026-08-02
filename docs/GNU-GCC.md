@@ -107,7 +107,7 @@ different environment requires the matching environment's GCC package, per
 
 ## Dependencies
 
-The catalog snapshot records eleven `runtime-depends-on` edges for
+The catalog snapshot records twelve `runtime-depends-on` edges for
 `package:msys2:mingw-w64-ucrt-x86_64-gcc`:
 
 | Dependency | Package | Architectural reason |

@@ -1,30 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="918" height="676" viewBox="0 0 918 676" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="918" height="602" viewBox="0 0 918 602" role="img" aria-labelledby="title description">
 <title id="title">Level 6: Executables and DLLs</title>
-<desc id="description">Binary artifacts recovered by the deep-inventory pipeline. 16 of 16 objects shown, with 13 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
+<desc id="description">Binary artifacts recovered by the deep-inventory pipeline. 18 of 22 objects shown, with 14 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
 <style>.edge{stroke:#8896ab;stroke-width:1;fill:none}.node{fill:#eef4ff;stroke:#0645ad;stroke-width:1}.label{font:12px system-ui,sans-serif;fill:#111}.kindlabel{font:11px system-ui,sans-serif;fill:#5a6478}.h1{font:bold 17px system-ui,sans-serif;fill:#111}.meta{font:12px system-ui,sans-serif;fill:#41485a}.nav{font:12px system-ui,sans-serif;fill:#0645ad}</style>
-<rect width="918" height="676" fill="#ffffff"/>
+<rect width="918" height="602" fill="#ffffff"/>
 <text class="h1" x="28" y="30">Level 6 — Executables and DLLs</text>
 <text class="meta" x="28" y="50">Binary artifacts recovered by the deep-inventory pipeline.</text>
 <a href="level-5.svg"><text class="nav" x="28" y="72">Up to L5</text></a>
 <a href="level-7.svg"><text class="nav" x="95" y="72">Down to L7</text></a>
 <a href="../docs/BINARY-DLL-DEPENDENCY-GRAPH.md"><text class="nav" x="176" y="72">Read BINARY-DLL-DEPENDENCY-GRAPH.md</text></a>
-<line class="edge" x1="126" y1="142" x2="348" y2="170"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="792" y2="244"><title>imports-dll</title></line>
-<line class="edge" x1="224" y1="193" x2="472" y2="193"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="466" x2="348" y2="216"><title>wraps</title></line>
+<line class="edge" x1="126" y1="142" x2="570" y2="170"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="216" x2="126" y2="318"><title>imports-dll</title></line>
+<line class="edge" x1="224" y1="193" x2="694" y2="193"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="216" x2="570" y2="318"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="142" x2="348" y2="392"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="142" x2="792" y2="318"><title>imports-dll</title></line>
 <line class="edge" x1="126" y1="216" x2="348" y2="318"><title>imports-dll</title></line>
 <line class="edge" x1="126" y1="142" x2="126" y2="392"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="142" x2="570" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="126" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="142" x2="792" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="570" y2="244"><title>imports-dll</title></line>
-<line class="edge" x1="224" y1="193" x2="250" y2="193"><title>imports-dll</title></line>
-<line class="edge" x1="224" y1="193" x2="694" y2="193"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="348" y2="244"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="216" x2="792" y2="244"><title>imports-dll</title></line>
+<line class="edge" x1="224" y1="193" x2="472" y2="193"><title>imports-dll</title></line>
 <line class="edge" x1="126" y1="216" x2="126" y2="244"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="216" x2="570" y2="244"><title>imports-dll</title></line>
+<line class="edge" x1="126" y1="216" x2="348" y2="244"><title>imports-dll</title></line>
 <text class="kindlabel" x="28" y="90">executable</text>
 <text class="kindlabel" x="28" y="164">dll</text>
 <text class="kindlabel" x="28" y="460">import-library</text>
-<text class="kindlabel" x="28" y="534">static-library</text>
 <a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fcurl.exe" aria-label="/usr/bin/curl.exe (executable:msys2:/usr/bin/curl.exe)">
 <rect class="node" x="28" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/curl.exe: executable:msys2:/usr/bin/curl.exe</title></rect>
 <text class="label" x="126" y="124" text-anchor="middle">/usr/bin/curl.exe</text>
@@ -33,62 +33,70 @@
 <rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/bin/zlib1.dll: dll:msys2:/ucrt64/bin/zlib1.dll</title></rect>
 <text class="label" x="126" y="198" text-anchor="middle">/ucrt64/bin/zlib1.dll</text>
 </a>
+<a href="../generated/explorer/index.html#/object/dll%3Agnu%3Azlib1.dll" aria-label="zlib1.dll (UCRT64) (dll:gnu:zlib1.dll)">
+<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>zlib1.dll (UCRT64): dll:gnu:zlib1.dll</title></rect>
+<text class="label" x="348" y="198" text-anchor="middle">zlib1.dll (UCRT64)</text>
+</a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Akernel32.dll" aria-label="kernel32.dll (dll:windows:kernel32.dll)">
-<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>kernel32.dll: dll:windows:kernel32.dll</title></rect>
-<text class="label" x="348" y="198" text-anchor="middle">kernel32.dll</text>
+<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>kernel32.dll: dll:windows:kernel32.dll</title></rect>
+<text class="label" x="570" y="198" text-anchor="middle">kernel32.dll</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-convert-l1-1-0.dll" aria-label="api-ms-win-crt-convert-l1-1-0.dll (dll:windows:api-ms-win-crt-convert-l1-1-0.dll)">
-<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-convert-l1-1-0.dll: dll:windows:api-ms-win-crt-convert-l1-1-0.dll</title></rect>
-<text class="label" x="570" y="198" text-anchor="middle">api-ms-win-crt-convert-l1-…</text>
+<rect class="node" x="694" y="170" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-convert-l1-1-0.dll: dll:windows:api-ms-win-crt-convert-l1-1-0.dll</title></rect>
+<text class="label" x="792" y="198" text-anchor="middle">api-ms-win-crt-convert-l1-…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-heap-l1-1-0.dll" aria-label="api-ms-win-crt-heap-l1-1-0.dll (dll:windows:api-ms-win-crt-heap-l1-1-0.dll)">
-<rect class="node" x="694" y="170" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-heap-l1-1-0.dll: dll:windows:api-ms-win-crt-heap-l1-1-0.dll</title></rect>
-<text class="label" x="792" y="198" text-anchor="middle">api-ms-win-crt-heap-l1-1-0…</text>
+<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-heap-l1-1-0.dll: dll:windows:api-ms-win-crt-heap-l1-1-0.dll</title></rect>
+<text class="label" x="126" y="272" text-anchor="middle">api-ms-win-crt-heap-l1-1-0…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-locale-l1-1-0.dll" aria-label="api-ms-win-crt-locale-l1-1-0.dll (dll:windows:api-ms-win-crt-locale-l1-1-0.dll)">
-<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-locale-l1-1-0.dll: dll:windows:api-ms-win-crt-locale-l1-1-0.dll</title></rect>
-<text class="label" x="126" y="272" text-anchor="middle">api-ms-win-crt-locale-l1-1…</text>
+<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-locale-l1-1-0.dll: dll:windows:api-ms-win-crt-locale-l1-1-0.dll</title></rect>
+<text class="label" x="348" y="272" text-anchor="middle">api-ms-win-crt-locale-l1-1…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-private-l1-1-0.dll" aria-label="api-ms-win-crt-private-l1-1-0.dll (dll:windows:api-ms-win-crt-private-l1-1-0.dll)">
-<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-private-l1-1-0.dll: dll:windows:api-ms-win-crt-private-l1-1-0.dll</title></rect>
-<text class="label" x="348" y="272" text-anchor="middle">api-ms-win-crt-private-l1-…</text>
+<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-private-l1-1-0.dll: dll:windows:api-ms-win-crt-private-l1-1-0.dll</title></rect>
+<text class="label" x="570" y="272" text-anchor="middle">api-ms-win-crt-private-l1-…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-runtime-l1-1-0.dll" aria-label="api-ms-win-crt-runtime-l1-1-0.dll (dll:windows:api-ms-win-crt-runtime-l1-1-0.dll)">
-<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-runtime-l1-1-0.dll: dll:windows:api-ms-win-crt-runtime-l1-1-0.dll</title></rect>
-<text class="label" x="570" y="272" text-anchor="middle">api-ms-win-crt-runtime-l1-…</text>
+<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-runtime-l1-1-0.dll: dll:windows:api-ms-win-crt-runtime-l1-1-0.dll</title></rect>
+<text class="label" x="792" y="272" text-anchor="middle">api-ms-win-crt-runtime-l1-…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-stdio-l1-1-0.dll" aria-label="api-ms-win-crt-stdio-l1-1-0.dll (dll:windows:api-ms-win-crt-stdio-l1-1-0.dll)">
-<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-stdio-l1-1-0.dll: dll:windows:api-ms-win-crt-stdio-l1-1-0.dll</title></rect>
-<text class="label" x="792" y="272" text-anchor="middle">api-ms-win-crt-stdio-l1-1-…</text>
+<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-stdio-l1-1-0.dll: dll:windows:api-ms-win-crt-stdio-l1-1-0.dll</title></rect>
+<text class="label" x="126" y="346" text-anchor="middle">api-ms-win-crt-stdio-l1-1-…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-string-l1-1-0.dll" aria-label="api-ms-win-crt-string-l1-1-0.dll (dll:windows:api-ms-win-crt-string-l1-1-0.dll)">
-<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-string-l1-1-0.dll: dll:windows:api-ms-win-crt-string-l1-1-0.dll</title></rect>
-<text class="label" x="126" y="346" text-anchor="middle">api-ms-win-crt-string-l1-1…</text>
+<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-string-l1-1-0.dll: dll:windows:api-ms-win-crt-string-l1-1-0.dll</title></rect>
+<text class="label" x="348" y="346" text-anchor="middle">api-ms-win-crt-string-l1-1…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-utility-l1-1-0.dll" aria-label="api-ms-win-crt-utility-l1-1-0.dll (dll:windows:api-ms-win-crt-utility-l1-1-0.dll)">
-<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-utility-l1-1-0.dll: dll:windows:api-ms-win-crt-utility-l1-1-0.dll</title></rect>
-<text class="label" x="348" y="346" text-anchor="middle">api-ms-win-crt-utility-l1-…</text>
+<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-utility-l1-1-0.dll: dll:windows:api-ms-win-crt-utility-l1-1-0.dll</title></rect>
+<text class="label" x="570" y="346" text-anchor="middle">api-ms-win-crt-utility-l1-…</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-2.0.dll" aria-label="msys-2.0.dll (dll:windows:msys-2.0.dll)">
-<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>msys-2.0.dll: dll:windows:msys-2.0.dll</title></rect>
-<text class="label" x="570" y="346" text-anchor="middle">msys-2.0.dll</text>
+<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>msys-2.0.dll: dll:windows:msys-2.0.dll</title></rect>
+<text class="label" x="792" y="346" text-anchor="middle">msys-2.0.dll</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-curl-4.dll" aria-label="msys-curl-4.dll (dll:windows:msys-curl-4.dll)">
-<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>msys-curl-4.dll: dll:windows:msys-curl-4.dll</title></rect>
-<text class="label" x="792" y="346" text-anchor="middle">msys-curl-4.dll</text>
+<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>msys-curl-4.dll: dll:windows:msys-curl-4.dll</title></rect>
+<text class="label" x="126" y="420" text-anchor="middle">msys-curl-4.dll</text>
 </a>
 <a href="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-z.dll" aria-label="msys-z.dll (dll:windows:msys-z.dll)">
-<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>msys-z.dll: dll:windows:msys-z.dll</title></rect>
-<text class="label" x="126" y="420" text-anchor="middle">msys-z.dll</text>
+<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>msys-z.dll: dll:windows:msys-z.dll</title></rect>
+<text class="label" x="348" y="420" text-anchor="middle">msys-z.dll</text>
+</a>
+<a href="../generated/explorer/index.html#/object/dll%3Afacebook%3Alibzstd.dll" aria-label="libzstd.dll (UCRT64) (dll:facebook:libzstd.dll)">
+<rect class="node" x="472" y="392" width="196" height="46" rx="5" tabindex="0"><title>libzstd.dll (UCRT64): dll:facebook:libzstd.dll</title></rect>
+<text class="label" x="570" y="420" text-anchor="middle">libzstd.dll (UCRT64)</text>
+</a>
+<a href="../generated/explorer/index.html#/object/import-library%3Agnu%3Alibz.dll.a" aria-label="libz.dll.a (UCRT64) (import-library:gnu:libz.dll.a)">
+<rect class="node" x="28" y="466" width="196" height="46" rx="5" tabindex="0"><title>libz.dll.a (UCRT64): import-library:gnu:libz.dll.a</title></rect>
+<text class="label" x="126" y="494" text-anchor="middle">libz.dll.a (UCRT64)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/import-library%3Amsys2%3A%2Fucrt64%2Flib%2Flibz.dll.a" aria-label="/ucrt64/lib/libz.dll.a (import-library:msys2:/ucrt64/lib/libz.dll.a)">
-<rect class="node" x="28" y="466" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/libz.dll.a: import-library:msys2:/ucrt64/lib/libz.dll.a</title></rect>
-<text class="label" x="126" y="494" text-anchor="middle">/ucrt64/lib/libz.dll.a</text>
+<rect class="node" x="250" y="466" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/libz.dll.a: import-library:msys2:/ucrt64/lib/libz.dll.a</title></rect>
+<text class="label" x="348" y="494" text-anchor="middle">/ucrt64/lib/libz.dll.a</text>
 </a>
-<a href="../generated/explorer/index.html#/object/static-library%3Amsys2%3A%2Fucrt64%2Flib%2Flibz.a" aria-label="/ucrt64/lib/libz.a (static-library:msys2:/ucrt64/lib/libz.a)">
-<rect class="node" x="28" y="540" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/libz.a: static-library:msys2:/ucrt64/lib/libz.a</title></rect>
-<text class="label" x="126" y="568" text-anchor="middle">/ucrt64/lib/libz.a</text>
-</a>
-<text class="meta" x="28" y="644">All 16 objects of this level shown.</text>
-<text class="meta" x="28" y="662">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
+<text class="meta" x="28" y="570">18 of 22 objects shown, ranked by graph degree.</text>
+<text class="meta" x="28" y="588">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
 </svg>

@@ -92,7 +92,11 @@ The catalog snapshot records one `runtime-depends-on` edge for
 `package:msys2:mingw-w64-ucrt-x86_64-npth`:
 `mingw-w64-ucrt-x86_64-gcc-libs`, the standard GCC-toolchain runtime
 libraries documented as the hub of
-[libstdc++'s dependents](LIBSTDCXX.md#reverse-dependencies).
+[libstdc++'s dependents](LIBSTDCXX.md#reverse-dependencies). This edge
+is now modeled in this knowledge base
+(`relationship:foundation-libraries:npth-requires-libstdcxx`, added
+2026-07-30 — this page's own prose had named it without a corresponding
+graph edge).
 
 ## Reverse Dependencies
 
@@ -161,6 +165,25 @@ actual catalog-recorded dependency. Open, and explicitly out of scope for
 this page: header-level API surface and PE import/export-level evidence,
 per the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["nPth (New Portable Threads)"]
+    d0["libstdc++"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:npth` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

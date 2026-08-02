@@ -5,8 +5,9 @@ volume: 7
 status: partial
 model_refs:
   - ecosystem:msys2:msys2
-evidence_refs: []
-last_verified: 2026-07-28
+evidence_refs:
+  - evidence:akb-process:zstd-signature-verification-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Pacman Repository, Mirror, and Trust Model
@@ -62,18 +63,31 @@ flowchart LR
 4. Observe local database, cache, and hooks before and after a controlled
    transaction.
 
-## Mechanism pages
+## Controlled local signature verification
 
-The boundary table above states what evidence each concern requires. The
-mechanism behind each row is documented separately:
-[repository layout](PACMAN-REPOSITORY-LAYOUT.md),
-[package signing](PACMAN-PACKAGE-SIGNING.md),
-[database model](PACMAN-DATABASE-MODEL.md), and
-[hooks and cache](PACMAN-HOOKS-AND-CACHE.md).
+On 2026-07-31, the "Keyring and signatures" row's "verification result"
+collection rule was exercised directly, independent of a pacman
+installation (none is available in the current authoring environment):
+`mingw-w64-ucrt-x86_64-zstd-1.5.7-2-any.pkg.tar.zst` and its detached
+`.sig` file were downloaded from the official mirror
+(`https://mirror.msys2.org/mingw/ucrt64/`), and `gpg --verify` against
+that pair reported `gpg: Signature made ... using RSA key
+5F944B027F7FE2091985AA2EFA11531AA0AA7F57` and `gpg: Good signature from
+"Christoph Reiter (MSYS2 development key) <reiter.christoph@gmail.com>"`
+after fetching that key ID from `hkps://keyserver.ubuntu.com`.
 
-**None of the collection rules in the table above has been executed.** No
-MSYS2 `pacman.conf` is captured, no transaction observed, no hook set
-inventoried, no effective path recorded.
+This is genuine cryptographic verification that the archive's bytes
+match a signature made by a real, named MSYS2 packager's private key —
+not a simulation or a documentation-only claim. It is explicitly
+**not** the same trust chain pacman itself uses: `gpg` reported
+`WARNING: This key is not certified with a trusted signature! There is
+no indication that the signature belongs to the owner`, because the key
+was fetched ad hoc from a public keyserver rather than through pacman's
+own `msys2-keyring` package and its local trust database. This
+establishes archive-signature validity for one package/version against
+one keyserver-sourced key on one date; it does not establish pacman's
+own keyring-trust chain, key provenance beyond the keyserver's own
+claims, or signature verification for any other package.
 
 ## Related Views
 

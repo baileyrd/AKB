@@ -38,7 +38,7 @@ Someone writing or porting software that will run on Windows, who has
 MSYS2 installed and has to decide what to target. It is not for someone
 operating an MSYS2 installation — that is Volume 19 — and it is not about
 this knowledge base's own tooling, which is
-[AKB Developer and Operator Workflows](DEVELOPER-OPERATOR-WORKFLOWS.md)
+[AKB developer workflow](DEVELOPER-WORKFLOW.md)
 in Volume 20.
 
 ## The one decision that matters

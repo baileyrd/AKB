@@ -8,12 +8,11 @@ model_refs:
   - package:msys2:mingw-w64-clang-x86_64-zlib
   - component:llvm:lld
   - component:llvm:lldb
-  - library:yubico:libfido2@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:zlib:manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-08-02
+last_verified: 2026-07-30
 ---
 
 # zlib (CLANG64)
@@ -100,30 +99,23 @@ runtime support.
 
 ## Reverse Dependencies
 
-The catalog snapshot records 285 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-zlib`. Eight are already modeled
-in this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
-(`relationship:foundation-libraries:curl-clang64-requires-zlib-clang64`,
-added 2026-08-02), [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
-(`relationship:foundation-libraries:libarchive-clang64-requires-zlib-clang64`,
-added 2026-08-02), [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
-(`relationship:foundation-libraries:pcre2-clang64-requires-zlib-clang64`,
-added 2026-08-02), [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
-(`relationship:foundation-libraries:libssh2-clang64-requires-zlib-clang64`,
-added 2026-08-02), `package:msys2:mingw-w64-clang-x86_64-lld`
+**Correction, 2026-07-30**: this page previously stated 285 relationships;
+the catalog snapshot actually records **287** targeting
+`package:msys2:mingw-w64-clang-x86_64-zlib`. Four are already modeled
+in this knowledge base: `package:msys2:mingw-w64-clang-x86_64-lld`
 (`relationship:toolchain:lld-requires-zlib-clang64`),
 `package:msys2:mingw-w64-clang-x86_64-lldb`
 (`relationship:toolchain:lldb-requires-zlib-clang64`),
 `package:msys2:mingw-w64-clang-x86_64-llvm-libs`
 (`relationship:foundation-libraries:llvm-libs-requires-zlib-clang64`,
 correcting [LLVM libraries'](LLVM-LIBS.md) own prior incorrect
-no-dependencies claim), and
-`package:msys2:mingw-w64-clang-x86_64-libxml2`
+no-dependencies claim), and `package:msys2:mingw-w64-clang-x86_64-libxml2`
 (`relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64`,
-correcting [libxml2 (CLANG64)'s](LIBXML2-CLANG64.md) own prior declined
-edge). The remaining ~277 recorded dependents (a broad
-mix of CLANG64 packages) are not individually modeled in this
-knowledge base; see the
+added 2026-07-30 to close a gap in
+[libxml2 (CLANG64)'s own dependency table](LIBXML2-CLANG64.md#dependencies),
+which had cited this package by name without a corresponding graph
+edge). The remaining ~283 recorded dependents (a broad mix of CLANG64
+packages) are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -172,10 +164,10 @@ before being treated as an LLD or LLDB defect.
 
 DEFLATE compression scope is backed by the official zlib project site
 (`evidence:zlib:manual-2026-07-30`), the same evidence record
-[zlib (UCRT64)](ZLIB.md) cites. Package identity, version, and the two
+[zlib (UCRT64)](ZLIB.md) cites. Package identity, version, and the four
 modeled dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: the ~277 remaining recorded dependents not individually
+this page: the ~283 remaining recorded dependents not individually
 modeled, and header-level API surface / PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -222,9 +214,3 @@ Edits between the surrounding markers are overwritten on the next build.
 - [LLDB](LLDB.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)
-- [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
-- [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md)
-- [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
-- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
-- [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
-- [curl (CLANG64)](CURL-CLANG64.md)

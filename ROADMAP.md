@@ -407,7 +407,7 @@ Eleven volumes hold fourteen pages between them.
 - [x] Volume 18 developer guide
 
 **Volume 18 closed 2026-08-02.** The volume had zero pages; the ledger
-pointed at `DEVELOPER-OPERATOR-WORKFLOWS.md`, which is about this
+pointed at `DEVELOPER-WORKFLOW.md`, which is about this
 repository's own tooling and stays in Volume 20. Five pages now answer the
 charter's question in its own five parts — select, build, debug, package,
 migrate — sourced from MSYS2's own wiki and documentation rather than

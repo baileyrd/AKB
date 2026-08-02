@@ -4,8 +4,10 @@ title: AKB Threat Model and Supply-Chain Analysis
 volume: 16
 status: partial
 model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+evidence_refs:
+  - evidence:akb-process:recipe-no-execution-code-review-2026-07-31
+  - evidence:akb-process:projection-write-atomicity-code-review-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # AKB Threat Model and Supply-Chain Analysis
@@ -21,7 +23,7 @@ claim or replace a previously verified projection.
 | Mirror and repository transfer | Tampered, stale, or inconsistent metadata | Snapshot hashes, retrieval identity, pacman verification boundary | Mirror-divergence monitoring and alerting |
 | Catalog/deep-inventory streams | Truncation, path traversal, schema abuse, parser failure | Required streams, hashes/counts, normalized paths, bounded parsers | Adversarial corpus and fuzz testing |
 | Package recipes | Shell-side effects or dynamic-value misinterpretation | Static parsing only; PKGBUILDs never execute | Expanded dynamic-field coverage and source checksum retrieval |
-| Generated projections | Partial import replacing trustworthy state | Validation before atomic current-view replacement | Cross-process locking and recovery drills |
+| Generated projections | Partial import replacing trustworthy state | Validation-before-write transaction boundary (a failed import never touches the current projection); the individual `CURRENT`-file write itself is not an OS-level atomic rename, see verification below | An `os.replace`-based atomic file swap, cross-process locking, and recovery drills |
 | Explorer / generated documents | Script or markup injection from names or metadata | HTML escaping and static generation | Browser security headers when hosted |
 | Credentials and local configuration | Secret leakage through collection or evidence | Sanitization rules; credential stores excluded | Automated secret-scanning gate for snapshots |
 | Refresh automation | Privilege abuse or task tampering | Explicit task registration and inspectable command | Least-privilege service account guidance |
@@ -52,6 +54,108 @@ flowchart LR
    signed package or source commit is not proof of runtime behavior.
 6. Escalate unresolved dependency, ambiguous DLL, parser-warning, and source
    drift records as coverage limits rather than filling gaps with inference.
+
+## Measured control verification: Explorer script/markup injection
+
+No entity in the current authored `model/graph.json` contains an HTML
+metacharacter (`<`, `>`, `&`, `"`) in its `name` or `summary`, so the
+"HTML escaping and static generation" control for the Explorer row above
+has never actually been exercised by this repository's own real data. On
+2026-07-30, it was exercised directly against `tools/build_explorer.py`'s
+own `build()` function (not a reimplementation) using synthetic,
+non-committed test entities — an XSS-shaped name
+(`<script>alert(1)</script>`) and a quote-breaking id
+(`component:test:"onmouseover="alert(1)`) — run through a temporary
+output directory, never staged in this repository:
+
+- The generated `index.html` and `overview.svg` contained the
+  HTML-entity-escaped form (`&lt;script&gt;...`) and did not contain the
+  raw, unescaped payload as a live tag or attribute break-out.
+- The one raw-substring match in `index.html` was the payload appearing
+  inside the page's embedded `const data = {...}` JSON blob, itself
+  inside a `<script>` tag; Python's `json.dumps` escapes the `/` in
+  `</script>` to `<\/script>`, the standard, correct mitigation that
+  prevents a JSON string value from prematurely closing that script
+  block.
+- That same generated page's client-side JavaScript defines its own
+  `esc()` function
+  (`value => String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))`)
+  and applies it to every entity name/id/kind/status value before
+  inserting it via `innerHTML` in the hash-routed dynamic views (search
+  results, per-object dossier, breadcrumbs, relationship lists) —
+  confirming the escaping control operates at both the static-generation
+  layer (Python, `html.escape`) and the client-rendering layer
+  (JavaScript, `esc`), independently.
+- `overview.txt` is plain text, not rendered as HTML, so it was not
+  escaped and this is not itself a finding.
+
+This verifies the control functions correctly against the specific
+payloads tested; it does not constitute a general security audit, does
+not cover every possible injection vector (URL-fragment routing, SVG
+`<title>` content beyond what was tested, or a future code change that
+bypasses `esc`/`html.escape`), and should be re-run after any change to
+`tools/build_explorer.py` or its generated client-side script.
+
+## Measured control verification: Package recipes never execute
+
+A 2026-07-31 direct code inspection (not a black-box test) of the two
+real functions that touch PKGBUILD text verified the "Static parsing
+only; PKGBUILDs never execute" control for the Package recipes row
+above:
+
+- `tools/deep_inventory.py`'s `parse_pkgbuild()` (the function
+  `tools/collect_recipe_tree.py`'s collector actually calls) reads the
+  PKGBUILD file with `Path.read_text()` and extracts every field with
+  `re.search`/`re.findall` against that string; it contains no `exec`,
+  `eval`, `subprocess`, `os.system`, or any other code-execution call
+  operating on PKGBUILD content anywhere in its body.
+- `tools/collect_recipe_tree.py` does call `subprocess.run` exactly
+  once, but for `git -C <root> rev-parse HEAD` — reading the checked-out
+  tree's own revision, not interpreting any PKGBUILD's shell syntax.
+- `tools/import_recipe_tree.py`, which consumes the collector's output,
+  contains no execution call either; it only validates and imports the
+  already-statically-parsed JSON records `parse_pkgbuild()` produced.
+
+This confirms the control as implemented today, for these three files at
+this commit; it does not constitute a general audit of every code path
+that might touch recipe text (for example, any future collector or
+importer added under this or a different extension point), and — per the
+row's own "Remaining assurance need" — does not cover the still-open
+work of expanding dynamic-field coverage or retrieving source checksums.
+
+## Measured control verification: Generated projections replacement
+
+A 2026-07-31 code inspection of `tools/import_package_catalog.py`,
+`tools/import_deep_inventory.py`, and the other `import_*.py` modules
+that write to a `CURRENT` path examined what "Validation before atomic
+current-view replacement" actually means in this codebase, since the
+phrase is ambiguous between two different guarantees:
+
+- **Confirmed**: every importer calls its own `verify_input`/validation
+  step first and raises before any write on failure (for example,
+  `import_package_catalog.py`'s `import_catalog()` calls `verify_input()`
+  at the top of the function; a hash mismatch, missing field, or count
+  mismatch raises `CatalogError` before `build_catalog()` or any
+  `write_json(CURRENT, ...)` call is reached). This is genuine
+  transaction-level atomicity: a failed import never touches the current
+  projection at all.
+- **Not confirmed, and likely not true as literally stated**: the write
+  to `CURRENT` itself (`write_json()`'s `path.write_text(...)`) is a
+  direct, in-place write, not a temp-file-plus-`os.replace()` pattern.
+  No occurrence of `os.replace` or an equivalent rename-based swap was
+  found guarding any `CURRENT` write in this codebase. This means an
+  interruption (process kill, power loss) during that specific write
+  call could leave a truncated or corrupted `current.json`/`current/`
+  file — a real, narrow gap between the documented control and the
+  code, distinct from the transaction-level guarantee that is genuinely
+  implemented.
+
+This corrects rather than merely confirms the row's existing-control
+description: "atomic" accurately describes the validate-then-write
+transaction boundary, not the individual file-write operation. Closing
+the file-write-level gap (an actual `os.replace`-based swap) would be a
+production code change to the import pipeline and is out of scope for
+this documentation-only pass.
 
 ## Response and Review
 

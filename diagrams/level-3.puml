@@ -24,17 +24,17 @@ rectangle "Vim" as n16 <<component>>
 rectangle "GNU Diffutils" as n17 <<component>>
 n8 --> n9 : requires
 n16 --> n9 : requires
-n6 --> n3 : requires
-n6 --> n12 : requires
-n6 --> n5 : requires
-n3 --> n5 : requires
-n12 --> n5 : requires
-n4 --> n7 : invokes
-n14 --> n10 : invokes
-n10 --> n7 : compatible-with
 n15 --> n14 : contains
 n15 --> n10 : contains
 n15 --> n11 : contains
+n3 --> n5 : requires
+n6 --> n3 : requires
+n6 --> n12 : requires
+n6 --> n5 : requires
+n12 --> n5 : requires
+n14 --> n10 : invokes
+n4 --> n7 : invokes
+n10 --> n7 : compatible-with
 note bottom : Parent level-2
 note bottom : Child level-4
 @enduml

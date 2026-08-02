@@ -3,12 +3,46 @@ id: doc:volume-14:build-artifact-flow-mappings
 title: Generated Artifact and Build-Flow Mappings
 volume: 14
 status: partial
-model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+model_refs:
+  - library:gnu:zlib
+evidence_refs:
+  - evidence:akb-process:zlib-upstream-build-2026-07-31
+last_verified: 2026-07-31
 ---
 
 # Generated Artifact and Build-Flow Mappings
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Jean-loup Gailly and Mark Adler |
+| Environments | `ucrt64` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-zlib` |
+| Version (observed) | 1.3.2-2 |
+| License (observed) | spdx:Zlib |
+| Architecture (observed) | any |
+| Installed size (observed) | 427.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:zlib:hub` (`observation`, `verified`) — zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 Build-flow mappings explain how a selected source revision and configuration
 produce observed outputs without collapsing distinct stages into one
@@ -65,8 +99,91 @@ flowchart LR
 5. Import only verified observations so all graph facts reference their
    snapshot and retain unresolved mappings where proof is incomplete.
 
+## Worked example: zlib, reaching and stopping at Compile and link
+
+[Source code organization](SOURCE-CODE-ORGANIZATION.md#bounded-provenance-slice-zlib)
+already records a controlled local build attempt that exercises three of
+this table's stages, previously not cross-linked from here:
+
+| Stage | What was actually done |
+| --- | --- |
+| Source selection | The retained `zlib/PKGBUILD` declared `zlib-1.3.2.tar.xz` and a SHA-256; a local retrieval of that exact URL matched the declared digest — Source selection evidence, not proof the installed DLL was built from it (see the linked page's own caveat). |
+| Configuration | The recipe's two local patches matched their declared SHA-256 values and were verified before application. |
+| Build graph / Compile and link | A controlled local build applied both patches successfully, then **failed** compiling `gzlib.c` under MSYS GCC `15.3.0`, which referenced `lseek` without a visible declaration — a version-qualified failed-build observation, not evidence the recipe or installed DLL is invalid. |
+| Install staging / Package archive / Installed files | Not reached by this attempt; the installed `zlib 1.3.2-1` and `/usr/bin/msys-z.dll` observed separately are ownership evidence only, per this table's own "Do not infer" column — this attempt does not connect them to the failed local build. |
+
+This is exactly the failure mode Canonical Mapping Rule 5 anticipates:
+the attempt stopped mid-pipeline, so no reproducibility comparison over
+qualified output hashes is possible here, and none is claimed.
+
+## Worked example: zlib, a second attempt reaching Compile, link, and execution
+
+A 2026-07-31 session installed a real MSYS2 environment (`C:\msys64`,
+via `winget install MSYS2.MSYS2`) and a real UCRT64 GCC toolchain
+(`gcc.exe (Rev5, Built by MSYS2 project) 16.1.0`) on this host, neither
+of which was available for the attempt above. This is a **separate,
+independently-scoped build exercise, not a retry of the same recipe**:
+it compiles the upstream `zlib-1.3.2.tar.gz` release archive (SHA-256
+`bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16`,
+downloaded fresh from `zlib.net`) using zlib's own bundled
+`win32/Makefile.gcc`, without the MSYS2 recipe's two patches or its
+actual build script — a different source distribution format (`.tar.gz`
+vs. the recipe-declared `.tar.xz`) and a different, newer GCC than the
+recipe-pinned toolchain. It answers "does zlib 1.3.2 compile with a
+current GCC 16.1.0 via its own build system," not "does the MSYS2
+recipe build succeed now."
+
+| Stage | What was actually done |
+| --- | --- |
+| Compile and link | `gzlib.c` — the specific file that failed under GCC `15.3.0` above — compiled cleanly under GCC `16.1.0` (exit 0). The full `win32/Makefile.gcc` build then succeeded end to end: `libz.a` (SHA-256 `32817246efa3ca6570fee1995a4108ef2e7e712fb97f49bf17466ee5ee6f22d4`), `libz.dll.a` (SHA-256 `6480b10caf0fa033319b2494b2bc1e638d5d975015facbe9381953a167349ac7`), `zlib1.dll` (SHA-256 `4a4363adc2c9c96e6c96d4bb6167aa326918ef96924eb84639e60026d3860ef5`), and the bundled test executables `example.exe`/`minigzip.exe` all built — the full family-classification artifact set this knowledge base already models for the UCRT64-packaged build (per [zlib's Family Classification](ZLIB.md#family-classification)), here as freshly-built rather than package-archive-extracted bytes. |
+| Execution | Running `example.exe` reached the Runtime Behavior stage this knowledge base has not previously exercised for any package: it printed `zlib version 1.3.2 = 0x1320, compile flags = 0x65`, `uncompress(): hello, hello!`, and `gzread(): hello, hello!` (three passing checks), but also `gzseek error, pos=6, gztell=14` and exited with status 1 — a genuine, reproducible functional-test failure in zlib's own bundled self-test on this specific build, not fabricated or omitted to present a clean success. |
+| Cross-runtime finding | The identical build command failed with `Cannot create temporary file in C:\Windows\: Permission denied` when the newly-installed `C:\msys64`-built `gcc.exe` was invoked as a child process of Git for Windows' own, separate `msys-2.0.dll` runtime (the shell this whole session otherwise runs in); it succeeded only when invoked through `C:\msys64\usr\bin\bash.exe` — its own matching runtime. Reproduced twice. This is environment/runtime-boundary evidence distinct from the zlib build itself: running one MSYS2 installation's native toolchain binaries as a child of a *different* MSYS2 installation's shell runtime is not equivalent to running them under their own. |
+
+Together with the first attempt, this knowledge base now has two
+differently-scoped worked build attempts for the same library: one that
+stopped at a compile failure using the exact recipe/patches/toolchain
+pin, and one that reached execution using upstream source and a current
+toolchain but outside the recipe's exact build path. Neither
+individually proves the MSYS2-packaged `zlib1.dll` reproduces from
+source; every other documented package/library still has only the
+abstract stage table above, no worked attempt.
+
 ## Related Views
 
 - [Build system role model](BUILD-SYSTEM-ROLE-MODEL.md)
 - [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md)
 - [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)
+- [Source code organization](SOURCE-CODE-ORGANIZATION.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    u1["GNU Binutils"]
+    u1 -->|requires| subject
+    u2["GCC"]
+    u2 -->|requires| subject
+    u3["GDB"]
+    u3 -->|requires| subject
+    u4["curl (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libxml2"]
+    u5 -->|requires| subject
+    u6["GnuTLS (UCRT64)"]
+    u6 -->|requires| subject
+    u7["libarchive"]
+    u7 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib` in the composed graph: 13 dependents and 0 dependencies, of which 5 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

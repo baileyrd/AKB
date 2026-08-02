@@ -20,8 +20,17 @@ last_verified: 2026-08-02
 
 Nine roadmap items are unchecked, and they have been unchecked while
 everything around them closed. Left unexplained, that reads as neglect.
-It is not: **they all need a Windows host with MSYS2 installed, and this
-knowledge base has never had one.**
+It is not: **they all need a session on a Windows host with MSYS2
+installed to run `tools/Collect-AkbDeepInventory.ps1`, and no session has
+done that beyond the two-package run already recorded.**
+
+A Windows host with MSYS2 is no longer hypothetical. A 2026-07-31 session
+installed MSYS2 at `C:\msys64`, ran two logged pacman transactions, and a
+2026-07-30 session reached compile, link, and execution on a real zlib
+build — evidence recorded in Volumes 3, 7, 14, and 19. What those sessions
+did not do is run the deep-inventory collector across the installed
+package set, which is the specific act these nine items wait on. The
+sessions that author this page run in Linux containers and cannot run it.
 
 A gap with a named cause is a different kind of gap from one without, and
 the charter asks for coverage gaps to be measured and visible rather than
@@ -76,8 +85,10 @@ opens those files and reads their headers. That requires:
   *there*.
 
 None of those is a software dependency that could be added. They are
-properties of the machine, and every session this knowledge base has run
-in has been a Linux container.
+properties of the machine. The MSYS2 installation at `C:\msys64` recorded
+in Volume 7 satisfies all three; what has not happened is a session on
+that host invoking this collector at scale. The sessions that author this
+page run in Linux containers, where the first condition fails outright.
 
 ## What the two observed packages already show
 
@@ -114,7 +125,9 @@ are currently qualified by the absence of this data:
   linkage differs — a package can declare a dependency it does not link,
   and link one it does not declare.
 - **Git for Windows DLL loading** ([the page](GIT-FOR-WINDOWS-DLL-LOADING.md))
-  stops at mechanism because no Git for Windows binary has been analysed.
+  has one binary analysed — a 2026-07-30 PE-import parse of `git.exe`
+  found 10 imported DLLs, 4 MSYS-derived — and stops at mechanism for
+  every other binary the distribution ships.
 - **Migration step 6** in [the migration guide](DEVELOPER-MIGRATION.md) —
   check the produced binary's imports — is a recommendation this knowledge
   base cannot demonstrate.
@@ -127,7 +140,8 @@ are currently qualified by the absence of this data:
 
 ## What would unblock it
 
-One session on a Windows host with MSYS2 installed, running:
+One session on the Windows host that already carries the `C:\msys64`
+installation, running:
 
 ```powershell
 pwsh ./tools/Update-Akb.ps1 -Msys2Root C:\msys64
@@ -140,7 +154,7 @@ composes into the graph exactly as the existing two-package snapshot does.
 The scale of the run is a policy choice rather than a technical one:
 `-InventoryScope repositories` covers repository-wide file ownership,
 against the installed set alone. See
-[AKB Developer and Operator Workflows](DEVELOPER-OPERATOR-WORKFLOWS.md).
+[AKB developer workflow](DEVELOPER-WORKFLOW.md).
 
 ## Standing statement
 
@@ -203,5 +217,5 @@ Edits between the surrounding markers are overwritten on the next build.
 - [Package-to-file inventory](PACKAGE-FILE-INVENTORY.md)
 - [Binary-to-DLL dependency graph](BINARY-DLL-DEPENDENCY-GRAPH.md)
 - [Header and development-metadata indexes](HEADER-AND-METADATA-INDEXES.md)
-- [AKB Developer and Operator Workflows](DEVELOPER-OPERATOR-WORKFLOWS.md)
+- [AKB developer workflow](DEVELOPER-WORKFLOW.md)
 - [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)

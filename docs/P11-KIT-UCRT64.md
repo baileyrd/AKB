@@ -109,7 +109,8 @@ dependencies on [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md)
 
 ## Reverse Dependencies
 
-The catalog snapshot records 4 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 4 relationships;
+the catalog snapshot actually records **5** targeting
 `package:msys2:mingw-w64-ucrt-x86_64-p11-kit`. Two are now modeled in
 this knowledge base:
 [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
@@ -117,8 +118,9 @@ this knowledge base:
 correcting that page's own prior explicitly-unmodeled note) and
 [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
 (`relationship:foundation-libraries:gnutls-ucrt64-requires-p11-kit-ucrt64`).
-The remaining recorded dependents (`qemu` and `qemu-image-util`) are
-not individually modeled in this knowledge base; see the
+The remaining recorded dependents (`libp11`, `qemu`, and
+`qemu-image-util`) are not individually modeled in this knowledge base;
+see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 

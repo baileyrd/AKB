@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="918" height="602" viewBox="0 0 918 602" role="img" aria-labelledby="title description">
 <title id="title">Level 7: Source and development artifacts</title>
-<desc id="description">Source-adjacent development artifacts: headers, pkg-config modules, and owned filesystem paths. 18 of 536 objects shown, with 0 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
+<desc id="description">Source-adjacent development artifacts: headers, pkg-config modules, and owned filesystem paths. 18 of 538 objects shown, with 0 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
 <style>.edge{stroke:#8896ab;stroke-width:1;fill:none}.node{fill:#eef4ff;stroke:#0645ad;stroke-width:1}.label{font:12px system-ui,sans-serif;fill:#111}.kindlabel{font:11px system-ui,sans-serif;fill:#5a6478}.h1{font:bold 17px system-ui,sans-serif;fill:#111}.meta{font:12px system-ui,sans-serif;fill:#41485a}.nav{font:12px system-ui,sans-serif;fill:#0645ad}</style>
 <rect width="918" height="602" fill="#ffffff"/>
 <text class="h1" x="28" y="30">Level 7 — Source and development artifacts</text>
@@ -18,9 +18,17 @@
 <rect class="node" x="250" y="96" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/include/zlib.h: header:msys2:/ucrt64/include/zlib.h</title></rect>
 <text class="label" x="348" y="124" text-anchor="middle">/ucrt64/include/zlib.h</text>
 </a>
+<a href="../generated/explorer/index.html#/object/pkg-config-module%3Agnu%3Azlib-pc" aria-label="zlib.pc (UCRT64) (pkg-config-module:gnu:zlib-pc)">
+<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>zlib.pc (UCRT64): pkg-config-module:gnu:zlib-pc</title></rect>
+<text class="label" x="126" y="198" text-anchor="middle">zlib.pc (UCRT64)</text>
+</a>
 <a href="../generated/explorer/index.html#/object/pkg-config-module%3Amsys2%3A%2Fucrt64%2Flib%2Fpkgconfig%2Fzlib.pc" aria-label="/ucrt64/lib/pkgconfig/zlib.pc (pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc)">
-<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/pkgconfig/zlib.pc: pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc</title></rect>
-<text class="label" x="126" y="198" text-anchor="middle">/ucrt64/lib/pkgconfig/zlib…</text>
+<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/pkgconfig/zlib.pc: pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc</title></rect>
+<text class="label" x="348" y="198" text-anchor="middle">/ucrt64/lib/pkgconfig/zlib…</text>
+</a>
+<a href="../generated/explorer/index.html#/object/pkg-config-module%3Afacebook%3Azstd-pc" aria-label="libzstd.pc (UCRT64) (pkg-config-module:facebook:zstd-pc)">
+<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>libzstd.pc (UCRT64): pkg-config-module:facebook:zstd-pc</title></rect>
+<text class="label" x="570" y="198" text-anchor="middle">libzstd.pc (UCRT64)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2F.buildinfo" aria-label="/.BUILDINFO (filesystem-path:msys2:/.buildinfo)">
 <rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>/.BUILDINFO: filesystem-path:msys2:/.buildinfo</title></rect>
@@ -74,14 +82,6 @@
 <rect class="node" x="28" y="466" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man3/curl_easy_duphandle.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz</title></rect>
 <text class="label" x="126" y="494" text-anchor="middle">/usr/share/man/man3/curl_e…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_escape.3.gz" aria-label="/usr/share/man/man3/curl_easy_escape.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_escape.3.gz)">
-<rect class="node" x="250" y="466" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man3/curl_easy_escape.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_escape.3.gz</title></rect>
-<text class="label" x="348" y="494" text-anchor="middle">/usr/share/man/man3/curl_e…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_getinfo.3.gz" aria-label="/usr/share/man/man3/curl_easy_getinfo.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_getinfo.3.gz)">
-<rect class="node" x="472" y="466" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man3/curl_easy_getinfo.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_getinfo.3.gz</title></rect>
-<text class="label" x="570" y="494" text-anchor="middle">/usr/share/man/man3/curl_e…</text>
-</a>
-<text class="meta" x="28" y="570">18 of 536 objects shown, ranked by graph degree.</text>
+<text class="meta" x="28" y="570">18 of 538 objects shown, ranked by graph degree.</text>
 <text class="meta" x="28" y="588">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
 </svg>

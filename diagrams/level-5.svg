@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="918" height="528" viewBox="0 0 918 528" role="img" aria-labelledby="title description">
 <title id="title">Level 5: Libraries</title>
-<desc id="description">Modelled libraries ranked by graph degree. 18 of 163 objects shown, with 18 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
+<desc id="description">Modelled libraries ranked by graph degree. 18 of 163 objects shown, with 17 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
 <style>.edge{stroke:#8896ab;stroke-width:1;fill:none}.node{fill:#eef4ff;stroke:#0645ad;stroke-width:1}.label{font:12px system-ui,sans-serif;fill:#111}.kindlabel{font:11px system-ui,sans-serif;fill:#5a6478}.h1{font:bold 17px system-ui,sans-serif;fill:#111}.meta{font:12px system-ui,sans-serif;fill:#41485a}.nav{font:12px system-ui,sans-serif;fill:#0645ad}</style>
 <rect width="918" height="528" fill="#ffffff"/>
 <text class="h1" x="28" y="30">Level 5 — Libraries</text>
@@ -8,40 +8,39 @@
 <a href="level-4.svg"><text class="nav" x="28" y="72">Up to L4</text></a>
 <a href="level-6.svg"><text class="nav" x="95" y="72">Down to L6</text></a>
 <a href="../docs/LIBRARIES-ARCHITECTURE.md"><text class="nav" x="176" y="72">Read LIBRARIES-ARCHITECTURE.md</text></a>
-<line class="edge" x1="348" y1="290" x2="348" y2="318"><title>requires</title></line>
-<line class="edge" x1="792" y1="216" x2="348" y2="318"><title>requires</title></line>
-<line class="edge" x1="792" y1="170" x2="792" y2="142"><title>requires</title></line>
+<line class="edge" x1="224" y1="267" x2="694" y2="267"><title>requires</title></line>
+<line class="edge" x1="348" y1="170" x2="348" y2="142"><title>requires</title></line>
+<line class="edge" x1="348" y1="290" x2="570" y2="318"><title>requires</title></line>
+<line class="edge" x1="126" y1="318" x2="792" y2="290"><title>requires</title></line>
+<line class="edge" x1="570" y1="170" x2="792" y2="142"><title>requires</title></line>
 <line class="edge" x1="570" y1="170" x2="126" y2="142"><title>requires</title></line>
-<line class="edge" x1="570" y1="318" x2="126" y2="142"><title>requires</title></line>
-<line class="edge" x1="570" y1="170" x2="570" y2="142"><title>requires</title></line>
-<line class="edge" x1="224" y1="119" x2="472" y2="119"><title>requires</title></line>
-<line class="edge" x1="570" y1="318" x2="570" y2="142"><title>requires</title></line>
-<line class="edge" x1="348" y1="142" x2="126" y2="170"><title>requires</title></line>
-<line class="edge" x1="694" y1="267" x2="668" y2="267"><title>requires</title></line>
-<line class="edge" x1="224" y1="267" x2="472" y2="267"><title>requires</title></line>
-<line class="edge" x1="792" y1="318" x2="570" y2="290"><title>requires</title></line>
-<line class="edge" x1="126" y1="392" x2="570" y2="290"><title>requires</title></line>
-<line class="edge" x1="348" y1="170" x2="792" y2="142"><title>requires</title></line>
-<line class="edge" x1="126" y1="318" x2="348" y2="290"><title>requires</title></line>
-<line class="edge" x1="126" y1="364" x2="348" y2="392"><title>requires</title></line>
-<line class="edge" x1="126" y1="318" x2="792" y2="142"><title>requires</title></line>
 <line class="edge" x1="472" y1="193" x2="224" y2="193"><title>requires</title></line>
+<line class="edge" x1="348" y1="318" x2="348" y2="290"><title>requires</title></line>
+<line class="edge" x1="348" y1="318" x2="348" y2="142"><title>requires</title></line>
+<line class="edge" x1="126" y1="392" x2="792" y2="290"><title>requires</title></line>
+<line class="edge" x1="792" y1="216" x2="570" y2="318"><title>requires</title></line>
+<line class="edge" x1="792" y1="170" x2="348" y2="142"><title>requires</title></line>
+<line class="edge" x1="570" y1="142" x2="126" y2="170"><title>requires</title></line>
+<line class="edge" x1="792" y1="318" x2="792" y2="142"><title>requires</title></line>
+<line class="edge" x1="792" y1="318" x2="126" y2="142"><title>requires</title></line>
+<line class="edge" x1="224" y1="119" x2="694" y2="119"><title>requires</title></line>
+<line class="edge" x1="348" y1="392" x2="792" y2="290"><title>requires</title></line>
 <text class="kindlabel" x="28" y="90">library</text>
 <a href="../generated/explorer/index.html#/object/library%3Agnu%3Alibintl" aria-label="GNU libintl (library:gnu:libintl)">
 <rect class="node" x="28" y="96" width="196" height="46" rx="5" tabindex="0"><title>GNU libintl: library:gnu:libintl</title></rect>
 <text class="label" x="126" y="124" text-anchor="middle">GNU libintl</text>
 </a>
+<a href="../generated/explorer/index.html#/object/library%3Agnu%3Azlib" aria-label="zlib (library:gnu:zlib)">
+<rect class="node" x="250" y="96" width="196" height="46" rx="5" tabindex="0"><title>zlib: library:gnu:zlib</title></rect>
+<text class="label" x="348" y="124" text-anchor="middle">zlib</text>
+</a>
 <a href="../generated/explorer/index.html#/object/library%3Acurl%3Alibcurl" aria-label="libcurl (library:curl:libcurl)">
-<rect class="node" x="250" y="96" width="196" height="46" rx="5" tabindex="0"><title>libcurl: library:curl:libcurl</title></rect>
-<text class="label" x="348" y="124" text-anchor="middle">libcurl</text>
+<rect class="node" x="472" y="96" width="196" height="46" rx="5" tabindex="0"><title>libcurl: library:curl:libcurl</title></rect>
+<text class="label" x="570" y="124" text-anchor="middle">libcurl</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Agnu%3Alibiconv%40msys" aria-label="GNU libiconv (MSYS) (library:gnu:libiconv@msys)">
-<rect class="node" x="472" y="96" width="196" height="46" rx="5" tabindex="0"><title>GNU libiconv (MSYS): library:gnu:libiconv@msys</title></rect>
-<text class="label" x="570" y="124" text-anchor="middle">GNU libiconv (MSYS)</text>
-</a>
-<a href="../generated/explorer/index.html#/object/library%3Agnu%3Azlib" aria-label="zlib (library:gnu:zlib)">
-<rect class="node" x="694" y="96" width="196" height="46" rx="5" tabindex="0"><title>zlib: library:gnu:zlib</title></rect>
-<text class="label" x="792" y="124" text-anchor="middle">zlib</text>
+<rect class="node" x="694" y="96" width="196" height="46" rx="5" tabindex="0"><title>GNU libiconv (MSYS): library:gnu:libiconv@msys</title></rect>
+<text class="label" x="792" y="124" text-anchor="middle">GNU libiconv (MSYS)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Agnu%3Azlib%40msys" aria-label="zlib (MSYS) (library:gnu:zlib@msys)">
 <rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>zlib (MSYS): library:gnu:zlib@msys</title></rect>
@@ -67,37 +66,37 @@
 <rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>GNU gettext: library:gnu:gettext</title></rect>
 <text class="label" x="348" y="272" text-anchor="middle">GNU gettext</text>
 </a>
+<a href="../generated/explorer/index.html#/object/library%3Agnu%3Alibstdc%2B%2B" aria-label="libstdc++ (library:gnu:libstdc++)">
+<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>libstdc++: library:gnu:libstdc++</title></rect>
+<text class="label" x="570" y="272" text-anchor="middle">libstdc++</text>
+</a>
 <a href="../generated/explorer/index.html#/object/library%3Agnu%3Azlib%40clang64" aria-label="zlib (CLANG64) (library:gnu:zlib@clang64)">
-<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>zlib (CLANG64): library:gnu:zlib@clang64</title></rect>
-<text class="label" x="570" y="272" text-anchor="middle">zlib (CLANG64)</text>
+<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>zlib (CLANG64): library:gnu:zlib@clang64</title></rect>
+<text class="label" x="792" y="272" text-anchor="middle">zlib (CLANG64)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Agnutls%3Agnutls%40clang64" aria-label="GnuTLS (CLANG64) (library:gnutls:gnutls@clang64)">
-<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>GnuTLS (CLANG64): library:gnutls:gnutls@clang64</title></rect>
-<text class="label" x="792" y="272" text-anchor="middle">GnuTLS (CLANG64)</text>
+<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>GnuTLS (CLANG64): library:gnutls:gnutls@clang64</title></rect>
+<text class="label" x="126" y="346" text-anchor="middle">GnuTLS (CLANG64)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Agnutls%3Agnutls%40ucrt64" aria-label="GnuTLS (UCRT64) (library:gnutls:gnutls@ucrt64)">
-<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>GnuTLS (UCRT64): library:gnutls:gnutls@ucrt64</title></rect>
-<text class="label" x="126" y="346" text-anchor="middle">GnuTLS (UCRT64)</text>
+<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>GnuTLS (UCRT64): library:gnutls:gnutls@ucrt64</title></rect>
+<text class="label" x="348" y="346" text-anchor="middle">GnuTLS (UCRT64)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Agnu%3Alibiconv" aria-label="GNU libiconv (library:gnu:libiconv)">
-<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>GNU libiconv: library:gnu:libiconv</title></rect>
-<text class="label" x="348" y="346" text-anchor="middle">GNU libiconv</text>
+<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>GNU libiconv: library:gnu:libiconv</title></rect>
+<text class="label" x="570" y="346" text-anchor="middle">GNU libiconv</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Agnupg%3Alibgpg-error%40msys" aria-label="libgpg-error (MSYS) (library:gnupg:libgpg-error@msys)">
-<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>libgpg-error (MSYS): library:gnupg:libgpg-error@msys</title></rect>
-<text class="label" x="570" y="346" text-anchor="middle">libgpg-error (MSYS)</text>
+<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>libgpg-error (MSYS): library:gnupg:libgpg-error@msys</title></rect>
+<text class="label" x="792" y="346" text-anchor="middle">libgpg-error (MSYS)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Alibarchive%3Alibarchive%40clang64" aria-label="libarchive (CLANG64) (library:libarchive:libarchive@clang64)">
-<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>libarchive (CLANG64): library:libarchive:libarchive@clang64</title></rect>
-<text class="label" x="792" y="346" text-anchor="middle">libarchive (CLANG64)</text>
+<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>libarchive (CLANG64): library:libarchive:libarchive@clang64</title></rect>
+<text class="label" x="126" y="420" text-anchor="middle">libarchive (CLANG64)</text>
 </a>
 <a href="../generated/explorer/index.html#/object/library%3Allvm%3Allvm-libs" aria-label="LLVM libraries (library:llvm:llvm-libs)">
-<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>LLVM libraries: library:llvm:llvm-libs</title></rect>
-<text class="label" x="126" y="420" text-anchor="middle">LLVM libraries</text>
-</a>
-<a href="../generated/explorer/index.html#/object/library%3Agnu%3Agmp" aria-label="GNU MP (GMP) (library:gnu:gmp)">
-<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>GNU MP (GMP): library:gnu:gmp</title></rect>
-<text class="label" x="348" y="420" text-anchor="middle">GNU MP (GMP)</text>
+<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>LLVM libraries: library:llvm:llvm-libs</title></rect>
+<text class="label" x="348" y="420" text-anchor="middle">LLVM libraries</text>
 </a>
 <text class="meta" x="28" y="496">18 of 163 objects shown, ranked by graph degree.</text>
 <text class="meta" x="28" y="514">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>

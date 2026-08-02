@@ -17,6 +17,8 @@ digraph level_0 {
   n9 [label="Layer 7 — GNU userland, libraries, IDEs, and developer tools" tooltip="layer:msys2:7-userland-and-libraries" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A7-userland-and-libraries"];
   n10 [label="Layer 8 — Users, applications, and automation" tooltip="layer:msys2:8-users-and-automation" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A8-users-and-automation"];
   n0 -> n1 [label="requires"];
+  n3 -> n1 [label="contains"];
+  n5 -> n2 [label="contains"];
   n0 -> n3 [label="contains"];
   n0 -> n4 [label="contains"];
   n0 -> n5 [label="contains"];
@@ -25,6 +27,4 @@ digraph level_0 {
   n0 -> n8 [label="contains"];
   n0 -> n9 [label="contains"];
   n0 -> n10 [label="contains"];
-  n3 -> n1 [label="contains"];
-  n5 -> n2 [label="contains"];
 }

@@ -804,7 +804,7 @@
     "Developer and operator workflows": [
       {
         "type": "doc_exists",
-        "doc": "DEVELOPER-OPERATOR-WORKFLOWS.md"
+        "doc": "DEVELOPER-WORKFLOW.md"
       }
     ],
     "Initial continuous refresh, difference reports, and historical snapshots": [

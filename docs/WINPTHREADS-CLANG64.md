@@ -95,10 +95,15 @@ No independent interface beyond re-exporting or version-pinning
 
 ## Dependencies
 
-The catalog snapshot records one `runtime-depends-on` edge for
-`package:msys2:mingw-w64-clang-x86_64-winpthreads`:
-`package:msys2:mingw-w64-clang-x86_64-libwinpthread`, version-pinned to
-an exact matching build, documented fully in
+**Correction, 2026-07-30**: this page previously stated the catalog
+snapshot records one `runtime-depends-on` edge for
+`package:msys2:mingw-w64-clang-x86_64-winpthreads`. It actually records
+**two**, the same pair its UCRT64 sibling
+[winpthreads](WINPTHREADS.md#dependencies) documents:
+`mingw-w64-clang-x86_64-crt` (the MinGW-w64 C runtime and Windows API
+headers this build targets) and a version-pinned
+`package:msys2:mingw-w64-clang-x86_64-libwinpthread=14.0.0.r220.gd999af622`,
+documented fully in
 [libwinpthread (CLANG64)](LIBWINPTHREAD-CLANG64.md)
 (`relationship:foundation-libraries:winpthreads-clang64-requires-libwinpthread-clang64`).
 

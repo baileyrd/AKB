@@ -16,6 +16,8 @@ rectangle "Layer 6 — Toolchains and build systems" as n8 <<layer>>
 rectangle "Layer 7 — GNU userland, libraries, IDEs, and developer tools" as n9 <<layer>>
 rectangle "Layer 8 — Users, applications, and automation" as n10 <<layer>>
 n0 --> n1 : requires
+n3 --> n1 : contains
+n5 --> n2 : contains
 n0 --> n3 : contains
 n0 --> n4 : contains
 n0 --> n5 : contains
@@ -24,7 +26,5 @@ n0 --> n7 : contains
 n0 --> n8 : contains
 n0 --> n9 : contains
 n0 --> n10 : contains
-n3 --> n1 : contains
-n5 --> n2 : contains
 note bottom : Child level-1
 @enduml

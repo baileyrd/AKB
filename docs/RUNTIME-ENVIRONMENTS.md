@@ -59,6 +59,30 @@ native environments. Native environments add their own prefix before `/usr`.
 They are not interchangeable build targets: architecture, CRT, compiler,
 linker, and C++ standard library are separate compatibility axes.
 
+## Current repository size, per environment
+
+The pacman catalog snapshot (`evidence:catalog:current`, retrieved
+2026-07-29) records the following per-repository package counts, a
+current, quantitative cross-check against the lifecycle labels above:
+
+| Environment | Repository | Package count |
+| --- | --- | ---: |
+| UCRT64 | `ucrt64` | 3,898 |
+| CLANG64 | `clang64` | 3,822 |
+| CLANGARM64 | `clangarm64` | 3,779 |
+| MINGW64 | `mingw64` | 3,100 |
+| MSYS | `msys` | 798 |
+| MINGW32 | `mingw32` | 314 |
+
+UCRT64 is the largest repository, consistent with its "Default
+recommendation" lifecycle label above. MINGW32's count is roughly a
+tenth of UCRT64's, consistent with its "In phase-out" label; this is a
+package-count snapshot, not itself a policy statement, and does not by
+itself establish maintenance status, only current package-set size.
+This is a single-snapshot count; repository size changes over time and
+should be re-derived from a current catalog snapshot rather than assumed
+static.
+
 ## Compatibility and Migration
 
 | Situation | Target | Migration guidance |

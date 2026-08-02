@@ -106,7 +106,8 @@ translation, NLS), documented fully in
 
 ## Reverse Dependencies
 
-The catalog snapshot records 42 relationships targeting
+**Correction, 2026-07-30**: this page previously stated 42 relationships;
+the catalog snapshot actually records **43** targeting
 `package:msys2:mingw-w64-ucrt-x86_64-xz`. Two are already modeled in this
 knowledge base: `package:msys2:mingw-w64-ucrt-x86_64-gdb`
 (`relationship:toolchain:gdb-requires-liblzma`) and
@@ -114,7 +115,7 @@ knowledge base: `package:msys2:mingw-w64-ucrt-x86_64-gdb`
 (`relationship:toolchain:libarchive-requires-liblzma`, added 2026-07-30
 to close a gap in
 [libarchive's own dependency table](LIBARCHIVE.md#dependencies)). The
-remaining ~40 recorded dependents (a broad mix of UCRT64 packages such
+remaining ~41 recorded dependents (a broad mix of UCRT64 packages such
 as `gimp`, `graphicsmagick`, and `htslib`) are not individually modeled
 in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)

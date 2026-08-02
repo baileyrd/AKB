@@ -3,12 +3,60 @@ id: doc:volume-11:library-family-classification
 title: Library Family Classification Model
 volume: 11
 status: partial
-model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+model_refs:
+  - library:gnu:zlib
+  - header-set:gnu:zlib-headers
+  - pkg-config-module:gnu:zlib-pc
+  - static-library:gnu:libz.a
+  - import-library:gnu:libz.dll.a
+  - dll:gnu:zlib1.dll
+  - library:facebook:zstd
+  - header-set:facebook:zstd-headers
+  - pkg-config-module:facebook:zstd-pc
+  - static-library:facebook:libzstd.a
+  - import-library:facebook:libzstd.dll.a
+  - dll:facebook:libzstd.dll
+evidence_refs:
+  - evidence:zlib:ucrt64-archive-analysis-2026-07-29
+  - evidence:akb-process:zstd-ucrt64-archive-analysis-2026-07-31
+  - evidence:recipe-dependencies:current
+  - evidence:catalog:current
+last_verified: 2026-08-02
 ---
 
 # Library Family Classification Model
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Jean-loup Gailly and Mark Adler |
+| Environments | `ucrt64` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-zlib` |
+| Version (observed) | 1.3.2-2 |
+| License (observed) | spdx:Zlib |
+| Architecture (observed) | any |
+| Installed size (observed) | 427.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:zlib:hub` (`observation`, `verified`) — zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 A library family groups related development and runtime artifacts around a
 qualified logical API. The grouping is an evidence-backed classification, not
@@ -56,6 +104,25 @@ flowchart LR
 3. Compare declared names, imported targets, exports, and ownership evidence.
 4. Record supported family membership plus confidence and unresolved ambiguity.
 5. Use explicit ABI or runtime observations before making compatibility claims.
+
+## Worked Examples
+
+[zlib](ZLIB.md#family-classification) was, as of 2026-07-30, the first
+library in this knowledge base to have this methodology fully applied: a
+package-archive static analysis recorded its header set, `pkg-config`
+module, static library, import library, and runtime DLL as five separate
+typed entities, each linked to `library:gnu:zlib` and to their shared
+package via the relationship types this document's diagram implies
+(`exposes`, `documents`, `implements`, `wraps`, `packaged-by`).
+
+A 2026-07-31 update applied the identical methodology to
+[zstd (UCRT64)](LIBZSTD.md#family-classification), reusing the archive
+already downloaded for a Volume 11 worked example rather than a fresh
+collection: `header-set:facebook:zstd-headers`,
+`pkg-config-module:facebook:zstd-pc`, `static-library:facebook:libzstd.a`,
+`import-library:facebook:libzstd.dll.a`, and `dll:facebook:libzstd.dll`.
+The other documented library pages — 157 exist as of 2026-08-02 — have
+not yet received this treatment.
 
 ## Category Coverage
 
@@ -144,3 +211,36 @@ section is runtime-only any more.
 - [Header and development-metadata indexes](HEADER-AND-METADATA-INDEXES.md)
 - [Binary-to-DLL dependency graph](BINARY-DLL-DEPENDENCY-GRAPH.md)
 - [Package-to-file inventory](PACKAGE-FILE-INVENTORY.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    u1["GNU Binutils"]
+    u1 -->|requires| subject
+    u2["GCC"]
+    u2 -->|requires| subject
+    u3["GDB"]
+    u3 -->|requires| subject
+    u4["curl (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libxml2"]
+    u5 -->|requires| subject
+    u6["GnuTLS (UCRT64)"]
+    u6 -->|requires| subject
+    u7["libarchive"]
+    u7 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib` in the composed graph: 13 dependents and 0 dependencies, of which 5 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

@@ -50,7 +50,10 @@ Edits between the surrounding markers are overwritten on the next build.
 Libwinpthread implements POSIX-threads-style threading (`pthread_create`,
 mutexes, condition variables) on top of Windows' native threading
 primitives, and — per this snapshot — it is the third most-depended-upon
-package identified anywhere in this knowledge base. This page documents
+package among the components and libraries this knowledge base actually
+models, not the full generated catalog view (see
+[zlib](ZLIB.md#reverse-dependencies)'s 2026-07-30 correction for why
+that distinction matters). This page documents
 its architectural centrality; see the
 [official MinGW-w64 project site](https://www.mingw-w64.org/) for the
 project overview.
@@ -97,20 +100,23 @@ the Windows kernel.
 
 The snapshot records **152** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-libwinpthread` — the third-largest
-reverse-dependency count recorded in this knowledge base, behind only
+reverse-dependency count among this knowledge base's modeled components
+and libraries, behind only
 [zlib](ZLIB.md#reverse-dependencies)'s 299 and
-[gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167, reflecting that
+[gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167 (`generated/reverse-dependency-impact.json`'s
+full catalog view records higher, undocumented counts, e.g. glib2 at 186
+and Qt6-base at 181 — see [zlib](ZLIB.md#reverse-dependencies)'s own
+2026-07-30 correction). This reflects that
 nearly any multithreaded program built in this environment links against
 it. Two are now modeled in this knowledge base:
 [GNU Binutils](GNU-BINUTILS.md#dependencies)
 (`relationship:toolchain:binutils-requires-libwinpthread`, added
 2026-07-30 to close a gap in
 [Binutils' own dependency table](GNU-BINUTILS.md#dependencies), which
-had cited this package by name without a corresponding graph edge), and
+had cited this package by name without a corresponding graph edge) and
 [libstdc++](LIBSTDCXX.md#dependencies)
-(`relationship:toolchain:libstdcxx-requires-libwinpthread`, added
-2026-07-30, closing the same kind of gap on gcc-libs' own dependency
-list). See
+(`relationship:foundation-libraries:libstdcxx-requires-libwinpthread`,
+added the same day for the same reason). See
 the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.

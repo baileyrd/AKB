@@ -177,8 +177,9 @@ overwhelmingly a Python-packaging phenomenon, concentrated on
 - **No rendering behavior has been observed.** Whether any of these
   libraries works on a given Windows host, which GL implementation
   resolves, and what a `vulkan-loader` ICD search finds are all
-  unestablished — they require a Windows host with a display, which this
-  knowledge base has never had.
+  unestablished — they require a graphical session on a Windows host, and
+  every controlled observation this knowledge base holds was made from a
+  shell.
 - No PE import analysis exists for any package here, so the DLLs each one
   actually loads are unknown.
 

@@ -25,15 +25,15 @@ digraph level_3 {
   n17 [label="GNU Diffutils" tooltip="component:gnu:diffutils" URL="../generated/explorer/index.html#/object/component%3Agnu%3Adiffutils"];
   n8 -> n9 [label="requires"];
   n16 -> n9 [label="requires"];
-  n6 -> n3 [label="requires"];
-  n6 -> n12 [label="requires"];
-  n6 -> n5 [label="requires"];
-  n3 -> n5 [label="requires"];
-  n12 -> n5 [label="requires"];
-  n4 -> n7 [label="invokes"];
-  n14 -> n10 [label="invokes"];
-  n10 -> n7 [label="compatible-with"];
   n15 -> n14 [label="contains"];
   n15 -> n10 [label="contains"];
   n15 -> n11 [label="contains"];
+  n3 -> n5 [label="requires"];
+  n6 -> n3 [label="requires"];
+  n6 -> n12 [label="requires"];
+  n6 -> n5 [label="requires"];
+  n12 -> n5 [label="requires"];
+  n14 -> n10 [label="invokes"];
+  n4 -> n7 [label="invokes"];
+  n10 -> n7 [label="compatible-with"];
 }

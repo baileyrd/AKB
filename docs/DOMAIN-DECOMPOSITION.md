@@ -22,7 +22,7 @@ last_verified: 2026-07-30
 | Toolchains and builds | Compilers, linkers, debuggers, recipes, build systems | 8 and 14 | [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md) (14 per-tool pages), [Build system role model](BUILD-SYSTEM-ROLE-MODEL.md) |
 | Distribution integrations | Git for Windows, launchers, transports, credentials | 9 | [Git for Windows distribution boundary](GIT-FOR-WINDOWS-BOUNDARY.md), [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md) |
 | Evidence and navigation | Graph, sources, generated views, dependency analysis, explorer | 10, 12, 13, and 20 | [Diagram hierarchy](DIAGRAM-HIERARCHY.md), [Reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md) |
-| Assurance and operations | Security, performance, developer and operator workflows | 16–19 | [Threat model and supply chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md), [Developer/operator workflows](DEVELOPER-OPERATOR-WORKFLOWS.md) |
+| Assurance and operations | Security, performance, developer and operator workflows | 16–19 | [Threat model and supply chain](THREAT-MODEL-AND-SUPPLY-CHAIN.md), [Developer workflow](DEVELOPER-WORKFLOW.md), [Operator refresh workflow](OPERATOR-REFRESH-WORKFLOW.md) |
 
 ## Boundary Rules
 

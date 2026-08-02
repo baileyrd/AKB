@@ -91,22 +91,19 @@ throughout this volume for MSYS/UCRT64/CLANG64 sibling triples.
 ## Dependencies
 
 The CLANG64 `package:msys2:mingw-w64-clang-x86_64-xz` declares a
-dependency on [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
-(`relationship:foundation-libraries:liblzma-clang64-requires-gettext-clang64`,
-added 2026-08-02 — **correction**: this section had previously left
-this edge unmodeled since GNU gettext (CLANG64) did not yet have a
-page of its own).
+dependency on `mingw-w64-clang-x86_64-gettext-runtime` — a CLANG64
+sibling package, not individually modeled as a separate dependency edge
+from this entity in this knowledge base.
 
 ## Reverse Dependencies
 
-The catalog snapshot records 41 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-xz`. Two are now modeled in this
+**Correction, 2026-07-30**: this page previously stated 41 relationships;
+the catalog snapshot actually records **42** targeting
+`package:msys2:mingw-w64-clang-x86_64-xz`. One is now modeled in this
 knowledge base: [LLDB](LLDB.md)
-(`relationship:foundation-libraries:lldb-requires-liblzma-clang64`) and
-[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
-(`relationship:foundation-libraries:libarchive-clang64-requires-liblzma-clang64`,
-added 2026-08-02). The remaining ~39 recorded dependents (a broad mix
-of CLANG64 packages including `boost-libs`, `imagemagick`, `qemu`, and
+(`relationship:foundation-libraries:lldb-requires-liblzma-clang64`).
+The remaining ~41 recorded dependents (a broad mix of CLANG64 packages
+including `boost-libs`, `imagemagick`, `libarchive`, `qemu`, and
 `rustup`) are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -161,8 +158,9 @@ project page (`evidence:tukaani:xz-library-manual-2026-07-30`), the
 same evidence record [liblzma (UCRT64)](LIBLZMA.md) cites. Package
 identity, version, and the one modeled dependent edge are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open, and
-explicitly out of scope for this page: the ~40 remaining recorded
-dependents not individually modeled, and header-level API surface / PE
+explicitly out of scope for this page: the ~41 remaining recorded
+dependents not individually modeled, this package's own
+gettext-runtime sub-dependency, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -196,5 +194,3 @@ Edits between the surrounding markers are overwritten on the next build.
 - [liblzma (UCRT64)](LIBLZMA.md)
 - [XZ Utils](XZ-UTILS.md)
 - [LLDB](LLDB.md)
-- [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
-- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

@@ -330,11 +330,14 @@ does not.
 ## Standing Gap
 
 Every item in Hot Paths 1–3, and the transaction decomposition in Hot
-Path 4, requires a Windows host running MSYS2. This knowledge base has
-never had one; the five bounded probes of 2026-07-30 established command
-outcomes, not timings. Until that host exists, this page is a cost model
-with named uncertainty rather than a performance report, and it is
-labelled `partial` for that reason.
+Path 4, requires timing measurement on a Windows host running MSYS2.
+Such a host exists — Volumes 3, 7, 14, and 19 record probes, two logged
+pacman transactions, and a completed zlib build against real MSYS2
+installations — but **none of those observations timed anything**. They
+establish outcomes, not costs, which is a different measurement and needs
+a different run. Until that run happens, this page is a cost model with
+named uncertainty rather than a performance report, and it is labelled
+`partial` for that reason.
 
 <!-- BEGIN GENERATED dependency-subgraph -->
 

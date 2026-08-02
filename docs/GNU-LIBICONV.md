@@ -95,7 +95,7 @@ the UCRT64 repository and environment.
 
 ## Reverse Dependencies
 
-The snapshot records **82** relationships targeting
+The snapshot records **81** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-libiconv` — a substantial dependent
 count, though smaller than [zlib](ZLIB.md#reverse-dependencies)'s 299 and
 [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167. Its MSYS-environment

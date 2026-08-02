@@ -618,15 +618,15 @@
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 5 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
-| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 1 | 2 |
+| library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 2 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
-| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 1 |
+| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 2 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
-| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 1 |
+| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 2 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
@@ -725,7 +725,7 @@
 | library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 4 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
-| library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |
+| library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 1 | 1 |
 | library:tukaani:liblzma@msys | library | liblzma (MSYS) | partial | 0 | 3 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |

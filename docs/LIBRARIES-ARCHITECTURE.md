@@ -895,7 +895,13 @@ modeled ([GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md),
 [ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) itself, each
 closing full dependency coverage as its own prerequisites were modeled
 in sequence — mirroring the same scope-first-then-build discipline
-used for the earlier APR/APR-util/Serf (MSYS) chain. These
+used for the earlier APR/APR-util/Serf (MSYS) chain. A post-batch
+audit re-run then found two further edges this chain had
+retroactively unlocked, no new pages needed: both
+[libxml2 (CLANG64)](LIBXML2-CLANG64.md#dependencies) and
+[liblzma (CLANG64)](LIBLZMA-CLANG64.md#dependencies) had each left
+their own libiconv/gettext-runtime sub-dependency explicitly unmodeled
+pending those libraries' own pages, which this batch supplied. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

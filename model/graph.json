@@ -8853,6 +8853,30 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:libxml2-clang64-requires-libiconv-clang64",
+      "type": "requires",
+      "source": "library:gnome:libxml2@clang64",
+      "target": "library:gnu:libiconv@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for libxml2's own parsing and serialization, added 2026-08-02 to close a gap this page had previously left explicitly unmodeled — libiconv (CLANG64) is now a modeled entity.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:liblzma-clang64-requires-gettext-clang64",
+      "type": "requires",
+      "source": "library:tukaani:liblzma@clang64",
+      "target": "library:gnu:gettext@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for xz's own diagnostic output, added 2026-08-02 to close a gap this page had previously left explicitly unmodeled — GNU gettext (CLANG64) is now a modeled entity.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:foundation-libraries:gettext-clang64-requires-libiconv-clang64",
       "type": "requires",
       "source": "library:gnu:gettext@clang64",

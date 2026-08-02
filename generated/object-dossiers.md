@@ -5534,7 +5534,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `library:gnome:libxml2@msys`
@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:gmp`
 
@@ -5607,7 +5607,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:libiconv@msys`
 
@@ -6497,7 +6497,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 0
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `library:tukaani:liblzma@msys`

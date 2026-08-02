@@ -69,13 +69,15 @@ MSYS/UCRT64/CLANG64 sibling groups.
 ## Dependencies
 
 The CLANG64 `package:msys2:mingw-w64-clang-x86_64-libxml2` declares
-dependencies on `mingw-w64-clang-x86_64-libiconv` (not individually
-modeled as a separate dependency edge from this entity in this
-knowledge base) and [zlib (CLANG64)](ZLIB-CLANG64.md)
+dependencies on [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)
+(`relationship:foundation-libraries:libxml2-clang64-requires-libiconv-clang64`,
+added 2026-08-02 — **correction**: this section had previously left
+this edge unmodeled since libiconv (CLANG64) did not yet have a page
+of its own) and [zlib (CLANG64)](ZLIB-CLANG64.md)
 (`relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64`,
 added 2026-07-30 — **correction**: this section had previously grouped
-this edge with the still-unmodeled libiconv sub-dependency, but
-zlib (CLANG64) is in fact already modeled elsewhere in this knowledge
+this edge with the then-unmodeled libiconv sub-dependency, but
+zlib (CLANG64) was in fact already modeled elsewhere in this knowledge
 base).
 
 ## Reverse Dependencies
@@ -143,9 +145,8 @@ record [libxml2 (UCRT64)](LIBXML2.md) cites. Package identity, version,
 license, and the recorded dependency and dependent edges are backed by
 the pacman catalog snapshot (`evidence:catalog:current`). Open, and
 explicitly out of scope for this page: the ~125 remaining recorded
-dependents not individually modeled, this package's own libiconv
-sub-dependency, and header-level API surface / PE import/export-level
-evidence, per the
+dependents not individually modeled, and header-level API surface / PE
+import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -157,3 +158,4 @@ methodology.
 - [LLDB](LLDB.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)

@@ -63,9 +63,11 @@ throughout this volume for MSYS/UCRT64/CLANG64 sibling triples.
 ## Dependencies
 
 The CLANG64 `package:msys2:mingw-w64-clang-x86_64-xz` declares a
-dependency on `mingw-w64-clang-x86_64-gettext-runtime` — a CLANG64
-sibling package, not individually modeled as a separate dependency edge
-from this entity in this knowledge base.
+dependency on [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
+(`relationship:foundation-libraries:liblzma-clang64-requires-gettext-clang64`,
+added 2026-08-02 — **correction**: this section had previously left
+this edge unmodeled since GNU gettext (CLANG64) did not yet have a
+page of its own).
 
 ## Reverse Dependencies
 
@@ -130,8 +132,7 @@ same evidence record [liblzma (UCRT64)](LIBLZMA.md) cites. Package
 identity, version, and the one modeled dependent edge are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open, and
 explicitly out of scope for this page: the ~40 remaining recorded
-dependents not individually modeled, this package's own
-gettext-runtime sub-dependency, and header-level API surface / PE
+dependents not individually modeled, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -142,3 +143,4 @@ methodology.
 - [liblzma (UCRT64)](LIBLZMA.md)
 - [XZ Utils](XZ-UTILS.md)
 - [LLDB](LLDB.md)
+- [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)

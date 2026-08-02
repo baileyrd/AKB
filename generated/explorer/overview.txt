@@ -16923,6 +16923,8 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:gnome:libxml2@clang64 --requires--> library:gnu:libiconv@clang64
+- library:tukaani:liblzma@clang64 --requires--> library:gnu:gettext@clang64
 - library:gnu:gettext@clang64 --requires--> library:gnu:libiconv@clang64
 - library:p11-glue:p11-kit@clang64 --requires--> library:gnu:gettext@clang64
 - library:p11-glue:p11-kit@clang64 --requires--> library:libffi:libffi@clang64

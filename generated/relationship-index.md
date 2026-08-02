@@ -76358,6 +76358,7 @@
 | relationship:foundation-libraries:libksba-requires-libgpg-error | requires | library:gnupg:libksba | library:gnupg:libgpg-error | verified |
 | relationship:foundation-libraries:libltdl-packaged-by-package | packaged-by | library:gnu:libltdl | package:msys2:libltdl | verified |
 | relationship:foundation-libraries:libltdl-uses-msys-runtime | uses-runtime | library:gnu:libltdl | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:liblzma-clang64-requires-gettext-clang64 | requires | library:tukaani:liblzma@clang64 | library:gnu:gettext@clang64 | verified |
 | relationship:foundation-libraries:liblzma-packaged-by-package | packaged-by | library:tukaani:liblzma | package:msys2:mingw-w64-ucrt-x86_64-xz | verified |
 | relationship:foundation-libraries:liblzma-requires-gettext | requires | library:tukaani:liblzma | library:gnu:gettext | verified |
 | relationship:foundation-libraries:libnettle-msys-requires-libhogweed-msys | requires | library:nettle:libnettle@msys | library:nettle:libhogweed@msys | verified |
@@ -76402,6 +76403,7 @@
 | relationship:foundation-libraries:libwinpthread-packaged-by-package | packaged-by | library:mingw-w64:libwinpthread | package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | verified |
 | relationship:foundation-libraries:libxcrypt-packaged-by-package | packaged-by | library:libxcrypt:libxcrypt | package:msys2:libxcrypt | verified |
 | relationship:foundation-libraries:libxcrypt-uses-msys-runtime | uses-runtime | library:libxcrypt:libxcrypt | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libxml2-clang64-requires-libiconv-clang64 | requires | library:gnome:libxml2@clang64 | library:gnu:libiconv@clang64 | verified |
 | relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64 | requires | library:gnome:libxml2@clang64 | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:libxml2-msys-packaged-by-package | packaged-by | library:gnome:libxml2@msys | package:msys2:libxml2 | verified |
 | relationship:foundation-libraries:libxml2-msys-requires-readline-msys | requires | library:gnome:libxml2@msys | library:gnu:readline@msys | verified |

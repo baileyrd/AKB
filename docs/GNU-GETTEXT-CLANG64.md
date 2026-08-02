@@ -76,13 +76,16 @@ this knowledge base:
 
 The catalog snapshot records 136 relationships targeting
 `package:msys2:mingw-w64-clang-x86_64-gettext-runtime` — the widest
-reverse-dependency footprint of any library added in this batch. One is
-now modeled in this knowledge base:
+reverse-dependency footprint of any library added in this batch. Two
+are now modeled in this knowledge base:
 [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
 (`relationship:foundation-libraries:p11-kit-clang64-requires-gettext-clang64`,
-added 2026-08-02). The remaining ~135 (a broad mix of CLANG64 packages
-including `appstream`, `atk`, `aspell`, and many others) are not
-individually modeled in this knowledge base; see the
+added 2026-08-02) and [liblzma (CLANG64)](LIBLZMA-CLANG64.md)
+(`relationship:foundation-libraries:liblzma-clang64-requires-gettext-clang64`,
+added 2026-08-02, closing a gap that page had previously left
+explicitly unmodeled). The remaining ~134 (a broad mix of CLANG64
+packages including `appstream`, `atk`, `aspell`, and many others) are
+not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -133,7 +136,7 @@ The NLS runtime scope is backed by the official GNU gettext project
 page (`evidence:gnu:gettext-manual-2026-07-30`), the same evidence
 record [GNU gettext (UCRT64)](GNU-GETTEXT.md) cites. Package identity,
 version, license, and the recorded dependency edge are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open: the ~135
+pacman catalog snapshot (`evidence:catalog:current`). Open: the ~134
 remaining recorded reverse dependents are not individually modeled in
 this knowledge base.
 
@@ -143,3 +146,4 @@ this knowledge base.
 - [GNU gettext (UCRT64)](GNU-GETTEXT.md)
 - [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)
 - [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
+- [liblzma (CLANG64)](LIBLZMA-CLANG64.md)

@@ -60,18 +60,54 @@ flowchart LR
 ## Category Coverage
 
 Seven categories are documented as categories rather than per library,
-each ranked from the catalog snapshot by dependents summed across all
-environment variants:
+each ranked by dependents summed across all environment variants. All
+seven were recomputed against build-time edges on 2026-08-02: runtime
+figures come from catalog snapshot `20260729T113151Z`, build and check
+figures from the repository databases read 2026-08-02.
 
-| Category | Leader | Runtime | Build + check |
-| --- | --- | ---: | ---: |
-| [GUI](LIBRARY-CATEGORY-GUI.md) | `glib2` (infrastructure); `qt6-base` is the leading toolkit | 735 / 637 | — |
-| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 | — |
-| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 | — |
-| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 | — |
-| [Audio](LIBRARY-CATEGORY-AUDIO.md) | `libsndfile` | 100 | — |
-| [Logging](LIBRARY-CATEGORY-LOGGING.md) | `spdlog` | 27 | **0** |
-| [Testing](LIBRARY-CATEGORY-TESTING.md) | `gtest` | 0 | **79** |
+| Category | Leader | Runtime | Build + check | Total |
+| --- | --- | ---: | ---: | ---: |
+| [GUI](LIBRARY-CATEGORY-GUI.md) | `qt6-base` | 637 | 458 | **1,095** |
+| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 | 110 | **581** |
+| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 | 185 | **506** |
+| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 | 54 | **215** |
+| [Audio](LIBRARY-CATEGORY-AUDIO.md) | SDL2 | 158 | 0 | **158** |
+| [Testing](LIBRARY-CATEGORY-TESTING.md) | `gtest` | 0 | 79 | **79** |
+| [Logging](LIBRARY-CATEGORY-LOGGING.md) | `spdlog` | 27 | 0 | **27** |
+
+**One category leader changed and four internal orderings moved:**
+
+- **GUI**: `qt6-base` (1,095) displaces `glib2` (794). The page previously
+  had to explain that its leader was not a GUI library at all; it now is.
+  Qt 5 also overtakes GTK 3, 398 to 381.
+- **Audio**: `libvorbis` (125) overtakes `libsndfile` (121), and `openal`
+  climbs from fifth to fourth on 43 build edges.
+- **Video**: `dav1d` falls from fourth to seventh with zero build edges
+  while `aom`, `libass`, `x265`, and `svt-av1` rise past it.
+- **Imaging**: `openjpeg2` rises from sixth to fifth past `lcms2`, at 99
+  build against 119 runtime — the most build-weighted library in its
+  category.
+- **Graphics**: `pixman` edges past `libepoxy`. `cairo` leads on either
+  measure.
+
+### How to read the build column
+
+**A nonzero build count is a floor, not a measure.** MSYS2 recipes declare
+a library needed at both build and run time only once, in `depends` —
+`SDL2_image` builds against SDL2 and lists it in `DEPENDS`, with
+`MAKEDEPENDS` carrying only `cc` and `autotools`. What `makedepends`
+reliably carries is build-*only* dependencies: toolchains and build
+systems, header and code-generation packages, and `-devel` split packages
+on the MSYS side (87 of them take 1,036 build edges between them; `zlib-devel`
+alone has 111 against `zlib`'s 9 runtime).
+
+So the build column is evidence of use, and its absence is not evidence of
+non-use. Each category page repeats this where its own numbers depend on
+it.
+
+**Check-time edges are a Python phenomenon.** Outside testing they are
+essentially zero across all six other categories — the only non-testing
+entry anywhere is `gtk3` at 4.
 
 **Corrected 2026-08-02.** The testing row previously read `0` and this
 section said so was an artifact rather than a fact — the catalog projection
@@ -100,10 +136,8 @@ The build-time graph is a genuinely different graph. Its leaders — `ninja`
 (2,081) — do not appear anywhere in a runtime ranking, and between them
 are declared by more packages than any runtime dependency in the catalog.
 
-The five categories showing `—` above have not been recomputed against
-build-time edges; their leaders are runtime-centrality leaders, and that
-qualifier now belongs on them explicitly rather than on the table as a
-whole.
+All seven category pages now carry both measures. No ranking in this
+section is runtime-only any more.
 
 ## Related Views
 

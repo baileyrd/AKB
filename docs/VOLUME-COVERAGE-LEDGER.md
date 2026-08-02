@@ -71,12 +71,12 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 3 | MSYS Runtime | `partial` | 11 | 143 | 5,622 | 511 | 2 | 12 |
 | 4 | Runtime Environments | `partial` | 8 | 105 | 5,388 | 674 | 2 | 15 |
 | 5 | GNU Userland | `partial` | 32 | 459 | 23,868 | 746 | 33 | 98 |
-| 6 | Libraries | `partial` | 164 | 2388 | 113,266 | 691 | 81 | 353 |
+| 6 | Libraries | `partial` | 164 | 2393 | 115,432 | 704 | 81 | 353 |
 | 7 | Package Management | `inferred` | 7 | 83 | 3,877 | 554 | 3 | 3 |
 | 8 | Toolchains | `partial` | 16 | 223 | 13,469 | 842 | 22 | 66 |
 | 9 | Git for Windows | `partial` | 8 | 73 | 3,950 | 494 | 6 | 4 |
 | 10 | Interactive Architecture Explorer | `partial` | 9 | 19 | 2,136 | 237 | 0 | 4 |
-| 11 | Package Catalog | `partial` | 9 | 28 | 4,061 | 451 | 2 | 3 |
+| 11 | Package Catalog | `partial` | 9 | 28 | 4,339 | 482 | 2 | 3 |
 | 12 | Source Code Organization | `planned` | 2 | 5 | 596 | 298 | 0 | 0 |
 | 13 | Dependency Analysis | `partial` | 1 | 3 | 406 | 406 | 0 | 0 |
 | 14 | Build Systems | `partial` | 2 | 5 | 776 | 388 | 0 | 9 |
@@ -86,11 +86,11 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 18 | Developer Guide | `inferred` | 5 | 42 | 5,261 | 1,052 | 13 | 10 |
 | 19 | Operations Guide | `partial` | 3 | 18 | 1,796 | 599 | 0 | 0 |
 | 20 | Reference Appendices | `partial` | 9 | 48 | 14,383 | 1,598 | 1 | 0 |
-| | **Total** | | **302** | **3,725** | **206,633** | | | |
+| | **Total** | | **302** | **3,730** | **209,077** | | | |
 
 ### What the numbers say
 
-- Volume 6 (Libraries) holds 164 of 302 pages and 54.8% of all prose.
+- Volume 6 (Libraries) holds 164 of 302 pages and 55.2% of all prose.
 - 8 volumes cite no evidence record on any page: 1, 10, 12, 13, 14, 15, 16, 19. Their claims are authored rather than sourced.
 - Volume 10 (Interactive Architecture Explorer) has the lowest prose density at 237 words per page.
 - 3 of the charter's 8 coverage states are in use. Unused: `unknown`, `not-applicable`, `verified`, `deprecated`, `superseded`.

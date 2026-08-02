@@ -9,6 +9,7 @@ model_refs:
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:libpng:project-site-2026-08-02
+  - evidence:build-dependencies:current
   - evidence:catalog:current
 last_verified: 2026-08-02
 ---
@@ -49,17 +50,30 @@ Imaging is the heaviest of the seven categories this page set covers, and
 it is not close. From the catalog snapshot (`20260729T113151Z`), counting
 dependents across all environment variants of each project:
 
-| Library | Dependents | Version | License |
-| --- | ---: | --- | --- |
-| `libpng` (`library:libpng:libpng`) | 471 | 1.6.58-1 | custom |
-| libjpeg-turbo | 310 | 3.2.0-1 | custom BSD-like |
-| libtiff | 266 | 4.7.2-1 | MIT |
-| libwebp | 163 | 1.6.0-1 | BSD-3-Clause |
-| openjpeg2 | 119 | 2.5.4-2 | BSD-2-Clause |
-| lcms2 | 114 | 2.19.1-1 | MIT AND GPL-3.0-or-later |
-| libheif | 62 | 1.23.1-1 | LGPL-3.0 AND MIT |
-| giflib | 61 | 6.1.3-1 | MIT |
-| libraw | 32 | 0.22.2-1 | LGPL-2.1 OR CDDL-1.0 |
+| Library | Runtime | Build | Total | Version | License |
+| --- | ---: | ---: | ---: | --- | --- |
+| `libpng` (`library:libpng:libpng`) | 471 | 110 | **581** | 1.6.58-1 | custom |
+| libjpeg-turbo | 310 | 117 | **427** | 3.2.0-1 | custom BSD-like |
+| libtiff | 266 | 95 | **361** | 4.7.2-1 | MIT |
+| libwebp | 163 | 71 | **234** | 1.6.0-1 | BSD-3-Clause |
+| openjpeg2 | 119 | 99 | **218** | 2.5.4-2 | BSD-2-Clause |
+| lcms2 | 114 | 12 | **126** | 2.19.1-1 | MIT AND GPL-3.0-or-later |
+| libheif | 62 | 11 | **73** | 1.23.1-1 | LGPL-3.0 AND MIT |
+| giflib | 61 | 4 | **65** | 6.1.3-1 | MIT |
+| libraw | 32 | 3 | **35** | 0.22.2-1 | LGPL-2.1 OR CDDL-1.0 |
+
+Recomputed 2026-08-02 against build-time edges. Runtime figures from
+catalog snapshot `20260729T113151Z`; build figures from the repository
+databases read 2026-08-02. Check-time edges are zero across this category.
+
+The order holds at the top — `libpng`, `libjpeg-turbo`, `libtiff` in the
+same sequence — and one entry moves: **`openjpeg2` rises from sixth to
+fifth**, passing `lcms2`. It is the most build-weighted library in the
+category at 99 build against 119 runtime, close to one-to-one, which fits a
+codec pulled in by media packages at compile time.
+
+`lcms2`, by contrast, gains only 12 build edges against 114 runtime — it is
+a colour-management engine consumed at runtime rather than built against.
 
 `libpng` at 471 dependents is the fourth most-depended-upon library of any
 kind in this catalog, behind only the `python` and `zlib` families. That
@@ -119,8 +133,45 @@ LGPL-3.0 with MIT, `lcms2` combines MIT with GPL-3.0-or-later, and
 this category has a real license-composition question, and the catalog's
 `licenses` field is the observed starting point for answering it.
 
+## What the build column does and does not mean
+
+**A nonzero build count is a floor, not a measure.** MSYS2 recipes declare
+a library needed at *both* build and run time only once, in `depends`.
+`mingw-w64-ucrt-x86_64-SDL2_image` builds against SDL2 and lists it in
+`DEPENDS`; its `MAKEDEPENDS` carries only `cc` and `autotools`. So a
+library can be built against by hundreds of packages and still score zero
+in the build column.
+
+What `makedepends` reliably carries is build-*only* dependencies:
+
+- toolchains and build systems — `cc`, `cmake`, `ninja`, `meson`,
+  `autotools`, `pkgconf`;
+- header-only and code-generation packages — `vulkan-headers`, `nasm`,
+  `gtk-doc`, `gobject-introspection`;
+- **`-devel` split packages on the MSYS side.** 87 of them receive 1,036
+  build edges between them; `zlib-devel` alone has 111, against `zlib`'s 9
+  runtime, because the MSYS side ships headers as a separate package.
+
+Where a library *does* score build edges the signal is real — some recipes
+do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
+`cairo` or `emacs` declaring `libpng`. But the convention is inconsistent
+between recipes. Read the build column as evidence of use, and never read
+its absence as evidence of non-use.
+
+**Check-time edges are near-absent from this category**, as they are from
+every category except testing: `check-depends-on` in this ecosystem is
+overwhelmingly a Python-packaging phenomenon, concentrated on
+`python-pytest` and its plugins. See
+[Library Category — Testing](LIBRARY-CATEGORY-TESTING.md).
+
 ## Evidence and Gaps
 
+- Build and check counts are **observed** from the six MSYS2 repository
+  databases read 2026-08-02, projected additively into
+  `model/build-dependencies/current.json`. They carry a later observation
+  date than the runtime counts and versions above, which come from catalog
+  snapshot `20260729T113151Z`; see `tools/import_build_dependencies.py` for
+  why the two are separate.
 - Dependent counts, versions, and licenses are **observed** from the
   catalog snapshot and are the strongest claims here.
 - The three-link dependency chain is **verified** against declared

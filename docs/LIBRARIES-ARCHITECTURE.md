@@ -373,7 +373,7 @@ pages elsewhere in this knowledge base (character-set conversion, NLS,
 DEFLATE compression, XML parsing) that had not yet been given pages of
 their own. zlib's 299 recorded reverse dependents make it the
 most-depended-upon package identified anywhere in this knowledge base to
-date (`claim:library:zlib-hub`). One cross-package mixup was caught and
+date (`claim:library:zlib:hub`). One cross-package mixup was caught and
 corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two

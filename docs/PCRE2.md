@@ -67,7 +67,7 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs `pcre2grep`'s support for searching gzip-compressed files, the same `zgrep`-style composition pattern documented for [GNU Gzip](GNU-GZIP.md#dependencies). |
-| Interactive line editing | `mingw-w64-ucrt-x86_64-wineditline` | Backs interactive line editing in the bundled `pcre2test` tool, a Windows port of the BSD editline library serving a comparable role to [GNU Readline](GNU-READLINE.md) elsewhere in this volume (`claim:library:pcre2-wineditline-interactive-tool`). Documented fully in [WinEditLine](WINEDITLINE.md). |
+| Interactive line editing | `mingw-w64-ucrt-x86_64-wineditline` | Backs interactive line editing in the bundled `pcre2test` tool, a Windows port of the BSD editline library serving a comparable role to [GNU Readline](GNU-READLINE.md) elsewhere in this volume (`claim:library:pcre2:wineditline-interactive-tool`). Documented fully in [WinEditLine](WINEDITLINE.md). |
 | Compression (bzip2) | `mingw-w64-ucrt-x86_64-bzip2` | Backs `pcre2grep`'s support for searching bzip2-compressed files; this is a separate UCRT64 `bzip2` package, distinct from the MSYS-environment `bzip2` component already documented in Volume 5. **Correction, 2026-08-02**: this dependency is now formally modeled as [bzip2 (UCRT64)](BZIP2-UCRT64.md) (`relationship:foundation-libraries:pcre2-requires-bzip2-ucrt64`); it had previously only been cited here by package name. |
 
 ## Reverse Dependencies
@@ -130,7 +130,7 @@ already recorded for `package:msys2:mingw-w64-ucrt-x86_64-pcre2` in the
 catalog. Package identity, version, license, and all three dependency
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`) via
-`claim:library:pcre2-wineditline-interactive-tool`. Open, and explicitly
+`claim:library:pcre2:wineditline-interactive-tool`. Open, and explicitly
 out of scope for this page: header-level API surface and PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)

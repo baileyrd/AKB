@@ -37,7 +37,7 @@ page cites `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` (version
 runtime piece. `gettext-tools` (the `msgfmt`/`xgettext`/`msginit` CLI
 programs) and `gettext-libtextstyle` (a terminal text-styling library used
 by those tools) are separate packages
-(`claim:library:gettext-package-split`), not covered individually by this
+(`claim:library:gettext:package-split`), not covered individually by this
 page.
 
 ## Responsibilities
@@ -143,7 +143,7 @@ itself.
 The NLS runtime model and the runtime/tools/libtextstyle package split are
 backed by the official GNU gettext manual
 (`evidence:gnu:gettext-manual-2026-07-30`) and the pacman catalog snapshot
-(`evidence:catalog:current`) via `claim:library:gettext-package-split`.
+(`evidence:catalog:current`) via `claim:library:gettext:package-split`.
 Package identity, version, license, and dependency edges are backed by the
 catalog snapshot as well. Open, and explicitly out of scope for this page:
 the `gettext-tools` and `gettext-libtextstyle` packages are not documented

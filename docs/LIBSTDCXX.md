@@ -48,7 +48,7 @@ section below.
 libstdc++ is not packaged standalone in this environment: it is bundled
 inside `gcc-libs` alongside `libgcc` (low-level compiler runtime support)
 and `libgomp` (OpenMP runtime), rather than shipped as its own MSYS2
-package (`claim:library:libstdcxx-bundled-in-gcc-libs`). It is not the
+package (`claim:library:libstdcxx:bundled-in-gcc-libs`). It is not the
 only C++ standard library available in this environment; see
 [libc++](LIBCXX.md) for the LLVM alternative, which this environment also
 packages for UCRT64.
@@ -74,7 +74,7 @@ knowledge base). The package also `provides` the
 `mingw-w64-ucrt-x86_64-cc-libs` virtual capability, which
 [libc++](LIBCXX.md#dependencies) in this same environment depends on for
 low-level compiler runtime support even when a project chooses libc++ over
-libstdc++ (`claim:library:libcxx-cc-libs-capability`).
+libstdc++ (`claim:library:libcxx:cc-libs-capability`).
 
 ## Reverse Dependencies
 
@@ -151,7 +151,7 @@ documented resolution rather than mixing.
 
 Bundling and dependency facts are backed by the pacman catalog snapshot
 (`evidence:catalog:current`) via
-`claim:library:libstdcxx-bundled-in-gcc-libs`; the library's general
+`claim:library:libstdcxx:bundled-in-gcc-libs`; the library's general
 architecture is backed by the official libstdc++ documentation
 (`evidence:gnu:libstdcxx-manual-2026-07-30`). Open, and explicitly out of
 scope for this page: header-level API surface, `pkg-config`/CMake metadata,

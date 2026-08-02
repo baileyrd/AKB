@@ -317,8 +317,8 @@
     },
     "claimId": {
       "type": "string",
-      "description": "Claim identifier. Two conventions are in use and both are accepted here: the dominant four-segment claim:<kind>:<subject>:<aspect> (30 claims) and a three-segment claim:<kind>:<subject-and-aspect> (9 claims, all Volume 6 library claims added later, which merged subject and aspect into one segment). The four-segment form is preferred because it keeps subject and aspect separable. Normalising the nine is deferred rather than done: 33 claim identifiers are cited by name in documentation prose and renaming would break those citations. Recorded as an open item rather than silently blessed.",
-      "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9._/-]+:[a-z0-9._/@+-]+(:[a-z0-9._/@+-]+)?$"
+      "description": "Claim identifier, always four segments: claim:<kind>:<subject>:<aspect>. Nine Volume 6 library claims used a three-segment form that merged subject and aspect into one segment; they were normalised on 2026-08-02 along with the 33 citations of them in documentation prose, and the pattern below no longer admits the short form. Keeping subject and aspect separable is what lets a claim be found by its subject.",
+      "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9._/-]+:[a-z0-9._/@+-]+:[a-z0-9._/@+-]+$"
     }
   }
 }

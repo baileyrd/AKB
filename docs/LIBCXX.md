@@ -35,7 +35,7 @@ the LLVM Project. This page cites the UCRT64 package,
 `package:msys2:mingw-w64-ucrt-x86_64-libc++` (version `22.1.8-1`, license
 `Apache-2.0 WITH LLVM-exception`); separate `mingw-w64-clang-x86_64-libc++`
 and `mingw-w64-x86_64-libc++` packages exist for CLANG64 and MINGW64
-respectively (`claim:library:libcxx-cross-environment-availability`). This
+respectively (`claim:library:libcxx:cross-environment-availability`). This
 page is scoped to Volume 6's package/dependency-level evidence; the fuller
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology (headers, `pkg-config`/CMake metadata, PE import/export
@@ -70,7 +70,7 @@ enumerate.
 
 The catalog snapshot shows an environment-dependent dependency structure
 for libc++, precisely reflecting where a GCC runtime package does and does
-not exist (`claim:library:libcxx-cc-libs-capability`):
+not exist (`claim:library:libcxx:cc-libs-capability`):
 
 | Environment | Dependency | Architectural reason |
 | --- | --- | --- |
@@ -141,8 +141,8 @@ against one C++ library is the documented resolution.
 
 The environment-dependent dependency structure and cross-environment
 packaging are backed by the pacman catalog snapshot
-(`evidence:catalog:current`) via `claim:library:libcxx-cc-libs-capability`
-and `claim:library:libcxx-cross-environment-availability`; the library's
+(`evidence:catalog:current`) via `claim:library:libcxx:cc-libs-capability`
+and `claim:library:libcxx:cross-environment-availability`; the library's
 general architecture is backed by the official libc++ project site
 (`evidence:llvm:libcxx-manual-2026-07-30`). Open, and explicitly out of
 scope for this page: header-level API surface, `pkg-config`/CMake metadata,

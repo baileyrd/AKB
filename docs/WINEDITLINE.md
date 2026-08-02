@@ -59,7 +59,7 @@ either — libedit and Readline both operate within the MSYS/POSIX-emulated
 terminal environment, while WinEditLine targets the native Windows Console
 API directly, already noted on
 [PCRE2's own page](PCRE2.md#dependencies)
-(`claim:library:pcre2-wineditline-interactive-tool`).
+(`claim:library:pcre2:wineditline-interactive-tool`).
 
 ## Interfaces
 

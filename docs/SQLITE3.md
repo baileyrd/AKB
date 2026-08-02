@@ -70,7 +70,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Tcl interpreter | `mingw-w64-ucrt-x86_64-tcl` | SQLite's canonical test suite is Tcl-based; this dependency most plausibly reflects that test/development tooling bundled into the package rather than a runtime requirement of the SQL engine itself (`claim:library:sqlite3-tcl-test-dependency`). |
+| Tcl interpreter | `mingw-w64-ucrt-x86_64-tcl` | SQLite's canonical test suite is Tcl-based; this dependency most plausibly reflects that test/development tooling bundled into the package rather than a runtime requirement of the SQL engine itself (`claim:library:sqlite3:tcl-test-dependency`). |
 | Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs SQLite's optional compression-related extensions and utilities. |
 
 The `tcl` dependency is easy to misread as SQLite requiring a Tcl runtime
@@ -143,7 +143,7 @@ are backed by the official SQLite project site
 already recorded for `package:msys2:mingw-w64-ucrt-x86_64-sqlite3` in the
 catalog. Package identity, version, license, and both dependency edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:sqlite3-tcl-test-dependency`. Open, and explicitly out of
+`claim:library:sqlite3:tcl-test-dependency`. Open, and explicitly out of
 scope for this page: header-level API surface and PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)

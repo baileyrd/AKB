@@ -73,7 +73,7 @@ consistent with zlib's small, self-contained, widely portable design.
 The snapshot records **299** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-zlib` — the largest reverse-dependency
 count recorded anywhere in this knowledge base
-(`claim:library:zlib-hub`), exceeding [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s
+(`claim:library:zlib:hub`), exceeding [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s
 167 and far exceeding [ncurses](NCURSES.md#reverse-dependencies)'s 40. This
 reflects DEFLATE compression's use as a near-universal building block
 across compilers ([GCC](GNU-GCC.md), [Clang](CLANG.md), [LLD](LLD.md)),
@@ -140,7 +140,7 @@ The compression model is backed by the official zlib manual
 recorded for `package:msys2:mingw-w64-ucrt-x86_64-zlib` in the catalog.
 Package identity, version, license, and the reverse-dependency count are
 backed by the pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:zlib-hub`. Open, and explicitly out of scope for this page:
+`claim:library:zlib:hub`. Open, and explicitly out of scope for this page:
 header-level API surface and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology; no version-qualified CVE review has been performed despite

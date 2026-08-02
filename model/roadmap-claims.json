@@ -984,6 +984,11 @@
     "Normalise the nine three-segment claim identifiers": [
       {
         "type": "no_three_segment_claim_ids"
+      },
+      {
+        "type": "term_in_docs",
+        "term": "claim:library:zlib:hub",
+        "min_files": 1
       }
     ]
   }

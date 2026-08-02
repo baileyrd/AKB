@@ -9669,7 +9669,7 @@
       "status": "verified",
       "confidence": "verified",
       "scope": "packaging",
-      "condition": "libstdc++ is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries, not packaged standalone (claim:library:libstdcxx-bundled-in-gcc-libs).",
+      "condition": "libstdc++ is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries, not packaged standalone (claim:library:libstdcxx:bundled-in-gcc-libs).",
       "properties": {},
       "evidence_refs": [
         "evidence:catalog:current"
@@ -9893,7 +9893,7 @@
       "status": "verified",
       "confidence": "verified",
       "scope": "runtime",
-      "condition": "Backs libxml2's character-set conversion between an XML document's declared encoding and the caller's requested encoding (claim:library:libxml2-iconv-zlib-features).",
+      "condition": "Backs libxml2's character-set conversion between an XML document's declared encoding and the caller's requested encoding (claim:library:libxml2:iconv-zlib-features).",
       "properties": {},
       "evidence_refs": [
         "evidence:catalog:current"
@@ -9907,7 +9907,7 @@
       "status": "verified",
       "confidence": "verified",
       "scope": "runtime",
-      "condition": "Backs libxml2's support for reading gzip-compressed XML documents (claim:library:libxml2-iconv-zlib-features).",
+      "condition": "Backs libxml2's support for reading gzip-compressed XML documents (claim:library:libxml2:iconv-zlib-features).",
       "properties": {},
       "evidence_refs": [
         "evidence:catalog:current"
@@ -10271,7 +10271,7 @@
       "status": "verified",
       "confidence": "verified",
       "scope": "linkage",
-      "condition": "Version-pinned to an exact matching libwinpthread build in the catalog snapshot (claim:library:winpthreads-libwinpthread-split).",
+      "condition": "Version-pinned to an exact matching libwinpthread build in the catalog snapshot (claim:library:winpthreads:libwinpthread-split).",
       "properties": {},
       "evidence_refs": [
         "evidence:catalog:current"
@@ -15913,7 +15913,7 @@
       "status": "verified",
       "confidence": "verified",
       "scope": "linkage",
-      "condition": "Version-pinned to an exact matching libwinpthread build in the catalog snapshot, the same split pattern documented for the UCRT64 siblings (claim:library:winpthreads-libwinpthread-split).",
+      "condition": "Version-pinned to an exact matching libwinpthread build in the catalog snapshot, the same split pattern documented for the UCRT64 siblings (claim:library:winpthreads:libwinpthread-split).",
       "properties": {},
       "evidence_refs": [
         "evidence:catalog:current"
@@ -17870,7 +17870,7 @@
       ]
     },
     {
-      "id": "claim:library:libstdcxx-bundled-in-gcc-libs",
+      "id": "claim:library:libstdcxx:bundled-in-gcc-libs",
       "subject": "library:gnu:libstdc++",
       "statement": "libstdc++ is not packaged as a standalone MSYS2 package; it is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries.",
       "classification": "fact",
@@ -17882,7 +17882,7 @@
       ]
     },
     {
-      "id": "claim:library:libcxx-cc-libs-capability",
+      "id": "claim:library:libcxx:cc-libs-capability",
       "subject": "library:llvm:libc++",
       "statement": "In CLANG64, the libc++ package itself provides the gcc-libs/cc-libs virtual capability, since no separate GCC runtime package exists in that environment; in UCRT64, libc++ instead depends on the cc-libs capability that gcc-libs provides there.",
       "classification": "fact",
@@ -17894,7 +17894,7 @@
       ]
     },
     {
-      "id": "claim:library:libcxx-cross-environment-availability",
+      "id": "claim:library:libcxx:cross-environment-availability",
       "subject": "library:llvm:libc++",
       "statement": "libc++ is packaged for UCRT64 and MINGW64 as well as CLANG64, meaning a project can opt into libc++ even in a GCC-oriented environment rather than being restricted to libstdc++.",
       "classification": "fact",
@@ -17906,7 +17906,7 @@
       ]
     },
     {
-      "id": "claim:library:zlib-hub",
+      "id": "claim:library:zlib:hub",
       "subject": "library:gnu:zlib",
       "statement": "zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.",
       "classification": "observation",
@@ -17918,7 +17918,7 @@
       ]
     },
     {
-      "id": "claim:library:gettext-package-split",
+      "id": "claim:library:gettext:package-split",
       "subject": "library:gnu:gettext",
       "statement": "GNU gettext is split into three separate MSYS2 packages: gettext-runtime (the libintl runtime library), gettext-tools (msgfmt/xgettext/msginit and other CLI tools), and gettext-libtextstyle (a terminal text-styling library used by the tools); this page models the runtime component.",
       "classification": "fact",
@@ -17930,7 +17930,7 @@
       ]
     },
     {
-      "id": "claim:library:libxml2-iconv-zlib-features",
+      "id": "claim:library:libxml2:iconv-zlib-features",
       "subject": "library:gnome:libxml2",
       "statement": "libxml2's dependencies on libiconv and zlib back its character-encoding conversion and compressed-XML (gzip) reading support respectively.",
       "classification": "inference",
@@ -17942,7 +17942,7 @@
       ]
     },
     {
-      "id": "claim:library:sqlite3-tcl-test-dependency",
+      "id": "claim:library:sqlite3:tcl-test-dependency",
       "subject": "library:sqlite:sqlite3",
       "statement": "SQLite's dependency on tcl reflects its own canonical test-suite tooling, which is Tcl-based, bundled into this package rather than a runtime requirement of the SQL engine itself.",
       "classification": "inference",
@@ -17954,7 +17954,7 @@
       ]
     },
     {
-      "id": "claim:library:pcre2-wineditline-interactive-tool",
+      "id": "claim:library:pcre2:wineditline-interactive-tool",
       "subject": "library:pcre:pcre2",
       "statement": "pcre2's dependency on wineditline backs interactive line editing in its bundled pcre2test tool, the Windows port of the BSD editline library serving a comparable role to GNU Readline elsewhere in this volume.",
       "classification": "inference",
@@ -17966,7 +17966,7 @@
       ]
     },
     {
-      "id": "claim:library:winpthreads-libwinpthread-split",
+      "id": "claim:library:winpthreads:libwinpthread-split",
       "subject": "library:mingw-w64:winpthreads",
       "statement": "The MSYS2 winpthreads package's exact relationship to libwinpthread is unresolved from package-level evidence alone: the version-pinned dependency and near-identical summaries are consistent with a development/runtime split, but a separate winpthreads-stub package that provides/conflicts with winpthreads (a near-empty, 8-byte-installed placeholder swappable for it) argues against a simple dev-headers theory and toward winpthreads containing a real, optionally-replaceable implementation component instead. Neither theory is confirmed against file contents.",
       "classification": "inference",

@@ -47,7 +47,7 @@ installed, license `NONE`), and exists for CLANG64, CLANGARM64, and
 MINGW64 as well as UCRT64. A package a project can swap for an empty
 stub is a poor fit for "required development headers" — that pattern
 reads more like an optional or replaceable implementation component.
-Both theories remain unconfirmed (`claim:library:winpthreads-libwinpthread-split`,
+Both theories remain unconfirmed (`claim:library:winpthreads:libwinpthread-split`,
 recorded at `low` confidence after this finding, down from the earlier
 `medium`).
 
@@ -134,7 +134,7 @@ Not established at package/dependency-level evidence.
 Package identity, version, both dependency edges, and the
 `winpthreads-stub` provides/conflicts relationship are backed by the
 pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:winpthreads-libwinpthread-split`. Open, and the primary
+`claim:library:winpthreads:libwinpthread-split`. Open, and the primary
 purpose of this page: what this package actually contains remains
 unresolved — the original dev/runtime-split theory and the
 stub-replaceable-implementation reading it prompted are both live,

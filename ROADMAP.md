@@ -299,7 +299,7 @@ into `docs/`; all 253 pages are hand-authored.
 - [x] Validate documentation pages in `tools/akb.py`
 - [x] Enforce the model schemas in CI
 - [x] Enforce roadmap claims against evidence
-- [ ] Normalise the nine three-segment claim identifiers
+- [x] Normalise the nine three-segment claim identifiers
 
 **Schema enforcement closed 2026-08-02.** The item read "with jsonschema";
 that package is unavailable here and the repository has no dependency
@@ -311,6 +311,18 @@ is unchanged while the zero-dependency property is kept. Recorded as
 silently reworded. Running the schemas for the first time found that 30
 claim identifiers use four segments and 9 use three; the nine are the
 outliers and normalising them is added above rather than blessed.
+
+**Claim identifiers normalised 2026-08-02.** All nine three-segment
+identifiers now use the four-segment `claim:<kind>:<subject>:<aspect>`
+form, together with every citation of them in documentation prose — ten
+pages carried them by name, which is why the rename was deferred when the
+inconsistency was first found rather than done on the spot.
+
+The schema was tightened at the same time: `$defs/claimId` previously
+accepted both forms with a description explaining why. Its pattern now
+requires four segments, so the short form cannot return. That was verified
+by reintroducing `claim:library:zlib-hub` and confirming `schema_check.py`
+rejects it.
 
 ## Increment 12 — Volume balance
 

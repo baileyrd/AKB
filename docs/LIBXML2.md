@@ -76,8 +76,8 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Character-set conversion | `mingw-w64-ucrt-x86_64-libiconv` | Backs conversion between an XML document's declared encoding and the caller's requested encoding (`claim:library:libxml2-iconv-zlib-features`), documented fully in [GNU libiconv](GNU-LIBICONV.md). |
-| Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs reading gzip-compressed XML documents directly (`claim:library:libxml2-iconv-zlib-features`), documented fully in [zlib](ZLIB.md). |
+| Character-set conversion | `mingw-w64-ucrt-x86_64-libiconv` | Backs conversion between an XML document's declared encoding and the caller's requested encoding (`claim:library:libxml2:iconv-zlib-features`), documented fully in [GNU libiconv](GNU-LIBICONV.md). |
+| Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs reading gzip-compressed XML documents directly (`claim:library:libxml2:iconv-zlib-features`), documented fully in [zlib](ZLIB.md). |
 
 An optional dependency on `python` backs libxml2's Python bindings.
 
@@ -143,7 +143,7 @@ project wiki (`evidence:gnome:libxml2-manual-2026-07-30`), matching the
 `package:msys2:mingw-w64-ucrt-x86_64-libxml2` in the catalog. Package
 identity, version, license, and both dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:libxml2-iconv-zlib-features`. Open, and explicitly out of
+`claim:library:libxml2:iconv-zlib-features`. Open, and explicitly out of
 scope for this page: header-level API surface and PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)

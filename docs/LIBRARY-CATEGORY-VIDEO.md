@@ -52,29 +52,29 @@ all environment variants:
 
 | Library | Runtime | Build | Total | Version | License | Role |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| `ffmpeg` (`library:ffmpeg:ffmpeg`) | 161 | 42 | **203** | 8.1.2-1 | GPL-3.0-or-later | everything |
+| `ffmpeg` (`library:ffmpeg:ffmpeg`) | 161 | 53 | **214** | 8.1.2-1 | GPL-3.0-or-later | everything |
 | gstreamer | 85 | 12 | **97** | 1.28.5-1 | LGPL-2.1-or-later | pipeline framework |
-| libtheora | 36 | 0 | **36** | 1.2.0-1 | BSD-3-Clause | codec |
+| libtheora | 36 | 8 | **44** | 1.2.0-1 | BSD-3-Clause | codec |
 | aom | 23 | 12 | **35** | 3.14.1-1 | BSD-2-Clause | AV1 reference codec |
 | libass | 23 | 12 | **35** | 0.17.5-1 | ISC | subtitle rendering |
+| x265 | 21 | 12 | **33** | 4.2-2 | GPL | HEVC encoder |
 | dav1d | 32 | 0 | **32** | 1.5.4-1 | BSD-2-Clause | AV1 decoder |
 | svt-av1 | 19 | 12 | **31** | 4.2.0-1 | BSD-3-Clause-Clear | AV1 encoder |
-| x265 | 21 | 0 | **21** | 4.2-2 | GPL | HEVC encoder |
 | libvpx | 21 | 0 | **21** | 1.16.0-1 | BSD-3-Clause | VP8/VP9 codec |
 
 Recomputed 2026-08-02 against build-time edges read from the PKGBUILD
 trees. Runtime figures from catalog snapshot `20260729T113151Z`. Check-time
 edges are zero across this category.
 
-`ffmpeg` and `gstreamer` hold first and second on either measure. Below
-them the order rearranges: `aom`, `libass`, and `svt-av1` — twelve build
-edges each — rise past `dav1d`, `x265`, and `libvpx`, which have none.
+`ffmpeg` and `gstreamer` hold first and second on either measure, and
+`ffmpeg` gains 53 build edges. Below them the order rearranges modestly:
+`libtheora`, `libass`, `aom`, and `x265` — eight to twelve build edges
+each — rise past `dav1d` and `libvpx`, which have none.
 
 Read that with the caveat below rather than as a usage claim. Almost every
 codec here is declared in `depends` by the packages that use it, because a
-codec needed to build is needed to run. The twelve-edge cluster is the
-`gst-plugins-*` family naming its codecs in `makedepends`; the zeros are
-not evidence of anything.
+codec needed to build is needed to run. The zeros on `dav1d` and `libvpx`
+are not evidence of anything.
 
 ## FFmpeg is a dependency hub, not a leaf
 

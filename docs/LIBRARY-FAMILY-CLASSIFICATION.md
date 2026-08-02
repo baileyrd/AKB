@@ -67,24 +67,25 @@ figures from the MSYS2 and MinGW-w64 PKGBUILD trees read the same day.
 
 | Category | Leader | Runtime | Build + check | Total |
 | --- | --- | ---: | ---: | ---: |
-| [GUI](LIBRARY-CATEGORY-GUI.md) | `qt6-base` | 637 | 454 | **1,091** |
-| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 | 102 | **573** |
-| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 | 186 | **507** |
-| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 | 42 | **203** |
-| [Audio](LIBRARY-CATEGORY-AUDIO.md) | SDL2 | 158 | 31 | **189** |
+| [GUI](LIBRARY-CATEGORY-GUI.md) | `qt6-base` | 637 | 422 | **1,059** |
+| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 | 110 | **581** |
+| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 | 165 | **486** |
+| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 | 53 | **214** |
+| [Audio](LIBRARY-CATEGORY-AUDIO.md) | SDL2 | 158 | 36 | **194** |
 | [Testing](LIBRARY-CATEGORY-TESTING.md) | `python-pytest` | 81 | 1,247 | **1,328** |
 | [Logging](LIBRARY-CATEGORY-LOGGING.md) | `spdlog` | 27 | 0 | **27** |
 
-**One category leader changed and three internal orderings moved:**
+**One category leader changed and four internal orderings moved:**
 
-- **GUI**: `qt6-base` (1,091) displaces `glib2` (794). The page previously
+- **GUI**: `qt6-base` (1,059) displaces `glib2` (794). The page previously
   had to explain that its leader was not a GUI library at all; it now is.
-  Qt 5 also overtakes GTK 3, 398 to 381.
-- **Audio**: `libvorbis` draws level with `libsndfile` at 121, having
-  trailed it 98 to 100, and `openal` climbs from fifth to fourth on 47
-  build edges.
-- **Video**: `aom`, `libass`, and `svt-av1` rise past `dav1d`, `x265`, and
+  Qt 5 also edges past GTK 3 by a single edge, 382 to 381 — a tie, not a
+  finding.
+- **Audio**: `libvorbis` overtakes `libsndfile`, 125 to 121, having trailed
+  it 98 to 100, and `openal` climbs from fifth to fourth on 42 build edges.
+- **Video**: `libtheora`, `libass`, `aom`, and `x265` rise past `dav1d` and
   `libvpx`.
+- **Graphics**: `pixman` edges past `libepoxy`, 36 to 31.
 - **Imaging**: `openjpeg2` rises from sixth to fifth past `lcms2`, at 99
   build against 119 runtime — the most build-weighted library in its
   category.
@@ -102,14 +103,14 @@ be trustworthy on its own.
 `%CHECKDEPENDS%` from the pacman **repository databases** — what the built
 package records. `tools/import_recipe_dependencies.py` reads the same two
 fields from the **PKGBUILD trees** — the declaration makepkg actually
-consumes. Measured against each other, the recipe confirms **93.7%** of the
-database's edges and adds 10,151 more, 92% of them virtual provides.
+consumes. Measured against each other, the recipe confirms **94.6%** of the
+database's edges and adds 9,742 more, 95% of them virtual provides.
 
 The decisive difference is the compiler. Recipes name
 `${MINGW_PACKAGE_PREFIX}-cc`; no package is called that, so the database
 importer dropped it, and **under that projection not one package in the
 ecosystem had a build edge to its own compiler.** Resolving provides makes
-`gcc` (4,991) and `clang` (4,776) the two most-declared build dependencies
+`gcc` (4,945) and `clang` (4,675) the two most-declared build dependencies
 in the catalog. The recipe projection is the one composed; the database
 tool is kept for hosts without the recipe trees.
 
@@ -129,9 +130,9 @@ entry anywhere is `gtk3` at 4 — and inside testing they are dominated by
 `python-pytest` and its plugins.
 
 The build-time graph is a genuinely different graph. Its leaders — `gcc`
-4,991, `clang` 4,776, `ninja` 4,340, `python-installer` 4,123, `cmake`
-4,081, `python-build` 4,072, `python-setuptools` 3,111, `autotools` 2,577,
-`pkgconf` 2,085 — do not appear anywhere in a runtime ranking, and between
+4,945, `clang` 4,675, `ninja` 4,382, `cmake` 4,107, `python-installer`
+4,107, `python-build` 4,056, `python-setuptools` 3,096, `autotools` 2,589,
+`pkgconf` 2,098 — do not appear anywhere in a runtime ranking, and between
 them are declared by more packages than any runtime dependency in the
 catalog.
 

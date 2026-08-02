@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-02T20:48:27.708605Z",
+  "collector": "tools/import_recipe_dependencies.py",
+  "sources": [
+    "/tmp/claude-0/-home-user-AKB/0703d820-cdc6-5cfe-9507-2d0dfa38b67b/scratchpad/recipes-msys",
+    "/tmp/claude-0/-home-user-AKB/0703d820-cdc6-5cfe-9507-2d0dfa38b67b/scratchpad/recipes-mingw"
+  ],
+  "statistics": {
+    "declared": 64265,
+    "resolved_via_name": 54841,
+    "resolved_via_provides": 9356,
+    "source_unresolved": 5351,
+    "target_absent": 68,
+    "array_splices_resolved": 5,
+    "projected": 64086,
+    "build": 60703,
+    "check": 3383,
+    "recipes": 3956
+  },
+  "unresolved_top": [
+    [
+      "build",
+      4
+    ],
+    [
+      "installer",
+      4
+    ],
+    [
+      "setuptools",
+      4
+    ],
+    [
+      "mingw-w64-i686-python-mock",
+      3
+    ],
+    [
+      "mingw-w64-x86_64-perl-xml-parser",
+      2
+    ],
+    [
+      "mingw-w64-ucrt-x86_64-perl-xml-parser",
+      2
+    ],
+    [
+      "mingw-w64-clang-x86_64-perl-xml-parser",
+      2
+    ],
+    [
+      "mingw-w64-clang-aarch64-perl-xml-parser",
+      2
+    ],
+    [
+      "mingw-w64-i686-python-brotli",
+      2
+    ],
+    [
+      "mingw-w64-i686-python-hypothesis",
+      2
+    ],
+    [
+      "perl-test-pod-coverage",
+      1
+    ],
+    [
+      "mingw-w64-i686-perl",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-flake8",
+      1
+    ],
+    [
+      "mingw-w64-ucrt-x86_64-python2-nose",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-freezegun",
+      1
+    ],
+    [
+      "mingw-w64-x86_64-python-codecov",
+      1
+    ],
+    [
+      "mingw-w64-ucrt-x86_64-python-codecov",
+      1
+    ],
+    [
+      "mingw-w64-clang-x86_64-python-codecov",
+      1
+    ],
+    [
+      "mingw-w64-clang-aarch64-python-codecov",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-pytest-benchmark",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-pyfilesystem2",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-ufolib2",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-pretend",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-wcag-contrast-ratio",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-attrs",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-nose",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-xmlschema",
+      1
+    ],
+    [
+      "mingw-w64-x86_64-python-pytest-httpbin",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-pytest-httpbin",
+      1
+    ],
+    [
+      "mingw-w64-ucrt-x86_64-python-pytest-httpbin",
+      1
+    ],
+    [
+      "mingw-w64-clang-x86_64-python-pytest-httpbin",
+      1
+    ],
+    [
+      "mingw-w64-clang-aarch64-python-pytest-httpbin",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-jaraco.envs",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-jaraco.path",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-pytest-subprocess",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-tomli-w",
+      1
+    ],
+    [
+      "mingw-w64-i686-python-defusedxml",
+      1
+    ],
+    [
+      "mingw-w64-x86_64-python-simplejson",
+      1
+    ],
+    [
+      "mingw-w64-ucrt-x86_64-python-simplejson",
+      1
+    ],
+    [
+      "mingw-w64-clang-x86_64-python-simplejson",
+      1
+    ]
+  ]
+}

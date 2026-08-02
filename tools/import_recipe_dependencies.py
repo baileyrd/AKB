@@ -64,6 +64,25 @@ PREFIXES = (
 FIELD_RELATIONS = (("makedepends", "build-depends-on"), ("checkdepends", "check-depends-on"))
 
 PREFIX_REF = re.compile(r"\$\{?MINGW_PACKAGE_PREFIX\}?")
+# `makedepends=("...-cc" "${checkdepends[@]}")` splices one of the recipe's
+# own arrays into another. The referenced array is already parsed, so the
+# reference resolves without any shell.
+ARRAY_SPLICE = re.compile(r"^\$\{([A-Za-z_][A-Za-z0-9_]*)\[@\]\}$")
+# Bash brace expansion: `...-python-{build,installer,setuptools}` is three
+# dependencies written as one word.
+BRACES = re.compile(r"\{([^{}]*,[^{}]*)\}")
+
+
+def expand_braces(value: str) -> list[str]:
+    match = BRACES.search(value)
+    if not match:
+        return [value]
+    expanded: list[str] = []
+    for option in match.group(1).split(","):
+        expanded.extend(
+            expand_braces(value[: match.start()] + option + value[match.end() :])
+        )
+    return expanded
 VAR_REF = re.compile(r"\$\{?([A-Za-z_][A-Za-z0-9_]*)\}?")
 # A dependency entry that is really shell fragmentation from a conditional
 # array. Recipes such as `makedepends=($([[ $CARCH == i686 ]] && echo foo))`
@@ -157,7 +176,21 @@ def project(recipes: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, in
         if not names:
             continue
         for field, relation in FIELD_RELATIONS:
-            declared = [clean(item) for item in recipe.get(field, [])]
+            declared = []
+            for item in recipe.get(field, []):
+                splice = ARRAY_SPLICE.match(str(item).strip())
+                if splice:
+                    # Resolve the reference against the recipe's own arrays.
+                    # Only dependency-bearing arrays are spliced; a reference
+                    # to anything else is left to be dropped and counted.
+                    referenced = recipe.get(splice.group(1))
+                    if referenced is None:
+                        referenced = (recipe.get("local_arrays") or {}).get(splice.group(1))
+                    if isinstance(referenced, list):
+                        stats["array_splices_resolved"] += 1
+                        declared.extend(clean(inner) for inner in referenced)
+                        continue
+                declared.extend(expand_braces(clean(item)))
             declared = [item for item in declared if item and not SHELL_NOISE.match(item)]
             if not declared:
                 continue

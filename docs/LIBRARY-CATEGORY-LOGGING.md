@@ -68,7 +68,7 @@ When this page was first written, the leading suspicion was that the counts
 were an artifact: the catalog projection carried no build-time or check-time
 edges, so a library used only at build time was invisible. That gap has
 since been closed — `model/recipe-dependencies/current.json` now carries
-60,560 `build-depends-on` and 3,439 `check-depends-on` edges — and it
+60,703 `build-depends-on` and 3,383 `check-depends-on` edges — and it
 **does not rescue this category**:
 
 | Library | Runtime | Build | Check |
@@ -80,7 +80,7 @@ since been closed — `model/recipe-dependencies/current.json` now carries
 | log4cxx | 0 | 0 | 0 |
 
 Zero across the whole category on both new edge classes. The same fix took
-the testing category from 1 dependent to 207 on its C and C++ side and
+the testing category from 1 dependent to 203 on its C and C++ side and
 surfaced `python-pytest` at 1,328, so the instrument works; logging simply
 has nothing there.
 

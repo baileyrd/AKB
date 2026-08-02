@@ -194,8 +194,8 @@ build-time or check-time edges at all.
 `%DEPENDS%` and `%OPTDEPENDS%` from each package's `desc` record and
 dropped `%MAKEDEPENDS%` and `%CHECKDEPENDS%`. Both were in the repository
 database the whole time — `%MAKEDEPENDS%` appears in 662 of the 798 `msys`
-records. `model/recipe-dependencies/current.json` now carries 60,560
-`build-depends-on` and 3,439 `check-depends-on` edges, and
+records. `model/recipe-dependencies/current.json` now carries 60,703
+`build-depends-on` and 3,383 `check-depends-on` edges, and
 `build-depends-on` is the largest single edge type in the composed graph,
 ahead of `runtime-depends-on` at 41,061.
 

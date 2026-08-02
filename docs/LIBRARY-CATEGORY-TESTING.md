@@ -58,8 +58,8 @@ and `%OPTDEPENDS%` from each package's `desc` record and dropped
 repository database the whole time — `%MAKEDEPENDS%` appears in 662 of the
 798 `msys` records — and simply were not read.
 
-`model/recipe-dependencies/current.json` now carries 60,560
-`build-depends-on` and 3,439 `check-depends-on` edges. `build-depends-on`
+`model/recipe-dependencies/current.json` now carries 60,703
+`build-depends-on` and 3,383 `check-depends-on` edges. `build-depends-on`
 is the largest single edge type in the composed graph, ahead of
 `runtime-depends-on` at 41,061.
 
@@ -71,7 +71,7 @@ from the MSYS2 and MinGW-w64 PKGBUILD trees read 2026-08-02.
 
 | Library | Runtime | Build | Check | Total | Version | License |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| `gtest` (`library:google:googletest`) | 0 | 37 | 46 | **83** | 1.17.0-1 | BSD-3-Clause |
+| `gtest` (`library:google:googletest`) | 0 | 33 | 46 | **79** | 1.17.0-1 | BSD-3-Clause |
 | cppunit | 0 | 46 | 13 | **59** | 1.15.1-3 | LGPL-2.1-or-later |
 | catch (Catch2) | 0 | 21 | 0 | **21** | 3.15.3-1 | BSL-1.0 |
 | cunit | 0 | 9 | 5 | **14** | 2.1.3-4 | LGPL2.1 |
@@ -82,7 +82,7 @@ from the MSYS2 and MinGW-w64 PKGBUILD trees read 2026-08-02.
 | cpputest | 0 | 0 | 0 | 0 | 4.0-2 | BSD-3-Clause |
 | bcunit | 0 | 0 | 0 | 0 | 5.4.88-1 | LGPL-2.0-or-later |
 
-The C and C++ side of the category totals 207 dependents rather than 1.
+The C and C++ side of the category totals 203 dependents rather than 1.
 
 ## The largest test framework in the catalog is not in that table
 
@@ -116,17 +116,17 @@ ranking shares nothing with the runtime ranking:
 
 | Package | Build-time dependents |
 | --- | ---: |
-| gcc | 4,991 |
-| clang | 4,776 |
-| ninja | 4,340 |
-| python-installer | 4,123 |
-| cmake | 4,081 |
-| python-build | 4,072 |
-| python-setuptools | 3,111 |
-| autotools | 2,577 |
-| pkgconf | 2,085 |
-| git | 1,150 |
-| meson | 1,021 |
+| gcc | 4,945 |
+| clang | 4,675 |
+| ninja | 4,382 |
+| cmake | 4,107 |
+| python-installer | 4,107 |
+| python-build | 4,056 |
+| python-setuptools | 3,096 |
+| autotools | 2,589 |
+| pkgconf | 2,098 |
+| git | 1,157 |
+| meson | 1,032 |
 
 Compare the runtime leaders — `python` at 999, `zlib` at 299, `libpng` at
 471. **Not one of these appears anywhere in a runtime ranking**, and
@@ -146,7 +146,7 @@ Reading the recipes and resolving the virtual provide puts `gcc` and
 C++ frameworks in the xUnit tradition. `gtest`, `catch` (Catch2),
 `doctest`, `cmocka`, and `cpputest` are the current generation.
 
-The build/check split within a framework is informative. `gtest` at 37
+The build/check split within a framework is informative. `gtest` at 33
 build and 46 check is used predominantly as intended — a check-time
 dependency for running a suite. `cppunit` at 46 build and 13 check leans
 the other way, which is consistent with packages linking it rather than
@@ -171,17 +171,21 @@ not itself distributed.
   statically and never executed, and projected additively. See
   `model/recipe-dependencies/README.md` for why the recipe rather than the
   repository database, and why the two observation dates are separate.
-- **9,445 edges resolve through a virtual provide** rather than a package
+- **9,356 edges resolve through a virtual provide** rather than a package
   name — overwhelmingly `${MINGW_PACKAGE_PREFIX}-cc` resolving to `gcc` or
   `clang`. Each carries `resolved_via: provides` in its properties, so a
   reader can discount them; edges matched on the package name itself carry
   `resolved_via: name`.
-- **Dropped and counted rather than guessed at**: 1,221 declared names
-  matching neither a package nor a provide in the catalog, and 812 still
-  containing a shell expansion after variable substitution. Recipes using
-  conditional arrays (`makedepends=($([[ ... ]] && echo foo))`) defeat
-  static parsing, and their fragments are discarded rather than treated as
-  dependency names.
+- **68 of 64,265 declared names were dropped** — 0.11% — and every one of
+  them is a package the 2026-07-29 catalog does not contain, mostly `i686`
+  Python packages and retired ones such as `python2-nose`. No name is
+  dropped for a parsing reason any more; see the commit history for the
+  four array-parsing defects that previously lost 2,033.
+- **Conditional dependencies are not recorded.** A
+  `makedepends=($([[ ${CARCH} == aarch64 ]] || echo nasm))` entry is real
+  but architecture-specific, and this parser does not evaluate conditions,
+  so the span is dropped and counted per recipe in
+  `conditional_spans_dropped` rather than asserted unconditionally.
 - GoogleTest's documentation site was retrieved 2026-08-02 and verified 200.
 - **Only `gtest` is modelled as an entity.**
 - **No test framework has been built or run by this knowledge base**, and

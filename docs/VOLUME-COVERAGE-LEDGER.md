@@ -71,12 +71,12 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 3 | MSYS Runtime | `partial` | 11 | 143 | 5,622 | 511 | 2 | 12 |
 | 4 | Runtime Environments | `partial` | 8 | 105 | 5,388 | 674 | 2 | 15 |
 | 5 | GNU Userland | `partial` | 32 | 459 | 23,868 | 746 | 33 | 98 |
-| 6 | Libraries | `partial` | 164 | 2393 | 115,446 | 704 | 81 | 353 |
+| 6 | Libraries | `partial` | 164 | 2393 | 115,525 | 704 | 81 | 353 |
 | 7 | Package Management | `inferred` | 7 | 83 | 3,877 | 554 | 3 | 3 |
 | 8 | Toolchains | `partial` | 16 | 223 | 13,469 | 842 | 22 | 66 |
 | 9 | Git for Windows | `partial` | 8 | 73 | 3,950 | 494 | 6 | 4 |
 | 10 | Interactive Architecture Explorer | `partial` | 9 | 19 | 2,136 | 237 | 0 | 4 |
-| 11 | Package Catalog | `partial` | 9 | 28 | 4,368 | 485 | 2 | 3 |
+| 11 | Package Catalog | `partial` | 9 | 28 | 4,387 | 487 | 2 | 3 |
 | 12 | Source Code Organization | `planned` | 2 | 5 | 596 | 298 | 0 | 0 |
 | 13 | Dependency Analysis | `partial` | 1 | 3 | 406 | 406 | 0 | 0 |
 | 14 | Build Systems | `partial` | 2 | 5 | 776 | 388 | 0 | 9 |
@@ -86,7 +86,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 18 | Developer Guide | `inferred` | 5 | 42 | 5,261 | 1,052 | 13 | 10 |
 | 19 | Operations Guide | `partial` | 3 | 18 | 1,796 | 599 | 0 | 0 |
 | 20 | Reference Appendices | `partial` | 9 | 48 | 14,383 | 1,598 | 1 | 0 |
-| | **Total** | | **302** | **3,730** | **209,120** | | | |
+| | **Total** | | **302** | **3,730** | **209,218** | | | |
 
 ### What the numbers say
 

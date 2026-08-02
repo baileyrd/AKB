@@ -51,28 +51,29 @@ all environment variants:
 
 | Library | Runtime | Build | Total | Version | License | Layer |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| SDL2 | 158 | 31 | **189** | 2.32.10-1 | Zlib | output + input abstraction |
-| libvorbis | 98 | 23 | **121** | 1.3.7-2 | custom | codec |
+| SDL2 | 158 | 36 | **194** | 2.32.10-1 | Zlib | output + input abstraction |
+| libvorbis | 98 | 27 | **125** | 1.3.7-2 | custom | codec |
 | `libsndfile` (`library:libsndfile:libsndfile`) | 100 | 21 | **121** | 1.2.2-1 | LGPL-2.1-or-later | file I/O across formats |
-| openal | 70 | 47 | **117** | 1.25.2-1 | GPL-2.0-or-later | 3D audio output |
+| openal | 70 | 42 | **112** | 1.25.2-1 | GPL-2.0-or-later | 3D audio output |
+| libogg | 75 | 8 | **83** | 1.3.6-1 | BSD-3-Clause | container |
 | opus | 63 | 12 | **75** | 1.6.1-1 | BSD-3-Clause | codec |
-| libogg | 75 | 0 | **75** | 1.3.6-1 | BSD-3-Clause | container |
 | flac | 67 | 5 | **72** | 1.5.0-1 | custom Xiph/LGPL/GPL/FDL | codec |
-| portaudio | 57 | 14 | **71** | 1~19.7.0-5 | custom | output abstraction |
+| portaudio | 57 | 9 | **66** | 1~19.7.0-5 | custom | output abstraction |
 | mpg123 | 32 | 10 | **42** | 1.33.5-1 | LGPL-2.1-or-later | codec (MP3) |
 
 Recomputed 2026-08-02 against build-time edges read from the PKGBUILD
 trees. Runtime figures from catalog snapshot `20260729T113151Z`. Check-time
 edges are zero across this category.
 
-Two positions change against the runtime-only ranking. **`libvorbis` draws
-level with `libsndfile`** at 121 apiece, having trailed it 98 to 100. And
-**`openal` climbs from fifth to fourth**, past `libogg`, on 47 build
-edges — the highest build-to-runtime ratio in the category at roughly
-0.67:1, which fits a library games and engines compile against.
+Two positions change against the runtime-only ranking. **`libvorbis`
+overtakes `libsndfile`**, 125 to 121, having trailed it 98 to 100. And
+**`openal` climbs from fifth to fourth**, past `libogg`, on 42 build
+edges — the highest build-to-runtime ratio in the category at 0.6:1, which
+fits a library games and engines compile against.
 
-`libogg` gains nothing: it is a container format pulled in transitively by
-the codecs above it rather than named directly in recipes.
+SDL2 leads on 194. Its 36 build edges are worth reading against the caveat
+below: most packages that build against SDL2 declare it in `depends`, so
+even that number is a floor.
 
 ## Three layers, and they are cleanly separated
 

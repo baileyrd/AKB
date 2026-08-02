@@ -20,14 +20,14 @@ The recipe wins because it is the declaration makepkg actually consumes, and
 because the database projection drops what it cannot resolve. Measured against
 each other on 2026-08-02:
 
-- the recipe confirms **93.7%** of the database's edges;
-- the recipe adds **10,151** the database lacks, 92% of them virtual provides
+- the recipe confirms **94.6%** of the database's edges;
+- the recipe adds **9,742** the database lacks, 95% of them virtual provides
   — overwhelmingly `${MINGW_PACKAGE_PREFIX}-cc`, the compiler, which the
   database projection dropped for every package that declares it.
 
 That last point is the decisive one: under the database projection no package
 had a build edge to its compiler at all. Under the recipe projection `gcc`
-(4,991) and `clang` (4,776) are the two most-declared build dependencies in
+(4,945) and `clang` (4,675) are the two most-declared build dependencies in
 the ecosystem, which is what one would expect and what the database could not
 show.
 
@@ -41,3 +41,16 @@ python tools/import_recipe_dependencies.py <out-msys> <out-mingw>
 
 The recipe trees are the `msys2/MSYS2-packages` and `msys2/MINGW-packages`
 repositories. PKGBUILDs are parsed statically, never executed.
+
+## What is still dropped
+
+68 of 64,265 declared names — 0.11% — and every one is a package the
+2026-07-29 catalog does not contain, mostly `i686` Python packages and
+retired ones such as `python2-nose`. Nothing is dropped for a parsing
+reason.
+
+Separately, **conditional dependencies are not recorded at all**. An entry
+such as `$([[ ${CARCH} == aarch64 ]] || echo nasm)` is a real dependency on
+some architectures and not on others; this parser does not evaluate
+conditions, so the span is dropped rather than asserted unconditionally.
+Each recipe's `conditional_spans_dropped` count says how many it had.

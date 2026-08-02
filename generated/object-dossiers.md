@@ -7344,7 +7344,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 19
+- Incoming relationships: 7
 
 ## `package:msys2:bison`
 
@@ -7524,7 +7524,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 47
+- Incoming relationships: 11
 
 ## `package:msys2:clang-analyzer`
 
@@ -7911,7 +7911,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 9
+- Incoming relationships: 13
 
 ## `package:msys2:dtc`
 
@@ -8028,7 +8028,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 20
+- Incoming relationships: 12
 
 ## `package:msys2:filesystem`
 
@@ -8216,8 +8216,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 35
-- Incoming relationships: 1028
+- Outgoing relationships: 34
+- Incoming relationships: 1030
 
 ## `package:msys2:git-crypt`
 
@@ -8406,7 +8406,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 53
+- Incoming relationships: 61
 
 ## `package:msys2:gtest`
 
@@ -10062,7 +10062,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 9
+- Incoming relationships: 5
 
 ## `package:msys2:llvm-libs`
 
@@ -10485,7 +10485,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-amf-headers`
 
@@ -10494,7 +10494,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-amgcl`
 
@@ -10521,7 +10521,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 7
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-android-tools`
 
@@ -10583,7 +10583,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-clang-aarch64-appstream`
@@ -10718,7 +10718,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 8
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-arpack64`
@@ -10727,7 +10727,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-arrow`
@@ -10827,7 +10827,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 22
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-clang-aarch64-asio`
 
@@ -10835,7 +10835,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-asiosdk`
@@ -10845,7 +10845,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-asm-lsp`
 
@@ -11016,7 +11016,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 538
+- Incoming relationships: 536
 
 ## `package:msys2:mingw-w64-clang-aarch64-avogadroapp`
 
@@ -11286,7 +11286,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-bcftools`
 
@@ -11358,7 +11358,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-bitwise`
 
@@ -11393,7 +11393,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 56
+- Outgoing relationships: 55
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-blis`
@@ -11537,7 +11537,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-brush`
@@ -11610,7 +11610,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 62
+- Incoming relationships: 58
 
 ## `package:msys2:mingw-w64-clang-aarch64-bzip3`
 
@@ -11655,7 +11655,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-aarch64-cabextract`
 
@@ -11673,7 +11673,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 131
+- Incoming relationships: 126
 
 ## `package:msys2:mingw-w64-clang-aarch64-cairomm`
 
@@ -11844,7 +11844,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-cas-offinder`
 
@@ -11933,7 +11933,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-cddlib`
@@ -12015,7 +12015,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-chafa`
 
@@ -12024,7 +12024,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 8
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-charls`
 
@@ -12122,8 +12122,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 2293
+- Outgoing relationships: 17
+- Incoming relationships: 2270
 
 ## `package:msys2:mingw-w64-clang-aarch64-clang-21`
 
@@ -12140,7 +12140,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-clang-libs`
@@ -12149,7 +12149,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-clang-aarch64-clang-tools-extra`
@@ -12158,8 +12158,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 26
+- Outgoing relationships: 10
+- Incoming relationships: 24
 
 ## `package:msys2:mingw-w64-clang-aarch64-clazy`
 
@@ -12186,7 +12186,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-clip`
 
@@ -12239,8 +12239,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
-- Incoming relationships: 1048
+- Outgoing relationships: 18
+- Incoming relationships: 1055
 
 ## `package:msys2:mingw-w64-clang-aarch64-cmake-bootstrap`
 
@@ -12249,7 +12249,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-cmake-cmcldeps`
 
@@ -12257,7 +12257,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-cmake-docs`
@@ -12266,7 +12266,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-cmake-gui`
@@ -12275,7 +12275,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-cmakelang`
@@ -12500,8 +12500,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 6
+- Outgoing relationships: 9
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-compiler-rt-21`
 
@@ -12716,7 +12716,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-csfml`
@@ -12797,7 +12797,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 22
 - Incoming relationships: 112
 
 ## `package:msys2:mingw-w64-clang-aarch64-curl-gnutls`
@@ -12806,7 +12806,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-curl-winssl`
@@ -12815,7 +12815,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-cusp`
@@ -12861,7 +12861,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 88
+- Incoming relationships: 87
 
 ## `package:msys2:mingw-w64-clang-aarch64-czkawka-cli`
 
@@ -13031,7 +13031,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-devil`
@@ -13122,7 +13122,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-aarch64-directxmath`
 
@@ -13364,8 +13364,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
-- Incoming relationships: 104
+- Outgoing relationships: 14
+- Incoming relationships: 103
 
 ## `package:msys2:mingw-w64-clang-aarch64-draco`
 
@@ -13463,7 +13463,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-dust`
@@ -13581,7 +13581,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 33
+- Incoming relationships: 35
 
 ## `package:msys2:mingw-w64-clang-aarch64-elementary-icon-theme`
 
@@ -13607,8 +13607,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
-- Incoming relationships: 7
+- Outgoing relationships: 26
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-emacs-pdf-tools-server`
 
@@ -13824,7 +13824,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-extra-cmake-modules`
 
@@ -13833,7 +13833,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 84
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-clang-aarch64-extremetuxracer`
 
@@ -13914,7 +13914,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 15
+- Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-clang-aarch64-fastfetch`
 
@@ -13958,7 +13958,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-fcrackzip`
@@ -13994,8 +13994,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
-- Incoming relationships: 53
+- Outgoing relationships: 59
+- Incoming relationships: 56
 
 ## `package:msys2:mingw-w64-clang-aarch64-ffmpeg-python`
 
@@ -14040,7 +14040,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 38
+- Incoming relationships: 39
 
 ## `package:msys2:mingw-w64-clang-aarch64-fgsl`
 
@@ -14103,7 +14103,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 77
+- Incoming relationships: 74
 
 ## `package:msys2:mingw-w64-clang-aarch64-flang-rt`
 
@@ -14228,7 +14228,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-fontconfig`
@@ -14238,7 +14238,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 40
+- Incoming relationships: 41
 
 ## `package:msys2:mingw-w64-clang-aarch64-fontforge`
 
@@ -14354,8 +14354,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
-- Incoming relationships: 3
+- Outgoing relationships: 10
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-fribidi`
 
@@ -14472,7 +14472,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-gc`
 
@@ -14499,7 +14499,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 16
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-aarch64-gcovr`
 
@@ -14517,7 +14517,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 56
-- Incoming relationships: 10
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-aarch64-gdbm`
 
@@ -14544,7 +14544,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 58
+- Incoming relationships: 59
 
 ## `package:msys2:mingw-w64-clang-aarch64-gdk-pixbuf2-docs`
 
@@ -14787,7 +14787,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-aarch64-gimp`
 
@@ -14814,7 +14814,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 69
+- Incoming relationships: 79
 
 ## `package:msys2:mingw-w64-clang-aarch64-git-archimport`
 
@@ -14885,7 +14885,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-git-p4`
@@ -15012,7 +15012,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-glab`
 
@@ -15101,7 +15101,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 14
 - Incoming relationships: 198
 
 ## `package:msys2:mingw-w64-clang-aarch64-glibmm`
@@ -15281,7 +15281,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-gnupg`
@@ -15372,7 +15372,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 142
+- Incoming relationships: 134
 
 ## `package:msys2:mingw-w64-clang-aarch64-gobject-introspection-runtime`
 
@@ -15407,7 +15407,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-gojq`
@@ -15452,7 +15452,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 11
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-clang-aarch64-gphoto2`
@@ -15552,7 +15552,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 8
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-graphviz`
 
@@ -15560,7 +15560,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 27
 - Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-clang-aarch64-graphviz-docs`
@@ -15569,7 +15569,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-grep`
@@ -15758,7 +15758,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 68
+- Outgoing relationships: 74
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-gst-plugins-bad`
@@ -15767,7 +15767,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 120
+- Outgoing relationships: 126
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-gst-plugins-bad-libs`
@@ -15776,7 +15776,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 72
+- Outgoing relationships: 78
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-gst-plugins-base`
@@ -15849,7 +15849,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 20
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-aarch64-gtk-doc`
 
@@ -15858,7 +15858,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 87
+- Incoming relationships: 82
 
 ## `package:msys2:mingw-w64-clang-aarch64-gtk-elementary-theme`
 
@@ -16055,8 +16055,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 18
-- Incoming relationships: 43
+- Outgoing relationships: 15
+- Incoming relationships: 42
 
 ## `package:msys2:mingw-w64-clang-aarch64-harfbuzz-cairo`
 
@@ -16064,7 +16064,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-harfbuzz-docs`
@@ -16073,7 +16073,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-harfbuzz-icu`
@@ -16082,7 +16082,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-harfbuzz-utils`
@@ -16091,7 +16091,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 6
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-harper`
@@ -16136,8 +16136,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
-- Incoming relationships: 31
+- Outgoing relationships: 13
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-clang-aarch64-hdr10plus-tool`
 
@@ -16199,7 +16199,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-hexyl`
@@ -16479,7 +16479,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 59
+- Incoming relationships: 54
 
 ## `package:msys2:mingw-w64-clang-aarch64-id3lib`
 
@@ -16559,7 +16559,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 7
 - Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-aarch64-img2pdf`
@@ -16649,7 +16649,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-is_utf8`
@@ -16703,7 +16703,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
+- Outgoing relationships: 43
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-itstool`
@@ -16884,7 +16884,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-jq-lsp`
 
@@ -17217,7 +17217,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 14
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-aarch64-kdsingleapplication`
 
@@ -17540,7 +17540,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-kitemmodels`
@@ -17577,7 +17577,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-knotifications`
 
@@ -17837,7 +17837,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 53
+- Outgoing relationships: 54
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-ladspa-sdk`
@@ -17864,7 +17864,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-lammps`
@@ -18197,7 +18197,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-aarch64-libassuan`
@@ -18341,8 +18341,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
-- Incoming relationships: 11
+- Outgoing relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-aarch64-libcaca`
 
@@ -18350,7 +18350,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 10
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-libcacard`
@@ -18666,7 +18666,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-libelf`
 
@@ -18756,7 +18756,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 27
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-clang-aarch64-libfido2`
 
@@ -18854,7 +18854,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 30
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-libgdiplus`
@@ -19008,7 +19008,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-libgoom2`
 
@@ -19349,8 +19349,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 114
+- Outgoing relationships: 5
+- Incoming relationships: 115
 
 ## `package:msys2:mingw-w64-clang-aarch64-libjxl`
 
@@ -19385,7 +19385,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-libkqueue`
@@ -19422,7 +19422,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-liblastfm`
 
@@ -19512,7 +19512,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-aarch64-libmatroska`
 
@@ -19629,7 +19629,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 13
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-aarch64-libmodbus`
 
@@ -19655,7 +19655,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-libmongoose`
@@ -19926,7 +19926,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 17
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-aarch64-libomemo-c`
 
@@ -20133,7 +20133,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 146
+- Incoming relationships: 148
 
 ## `package:msys2:mingw-w64-clang-aarch64-libpqxx`
 
@@ -20358,7 +20358,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 28
+- Incoming relationships: 29
 
 ## `package:msys2:mingw-w64-clang-aarch64-librsvg-docs`
 
@@ -20394,7 +20394,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-libsass`
 
@@ -20673,7 +20673,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 24
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-clang-aarch64-libssh2-wincng`
 
@@ -20708,7 +20708,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 29
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-libsystre`
@@ -20763,7 +20763,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-clang-aarch64-libtiff`
 
@@ -20772,7 +20772,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 92
+- Incoming relationships: 93
 
 ## `package:msys2:mingw-w64-clang-aarch64-libtiff-docs`
 
@@ -20915,7 +20915,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-aarch64-libusb`
@@ -21005,7 +21005,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 43
+- Outgoing relationships: 42
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-libvirt`
@@ -21069,7 +21069,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 29
+- Incoming relationships: 30
 
 ## `package:msys2:mingw-w64-clang-aarch64-libvpl`
 
@@ -21249,7 +21249,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 141
+- Incoming relationships: 143
 
 ## `package:msys2:mingw-w64-clang-aarch64-libxml2-docs`
 
@@ -21356,7 +21356,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-lite-xl`
@@ -21375,7 +21375,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-live-chart`
 
@@ -21437,8 +21437,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 29
+- Outgoing relationships: 12
+- Incoming relationships: 27
 
 ## `package:msys2:mingw-w64-clang-aarch64-lld-21`
 
@@ -21473,8 +21473,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 42
+- Outgoing relationships: 11
+- Incoming relationships: 41
 
 ## `package:msys2:mingw-w64-clang-aarch64-llvm-21`
 
@@ -21491,7 +21491,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 13
 - Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-aarch64-llvm-openmp`
@@ -21500,7 +21500,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 6
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-llvm-tools`
@@ -21509,7 +21509,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-aarch64-lmdb`
@@ -21600,7 +21600,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 35
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-clang-aarch64-lua-cjson`
 
@@ -22032,7 +22032,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-maturin`
 
@@ -22113,7 +22113,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-mdbook`
 
@@ -22275,7 +22275,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 248
+- Incoming relationships: 245
 
 ## `package:msys2:mingw-w64-clang-aarch64-meson-python`
 
@@ -22472,7 +22472,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 43
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-mman-win32`
@@ -22581,7 +22581,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-mpfr`
 
@@ -22590,7 +22590,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 27
+- Incoming relationships: 29
 
 ## `package:msys2:mingw-w64-clang-aarch64-mpg123`
 
@@ -22598,7 +22598,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-mpv`
@@ -22905,7 +22905,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 34
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-clang-aarch64-nativefiledialog-extended`
 
@@ -22932,7 +22932,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 24
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-clang-aarch64-neocmakelsp`
 
@@ -22977,7 +22977,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-aarch64-netcdf-cxx`
 
@@ -23058,7 +23058,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-nghttp3`
 
@@ -23067,7 +23067,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-ngraph-gtk`
 
@@ -23093,8 +23093,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 2
+- Outgoing relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-nicotine+`
 
@@ -23112,7 +23112,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1103
+- Incoming relationships: 1113
 
 ## `package:msys2:mingw-w64-clang-aarch64-nlohmann-json`
 
@@ -23490,7 +23490,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 30
+- Incoming relationships: 29
 
 ## `package:msys2:mingw-w64-clang-aarch64-openapv`
 
@@ -23517,7 +23517,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 48
+- Incoming relationships: 50
 
 ## `package:msys2:mingw-w64-clang-aarch64-openblas64`
 
@@ -23526,7 +23526,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-opencamlib`
 
@@ -23544,7 +23544,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-clang-aarch64-opencascade-doc-overview`
 
@@ -23643,7 +23643,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 40
-- Incoming relationships: 15
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-clang-aarch64-openexr`
 
@@ -23687,7 +23687,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 6
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-openimagedenoise`
@@ -23768,7 +23768,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 28
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-openscenegraph`
@@ -23796,7 +23796,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-openssl`
 
@@ -23805,7 +23805,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 204
+- Incoming relationships: 205
 
 ## `package:msys2:mingw-w64-clang-aarch64-opensubdiv`
 
@@ -23841,7 +23841,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 24
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-openvdb`
 
@@ -23850,7 +23850,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-openvr`
 
@@ -23859,7 +23859,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-aarch64-openxr-sdk`
 
@@ -24020,7 +24020,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 26
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-osslsigncode`
@@ -24201,7 +24201,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 82
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-clang-aarch64-pango-docs`
 
@@ -24309,7 +24309,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-pdcurses`
 
@@ -24372,7 +24372,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 171
+- Incoming relationships: 174
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-algorithm-diff`
 
@@ -24876,7 +24876,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-html-parser`
 
@@ -24984,7 +24984,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-ipc-run3`
 
@@ -25605,7 +25605,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-win32-shellquote`
 
@@ -25623,7 +25623,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-win32-tieregistry`
 
@@ -25632,7 +25632,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-win32-unicode`
 
@@ -25650,7 +25650,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-win32api-registry`
 
@@ -25659,7 +25659,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-perl-www-robotrules`
 
@@ -25758,7 +25758,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-pg_probackup-16`
 
@@ -25884,7 +25884,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-aarch64-pkcs11-helper`
 
@@ -25902,7 +25902,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 546
+- Incoming relationships: 550
 
 ## `package:msys2:mingw-w64-clang-aarch64-planarity`
 
@@ -26018,7 +26018,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-podman`
@@ -26135,8 +26135,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 17
+- Outgoing relationships: 6
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-aarch64-portmidi`
 
@@ -26171,8 +26171,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
-- Incoming relationships: 43
+- Outgoing relationships: 25
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-clang-aarch64-postgresql-16`
 
@@ -26190,7 +26190,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-aarch64-powerpc-apple-macos-binutils`
 
@@ -26243,7 +26243,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 12
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-premake`
@@ -26325,7 +26325,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 11
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-aarch64-projectchrono`
 
@@ -26388,7 +26388,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-pupnp`
 
@@ -26522,7 +26522,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 45
+- Outgoing relationships: 60
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-pyside6-tools`
@@ -26531,7 +26531,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 36
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-pystring`
@@ -26550,7 +26550,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 1210
+- Incoming relationships: 1212
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-aafigure`
 
@@ -27000,7 +27000,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-autopxd2`
 
@@ -27125,7 +27125,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-black`
@@ -27261,7 +27261,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 994
+- Incoming relationships: 990
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-cabarchive`
 
@@ -27504,7 +27504,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-cloup`
 
@@ -27701,7 +27701,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-cssselect`
@@ -27953,7 +27953,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-docopt`
@@ -27981,7 +27981,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 32
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-docx`
 
@@ -28521,7 +28521,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 10
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-ford`
 
@@ -28871,7 +28871,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-graphviz`
@@ -29150,7 +29150,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-hyperframe`
@@ -29376,7 +29376,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1003
+- Incoming relationships: 999
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-intervaltree`
 
@@ -29466,7 +29466,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-isodate`
 
@@ -29628,7 +29628,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-json-logger`
 
@@ -29978,7 +29978,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-lark-parser`
@@ -30230,7 +30230,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-manimpango`
@@ -30744,7 +30744,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 128
+- Incoming relationships: 127
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-numpydoc`
 
@@ -32157,7 +32157,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-pydoe2`
 
@@ -32255,7 +32255,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 26
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-pygccxml`
@@ -32444,7 +32444,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 15
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-pymupdf`
@@ -32633,7 +32633,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 42
 - Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-pyqt6-sip`
@@ -33768,7 +33768,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 789
+- Incoming relationships: 781
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-setuptools-git`
 
@@ -33975,7 +33975,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 26
-- Incoming relationships: 74
+- Incoming relationships: 69
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-sphinx-alabaster-theme`
 
@@ -34686,7 +34686,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-trio-websocket`
 
@@ -34983,7 +34983,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 16
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-clang-aarch64-python-virtualenv-clone`
 
@@ -35504,7 +35504,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-qgpgme-qt6`
@@ -35513,7 +35513,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-qhttpengine`
@@ -35648,7 +35648,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 37
+- Outgoing relationships: 36
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt-creator-devel`
@@ -35657,7 +35657,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt-creator-docs`
@@ -35666,7 +35666,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt-installer-framework`
@@ -35721,7 +35721,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 45
-- Incoming relationships: 101
+- Incoming relationships: 97
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt5-base-debug`
 
@@ -36189,7 +36189,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt5-svg-debug`
 
@@ -36378,7 +36378,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 31
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-5compat-debug`
 
@@ -36414,7 +36414,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 49
-- Incoming relationships: 303
+- Incoming relationships: 295
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-base-debug`
 
@@ -36486,7 +36486,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 157
+- Incoming relationships: 159
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-declarative-debug`
 
@@ -36513,7 +36513,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-graphs-debug`
 
@@ -36549,7 +36549,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-httpserver-debug`
 
@@ -36594,7 +36594,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 4
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-location-debug`
 
@@ -36647,8 +36647,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
-- Incoming relationships: 40
+- Outgoing relationships: 19
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-multimedia-debug`
 
@@ -36656,7 +36656,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-multimedia-ffmpeg`
@@ -36665,7 +36665,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 15
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-multimedia-wmf`
@@ -36674,7 +36674,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-networkauth`
@@ -36684,7 +36684,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-networkauth-debug`
 
@@ -36702,7 +36702,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-pdf-debug`
 
@@ -36720,7 +36720,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 11
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-positioning-debug`
 
@@ -36738,7 +36738,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 21
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-quick3d-debug`
 
@@ -36810,7 +36810,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-remoteobjects-debug`
 
@@ -36828,7 +36828,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 7
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-scxml-debug`
 
@@ -36846,7 +36846,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-sensors-debug`
 
@@ -36864,7 +36864,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-serialbus-debug`
 
@@ -36882,7 +36882,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 18
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-serialport-debug`
 
@@ -36900,7 +36900,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 33
+- Incoming relationships: 34
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-shadertools-debug`
 
@@ -36918,7 +36918,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-speech-debug`
 
@@ -36935,7 +36935,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 25
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-svg`
@@ -36945,7 +36945,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 76
+- Incoming relationships: 80
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-svg-debug`
 
@@ -36963,7 +36963,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 143
+- Incoming relationships: 142
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-tools-debug`
 
@@ -37008,7 +37008,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-webchannel-debug`
 
@@ -37026,7 +37026,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 14
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-clang-aarch64-qt6-websockets-debug`
 
@@ -37097,7 +37097,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-quazip`
@@ -37233,7 +37233,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-range-v3`
 
@@ -37269,7 +37269,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 11
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-aarch64-raptor`
 
@@ -37295,7 +37295,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-raylib`
@@ -37683,7 +37683,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-rtl-sdr`
 
@@ -37728,7 +37728,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-ruby`
 
@@ -37737,7 +37737,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 19
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-aarch64-ruby-dbus`
 
@@ -37826,8 +37826,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
-- Incoming relationships: 166
+- Outgoing relationships: 24
+- Incoming relationships: 165
 
 ## `package:msys2:mingw-w64-clang-aarch64-rust-analyzer`
 
@@ -37862,7 +37862,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 19
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-rust-wasm`
@@ -37889,7 +37889,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-rustlings`
@@ -38015,7 +38015,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-scc`
@@ -38105,8 +38105,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
-- Incoming relationships: 3
+- Outgoing relationships: 9
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-scotch-metis`
 
@@ -38114,7 +38114,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-scotch64`
@@ -38123,7 +38123,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-scotch64-metis`
@@ -38132,7 +38132,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-scour`
@@ -38196,7 +38196,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-aarch64-sdl12-compat`
 
@@ -38214,7 +38214,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 48
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-clang-aarch64-sdl2_gfx`
 
@@ -38376,7 +38376,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-aarch64-sed`
 
@@ -38493,7 +38493,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-aarch64-shfmt`
 
@@ -38519,7 +38519,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 38
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-shim_executable`
@@ -38573,7 +38573,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 16
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-sigutils`
@@ -38681,7 +38681,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-smpeg`
@@ -38880,7 +38880,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-aarch64-sox-ng`
 
@@ -39077,7 +39077,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-sqlite-orm`
@@ -39177,7 +39177,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-starpu`
 
@@ -39185,7 +39185,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-starship`
@@ -39293,7 +39293,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-supercollider`
@@ -39537,7 +39537,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 36
+- Incoming relationships: 31
 
 ## `package:msys2:mingw-w64-clang-aarch64-symmetrica`
 
@@ -40895,7 +40895,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 38
+- Outgoing relationships: 51
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-texlive-core`
@@ -41364,7 +41364,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 18
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-aarch64-tkimg`
 
@@ -41634,7 +41634,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-trippy`
 
@@ -41670,7 +41670,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-tslib`
 
@@ -42471,7 +42471,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 19
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-clang-aarch64-unordered_dense`
 
@@ -42533,7 +42533,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-usrsctp`
@@ -42552,7 +42552,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 10
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-aarch64-uthash`
 
@@ -42732,7 +42732,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-aarch64-vigra`
 
@@ -42831,7 +42831,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-vo-amrwbenc`
 
@@ -42840,7 +42840,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-aarch64-volk`
 
@@ -42938,7 +42938,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
+- Outgoing relationships: 92
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-aarch64-vulkan-headers`
@@ -42948,7 +42948,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 46
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-clang-aarch64-vulkan-loader`
 
@@ -43101,7 +43101,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-wasm-component-ld`
 
@@ -43218,7 +43218,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-webview`
 
@@ -43371,7 +43371,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 14
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-clang-aarch64-winpthreads-stub`
 
@@ -43380,7 +43380,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-winpty`
 
@@ -43694,8 +43694,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 5
+- Outgoing relationships: 5
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-clang-aarch64-xa65`
 
@@ -43766,7 +43766,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-xlnt`
@@ -43874,7 +43874,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-aarch64-xxhash`
@@ -43893,7 +43893,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 51
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-clang-aarch64-yajl`
 
@@ -44019,7 +44019,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 7
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-aarch64-zbar`
 
@@ -44028,7 +44028,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-aarch64-zed`
 
@@ -44036,7 +44036,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 23
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-aarch64-zeromq`
@@ -44109,7 +44109,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 324
+- Incoming relationships: 329
 
 ## `package:msys2:mingw-w64-clang-aarch64-zlib-ng`
 
@@ -44163,7 +44163,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 102
+- Incoming relationships: 100
 
 ## `package:msys2:mingw-w64-clang-aarch64-zug`
 
@@ -44333,7 +44333,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 15
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-abiword`
@@ -44505,7 +44505,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-alure`
 
@@ -44523,7 +44523,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-amgcl`
 
@@ -44550,7 +44550,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 7
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-android-tools`
 
@@ -44612,7 +44612,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-clang-x86_64-appstream`
@@ -44765,7 +44765,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-arpack64`
@@ -44774,7 +44774,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-arrow`
@@ -44874,7 +44874,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 22
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-clang-x86_64-asio`
 
@@ -44882,7 +44882,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-asiosdk`
@@ -44892,7 +44892,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-asm-lsp`
 
@@ -45072,7 +45072,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 552
+- Incoming relationships: 550
 
 ## `package:msys2:mingw-w64-clang-x86_64-avogadroapp`
 
@@ -45360,7 +45360,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-bcftools`
 
@@ -45432,7 +45432,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-bitwise`
 
@@ -45611,7 +45611,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-brush`
@@ -45684,7 +45684,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 62
+- Incoming relationships: 58
 
 ## `package:msys2:mingw-w64-clang-x86_64-bzip3`
 
@@ -45729,7 +45729,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-clang-x86_64-cabextract`
 
@@ -45747,7 +45747,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 131
+- Incoming relationships: 126
 
 ## `package:msys2:mingw-w64-clang-x86_64-cairomm`
 
@@ -45918,7 +45918,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-cas-offinder`
 
@@ -46007,7 +46007,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-cddlib`
@@ -46089,7 +46089,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-chafa`
 
@@ -46098,7 +46098,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 8
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-charls`
 
@@ -46196,8 +46196,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 2327
+- Outgoing relationships: 17
+- Incoming relationships: 2304
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-21`
 
@@ -46214,7 +46214,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-libs`
@@ -46223,7 +46223,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-clang-x86_64-clang-tools-extra`
@@ -46232,8 +46232,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 26
+- Outgoing relationships: 10
+- Incoming relationships: 24
 
 ## `package:msys2:mingw-w64-clang-x86_64-clazy`
 
@@ -46260,7 +46260,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-clip`
 
@@ -46313,8 +46313,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
-- Incoming relationships: 1066
+- Outgoing relationships: 18
+- Incoming relationships: 1072
 
 ## `package:msys2:mingw-w64-clang-x86_64-cmake-bootstrap`
 
@@ -46323,7 +46323,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-cmake-cmcldeps`
 
@@ -46331,7 +46331,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-cmake-docs`
@@ -46340,7 +46340,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-cmake-gui`
@@ -46349,7 +46349,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-cmakelang`
@@ -46574,8 +46574,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 6
+- Outgoing relationships: 9
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-compiler-rt-21`
 
@@ -46790,7 +46790,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-csfml`
@@ -46871,7 +46871,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 22
 - Incoming relationships: 112
 
 ## `package:msys2:mingw-w64-clang-x86_64-curl-gnutls`
@@ -46880,7 +46880,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-curl-winssl`
@@ -46889,7 +46889,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-cusp`
@@ -46935,7 +46935,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 90
+- Incoming relationships: 89
 
 ## `package:msys2:mingw-w64-clang-x86_64-czkawka-cli`
 
@@ -47105,7 +47105,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-devil`
@@ -47196,7 +47196,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-x86_64-directxmath`
 
@@ -47438,8 +47438,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
-- Incoming relationships: 106
+- Outgoing relationships: 14
+- Incoming relationships: 105
 
 ## `package:msys2:mingw-w64-clang-x86_64-draco`
 
@@ -47537,7 +47537,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-dust`
@@ -47664,7 +47664,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 35
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-clang-x86_64-elementary-icon-theme`
 
@@ -47690,8 +47690,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
-- Incoming relationships: 7
+- Outgoing relationships: 26
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-emacs-pdf-tools-server`
 
@@ -47907,7 +47907,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-extra-cmake-modules`
 
@@ -47916,7 +47916,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 85
+- Incoming relationships: 84
 
 ## `package:msys2:mingw-w64-clang-x86_64-extremetuxracer`
 
@@ -47997,7 +47997,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 15
+- Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-clang-x86_64-fastfetch`
 
@@ -48041,7 +48041,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 2
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-fcrackzip`
@@ -48086,8 +48086,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
-- Incoming relationships: 53
+- Outgoing relationships: 59
+- Incoming relationships: 56
 
 ## `package:msys2:mingw-w64-clang-x86_64-ffmpeg-python`
 
@@ -48132,7 +48132,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 39
+- Incoming relationships: 40
 
 ## `package:msys2:mingw-w64-clang-x86_64-file`
 
@@ -48186,7 +48186,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 81
+- Incoming relationships: 77
 
 ## `package:msys2:mingw-w64-clang-x86_64-flang-rt`
 
@@ -48311,7 +48311,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-fontconfig`
@@ -48321,7 +48321,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 42
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-clang-x86_64-fontforge`
 
@@ -48437,8 +48437,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
-- Incoming relationships: 3
+- Outgoing relationships: 10
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-fribidi`
 
@@ -48464,7 +48464,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-frozen`
@@ -48555,7 +48555,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-gc`
 
@@ -48582,7 +48582,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 16
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-gcovr`
 
@@ -48600,7 +48600,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 57
-- Incoming relationships: 10
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-x86_64-gdb`
 
@@ -48645,7 +48645,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 58
+- Incoming relationships: 59
 
 ## `package:msys2:mingw-w64-clang-x86_64-gdk-pixbuf2-docs`
 
@@ -48888,7 +48888,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-x86_64-gimp`
 
@@ -48915,7 +48915,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 69
+- Incoming relationships: 79
 
 ## `package:msys2:mingw-w64-clang-x86_64-git-archimport`
 
@@ -48986,7 +48986,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-git-p4`
@@ -49113,7 +49113,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-glab`
 
@@ -49202,7 +49202,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 14
 - Incoming relationships: 198
 
 ## `package:msys2:mingw-w64-clang-x86_64-glibmm`
@@ -49382,7 +49382,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-gnupg`
@@ -49473,7 +49473,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 142
+- Incoming relationships: 134
 
 ## `package:msys2:mingw-w64-clang-x86_64-gobject-introspection-runtime`
 
@@ -49508,7 +49508,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-gojq`
@@ -49553,7 +49553,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 11
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-clang-x86_64-gphoto2`
@@ -49653,7 +49653,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 8
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-graphviz`
 
@@ -49661,7 +49661,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 27
 - Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-clang-x86_64-graphviz-docs`
@@ -49670,7 +49670,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-grep`
@@ -49859,7 +49859,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 69
+- Outgoing relationships: 74
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-gst-plugins-bad`
@@ -49868,7 +49868,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 122
+- Outgoing relationships: 127
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-gst-plugins-bad-libs`
@@ -49877,7 +49877,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 73
+- Outgoing relationships: 78
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-gst-plugins-base`
@@ -49950,7 +49950,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 22
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-clang-x86_64-gtk-doc`
 
@@ -49959,7 +49959,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 87
+- Incoming relationships: 82
 
 ## `package:msys2:mingw-w64-clang-x86_64-gtk-elementary-theme`
 
@@ -50156,8 +50156,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 18
-- Incoming relationships: 43
+- Outgoing relationships: 15
+- Incoming relationships: 42
 
 ## `package:msys2:mingw-w64-clang-x86_64-harfbuzz-cairo`
 
@@ -50165,7 +50165,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-harfbuzz-docs`
@@ -50174,7 +50174,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-harfbuzz-icu`
@@ -50183,7 +50183,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-harfbuzz-utils`
@@ -50192,7 +50192,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 6
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-harper`
@@ -50237,8 +50237,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
-- Incoming relationships: 31
+- Outgoing relationships: 13
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-clang-x86_64-hdr10plus-tool`
 
@@ -50300,7 +50300,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-hexyl`
@@ -50525,7 +50525,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-i2pd`
@@ -50580,7 +50580,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 60
+- Incoming relationships: 55
 
 ## `package:msys2:mingw-w64-clang-x86_64-id3lib`
 
@@ -50660,7 +50660,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 7
 - Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-x86_64-img2pdf`
@@ -50750,7 +50750,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-is_utf8`
@@ -50804,7 +50804,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
+- Outgoing relationships: 43
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-itstool`
@@ -50985,7 +50985,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-jq-lsp`
 
@@ -51318,7 +51318,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 14
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-x86_64-kdsingleapplication`
 
@@ -51641,7 +51641,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-kitemmodels`
@@ -51678,7 +51678,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-knotifications`
 
@@ -51938,7 +51938,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 53
+- Outgoing relationships: 54
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-ladspa-sdk`
@@ -51965,7 +51965,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-lammps`
@@ -52298,7 +52298,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-x86_64-libassuan`
@@ -52442,8 +52442,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
-- Incoming relationships: 11
+- Outgoing relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-x86_64-libcaca`
 
@@ -52451,7 +52451,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 10
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-libcacard`
@@ -52767,7 +52767,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-libelf`
 
@@ -52857,7 +52857,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 28
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-clang-x86_64-libfido2`
 
@@ -52955,7 +52955,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 30
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-libgdiplus`
@@ -53109,7 +53109,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-libgoom2`
 
@@ -53153,7 +53153,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-libgsf`
@@ -53450,8 +53450,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 115
+- Outgoing relationships: 5
+- Incoming relationships: 116
 
 ## `package:msys2:mingw-w64-clang-x86_64-libjxl`
 
@@ -53486,7 +53486,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-libkqueue`
@@ -53523,7 +53523,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-liblastfm`
 
@@ -53613,7 +53613,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-x86_64-libmatroska`
 
@@ -53730,7 +53730,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 13
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-x86_64-libmodbus`
 
@@ -53756,7 +53756,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-libmongoose`
@@ -54027,7 +54027,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 17
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-x86_64-libomemo-c`
 
@@ -54234,7 +54234,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 147
+- Incoming relationships: 149
 
 ## `package:msys2:mingw-w64-clang-x86_64-libpqxx`
 
@@ -54459,7 +54459,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 28
+- Incoming relationships: 29
 
 ## `package:msys2:mingw-w64-clang-x86_64-librsvg-docs`
 
@@ -54495,7 +54495,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-libsass`
 
@@ -54621,7 +54621,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-libslirp`
 
@@ -54783,7 +54783,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 24
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-clang-x86_64-libssh2-wincng`
 
@@ -54818,7 +54818,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 29
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-libsystre`
@@ -54873,7 +54873,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-clang-x86_64-libtiff`
 
@@ -54882,7 +54882,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 93
+- Incoming relationships: 94
 
 ## `package:msys2:mingw-w64-clang-x86_64-libtiff-docs`
 
@@ -55025,7 +55025,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-x86_64-libusb`
@@ -55115,7 +55115,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 43
+- Outgoing relationships: 42
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-libvirt`
@@ -55179,7 +55179,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 31
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-clang-x86_64-libvpl`
 
@@ -55368,7 +55368,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 143
+- Incoming relationships: 145
 
 ## `package:msys2:mingw-w64-clang-x86_64-libxml2-docs`
 
@@ -55503,7 +55503,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-live-chart`
 
@@ -55565,8 +55565,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 30
+- Outgoing relationships: 12
+- Incoming relationships: 28
 
 ## `package:msys2:mingw-w64-clang-x86_64-lld-21`
 
@@ -55601,8 +55601,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 44
+- Outgoing relationships: 11
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-clang-x86_64-llvm-21`
 
@@ -55619,7 +55619,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 13
 - Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-clang-x86_64-llvm-openmp`
@@ -55628,7 +55628,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 6
 - Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-llvm-tools`
@@ -55637,7 +55637,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-x86_64-lmdb`
@@ -55728,7 +55728,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 35
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-clang-x86_64-lua-cjson`
 
@@ -56160,7 +56160,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-maturin`
 
@@ -56241,7 +56241,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-mdbook`
 
@@ -56403,7 +56403,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 249
+- Incoming relationships: 246
 
 ## `package:msys2:mingw-w64-clang-x86_64-meson-python`
 
@@ -56429,7 +56429,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-mgba`
@@ -56618,7 +56618,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 43
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-mman-win32`
@@ -56645,7 +56645,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-mold`
@@ -56745,7 +56745,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-mpfr`
 
@@ -56754,7 +56754,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 35
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-clang-x86_64-mpg123`
 
@@ -56762,7 +56762,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-x86_64-mpv`
@@ -56826,7 +56826,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 25
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-msmtp`
 
@@ -56897,7 +56897,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-munt`
@@ -57078,7 +57078,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 35
+- Incoming relationships: 24
 
 ## `package:msys2:mingw-w64-clang-x86_64-nativefiledialog-extended`
 
@@ -57105,7 +57105,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 25
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-x86_64-neocmakelsp`
 
@@ -57150,7 +57150,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-x86_64-netcdf-cxx`
 
@@ -57231,7 +57231,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-nghttp3`
 
@@ -57240,7 +57240,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-ngraph-gtk`
 
@@ -57266,8 +57266,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 2
+- Outgoing relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-nicotine+`
 
@@ -57285,7 +57285,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1115
+- Incoming relationships: 1124
 
 ## `package:msys2:mingw-w64-clang-x86_64-nlohmann-json`
 
@@ -57608,7 +57608,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-onefetch`
@@ -57653,7 +57653,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
+- Outgoing relationships: 25
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-open62541`
@@ -57681,7 +57681,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 31
+- Incoming relationships: 30
 
 ## `package:msys2:mingw-w64-clang-x86_64-openapv`
 
@@ -57708,7 +57708,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 53
+- Incoming relationships: 55
 
 ## `package:msys2:mingw-w64-clang-x86_64-openblas64`
 
@@ -57717,7 +57717,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-opencamlib`
 
@@ -57735,7 +57735,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-clang-x86_64-opencascade-doc-overview`
 
@@ -57806,7 +57806,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 19
+- Outgoing relationships: 20
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-opencore-amr`
@@ -57834,7 +57834,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 40
-- Incoming relationships: 15
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-clang-x86_64-openexr`
 
@@ -57878,7 +57878,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 6
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-openimagedenoise`
@@ -57959,7 +57959,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 28
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-openscenegraph`
@@ -57987,7 +57987,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-openssl`
 
@@ -57996,7 +57996,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 207
+- Incoming relationships: 208
 
 ## `package:msys2:mingw-w64-clang-x86_64-opensubdiv`
 
@@ -58032,7 +58032,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 24
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-openvdb`
 
@@ -58041,7 +58041,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-openvr`
 
@@ -58050,7 +58050,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-x86_64-openxr-sdk`
 
@@ -58211,7 +58211,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 26
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-osslsigncode`
@@ -58392,7 +58392,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 82
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-clang-x86_64-pango-docs`
 
@@ -58446,7 +58446,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-parpack`
 
@@ -58454,7 +58454,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-parsec`
@@ -58518,7 +58518,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-pdcurses`
 
@@ -58581,7 +58581,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 172
+- Incoming relationships: 175
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-algorithm-diff`
 
@@ -59085,7 +59085,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-html-parser`
 
@@ -59193,7 +59193,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-ipc-run3`
 
@@ -59823,7 +59823,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-win32-shellquote`
 
@@ -59841,7 +59841,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-win32-tieregistry`
 
@@ -59850,7 +59850,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-win32-unicode`
 
@@ -59868,7 +59868,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-win32api-registry`
 
@@ -59877,7 +59877,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-perl-www-robotrules`
 
@@ -59966,7 +59966,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-petsc-build`
@@ -59975,8 +59975,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
-- Incoming relationships: 0
+- Outgoing relationships: 11
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-pg_probackup-16`
 
@@ -60102,7 +60102,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-x86_64-pkcs11-helper`
 
@@ -60129,7 +60129,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 522
+- Incoming relationships: 526
 
 ## `package:msys2:mingw-w64-clang-x86_64-planarity`
 
@@ -60245,7 +60245,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-podman`
@@ -60362,8 +60362,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 17
+- Outgoing relationships: 6
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-x86_64-portmidi`
 
@@ -60398,8 +60398,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
-- Incoming relationships: 43
+- Outgoing relationships: 25
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-clang-x86_64-postgresql-16`
 
@@ -60417,7 +60417,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-powerpc-apple-macos-binutils`
 
@@ -60470,7 +60470,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 12
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-premake`
@@ -60552,7 +60552,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 11
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-x86_64-projectchrono`
 
@@ -60624,7 +60624,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-pupnp`
 
@@ -60758,7 +60758,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 45
+- Outgoing relationships: 60
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-pyside6-tools`
@@ -60767,7 +60767,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 36
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-pystring`
@@ -60786,7 +60786,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 1219
+- Incoming relationships: 1222
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-aafigure`
 
@@ -61236,7 +61236,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-autopxd2`
 
@@ -61361,7 +61361,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-black`
@@ -61497,7 +61497,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 998
+- Incoming relationships: 994
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-cabarchive`
 
@@ -61740,7 +61740,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 6
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-cloup`
 
@@ -61937,7 +61937,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-cssselect`
@@ -62189,7 +62189,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-docopt`
@@ -62217,7 +62217,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 32
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-docx`
 
@@ -62757,7 +62757,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 10
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-ford`
 
@@ -63107,7 +63107,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-graphviz`
@@ -63386,7 +63386,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-hyperframe`
@@ -63612,7 +63612,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1007
+- Incoming relationships: 1003
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-intervaltree`
 
@@ -63702,7 +63702,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-isodate`
 
@@ -63864,7 +63864,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-json-logger`
 
@@ -64214,7 +64214,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-lark-parser`
@@ -64466,7 +64466,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-manimpango`
@@ -64989,7 +64989,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 132
+- Incoming relationships: 131
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-numpydoc`
 
@@ -65060,7 +65060,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 30
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-opencamlib`
@@ -66411,7 +66411,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-pydoe2`
 
@@ -66698,7 +66698,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 15
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-pymupdf`
@@ -66869,7 +66869,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 42
+- Outgoing relationships: 41
 - Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-pyqt5-3d`
@@ -66887,7 +66887,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 42
 - Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-pyqt6-sip`
@@ -68022,7 +68022,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 793
+- Incoming relationships: 785
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-setuptools-git`
 
@@ -68229,7 +68229,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 26
-- Incoming relationships: 75
+- Incoming relationships: 70
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-sphinx-alabaster-theme`
 
@@ -68949,7 +68949,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-trio-websocket`
 
@@ -69246,7 +69246,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 16
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-clang-x86_64-python-virtualenv-clone`
 
@@ -69767,7 +69767,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-qgpgme-qt6`
@@ -69776,7 +69776,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-qhttpengine`
@@ -69911,7 +69911,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 38
+- Outgoing relationships: 37
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt-creator-devel`
@@ -69920,7 +69920,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt-creator-docs`
@@ -69929,7 +69929,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt-installer-framework`
@@ -69984,7 +69984,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 45
-- Incoming relationships: 102
+- Incoming relationships: 98
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt5-base-debug`
 
@@ -70452,7 +70452,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt5-svg-debug`
 
@@ -70641,7 +70641,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 31
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-5compat-debug`
 
@@ -70677,7 +70677,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 49
-- Incoming relationships: 303
+- Incoming relationships: 295
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-base-debug`
 
@@ -70749,7 +70749,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 157
+- Incoming relationships: 159
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-declarative-debug`
 
@@ -70776,7 +70776,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-graphs-debug`
 
@@ -70812,7 +70812,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-httpserver-debug`
 
@@ -70857,7 +70857,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 4
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-location-debug`
 
@@ -70910,8 +70910,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
-- Incoming relationships: 40
+- Outgoing relationships: 19
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-multimedia-debug`
 
@@ -70919,7 +70919,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-multimedia-ffmpeg`
@@ -70928,7 +70928,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 15
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-multimedia-wmf`
@@ -70937,7 +70937,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-networkauth`
@@ -70947,7 +70947,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-networkauth-debug`
 
@@ -70965,7 +70965,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-pdf-debug`
 
@@ -70983,7 +70983,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 11
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-positioning-debug`
 
@@ -71001,7 +71001,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 21
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-quick3d-debug`
 
@@ -71073,7 +71073,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-remoteobjects-debug`
 
@@ -71091,7 +71091,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 7
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-scxml-debug`
 
@@ -71109,7 +71109,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-sensors-debug`
 
@@ -71127,7 +71127,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-serialbus-debug`
 
@@ -71145,7 +71145,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 18
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-serialport-debug`
 
@@ -71163,7 +71163,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 33
+- Incoming relationships: 34
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-shadertools-debug`
 
@@ -71181,7 +71181,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-speech-debug`
 
@@ -71198,7 +71198,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 25
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-svg`
@@ -71208,7 +71208,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 76
+- Incoming relationships: 80
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-svg-debug`
 
@@ -71226,7 +71226,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 143
+- Incoming relationships: 142
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-tools-debug`
 
@@ -71271,7 +71271,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-webchannel-debug`
 
@@ -71289,7 +71289,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 14
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-clang-x86_64-qt6-websockets-debug`
 
@@ -71334,7 +71334,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 21
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-quantlib`
 
@@ -71369,7 +71369,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-quazip`
@@ -71505,7 +71505,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-range-v3`
 
@@ -71541,7 +71541,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 11
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-clang-x86_64-raptor`
 
@@ -71567,7 +71567,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-raylib`
@@ -71991,7 +71991,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-rtl-sdr`
 
@@ -72036,7 +72036,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-ruby`
 
@@ -72045,7 +72045,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 20
+- Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-clang-x86_64-ruby-dbus`
 
@@ -72134,8 +72134,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
-- Incoming relationships: 169
+- Outgoing relationships: 25
+- Incoming relationships: 168
 
 ## `package:msys2:mingw-w64-clang-x86_64-rust-analyzer`
 
@@ -72170,7 +72170,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 19
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-rust-wasm`
@@ -72197,7 +72197,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-rustlings`
@@ -72341,7 +72341,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-scalapack`
@@ -72351,7 +72351,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-scc`
 
@@ -72440,8 +72440,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
-- Incoming relationships: 3
+- Outgoing relationships: 9
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-scotch-metis`
 
@@ -72449,7 +72449,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-scotch64`
@@ -72458,7 +72458,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-scotch64-metis`
@@ -72467,7 +72467,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-scour`
@@ -72540,7 +72540,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-clang-x86_64-sdl12-compat`
 
@@ -72558,7 +72558,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 48
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-clang-x86_64-sdl2_gfx`
 
@@ -72720,7 +72720,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-clang-x86_64-sed`
 
@@ -72837,7 +72837,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-x86_64-shfmt`
 
@@ -72863,7 +72863,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 38
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-shim_executable`
@@ -73025,7 +73025,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-smpeg`
@@ -73224,7 +73224,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-sox-ng`
 
@@ -73421,7 +73421,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-sqlite-orm`
@@ -73520,7 +73520,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-starship`
@@ -73628,7 +73628,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-supercollider`
@@ -73737,7 +73737,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-swi-prolog-archive`
 
@@ -73890,7 +73890,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 36
+- Incoming relationships: 31
 
 ## `package:msys2:mingw-w64-clang-x86_64-symmetrica`
 
@@ -75248,7 +75248,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 40
+- Outgoing relationships: 52
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-texlive-core`
@@ -75717,7 +75717,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 18
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-clang-x86_64-tkimg`
 
@@ -75986,8 +75986,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 1
+- Outgoing relationships: 12
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-trippy`
 
@@ -76023,7 +76023,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-tslib`
 
@@ -76716,7 +76716,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-uchardet`
 
@@ -76842,7 +76842,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 19
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-clang-x86_64-unordered_dense`
 
@@ -76904,7 +76904,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-usrsctp`
@@ -76923,7 +76923,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 10
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-clang-x86_64-uthash`
 
@@ -77103,7 +77103,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-vigra`
 
@@ -77202,7 +77202,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-vo-amrwbenc`
 
@@ -77211,7 +77211,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-clang-x86_64-volk`
 
@@ -77309,7 +77309,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
+- Outgoing relationships: 92
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-clang-x86_64-vulkan-headers`
@@ -77319,7 +77319,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 46
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-clang-x86_64-vulkan-loader`
 
@@ -77436,7 +77436,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-clang-x86_64-wasi-compiler-rt`
 
@@ -77472,7 +77472,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-wasm-component-ld`
 
@@ -77598,7 +77598,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-webview`
 
@@ -77751,7 +77751,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-x86_64-winpthreads-stub`
 
@@ -77760,7 +77760,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-winpty`
 
@@ -78074,8 +78074,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 5
+- Outgoing relationships: 5
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-clang-x86_64-xa65`
 
@@ -78183,7 +78183,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-clang-x86_64-xmlsec`
 
@@ -78254,7 +78254,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-clang-x86_64-xxhash`
@@ -78273,7 +78273,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 52
+- Incoming relationships: 50
 
 ## `package:msys2:mingw-w64-clang-x86_64-yajl`
 
@@ -78399,7 +78399,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 7
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-clang-x86_64-zbar`
 
@@ -78408,7 +78408,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-clang-x86_64-zeal`
 
@@ -78425,7 +78425,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 23
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-clang-x86_64-zeromq`
@@ -78498,7 +78498,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 331
+- Incoming relationships: 336
 
 ## `package:msys2:mingw-w64-clang-x86_64-zlib-ng`
 
@@ -78561,7 +78561,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 111
+- Incoming relationships: 109
 
 ## `package:msys2:mingw-w64-clang-x86_64-zug`
 
@@ -79101,7 +79101,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-i686-aom`
 
@@ -79128,7 +79128,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 16
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-i686-asiosdk`
 
@@ -79137,7 +79137,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-i686-autotools`
 
@@ -79146,7 +79146,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 103
+- Incoming relationships: 105
 
 ## `package:msys2:mingw-w64-i686-binutils`
 
@@ -79155,7 +79155,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-i686-brotli`
 
@@ -79191,7 +79191,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-cairo`
 
@@ -79200,7 +79200,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-catch`
 
@@ -79226,7 +79226,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 17
 - Incoming relationships: 63
 
 ## `package:msys2:mingw-w64-i686-cmake-bootstrap`
@@ -79272,7 +79272,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-i686-crypto++`
 
@@ -79298,7 +79298,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 22
 - Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-i686-cython`
@@ -79353,7 +79353,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 7
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-i686-expat`
 
@@ -79370,7 +79370,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 52
+- Outgoing relationships: 51
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-ffms2`
@@ -79460,8 +79460,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
-- Incoming relationships: 236
+- Outgoing relationships: 30
+- Incoming relationships: 237
 
 ## `package:msys2:mingw-w64-i686-gcc-libs`
 
@@ -79469,7 +79469,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 20
 - Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-i686-gcc-lto-dump`
@@ -79721,7 +79721,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 14
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-i686-gmp`
@@ -79731,7 +79731,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 12
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-i686-gnutls`
 
@@ -79749,7 +79749,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-i686-gobject-introspection-runtime`
 
@@ -79767,7 +79767,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-i686-graphite2`
 
@@ -79803,7 +79803,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-harfbuzz`
 
@@ -79811,7 +79811,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 15
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-headers`
@@ -79821,7 +79821,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-i686-highway`
 
@@ -79856,7 +79856,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-isl`
@@ -79866,7 +79866,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-itstool`
 
@@ -79937,7 +79937,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-lcms2`
@@ -79973,7 +79973,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-libavif`
@@ -80009,7 +80009,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 10
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-libde265`
@@ -80100,7 +80100,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 24
+- Incoming relationships: 26
 
 ## `package:msys2:mingw-w64-i686-libidn2`
 
@@ -80117,7 +80117,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-i686-libjxl`
@@ -80244,7 +80244,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-libssh2-wincng`
 
@@ -80505,7 +80505,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 25
+- Incoming relationships: 26
 
 ## `package:msys2:mingw-w64-i686-minizip`
 
@@ -80523,7 +80523,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-mpdecimal`
 
@@ -80541,7 +80541,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-i686-mpg123`
 
@@ -80549,7 +80549,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-nasm`
@@ -80559,7 +80559,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 11
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-ncurses`
 
@@ -80568,7 +80568,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 8
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-i686-nettle`
 
@@ -80595,7 +80595,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-nghttp3`
 
@@ -80604,7 +80604,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-ngtcp2`
 
@@ -80612,8 +80612,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 1
+- Outgoing relationships: 6
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-ninja`
 
@@ -80622,7 +80622,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 73
+- Incoming relationships: 76
 
 ## `package:msys2:mingw-w64-i686-nsis`
 
@@ -80649,7 +80649,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-opencore-amr`
 
@@ -80675,7 +80675,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 7
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-openjpeg2`
@@ -80703,7 +80703,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 31
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-i686-opus`
 
@@ -80775,7 +80775,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 34
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-i686-portaudio`
 
@@ -80783,8 +80783,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 5
+- Outgoing relationships: 6
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-i686-python`
 
@@ -80793,7 +80793,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 97
+- Incoming relationships: 98
 
 ## `package:msys2:mingw-w64-i686-python-appdirs`
 
@@ -80910,7 +80910,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-i686-python-execnet`
 
@@ -81252,7 +81252,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 47
+- Incoming relationships: 48
 
 ## `package:msys2:mingw-w64-i686-python-setuptools-scm`
 
@@ -81288,7 +81288,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 6
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-i686-python-sphinx-alabaster-theme`
 
@@ -81459,7 +81459,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-readline`
 
@@ -81531,7 +81531,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 11
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-i686-sdl2_gfx`
 
@@ -81792,7 +81792,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-i686-wineditline`
 
@@ -81810,7 +81810,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-i686-x264`
 
@@ -81827,7 +81827,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-i686-xapian-core`
@@ -81863,7 +81863,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-i686-xxhash`
@@ -81900,7 +81900,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 42
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-i686-zstd`
 
@@ -81909,7 +81909,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 10
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-i686-zvbi`
 
@@ -82007,7 +82007,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 16
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-abiword`
@@ -82098,7 +82098,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 7
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-adobe-source-code-pro-fonts`
 
@@ -82224,7 +82224,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-alure`
 
@@ -82251,7 +82251,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-amgcl`
 
@@ -82278,7 +82278,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 9
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-android-tools`
 
@@ -82340,7 +82340,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-appstream`
@@ -82493,7 +82493,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-arpack64`
@@ -82502,7 +82502,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-arrow`
@@ -82611,7 +82611,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 22
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-asio`
 
@@ -82619,7 +82619,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-asiosdk`
@@ -82629,7 +82629,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-asm-lsp`
 
@@ -83097,7 +83097,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-bcftools`
 
@@ -83169,7 +83169,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-binutils`
 
@@ -83178,7 +83178,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-bitwise`
 
@@ -83268,7 +83268,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 121
+- Incoming relationships: 120
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-boost-libs`
 
@@ -83357,7 +83357,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-brush`
@@ -83439,7 +83439,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 62
+- Incoming relationships: 58
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-bzip3`
 
@@ -83484,7 +83484,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cabextract`
 
@@ -83502,7 +83502,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 135
+- Incoming relationships: 130
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cairomm`
 
@@ -83673,7 +83673,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cas-offinder`
 
@@ -83762,7 +83762,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cddlib`
@@ -83844,7 +83844,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-chafa`
 
@@ -83853,7 +83853,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 8
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-charls`
 
@@ -83951,8 +83951,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
-- Incoming relationships: 87
+- Outgoing relationships: 13
+- Incoming relationships: 77
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-clang-21`
 
@@ -83969,7 +83969,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-clang-libs`
@@ -83978,7 +83978,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-clang-tools-extra`
@@ -83987,8 +83987,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 24
+- Outgoing relationships: 10
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-clblast`
 
@@ -84006,7 +84006,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-clip`
 
@@ -84059,8 +84059,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
-- Incoming relationships: 1071
+- Outgoing relationships: 18
+- Incoming relationships: 1077
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmake-bootstrap`
 
@@ -84069,7 +84069,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmake-cmcldeps`
 
@@ -84077,7 +84077,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmake-docs`
@@ -84086,7 +84086,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmake-gui`
@@ -84095,7 +84095,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cmakelang`
@@ -84203,7 +84203,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cogl`
@@ -84329,7 +84329,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 9
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-compiler-rt-21`
@@ -84537,7 +84537,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-crypto++`
 
@@ -84554,7 +84554,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-csfml`
@@ -84644,7 +84644,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 22
 - Incoming relationships: 109
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-curl-gnutls`
@@ -84653,7 +84653,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-curl-winssl`
@@ -84662,7 +84662,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cusp`
@@ -84708,7 +84708,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 90
+- Incoming relationships: 89
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-czkawka-cli`
 
@@ -84887,7 +84887,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-devil`
@@ -84987,7 +84987,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-directxmath`
 
@@ -85238,8 +85238,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
-- Incoming relationships: 106
+- Outgoing relationships: 14
+- Incoming relationships: 105
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-draco`
 
@@ -85283,7 +85283,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-dtc`
@@ -85337,7 +85337,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-dust`
@@ -85464,7 +85464,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 37
+- Incoming relationships: 38
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-elementary-icon-theme`
 
@@ -85490,7 +85490,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 36
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-elmerfem-mpi`
@@ -85499,7 +85499,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-emacs`
@@ -85508,8 +85508,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
-- Incoming relationships: 7
+- Outgoing relationships: 27
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-emacs-pdf-tools-server`
 
@@ -85734,7 +85734,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 85
+- Incoming relationships: 84
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-extremetuxracer`
 
@@ -85806,7 +85806,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 17
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-fastfetch`
 
@@ -85886,8 +85886,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
-- Incoming relationships: 56
+- Outgoing relationships: 59
+- Incoming relationships: 58
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-ffmpeg-python`
 
@@ -85932,7 +85932,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 40
+- Incoming relationships: 41
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-fgsl`
 
@@ -85995,7 +85995,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-flang-rt`
 
@@ -86138,7 +86138,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-fontconfig`
@@ -86148,7 +86148,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 42
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-fontforge`
 
@@ -86282,8 +86282,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
-- Incoming relationships: 3
+- Outgoing relationships: 10
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-fribidi`
 
@@ -86309,7 +86309,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-frozen`
@@ -86400,7 +86400,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gc`
 
@@ -86426,8 +86426,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
-- Incoming relationships: 2325
+- Outgoing relationships: 30
+- Incoming relationships: 2301
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-ada`
 
@@ -86435,8 +86435,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 39
+- Outgoing relationships: 11
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-fortran`
 
@@ -86445,7 +86445,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 91
+- Incoming relationships: 86
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-libgfortran`
 
@@ -86462,7 +86462,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 20
 - Incoming relationships: 180
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gcc-lto-dump`
@@ -86499,7 +86499,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 57
-- Incoming relationships: 10
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gdb`
 
@@ -86544,7 +86544,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 60
+- Incoming relationships: 61
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gdk-pixbuf2-docs`
 
@@ -86805,7 +86805,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 15
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gimp`
 
@@ -86832,7 +86832,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 73
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-git-archimport`
 
@@ -86903,7 +86903,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-git-p4`
@@ -87030,7 +87030,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-glab`
 
@@ -87119,7 +87119,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 14
 - Incoming relationships: 202
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-glibmm`
@@ -87237,7 +87237,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 88
+- Incoming relationships: 90
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gmsh`
 
@@ -87407,7 +87407,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gnupg`
@@ -87498,7 +87498,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 143
+- Incoming relationships: 135
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gobject-introspection-runtime`
 
@@ -87533,7 +87533,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gojq`
@@ -87570,7 +87570,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 26
+- Incoming relationships: 28
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gpgme`
 
@@ -87578,7 +87578,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 11
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gphoto2`
@@ -87714,7 +87714,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 8
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-graphviz`
 
@@ -87722,7 +87722,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 27
 - Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-graphviz-docs`
@@ -87731,7 +87731,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-grep`
@@ -87920,7 +87920,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 69
+- Outgoing relationships: 74
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gst-plugins-bad`
@@ -87929,7 +87929,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 122
+- Outgoing relationships: 127
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gst-plugins-bad-libs`
@@ -87938,7 +87938,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 73
+- Outgoing relationships: 78
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gst-plugins-base`
@@ -88011,7 +88011,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 24
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gtk-doc`
 
@@ -88020,7 +88020,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 88
+- Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gtk-elementary-theme`
 
@@ -88226,8 +88226,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 18
-- Incoming relationships: 43
+- Outgoing relationships: 15
+- Incoming relationships: 42
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-harfbuzz-cairo`
 
@@ -88235,7 +88235,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-harfbuzz-docs`
@@ -88244,7 +88244,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-harfbuzz-icu`
@@ -88253,7 +88253,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-harfbuzz-utils`
@@ -88262,7 +88262,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 6
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-harper`
@@ -88307,8 +88307,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
-- Incoming relationships: 32
+- Outgoing relationships: 14
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-hdr10plus-tool`
 
@@ -88326,7 +88326,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-heimdall`
 
@@ -88370,7 +88370,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-hexyl`
@@ -88604,7 +88604,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-i2pd`
@@ -88659,7 +88659,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 62
+- Incoming relationships: 57
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-id3lib`
 
@@ -88739,7 +88739,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 7
 - Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-img2pdf`
@@ -88829,7 +88829,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-is_utf8`
@@ -88857,7 +88857,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 16
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-iso-codes`
 
@@ -88883,7 +88883,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
+- Outgoing relationships: 43
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-itstool`
@@ -89064,7 +89064,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-jq-lsp`
 
@@ -89397,7 +89397,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 14
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-kdsingleapplication`
 
@@ -89757,7 +89757,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-knotifications`
 
@@ -90017,7 +90017,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 53
+- Outgoing relationships: 54
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-ladspa-sdk`
@@ -90053,7 +90053,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-lammps`
@@ -90422,7 +90422,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libassuan`
@@ -90566,7 +90566,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libcaca`
@@ -90575,7 +90575,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 10
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libcacard`
@@ -90891,7 +90891,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libelf`
 
@@ -90990,7 +90990,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 28
+- Incoming relationships: 37
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libfido2`
 
@@ -91097,7 +91097,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 30
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgdiplus`
@@ -91251,7 +91251,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgoom2`
 
@@ -91304,7 +91304,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libgsf`
@@ -91422,7 +91422,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 101
+- Incoming relationships: 103
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libicsneo`
 
@@ -91601,8 +91601,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 111
+- Outgoing relationships: 5
+- Incoming relationships: 112
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libjxl`
 
@@ -91637,7 +91637,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libkqueue`
@@ -91674,7 +91674,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-liblastfm`
 
@@ -91890,7 +91890,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 13
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libmodbus`
 
@@ -91916,7 +91916,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libmongoose`
@@ -92187,7 +92187,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 17
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libomemo-c`
 
@@ -92394,7 +92394,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 148
+- Incoming relationships: 150
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libpqxx`
 
@@ -92619,7 +92619,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 28
+- Incoming relationships: 29
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-librsvg-docs`
 
@@ -92655,7 +92655,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libsass`
 
@@ -92781,7 +92781,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libslirp`
 
@@ -92943,7 +92943,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 24
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libssh2-wincng`
 
@@ -92978,7 +92978,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 29
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libsystre`
@@ -93033,7 +93033,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libtiff`
 
@@ -93042,7 +93042,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 93
+- Incoming relationships: 94
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libtiff-docs`
 
@@ -93185,7 +93185,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libusb`
@@ -93275,7 +93275,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 43
+- Outgoing relationships: 42
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libvirt`
@@ -93339,7 +93339,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 29
+- Incoming relationships: 30
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libvpl`
 
@@ -93528,7 +93528,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 144
+- Incoming relationships: 146
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libxml2-docs`
 
@@ -93663,7 +93663,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-live-chart`
 
@@ -93725,8 +93725,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 23
+- Outgoing relationships: 12
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-lld-21`
 
@@ -93761,8 +93761,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 44
+- Outgoing relationships: 11
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-llvm-21`
 
@@ -93779,7 +93779,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 13
 - Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-llvm-openmp`
@@ -93788,7 +93788,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-llvm-tools`
@@ -93797,7 +93797,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-lmdb`
@@ -93897,7 +93897,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 35
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-lua-cjson`
 
@@ -94320,7 +94320,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-maturin`
 
@@ -94401,7 +94401,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mdbook`
 
@@ -94563,7 +94563,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 251
+- Incoming relationships: 248
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-meson-python`
 
@@ -94598,7 +94598,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mgba`
@@ -94769,7 +94769,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mlpack`
@@ -94787,7 +94787,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 43
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mman-win32`
@@ -94814,7 +94814,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mold`
@@ -94896,7 +94896,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 23
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpdecimal`
 
@@ -94914,7 +94914,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpfr`
 
@@ -94923,7 +94923,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 43
+- Incoming relationships: 47
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpg123`
 
@@ -94931,7 +94931,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-mpv`
@@ -94995,7 +94995,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 27
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-msmtp`
 
@@ -95075,7 +95075,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-munt`
@@ -95256,7 +95256,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 35
+- Incoming relationships: 24
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nativefiledialog-extended`
 
@@ -95283,7 +95283,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 28
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-neocmakelsp`
 
@@ -95328,7 +95328,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 13
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-netcdf-cxx`
 
@@ -95409,7 +95409,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nghttp3`
 
@@ -95418,7 +95418,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-ngraph-gtk`
 
@@ -95444,8 +95444,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 2
+- Outgoing relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nicotine+`
 
@@ -95481,7 +95481,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1119
+- Incoming relationships: 1129
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nlohmann-json`
 
@@ -95490,7 +95490,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 28
+- Incoming relationships: 29
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-nlopt`
 
@@ -95831,7 +95831,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-onefetch`
@@ -95876,7 +95876,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
+- Outgoing relationships: 25
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-open62541`
@@ -95904,7 +95904,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 28
+- Incoming relationships: 27
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openapv`
 
@@ -95931,7 +95931,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 59
+- Incoming relationships: 61
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openblas64`
 
@@ -95940,7 +95940,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-opencamlib`
 
@@ -95958,7 +95958,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 11
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-opencascade-doc-overview`
 
@@ -96029,7 +96029,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 19
+- Outgoing relationships: 20
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-opencore-amr`
@@ -96057,7 +96057,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 40
-- Incoming relationships: 15
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openexr`
 
@@ -96101,7 +96101,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 7
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openimagedenoise`
@@ -96182,7 +96182,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 28
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openscenegraph`
@@ -96210,7 +96210,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openssl`
 
@@ -96219,7 +96219,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 210
+- Incoming relationships: 211
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-opensubdiv`
 
@@ -96255,7 +96255,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 24
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openvdb`
 
@@ -96264,7 +96264,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 5
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openvr`
 
@@ -96273,7 +96273,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-openxr-sdk`
 
@@ -96434,7 +96434,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 26
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-osslsigncode`
@@ -96615,7 +96615,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 85
+- Incoming relationships: 86
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pango-docs`
 
@@ -96669,7 +96669,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-parpack`
 
@@ -96677,7 +96677,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-parsec`
@@ -96741,7 +96741,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pdcurses`
 
@@ -96813,7 +96813,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 172
+- Incoming relationships: 175
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-algorithm-diff`
 
@@ -97317,7 +97317,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-html-parser`
 
@@ -97425,7 +97425,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-ipc-run3`
 
@@ -98055,7 +98055,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-win32-shellquote`
 
@@ -98073,7 +98073,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-win32-tieregistry`
 
@@ -98082,7 +98082,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-win32-unicode`
 
@@ -98100,7 +98100,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-win32api-registry`
 
@@ -98109,7 +98109,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-perl-www-robotrules`
 
@@ -98198,7 +98198,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-petsc-build`
@@ -98207,8 +98207,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 0
+- Outgoing relationships: 12
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pg_probackup-16`
 
@@ -98334,7 +98334,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pkcs11-helper`
 
@@ -98361,7 +98361,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 527
+- Incoming relationships: 532
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-planarity`
 
@@ -98405,7 +98405,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 23
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-plutosvg`
@@ -98477,7 +98477,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-podman`
@@ -98594,8 +98594,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 17
+- Outgoing relationships: 6
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-portmidi`
 
@@ -98630,8 +98630,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
-- Incoming relationships: 39
+- Outgoing relationships: 25
+- Incoming relationships: 40
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-postgresql-16`
 
@@ -98649,7 +98649,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-powerpc-apple-macos-binutils`
 
@@ -98702,7 +98702,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 12
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-premake`
@@ -98793,7 +98793,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 11
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-projectchrono`
 
@@ -98865,7 +98865,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pupnp`
 
@@ -98999,7 +98999,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 46
+- Outgoing relationships: 61
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pyside6-tools`
@@ -99008,7 +99008,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
+- Outgoing relationships: 37
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-pystring`
@@ -99027,7 +99027,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 1235
+- Incoming relationships: 1241
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-aafigure`
 
@@ -99477,7 +99477,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-autopxd2`
 
@@ -99602,7 +99602,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-black`
@@ -99747,7 +99747,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1006
+- Incoming relationships: 1002
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-cabarchive`
 
@@ -99990,7 +99990,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 6
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-cloup`
 
@@ -100187,7 +100187,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-cssselect`
@@ -100439,7 +100439,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-docopt`
@@ -100467,7 +100467,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 35
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-docx`
 
@@ -101007,7 +101007,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 10
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-ford`
 
@@ -101357,7 +101357,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-graphviz`
@@ -101636,7 +101636,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-hyperframe`
@@ -101862,7 +101862,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1015
+- Incoming relationships: 1011
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-intervaltree`
 
@@ -101952,7 +101952,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-isodate`
 
@@ -102114,7 +102114,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-json-logger`
 
@@ -102464,7 +102464,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-lark-parser`
@@ -102716,7 +102716,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-manimpango`
@@ -103239,7 +103239,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 132
+- Incoming relationships: 131
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-numpydoc`
 
@@ -103310,7 +103310,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 30
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-opencamlib`
@@ -104679,7 +104679,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-pydoe2`
 
@@ -104966,7 +104966,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 15
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-pymupdf`
@@ -105137,7 +105137,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 42
+- Outgoing relationships: 41
 - Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-pyqt5-3d`
@@ -105155,7 +105155,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 42
 - Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-pyqt6-sip`
@@ -106290,7 +106290,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 809
+- Incoming relationships: 801
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-setuptools-git`
 
@@ -106497,7 +106497,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 26
-- Incoming relationships: 76
+- Incoming relationships: 71
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-sphinx-alabaster-theme`
 
@@ -107217,7 +107217,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-trio-websocket`
 
@@ -107514,7 +107514,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 16
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-python-virtualenv-clone`
 
@@ -108035,7 +108035,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qgpgme-qt6`
@@ -108044,7 +108044,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qhttpengine`
@@ -108179,7 +108179,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 39
+- Outgoing relationships: 38
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt-creator-devel`
@@ -108188,7 +108188,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
+- Outgoing relationships: 21
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt-creator-docs`
@@ -108197,7 +108197,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt-installer-framework`
@@ -108252,7 +108252,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 45
-- Incoming relationships: 102
+- Incoming relationships: 98
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt5-base-debug`
 
@@ -108720,7 +108720,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 22
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt5-svg-debug`
 
@@ -108909,7 +108909,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 31
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-5compat-debug`
 
@@ -108945,7 +108945,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 49
-- Incoming relationships: 305
+- Incoming relationships: 297
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-base-debug`
 
@@ -109017,7 +109017,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 160
+- Incoming relationships: 162
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-declarative-debug`
 
@@ -109044,7 +109044,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-graphs-debug`
 
@@ -109080,7 +109080,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-httpserver-debug`
 
@@ -109125,7 +109125,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 4
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-location-debug`
 
@@ -109178,8 +109178,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
-- Incoming relationships: 40
+- Outgoing relationships: 19
+- Incoming relationships: 43
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-multimedia-debug`
 
@@ -109187,7 +109187,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-multimedia-ffmpeg`
@@ -109196,7 +109196,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 15
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-multimedia-wmf`
@@ -109205,7 +109205,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-networkauth`
@@ -109215,7 +109215,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-networkauth-debug`
 
@@ -109233,7 +109233,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 4
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-pdf-debug`
 
@@ -109251,7 +109251,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 11
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-positioning-debug`
 
@@ -109269,7 +109269,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 21
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-quick3d-debug`
 
@@ -109341,7 +109341,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-remoteobjects-debug`
 
@@ -109359,7 +109359,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 7
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-scxml-debug`
 
@@ -109377,7 +109377,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-sensors-debug`
 
@@ -109395,7 +109395,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-serialbus-debug`
 
@@ -109413,7 +109413,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 18
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-serialport-debug`
 
@@ -109431,7 +109431,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 33
+- Incoming relationships: 34
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-shadertools-debug`
 
@@ -109449,7 +109449,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 6
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-speech-debug`
 
@@ -109466,7 +109466,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 26
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-svg`
@@ -109476,7 +109476,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 77
+- Incoming relationships: 81
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-svg-debug`
 
@@ -109494,7 +109494,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 144
+- Incoming relationships: 143
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-tools-debug`
 
@@ -109539,7 +109539,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-webchannel-debug`
 
@@ -109557,7 +109557,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 14
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-qt6-websockets-debug`
 
@@ -109602,7 +109602,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 21
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-quantlib`
 
@@ -109637,7 +109637,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-quazip`
@@ -109773,7 +109773,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-range-v3`
 
@@ -109809,7 +109809,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 11
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-raptor`
 
@@ -109835,7 +109835,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-raylib`
@@ -110259,7 +110259,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-rtl-sdr`
 
@@ -110304,7 +110304,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-ruby`
 
@@ -110313,7 +110313,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 20
+- Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-ruby-dbus`
 
@@ -110411,8 +110411,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
-- Incoming relationships: 169
+- Outgoing relationships: 26
+- Incoming relationships: 168
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-rust-analyzer`
 
@@ -110447,7 +110447,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 18
+- Outgoing relationships: 20
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-rust-wasm`
@@ -110474,7 +110474,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-rustlings`
@@ -110628,7 +110628,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-scc`
 
@@ -110717,8 +110717,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
-- Incoming relationships: 3
+- Outgoing relationships: 9
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-scotch-metis`
 
@@ -110726,7 +110726,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-scotch64`
@@ -110735,7 +110735,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-scotch64-metis`
@@ -110744,7 +110744,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-scour`
@@ -110817,7 +110817,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sdl12-compat`
 
@@ -110835,7 +110835,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 44
+- Incoming relationships: 45
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sdl2_gfx`
 
@@ -110997,7 +110997,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sed`
 
@@ -111114,7 +111114,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-shfmt`
 
@@ -111140,7 +111140,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 39
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-shim_executable`
@@ -111302,7 +111302,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-slim-simulator`
@@ -111510,7 +111510,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 24
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sox-ng`
 
@@ -111707,7 +111707,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-sqlite-orm`
@@ -111806,7 +111806,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-starship`
@@ -111923,7 +111923,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-supercollider`
@@ -112032,7 +112032,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-swi-prolog-archive`
 
@@ -112185,7 +112185,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 37
+- Incoming relationships: 32
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-symmetrica`
 
@@ -113552,7 +113552,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 40
+- Outgoing relationships: 52
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-texlive-core`
@@ -114030,7 +114030,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-tkimg`
 
@@ -114299,8 +114299,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 1
+- Outgoing relationships: 12
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-trippy`
 
@@ -114336,7 +114336,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-tslib`
 
@@ -115029,7 +115029,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-uchardet`
 
@@ -115155,7 +115155,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 21
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-unordered_dense`
 
@@ -115226,7 +115226,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-usrsctp`
@@ -115245,7 +115245,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 10
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-uthash`
 
@@ -115425,7 +115425,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-vigra`
 
@@ -115524,7 +115524,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-vo-amrwbenc`
 
@@ -115533,7 +115533,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-volk`
 
@@ -115649,7 +115649,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
+- Outgoing relationships: 92
 - Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-vulkan-headers`
@@ -115659,7 +115659,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 46
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-vulkan-loader`
 
@@ -115776,7 +115776,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-wasi-compiler-rt`
 
@@ -115812,7 +115812,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-wasm-component-ld`
 
@@ -115938,7 +115938,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-webview`
 
@@ -116046,7 +116046,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-wined3d`
 
@@ -116091,7 +116091,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 15
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-winpthreads-stub`
 
@@ -116100,7 +116100,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-winpty`
 
@@ -116423,8 +116423,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 5
+- Outgoing relationships: 5
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-xa65`
 
@@ -116541,7 +116541,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-xmlsec`
 
@@ -116612,7 +116612,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-xxhash`
@@ -116631,7 +116631,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 61
+- Incoming relationships: 59
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-yajl`
 
@@ -116766,7 +116766,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 7
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zbar`
 
@@ -116775,7 +116775,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zeal`
 
@@ -116792,7 +116792,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 23
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zeromq`
@@ -116856,7 +116856,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 351
+- Incoming relationships: 358
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-zlib-ng`
 
@@ -117234,7 +117234,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-alure`
 
@@ -117261,7 +117261,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-amgcl`
 
@@ -117341,7 +117341,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-x86_64-appstream`
@@ -117458,7 +117458,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-arpack64`
@@ -117467,7 +117467,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-arrow`
@@ -117567,7 +117567,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 19
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-x86_64-asio`
 
@@ -117575,7 +117575,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-asiosdk`
@@ -117585,7 +117585,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-asmjit`
 
@@ -117900,7 +117900,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-bcftools`
 
@@ -117963,7 +117963,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-bitwise`
 
@@ -118088,7 +118088,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-bscan-spi-bitstreams`
@@ -118161,7 +118161,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 53
+- Incoming relationships: 49
 
 ## `package:msys2:mingw-w64-x86_64-bzip3`
 
@@ -118188,7 +118188,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 11
+- Incoming relationships: 12
 
 ## `package:msys2:mingw-w64-x86_64-cairo`
 
@@ -118197,7 +118197,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 108
+- Incoming relationships: 103
 
 ## `package:msys2:mingw-w64-x86_64-cairomm`
 
@@ -118385,7 +118385,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-cddlib`
@@ -118467,7 +118467,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-chafa`
 
@@ -118476,7 +118476,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 6
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-charls`
 
@@ -118565,8 +118565,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
-- Incoming relationships: 71
+- Outgoing relationships: 13
+- Incoming relationships: 62
 
 ## `package:msys2:mingw-w64-x86_64-clang-21`
 
@@ -118583,7 +118583,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-clang-libs`
@@ -118592,7 +118592,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-x86_64-clang-tools-extra`
@@ -118601,8 +118601,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 17
+- Outgoing relationships: 10
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-x86_64-clblast`
 
@@ -118620,7 +118620,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 0
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-clip`
 
@@ -118664,8 +118664,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
-- Incoming relationships: 831
+- Outgoing relationships: 18
+- Incoming relationships: 838
 
 ## `package:msys2:mingw-w64-x86_64-cmake-bootstrap`
 
@@ -118674,7 +118674,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-cmake-cmcldeps`
 
@@ -118682,7 +118682,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 3
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-cmake-docs`
@@ -118691,7 +118691,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-cmake-gui`
@@ -118700,7 +118700,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-cmakelang`
@@ -118808,7 +118808,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 9
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-compiler-rt-21`
@@ -118962,7 +118962,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-x86_64-crypto++`
 
@@ -118979,7 +118979,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-csfml`
@@ -119051,7 +119051,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 22
 - Incoming relationships: 83
 
 ## `package:msys2:mingw-w64-x86_64-curl-gnutls`
@@ -119060,7 +119060,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-curl-winssl`
@@ -119069,7 +119069,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-cusp`
@@ -119115,7 +119115,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 59
+- Incoming relationships: 58
 
 ## `package:msys2:mingw-w64-x86_64-d-feet`
 
@@ -119231,7 +119231,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-devil`
@@ -119295,7 +119295,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 6
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-directxmath`
 
@@ -119537,8 +119537,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
-- Incoming relationships: 96
+- Outgoing relationships: 14
+- Incoming relationships: 95
 
 ## `package:msys2:mingw-w64-x86_64-draco`
 
@@ -119573,7 +119573,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-dtc`
@@ -119618,7 +119618,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-dwarfstack`
@@ -119727,7 +119727,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 19
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-x86_64-elementary-icon-theme`
 
@@ -119744,8 +119744,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
-- Incoming relationships: 7
+- Outgoing relationships: 27
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-emacs-pdf-tools-server`
 
@@ -119898,7 +119898,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-extra-cmake-modules`
 
@@ -119907,7 +119907,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 6
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-extremetuxracer`
 
@@ -119970,7 +119970,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-x86_64-fastgltf`
 
@@ -120032,8 +120032,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 60
-- Incoming relationships: 38
+- Outgoing relationships: 59
+- Incoming relationships: 41
 
 ## `package:msys2:mingw-w64-x86_64-ffmpeg-python`
 
@@ -120078,7 +120078,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 26
+- Incoming relationships: 27
 
 ## `package:msys2:mingw-w64-x86_64-fgsl`
 
@@ -120257,7 +120257,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-fontconfig`
@@ -120267,7 +120267,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 38
+- Incoming relationships: 39
 
 ## `package:msys2:mingw-w64-x86_64-fontforge`
 
@@ -120383,8 +120383,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
-- Incoming relationships: 2
+- Outgoing relationships: 10
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-fribidi`
 
@@ -120410,7 +120410,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-fswatch`
@@ -120474,7 +120474,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-gc`
 
@@ -120500,8 +120500,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
-- Incoming relationships: 1967
+- Outgoing relationships: 30
+- Incoming relationships: 1944
 
 ## `package:msys2:mingw-w64-x86_64-gcc-ada`
 
@@ -120509,8 +120509,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 36
+- Outgoing relationships: 11
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-x86_64-gcc-fortran`
 
@@ -120519,7 +120519,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 56
+- Incoming relationships: 52
 
 ## `package:msys2:mingw-w64-x86_64-gcc-libgfortran`
 
@@ -120536,7 +120536,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 20
 - Incoming relationships: 162
 
 ## `package:msys2:mingw-w64-x86_64-gcc-lto-dump`
@@ -120564,7 +120564,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 57
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-gdb`
 
@@ -120609,7 +120609,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 46
+- Incoming relationships: 47
 
 ## `package:msys2:mingw-w64-x86_64-gdk-pixbuf2-docs`
 
@@ -120834,7 +120834,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 14
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-x86_64-ginkgo`
 
@@ -120852,7 +120852,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 51
+- Incoming relationships: 61
 
 ## `package:msys2:mingw-w64-x86_64-git-archimport`
 
@@ -120923,7 +120923,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-git-p4`
@@ -121023,7 +121023,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-glab`
 
@@ -121112,7 +121112,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 14
 - Incoming relationships: 181
 
 ## `package:msys2:mingw-w64-x86_64-glibmm`
@@ -121230,7 +121230,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 55
+- Incoming relationships: 57
 
 ## `package:msys2:mingw-w64-x86_64-gmsh`
 
@@ -121464,7 +121464,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 133
+- Incoming relationships: 127
 
 ## `package:msys2:mingw-w64-x86_64-gobject-introspection-runtime`
 
@@ -121518,7 +121518,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 21
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-x86_64-gpgme`
 
@@ -121526,7 +121526,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 11
 - Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-gphoto2`
@@ -121653,7 +121653,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-graphviz`
 
@@ -121661,7 +121661,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 27
 - Incoming relationships: 30
 
 ## `package:msys2:mingw-w64-x86_64-graphviz-docs`
@@ -121670,7 +121670,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-grep`
@@ -121850,7 +121850,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 69
+- Outgoing relationships: 74
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-gst-plugins-bad`
@@ -121859,7 +121859,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 122
+- Outgoing relationships: 127
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-gst-plugins-bad-libs`
@@ -121868,7 +121868,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 73
+- Outgoing relationships: 78
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-gst-plugins-base`
@@ -121941,7 +121941,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 17
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-x86_64-gtk-doc`
 
@@ -121950,7 +121950,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 80
+- Incoming relationships: 75
 
 ## `package:msys2:mingw-w64-x86_64-gtk-elementary-theme`
 
@@ -122129,8 +122129,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 18
-- Incoming relationships: 37
+- Outgoing relationships: 15
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-x86_64-harfbuzz-cairo`
 
@@ -122138,7 +122138,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-harfbuzz-docs`
@@ -122147,7 +122147,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-harfbuzz-icu`
@@ -122156,7 +122156,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-harfbuzz-utils`
@@ -122165,7 +122165,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 6
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-harper`
@@ -122201,8 +122201,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
-- Incoming relationships: 22
+- Outgoing relationships: 14
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-x86_64-headers`
 
@@ -122211,7 +122211,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-heimdall`
 
@@ -122255,7 +122255,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-hicolor-icon-theme`
@@ -122453,7 +122453,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-i2pd`
@@ -122508,7 +122508,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 44
+- Incoming relationships: 39
 
 ## `package:msys2:mingw-w64-x86_64-id3lib`
 
@@ -122579,7 +122579,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 7
 - Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-x86_64-img2pdf`
@@ -122669,7 +122669,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-isa-l`
@@ -122688,7 +122688,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-x86_64-iso-codes`
 
@@ -122714,7 +122714,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 43
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-itstool`
@@ -123047,7 +123047,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-langkit`
@@ -123389,7 +123389,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-libassuan`
@@ -123524,7 +123524,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-x86_64-libcaca`
@@ -123533,7 +123533,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 10
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-libcacard`
@@ -123831,7 +123831,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-libelf`
 
@@ -123894,7 +123894,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 27
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-x86_64-libfido2`
 
@@ -123983,7 +123983,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 31
+- Outgoing relationships: 30
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-libgdiplus`
@@ -124137,7 +124137,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-libgoom2`
 
@@ -124281,7 +124281,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 89
+- Incoming relationships: 91
 
 ## `package:msys2:mingw-w64-x86_64-libicsneo`
 
@@ -124442,8 +124442,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 87
+- Outgoing relationships: 5
+- Incoming relationships: 88
 
 ## `package:msys2:mingw-w64-x86_64-libjxl`
 
@@ -124460,7 +124460,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-libkqueue`
@@ -124488,7 +124488,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-liblastfm`
 
@@ -124587,7 +124587,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-x86_64-libmatroska`
 
@@ -124695,7 +124695,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 12
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-x86_64-libmodbus`
 
@@ -124721,7 +124721,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-libmongoose`
@@ -124947,7 +124947,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 17
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-x86_64-libomemo-c`
 
@@ -125136,7 +125136,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 119
+- Incoming relationships: 121
 
 ## `package:msys2:mingw-w64-x86_64-libpqxx`
 
@@ -125325,7 +125325,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 24
+- Incoming relationships: 25
 
 ## `package:msys2:mingw-w64-x86_64-librsvg-docs`
 
@@ -125361,7 +125361,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-libsass`
 
@@ -125649,7 +125649,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-x86_64-libssh2-wincng`
 
@@ -125721,7 +125721,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-x86_64-libtiff`
 
@@ -125730,7 +125730,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 72
+- Incoming relationships: 73
 
 ## `package:msys2:mingw-w64-x86_64-libtiff-docs`
 
@@ -125873,7 +125873,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-x86_64-libusb`
@@ -125963,7 +125963,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 43
+- Outgoing relationships: 42
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-libvirt`
@@ -126027,7 +126027,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 27
+- Incoming relationships: 28
 
 ## `package:msys2:mingw-w64-x86_64-libvpl`
 
@@ -126189,7 +126189,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 114
+- Incoming relationships: 116
 
 ## `package:msys2:mingw-w64-x86_64-libxml2-docs`
 
@@ -126288,7 +126288,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-live-chart`
 
@@ -126332,8 +126332,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 14
+- Outgoing relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-x86_64-lld-21`
 
@@ -126368,8 +126368,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 36
+- Outgoing relationships: 11
+- Incoming relationships: 35
 
 ## `package:msys2:mingw-w64-x86_64-llvm-21`
 
@@ -126386,7 +126386,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 13
 - Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-x86_64-llvm-openmp`
@@ -126404,7 +126404,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 10
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-lmdb`
@@ -126459,7 +126459,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 35
+- Incoming relationships: 33
 
 ## `package:msys2:mingw-w64-x86_64-lua-cjson`
 
@@ -126855,7 +126855,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-maturin`
 
@@ -126918,7 +126918,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 7
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-x86_64-mdbook`
 
@@ -127062,7 +127062,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 239
+- Incoming relationships: 236
 
 ## `package:msys2:mingw-w64-x86_64-meson-python`
 
@@ -127097,7 +127097,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-mgba`
@@ -127241,7 +127241,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 6
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-mlpack`
@@ -127259,7 +127259,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 43
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-mman-win32`
@@ -127277,7 +127277,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-mold`
@@ -127332,7 +127332,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-x86_64-mpdecimal`
 
@@ -127350,7 +127350,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 18
+- Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-x86_64-mpg123`
 
@@ -127358,7 +127358,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-x86_64-mpv`
@@ -127413,7 +127413,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 22
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-msmtp`
 
@@ -127466,7 +127466,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-munt`
@@ -127629,7 +127629,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 25
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-x86_64-nauty`
 
@@ -127647,7 +127647,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 26
+- Incoming relationships: 20
 
 ## `package:msys2:mingw-w64-x86_64-neocmakelsp`
 
@@ -127674,7 +127674,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 19
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:mingw-w64-x86_64-netcdf-cxx`
 
@@ -127755,7 +127755,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-nghttp3`
 
@@ -127764,7 +127764,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-ngraph-gtk`
 
@@ -127790,8 +127790,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
-- Incoming relationships: 2
+- Outgoing relationships: 6
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-nim`
 
@@ -127818,7 +127818,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 898
+- Incoming relationships: 908
 
 ## `package:msys2:mingw-w64-x86_64-nlohmann-json`
 
@@ -128114,7 +128114,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-onigmo`
@@ -128151,7 +128151,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 25
+- Incoming relationships: 24
 
 ## `package:msys2:mingw-w64-x86_64-openapv`
 
@@ -128169,7 +128169,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 38
+- Incoming relationships: 40
 
 ## `package:msys2:mingw-w64-x86_64-openblas64`
 
@@ -128178,7 +128178,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-opencamlib`
 
@@ -128196,7 +128196,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 4
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-x86_64-opencascade-doc-overview`
 
@@ -128267,7 +128267,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 19
+- Outgoing relationships: 20
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-opencore-amr`
@@ -128295,7 +128295,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 40
-- Incoming relationships: 14
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-x86_64-openexr`
 
@@ -128339,7 +128339,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 7
 - Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-openimagedenoise`
@@ -128420,7 +128420,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 28
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-openscenegraph`
@@ -128448,7 +128448,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 3
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-openssl`
 
@@ -128457,7 +128457,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 184
+- Incoming relationships: 185
 
 ## `package:msys2:mingw-w64-x86_64-opensubdiv`
 
@@ -128484,7 +128484,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 24
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-openvdb`
 
@@ -128493,7 +128493,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-openvr`
 
@@ -128502,7 +128502,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 7
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-openxr-sdk`
 
@@ -128645,7 +128645,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 27
+- Outgoing relationships: 26
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-osslsigncode`
@@ -128682,7 +128682,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 15
-- Incoming relationships: 74
+- Incoming relationships: 75
 
 ## `package:msys2:mingw-w64-x86_64-pango-docs`
 
@@ -128718,7 +128718,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-parpack`
 
@@ -128726,7 +128726,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 5
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-parsec`
@@ -128790,7 +128790,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 23
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-pdcurses`
 
@@ -128844,7 +128844,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 30
+- Incoming relationships: 31
 
 ## `package:msys2:mingw-w64-x86_64-perl-digest-sha`
 
@@ -128978,7 +128978,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-petsc-build`
@@ -128987,8 +128987,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 0
+- Outgoing relationships: 12
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-pg_probackup-16`
 
@@ -129114,7 +129114,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 447
+- Incoming relationships: 452
 
 ## `package:msys2:mingw-w64-x86_64-plfit`
 
@@ -129131,7 +129131,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 23
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-plutosvg`
@@ -129194,7 +129194,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 14
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-podman`
@@ -129311,8 +129311,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
-- Incoming relationships: 15
+- Outgoing relationships: 6
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-x86_64-portmidi`
 
@@ -129347,8 +129347,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
-- Incoming relationships: 34
+- Outgoing relationships: 25
+- Incoming relationships: 35
 
 ## `package:msys2:mingw-w64-x86_64-postgresql-16`
 
@@ -129392,7 +129392,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 12
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-premake`
@@ -129438,7 +129438,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 9
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-x86_64-projectchrono`
 
@@ -129510,7 +129510,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 4
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-pupnp`
 
@@ -129626,7 +129626,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 43
+- Outgoing relationships: 59
 - Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-pyside6-tools`
@@ -129635,7 +129635,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 37
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-pystring`
@@ -129654,7 +129654,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 1103
+- Incoming relationships: 1107
 
 ## `package:msys2:mingw-w64-x86_64-python-aafigure`
 
@@ -130086,7 +130086,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-autopxd2`
 
@@ -130193,7 +130193,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-black`
@@ -130338,7 +130338,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 931
+- Incoming relationships: 927
 
 ## `package:msys2:mingw-w64-x86_64-python-cabarchive`
 
@@ -130554,7 +130554,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 6
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-python-cloup`
 
@@ -130742,7 +130742,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-x86_64-python-cssselect`
@@ -130994,7 +130994,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 12
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-python-docopt`
@@ -131022,7 +131022,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 35
+- Incoming relationships: 36
 
 ## `package:msys2:mingw-w64-x86_64-python-docx`
 
@@ -131544,7 +131544,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 17
-- Incoming relationships: 10
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-x86_64-python-ford`
 
@@ -131885,7 +131885,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-graphviz`
@@ -132155,7 +132155,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 13
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-hyperframe`
@@ -132381,7 +132381,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 939
+- Incoming relationships: 935
 
 ## `package:msys2:mingw-w64-x86_64-python-intervaltree`
 
@@ -132471,7 +132471,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-python-isodate`
 
@@ -132633,7 +132633,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-python-json-logger`
 
@@ -132956,7 +132956,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
+- Outgoing relationships: 22
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-lark-parser`
@@ -133208,7 +133208,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-python-manimpango`
@@ -133722,7 +133722,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 103
+- Incoming relationships: 102
 
 ## `package:msys2:mingw-w64-x86_64-python-numpydoc`
 
@@ -134802,7 +134802,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-pydoe2`
 
@@ -135080,7 +135080,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 15
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-python-pymupdf`
@@ -135242,7 +135242,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 42
+- Outgoing relationships: 41
 - Incoming relationships: 17
 
 ## `package:msys2:mingw-w64-x86_64-python-pyqt5-3d`
@@ -135260,7 +135260,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 29
+- Outgoing relationships: 41
 - Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-python-pyqt6-sip`
@@ -136350,7 +136350,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 20
-- Incoming relationships: 741
+- Incoming relationships: 733
 
 ## `package:msys2:mingw-w64-x86_64-python-setuptools-git`
 
@@ -136557,7 +136557,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 25
-- Incoming relationships: 75
+- Incoming relationships: 70
 
 ## `package:msys2:mingw-w64-x86_64-python-sphinx-alabaster-theme`
 
@@ -137268,7 +137268,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 3
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-python-trio-websocket`
 
@@ -137556,7 +137556,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 16
+- Incoming relationships: 14
 
 ## `package:msys2:mingw-w64-x86_64-python-virtualenv-clone`
 
@@ -138041,7 +138041,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-qgpgme-qt6`
@@ -138050,7 +138050,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
+- Outgoing relationships: 4
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-qhttpengine`
@@ -138158,7 +138158,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 39
+- Outgoing relationships: 38
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-qt-creator-devel`
@@ -138167,7 +138167,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 22
+- Outgoing relationships: 21
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-qt-creator-docs`
@@ -138176,7 +138176,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 21
+- Outgoing relationships: 20
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-qt-installer-framework`
@@ -138231,7 +138231,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 45
-- Incoming relationships: 93
+- Incoming relationships: 89
 
 ## `package:msys2:mingw-w64-x86_64-qt5-base-debug`
 
@@ -138699,7 +138699,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 22
+- Incoming relationships: 23
 
 ## `package:msys2:mingw-w64-x86_64-qt5-svg-debug`
 
@@ -138888,7 +138888,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 21
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-x86_64-qt6-5compat-debug`
 
@@ -138924,7 +138924,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 49
-- Incoming relationships: 180
+- Incoming relationships: 172
 
 ## `package:msys2:mingw-w64-x86_64-qt6-base-debug`
 
@@ -138996,7 +138996,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 95
+- Incoming relationships: 97
 
 ## `package:msys2:mingw-w64-x86_64-qt6-declarative-debug`
 
@@ -139041,7 +139041,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-qt6-httpserver-debug`
 
@@ -139086,7 +139086,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-qt6-location-debug`
 
@@ -139121,8 +139121,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
-- Incoming relationships: 31
+- Outgoing relationships: 19
+- Incoming relationships: 34
 
 ## `package:msys2:mingw-w64-x86_64-qt6-multimedia-debug`
 
@@ -139130,7 +139130,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-qt6-multimedia-ffmpeg`
@@ -139139,7 +139139,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 16
+- Outgoing relationships: 15
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-qt6-multimedia-wmf`
@@ -139148,7 +139148,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 14
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-qt6-networkauth`
@@ -139158,7 +139158,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-qt6-networkauth-debug`
 
@@ -139176,7 +139176,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 7
+- Incoming relationships: 11
 
 ## `package:msys2:mingw-w64-x86_64-qt6-positioning-debug`
 
@@ -139194,7 +139194,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 18
+- Incoming relationships: 22
 
 ## `package:msys2:mingw-w64-x86_64-qt6-quick3d-debug`
 
@@ -139266,7 +139266,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-qt6-remoteobjects-debug`
 
@@ -139284,7 +139284,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 5
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-qt6-scxml-debug`
 
@@ -139302,7 +139302,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-qt6-sensors-debug`
 
@@ -139320,7 +139320,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `package:msys2:mingw-w64-x86_64-qt6-serialbus-debug`
 
@@ -139338,7 +139338,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 14
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-x86_64-qt6-serialport-debug`
 
@@ -139356,7 +139356,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 30
+- Incoming relationships: 31
 
 ## `package:msys2:mingw-w64-x86_64-qt6-shadertools-debug`
 
@@ -139374,7 +139374,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-qt6-speech-debug`
 
@@ -139391,7 +139391,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 30
+- Outgoing relationships: 26
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-qt6-svg`
@@ -139401,7 +139401,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 52
+- Incoming relationships: 56
 
 ## `package:msys2:mingw-w64-x86_64-qt6-svg-debug`
 
@@ -139419,7 +139419,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 18
-- Incoming relationships: 59
+- Incoming relationships: 58
 
 ## `package:msys2:mingw-w64-x86_64-qt6-tools-debug`
 
@@ -139464,7 +139464,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 3
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-qt6-webchannel-debug`
 
@@ -139482,7 +139482,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 14
+- Incoming relationships: 18
 
 ## `package:msys2:mingw-w64-x86_64-qt6-websockets-debug`
 
@@ -139527,7 +139527,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 21
-- Incoming relationships: 5
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-quantlib`
 
@@ -139553,7 +139553,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 12
+- Outgoing relationships: 11
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-quazip`
@@ -139662,7 +139662,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-range-v3`
 
@@ -139689,7 +139689,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 10
+- Incoming relationships: 9
 
 ## `package:msys2:mingw-w64-x86_64-rav1e`
 
@@ -139697,7 +139697,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
+- Outgoing relationships: 5
 - Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-raylib`
@@ -139968,7 +139968,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-rtl-sdr`
 
@@ -140013,7 +140013,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-ruby`
 
@@ -140022,7 +140022,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 14
-- Incoming relationships: 18
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-x86_64-ruby-dbus`
 
@@ -140120,8 +140120,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 24
-- Incoming relationships: 59
+- Outgoing relationships: 26
+- Incoming relationships: 57
 
 ## `package:msys2:mingw-w64-x86_64-rust-analyzer`
 
@@ -140147,7 +140147,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 18
+- Outgoing relationships: 20
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-rustup`
@@ -140238,7 +140238,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 2
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-scc`
 
@@ -140318,8 +140318,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
-- Incoming relationships: 3
+- Outgoing relationships: 9
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-scotch-metis`
 
@@ -140327,7 +140327,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-scotch64`
@@ -140336,7 +140336,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 11
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-scotch64-metis`
@@ -140345,7 +140345,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 9
+- Outgoing relationships: 7
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-scour`
@@ -140400,7 +140400,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `package:msys2:mingw-w64-x86_64-sdl12-compat`
 
@@ -140418,7 +140418,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 38
+- Incoming relationships: 39
 
 ## `package:msys2:mingw-w64-x86_64-sdl2_gfx`
 
@@ -140571,7 +140571,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-sed`
 
@@ -140696,7 +140696,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 23
+- Outgoing relationships: 39
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-shim_executable`
@@ -140831,7 +140831,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 11
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-slim-simulator`
@@ -141021,7 +141021,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 24
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `package:msys2:mingw-w64-x86_64-sox-ng`
 
@@ -141209,7 +141209,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 2
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-sqlite-orm`
@@ -141228,7 +141228,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 52
+- Incoming relationships: 53
 
 ## `package:msys2:mingw-w64-x86_64-sqlite3mc`
 
@@ -141308,7 +141308,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 17
+- Outgoing relationships: 12
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-stb`
@@ -141398,7 +141398,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 9
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-superlu`
@@ -141444,7 +141444,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 4
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-swi-prolog-archive`
 
@@ -141597,7 +141597,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 32
+- Incoming relationships: 27
 
 ## `package:msys2:mingw-w64-x86_64-symmetrica`
 
@@ -143046,7 +143046,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 18
+- Incoming relationships: 19
 
 ## `package:msys2:mingw-w64-x86_64-tkimg`
 
@@ -143234,8 +143234,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 13
-- Incoming relationships: 1
+- Outgoing relationships: 12
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-triton`
 
@@ -143388,7 +143388,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-uchardet`
 
@@ -143505,7 +143505,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 19
+- Incoming relationships: 21
 
 ## `package:msys2:mingw-w64-x86_64-unordered_dense`
 
@@ -143576,7 +143576,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-usrsctp`
@@ -143595,7 +143595,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-uthash`
 
@@ -143712,7 +143712,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-vigra`
 
@@ -143793,7 +143793,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-vo-amrwbenc`
 
@@ -143802,7 +143802,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 3
+- Incoming relationships: 6
 
 ## `package:msys2:mingw-w64-x86_64-volk`
 
@@ -143918,7 +143918,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 55
+- Outgoing relationships: 88
 - Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-vulkan-headers`
@@ -143928,7 +143928,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 41
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-x86_64-vulkan-loader`
 
@@ -144072,7 +144072,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-wget`
 
@@ -144126,7 +144126,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `package:msys2:mingw-w64-x86_64-wined3d`
 
@@ -144171,7 +144171,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 9
-- Incoming relationships: 12
+- Incoming relationships: 15
 
 ## `package:msys2:mingw-w64-x86_64-winpthreads-stub`
 
@@ -144180,7 +144180,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 0
 
 ## `package:msys2:mingw-w64-x86_64-winpty`
 
@@ -144395,8 +144395,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 6
-- Incoming relationships: 4
+- Outgoing relationships: 5
+- Incoming relationships: 7
 
 ## `package:msys2:mingw-w64-x86_64-xa65`
 
@@ -144575,7 +144575,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-x86_64-xxhash`
@@ -144594,7 +144594,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 7
-- Incoming relationships: 49
+- Incoming relationships: 47
 
 ## `package:msys2:mingw-w64-x86_64-yajl`
 
@@ -144720,7 +144720,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 7
+- Incoming relationships: 16
 
 ## `package:msys2:mingw-w64-x86_64-zbar`
 
@@ -144729,7 +144729,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 1
+- Incoming relationships: 4
 
 ## `package:msys2:mingw-w64-x86_64-zeal`
 
@@ -144792,7 +144792,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 289
+- Incoming relationships: 294
 
 ## `package:msys2:mingw-w64-x86_64-zlib-ng`
 
@@ -145458,7 +145458,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 28
+- Incoming relationships: 20
 
 ## `package:msys2:patchutils`
 
@@ -146790,7 +146790,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 14
+- Incoming relationships: 19
 
 ## `package:msys2:popt`
 
@@ -147698,8 +147698,8 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 26
-- Incoming relationships: 11
+- Outgoing relationships: 25
+- Incoming relationships: 10
 
 ## `package:msys2:scons`
 
@@ -147888,7 +147888,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 6
+- Incoming relationships: 5
 
 ## `package:msys2:tcl-devel`
 
@@ -147933,7 +147933,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 33
+- Incoming relationships: 32
 
 ## `package:msys2:texinfo-tex`
 
@@ -148346,7 +148346,7 @@
 - Kind: `package`
 - Status: `verified`
 - Evidence: evidence:catalog:current
-- Outgoing relationships: 20
+- Outgoing relationships: 19
 - Incoming relationships: 0
 
 ## `package:msys2:zsh`

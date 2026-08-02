@@ -56,6 +56,91 @@ class ParserTests(unittest.TestCase):
         self.assertEqual(parsed["variables"]["_good"], "plain")
 
 
+class ArrayParsingTests(unittest.TestCase):
+    """Four defects that between them dropped 2,033 declarations."""
+
+    def parse(self, text):
+        path = Path(self.enterContext(__import__("tempfile").TemporaryDirectory()))
+        recipe = path / "PKGBUILD"
+        recipe.write_text(text, encoding="utf-8")
+        return deep_inventory.parse_pkgbuild(recipe)
+
+    def test_elements_after_a_command_substitution_survive(self):
+        """The worst of the four: a non-greedy scan to the first `)` truncated
+        the array, silently losing every element after it."""
+        parsed = self.parse(
+            'makedepends=(a b $([[ ${CARCH} == aarch64 ]] || echo c) d e)\n'
+        )
+        self.assertEqual(parsed["makedepends"], ["a", "b", "d", "e"])
+
+    def test_the_conditional_itself_is_dropped_and_counted(self):
+        """Its dependency is real but conditional; recording it
+        unconditionally would assert something false on the other arch."""
+        parsed = self.parse('makedepends=(a $([[ x ]] || echo nasm) b)\n')
+        self.assertNotIn("nasm", parsed["makedepends"])
+        self.assertEqual(parsed["conditional_spans_dropped"], 1)
+
+    def test_comments_inside_an_array_are_not_dependencies(self):
+        parsed = self.parse(
+            'makedepends=(\n  "one"\n'
+            '  # Note: the following are carried from vtk\n'
+            '  "two"\n)\n'
+        )
+        self.assertEqual(parsed["makedepends"], ["one", "two"])
+
+    def test_an_apostrophe_in_a_comment_does_not_swallow_the_array(self):
+        """`#"...-ruby" unable to find ruby's pkgconfig file` opened a phantom
+        single quote that ate the closing paren, so the whole array was lost."""
+        parsed = self.parse(
+            'makedepends=("one"\n'
+            "             #\"two\" unable to find ruby's pkgconfig file\n"
+            '             "three")\n'
+        )
+        self.assertEqual(parsed["makedepends"], ["one", "three"])
+
+    def test_recipe_local_arrays_are_captured_for_splicing(self):
+        parsed = self.parse('_extra=(alpha beta)\nmakedepends=(cc "${_extra[@]}")\n')
+        self.assertEqual(parsed["local_arrays"]["_extra"], ["alpha", "beta"])
+
+    def test_shell_keywords_never_become_dependencies(self):
+        parsed = self.parse("makedepends=(real && echo || fi [[ ]])\n")
+        self.assertEqual(parsed["makedepends"], ["real"])
+
+    def test_an_unterminated_array_reports_nothing(self):
+        """Better to record none than to guess where it ended."""
+        parsed = self.parse('makedepends=("one" "two"\n')
+        self.assertNotIn("two", parsed["makedepends"])
+
+
+class SpliceAndBraceTests(unittest.TestCase):
+    def test_array_splice_resolves_against_the_recipe(self):
+        recipe = {
+            "pkgname": ["p"], "checkdepends": ["boost"],
+            "makedepends": ["cc", "${checkdepends[@]}"], "variables": {},
+        }
+        packages = {"p": "package:msys2:p", "cc": "package:msys2:cc",
+                    "boost": "package:msys2:boost"}
+        projection, stats, _ = self._project(recipe, packages)
+        targets = {e["target"] for e in projection["relationships"]}
+        self.assertIn("package:msys2:boost", targets)
+        self.assertEqual(stats["array_splices_resolved"], 1)
+
+    def test_brace_expansion_becomes_several_dependencies(self):
+        self.assertEqual(
+            sorted(ird.expand_braces("p-{build,installer}")),
+            ["p-build", "p-installer"],
+        )
+        self.assertEqual(ird.expand_braces("plain"), ["plain"])
+
+    def _project(self, recipe, packages):
+        original = ird.catalog_index
+        ird.catalog_index = lambda: (packages, {})
+        try:
+            return ird.project([recipe])
+        finally:
+            ird.catalog_index = original
+
+
 class ExpansionTests(unittest.TestCase):
     def test_prefix_and_locals_expand(self):
         variables = {"_realname": "pytest", "pkgbase": "guile"}

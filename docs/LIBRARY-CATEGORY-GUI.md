@@ -55,12 +55,12 @@ databases read 2026-08-02.
 
 | Library | Runtime | Build | Check | Total | Version | License |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| qt6-base | 637 | 454 | 0 | **1,091** | 6.11.1-1 | LGPL-3.0-only WITH Qt-GPL-exception |
+| qt6-base | 637 | 422 | 0 | **1,059** | 6.11.1-1 | LGPL-3.0-only WITH Qt-GPL-exception |
 | glib2 | 735 | 59 | 0 | **794** | 2.88.1-1 | LGPL |
-| qt5-base | 223 | 175 | 0 | **398** | 5.15.19+kde+r96-1 | LGPL-3.0-only WITH Qt-GPL-exception |
+| qt5-base | 223 | 159 | 0 | **382** | 5.15.19+kde+r96-1 | LGPL-3.0-only WITH Qt-GPL-exception |
 | `gtk3` (`library:gnome:gtk3`) | 234 | 143 | 4 | **381** | 3.24.52-1 | LGPL-2.1-or-later |
-| pango | 235 | 88 | 0 | **323** | 1.58.0-1 | LGPL-2.1 |
-| gdk-pixbuf2 | 204 | 24 | 0 | **228** | 2.44.7-1 | LGPL-2.1-or-later |
+| pango | 235 | 92 | 0 | **327** | 1.58.0-1 | LGPL-2.1 |
+| gdk-pixbuf2 | 204 | 28 | 0 | **232** | 2.44.7-1 | LGPL-2.1-or-later |
 | gtk4 | 88 | 37 | 0 | **125** | 4.22.4-1 | LGPL-2.1-or-later |
 | atk | 37 | 0 | 0 | **37** | 2.60.5-1 | LGPL-2.1-or-later |
 | libadwaita | 23 | 0 | 0 | **23** | 1.9.1-1 | LGPL-2.1-or-later |
@@ -72,8 +72,8 @@ library at all — `glib2` is an object system, main-loop implementation, and
 portability layer that everything in the GTK stack requires and much
 outside it requires too.
 
-With build-time edges included, `qt6-base` leads at 1,091 and the ranking
-finally means what a reader expects it to mean. `qt6-base` gains 454 build
+With build-time edges included, `qt6-base` leads at 1,059 and the ranking
+finally means what a reader expects it to mean. `qt6-base` gains 422 build
 edges against `glib2`'s 59, which is the difference between a framework
 packages are *built against* and infrastructure they merely link.
 
@@ -87,8 +87,8 @@ Stripping out infrastructure leaves the actual toolkits:
 
 | Toolkit | Total | Runtime | Build | Nature |
 | --- | ---: | ---: | ---: | --- |
-| Qt 6 | 1,091 | 637 | 454 | full application framework |
-| Qt 5 | 398 | 223 | 175 | previous Qt generation, still heavily depended on |
+| Qt 6 | 1,059 | 637 | 422 | full application framework |
+| Qt 5 | 382 | 223 | 159 | previous Qt generation, still heavily depended on |
 | GTK 3 | 381 | 234 | 143 | widget toolkit over the GLib stack |
 | GTK 4 | 125 | 88 | 37 | current GTK generation |
 | FLTK | 20 | 16 | 4 | small self-contained toolkit |
@@ -96,17 +96,18 @@ Stripping out infrastructure leaves the actual toolkits:
 Three observations follow.
 
 **Qt is ahead of GTK, and the gap is wider than runtime edges showed.**
-Qt 5 and Qt 6 together reach 1,489 against GTK 3 and GTK 4's 506 — a ratio
-of roughly 3:1, against 2.7:1 on runtime edges alone. Part of that is
+Qt 5 and Qt 6 together reach 1,441 against GTK 3 and GTK 4's 506 — a ratio
+of roughly 2.8:1, against 2.7:1 on runtime edges alone. Part of that is
 scope: Qt is documented upstream as a full cross-platform application
 framework — networking, threading, and more — rather than a widget set, so
 packages depend on `qt6-base` for non-GUI reasons.
 
-**Qt 5 overtakes GTK 3 once build edges count.** On runtime alone GTK 3
-led Qt 5, 234 to 223. On totals Qt 5 leads, 398 to 381, because Qt 5 is
-declared as a build dependency 175 times against GTK 3's 143.
+**Qt 5 overtakes GTK 3 once build edges count, barely.** On runtime alone
+GTK 3 led Qt 5, 234 to 223. On totals Qt 5 leads by a single edge, 382 to
+381, because Qt 5 is declared as a build dependency 159 times against
+GTK 3's 143. A margin that thin is not a finding; it is a tie.
 
-**Both families carry their previous generation at scale.** Qt 5 at 398
+**Both families carry their previous generation at scale.** Qt 5 at 382
 and GTK 3 at 381 each exceed the newer generation alongside them — GTK 4 at
 125, and Qt 6 aside. A migration to the newer major version is still in
 progress across the catalog, and a build environment realistically needs

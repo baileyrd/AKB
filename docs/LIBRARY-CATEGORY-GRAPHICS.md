@@ -59,25 +59,25 @@ all environment variants; runtime figures from catalog snapshot
 
 | Library | Runtime | Build | Total | Version | License | Role |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| `cairo` (`library:cairographics:cairo`) | 321 | 186 | **507** | 1.18.4-4 | LGPL-2.1-or-later OR MPL-1.1 | 2D vector rendering |
+| `cairo` (`library:cairographics:cairo`) | 321 | 165 | **486** | 1.18.4-4 | LGPL-2.1-or-later OR MPL-1.1 | 2D vector rendering |
 | vulkan-loader | 83 | 38 | **121** | 1~1.4.350.1-1 | Apache-2.0 | Vulkan ICD loading |
 | glew | 77 | 13 | **90** | 2.3.1-4 | Modified BSD/MIT/GPL | OpenGL extension loading |
 | freeglut | 47 | 32 | **79** | 3.8.0-1 | MIT | OpenGL windowing/input |
 | glfw | 39 | 8 | **47** | 3.4-1 | Zlib | OpenGL/Vulkan windowing/input |
+| pixman | 30 | 6 | **36** | 0.46.4-3 | MIT | low-level pixel manipulation |
 | libepoxy | 31 | 0 | **31** | 1.5.10-7 | MIT | OpenGL function dispatch |
-| pixman | 30 | 0 | **30** | 0.46.4-3 | MIT | low-level pixel manipulation |
 | angleproject | 19 | 8 | **27** | 2.1.r25748.890b5d8f-3 | BSD-3-Clause | OpenGL ES over other backends |
 | mesa | 4 | 3 | **7** | 26.1.5-1 | MIT | software/driver GL implementation |
 
 The ordering is unchanged from the runtime-only ranking. `cairo` leads on
-either measure and by a wider margin on totals — 507 against
-`vulkan-loader`'s 121 — gaining 186 build edges, the largest absolute gain
+either measure and by a wider margin on totals — 486 against
+`vulkan-loader`'s 121 — gaining 165 build edges, the largest absolute gain
 in the category, from packages such as `gst-plugins-bad` that name it in
 `makedepends`.
 
-`libepoxy` and `pixman` both gain none. See the caveat below before reading
-that as disuse: `pixman` is a transitive dependency of `cairo` rather than
-something packages name directly.
+One pair swaps against the runtime-only ranking: `pixman` at 36 edges past
+`libepoxy` at 31, having trailed it by one. `libepoxy` gains no build edges
+at all — see the caveat below before reading that as disuse.
 
 ## Two distinct sub-groups
 

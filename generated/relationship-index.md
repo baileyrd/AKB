@@ -76216,6 +76216,8 @@
 | relationship:foundation-libraries:bzip2-requires-libbz2 | requires | component:bzip2:bzip2 | library:bzip2:libbz2 | verified |
 | relationship:foundation-libraries:ca-certificates-clang64-requires-p11-kit-clang64 | requires | library:mozilla:ca-certificates@clang64 | library:p11-glue:p11-kit@clang64 | verified |
 | relationship:foundation-libraries:ca-certificates-packaged-by-package | packaged-by | library:mozilla:ca-certificates | package:msys2:ca-certificates | verified |
+| relationship:foundation-libraries:ca-certificates-requires-openssl-msys | requires | library:mozilla:ca-certificates | component:openssl:openssl | verified |
+| relationship:foundation-libraries:ca-certificates-requires-p11-kit-msys | requires | library:mozilla:ca-certificates | library:p11-glue:p11-kit | verified |
 | relationship:foundation-libraries:ca-certificates-ucrt64-requires-p11-kit-ucrt64 | requires | library:mozilla:ca-certificates@ucrt64 | library:p11-glue:p11-kit@ucrt64 | verified |
 | relationship:foundation-libraries:clang-libs-packaged-by-package | packaged-by | library:llvm:clang-libs | package:msys2:mingw-w64-clang-x86_64-clang-libs | verified |
 | relationship:foundation-libraries:clang64-contains-clang-libs | contains | environment:msys2:clang64 | library:llvm:clang-libs | partial |

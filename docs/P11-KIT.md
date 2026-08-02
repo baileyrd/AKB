@@ -12,10 +12,11 @@ model_refs:
   - library:libffi:libffi@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
+  - library:mozilla:ca-certificates
 evidence_refs:
   - evidence:p11-glue:p11-kit-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # p11-kit
@@ -90,7 +91,18 @@ The catalog snapshot records 3 relationships targeting
 (`relationship:foundation-libraries:gnutls-requires-p11-kit` in this
 knowledge base's graph), its own `-devel` subpackage, and a separate
 `package:msys2:p11-kit` package (the project's own command-line tools,
-distinct from this library package).
+distinct from this library package). That separate `p11-kit` package is
+itself depended on by `package:msys2:ca-certificates`; rather than model
+the thin, unmodeled `p11-kit` CLI/meta-package as a new entity, this
+transitive dependency is modeled directly from
+[ca-certificates](CA-CERTIFICATES.md) to this library
+(`relationship:foundation-libraries:ca-certificates-requires-p11-kit-msys`,
+added 2026-08-02 while correcting that page's own prior false
+"no runtime-depends-on edges" claim) — backing trust-anchor registration
+and coordination through the p11-kit PKCS#11 trust module, the same
+rationale already documented for the
+[UCRT64](CA-CERTIFICATES-UCRT64.md#dependencies) and
+[CLANG64](CA-CERTIFICATES-CLANG64.md#dependencies) siblings.
 
 ## Configuration
 
@@ -163,3 +175,4 @@ methodology, also remain open.
 - [GNU libintl](GNU-LIBINTL.md)
 - [libffi (MSYS)](LIBFFI-MSYS.md)
 - [p11-kit (UCRT64)](P11-KIT-UCRT64.md)
+- [ca-certificates](CA-CERTIFICATES.md)

@@ -17002,6 +17002,8 @@ Relationships
 - library:p11-glue:p11-kit@clang64 --requires--> library:gnu:gettext@clang64
 - library:p11-glue:p11-kit@clang64 --requires--> library:libffi:libffi@clang64
 - library:p11-glue:p11-kit@clang64 --requires--> library:gnu:libtasn1@clang64
+- library:mozilla:ca-certificates --requires--> component:openssl:openssl
+- library:mozilla:ca-certificates --requires--> library:p11-glue:p11-kit
 - library:mozilla:ca-certificates@clang64 --requires--> library:p11-glue:p11-kit@clang64
 - library:multiprecision:mpc@clang64 --requires--> library:gnu:gmp@clang64
 - library:multiprecision:mpc@clang64 --requires--> library:gnu:mpfr@clang64

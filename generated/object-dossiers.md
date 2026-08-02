@@ -342,7 +342,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `component:p7zip:p7zip`
 
@@ -6353,7 +6353,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 3
 - Incoming relationships: 4
 
 ## `library:mozilla:ca-certificates@clang64`
@@ -6561,7 +6561,7 @@
 - Status: `partial`
 - Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:p11-glue:p11-kit@clang64`
 

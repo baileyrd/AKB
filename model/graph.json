@@ -9927,6 +9927,30 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:ca-certificates-requires-openssl-msys",
+      "type": "requires",
+      "source": "library:mozilla:ca-certificates",
+      "target": "component:openssl:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs certificate-bundle processing this package's own install-time hooks perform; the exact mechanism was not confirmed. Added 2026-08-02 to correct this page's own prior false \"no runtime-depends-on edges\" claim.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ca-certificates-requires-p11-kit-msys",
+      "type": "requires",
+      "source": "library:mozilla:ca-certificates",
+      "target": "library:p11-glue:p11-kit",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs trust-anchor registration and coordination through the p11-kit PKCS#11 trust module, added 2026-08-02 to correct this page's own prior false \"no runtime-depends-on edges\" claim.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:foundation-libraries:ca-certificates-clang64-requires-p11-kit-clang64",
       "type": "requires",
       "source": "library:mozilla:ca-certificates@clang64",

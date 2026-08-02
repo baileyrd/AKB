@@ -9,11 +9,12 @@ model_refs:
   - library:openssl:libopenssl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
+  - library:mozilla:ca-certificates
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # OpenSSL
@@ -66,6 +67,17 @@ cryptography library (the CLI/library split noted above). Documented
 fully in [libopenssl](LIBOPENSSL.md). Optional
 dependencies on `ca-certificates` and `perl` support certificate-chain
 verification and OpenSSL's Perl-based test/build tooling, respectively.
+
+## Reverse Dependencies (ca-certificates)
+
+**Added 2026-08-02**: [ca-certificates](CA-CERTIFICATES.md) records a
+`requires` edge to this component
+(`relationship:foundation-libraries:ca-certificates-requires-openssl-msys`)
+— backing certificate-bundle processing ca-certificates' own install-time
+hooks perform, added while correcting that page's own prior false
+"no runtime-depends-on edges" claim. The exact mechanism was not
+confirmed; this edge is counted among the 21 reverse dependents noted
+below.
 
 ## Reverse Dependencies
 
@@ -146,3 +158,4 @@ confirmed.
 - [GnuPG](GNUPG.md)
 - [libopenssl](LIBOPENSSL.md)
 - [libssh2](LIBSSH2.md)
+- [ca-certificates](CA-CERTIFICATES.md)

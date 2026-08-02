@@ -41,7 +41,7 @@
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
 | component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
 | component:openssh:openssh | component | OpenSSH | partial | 7 | 2 |
-| component:openssl:openssl | component | OpenSSL | partial | 3 | 6 |
+| component:openssl:openssl | component | OpenSSL | partial | 3 | 7 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
 | component:tukaani:xz | component | XZ Utils | partial | 5 | 1 |
@@ -709,7 +709,7 @@
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:mingweditline:wineditline@clang64 | library | WinEditLine (CLANG64) | partial | 0 | 1 |
-| library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 4 |
+| library:mozilla:ca-certificates | library | ca-certificates | partial | 3 | 4 |
 | library:mozilla:ca-certificates@clang64 | library | ca-certificates (CLANG64) | partial | 1 | 1 |
 | library:mozilla:ca-certificates@ucrt64 | library | ca-certificates (UCRT64) | partial | 1 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
@@ -732,7 +732,7 @@
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
 | library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 4 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
-| library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
+| library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 3 |
 | library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |

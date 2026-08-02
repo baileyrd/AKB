@@ -142,3 +142,4 @@ methodology.
 - [libnghttp3 (MSYS)](LIBNGHTTP3.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md)
+- [libnghttp3 (CLANG64)](LIBNGHTTP3-CLANG64.md)

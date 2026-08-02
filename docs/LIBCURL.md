@@ -197,3 +197,4 @@ methodology.
 - [libssh2](LIBSSH2.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

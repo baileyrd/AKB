@@ -69,11 +69,12 @@ for [c-ares (UCRT64)](C-ARES-UCRT64.md#dependencies).
 ## Reverse Dependencies
 
 The catalog snapshot records 10 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-c-ares`, including
-`mingw-w64-clang-x86_64-curl` (the CLANG64 sibling of
-[curl (UCRT64)](CURL-UCRT64.md), not yet modeled), `aria2`, `arrow`,
-`grpc`, `mosquitto`, and `nodejs`. None are currently modeled as
-entities in this knowledge base; see the
+`package:msys2:mingw-w64-clang-x86_64-c-ares`. One is now modeled in
+this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-c-ares-clang64`,
+added 2026-08-02). The remaining recorded dependents (`aria2`, `arrow`,
+`grpc`, `mosquitto`, `nodejs`) are not individually modeled as entities
+in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -134,3 +135,4 @@ dependents are not individually modeled in this knowledge base.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [c-ares (UCRT64)](C-ARES-UCRT64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

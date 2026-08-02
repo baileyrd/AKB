@@ -65,12 +65,15 @@ for [Brotli (UCRT64)](BROTLI-UCRT64.md#dependencies).
 ## Reverse Dependencies
 
 The catalog snapshot records 19 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-brotli`, including
-`mingw-w64-clang-x86_64-curl` (the CLANG64 sibling of
-[curl (UCRT64)](CURL-UCRT64.md), not yet modeled) and a broad mix of
-other CLANG64 packages (`arrow`, `android-tools`, `exiv2`, `freetype`,
-and others). None are currently modeled as entities in this knowledge
-base; see the
+`package:msys2:mingw-w64-clang-x86_64-brotli`. Two are now modeled in
+this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-brotli-clang64`,
+added 2026-08-02) and [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)
+(`relationship:foundation-libraries:gnutls-clang64-requires-brotli-clang64`,
+added 2026-08-02). The remaining ~17 recorded dependents (a broad mix
+of other CLANG64 packages including `arrow`, `android-tools`, `exiv2`,
+`freetype`, and others) are not individually modeled as entities in
+this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -122,7 +125,7 @@ Brotli compression scope is backed by the official Brotli project page
 (`evidence:google:brotli-manual-2026-07-30`), the same evidence record
 [Brotli (UCRT64)](BROTLI-UCRT64.md) cites. Package identity, version,
 and license are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open: the 19 recorded reverse dependents
+(`evidence:catalog:current`). Open: the ~17 remaining recorded reverse dependents
 are not individually modeled in this knowledge base.
 
 ## Related Objects
@@ -130,3 +133,5 @@ are not individually modeled in this knowledge base.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Brotli (UCRT64)](BROTLI-UCRT64.md)
 - [Brotli (MSYS)](BROTLI.md)
+- [curl (CLANG64)](CURL-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

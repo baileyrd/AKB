@@ -147,3 +147,4 @@ methodology.
 - [libwinpthread (UCRT64)](LIBWINPTHREAD.md)
 - [winpthreads (CLANG64)](WINPTHREADS-CLANG64.md)
 - [Clang](CLANG.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

@@ -209,3 +209,4 @@ methodology.
 - [libnghttp2 (UCRT64)](LIBNGHTTP2-UCRT64.md)
 - [libngtcp2 (UCRT64)](LIBNGTCP2-UCRT64.md)
 - [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

@@ -73,11 +73,15 @@ this knowledge base:
 ## Reverse Dependencies
 
 The catalog snapshot records 18 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-libssh2`, including
-`mingw-w64-clang-x86_64-curl` (the CLANG64 sibling of
-[curl (UCRT64)](CURL-UCRT64.md), not yet modeled), `aria2`, `libgit2`,
-`qemu`, `rust`, `vlc`, and `wezterm`. None are currently modeled as
-entities in this knowledge base; see the
+`package:msys2:mingw-w64-clang-x86_64-libssh2`. One is now modeled in
+this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-libssh2-clang64`,
+added 2026-08-02). The remaining recorded dependents (`aria2`,
+`cargo-c`, `cargo-generate`, `cargo-local-registry`, `curl-gnutls`,
+`gitui`, `gst-plugins-bad`, `lapce`, `libgit2`, `libgit2-glib`,
+`libgit2-winhttp`, `libvirt`, `qemu`, `qemu-image-util`, `rust`, `vlc`,
+`wezterm`) are not individually modeled as entities in this knowledge
+base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -142,3 +146,4 @@ base.
 - [libssh2 (MSYS)](LIBSSH2.md)
 - [OpenSSL (CLANG64)](OPENSSL-CLANG64.md)
 - [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

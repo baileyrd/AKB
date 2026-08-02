@@ -150,3 +150,4 @@ batch, per this volume's ongoing gap-closing methodology.
 - [Nettle (UCRT64)](NETTLE.md)
 - [Nettle (MSYS)](NETTLE-MSYS.md)
 - [GMP (CLANG64)](GNU-GMP-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

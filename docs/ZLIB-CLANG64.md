@@ -72,8 +72,10 @@ runtime support.
 ## Reverse Dependencies
 
 The catalog snapshot records 285 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-zlib`. Seven are already modeled
-in this knowledge base: [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+`package:msys2:mingw-w64-clang-x86_64-zlib`. Eight are already modeled
+in this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-zlib-clang64`,
+added 2026-08-02), [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 (`relationship:foundation-libraries:libarchive-clang64-requires-zlib-clang64`,
 added 2026-08-02), [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
 (`relationship:foundation-libraries:pcre2-clang64-requires-zlib-clang64`,
@@ -90,7 +92,7 @@ no-dependencies claim), and
 `package:msys2:mingw-w64-clang-x86_64-libxml2`
 (`relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64`,
 correcting [libxml2 (CLANG64)'s](LIBXML2-CLANG64.md) own prior declined
-edge). The remaining ~278 recorded dependents (a broad
+edge). The remaining ~277 recorded dependents (a broad
 mix of CLANG64 packages) are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -144,7 +146,7 @@ DEFLATE compression scope is backed by the official zlib project site
 [zlib (UCRT64)](ZLIB.md) cites. Package identity, version, and the two
 modeled dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: the ~278 remaining recorded dependents not individually
+this page: the ~277 remaining recorded dependents not individually
 modeled, and header-level API surface / PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -162,3 +164,4 @@ methodology.
 - [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 - [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

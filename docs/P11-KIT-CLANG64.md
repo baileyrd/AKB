@@ -153,3 +153,4 @@ Open: the remaining recorded dependents not individually modeled.
 - [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
 - [libffi (CLANG64)](LIBFFI-CLANG64.md)
 - [GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

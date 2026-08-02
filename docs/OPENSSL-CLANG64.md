@@ -78,13 +78,17 @@ dependencies receive elsewhere in this volume.
 ## Reverse Dependencies
 
 The catalog snapshot records 121 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-openssl`. Two are now modeled in
-this knowledge base: [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
+`package:msys2:mingw-w64-clang-x86_64-openssl`. Four are now modeled in
+this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-openssl-clang64`,
+added 2026-08-02), [libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md)
+(`relationship:foundation-libraries:libngtcp2-clang64-requires-openssl-clang64`,
+added 2026-08-02), [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 (`relationship:foundation-libraries:libssh2-clang64-requires-openssl-clang64`,
-added 2026-08-02) and [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+added 2026-08-02), and [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 (`relationship:foundation-libraries:libarchive-clang64-requires-openssl-clang64`,
-added 2026-08-02). The remaining ~119 recorded dependents (a broad mix
-of CLANG64 packages including `apr-util`, `arrow`, `curl`, `curl-gnutls`,
+added 2026-08-02). The remaining ~117 recorded dependents (a broad mix
+of CLANG64 packages including `apr-util`, `arrow`, `curl-gnutls`,
 and many others) are not individually modeled in this knowledge base;
 see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -144,7 +148,7 @@ official OpenSSL project site
 (`evidence:openssl:project-site-2026-07-30`), the same evidence record
 [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) cites. Package identity, version,
 license, and the one modeled dependent edge are backed by the pacman
-catalog snapshot (`evidence:catalog:current`). Open: the ~119 remaining
+catalog snapshot (`evidence:catalog:current`). Open: the ~117 remaining
 recorded dependents are not individually modeled in this knowledge
 base.
 
@@ -157,3 +161,5 @@ base.
 - [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 - [ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md)
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+- [libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

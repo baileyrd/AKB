@@ -50,6 +50,11 @@ model_refs:
   - library:libexpat:expat@clang64
   - library:pcre:pcre2@clang64
   - library:libarchive:libarchive@clang64
+  - library:nghttp2:libnghttp2@clang64
+  - library:nghttp2:libnghttp3@clang64
+  - library:gnutls:gnutls@clang64
+  - library:nghttp2:libngtcp2@clang64
+  - library:curl:curl@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -338,8 +343,13 @@ flowchart LR
 [LZ4 (CLANG64)](LZ4-CLANG64.md),
 [WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md),
 [Expat (CLANG64)](EXPAT-CLANG64.md),
-[PCRE2 (CLANG64)](PCRE2-CLANG64.md), and
-[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) are
+[PCRE2 (CLANG64)](PCRE2-CLANG64.md),
+[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md),
+[libnghttp2 (CLANG64)](LIBNGHTTP2-CLANG64.md),
+[libnghttp3 (CLANG64)](LIBNGHTTP3-CLANG64.md),
+[GnuTLS (CLANG64)](GNUTLS-CLANG64.md),
+[libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md), and
+[curl (CLANG64)](CURL-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -354,7 +364,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and forty-three pages are deliberately scoped to package/dependency-level
+All one hundred and forty-eight pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -972,9 +982,21 @@ and finally [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) itself,
 closing all ten of its own catalog dependencies (bzip2, Expat, BLAKE2,
 GNU libiconv, LZ4, OpenSSL, PCRE2, liblzma, zlib, Zstandard) in a
 single pass — the widest single-pass dependency closure of any library
-added this session. `curl` (CLANG64) remains open for a future batch;
-its own dependency set now mostly overlaps with libraries this batch
-already modeled. These
+added this session. A final batch then closed `curl` (CLANG64) itself: two more
+zero-dependency HTTP/2 and HTTP/3 protocol libraries
+([libnghttp2](LIBNGHTTP2-CLANG64.md),
+[libnghttp3](LIBNGHTTP3-CLANG64.md)), then
+[GnuTLS (CLANG64)](GNUTLS-CLANG64.md) — 11/11 catalog dependencies, all
+already modeled across this session's GMP-chain, ca-certificates-chain,
+and GnuPG-crypto-stack CLANG64 batches — and
+[libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md) (2/2: GnuTLS and OpenSSL,
+its two selectable QUIC TLS backends), before
+[curl (CLANG64)](CURL-CLANG64.md) itself closed all twelve of its own
+catalog dependencies in a single pass, completing the CLANG64
+network-transfer library cluster entirely and mirroring the same
+full-coverage milestone [curl (UCRT64)](CURL-UCRT64.md#dependencies)
+and [libcurl (MSYS)](LIBCURL.md#dependencies) reached earlier this
+session. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

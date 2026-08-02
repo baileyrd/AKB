@@ -611,36 +611,37 @@
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:bzip2:bzip2@clang64 | library | bzip2 (CLANG64) | partial | 0 | 2 |
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 6 |
-| library:c-ares:c-ares@clang64 | library | c-ares (CLANG64) | partial | 0 | 0 |
+| library:c-ares:c-ares@clang64 | library | c-ares (CLANG64) | partial | 0 | 1 |
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
+| library:curl:curl@clang64 | library | curl (CLANG64) | partial | 12 | 0 |
 | library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 12 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
 | library:darwinsys:file | library | file | partial | 6 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 7 |
-| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 4 |
+| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 6 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 5 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 2 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
-| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 5 |
+| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 6 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
-| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
+| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 5 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
 | library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 6 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
-| library:gnu:libidn2@clang64 | library | GNU libidn2 (CLANG64) | partial | 3 | 1 |
+| library:gnu:libidn2@clang64 | library | GNU libidn2 (CLANG64) | partial | 3 | 3 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 19 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 3 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
-| library:gnu:libtasn1@clang64 | library | GNU Libtasn1 (CLANG64) | partial | 0 | 1 |
+| library:gnu:libtasn1@clang64 | library | GNU Libtasn1 (CLANG64) | partial | 0 | 2 |
 | library:gnu:libtasn1@ucrt64 | library | GNU Libtasn1 (UCRT64) | partial | 0 | 2 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 5 |
-| library:gnu:libunistring@clang64 | library | GNU libunistring (CLANG64) | partial | 1 | 2 |
+| library:gnu:libunistring@clang64 | library | GNU libunistring (CLANG64) | partial | 1 | 3 |
 | library:gnu:libunistring@ucrt64 | library | libunistring (UCRT64) | partial | 1 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 4 |
 | library:gnu:mpfr@clang64 | library | GNU MPFR (CLANG64) | partial | 1 | 1 |
@@ -650,7 +651,7 @@
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
-| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 8 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 10 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@clang64 | library | libassuan (CLANG64) | partial | 1 | 0 |
@@ -668,9 +669,10 @@
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |
 | library:gnutls:gnutls | library | GnuTLS | partial | 10 | 3 |
+| library:gnutls:gnutls@clang64 | library | GnuTLS (CLANG64) | partial | 11 | 1 |
 | library:gnutls:gnutls@ucrt64 | library | GnuTLS (UCRT64) | partial | 11 | 1 |
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
-| library:google:brotli@clang64 | library | Brotli (CLANG64) | partial | 0 | 0 |
+| library:google:brotli@clang64 | library | Brotli (CLANG64) | partial | 0 | 2 |
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
@@ -689,10 +691,10 @@
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
 | library:libisl:isl@clang64 | library | isl (Integer Set Library) (CLANG64) | partial | 1 | 0 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
-| library:libpsl:libpsl@clang64 | library | libpsl (CLANG64) | partial | 4 | 0 |
+| library:libpsl:libpsl@clang64 | library | libpsl (CLANG64) | partial | 4 | 1 |
 | library:libpsl:libpsl@ucrt64 | library | libpsl (UCRT64) | partial | 4 | 1 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
-| library:libssh2:libssh2@clang64 | library | libssh2 (CLANG64) | partial | 2 | 0 |
+| library:libssh2:libssh2@clang64 | library | libssh2 (CLANG64) | partial | 2 | 1 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 7 |
@@ -702,33 +704,36 @@
 | library:lz4:liblz4 | library | liblz4 | partial | 0 | 1 |
 | library:lz4:lz4@clang64 | library | LZ4 (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 5 |
-| library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 1 |
+| library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 2 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:mingweditline:wineditline@clang64 | library | WinEditLine (CLANG64) | partial | 0 | 1 |
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 4 |
-| library:mozilla:ca-certificates@clang64 | library | ca-certificates (CLANG64) | partial | 1 | 0 |
+| library:mozilla:ca-certificates@clang64 | library | ca-certificates (CLANG64) | partial | 1 | 1 |
 | library:mozilla:ca-certificates@ucrt64 | library | ca-certificates (UCRT64) | partial | 1 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
 | library:multiprecision:mpc@clang64 | library | GNU MPC (CLANG64) | partial | 2 | 0 |
 | library:nettle:libhogweed@msys | library | libhogweed | partial | 1 | 2 |
 | library:nettle:libnettle@msys | library | libnettle | partial | 1 | 2 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 2 |
-| library:nettle:nettle@clang64 | library | Nettle (CLANG64) | partial | 1 | 0 |
+| library:nettle:nettle@clang64 | library | Nettle (CLANG64) | partial | 1 | 1 |
 | library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 3 | 2 |
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 3 |
+| library:nghttp2:libnghttp2@clang64 | library | libnghttp2 (CLANG64) | partial | 0 | 1 |
 | library:nghttp2:libnghttp2@ucrt64 | library | libnghttp2 (UCRT64) | partial | 0 | 1 |
 | library:nghttp2:libnghttp3 | library | libnghttp3 | partial | 2 | 3 |
+| library:nghttp2:libnghttp3@clang64 | library | libnghttp3 (CLANG64) | partial | 0 | 1 |
 | library:nghttp2:libnghttp3@ucrt64 | library | libnghttp3 (UCRT64) | partial | 0 | 1 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
+| library:nghttp2:libngtcp2@clang64 | library | libngtcp2 (CLANG64) | partial | 2 | 1 |
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
 | library:oberhumer:liblzo2@msys | library | LZO | partial | 0 | 0 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
-| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 2 |
+| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 4 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
-| library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 1 |
+| library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 3 |

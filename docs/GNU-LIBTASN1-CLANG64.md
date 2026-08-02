@@ -134,3 +134,4 @@ knowledge base.
 - [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md)
 - [GNU Libtasn1 (MSYS)](GNU-LIBTASN1.md)
 - [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

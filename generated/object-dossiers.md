@@ -5472,7 +5472,7 @@
 - Status: `partial`
 - Evidence: evidence:c-ares:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:c-ares:c-ares@ucrt64`
 
@@ -5482,6 +5482,15 @@
 - Evidence: evidence:c-ares:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
 - Incoming relationships: 1
+
+## `library:curl:curl@clang64`
+
+- Name: curl (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:curl:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 12
+- Incoming relationships: 0
 
 ## `library:curl:curl@ucrt64`
 
@@ -5526,7 +5535,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 6
 
 ## `library:facebook:zstd@msys-lib`
 
@@ -5580,7 +5589,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:gnu:gmp`
 
@@ -5598,7 +5607,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:gmp@msys`
 
@@ -5652,7 +5661,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 3
 
 ## `library:gnu:libidn2@ucrt64`
 
@@ -5706,7 +5715,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:libtasn1@ucrt64`
 
@@ -5733,7 +5742,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:libunistring@ucrt64`
 
@@ -5823,7 +5832,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 8
+- Incoming relationships: 10
 
 ## `library:gnu:zlib@msys`
 
@@ -5978,6 +5987,15 @@
 - Outgoing relationships: 10
 - Incoming relationships: 3
 
+## `library:gnutls:gnutls@clang64`
+
+- Name: GnuTLS (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnutls:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 11
+- Incoming relationships: 1
+
 ## `library:gnutls:gnutls@ucrt64`
 
 - Name: GnuTLS (UCRT64)
@@ -6003,7 +6021,7 @@
 - Status: `partial`
 - Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 0
+- Incoming relationships: 2
 
 ## `library:google:brotli@ucrt64`
 
@@ -6174,7 +6192,7 @@
 - Status: `partial`
 - Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:libpsl:libpsl@ucrt64`
 
@@ -6201,7 +6219,7 @@
 - Status: `partial`
 - Evidence: evidence:libssh2:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:libssh2:libssh2@ucrt64`
 
@@ -6291,7 +6309,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:mingw-w64:winpthreads`
 
@@ -6345,7 +6363,7 @@
 - Status: `partial`
 - Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:mozilla:ca-certificates@ucrt64`
 
@@ -6408,7 +6426,7 @@
 - Status: `partial`
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:nettle:nettle@msys`
 
@@ -6428,6 +6446,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 3
 
+## `library:nghttp2:libnghttp2@clang64`
+
+- Name: libnghttp2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:nghttp2:libnghttp2@ucrt64`
 
 - Name: libnghttp2 (UCRT64)
@@ -6446,6 +6473,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 3
 
+## `library:nghttp2:libnghttp3@clang64`
+
+- Name: libnghttp3 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libnghttp3-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:nghttp2:libnghttp3@ucrt64`
 
 - Name: libnghttp3 (UCRT64)
@@ -6463,6 +6499,15 @@
 - Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 3
+
+## `library:nghttp2:libngtcp2@clang64`
+
+- Name: libngtcp2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nghttp2:libngtcp2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
 
 ## `library:nghttp2:libngtcp2@ucrt64`
 
@@ -6498,7 +6543,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `library:openssl:openssl@ucrt64`
 
@@ -6525,7 +6570,7 @@
 - Status: `partial`
 - Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:p11-glue:p11-kit@ucrt64`
 

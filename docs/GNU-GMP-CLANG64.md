@@ -68,16 +68,18 @@ already documented for [GMP (UCRT64)](GNU-GMP.md#dependencies).
 ## Reverse Dependencies
 
 The catalog snapshot records 60 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-gmp`. Four are now modeled in
+`package:msys2:mingw-w64-clang-x86_64-gmp`. Five are now modeled in
 this knowledge base: [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)
 (`relationship:foundation-libraries:mpfr-clang64-requires-gmp-clang64`,
 added 2026-08-02), [Nettle (CLANG64)](NETTLE-CLANG64.md)
 (`relationship:foundation-libraries:nettle-clang64-requires-gmp-clang64`,
 added 2026-08-02), [isl (CLANG64)](LIBISL-CLANG64.md)
 (`relationship:foundation-libraries:isl-clang64-requires-gmp-clang64`,
-added 2026-08-02), and [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)
+added 2026-08-02), [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)
 (`relationship:foundation-libraries:mpc-clang64-requires-gmp-clang64`,
-added 2026-08-02). The remaining 56 are not individually
+added 2026-08-02), and [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)
+(`relationship:foundation-libraries:gnutls-clang64-requires-gmp-clang64`,
+added 2026-08-02). The remaining 55 are not individually
 modeled in this knowledge base. See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -149,3 +151,4 @@ for a future batch, per this volume's ongoing gap-closing methodology.
 - [Nettle (CLANG64)](NETTLE-CLANG64.md)
 - [isl (CLANG64)](LIBISL-CLANG64.md)
 - [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

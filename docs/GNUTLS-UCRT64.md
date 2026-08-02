@@ -198,3 +198,4 @@ methodology.
 - [Nettle](NETTLE.md)
 - [GNU MP](GNU-GMP.md)
 - [libwinpthread](LIBWINPTHREAD.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

@@ -79,12 +79,15 @@ this knowledge base:
 ## Reverse Dependencies
 
 The catalog snapshot records 12 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-ca-certificates`: `curl`,
-`curl-gnutls`, `git` (a separate CLANG64-native git package, distinct
+`package:msys2:mingw-w64-clang-x86_64-ca-certificates`. One is now
+modeled in this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-ca-certificates-clang64`,
+added 2026-08-02). The remaining recorded dependents (`curl-gnutls`,
+`git` (a separate CLANG64-native git package, distinct
 from this knowledge base's MSYS [Git](GIT-MSYS-PACKAGE.md) entity),
 `libressl`, `mono`, `neon`, `openssl`, `perl-lwp-protocol-https`,
-`pidgin`, `python-httplib2`, `qca-qt5`, and `qca-qt6`. None of these
-twelve are currently modeled as entities in this knowledge base; see
+`pidgin`, `python-httplib2`, `qca-qt5`, `qca-qt6`) are not
+individually modeled as entities in this knowledge base; see
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -150,3 +153,4 @@ dependents are not individually modeled in this knowledge base.
 - [ca-certificates (MSYS)](CA-CERTIFICATES.md)
 - [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
 - [OpenSSL (CLANG64)](OPENSSL-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

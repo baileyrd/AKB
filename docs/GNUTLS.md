@@ -195,3 +195,4 @@ methodology, also remain open.
 - [GNU libintl](GNU-LIBINTL.md)
 - [p11-kit](P11-KIT.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

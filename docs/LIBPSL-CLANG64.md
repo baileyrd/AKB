@@ -80,11 +80,13 @@ knowledge base:
 ## Reverse Dependencies
 
 The catalog snapshot records 10 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-libpsl`: `curl`, `curl-gnutls`,
+`package:msys2:mingw-w64-clang-x86_64-libpsl`. One is now modeled in
+this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-libpsl-clang64`,
+added 2026-08-02). The remaining recorded dependents (`curl-gnutls`,
 `curl-winssl`, `libsoup3`, `qemu`, `qemu-image-util`,
-`transmission-cli`, `transmission-gtk`, `transmission-qt`, and
-`wget2`. None of these ten are currently modeled as entities in this
-knowledge base; see the
+`transmission-cli`, `transmission-gtk`, `transmission-qt`, `wget2`) are
+not individually modeled as entities in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -148,3 +150,4 @@ knowledge base.
 - [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)
 - [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)
 - [GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

@@ -610,6 +610,7 @@ Objects
 - library:bzip2:libbz2 (library): libbz2
 - library:c-ares:c-ares@clang64 (library): c-ares (CLANG64)
 - library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
+- library:curl:curl@clang64 (library): curl (CLANG64)
 - library:curl:curl@ucrt64 (library): curl (UCRT64)
 - library:curl:libcurl (library): libcurl
 - library:darwinsys:file (library): file
@@ -665,6 +666,7 @@ Objects
 - library:gnupg:npth (library): nPth (New Portable Threads)
 - library:gnupg:npth@msys (library): nPth (MSYS)
 - library:gnutls:gnutls (library): GnuTLS
+- library:gnutls:gnutls@clang64 (library): GnuTLS (CLANG64)
 - library:gnutls:gnutls@ucrt64 (library): GnuTLS (UCRT64)
 - library:google:brotli (library): Brotli
 - library:google:brotli@clang64 (library): Brotli (CLANG64)
@@ -715,10 +717,13 @@ Objects
 - library:nettle:nettle@clang64 (library): Nettle (CLANG64)
 - library:nettle:nettle@msys (library): Nettle (MSYS)
 - library:nghttp2:libnghttp2 (library): libnghttp2
+- library:nghttp2:libnghttp2@clang64 (library): libnghttp2 (CLANG64)
 - library:nghttp2:libnghttp2@ucrt64 (library): libnghttp2 (UCRT64)
 - library:nghttp2:libnghttp3 (library): libnghttp3
+- library:nghttp2:libnghttp3@clang64 (library): libnghttp3 (CLANG64)
 - library:nghttp2:libnghttp3@ucrt64 (library): libnghttp3 (UCRT64)
 - library:nghttp2:libngtcp2 (library): libngtcp2
+- library:nghttp2:libngtcp2@clang64 (library): libngtcp2 (CLANG64)
 - library:nghttp2:libngtcp2@ucrt64 (library): libngtcp2 (UCRT64)
 - library:oberhumer:liblzo2@msys (library): LZO
 - library:openssl:libopenssl (library): libopenssl
@@ -16939,6 +16944,31 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:gnutls:gnutls@clang64 --requires--> library:google:brotli@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:gnu:gettext@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:gnu:gmp@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:gnu:libidn2@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:gnu:libtasn1@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:gnu:libunistring@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:mingw-w64:libwinpthread@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:nettle:nettle@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:p11-glue:p11-kit@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:gnu:zlib@clang64
+- library:gnutls:gnutls@clang64 --requires--> library:facebook:zstd@clang64
+- library:nghttp2:libngtcp2@clang64 --requires--> library:gnutls:gnutls@clang64
+- library:nghttp2:libngtcp2@clang64 --requires--> library:openssl:openssl@clang64
+- library:curl:curl@clang64 --requires--> library:google:brotli@clang64
+- library:curl:curl@clang64 --requires--> library:c-ares:c-ares@clang64
+- library:curl:curl@clang64 --requires--> library:mozilla:ca-certificates@clang64
+- library:curl:curl@clang64 --requires--> library:gnu:libidn2@clang64
+- library:curl:curl@clang64 --requires--> library:libpsl:libpsl@clang64
+- library:curl:curl@clang64 --requires--> library:libssh2:libssh2@clang64
+- library:curl:curl@clang64 --requires--> library:nghttp2:libnghttp2@clang64
+- library:curl:curl@clang64 --requires--> library:nghttp2:libnghttp3@clang64
+- library:curl:curl@clang64 --requires--> library:nghttp2:libngtcp2@clang64
+- library:curl:curl@clang64 --requires--> library:openssl:openssl@clang64
+- library:curl:curl@clang64 --requires--> library:gnu:zlib@clang64
+- library:curl:curl@clang64 --requires--> library:facebook:zstd@clang64
 - library:pcre:pcre2@clang64 --requires--> library:bzip2:bzip2@clang64
 - library:pcre:pcre2@clang64 --requires--> library:mingweditline:wineditline@clang64
 - library:pcre:pcre2@clang64 --requires--> library:gnu:zlib@clang64

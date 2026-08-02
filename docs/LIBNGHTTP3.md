@@ -145,3 +145,4 @@ methodology, remain open.
 - [libnghttp2](LIBNGHTTP2.md)
 - [libngtcp2](LIBNGTCP2.md)
 - [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md)
+- [libnghttp3 (CLANG64)](LIBNGHTTP3-CLANG64.md)

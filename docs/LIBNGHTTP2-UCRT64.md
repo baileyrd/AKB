@@ -134,3 +134,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libnghttp2 (MSYS)](LIBNGHTTP2.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
+- [libnghttp2 (CLANG64)](LIBNGHTTP2-CLANG64.md)

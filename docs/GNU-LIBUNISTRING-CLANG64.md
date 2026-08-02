@@ -150,3 +150,4 @@ individually modeled in this knowledge base.
 - [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)
 - [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)
 - [libpsl (CLANG64)](LIBPSL-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

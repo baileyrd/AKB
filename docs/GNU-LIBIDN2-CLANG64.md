@@ -83,11 +83,15 @@ this knowledge base:
 ## Reverse Dependencies
 
 The catalog snapshot records 11 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-libidn2`. One is now modeled in
-this knowledge base: [libpsl (CLANG64)](LIBPSL-CLANG64.md)
+`package:msys2:mingw-w64-clang-x86_64-libidn2`. Three are now modeled
+in this knowledge base: [libpsl (CLANG64)](LIBPSL-CLANG64.md)
 (`relationship:foundation-libraries:libpsl-clang64-requires-libidn2-clang64`,
-added 2026-08-02). The remaining recorded dependents (`curl`,
-`curl-gnutls`, `curl-winssl`, `gmime`, `gnutls`, `msmtp`, `qemu`,
+added 2026-08-02), [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-libidn2-clang64`,
+added 2026-08-02), and [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)
+(`relationship:foundation-libraries:gnutls-clang64-requires-libidn2-clang64`,
+added 2026-08-02). The remaining recorded dependents (`curl-gnutls`,
+`curl-winssl`, `gmime`, `msmtp`, `qemu`,
 `qemu-image-util`, `wget`, `wget2`) are not individually modeled in
 this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -153,4 +157,6 @@ individually modeled in this knowledge base.
 - [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
 - [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)
 - [GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)
 - [libpsl (CLANG64)](LIBPSL-CLANG64.md)

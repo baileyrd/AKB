@@ -154,3 +154,4 @@ general version-qualified security review noted above.
 - [libcurl](LIBCURL.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [ca-certificates](CA-CERTIFICATES.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

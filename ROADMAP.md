@@ -266,6 +266,27 @@ Volume 6 holds 157 of 253 pages and 66.9% of all prose; Volume 18 has none.
 Eleven volumes hold fourteen pages between them.
 
 - [x] Volume 17 performance architecture for the ecosystem
-- [ ] Volume 18 developer guide
+- [x] Volume 18 developer guide
+
+**Volume 18 closed 2026-08-02.** The volume had zero pages; the ledger
+pointed at `DEVELOPER-OPERATOR-WORKFLOWS.md`, which is about this
+repository's own tooling and stays in Volume 20. Five pages now answer the
+charter's question in its own five parts — select, build, debug, package,
+migrate — sourced from MSYS2's own wiki and documentation rather than
+inherited from Arch or Cygwin. The load-bearing facts: the `msys-2.0.dll`
+link test as the one decision everything follows from, the `base-devel`
+trap (it contains neither `gcc` nor `binutils`), the `makepkg` versus
+`makepkg-mingw` split with the MSYS shell used for both, the three
+just-in-time debugging cases including the inherited `SetErrorMode` flag
+that silently suppresses the debugger for native children of MSYS
+processes, and the host-triplet change from `*-pc-msys` to `*-pc-cygwin`
+that makes old `configure` matches fall through without error.
+
+No command on any of the five pages has been run by this knowledge base,
+and each page says so.
+
+`tests/test_doc_links.py` was added alongside them: nothing had ever
+checked that a Markdown link points at a file that exists. All 290 pages
+pass, and the test was verified to fail on an introduced break.
 - [ ] Per-volume page and heading metrics in the coverage ledger
 - [ ] Replace the ledger's uniform "Partial" with the charter's eight coverage states

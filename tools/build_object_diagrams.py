@@ -144,7 +144,14 @@ def splice(text: str, block: str) -> str:
     return text.rstrip("\n") + "\n\n" + block + "\n"
 
 
-def build(graph: dict, docs: Path = DOCS) -> list[Path]:
+def build(graph: dict, docs: Path = DOCS, write: bool = True) -> list[Path]:
+    """Return the pages whose generated block is out of date.
+
+    With ``write=False`` nothing is written, so a caller can ask "would this
+    change anything?" without changing anything. The idempotence test needs
+    that: a checking test that repairs what it is checking passes on its own
+    second run and hides the failure it just reported.
+    """
     entities = {entity["id"]: entity for entity in graph["entities"]}
     out_edges, in_edges = defaultdict(list), defaultdict(list)
     for edge in graph["relationships"]:
@@ -164,12 +171,14 @@ def build(graph: dict, docs: Path = DOCS) -> list[Path]:
                 start, finish = text.index(BEGIN), text.index(END) + len(END)
                 updated = (text[:start].rstrip("\n") + "\n\n" + text[finish:].lstrip("\n")).rstrip("\n") + "\n"
                 if updated != text:
-                    path.write_text(updated, encoding="utf-8")
+                    if write:
+                        path.write_text(updated, encoding="utf-8")
                     written.append(path)
             continue
         updated = splice(text, block)
         if updated != text:
-            path.write_text(updated, encoding="utf-8")
+            if write:
+                path.write_text(updated, encoding="utf-8")
             written.append(path)
     return written
 

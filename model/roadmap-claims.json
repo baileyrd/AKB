@@ -853,7 +853,29 @@
       {
         "type": "min_docs_in_volume",
         "volume": 18,
-        "count": 1
+        "count": 5
+      },
+      {
+        "type": "doc_exists",
+        "doc": "DEVELOPER-GUIDE.md"
+      },
+      {
+        "type": "term_in_volume",
+        "volume": 18,
+        "term": "makepkg",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_volume",
+        "volume": 18,
+        "term": "__MSYS__",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_volume",
+        "volume": 18,
+        "term": "error_start",
+        "min_files": 1
       }
     ],
     "Per-volume page and heading metrics in the coverage ledger": [

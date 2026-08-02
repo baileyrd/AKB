@@ -17206,6 +17206,26 @@
       "notes": "Official Apache Serf project site, matching the project_url recorded for package:msys2:libserf in the catalog snapshot."
     },
     {
+      "id": "evidence:arch:makepkg-8-2026-08-02",
+      "class": "primary",
+      "title": "makepkg(8) manual page",
+      "locator": "https://man.archlinux.org/man/makepkg.8.en",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for makepkg's phase options and behavior. Arch's manual page; MSYS2 ships makepkg-mingw alongside it, which this source does not describe."
+    },
+    {
+      "id": "evidence:arch:pkgbuild-5-2026-08-02",
+      "class": "primary",
+      "title": "PKGBUILD(5) manual page",
+      "locator": "https://man.archlinux.org/man/PKGBUILD.5.en",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the mandatory PKGBUILD fields, the _ prefix convention for custom variables, and package splitting. Arch's manual page: MSYS2 uses a pacman port and its PKGBUILDs follow this format, but MSYS2-specific directives and effective makepkg.conf are not established by this source."
+    },
+    {
       "id": "evidence:blake2:project-site-2026-08-02",
       "class": "primary",
       "title": "BLAKE2 (official project site)",
@@ -18086,6 +18106,26 @@
       "notes": "Official Mozilla CA Certificate Program page, matching the project_url recorded for package:msys2:ca-certificates in the catalog snapshot."
     },
     {
+      "id": "evidence:msys2:cmake-2026-08-02",
+      "class": "primary",
+      "title": "MSYS2 — Using CMake in MSYS2",
+      "locator": "https://www.msys2.org/docs/cmake/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the recommendation to install the MinGW CMake package for native builds, the Ninja default in the MSYS2-provided CMake, and the three relevant generators. MSYS2's own documentation; authoritative for MSYS2 rather than inherited from Cygwin or Arch. Retrieved and verified 200 on 2026-08-02."
+    },
+    {
+      "id": "evidence:msys2:creating-packages-2026-08-02",
+      "class": "primary",
+      "title": "MSYS2 — Creating Packages",
+      "locator": "https://www.msys2.org/wiki/Creating-Packages/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the msys/mingw subsystem decision rule, the makepkg phase sequence, the makepkg vs makepkg-mingw split, and the statement that the MSYS shell is used to build both kinds of package. MSYS2's own documentation; authoritative for MSYS2 rather than inherited from Cygwin or Arch. Retrieved and verified 200 on 2026-08-02."
+    },
+    {
       "id": "evidence:msys2:environments-2026-07-28",
       "class": "primary",
       "title": "MSYS2 Environments",
@@ -18094,6 +18134,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official environment matrix and lifecycle guidance retrieved for Bootstrap 0.5."
+    },
+    {
+      "id": "evidence:msys2:jit-debugging-2026-08-02",
+      "class": "primary",
+      "title": "MSYS2 — Just-in-time Debugging",
+      "locator": "https://www.msys2.org/docs/jit-debugging/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for MSYS error_start, the AeDebug registration for native processes, and the inherited-SetErrorMode problem that suppresses the debugger for native children of MSYS processes unless MSYS=winjitdebug is set. MSYS2's own documentation; authoritative for MSYS2 rather than inherited from Cygwin or Arch. Retrieved and verified 200 on 2026-08-02."
+    },
+    {
+      "id": "evidence:msys2:package-management-2026-08-02",
+      "class": "primary",
+      "title": "MSYS2 — Package Management",
+      "locator": "https://www.msys2.org/docs/package-management/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the five package repositories and the mingw-w64 naming prefixes with their clang/ucrt secondary prefix. MSYS2's own documentation; authoritative for MSYS2 rather than inherited from Cygwin or Arch. Retrieved and verified 200 on 2026-08-02."
+    },
+    {
+      "id": "evidence:msys2:porting-2026-08-02",
+      "class": "primary",
+      "title": "MSYS2 — Porting",
+      "locator": "https://www.msys2.org/wiki/Porting/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the preprocessor and host-triplet identifier table (__MSYS__, __MINGW32__, __CYGWIN__, x86_64-pc-cygwin, x86_64-w64-mingw32) and for the make vs mingw32-make distinction. MSYS2's own documentation; authoritative for MSYS2 rather than inherited from Cygwin or Arch. Retrieved and verified 200 on 2026-08-02."
     },
     {
       "id": "evidence:msys2:runtime-behavior-probes-2026-07-30",

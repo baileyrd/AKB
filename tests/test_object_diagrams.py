@@ -73,7 +73,7 @@ class ObjectDiagramTests(unittest.TestCase):
     def test_rebuild_is_a_no_op(self):
         """CI regenerates before `git diff --exit-code`."""
         before = {p: p.read_text(encoding="utf-8") for p in DOCS}
-        changed = bod.build(bod.load_graph())
+        changed = bod.build(bod.load_graph(), write=False)
         self.assertEqual(
             [p.name for p in changed], [], "regeneration is not idempotent"
         )

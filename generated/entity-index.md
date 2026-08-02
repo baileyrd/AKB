@@ -25,7 +25,7 @@
 | component:gnu:libtool | component | GNU Libtool | partial | 3 | 1 |
 | component:gnu:make | component | GNU Make | partial | 3 | 1 |
 | component:gnu:nano | component | GNU Nano | partial | 5 | 1 |
-| component:gnu:ncurses | component | ncurses | partial | 2 | 6 |
+| component:gnu:ncurses | component | ncurses | partial | 2 | 7 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 4 | 1 |
 | component:gnupg:gnupg | component | GnuPG | partial | 16 | 2 |
@@ -41,7 +41,7 @@
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
 | component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
 | component:openssh:openssh | component | OpenSSH | partial | 7 | 2 |
-| component:openssl:openssl | component | OpenSSL | partial | 3 | 7 |
+| component:openssl:openssl | component | OpenSSL | partial | 3 | 8 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
 | component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
 | component:tukaani:xz | component | XZ Utils | partial | 5 | 1 |
@@ -681,7 +681,7 @@
 | library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
 | library:libarchive:libarchive@clang64 | library | libarchive (CLANG64) | partial | 10 | 0 |
 | library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
-| library:libedit:libedit | library | libedit | partial | 2 | 3 |
+| library:libedit:libedit | library | libedit | partial | 3 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 4 |
 | library:libexpat:expat@clang64 | library | Expat (CLANG64) | partial | 0 | 1 |
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 3 |
@@ -751,7 +751,7 @@
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
 | library:xxhash:xxhash@msys | library | xxHash (MSYS) | partial | 0 | 0 |
-| library:yubico:libfido2 | library | libfido2 | partial | 4 | 2 |
+| library:yubico:libfido2 | library | libfido2 | partial | 5 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |

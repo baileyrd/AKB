@@ -10,6 +10,7 @@ model_refs:
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
   - library:mozilla:ca-certificates
+  - library:yubico:libfido2
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
   - evidence:catalog:current
@@ -68,7 +69,7 @@ fully in [libopenssl](LIBOPENSSL.md). Optional
 dependencies on `ca-certificates` and `perl` support certificate-chain
 verification and OpenSSL's Perl-based test/build tooling, respectively.
 
-## Reverse Dependencies (ca-certificates)
+## Reverse Dependencies (ca-certificates, libfido2)
 
 **Added 2026-08-02**: [ca-certificates](CA-CERTIFICATES.md) records a
 `requires` edge to this component
@@ -76,8 +77,11 @@ verification and OpenSSL's Perl-based test/build tooling, respectively.
 — backing certificate-bundle processing ca-certificates' own install-time
 hooks perform, added while correcting that page's own prior false
 "no runtime-depends-on edges" claim. The exact mechanism was not
-confirmed; this edge is counted among the 21 reverse dependents noted
-below.
+confirmed. Separately, [libfido2](LIBFIDO2.md) records a `requires` edge
+(`relationship:foundation-libraries:libfido2-requires-openssl`) backing
+FIDO2/U2F cryptographic operations, formalizing a dependency that page
+had previously cited by package name but declined to model. Both edges
+are counted among the 21 reverse dependents noted below.
 
 ## Reverse Dependencies
 
@@ -159,3 +163,4 @@ confirmed.
 - [libopenssl](LIBOPENSSL.md)
 - [libssh2](LIBSSH2.md)
 - [ca-certificates](CA-CERTIFICATES.md)
+- [libfido2](LIBFIDO2.md)

@@ -8823,6 +8823,18 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:libfido2-requires-openssl",
+      "type": "requires",
+      "source": "library:yubico:libfido2",
+      "target": "component:openssl:openssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs FIDO2/U2F cryptographic operations (ECDSA/EdDSA signature verification, hashing). Added 2026-08-02, formalizing a dependency this knowledge base's own LIBFIDO2.md page already cited by package name but had previously declined to model as a formal edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:foundation-libraries:file-requires-zlib-msys",
       "type": "requires",
       "source": "library:darwinsys:file",
@@ -11243,6 +11255,18 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs interactive line editing in Heimdal's own tools, closing a sub-dependency this page had previously left unenumerated.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libedit-requires-ncurses",
+      "type": "requires",
+      "source": "library:libedit:libedit",
+      "target": "component:gnu:ncurses",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs terminal capability querying and cursor control for interactive line editing. Added 2026-08-02, formalizing a dependency this knowledge base's own LIBEDIT.md page already cited by package name but had not yet modeled as a formal edge.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

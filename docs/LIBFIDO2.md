@@ -14,7 +14,7 @@ model_refs:
 evidence_refs:
   - evidence:yubico:libfido2-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libfido2
@@ -67,20 +67,23 @@ The MSYS `package:msys2:libfido2` declares dependencies on
 [libcbor](LIBCBOR.md) (a CBOR binary-format parsing library used by the
 FIDO2 protocol's own data encoding,
 `relationship:foundation-libraries:libfido2-requires-libcbor`),
-`package:msys2:openssl`, and [zlib (MSYS)](ZLIB-MSYS.md)
+[OpenSSL](OPENSSL.md) (`package:msys2:openssl`,
+`relationship:foundation-libraries:libfido2-requires-openssl` — backs
+FIDO2/U2F cryptographic operations such as ECDSA/EdDSA signature
+verification and hashing; formalized as a graph edge 2026-08-02,
+**correcting** this paragraph's prior statement that it declined to add
+a formal edge here — that rationale did not hold up: this is a real,
+directly-declared, catalog-verified dependency distinct from
+[OpenSSH's](OPENSSH.md#dependencies) own separate, direct dependency on
+the same package, and this volume's practice is to model such edges),
+and [zlib (MSYS)](ZLIB-MSYS.md)
 (`package:msys2:zlib`,
 `relationship:foundation-libraries:libfido2-requires-zlib-msys`) — a
 correction: this paragraph previously (incorrectly) identified the zlib
 dependency as this knowledge base's existing UCRT64
 `library:gnu:zlib` entity; it is in fact the separately versioned MSYS
 package, distinct from both the UCRT64 and CLANG64 zlib siblings this
-knowledge base also documents. `package:msys2:openssl` correctly
-matches this knowledge base's existing `component:openssl:openssl`
-packaged form, though this page does not add a formal `requires` edge
-for it since libfido2's use is a build/runtime linkage rather than a
-documented architectural relationship distinct from
-[OpenSSH's](OPENSSH.md#dependencies) own separate, direct dependency on
-`package:msys2:openssl`.
+knowledge base also documents.
 
 ## Reverse Dependencies
 

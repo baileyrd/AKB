@@ -8,11 +8,12 @@ model_refs:
   - package:msys2:ncurses
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
+  - library:libedit:libedit
 evidence_refs:
   - evidence:gnu:ncurses-manual-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # ncurses
@@ -76,7 +77,10 @@ documented across this volume so far, including bash's 46 at the package
 level for a different reason (bash is depended on broadly as the `sh`
 provider across the whole distribution, while ncurses is depended on
 specifically by interactive text-mode programs). This is the
-directly observed basis for `claim:component:ncurses:hub`. See the
+directly observed basis for `claim:component:ncurses:hub`. Among these,
+[libedit](LIBEDIT.md) is now individually modeled
+(`relationship:foundation-libraries:libedit-requires-ncurses`, added
+2026-08-02). See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -149,3 +153,4 @@ unconfirmed.
 - [Vim](VIM.md)
 - [mintty](MINTTY.md)
 - [ncurses (UCRT64)](NCURSES-UCRT64.md)
+- [libedit](LIBEDIT.md)

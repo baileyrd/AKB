@@ -16910,6 +16910,7 @@ Relationships
 - component:gnupg:gnupg --requires--> library:gnu:zlib@msys
 - library:curl:libcurl --requires--> library:gnu:zlib@msys
 - library:yubico:libfido2 --requires--> library:gnu:zlib@msys
+- library:yubico:libfido2 --requires--> component:openssl:openssl
 - library:darwinsys:file --requires--> library:gnu:zlib@msys
 - environment:msys2:msys --contains--> library:google:brotli
 - library:google:brotli --uses-runtime--> runtime:msys2:msys-2.0.dll
@@ -17112,6 +17113,7 @@ Relationships
 - library:gnome:libxml2@msys --requires--> library:gnu:readline@msys
 - library:gnome:libxml2@msys --requires--> library:gnu:zlib@msys
 - library:h5l:heimdal-libs --requires--> library:libedit:libedit
+- library:libedit:libedit --requires--> component:gnu:ncurses
 - library:h5l:heimdal-libs --requires--> library:libxcrypt:libxcrypt
 - library:libarchive:libarchive --requires--> library:openssl:openssl@ucrt64
 - library:gnu:ncurses@ucrt64 --requires--> library:pcre:pcre2

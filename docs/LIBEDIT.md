@@ -12,7 +12,7 @@ model_refs:
 evidence_refs:
   - evidence:libedit:manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libedit
@@ -62,7 +62,10 @@ interactive prompts depend on GNU Readline specifically, while
 The MSYS `package:msys2:libedit` declares a dependency on
 [ncurses](NCURSES.md) (`package:msys2:ncurses`, the same MSYS package
 [ncurses'](NCURSES.md#architectural-classification) own page documents),
-for terminal capability and cursor control.
+for terminal capability and cursor control
+(`relationship:foundation-libraries:libedit-requires-ncurses`, formalized
+as a graph edge 2026-08-02 — this dependency was previously cited here
+by package name only).
 
 ## Reverse Dependencies
 

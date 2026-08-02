@@ -198,7 +198,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 6
+- Incoming relationships: 7
 
 ## `component:gnu:sed`
 
@@ -342,7 +342,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `component:p7zip:p7zip`
 
@@ -6101,7 +6101,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libedit:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 3
 
 ## `library:libexpat:expat`
@@ -6731,7 +6731,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 2
 
 ## `package:msys2:ack`

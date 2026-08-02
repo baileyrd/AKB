@@ -76,11 +76,12 @@ policy, and the remaining one is modeled in this knowledge base:
 ## Reverse Dependencies
 
 The catalog snapshot records 26 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-mpfr`, including
-`mingw-w64-clang-x86_64-mpc` (the CLANG64 sibling of
-[GNU MPC](GNU-MPC.md), not yet modeled) and
+`package:msys2:mingw-w64-clang-x86_64-mpfr`. One is now modeled in
+this knowledge base: [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)
+(`relationship:foundation-libraries:mpc-clang64-requires-mpfr-clang64`,
+added 2026-08-02). The remaining 25 include
 `mingw-w64-clang-x86_64-gdb` (the CLANG64 sibling of
-[GDB](GNU-GDB.md), not yet modeled). None of the 26 are currently
+[GDB](GNU-GDB.md), not yet modeled) and are not currently
 modeled as entities in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -131,14 +132,14 @@ The correct-rounding arithmetic model is backed by the official MPFR
 project site (`evidence:gnu:mpfr-manual-2026-07-30`), the same evidence
 record [GNU MPFR (UCRT64)](GNU-MPFR.md) cites. Package identity,
 version, license, and the recorded dependency edge are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open: the 26
-recorded reverse dependents are not individually modeled in this
-knowledge base, though `mpc` (CLANG64) is flagged above as a candidate
-for a future batch, per this volume's ongoing gap-closing methodology.
+pacman catalog snapshot (`evidence:catalog:current`). Open: 25 of the
+26 recorded reverse dependents are not individually modeled in this
+knowledge base.
 
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU MPFR (UCRT64)](GNU-MPFR.md)
 - [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)
+- [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)
 - [GMP (CLANG64)](GNU-GMP-CLANG64.md)

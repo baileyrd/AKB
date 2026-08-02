@@ -126,3 +126,4 @@ methodology.
 - [GNU MP (GMP)](GNU-GMP.md)
 - [GNU MPFR](GNU-MPFR.md)
 - [GCC](GNU-GCC.md)
+- [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)

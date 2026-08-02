@@ -26,6 +26,7 @@ model_refs:
   - library:gnu:mpfr@clang64
   - library:nettle:nettle@clang64
   - library:libisl:isl@clang64
+  - library:multiprecision:mpc@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -289,8 +290,9 @@ flowchart LR
 [GPGME (MSYS)](LIBGPGME-MSYS.md),
 [GMP (CLANG64)](GNU-GMP-CLANG64.md),
 [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md),
-[Nettle (CLANG64)](NETTLE-CLANG64.md), and
-[isl (CLANG64)](LIBISL-CLANG64.md) are
+[Nettle (CLANG64)](NETTLE-CLANG64.md),
+[isl (CLANG64)](LIBISL-CLANG64.md), and
+[GNU MPC (CLANG64)](GNU-MPC-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -305,7 +307,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and nineteen pages are deliberately scoped to package/dependency-level
+All one hundred and twenty pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -854,10 +856,11 @@ dependency is also GMP (CLANG64), the eighth full-coverage addition.
 A third followed immediately: [isl (CLANG64)](LIBISL-CLANG64.md),
 whose sole catalog dependency turned out to be GMP alone (not GMP+MPFR
 as initially assumed), giving it full 1/1 coverage on the same
-pattern — the ninth full-coverage addition this session. One
-candidate remains open on GMP (CLANG64)'s own page for a future batch:
-`mpc` (CLANG64), which depends on both GMP and MPFR, both now modeled.
-These
+pattern — the ninth full-coverage addition this session. The
+last candidate, [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md), closed the
+same batch with full 2/2 coverage (GMP and MPFR, both CLANG64), the
+tenth full-coverage addition this session — completing every
+concrete future-batch candidate the GMP (CLANG64) chain flagged. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

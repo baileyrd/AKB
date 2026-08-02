@@ -76417,6 +76417,8 @@
 | relationship:foundation-libraries:llvm-libs-requires-libxml2-clang64 | requires | library:llvm:llvm-libs | library:gnome:libxml2@clang64 | verified |
 | relationship:foundation-libraries:llvm-libs-requires-zlib-clang64 | requires | library:llvm:llvm-libs | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:llvm-libs-requires-zstd-clang64 | requires | library:llvm:llvm-libs | library:facebook:zstd@clang64 | verified |
+| relationship:foundation-libraries:mpc-clang64-requires-gmp-clang64 | requires | library:multiprecision:mpc@clang64 | library:gnu:gmp@clang64 | verified |
+| relationship:foundation-libraries:mpc-clang64-requires-mpfr-clang64 | requires | library:multiprecision:mpc@clang64 | library:gnu:mpfr@clang64 | verified |
 | relationship:foundation-libraries:mpc-packaged-by-package | packaged-by | library:multiprecision:mpc | package:msys2:mingw-w64-ucrt-x86_64-mpc | verified |
 | relationship:foundation-libraries:mpc-requires-gmp | requires | library:multiprecision:mpc | library:gnu:gmp | verified |
 | relationship:foundation-libraries:mpc-requires-mpfr | requires | library:multiprecision:mpc | library:gnu:mpfr | verified |

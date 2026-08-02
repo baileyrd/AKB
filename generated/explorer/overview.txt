@@ -688,6 +688,7 @@ Objects
 - library:mozilla:ca-certificates (library): ca-certificates
 - library:mozilla:ca-certificates@ucrt64 (library): ca-certificates (UCRT64)
 - library:multiprecision:mpc (library): GNU MPC
+- library:multiprecision:mpc@clang64 (library): GNU MPC (CLANG64)
 - library:nettle:libhogweed@msys (library): libhogweed
 - library:nettle:libnettle@msys (library): libnettle
 - library:nettle:nettle (library): Nettle
@@ -16915,6 +16916,8 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:multiprecision:mpc@clang64 --requires--> library:gnu:gmp@clang64
+- library:multiprecision:mpc@clang64 --requires--> library:gnu:mpfr@clang64
 - library:libisl:isl@clang64 --requires--> library:gnu:gmp@clang64
 - library:nettle:nettle@clang64 --requires--> library:gnu:gmp@clang64
 - library:gnu:mpfr@clang64 --requires--> library:gnu:gmp@clang64

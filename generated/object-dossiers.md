@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:gmp@msys`
 
@@ -5688,7 +5688,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:gnu:mpfr@msys`
 
@@ -6184,6 +6184,15 @@
 - Evidence: evidence:multiprecision:mpc-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 2
+
+## `library:multiprecision:mpc@clang64`
+
+- Name: GNU MPC (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:multiprecision:mpc-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 0
 
 ## `library:nettle:libhogweed@msys`
 

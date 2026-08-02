@@ -621,7 +621,7 @@
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
-| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 3 |
+| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
@@ -635,7 +635,7 @@
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 5 |
 | library:gnu:libunistring@ucrt64 | library | libunistring (UCRT64) | partial | 1 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 4 |
-| library:gnu:mpfr@clang64 | library | GNU MPFR (CLANG64) | partial | 1 | 0 |
+| library:gnu:mpfr@clang64 | library | GNU MPFR (CLANG64) | partial | 1 | 1 |
 | library:gnu:mpfr@msys | library | GNU MPFR (MSYS) | partial | 1 | 1 |
 | library:gnu:ncurses@ucrt64 | library | ncurses (UCRT64) | partial | 1 | 1 |
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
@@ -691,6 +691,7 @@
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 4 |
 | library:mozilla:ca-certificates@ucrt64 | library | ca-certificates (UCRT64) | partial | 1 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
+| library:multiprecision:mpc@clang64 | library | GNU MPC (CLANG64) | partial | 2 | 0 |
 | library:nettle:libhogweed@msys | library | libhogweed | partial | 1 | 2 |
 | library:nettle:libnettle@msys | library | libnettle | partial | 1 | 2 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 2 |

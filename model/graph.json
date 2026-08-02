@@ -703,6 +703,24 @@
       "evidence_refs": ["evidence:libisl:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:multiprecision:mpc@clang64",
+      "kind": "library",
+      "name": "GNU MPC (CLANG64)",
+      "summary": "The GNU MPC complex-number arithmetic library, packaged in the CLANG64 environment and linking against GMP (CLANG64) and GNU MPFR (CLANG64), both already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["mpc", "GNU MPC"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.multiprecision.org",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-mpc",
+        "role": "arbitrary-precision complex-number arithmetic"
+      },
+      "evidence_refs": ["evidence:multiprecision:mpc-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8705,6 +8723,30 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpc-clang64-requires-gmp-clang64",
+      "type": "requires",
+      "source": "library:multiprecision:mpc@clang64",
+      "target": "library:gnu:gmp@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "MPC builds complex-number arithmetic directly on GMP's arbitrary-precision integer and rational primitives.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpc-clang64-requires-mpfr-clang64",
+      "type": "requires",
+      "source": "library:multiprecision:mpc@clang64",
+      "target": "library:gnu:mpfr@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "MPC's complex-number operations reuse MPFR's correctly-rounded real-arithmetic primitives for the real and imaginary components.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

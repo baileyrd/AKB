@@ -6212,6 +6212,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:oberhumer:liblzo2@msys`
+
+- Name: LZO
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:oberhumer:lzo-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `library:openssl:libopenssl`
 
 - Name: libopenssl

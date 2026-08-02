@@ -17,6 +17,7 @@ model_refs:
   - library:sqlite:libsqlite@msys
   - library:sasl:libsasl@msys
   - library:rpm:popt@msys
+  - library:oberhumer:liblzo2@msys
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -177,6 +178,7 @@ evidence_refs:
   - evidence:c-ares:project-site-2026-07-30
   - evidence:cyrusimap:libsasl-manual-2026-08-02
   - evidence:rpm:popt-manual-2026-08-02
+  - evidence:oberhumer:lzo-manual-2026-08-02
 last_verified: 2026-08-02
 ---
 
@@ -269,8 +271,9 @@ flowchart LR
 [libarchive (MSYS)](LIBARCHIVE-MSYS.md),
 [xxHash (MSYS)](XXHASH-MSYS.md),
 [libsqlite (MSYS)](LIBSQLITE-MSYS.md),
-[libsasl (MSYS)](LIBSASL-MSYS.md), and
-[popt (MSYS)](POPT-MSYS.md) are
+[libsasl (MSYS)](LIBSASL-MSYS.md),
+[popt (MSYS)](POPT-MSYS.md), and
+[LZO (MSYS)](LIBLZO2-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -285,7 +288,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and ten pages are deliberately scoped to package/dependency-level
+All one hundred and eleven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -777,7 +780,12 @@ path: [popt (MSYS)](POPT-MSYS.md), an RPM-project command-line option
 parser consumed by `rsync` (not yet a modeled entity), whose two own
 catalog dependencies — [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md) and
 [GNU libintl](GNU-LIBINTL.md) — were both already modeled, closing its
-full dependency footprint in one pass. These
+full dependency footprint in one pass. A final split-library candidate
+closed out the compression-codec sweep begun with liblz4:
+[LZO (MSYS)](LIBLZO2-MSYS.md), a fast-decompression codec library
+consumed by `lzop` and `squashfs-tools` (neither yet a modeled
+entity), with only the `gcc-libs` boilerplate row as its own recorded
+dependency. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

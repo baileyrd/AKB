@@ -132,3 +132,4 @@ batch, per this volume's ongoing gap-closing methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [xxHash (UCRT64)](XXHASH.md)
 - [liblz4 (MSYS)](LIBLZ4-MSYS.md)
+- [LZO (MSYS)](LIBLZO2-MSYS.md)

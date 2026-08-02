@@ -541,6 +541,24 @@
       "evidence_refs": ["evidence:rpm:popt-manual-2026-08-02", "evidence:catalog:current"]
     },
     {
+      "id": "library:oberhumer:liblzo2@msys",
+      "kind": "library",
+      "name": "LZO",
+      "summary": "A portable lossless data compression library prioritizing decompression speed, packaged in the MSYS environment and linked by lzop and squashfs-tools for LZO-format compression support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Markus F.X.J. Oberhumer",
+      "aliases": ["liblzo2", "LZO"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.oberhumer.com/opensource/lzo",
+        "packaged_as": "package:msys2:liblzo2",
+        "role": "LZO compression codec"
+      },
+      "evidence_refs": ["evidence:oberhumer:lzo-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -10417,6 +10435,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:oberhumer:lzo-manual-2026-08-02",
+      "class": "primary",
+      "title": "LZO (official project site)",
+      "locator": "https://www.oberhumer.com/opensource/lzo",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official LZO project site, matching the project_url recorded for package:msys2:liblzo2 in the catalog snapshot."
     },
     {
       "id": "evidence:rpm:popt-manual-2026-08-02",

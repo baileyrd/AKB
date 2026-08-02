@@ -691,6 +691,7 @@ Objects
 - library:nghttp2:libnghttp3@ucrt64 (library): libnghttp3 (UCRT64)
 - library:nghttp2:libngtcp2 (library): libngtcp2
 - library:nghttp2:libngtcp2@ucrt64 (library): libngtcp2 (UCRT64)
+- library:oberhumer:liblzo2@msys (library): LZO
 - library:openssl:libopenssl (library): libopenssl
 - library:openssl:openssl@ucrt64 (library): OpenSSL (UCRT64)
 - library:p11-glue:p11-kit (library): p11-kit

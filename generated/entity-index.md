@@ -694,6 +694,7 @@
 | library:nghttp2:libnghttp3@ucrt64 | library | libnghttp3 (UCRT64) | partial | 0 | 1 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
+| library:oberhumer:liblzo2@msys | library | LZO | partial | 0 | 0 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 5 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |

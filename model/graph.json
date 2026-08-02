@@ -469,6 +469,24 @@
       "evidence_refs": ["evidence:libarchive:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:xxhash:xxhash@msys",
+      "kind": "library",
+      "name": "xxHash (MSYS)",
+      "summary": "The MSYS-environment build of the xxHash fast non-cryptographic hash algorithm library, a distinct catalog package from the UCRT64 xxHash already documented in this knowledge base (GDB's dependency) and from the MSYS xxhash CLI package.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yann Collet",
+      "aliases": ["libxxhash"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://github.com/Cyan4973/xxHash",
+        "packaged_as": "package:msys2:libxxhash",
+        "role": "fast non-cryptographic hashing"
+      },
+      "evidence_refs": ["evidence:xxhash:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",

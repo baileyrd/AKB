@@ -124,10 +124,13 @@ project site (`evidence:xxhash:manual-2026-07-30`), matching the
 `project_url` already recorded for
 `package:msys2:mingw-w64-ucrt-x86_64-xxhash` in the catalog. Package
 identity, version, and the recorded dependency/dependent edges are
-backed by the pacman catalog snapshot (`evidence:catalog:current`). Open:
-whether other native environments package xxHash separately was not
-confirmed. Also explicitly out of scope for this page: header-level API
-surface and PE import/export-level evidence, per the
+backed by the pacman catalog snapshot (`evidence:catalog:current`).
+**Update, 2026-08-02**: the MSYS environment does package xxHash
+separately — see [xxHash (MSYS)](XXHASH-MSYS.md), a distinct catalog
+entity now modeled in this knowledge base. Whether CLANG64/i686
+package it separately as well remains unconfirmed. Also explicitly out
+of scope for this page: header-level API surface and PE import/export-
+level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -135,3 +138,4 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GDB](GNU-GDB.md)
+- [xxHash (MSYS)](XXHASH-MSYS.md)

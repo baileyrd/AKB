@@ -709,6 +709,7 @@
 | library:tukaani:liblzma@msys | library | liblzma (MSYS) | partial | 0 | 3 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
+| library:xxhash:xxhash@msys | library | xxHash (MSYS) | partial | 0 | 0 |
 | library:yubico:libfido2 | library | libfido2 | partial | 4 | 2 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |

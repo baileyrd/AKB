@@ -6347,6 +6347,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 2
 
+## `library:xxhash:xxhash@msys`
+
+- Name: xxHash (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:xxhash:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `library:yubico:libfido2`
 
 - Name: libfido2

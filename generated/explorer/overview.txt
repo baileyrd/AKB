@@ -706,6 +706,7 @@ Objects
 - library:tukaani:liblzma@msys (library): liblzma (MSYS)
 - library:unicode:icu (library): ICU (International Components for Unicode)
 - library:xxhash:xxhash (library): xxHash
+- library:xxhash:xxhash@msys (library): xxHash (MSYS)
 - library:yubico:libfido2 (library): libfido2
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible

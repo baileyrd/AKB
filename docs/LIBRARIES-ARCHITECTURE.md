@@ -67,6 +67,7 @@ model_refs:
   - library:llvm:llvm-libs
   - library:llvm:clang-libs
   - library:xxhash:xxhash
+  - library:xxhash:xxhash@msys
   - library:tukaani:liblzma
   - library:gnu:libiconv@msys
   - library:gnu:gmp@msys
@@ -259,8 +260,9 @@ flowchart LR
 [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md),
 [p11-kit (UCRT64)](P11-KIT-UCRT64.md),
 [GnuTLS (UCRT64)](GNUTLS-UCRT64.md),
-[liblzma (MSYS)](LIBLZMA-MSYS.md), [liblz4 (MSYS)](LIBLZ4-MSYS.md), and
-[libarchive (MSYS)](LIBARCHIVE-MSYS.md) are
+[liblzma (MSYS)](LIBLZMA-MSYS.md), [liblz4 (MSYS)](LIBLZ4-MSYS.md),
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md), and
+[xxHash (MSYS)](XXHASH-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -275,7 +277,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and six pages are deliberately scoped to package/dependency-level
+All one hundred and seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -737,7 +739,15 @@ together [libbz2](LIBBZ2.md), [Expat (MSYS)](EXPAT-MSYS.md),
 [liblz4 (MSYS)](LIBLZ4-MSYS.md), [liblzma (MSYS)](LIBLZMA-MSYS.md),
 [libopenssl](LIBOPENSSL.md), [libzstd (MSYS)](LIBZSTD-MSYS.md), and
 [zlib (MSYS)](ZLIB-MSYS.md), each of which now lists it as a reverse
-dependent. These pages are a starting point for this
+dependent. A third split-library candidate followed directly from
+liblz4's own reverse-dependency list: [xxHash (MSYS)](XXHASH-MSYS.md),
+a distinct catalog entity from this volume's earlier UCRT64
+[xxHash](XXHASH.md) page (GDB's dependency) and from the separate MSYS
+`xxhash` CLI package, with zero own dependencies and four
+not-yet-modeled reverse dependents (`ccache`, `libxxhash-devel`,
+`rsync`, `xxhash`); it closes [xxHash's](XXHASH.md) own prior open
+question about whether other environments package it separately. These
+pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

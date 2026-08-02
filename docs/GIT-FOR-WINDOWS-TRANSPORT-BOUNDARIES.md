@@ -50,6 +50,13 @@ particular installation.
 4. Collect binary and DLL evidence for that executable before attributing a
    startup or transport failure to the distribution.
 
+## Mechanism pages
+
+[HTTP transport](GIT-FOR-WINDOWS-HTTP-TRANSPORT.md) documents the cURL and
+TLS-backend mechanism behind the HTTPS row;
+[credential manager](GIT-FOR-WINDOWS-CREDENTIAL-MANAGER.md) documents the
+helper protocol behind the credential row.
+
 ## Related Views
 
 - [Git for Windows boundary](GIT-FOR-WINDOWS-BOUNDARY.md)

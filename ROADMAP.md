@@ -133,13 +133,21 @@ tenth by dependent count across the whole catalog.
 ## Increment 6 — Git for Windows
 
 - [x] Distribution boundary and divergence
-- [ ] Launcher, Git Bash, Mintty, and shell startup
-- [ ] Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading
+- [x] Launcher, Git Bash, Mintty, and shell startup
+- [x] Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading
 - [x] Package and source mappings
 
-Volume 9 is four pages. `MSYS interaction`, `HTTP transport`, and
-`credential manager` appear in zero Volume 9 pages; Mintty appears once,
-inside a Mermaid node label.
+**Closed 2026-08-02.** Volume 9 goes from 4 pages to 8. The three terms that
+appeared nowhere — `MSYS interaction`, `HTTP transport`, `credential
+manager` — each now have a page, and mintty is named as the terminal host
+rather than parenthesised in a diagram label. Facts come from
+gitforwindows.org, gitcredentials(7), and git-config, fetched this session.
+
+Two things the batch did not resolve and says so: Git Credential Manager's
+own repository was unreachable from this environment, so its internals are
+not independently verified; and no PE import analysis of any Git for Windows
+binary exists, which is what the DLL-loading page would need to move past
+mechanism.
 
 ## Increment 7 — Explorer
 

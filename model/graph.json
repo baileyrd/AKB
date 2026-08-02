@@ -12667,6 +12667,36 @@
   ],
   "evidence": [
     {
+      "id": "evidence:git-for-windows:site-2026-08-02",
+      "class": "primary",
+      "title": "Git for Windows (official site)",
+      "locator": "https://gitforwindows.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": "2.55.0.3",
+      "integrity": null,
+      "notes": "Distribution overview. Records the shipped version and that Git for Windows provides a BASH emulation (Git Bash) and Git GUI as part of a native tool set. Does not document component internals; those are attributed to git-scm.com documentation."
+    },
+    {
+      "id": "evidence:git:gitcredentials-7-2026-08-02",
+      "class": "primary",
+      "title": "gitcredentials(7) manual page",
+      "locator": "https://git-scm.com/docs/gitcredentials",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Credential helper protocol, the git-credential-$NAME naming convention, the get/store/erase operations, and the statement that Git Credential Manager is cross platform and included in Git for Windows. Also names git-credential-wincred as a Windows helper."
+    },
+    {
+      "id": "evidence:git:git-config-2026-08-02",
+      "class": "primary",
+      "title": "git-config manual page",
+      "locator": "https://git-scm.com/docs/git-config",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "http.sslBackend (openssl or schannel, ignored if cURL lacks runtime backend selection), http.sslCertType, credential.helper, and core.symlinks. Cited for transport and credential configuration surfaces."
+    },
+    {
       "id": "evidence:pacman:pacman-8-2026-08-02",
       "class": "primary",
       "title": "pacman(8) manual page",

@@ -13,7 +13,7 @@ last_verified: 2026-07-28
 ```mermaid
 flowchart LR
     A["Start-menu shortcut or terminal invocation"] --> B["Git for Windows launcher"]
-    B --> C["Terminal host (for example Mintty)"]
+    B --> C["Terminal host — mintty"]
     B --> D["Bash process and environment"]
     D --> E["Shell startup files"]
     D --> F["Git and supporting executables"]
@@ -22,7 +22,7 @@ flowchart LR
 | Component | Responsibility | Boundary |
 | --- | --- | --- |
 | Launcher | Selects executable, arguments, working directory, and initial environment | Installation-specific launch details require observed evidence |
-| Terminal host | Provides interactive terminal/session behavior | Console/PTY integration is distinct from Git process behavior |
+| Terminal host | Provides interactive terminal/session behavior | Console/PTY integration is distinct from Git process behavior. The terminal host is [mintty](MINTTY.md); PTY behavior is documented on [PTY and console](MSYS-PTY-AND-CONSOLE.md) |
 | Bash | Interprets commands and processes startup configuration | Shell profiles are user/site configuration, not package metadata |
 | Git executable | Performs Git operations and invokes configured helpers | Transport, credentials, SSH, and DLL loading are separate domains |
 
@@ -36,4 +36,7 @@ paths.
 ## Related Views
 
 - [Git for Windows boundary](GIT-FOR-WINDOWS-BOUNDARY.md)
+- [Git Bash and MSYS interaction](GIT-FOR-WINDOWS-GIT-BASH.md)
+- [DLL loading](GIT-FOR-WINDOWS-DLL-LOADING.md)
+- [mintty](MINTTY.md)
 - [GNU userland role model](GNU-USERLAND-ROLE-MODEL.md)

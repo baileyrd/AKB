@@ -6,7 +6,7 @@ status: partial
 model_refs:
   - ecosystem:msys2:msys2
 evidence_refs: []
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # Git for Windows Distribution Boundary
@@ -42,6 +42,20 @@ On 2026-07-30, the installed command resolved to
 Windows tree. This is local executable-resolution evidence only; it does not
 establish launcher behavior, transport selection, DLL loading, or bundled
 component versions not directly observed.
+
+## Component pages
+
+**Added 2026-08-02.** The charter names thirteen Git for Windows components.
+Four now have pages beyond the launcher and transport-boundary models:
+
+- [Git Bash and MSYS interaction](GIT-FOR-WINDOWS-GIT-BASH.md) — the shell,
+  mintty as terminal host, and the MSYS/native execution boundary
+- [Credential manager](GIT-FOR-WINDOWS-CREDENTIAL-MANAGER.md) — the helper
+  protocol and the manager the distribution ships
+- [HTTP transport](GIT-FOR-WINDOWS-HTTP-TRANSPORT.md) — cURL, and the
+  openssl/schannel trust-store divergence
+- [DLL loading](GIT-FOR-WINDOWS-DLL-LOADING.md) — resolution across the
+  MSYS/native split
 
 ## Related Views
 

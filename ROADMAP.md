@@ -180,13 +180,18 @@ one page of 485 words.
 
 The charter's Diagram Hierarchy section required Level 0 through Level 7
 drill-down with every diagram hyperlinking to related diagrams. No roadmap
-item mentioned diagrams. The eight SVGs in `diagrams/` contain zero
-hyperlinks to each other, are hand-authored rather than generated, and
-their level semantics do not match the charter ladder.
+item mentioned diagrams, and the eight hand-authored SVGs had zero
+hyperlinks to each other on level semantics that did not match the charter.
 
-- [ ] Generate diagrams from the composed model
-- [ ] Emit PlantUML and Graphviz alongside SVG
-- [ ] Renumber levels to the charter ladder and link parent, child, and sibling
+**Largely closed 2026-08-02.** `tools/build_diagrams.py` generates the ladder
+from the composed model, emitting SVG, PlantUML, and Graphviz per level on
+the charter's own semantics, with parent/child navigation and a link to each
+level's canonical page. The hand-authored set is retired. Per-object
+subgraphs remain outstanding.
+
+- [x] Generate diagrams from the composed model
+- [x] Emit PlantUML and Graphviz alongside SVG
+- [x] Renumber levels to the charter ladder and link parent, child, and sibling
 - [ ] Per-object dependency subgraphs on documentation pages
 
 ## Increment 11 — Documentation as code

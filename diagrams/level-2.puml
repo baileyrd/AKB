@@ -1,0 +1,24 @@
+@startuml level-2
+' Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+title Level 2 - Subsystems
+header 14 of 14 objects, ranked by graph degree
+skinparam componentStyle rectangle
+skinparam defaultFontName sans-serif
+rectangle "Microsoft Windows" as n0 <<platform>>
+rectangle "msys-2.0.dll" as n1 <<runtime>>
+rectangle "UCRT64" as n2 <<environment>>
+rectangle "CLANG64" as n3 <<environment>>
+rectangle "CLANGARM64" as n4 <<environment>>
+rectangle "MINGW64" as n5 <<environment>>
+rectangle "MSYS" as n6 <<environment>>
+rectangle "MINGW32" as n7 <<environment>>
+rectangle "ucrt64" as n8 <<repository>>
+rectangle "clang64" as n9 <<repository>>
+rectangle "clangarm64" as n10 <<repository>>
+rectangle "mingw64" as n11 <<repository>>
+rectangle "msys" as n12 <<repository>>
+rectangle "mingw32" as n13 <<repository>>
+n6 --> n1 : uses-runtime
+note bottom : Parent level-1
+note bottom : Child level-3
+@enduml

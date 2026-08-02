@@ -1,0 +1,36 @@
+// Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+digraph level_3 {
+  rankdir=TB;
+  node [shape=box style=rounded fontname="sans-serif" fontsize=10];
+  edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
+  label="Level 3 - Components (18 of 43 objects, ranked by graph degree)";
+  labelloc=t;
+  n0 [label="GnuPG" tooltip="component:gnupg:gnupg" URL="../generated/explorer/index.html#/object/component%3Agnupg%3Agnupg"];
+  n1 [label="GDB" tooltip="component:gnu:gdb" URL="../generated/explorer/index.html#/object/component%3Agnu%3Agdb"];
+  n2 [label="CMake" tooltip="component:cmake:cmake" URL="../generated/explorer/index.html#/object/component%3Acmake%3Acmake"];
+  n3 [label="curl" tooltip="component:curl:curl" URL="../generated/explorer/index.html#/object/component%3Acurl%3Acurl"];
+  n4 [label="GCC" tooltip="component:gnu:gcc" URL="../generated/explorer/index.html#/object/component%3Agnu%3Agcc"];
+  n5 [label="OpenSSL" tooltip="component:openssl:openssl" URL="../generated/explorer/index.html#/object/component%3Aopenssl%3Aopenssl"];
+  n6 [label="Git (MSYS2 package)" tooltip="component:git:git" URL="../generated/explorer/index.html#/object/component%3Agit%3Agit"];
+  n7 [label="GNU Binutils" tooltip="component:gnu:binutils" URL="../generated/explorer/index.html#/object/component%3Agnu%3Abinutils"];
+  n8 [label="GNU Emacs" tooltip="component:gnu:emacs" URL="../generated/explorer/index.html#/object/component%3Agnu%3Aemacs"];
+  n9 [label="ncurses" tooltip="component:gnu:ncurses" URL="../generated/explorer/index.html#/object/component%3Agnu%3Ancurses"];
+  n10 [label="OpenSSH" tooltip="component:openssh:openssh" URL="../generated/explorer/index.html#/object/component%3Aopenssh%3Aopenssh"];
+  n11 [label="LLD" tooltip="component:llvm:lld" URL="../generated/explorer/index.html#/object/component%3Allvm%3Alld"];
+  n12 [label="LLDB" tooltip="component:llvm:lldb" URL="../generated/explorer/index.html#/object/component%3Allvm%3Alldb"];
+  n13 [label="GNU Coreutils" tooltip="component:gnu:coreutils" URL="../generated/explorer/index.html#/object/component%3Agnu%3Acoreutils"];
+  n14 [label="Vim" tooltip="component:vim:vim" URL="../generated/explorer/index.html#/object/component%3Avim%3Avim"];
+  n15 [label="GNU Awk (gawk)" tooltip="component:gnu:gawk" URL="../generated/explorer/index.html#/object/component%3Agnu%3Agawk"];
+  n16 [label="GNU Grep" tooltip="component:gnu:grep" URL="../generated/explorer/index.html#/object/component%3Agnu%3Agrep"];
+  n17 [label="GNU Nano" tooltip="component:gnu:nano" URL="../generated/explorer/index.html#/object/component%3Agnu%3Anano"];
+  n8 -> n9 [label="requires"];
+  n17 -> n9 [label="requires"];
+  n14 -> n9 [label="requires"];
+  n6 -> n3 [label="requires"];
+  n6 -> n10 [label="requires"];
+  n6 -> n5 [label="requires"];
+  n3 -> n5 [label="requires"];
+  n10 -> n5 [label="requires"];
+  n4 -> n7 [label="invokes"];
+  n11 -> n7 [label="compatible-with"];
+}

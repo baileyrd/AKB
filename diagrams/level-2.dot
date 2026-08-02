@@ -1,0 +1,23 @@
+// Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+digraph level_2 {
+  rankdir=TB;
+  node [shape=box style=rounded fontname="sans-serif" fontsize=10];
+  edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
+  label="Level 2 - Subsystems (14 of 14 objects, ranked by graph degree)";
+  labelloc=t;
+  n0 [label="Microsoft Windows" tooltip="platform:microsoft:windows" URL="../generated/explorer/index.html#/object/platform%3Amicrosoft%3Awindows"];
+  n1 [label="msys-2.0.dll" tooltip="runtime:msys2:msys-2.0.dll" URL="../generated/explorer/index.html#/object/runtime%3Amsys2%3Amsys-2.0.dll"];
+  n2 [label="UCRT64" tooltip="environment:msys2:ucrt64" URL="../generated/explorer/index.html#/object/environment%3Amsys2%3Aucrt64"];
+  n3 [label="CLANG64" tooltip="environment:msys2:clang64" URL="../generated/explorer/index.html#/object/environment%3Amsys2%3Aclang64"];
+  n4 [label="CLANGARM64" tooltip="environment:msys2:clangarm64" URL="../generated/explorer/index.html#/object/environment%3Amsys2%3Aclangarm64"];
+  n5 [label="MINGW64" tooltip="environment:msys2:mingw64" URL="../generated/explorer/index.html#/object/environment%3Amsys2%3Amingw64"];
+  n6 [label="MSYS" tooltip="environment:msys2:msys" URL="../generated/explorer/index.html#/object/environment%3Amsys2%3Amsys"];
+  n7 [label="MINGW32" tooltip="environment:msys2:mingw32" URL="../generated/explorer/index.html#/object/environment%3Amsys2%3Amingw32"];
+  n8 [label="ucrt64" tooltip="repository:msys2:ucrt64" URL="../generated/explorer/index.html#/object/repository%3Amsys2%3Aucrt64"];
+  n9 [label="clang64" tooltip="repository:msys2:clang64" URL="../generated/explorer/index.html#/object/repository%3Amsys2%3Aclang64"];
+  n10 [label="clangarm64" tooltip="repository:msys2:clangarm64" URL="../generated/explorer/index.html#/object/repository%3Amsys2%3Aclangarm64"];
+  n11 [label="mingw64" tooltip="repository:msys2:mingw64" URL="../generated/explorer/index.html#/object/repository%3Amsys2%3Amingw64"];
+  n12 [label="msys" tooltip="repository:msys2:msys" URL="../generated/explorer/index.html#/object/repository%3Amsys2%3Amsys"];
+  n13 [label="mingw32" tooltip="repository:msys2:mingw32" URL="../generated/explorer/index.html#/object/repository%3Amsys2%3Amingw32"];
+  n6 -> n1 [label="uses-runtime"];
+}

@@ -11,7 +11,7 @@ last_verified: 2026-07-30
 
 # Pacman Architecture and Transaction Model
 
-The linked [Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
+The linked [Level 4 package diagram](../diagrams/level-4.svg)
 separates the repository and payload evidence path from runtime behavior.
 
 ```mermaid

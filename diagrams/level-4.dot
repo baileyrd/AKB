@@ -1,0 +1,44 @@
+// Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+digraph level_4 {
+  rankdir=TB;
+  node [shape=box style=rounded fontname="sans-serif" fontsize=10];
+  edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
+  label="Level 4 - Packages (18 of 15711 objects, ranked by graph degree)";
+  labelloc=t;
+  n0 [label="mingw-w64-ucrt-x86_64-python" tooltip="package:msys2:mingw-w64-ucrt-x86_64-python" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-ucrt-x86_64-python"];
+  n1 [label="mingw-w64-clang-x86_64-python" tooltip="package:msys2:mingw-w64-clang-x86_64-python" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-x86_64-python"];
+  n2 [label="mingw-w64-clang-aarch64-python" tooltip="package:msys2:mingw-w64-clang-aarch64-python" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-aarch64-python"];
+  n3 [label="mingw-w64-x86_64-python" tooltip="package:msys2:mingw-w64-x86_64-python" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-x86_64-python"];
+  n4 [label="curl" tooltip="package:msys2:curl" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Acurl"];
+  n5 [label="mingw-w64-ucrt-x86_64-zlib" tooltip="package:msys2:mingw-w64-ucrt-x86_64-zlib" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-ucrt-x86_64-zlib"];
+  n6 [label="mingw-w64-clang-x86_64-zlib" tooltip="package:msys2:mingw-w64-clang-x86_64-zlib" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-x86_64-zlib"];
+  n7 [label="mingw-w64-clang-aarch64-zlib" tooltip="package:msys2:mingw-w64-clang-aarch64-zlib" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-aarch64-zlib"];
+  n8 [label="mingw-w64-x86_64-zlib" tooltip="package:msys2:mingw-w64-x86_64-zlib" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-x86_64-zlib"];
+  n9 [label="mingw-w64-ucrt-x86_64-qt6-base" tooltip="package:msys2:mingw-w64-ucrt-x86_64-qt6-base" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-ucrt-x86_64-qt6-base"];
+  n10 [label="mingw-w64-clang-aarch64-qt6-base" tooltip="package:msys2:mingw-w64-clang-aarch64-qt6-base" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-aarch64-qt6-base"];
+  n11 [label="mingw-w64-clang-x86_64-qt6-base" tooltip="package:msys2:mingw-w64-clang-x86_64-qt6-base" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-x86_64-qt6-base"];
+  n12 [label="perl" tooltip="package:msys2:perl" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Aperl"];
+  n13 [label="mingw-w64-ucrt-x86_64-glib2" tooltip="package:msys2:mingw-w64-ucrt-x86_64-glib2" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-ucrt-x86_64-glib2"];
+  n14 [label="mingw-w64-clang-aarch64-glib2" tooltip="package:msys2:mingw-w64-clang-aarch64-glib2" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-aarch64-glib2"];
+  n15 [label="mingw-w64-clang-x86_64-glib2" tooltip="package:msys2:mingw-w64-clang-x86_64-glib2" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-clang-x86_64-glib2"];
+  n16 [label="mingw-w64-x86_64-glib2" tooltip="package:msys2:mingw-w64-x86_64-glib2" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-x86_64-glib2"];
+  n17 [label="mingw-w64-ucrt-x86_64-gcc-libs" tooltip="package:msys2:mingw-w64-ucrt-x86_64-gcc-libs" URL="../generated/explorer/index.html#/object/package%3Amsys2%3Amingw-w64-ucrt-x86_64-gcc-libs"];
+  n13 -> n0 [label="runtime-depends-on"];
+  n13 -> n5 [label="runtime-depends-on"];
+  n0 -> n5 [label="runtime-depends-on"];
+  n9 -> n13 [label="runtime-depends-on"];
+  n9 -> n5 [label="runtime-depends-on"];
+  n15 -> n1 [label="runtime-depends-on"];
+  n15 -> n6 [label="runtime-depends-on"];
+  n1 -> n6 [label="runtime-depends-on"];
+  n11 -> n15 [label="runtime-depends-on"];
+  n11 -> n6 [label="runtime-depends-on"];
+  n14 -> n2 [label="runtime-depends-on"];
+  n14 -> n7 [label="runtime-depends-on"];
+  n2 -> n7 [label="runtime-depends-on"];
+  n10 -> n14 [label="runtime-depends-on"];
+  n10 -> n7 [label="runtime-depends-on"];
+  n16 -> n3 [label="runtime-depends-on"];
+  n16 -> n8 [label="runtime-depends-on"];
+  n3 -> n8 [label="runtime-depends-on"];
+}

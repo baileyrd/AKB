@@ -1,0 +1,37 @@
+// Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+digraph level_6 {
+  rankdir=TB;
+  node [shape=box style=rounded fontname="sans-serif" fontsize=10];
+  edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
+  label="Level 6 - Executables and DLLs (16 of 16 objects, ranked by graph degree)";
+  labelloc=t;
+  n0 [label="/usr/bin/curl.exe" tooltip="executable:msys2:/usr/bin/curl.exe" URL="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fcurl.exe"];
+  n1 [label="/ucrt64/bin/zlib1.dll" tooltip="dll:msys2:/ucrt64/bin/zlib1.dll" URL="../generated/explorer/index.html#/object/dll%3Amsys2%3A%2Fucrt64%2Fbin%2Fzlib1.dll"];
+  n2 [label="kernel32.dll" tooltip="dll:windows:kernel32.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Akernel32.dll"];
+  n3 [label="api-ms-win-crt-convert-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-convert-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-convert-l1-1-0.dll"];
+  n4 [label="api-ms-win-crt-heap-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-heap-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-heap-l1-1-0.dll"];
+  n5 [label="api-ms-win-crt-locale-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-locale-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-locale-l1-1-0.dll"];
+  n6 [label="api-ms-win-crt-private-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-private-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-private-l1-1-0.dll"];
+  n7 [label="api-ms-win-crt-runtime-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-runtime-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-runtime-l1-1-0.dll"];
+  n8 [label="api-ms-win-crt-stdio-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-stdio-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-stdio-l1-1-0.dll"];
+  n9 [label="api-ms-win-crt-string-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-string-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-string-l1-1-0.dll"];
+  n10 [label="api-ms-win-crt-utility-l1-1-0.dll" tooltip="dll:windows:api-ms-win-crt-utility-l1-1-0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-utility-l1-1-0.dll"];
+  n11 [label="msys-2.0.dll" tooltip="dll:windows:msys-2.0.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-2.0.dll"];
+  n12 [label="msys-curl-4.dll" tooltip="dll:windows:msys-curl-4.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-curl-4.dll"];
+  n13 [label="msys-z.dll" tooltip="dll:windows:msys-z.dll" URL="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-z.dll"];
+  n14 [label="/ucrt64/lib/libz.dll.a" tooltip="import-library:msys2:/ucrt64/lib/libz.dll.a" URL="../generated/explorer/index.html#/object/import-library%3Amsys2%3A%2Fucrt64%2Flib%2Flibz.dll.a"];
+  n15 [label="/ucrt64/lib/libz.a" tooltip="static-library:msys2:/ucrt64/lib/libz.a" URL="../generated/explorer/index.html#/object/static-library%3Amsys2%3A%2Fucrt64%2Flib%2Flibz.a"];
+  n0 -> n2 [label="imports-dll"];
+  n1 -> n8 [label="imports-dll"];
+  n1 -> n3 [label="imports-dll"];
+  n1 -> n10 [label="imports-dll"];
+  n0 -> n13 [label="imports-dll"];
+  n0 -> n11 [label="imports-dll"];
+  n1 -> n9 [label="imports-dll"];
+  n0 -> n12 [label="imports-dll"];
+  n1 -> n7 [label="imports-dll"];
+  n1 -> n2 [label="imports-dll"];
+  n1 -> n4 [label="imports-dll"];
+  n1 -> n6 [label="imports-dll"];
+  n1 -> n5 [label="imports-dll"];
+}

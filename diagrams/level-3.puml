@@ -1,0 +1,37 @@
+@startuml level-3
+' Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+title Level 3 - Components
+header 18 of 43 objects, ranked by graph degree
+skinparam componentStyle rectangle
+skinparam defaultFontName sans-serif
+rectangle "GnuPG" as n0 <<component>>
+rectangle "GDB" as n1 <<component>>
+rectangle "CMake" as n2 <<component>>
+rectangle "curl" as n3 <<component>>
+rectangle "GCC" as n4 <<component>>
+rectangle "OpenSSL" as n5 <<component>>
+rectangle "Git (MSYS2 package)" as n6 <<component>>
+rectangle "GNU Binutils" as n7 <<component>>
+rectangle "GNU Emacs" as n8 <<component>>
+rectangle "ncurses" as n9 <<component>>
+rectangle "OpenSSH" as n10 <<component>>
+rectangle "LLD" as n11 <<component>>
+rectangle "LLDB" as n12 <<component>>
+rectangle "GNU Coreutils" as n13 <<component>>
+rectangle "Vim" as n14 <<component>>
+rectangle "GNU Awk (gawk)" as n15 <<component>>
+rectangle "GNU Grep" as n16 <<component>>
+rectangle "GNU Nano" as n17 <<component>>
+n8 --> n9 : requires
+n17 --> n9 : requires
+n14 --> n9 : requires
+n6 --> n3 : requires
+n6 --> n10 : requires
+n6 --> n5 : requires
+n3 --> n5 : requires
+n10 --> n5 : requires
+n4 --> n7 : invokes
+n11 --> n7 : compatible-with
+note bottom : Parent level-2
+note bottom : Child level-4
+@enduml

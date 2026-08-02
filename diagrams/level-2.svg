@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="918" height="602" viewBox="0 0 918 602" role="img" aria-labelledby="title description">
+<title id="title">Level 2: Subsystems</title>
+<desc id="description">The major subsystems: the POSIX runtime, the six execution environments, and the six package repositories that serve them. 14 of 14 objects shown, with 1 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
+<style>.edge{stroke:#8896ab;stroke-width:1;fill:none}.node{fill:#eef4ff;stroke:#0645ad;stroke-width:1}.label{font:12px system-ui,sans-serif;fill:#111}.kindlabel{font:11px system-ui,sans-serif;fill:#5a6478}.h1{font:bold 17px system-ui,sans-serif;fill:#111}.meta{font:12px system-ui,sans-serif;fill:#41485a}.nav{font:12px system-ui,sans-serif;fill:#0645ad}</style>
+<rect width="918" height="602" fill="#ffffff"/>
+<text class="h1" x="28" y="30">Level 2 — Subsystems</text>
+<text class="meta" x="28" y="50">The major subsystems: the POSIX runtime, the six execution environments, and the six package repositories that serve …</text>
+<a href="level-1.svg"><text class="nav" x="28" y="72">Up to L1</text></a>
+<a href="level-3.svg"><text class="nav" x="95" y="72">Down to L3</text></a>
+<a href="../docs/RUNTIME-ENVIRONMENTS.md"><text class="nav" x="176" y="72">Read RUNTIME-ENVIRONMENTS.md</text></a>
+<line class="edge" x1="126" y1="318" x2="126" y2="216"><title>uses-runtime</title></line>
+<text class="kindlabel" x="28" y="90">platform</text>
+<text class="kindlabel" x="28" y="164">runtime</text>
+<text class="kindlabel" x="28" y="238">environment</text>
+<text class="kindlabel" x="28" y="386">repository</text>
+<a href="../generated/explorer/index.html#/object/platform%3Amicrosoft%3Awindows" aria-label="Microsoft Windows (platform:microsoft:windows)">
+<rect class="node" x="28" y="96" width="196" height="46" rx="5" tabindex="0"><title>Microsoft Windows: platform:microsoft:windows</title></rect>
+<text class="label" x="126" y="124" text-anchor="middle">Microsoft Windows</text>
+</a>
+<a href="../generated/explorer/index.html#/object/runtime%3Amsys2%3Amsys-2.0.dll" aria-label="msys-2.0.dll (runtime:msys2:msys-2.0.dll)">
+<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>msys-2.0.dll: runtime:msys2:msys-2.0.dll</title></rect>
+<text class="label" x="126" y="198" text-anchor="middle">msys-2.0.dll</text>
+</a>
+<a href="../generated/explorer/index.html#/object/environment%3Amsys2%3Aucrt64" aria-label="UCRT64 (environment:msys2:ucrt64)">
+<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>UCRT64: environment:msys2:ucrt64</title></rect>
+<text class="label" x="126" y="272" text-anchor="middle">UCRT64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/environment%3Amsys2%3Aclang64" aria-label="CLANG64 (environment:msys2:clang64)">
+<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>CLANG64: environment:msys2:clang64</title></rect>
+<text class="label" x="348" y="272" text-anchor="middle">CLANG64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/environment%3Amsys2%3Aclangarm64" aria-label="CLANGARM64 (environment:msys2:clangarm64)">
+<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>CLANGARM64: environment:msys2:clangarm64</title></rect>
+<text class="label" x="570" y="272" text-anchor="middle">CLANGARM64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/environment%3Amsys2%3Amingw64" aria-label="MINGW64 (environment:msys2:mingw64)">
+<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>MINGW64: environment:msys2:mingw64</title></rect>
+<text class="label" x="792" y="272" text-anchor="middle">MINGW64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/environment%3Amsys2%3Amsys" aria-label="MSYS (environment:msys2:msys)">
+<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>MSYS: environment:msys2:msys</title></rect>
+<text class="label" x="126" y="346" text-anchor="middle">MSYS</text>
+</a>
+<a href="../generated/explorer/index.html#/object/environment%3Amsys2%3Amingw32" aria-label="MINGW32 (environment:msys2:mingw32)">
+<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>MINGW32: environment:msys2:mingw32</title></rect>
+<text class="label" x="348" y="346" text-anchor="middle">MINGW32</text>
+</a>
+<a href="../generated/explorer/index.html#/object/repository%3Amsys2%3Aucrt64" aria-label="ucrt64 (repository:msys2:ucrt64)">
+<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>ucrt64: repository:msys2:ucrt64</title></rect>
+<text class="label" x="126" y="420" text-anchor="middle">ucrt64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/repository%3Amsys2%3Aclang64" aria-label="clang64 (repository:msys2:clang64)">
+<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>clang64: repository:msys2:clang64</title></rect>
+<text class="label" x="348" y="420" text-anchor="middle">clang64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/repository%3Amsys2%3Aclangarm64" aria-label="clangarm64 (repository:msys2:clangarm64)">
+<rect class="node" x="472" y="392" width="196" height="46" rx="5" tabindex="0"><title>clangarm64: repository:msys2:clangarm64</title></rect>
+<text class="label" x="570" y="420" text-anchor="middle">clangarm64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/repository%3Amsys2%3Amingw64" aria-label="mingw64 (repository:msys2:mingw64)">
+<rect class="node" x="694" y="392" width="196" height="46" rx="5" tabindex="0"><title>mingw64: repository:msys2:mingw64</title></rect>
+<text class="label" x="792" y="420" text-anchor="middle">mingw64</text>
+</a>
+<a href="../generated/explorer/index.html#/object/repository%3Amsys2%3Amsys" aria-label="msys (repository:msys2:msys)">
+<rect class="node" x="28" y="466" width="196" height="46" rx="5" tabindex="0"><title>msys: repository:msys2:msys</title></rect>
+<text class="label" x="126" y="494" text-anchor="middle">msys</text>
+</a>
+<a href="../generated/explorer/index.html#/object/repository%3Amsys2%3Amingw32" aria-label="mingw32 (repository:msys2:mingw32)">
+<rect class="node" x="250" y="466" width="196" height="46" rx="5" tabindex="0"><title>mingw32: repository:msys2:mingw32</title></rect>
+<text class="label" x="348" y="494" text-anchor="middle">mingw32</text>
+</a>
+<text class="meta" x="28" y="570">All 14 objects of this level shown.</text>
+<text class="meta" x="28" y="588">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
+</svg>

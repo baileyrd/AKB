@@ -70,7 +70,7 @@ last_verified: 2026-07-30
 
 # GNU Userland Role Model
 
-The [Level 7 userland and applications view](../diagrams/level-7-userland-applications.svg)
+The [Level 3 component diagram](../diagrams/level-3.svg)
 connects this role model to shell, package, runtime, and Git for Windows paths.
 
 | Component family | Role | Boundary | Per-tool page |

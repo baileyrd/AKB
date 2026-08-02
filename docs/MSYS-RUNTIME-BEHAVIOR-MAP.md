@@ -11,7 +11,7 @@ last_verified: 2026-07-30
 
 # MSYS Runtime Behavior Architecture Map
 
-The [Level 3 runtime-boundary diagram](../diagrams/level-3-msys-runtime-boundary.svg)
+The [Level 2 subsystem diagram](../diagrams/level-2.svg)
 is the navigation companion to this map. It distinguishes MSYS-dependent
 execution from native environment execution before drilling into individual
 adaptation concerns.

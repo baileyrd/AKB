@@ -685,6 +685,24 @@
       "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:libisl:isl@clang64",
+      "kind": "library",
+      "name": "isl (Integer Set Library) (CLANG64)",
+      "summary": "The Integer Set Library (isl), used by GCC's Graphite loop optimization framework, packaged in the CLANG64 environment and linking against GMP (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "isl project",
+      "aliases": ["isl"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://libisl.sourceforge.io/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-isl",
+        "role": "polyhedral integer set operations"
+      },
+      "evidence_refs": ["evidence:libisl:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8687,6 +8705,18 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:isl-clang64-requires-gmp-clang64",
+      "type": "requires",
+      "source": "library:libisl:isl@clang64",
+      "target": "library:gnu:gmp@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "isl's polyhedral integer set operations are built on GMP's arbitrary-precision integer arithmetic.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

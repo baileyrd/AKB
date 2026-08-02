@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnu:gmp@msys`
 
@@ -6013,6 +6013,15 @@
 - Evidence: evidence:libisl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:libisl:isl@clang64`
+
+- Name: isl (Integer Set Library) (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libisl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
 
 ## `library:libpsl:libpsl`
 

@@ -76278,6 +76278,7 @@
 | relationship:foundation-libraries:heimdal-requires-heimdal-libs | requires | library:h5l:heimdal | library:h5l:heimdal-libs | verified |
 | relationship:foundation-libraries:heimdal-uses-msys-runtime | uses-runtime | library:h5l:heimdal | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:icu-packaged-by-package | packaged-by | library:unicode:icu | package:msys2:mingw-w64-ucrt-x86_64-icu | verified |
+| relationship:foundation-libraries:isl-clang64-requires-gmp-clang64 | requires | library:libisl:isl@clang64 | library:gnu:gmp@clang64 | verified |
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
 | relationship:foundation-libraries:isl-requires-gmp | requires | library:libisl:isl | library:gnu:gmp | verified |
 | relationship:foundation-libraries:jsoncpp-packaged-by-package | packaged-by | library:jsoncpp:jsoncpp | package:msys2:mingw-w64-ucrt-x86_64-jsoncpp | verified |

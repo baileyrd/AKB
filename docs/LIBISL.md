@@ -127,3 +127,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU MP (GMP)](GNU-GMP.md)
 - [GCC](GNU-GCC.md)
+- [isl (CLANG64)](LIBISL-CLANG64.md)

@@ -669,6 +669,7 @@ Objects
 - library:libffi:libffi@msys (library): libffi (MSYS)
 - library:libffi:libffi@ucrt64 (library): libffi (UCRT64)
 - library:libisl:isl (library): isl (Integer Set Library)
+- library:libisl:isl@clang64 (library): isl (Integer Set Library) (CLANG64)
 - library:libpsl:libpsl (library): libpsl
 - library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
 - library:libssh2:libssh2 (library): libssh2
@@ -16914,6 +16915,7 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:libisl:isl@clang64 --requires--> library:gnu:gmp@clang64
 - library:nettle:nettle@clang64 --requires--> library:gnu:gmp@clang64
 - library:gnu:mpfr@clang64 --requires--> library:gnu:gmp@clang64
 - library:gnupg:libgpgme@msys --requires--> component:gnupg:gnupg

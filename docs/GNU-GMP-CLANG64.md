@@ -68,17 +68,18 @@ already documented for [GMP (UCRT64)](GNU-GMP.md#dependencies).
 ## Reverse Dependencies
 
 The catalog snapshot records 60 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-gmp`. Two are now modeled in this
-knowledge base: [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)
+`package:msys2:mingw-w64-clang-x86_64-gmp`. Three are now modeled in
+this knowledge base: [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)
 (`relationship:foundation-libraries:mpfr-clang64-requires-gmp-clang64`,
-added 2026-08-02) and [Nettle (CLANG64)](NETTLE-CLANG64.md)
+added 2026-08-02), [Nettle (CLANG64)](NETTLE-CLANG64.md)
 (`relationship:foundation-libraries:nettle-clang64-requires-gmp-clang64`,
-added 2026-08-02). The remaining 58 are not individually
-modeled in this knowledge base, though two are the CLANG64
-siblings of libraries already documented as MSYS/UCRT64 entities
+added 2026-08-02), and [isl (CLANG64)](LIBISL-CLANG64.md)
+(`relationship:foundation-libraries:isl-clang64-requires-gmp-clang64`,
+added 2026-08-02). The remaining 57 are not individually
+modeled in this knowledge base, though one is the CLANG64
+sibling of a library already documented as an MSYS/UCRT64 entity
 elsewhere in this volume: `mingw-w64-clang-x86_64-mpc`
-([GNU MPC](GNU-MPC.md)) and `mingw-w64-clang-x86_64-isl`
-([isl](LIBISL.md)) — each a candidate for its own CLANG64 sibling
+([GNU MPC](GNU-MPC.md)) — a candidate for its own CLANG64 sibling
 page in a future batch. See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -132,7 +133,7 @@ The arithmetic model is backed by the official GMP project site
 (`evidence:gnu:gmp-manual-2026-07-30`), the same evidence record
 [GMP (UCRT64)](GNU-GMP.md) cites. Package identity, version, license,
 and reverse-dependency count are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open: 58 of the 60 recorded reverse dependents
+(`evidence:catalog:current`). Open: 57 of the 60 recorded reverse dependents
 are not individually modeled in this knowledge base, though the CLANG64
 siblings of MPFR, MPC, isl, and Nettle are flagged above as candidates
 for a future batch, per this volume's ongoing gap-closing methodology.
@@ -148,3 +149,4 @@ for a future batch, per this volume's ongoing gap-closing methodology.
 - [Nettle](NETTLE.md)
 - [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)
 - [Nettle (CLANG64)](NETTLE-CLANG64.md)
+- [isl (CLANG64)](LIBISL-CLANG64.md)

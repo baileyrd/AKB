@@ -621,7 +621,7 @@
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
-| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 2 |
+| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 3 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
@@ -672,6 +672,7 @@
 | library:libffi:libffi@msys | library | libffi (MSYS) | partial | 0 | 1 |
 | library:libffi:libffi@ucrt64 | library | libffi (UCRT64) | partial | 0 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
+| library:libisl:isl@clang64 | library | isl (Integer Set Library) (CLANG64) | partial | 1 | 0 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libpsl:libpsl@ucrt64 | library | libpsl (UCRT64) | partial | 4 | 1 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |

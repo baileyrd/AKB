@@ -18,6 +18,38 @@ last_verified: 2026-07-30
 
 # less
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:greenwood:less` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Mark Nudelman |
+| Environments | `msys` |
+| Upstream | <http://www.greenwoodsoftware.com/less> |
+| Packaged as | `package:msys2:less` |
+| Version (observed) | 704-1 |
+| License (observed) | GPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 306.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:less:project-site-2026-07-30` — less (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:less:pcre-search` (`inference`, `high`) — less's dependency on libpcre2_8 backs Perl-compatible regular-expression support in its search functionality.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Less is a pager: it displays text a screen at a time with backward and

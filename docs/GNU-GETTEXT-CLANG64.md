@@ -17,6 +17,34 @@ last_verified: 2026-08-02
 
 # GNU gettext (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:gettext@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `clang64` |
+| Upstream | <https://www.gnu.org/software/gettext/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-gettext-runtime` |
+| Version (observed) | 1.0-1 |
+| License (observed) | spdx:GPL-3.0-or-later AND LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gettext-manual-2026-07-30` — GNU gettext Manual (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-gettext-runtime`,

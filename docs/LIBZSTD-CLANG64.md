@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # Zstandard (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:facebook:zstd@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Meta (Facebook) |
+| Environments | `clang64` |
+| Upstream | <https://facebook.github.io/zstd/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-zstd` |
+| Version (observed) | 1.5.7-2 |
+| License (observed) | spdx:BSD-3-Clause OR GPL-2.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:facebook:zstd-manual-2026-07-30` — Zstandard (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** Zstandard package

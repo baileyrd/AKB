@@ -21,6 +21,34 @@ last_verified: 2026-07-30
 
 # GNU libidn2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libidn2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/libidn/#libidn2> |
+| Packaged as | `package:msys2:libidn2` |
+| Version (observed) | 2.3.8-1 |
+| License (observed) | GPL3;LGPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 369.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libidn2-manual-2026-07-30` — GNU libidn2 (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GNU libidn2 implements the IDNA2008, Punycode, and TR46 specifications for

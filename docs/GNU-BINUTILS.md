@@ -19,6 +19,38 @@ last_verified: 2026-07-30
 
 # GNU Binutils
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:binutils` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/binutils/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-binutils` |
+| Version (observed) | 2.47-1 |
+| License (observed) | spdx:GPL-3.0-or-later AND GPL-2.0-or-later AND LGPL-3.0-or-later AND LGPL-2.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 43.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:binutils-manual-2026-07-30` — GNU Binutils (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:binutils:compressed-debug-sections` (`inference`, `high`) — Binutils' dependencies on zlib and zstd back compressed debug-section support (--compress-debug-sections=zlib\|zstd).
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Binutils provides the assembler, linker, and object-file inspection tools

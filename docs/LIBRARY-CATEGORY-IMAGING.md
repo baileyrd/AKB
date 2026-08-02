@@ -15,6 +15,34 @@ last_verified: 2026-08-02
 
 # Library Category — Imaging
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libpng:libpng` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | PNG Development Group |
+| Environments | `ucrt64` |
+| Upstream | <http://www.libpng.org/pub/png/libpng.html> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libpng` |
+| Version (observed) | 1.6.58-1 |
+| License (observed) | custom |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libpng:project-site-2026-08-02` — libpng (official project page) (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Why this category leads
 
 Imaging is the heaviest of the seven categories this page set covers, and

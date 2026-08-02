@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # c-ares (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:c-ares:c-ares@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | c-ares project |
+| Environments | `ucrt64` |
+| Upstream | <https://c-ares.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-c-ares` |
+| Version (observed) | 1.34.8-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.2 MB |
+
+**Evidence on this object**
+
+- `evidence:c-ares:project-site-2026-07-30` — c-ares (official project site) (`primary`, retrieved 2026-07-30)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 c-ares is an asynchronous DNS-request and name-resolution library,

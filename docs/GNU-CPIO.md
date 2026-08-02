@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # GNU Cpio
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:cpio` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/cpio/> |
+| Packaged as | `package:msys2:cpio` |
+| Version (observed) | 2.15-1 |
+| License (observed) | GPLv3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1008.6 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:cpio-manual-2026-07-30` — GNU Cpio Manual (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Cpio copies files to and from a cpio- or tar-format archive stream, reading

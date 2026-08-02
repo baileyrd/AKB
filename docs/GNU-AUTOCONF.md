@@ -17,6 +17,38 @@ last_verified: 2026-07-30
 
 # GNU Autoconf
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:autoconf` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/autoconf> |
+| Packaged as | `package:msys2:autoconf2.71` |
+| Version (observed) | 2.71-4 |
+| License (observed) | spdx:GPL-2.0-or-later;spdx:GPL-3.0-or-later;spdx:Autoconf-exception-3.0 |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:autoconf-manual-2026-07-30` — GNU Autoconf (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:autoconf:m4-macro-processor` (`fact`, `verified`) — Autoconf is fundamentally an m4 macro-processing framework: autoconf/autoheader/autoreconf expand m4 macros to generate a portable configure script, which explains its dependency on m4.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Autoconf generates a portable `configure` shell script from a higher-level

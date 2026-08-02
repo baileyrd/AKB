@@ -15,6 +15,34 @@ last_verified: 2026-08-02
 
 # LZO (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:oberhumer:liblzo2@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Markus F.X.J. Oberhumer |
+| Environments | `msys` |
+| Upstream | <https://www.oberhumer.com/opensource/lzo> |
+| Packaged as | `package:msys2:liblzo2` |
+| Version (observed) | 2.10-3 |
+| License (observed) | GPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 184.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:oberhumer:lzo-manual-2026-08-02` — LZO (official project site) (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:liblzo2`, a portable lossless data

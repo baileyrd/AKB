@@ -14,6 +14,34 @@ last_verified: 2026-08-02
 
 # Pacman Transaction Model
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `package-manager:archlinux:pacman` |
+| Kind | `package-manager` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Arch Linux |
+| Environments | `msys` |
+| Upstream | <https://www.archlinux.org/pacman/> |
+| Packaged as | `package:msys2:pacman` |
+| Version (observed) | 6.1.0-25 |
+| License (observed) | spdx:GPL-2.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 35.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pacman:pacman-8-2026-08-02` — pacman(8) manual page (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 A pacman transaction is the unit in which package state changes: targets are

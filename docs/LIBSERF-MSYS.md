@@ -18,6 +18,34 @@ last_verified: 2026-08-02
 
 # Serf (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:apache:libserf@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Apache Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://serf.apache.org/> |
+| Packaged as | `package:msys2:libserf` |
+| Version (observed) | 1.3.10-2 |
+| License (observed) | Apache |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 94.9 KB |
+
+**Evidence on this object**
+
+- `evidence:apache:serf-manual-2026-08-02` — Serf (official project site) (`primary`, retrieved 2026-08-02)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:libserf`, a high-performance HTTP

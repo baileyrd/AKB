@@ -18,6 +18,38 @@ last_verified: 2026-07-30
 
 # GNU Libtool
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:libtool` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/libtool> |
+| Packaged as | `package:msys2:libtool` |
+| Version (observed) | 2.5.4-5 |
+| License (observed) | spdx:LGPL-2.0-or-later WITH Libtool-exception |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 2.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libtool-manual-2026-07-30` — GNU Libtool (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:libtool:generated-shell-script` (`inference`, `high`) — Libtool's primary artifact, the project-local libtool script, is itself a generated shell script executed via bash, which explains the package's dependency on bash.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Libtool provides a portable interface for building shared and static

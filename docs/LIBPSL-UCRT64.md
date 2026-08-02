@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # libpsl (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libpsl:libpsl@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libpsl project |
+| Environments | `ucrt64` |
+| Upstream | <https://github.com/rockdaboot/libpsl> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libpsl` |
+| Version (observed) | 0.21.5-3 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 271.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libpsl:manual-2026-07-30` — libpsl (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** libpsl package

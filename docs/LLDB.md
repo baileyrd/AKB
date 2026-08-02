@@ -20,6 +20,38 @@ last_verified: 2026-07-30
 
 # LLDB
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:llvm:lldb` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | LLVM Project |
+| Environments | `clang64` |
+| Upstream | <https://lldb.llvm.org/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-lldb` |
+| Version (observed) | 22.1.8-1 |
+| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| Architecture (observed) | any |
+| Installed size (observed) | 53.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:llvm:lldb-manual-2026-07-30` — LLDB (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:lldb:python-scripting` (`inference`, `high`) — LLDB's dependency on python backs its Python scripting API, the same scripting-extensibility pattern documented for GDB.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 LLDB is the LLVM project's debugger, the default debugger for LLVM-oriented

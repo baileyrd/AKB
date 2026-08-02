@@ -19,6 +19,34 @@ last_verified: 2026-07-30
 
 # libpsl
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libpsl:libpsl` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libpsl project |
+| Environments | `msys` |
+| Upstream | <https://github.com/rockdaboot/libpsl> |
+| Packaged as | `package:msys2:libpsl` |
+| Version (observed) | 0.21.5-2 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 113.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libpsl:manual-2026-07-30` — libpsl (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libpsl parses and evaluates domain names against Mozilla's Public Suffix

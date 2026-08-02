@@ -19,6 +19,34 @@ last_verified: 2026-08-02
 
 # GNU Diffutils
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:diffutils` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/diffutils> |
+| Packaged as | `package:msys2:diffutils` |
+| Version (observed) | 3.12-1 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:diff-1-2026-08-02` — diff(1) manual page (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Diffutils compares files line by line and emits the differences in a

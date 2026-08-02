@@ -15,6 +15,34 @@ last_verified: 2026-08-02
 
 # Library Category — Graphics
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:cairographics:cairo` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | cairographics.org |
+| Environments | `ucrt64` |
+| Upstream | <https://www.cairographics.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-cairo` |
+| Version (observed) | 1.18.4-4 |
+| License (observed) | spdx:LGPL-2.1-or-later OR MPL-1.1 |
+| Architecture (observed) | any |
+| Installed size (observed) | 4.0 MB |
+
+**Evidence on this object**
+
+- `evidence:cairo:project-site-2026-08-02` — Cairo (official project site) (`primary`, retrieved 2026-08-02)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## What is in the category
 
 Graphics here means rendering primitives — 2D vector drawing and 3D API

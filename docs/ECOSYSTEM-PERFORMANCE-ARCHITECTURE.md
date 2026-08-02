@@ -22,6 +22,23 @@ last_verified: 2026-08-02
 
 # MSYS2 Ecosystem Performance Architecture
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `runtime:msys2:msys-2.0.dll` |
+| Kind | `runtime` |
+| Status | `partial` |
+| Confidence | `verified` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Scope and Honest Limits
 
 This page analyses the cost structure of the MSYS2 ecosystem's four

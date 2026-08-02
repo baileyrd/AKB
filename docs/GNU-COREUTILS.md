@@ -20,6 +20,38 @@ last_verified: 2026-07-30
 
 # GNU Coreutils
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:coreutils` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/coreutils/> |
+| Packaged as | `package:msys2:coreutils` |
+| Version (observed) | 8.32-5 |
+| License (observed) | GPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 25.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:coreutils-manual-2026-07-30` — GNU Coreutils Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:coreutils:posix-utilities` (`fact`, `verified`) — GNU Coreutils packages the core POSIX-oriented file, shell, and text manipulation utilities for the MSYS environment.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Coreutils supplies the baseline file, shell, and text-manipulation commands

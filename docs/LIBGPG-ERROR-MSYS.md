@@ -22,6 +22,34 @@ last_verified: 2026-07-30
 
 # libgpg-error (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libgpg-error@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://gnupg.org> |
+| Packaged as | `package:msys2:libgpg-error` |
+| Version (observed) | 1.61-1 |
+| License (observed) | spdx:LGPL-2.1-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 814.5 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libgpg-error-manual-2026-07-30` — GnuPG project site (libgpg-error) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** `libgpg-error` package

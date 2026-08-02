@@ -17,6 +17,38 @@ last_verified: 2026-08-02
 
 # bzip2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:bzip2:bzip2` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Julian Seward |
+| Environments | `msys` |
+| Upstream | <http://www.bzip.org> |
+| Packaged as | `package:msys2:bzip2` |
+| Version (observed) | 1.0.8-4 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 306.6 KB |
+
+**Evidence on this object**
+
+- `evidence:bzip2:project-site-2026-07-30` — bzip2 and libbzip2 (official project site) (`primary`, retrieved 2026-07-30)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+**Claims about this object**
+
+- `claim:component:bzip2:libbz2-split` (`inference`, `high`) — The MSYS bzip2 CLI package is split from and links against libbz2, its shared compression library, rather than bundling the codec statically.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Bzip2 compresses and decompresses a single file or stream using a

@@ -26,6 +26,38 @@ last_verified: 2026-07-30
 
 # GDB
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:gdb` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/gdb/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gdb` |
+| Version (observed) | 17.2-1 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 15.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gdb-manual-2026-07-30` — GNU Debugger (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:gdb:python-scripting` (`inference`, `high`) — GDB's dependency on python backs its Python scripting API (pretty-printers, gdb.execute), and its optional dependency on python-pygments backs syntax-highlighted source-code display.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GDB is the default debugger for GCC-oriented MinGW-w64 environments,

@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # xxHash
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:xxhash:xxhash` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Yann Collet |
+| Environments | `ucrt64` |
+| Upstream | <https://xxhash.com/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-xxhash` |
+| Version (observed) | 0.8.3-2 |
+| License (observed) | spdx:BSD-2-Clause AND GPL-2.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 758.2 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:xxhash:manual-2026-07-30` — xxHash (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 xxHash is an extremely fast non-cryptographic hash algorithm library.

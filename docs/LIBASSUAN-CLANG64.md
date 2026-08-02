@@ -16,6 +16,34 @@ last_verified: 2026-08-02
 
 # libassuan (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libassuan@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `clang64` |
+| Upstream | <https://gnupg.org/software/libassuan/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libassuan` |
+| Version (observed) | 2.5.7-1 |
+| License (observed) | spdx: LGPL-2.1-or-later OR GPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 415.4 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libassuan-manual-2026-07-30` — libassuan (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-libassuan`,

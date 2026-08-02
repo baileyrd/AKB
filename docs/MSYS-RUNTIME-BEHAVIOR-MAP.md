@@ -12,6 +12,23 @@ last_verified: 2026-08-02
 
 # MSYS Runtime Behavior Architecture Map
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `runtime:msys2:msys-2.0.dll` |
+| Kind | `runtime` |
+| Status | `partial` |
+| Confidence | `verified` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 The [Level 2 subsystem diagram](../diagrams/level-2.svg)
 is the navigation companion to this map. It distinguishes MSYS-dependent
 execution from native environment execution before drilling into individual

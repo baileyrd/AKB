@@ -13,6 +13,33 @@ last_verified: 2026-08-02
 
 # Library Category — Logging
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gabime:spdlog` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Gabi Melman |
+| Environments | `ucrt64` |
+| Upstream | <https://github.com/gabime/spdlog> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-spdlog` |
+| Version (observed) | 1.17.0-3 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## The finding: this category is genuinely small
 
 From the catalog snapshot (`20260729T113151Z`), dependents summed across

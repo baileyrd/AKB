@@ -15,6 +15,34 @@ last_verified: 2026-08-02
 
 # Library Category — Audio
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libsndfile:libsndfile` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Erik de Castro Lopo |
+| Environments | `ucrt64` |
+| Upstream | <https://libsndfile.github.io/libsndfile/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libsndfile` |
+| Version (observed) | 1.2.2-1 |
+| License (observed) | spdx:LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libsndfile:project-site-2026-08-02` — libsndfile (official project site) (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## The ranking
 
 From the catalog snapshot (`20260729T113151Z`), dependents summed across

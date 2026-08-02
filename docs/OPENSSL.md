@@ -20,6 +20,34 @@ last_verified: 2026-08-02
 
 # OpenSSL
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:openssl:openssl` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | OpenSSL Software Foundation / OpenSSL project |
+| Environments | `msys` |
+| Upstream | <https://openssl-library.org> |
+| Packaged as | `package:msys2:openssl` |
+| Version (observed) | 3.6.3-1 |
+| License (observed) | spdx:Apache-2.0 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:openssl:project-site-2026-07-30` — OpenSSL (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 OpenSSL provides TLS/SSL protocol implementations and general-purpose

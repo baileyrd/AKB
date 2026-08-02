@@ -18,6 +18,34 @@ last_verified: 2026-08-02
 
 # GNU libunistring (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libunistring@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `clang64` |
+| Upstream | <https://www.gnu.org/software/libunistring/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libunistring` |
+| Version (observed) | 1.4.2-1 |
+| License (observed) | spdx:LGPL-3.0-or-later OR GPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 6.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libunistring-manual-2026-07-30` — GNU libunistring (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-libunistring`,

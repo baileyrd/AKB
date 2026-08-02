@@ -17,6 +17,34 @@ last_verified: 2026-08-02
 
 # GNU MPC (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:multiprecision:mpc@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `clang64` |
+| Upstream | <https://www.multiprecision.org> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-mpc` |
+| Version (observed) | 1.4.1-1 |
+| License (observed) | spdx:LGPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 452.9 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:multiprecision:mpc-manual-2026-07-30` — GNU MPC (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-mpc`, the

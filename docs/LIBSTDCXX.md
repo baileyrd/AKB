@@ -16,6 +16,38 @@ last_verified: 2026-07-30
 
 # libstdc++
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libstdc++` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://gcc.gnu.org/onlinedocs/libstdc++/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gcc-libs` |
+| Version (observed) | 16.1.0-5 |
+| License (observed) | spdx:GPL-3.0-or-later WITH GCC-exception-3.1 AND LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 3.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libstdcxx-manual-2026-07-30` — The GNU C++ Library Documentation (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:libstdcxx:bundled-in-gcc-libs` (`fact`, `verified`) — libstdc++ is not packaged as a standalone MSYS2 package; it is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libstdc++ is GCC's implementation of the C++ standard library, and it

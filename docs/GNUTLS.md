@@ -26,6 +26,34 @@ last_verified: 2026-07-30
 
 # GnuTLS
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnutls:gnutls` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuTLS project |
+| Environments | `msys` |
+| Upstream | <https://www.gnutls.org/> |
+| Packaged as | `package:msys2:libgnutls` |
+| Version (observed) | 3.8.13-2 |
+| License (observed) | spdx:GPL-3.0-or-later;spdx:LGPL-2.1-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 3.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnutls:manual-2026-07-30` — GnuTLS (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GnuTLS implements TLS/SSL and related cryptographic protocols, and it is

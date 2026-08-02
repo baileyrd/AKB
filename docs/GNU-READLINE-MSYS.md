@@ -19,6 +19,34 @@ last_verified: 2026-07-30
 
 # GNU Readline (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:readline@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://tiswww.case.edu/php/chet/readline/rltop.html> |
+| Packaged as | `package:msys2:libreadline` |
+| Version (observed) | 8.3.003-1 |
+| License (observed) | GPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:readline-manual-2026-07-30` — GNU Readline (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** GNU Readline package

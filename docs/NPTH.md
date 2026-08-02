@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # nPth (New Portable Threads)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:npth` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `ucrt64` |
+| Upstream | <https://gnupg.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-npth` |
+| Version (observed) | 1.8-1 |
+| License (observed) | LGPL |
+| Architecture (observed) | any |
+| Installed size (observed) | 88.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:npth-manual-2026-07-30` — GnuPG project site (nPth) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 nPth is GnuPG's own portable threading library, used internally for

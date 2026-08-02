@@ -17,6 +17,34 @@ last_verified: 2026-08-02
 
 # BLAKE2 (libb2) (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:blake2:libb2@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | BLAKE2 project |
+| Environments | `clang64` |
+| Upstream | <https://blake2.net/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libb2` |
+| Version (observed) | 0.98.1-3 |
+| License (observed) | custom:CC0 |
+| Architecture (observed) | any |
+| Installed size (observed) | 97.4 KB |
+
+**Evidence on this object**
+
+- `evidence:blake2:project-site-2026-08-02` — BLAKE2 (official project site) (`primary`, retrieved 2026-08-02)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-libb2`, the

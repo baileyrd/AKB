@@ -20,6 +20,38 @@ last_verified: 2026-07-30
 
 # Vim
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:vim:vim` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Bram Moolenaar / Vim community |
+| Environments | `msys` |
+| Upstream | <https://www.vim.org> |
+| Packaged as | `package:msys2:vim` |
+| Version (observed) | 9.2.0858-1 |
+| License (observed) | spdx:Vim |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 61.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:vim:documentation-2026-07-30` — Vim (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:vim:perl-integration` (`inference`, `high`) — Vim's dependency on perl reflects optional built-in Perl-interpreter integration, enabling embedded Perl scripting via :perl.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Vim is a highly configurable, modal text editor descended from vi. This

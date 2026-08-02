@@ -16,6 +16,34 @@ last_verified: 2026-08-02
 
 # xxHash (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:xxhash:xxhash@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Yann Collet |
+| Environments | `msys` |
+| Upstream | <https://github.com/Cyan4973/xxHash> |
+| Packaged as | `package:msys2:libxxhash` |
+| Version (observed) | 0.8.3-1 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 49.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:xxhash:manual-2026-07-30` — xxHash (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:libxxhash`, the MSYS-environment

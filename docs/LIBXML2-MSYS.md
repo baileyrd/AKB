@@ -19,6 +19,34 @@ last_verified: 2026-07-30
 
 # libxml2 (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnome:libxml2@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNOME Project |
+| Environments | `msys` |
+| Upstream | <https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home> |
+| Packaged as | `package:msys2:libxml2` |
+| Version (observed) | 2.15.3-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnome:libxml2-manual-2026-07-30` — libxml2 (official project wiki) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** libxml2 package

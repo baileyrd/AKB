@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # liblzma (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:tukaani:liblzma@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Tukaani project |
+| Environments | `msys` |
+| Upstream | <https://tukaani.org/xz/> |
+| Packaged as | `package:msys2:liblzma` |
+| Version (observed) | 5.8.3-1 |
+| License (observed) | GPL;LGPL;custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 177.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:tukaani:xz-library-manual-2026-07-30` — XZ Utils / liblzma (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 liblzma is the compression library underlying XZ Utils, split from

@@ -19,6 +19,34 @@ last_verified: 2026-08-02
 
 # libsasl (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:sasl:libsasl@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Cyrus SASL project |
+| Environments | `msys` |
+| Upstream | <https://www.cyrusimap.org/sasl/> |
+| Packaged as | `package:msys2:libsasl` |
+| Version (observed) | 2.1.28-5 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 438.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:cyrusimap:libsasl-manual-2026-08-02` — Cyrus SASL (official project site) (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:libsasl`, the Cyrus Simple

@@ -23,6 +23,23 @@ last_verified: 2026-08-02
 
 # msys-2.0.dll
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `runtime:msys2:msys-2.0.dll` |
+| Kind | `runtime` |
+| Status | `partial` |
+| Confidence | `verified` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 `msys-2.0.dll` is the POSIX compatibility runtime that makes MSYS2's

@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # libnghttp2 (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nghttp2:libnghttp2@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | nghttp2 project |
+| Environments | `ucrt64` |
+| Upstream | <https://nghttp2.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-nghttp2` |
+| Version (observed) | 1.69.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 944.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nghttp2:libnghttp2-manual-2026-07-30` — nghttp2 project site (libnghttp2) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** libnghttp2 package

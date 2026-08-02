@@ -16,6 +16,27 @@ last_verified: 2026-08-02
 
 # MSYS Mount Manager
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `subsystem:msys2:mount-manager` |
+| Kind | `subsystem` |
+| Status | `partial` |
+| Confidence | `medium` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+**Evidence on this object**
+
+- `evidence:cygwin:user-guide-2026-08-02` — Cygwin User's Guide (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 The mount manager holds the virtual mount table that maps POSIX path

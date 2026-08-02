@@ -15,6 +15,38 @@ last_verified: 2026-07-30
 
 # pkgconf
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:pkgconf:pkgconf` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | pkgconf project |
+| Environments | `ucrt64` |
+| Upstream | <https://github.com/pkgconf/pkgconf> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-pkgconf` |
+| Version (observed) | 1~3.0.4-1 |
+| License (observed) | spdx:ISC |
+| Architecture (observed) | any |
+| Installed size (observed) | 878.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pkgconf:project-site-2026-07-30` — pkgconf (official project repository) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:pkgconf:pkg-config-substitute` (`fact`, `verified`) — The MSYS2 pkgconf package provides, conflicts with, and replaces pkg-config in this environment, making pkgconf the packaged substitute for the original freedesktop.org pkg-config tool.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Pkgconf answers "what compiler and linker flags does library X need" by

@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # Nettle
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nettle:nettle` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Niels Möller |
+| Environments | `ucrt64` |
+| Upstream | <https://www.lysator.liu.se/~nisse/nettle> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-nettle` |
+| Version (observed) | 4.0-1 |
+| License (observed) | spdx:GPL-2.0-or-later;spdx:LGPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nettle:manual-2026-07-30` — Nettle (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Nettle is a low-level cryptographic library. This page documents the

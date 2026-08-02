@@ -29,6 +29,34 @@ last_verified: 2026-07-30
 
 # GnuPG
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnupg:gnupg` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Werner Koch / GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://gnupg.org/> |
+| Packaged as | `package:msys2:gnupg` |
+| Version (observed) | 2.4.9-1 |
+| License (observed) | GPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 11.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:project-site-2026-07-30` — GnuPG (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GnuPG implements the OpenPGP standard for encryption, decryption, and

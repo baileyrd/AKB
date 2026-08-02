@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # libwinpthread
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:mingw-w64:libwinpthread` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | MinGW-w64 project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.mingw-w64.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libwinpthread` |
+| Version (observed) | 14.0.0.r220.gd999af622-1 |
+| License (observed) | spdx:MIT AND BSD-3-Clause-Clear |
+| Architecture (observed) | any |
+| Installed size (observed) | 66.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mingw-w64:libwinpthread-manual-2026-07-30` — MinGW-w64 (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Libwinpthread implements POSIX-threads-style threading (`pthread_create`,

@@ -22,6 +22,34 @@ last_verified: 2026-07-30
 
 # LLVM libraries
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:llvm:llvm-libs` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | LLVM Project |
+| Environments | `clang64` |
+| Upstream | <https://llvm.org/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-llvm-libs` |
+| Version (observed) | 22.1.8-2 |
+| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| Architecture (observed) | any |
+| Installed size (observed) | 148.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:llvm:llvm-libs-manual-2026-07-30` — LLVM (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 The LLVM libraries package provides LLVM's shared object-file and

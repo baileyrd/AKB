@@ -292,10 +292,12 @@ subgraphs remain outstanding.
 ## Increment 11 — Documentation as code
 
 The companion objective requires diagrams, indexes, reports, and repetitive
-object pages to be generated from the model. No tool in `tools/` writes
-into `docs/`; all 253 pages are hand-authored.
+object pages to be generated from the model. When this increment opened, no
+tool in `tools/` wrote into `docs/` and all 253 pages were hand-authored.
+Three now do: `build_object_diagrams.py`, `build_object_facts.py`, and
+`build_volume_ledger.py`, each owning only what lies between its markers.
 
-- [ ] Generate mechanical object-page sections from the composed model
+- [x] Generate mechanical object-page sections from the composed model
 - [x] Validate documentation pages in `tools/akb.py`
 - [x] Enforce the model schemas in CI
 - [x] Enforce roadmap claims against evidence
@@ -311,6 +313,25 @@ is unchanged while the zero-dependency property is kept. Recorded as
 silently reworded. Running the schemas for the first time found that 30
 claim identifiers use four segments and 9 use three; the nine are the
 outliers and normalising them is added above rather than blessed.
+
+**Mechanical sections closed 2026-08-02.** `tools/build_object_facts.py`
+writes a facts block into 233 object pages, placed after the H1 and before
+the first authored section: the subject's model ID, kind, status,
+confidence, authority, applicable environments, upstream project, and
+packaging — with version, license, architecture, and installed size read
+from the catalog snapshot — plus every evidence record on the object with
+its class and retrieval date, and every claim whose subject it is.
+
+The defect this fixes is drift rather than absence. Each page restated
+those fields in prose by hand, and nothing checked they still matched:
+`validate_docs` verifies that a `model_ref` resolves, not that the sentence
+beside it is still true after a catalog refresh. The generated fields are
+now correct by construction and the prose around them is untouched.
+
+It deliberately generates no prose. Purpose, boundaries, and analysis stay
+hand-authored; only fields with one right answer in the model are
+generated, and only for entity kinds that name an object rather than a
+topic.
 
 **Claim identifiers normalised 2026-08-02.** All nine three-segment
 identifiers now use the four-segment `claim:<kind>:<subject>:<aspect>`

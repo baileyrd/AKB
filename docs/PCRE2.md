@@ -17,6 +17,38 @@ last_verified: 2026-08-02
 
 # PCRE2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:pcre:pcre2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Philip Hazel / PCRE2 maintainers |
+| Environments | `ucrt64` |
+| Upstream | <https://pcre.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-pcre2` |
+| Version (observed) | 10.47-1 |
+| License (observed) | spdx:BSD-3-Clause |
+| Architecture (observed) | any |
+| Installed size (observed) | 7.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pcre:pcre2-manual-2026-07-30` — PCRE2 (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:pcre2:wineditline-interactive-tool` (`inference`, `high`) — pcre2's dependency on wineditline backs interactive line editing in its bundled pcre2test tool, the Windows port of the BSD editline library serving a comparable role to GNU Readline elsewhere in this volume.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 PCRE2 implements Perl 5-style regular expressions as a library, and it is

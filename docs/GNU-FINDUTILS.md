@@ -19,6 +19,38 @@ last_verified: 2026-07-30
 
 # GNU Findutils
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:findutils` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/findutils> |
+| Packaged as | `package:msys2:findutils` |
+| Version (observed) | 4.10.0-3 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 2.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:findutils-manual-2026-07-30` — GNU Findutils Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:findutils:role` (`inference`, `high`) — GNU Findutils packages the file-locating and command-construction utilities (including `find` and `xargs`) for the MSYS environment.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Findutils locates files by predicate (`find`) and builds/executes command

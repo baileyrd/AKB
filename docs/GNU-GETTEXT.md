@@ -16,6 +16,38 @@ last_verified: 2026-07-30
 
 # GNU gettext
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:gettext` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/gettext/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` |
+| Version (observed) | 1.0-1 |
+| License (observed) | spdx:GPL-3.0-or-later AND LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gettext-manual-2026-07-30` — GNU gettext Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:gettext:package-split` (`fact`, `verified`) — GNU gettext is split into three separate MSYS2 packages: gettext-runtime (the libintl runtime library), gettext-tools (msgfmt/xgettext/msginit and other CLI tools), and gettext-libtextstyle (a terminal text-styling library used by the tools); this page models the runtime component.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Gettext provides native-language support (NLS): the `libintl` runtime

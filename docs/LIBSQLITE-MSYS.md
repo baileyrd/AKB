@@ -18,6 +18,34 @@ last_verified: 2026-08-02
 
 # libsqlite (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:sqlite:libsqlite@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | SQLite project |
+| Environments | `msys` |
+| Upstream | <https://www.sqlite.org/> |
+| Packaged as | `package:msys2:libsqlite` |
+| Version (observed) | 3.53.3-1 |
+| License (observed) | spdx:LicenseRef-Sqlite |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:sqlite:documentation-2026-07-30` — SQLite (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:libsqlite`, the MSYS-environment

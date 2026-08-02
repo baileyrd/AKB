@@ -25,6 +25,34 @@ last_verified: 2026-07-30
 
 # curl
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:curl:curl` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Daniel Stenberg / curl project |
+| Environments | `msys` |
+| Upstream | <https://curl.se/> |
+| Packaged as | `package:msys2:curl` |
+| Version (observed) | 8.21.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1015.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:curl:project-site-2026-07-30` — curl (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Curl is a multi-protocol command-line file-transfer client, and it is the

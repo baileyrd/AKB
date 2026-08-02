@@ -16,6 +16,34 @@ last_verified: 2026-08-02
 
 # Apache Portable Runtime (APR) (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:apache:apr@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Apache Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://apr.apache.org/> |
+| Packaged as | `package:msys2:apr` |
+| Version (observed) | 1.7.6-2 |
+| License (observed) | spdx:Apache-2.0 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 182.3 KB |
+
+**Evidence on this object**
+
+- `evidence:apache:apr-manual-2026-08-02` — Apache Portable Runtime (official project site) (`primary`, retrieved 2026-08-02)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:apr`, the Apache Portable Runtime —

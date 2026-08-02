@@ -19,6 +19,38 @@ last_verified: 2026-07-30
 
 # libxml2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnome:libxml2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Daniel Veillard / GNOME project |
+| Environments | `ucrt64` |
+| Upstream | <https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libxml2` |
+| Version (observed) | 2.15.3-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 5.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnome:libxml2-manual-2026-07-30` — libxml2 (official project wiki) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:libxml2:iconv-zlib-features` (`inference`, `high`) — libxml2's dependencies on libiconv and zlib back its character-encoding conversion and compressed-XML (gzip) reading support respectively.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Libxml2 is a full-featured XML parsing and toolkit library (DOM tree

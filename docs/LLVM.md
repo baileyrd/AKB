@@ -21,6 +21,36 @@ last_verified: 2026-08-02
 
 # LLVM
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:llvm:llvm` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | LLVM Project |
+| Environments | `clang64`, `clangarm64`, `mingw64`, `msys`, `ucrt64` |
+| Upstream | <https://llvm.org/> |
+| Packaged as | `package:msys2:llvm` |
+| Version (observed) | 21.1.8-2 |
+| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 348.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:llvm:codegen-2026-08-02` — The LLVM Target-Independent Code Generator (`primary`, retrieved 2026-08-02)
+- `evidence:llvm:command-guide-2026-08-02` — LLVM Command Guide (`primary`, retrieved 2026-08-02)
+- `evidence:llvm:langref-2026-08-02` — LLVM Language Reference Manual (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 LLVM is the umbrella this ecosystem's Clang-based environments rest on.

@@ -17,6 +17,38 @@ last_verified: 2026-07-30
 
 # GNU Gzip
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:gzip` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/gzip/> |
+| Packaged as | `package:msys2:gzip` |
+| Version (observed) | 1.14-2 |
+| License (observed) | GPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 187.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gzip-manual-2026-07-30` — GNU Gzip Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:gzip:wrapper-scripts` (`inference`, `high`) — The MSYS gzip package's dependencies on bash and less reflect its bundled shell-script wrappers (zcat, zless, zgrep, zcmp, zdiff) rather than a dependency of the core gzip/gunzip binary itself.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Gzip compresses and decompresses a single file or stream using the DEFLATE

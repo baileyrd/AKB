@@ -19,6 +19,34 @@ last_verified: 2026-07-30
 
 # libngtcp2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nghttp2:libngtcp2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | nghttp2 project |
+| Environments | `msys` |
+| Upstream | <https://nghttp2.org/ngtcp2> |
+| Packaged as | `package:msys2:libngtcp2` |
+| Version (observed) | 1.25.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 451.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nghttp2:libngtcp2-manual-2026-07-30` — ngtcp2 project page (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libngtcp2 implements the IETF QUIC transport protocol as a C library —

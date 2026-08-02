@@ -16,6 +16,34 @@ last_verified: 2026-08-02
 
 # LZ4 (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:lz4:lz4@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Yann Collet |
+| Environments | `ucrt64` |
+| Upstream | <https://lz4.github.io/lz4/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-lz4` |
+| Version (observed) | 1.10.0-1 |
+| License (observed) | BSD;GPL2 |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:lz4:manual-2026-07-30` — LZ4 (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-ucrt-x86_64-lz4`, the

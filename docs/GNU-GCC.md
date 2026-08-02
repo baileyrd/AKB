@@ -22,6 +22,38 @@ last_verified: 2026-07-30
 
 # GCC
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:gcc` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://gcc.gnu.org> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gcc` |
+| Version (observed) | 16.1.0-5 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 184.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gcc-manual-2026-07-30` — GCC Online Documentation (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:gcc:optimizer-arithmetic-libraries` (`inference`, `high`) — GCC's dependencies on gmp, mpfr, and mpc back arbitrary-precision arithmetic used during compilation (for example, constant folding), and its dependency on isl backs the Graphite loop-optimization framework.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GCC is the default compiler driver for GCC-oriented MinGW-w64 environments

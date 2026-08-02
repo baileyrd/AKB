@@ -856,7 +856,21 @@
     "Generate mechanical object-page sections from the composed model": [
       {
         "type": "path_exists",
-        "path": "tools/build_object_pages.py"
+        "path": "tools/build_object_facts.py"
+      },
+      {
+        "type": "path_exists",
+        "path": "tests/test_object_facts.py"
+      },
+      {
+        "type": "term_in_docs",
+        "term": "BEGIN GENERATED object-facts",
+        "min_files": 200
+      },
+      {
+        "type": "term_in_docs",
+        "term": "Version (observed)",
+        "min_files": 100
       }
     ],
     "Validate documentation pages in `tools/akb.py`": [

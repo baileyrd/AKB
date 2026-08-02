@@ -18,6 +18,23 @@ last_verified: 2026-08-02
 
 # Debugging on MSYS2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `runtime:msys2:msys-2.0.dll` |
+| Kind | `runtime` |
+| Status | `partial` |
+| Confidence | `verified` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 Part 3 of the [Developer Guide](DEVELOPER-GUIDE.md).
 
 ## The rule that governs everything below

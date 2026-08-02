@@ -16,6 +16,34 @@ last_verified: 2026-08-02
 
 # libgcrypt (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libgcrypt@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `clang64` |
+| Upstream | <https://gnupg.org/software/libgcrypt/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libgcrypt` |
+| Version (observed) | 1.12.2-2 |
+| License (observed) | LGPL |
+| Architecture (observed) | any |
+| Installed size (observed) | 4.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libgcrypt-manual-2026-07-30` — libgcrypt (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-libgcrypt`,

@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # libbz2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:bzip2:libbz2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Julian Seward |
+| Environments | `msys` |
+| Upstream | <http://www.bzip.org> |
+| Packaged as | `package:msys2:libbz2` |
+| Version (observed) | 1.0.8-4 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 65.7 KB |
+
+**Evidence on this object**
+
+- `evidence:bzip2:project-site-2026-07-30` — bzip2 and libbzip2 (official project site) (`primary`, retrieved 2026-07-30)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libbz2 is the Burrows-Wheeler-transform compression codec library split

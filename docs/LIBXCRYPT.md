@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # libxcrypt
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libxcrypt:libxcrypt` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libxcrypt project |
+| Environments | `msys` |
+| Upstream | <https://github.com/besser82/libxcrypt/> |
+| Packaged as | `package:msys2:libxcrypt` |
+| Version (observed) | 4.5.2-1 |
+| License (observed) | spdx:LGPL-2.1-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 214.2 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libxcrypt:manual-2026-07-30` — libxcrypt (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libxcrypt is a modern library for one-way hashing of passwords, providing

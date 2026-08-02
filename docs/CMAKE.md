@@ -23,6 +23,38 @@ last_verified: 2026-07-30
 
 # CMake
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:cmake:cmake` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Kitware, Inc. |
+| Environments | `ucrt64` |
+| Upstream | <https://www.cmake.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-cmake` |
+| Version (observed) | 4.4.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 57.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:cmake:documentation-2026-07-30` — CMake Documentation (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:cmake:feature-dependencies` (`inference`, `high`) — CMake's dependencies map to specific built-in features: cppdap backs its --debugger Debug Adapter Protocol support, curl backs file(DOWNLOAD)/ExternalProject network operations, jsoncpp backs its JSON-based file-api and CMakePresets.json support, libarchive backs file(ARCHIVE_CREATE) and CPack archive generation, and rhash backs its file(<HASH>) commands.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 CMake is a cross-platform build-system generator, and it is the widest and

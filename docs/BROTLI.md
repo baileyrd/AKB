@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # Brotli
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:google:brotli` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Google |
+| Environments | `msys` |
+| Upstream | <https://github.com/google/brotli> |
+| Packaged as | `package:msys2:brotli` |
+| Version (observed) | 1.2.0-1 |
+| License (observed) | MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 984.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:google:brotli-manual-2026-07-30` — Brotli (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Brotli is a general-purpose compression algorithm and library developed

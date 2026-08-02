@@ -18,6 +18,34 @@ last_verified: 2026-08-02
 
 # GPGME (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libgpgme@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://gnupg.org/related_software/gpgme/> |
+| Packaged as | `package:msys2:libgpgme` |
+| Version (observed) | 2.0.1-1 |
+| License (observed) | LGPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 586.2 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:gpgme-manual-2026-08-02` — GPGME (official project page) (`primary`, retrieved 2026-08-02)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:libgpgme`, GnuPG Made Easy (GPGME) —

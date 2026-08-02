@@ -18,6 +18,38 @@ last_verified: 2026-07-30
 
 # Info-ZIP Zip
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:info-zip:zip` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Info-ZIP |
+| Environments | `msys` |
+| Upstream | <http://www.info-zip.org/Zip.html> |
+| Packaged as | `package:msys2:zip` |
+| Version (observed) | 3.0-5 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 473.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:info-zip:zip-manual-2026-07-30` — Info-ZIP Zip (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:zip-family:bzip2-method` (`inference`, `high`) — Zip and UnZip support the bzip2 compression method within .zip archives, explaining their libbz2 dependency.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Zip creates PKZIP-compatible `.zip` archives, combining archiving and

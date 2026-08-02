@@ -16,6 +16,34 @@ last_verified: 2026-08-02
 
 # libcbor (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:pjk:libcbor@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | PJK (Pavel Kalvoda) |
+| Environments | `clang64` |
+| Upstream | <https://github.com/PJK/libcbor> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libcbor` |
+| Version (observed) | 0.14.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 224.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pjk:libcbor-manual-2026-07-30` — libcbor (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:mingw-w64-clang-x86_64-libcbor`,

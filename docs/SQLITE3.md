@@ -16,6 +16,38 @@ last_verified: 2026-07-30
 
 # SQLite
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:sqlite:sqlite3` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | D. Richard Hipp / SQLite Consortium |
+| Environments | `ucrt64` |
+| Upstream | <https://www.sqlite.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-sqlite3` |
+| Version (observed) | 3.53.4-1 |
+| License (observed) | PublicDomain |
+| Architecture (observed) | any |
+| Installed size (observed) | 20.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:sqlite:documentation-2026-07-30` — SQLite (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:sqlite3:tcl-test-dependency` (`inference`, `high`) — SQLite's dependency on tcl reflects its own canonical test-suite tooling, which is Tcl-based, bundled into this package rather than a runtime requirement of the SQL engine itself.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 SQLite is a self-contained, serverless SQL database engine implemented as

@@ -22,6 +22,34 @@ last_verified: 2026-07-30
 
 # GNU libiconv (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libiconv@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/libiconv/> |
+| Packaged as | `package:msys2:libiconv` |
+| Version (observed) | 1.19-1 |
+| License (observed) | LGPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libiconv-manual-2026-07-30` — GNU libiconv (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** GNU libiconv package

@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:mingw-w64-clang-x86_64-openssl
   - library:libssh2:libssh2@clang64
   - library:mozilla:ca-certificates@clang64
+  - library:yubico:libfido2@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
@@ -161,5 +162,6 @@ base.
 - [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 - [ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md)
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+- [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md)
 - [libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md)
 - [curl (CLANG64)](CURL-CLANG64.md)

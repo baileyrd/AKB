@@ -9,6 +9,8 @@ model_refs:
   - component:openssh:openssh
   - library:pjk:libcbor
   - library:gnu:zlib@msys
+  - library:yubico:libfido2@ucrt64
+  - library:yubico:libfido2@clang64
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -38,6 +40,9 @@ snapshot), authored by Yubico. A separately packaged, native
 documents the MSYS package specifically, since that is the one
 [OpenSSH](OPENSSH.md#dependencies) actually depends on — the same
 MSYS-vs-native distinction applied consistently across this volume.
+**Update, 2026-08-02**: the native siblings flagged here are now
+modeled — [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md) and
+[libfido2 (CLANG64)](LIBFIDO2-CLANG64.md).
 
 ## Responsibilities
 
@@ -166,3 +171,5 @@ methodology.
 - [libxcrypt](LIBXCRYPT.md)
 - [libcbor](LIBCBOR.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md)
+- [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md)

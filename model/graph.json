@@ -2377,6 +2377,42 @@
       "evidence_refs": ["evidence:yubico:libfido2-manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:yubico:libfido2@ucrt64",
+      "kind": "library",
+      "name": "libfido2 (UCRT64)",
+      "summary": "A library implementing the FIDO2/U2F protocols, packaged in the UCRT64 environment, depending on libcbor (UCRT64), OpenSSL (UCRT64), and zlib (UCRT64), whose sole recorded reverse dependent is python-fido2. Added 2026-08-02 to close a gap this knowledge base's own LIBFIDO2.md page had already flagged as an unconfirmed native sibling.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yubico",
+      "aliases": ["libfido2"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://developers.yubico.com/libfido2/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libfido2",
+        "role": "FIDO2/U2F hardware security key support"
+      },
+      "evidence_refs": ["evidence:yubico:libfido2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:yubico:libfido2@clang64",
+      "kind": "library",
+      "name": "libfido2 (CLANG64)",
+      "summary": "A library implementing the FIDO2/U2F protocols, packaged in the CLANG64 environment, depending on libcbor (CLANG64), OpenSSL (CLANG64), and zlib (CLANG64), whose sole recorded reverse dependent is python-fido2. Added 2026-08-02 to close a gap this knowledge base's own LIBFIDO2.md page had already flagged as an unconfirmed native sibling.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yubico",
+      "aliases": ["libfido2"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://developers.yubico.com/libfido2/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libfido2",
+        "role": "FIDO2/U2F hardware security key support"
+      },
+      "evidence_refs": ["evidence:yubico:libfido2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "library:h5l:heimdal",
       "kind": "library",
       "name": "Heimdal",
@@ -2966,6 +3002,42 @@
       "properties": {
         "upstream_project": "https://github.com/PJK/libcbor",
         "packaged_as": "package:msys2:libcbor",
+        "role": "CBOR binary-format parsing and generation"
+      },
+      "evidence_refs": ["evidence:pjk:libcbor-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pjk:libcbor@ucrt64",
+      "kind": "library",
+      "name": "libcbor (UCRT64)",
+      "summary": "A C library for parsing and generating CBOR, packaged in the UCRT64 environment with zero own catalog dependencies, whose sole recorded reverse dependent is libfido2 (UCRT64). Added 2026-08-02 to unblock libfido2 (UCRT64).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PJK (Pavel Kalvoda)",
+      "aliases": ["libcbor"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://github.com/PJK/libcbor",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libcbor",
+        "role": "CBOR binary-format parsing and generation"
+      },
+      "evidence_refs": ["evidence:pjk:libcbor-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pjk:libcbor@clang64",
+      "kind": "library",
+      "name": "libcbor (CLANG64)",
+      "summary": "A C library for parsing and generating CBOR, packaged in the CLANG64 environment with zero own catalog dependencies, whose sole recorded reverse dependent is libfido2 (CLANG64). Added 2026-08-02 to unblock libfido2 (CLANG64).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PJK (Pavel Kalvoda)",
+      "aliases": ["libcbor"],
+      "tags": ["library", "text-processing"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://github.com/PJK/libcbor",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libcbor",
         "role": "CBOR binary-format parsing and generation"
       },
       "evidence_refs": ["evidence:pjk:libcbor-manual-2026-07-30", "evidence:catalog:current"]
@@ -8885,6 +8957,78 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs FIDO2/U2F cryptographic operations (ECDSA/EdDSA signature verification, hashing). Added 2026-08-02, formalizing a dependency this knowledge base's own LIBFIDO2.md page already cited by package name but had previously declined to model as a formal edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-ucrt64-requires-libcbor-ucrt64",
+      "type": "requires",
+      "source": "library:yubico:libfido2@ucrt64",
+      "target": "library:pjk:libcbor@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs CBOR encoding/decoding of the FIDO2/CTAP protocol's own message format, the same rationale already documented for the MSYS sibling. Added 2026-08-02.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-ucrt64-requires-openssl-ucrt64",
+      "type": "requires",
+      "source": "library:yubico:libfido2@ucrt64",
+      "target": "library:openssl:openssl@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs FIDO2/U2F cryptographic operations (ECDSA/EdDSA signature verification, hashing), the same rationale already documented for the MSYS sibling. Added 2026-08-02.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-ucrt64-requires-zlib-ucrt64",
+      "type": "requires",
+      "source": "library:yubico:libfido2@ucrt64",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs compression support within libfido2's own dependency chain, the same pattern already documented for the MSYS sibling's zlib (MSYS) dependency. Added 2026-08-02.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-clang64-requires-libcbor-clang64",
+      "type": "requires",
+      "source": "library:yubico:libfido2@clang64",
+      "target": "library:pjk:libcbor@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs CBOR encoding/decoding of the FIDO2/CTAP protocol's own message format, the same rationale already documented for the MSYS sibling. Added 2026-08-02.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-clang64-requires-openssl-clang64",
+      "type": "requires",
+      "source": "library:yubico:libfido2@clang64",
+      "target": "library:openssl:openssl@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs FIDO2/U2F cryptographic operations (ECDSA/EdDSA signature verification, hashing), the same rationale already documented for the MSYS sibling. Added 2026-08-02.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libfido2-clang64-requires-zlib-clang64",
+      "type": "requires",
+      "source": "library:yubico:libfido2@clang64",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs compression support within libfido2's own dependency chain, the same pattern already documented for the MSYS sibling's zlib (MSYS) dependency. Added 2026-08-02.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

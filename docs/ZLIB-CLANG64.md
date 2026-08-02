@@ -8,11 +8,12 @@ model_refs:
   - package:msys2:mingw-w64-clang-x86_64-zlib
   - component:llvm:lld
   - component:llvm:lldb
+  - library:yubico:libfido2@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:zlib:manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # zlib (CLANG64)
@@ -161,6 +162,7 @@ methodology.
 - [LLVM libraries](LLVM-LIBS.md)
 - [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)
 - [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
+- [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md)
 - [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 - [PCRE2 (CLANG64)](PCRE2-CLANG64.md)

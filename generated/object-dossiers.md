@@ -5841,7 +5841,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 12
+- Incoming relationships: 13
 
 ## `library:gnu:zlib@clang64`
 
@@ -5850,7 +5850,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 10
+- Incoming relationships: 11
 
 ## `library:gnu:zlib@msys`
 
@@ -6570,7 +6570,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:openssl:openssl@ucrt64`
 
@@ -6579,7 +6579,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:p11-glue:p11-kit`
 
@@ -6652,6 +6652,24 @@
 - Evidence: evidence:pjk:libcbor-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:pjk:libcbor@clang64`
+
+- Name: libcbor (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pjk:libcbor-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:pjk:libcbor@ucrt64`
+
+- Name: libcbor (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pjk:libcbor-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:rhash:rhash`
 
@@ -6760,6 +6778,24 @@
 - Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
 - Incoming relationships: 2
+
+## `library:yubico:libfido2@clang64`
+
+- Name: libfido2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 0
+
+## `library:yubico:libfido2@ucrt64`
+
+- Name: libfido2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 0
 
 ## `package:msys2:ack`
 

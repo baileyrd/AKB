@@ -652,8 +652,8 @@
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 12 |
-| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 10 |
+| library:gnu:zlib | library | zlib | partial | 1 | 13 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 11 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@clang64 | library | libassuan (CLANG64) | partial | 1 | 0 |
@@ -733,8 +733,8 @@
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
 | library:oberhumer:liblzo2@msys | library | LZO | partial | 0 | 0 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
-| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 4 |
-| library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
+| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 5 |
+| library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 5 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 3 |
 | library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
@@ -743,6 +743,8 @@
 | library:pcre:pcre2@clang64 | library | PCRE2 (CLANG64) | partial | 3 | 2 |
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
+| library:pjk:libcbor@clang64 | library | libcbor (CLANG64) | partial | 0 | 1 |
+| library:pjk:libcbor@ucrt64 | library | libcbor (UCRT64) | partial | 0 | 1 |
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |
 | library:rpm:popt@msys | library | popt (MSYS) | partial | 2 | 0 |
 | library:sasl:libsasl@msys | library | libsasl (MSYS) | partial | 4 | 0 |
@@ -755,6 +757,8 @@
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |
 | library:xxhash:xxhash@msys | library | xxHash (MSYS) | partial | 0 | 0 |
 | library:yubico:libfido2 | library | libfido2 | partial | 5 | 2 |
+| library:yubico:libfido2@clang64 | library | libfido2 (CLANG64) | partial | 3 | 0 |
+| library:yubico:libfido2@ucrt64 | library | libfido2 (UCRT64) | partial | 3 | 0 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |

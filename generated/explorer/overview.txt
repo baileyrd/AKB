@@ -740,6 +740,8 @@ Objects
 - library:pcre:pcre2@clang64 (library): PCRE2 (CLANG64)
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
 - library:pjk:libcbor (library): libcbor
+- library:pjk:libcbor@clang64 (library): libcbor (CLANG64)
+- library:pjk:libcbor@ucrt64 (library): libcbor (UCRT64)
 - library:rhash:rhash (library): RHash
 - library:rpm:popt@msys (library): popt (MSYS)
 - library:sasl:libsasl@msys (library): libsasl (MSYS)
@@ -752,6 +754,8 @@ Objects
 - library:xxhash:xxhash (library): xxHash
 - library:xxhash:xxhash@msys (library): xxHash (MSYS)
 - library:yubico:libfido2 (library): libfido2
+- library:yubico:libfido2@clang64 (library): libfido2 (CLANG64)
+- library:yubico:libfido2@ucrt64 (library): libfido2 (UCRT64)
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -16914,6 +16918,12 @@ Relationships
 - library:curl:libcurl --requires--> library:gnu:zlib@msys
 - library:yubico:libfido2 --requires--> library:gnu:zlib@msys
 - library:yubico:libfido2 --requires--> component:openssl:openssl
+- library:yubico:libfido2@ucrt64 --requires--> library:pjk:libcbor@ucrt64
+- library:yubico:libfido2@ucrt64 --requires--> library:openssl:openssl@ucrt64
+- library:yubico:libfido2@ucrt64 --requires--> library:gnu:zlib
+- library:yubico:libfido2@clang64 --requires--> library:pjk:libcbor@clang64
+- library:yubico:libfido2@clang64 --requires--> library:openssl:openssl@clang64
+- library:yubico:libfido2@clang64 --requires--> library:gnu:zlib@clang64
 - library:darwinsys:file --requires--> library:gnu:zlib@msys
 - environment:msys2:msys --contains--> library:google:brotli
 - library:google:brotli --uses-runtime--> runtime:msys2:msys-2.0.dll

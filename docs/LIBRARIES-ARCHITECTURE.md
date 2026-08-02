@@ -155,6 +155,10 @@ model_refs:
   - library:bzip2:bzip2@ucrt64
   - library:lz4:lz4@ucrt64
   - library:gnu:ncurses@clang64
+  - library:pjk:libcbor@ucrt64
+  - library:pjk:libcbor@clang64
+  - library:yubico:libfido2@ucrt64
+  - library:yubico:libfido2@clang64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -354,8 +358,10 @@ flowchart LR
 [GnuTLS (CLANG64)](GNUTLS-CLANG64.md),
 [libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md),
 [curl (CLANG64)](CURL-CLANG64.md),
-[bzip2 (UCRT64)](BZIP2-UCRT64.md), [LZ4 (UCRT64)](LZ4-UCRT64.md), and
-[ncurses (CLANG64)](NCURSES-CLANG64.md) are
+[bzip2 (UCRT64)](BZIP2-UCRT64.md), [LZ4 (UCRT64)](LZ4-UCRT64.md),
+[ncurses (CLANG64)](NCURSES-CLANG64.md), [libcbor (UCRT64)](LIBCBOR-UCRT64.md),
+[libcbor (CLANG64)](LIBCBOR-CLANG64.md), [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md),
+and [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -370,7 +376,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and fifty-two pages are deliberately scoped to package/dependency-level
+All one hundred and fifty-six pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -1031,7 +1037,17 @@ explicitly left unmodeled ("not individually modeled as their own
 library entities," now corrected), and
 [ncurses (CLANG64)](NCURSES-CLANG64.md), completing the ncurses
 MSYS/UCRT64/CLANG64 sibling triple this volume had left partially
-covered since [ncurses (UCRT64)](NCURSES-UCRT64.md) was first added.
+covered since [ncurses (UCRT64)](NCURSES-UCRT64.md) was first added. A
+final batch of this session completed the libfido2 sibling triple the
+same way: [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md) and
+[libfido2 (CLANG64)](LIBFIDO2-CLANG64.md), each depending on OpenSSL
+and zlib (both already modeled for their own environments) and a new
+per-environment [libcbor (UCRT64)](LIBCBOR-UCRT64.md)/
+[libcbor (CLANG64)](LIBCBOR-CLANG64.md) pair added specifically to
+unblock them — closing an item
+[libfido2's](LIBFIDO2.md#architectural-classification) own page had
+flagged as an existing-but-unmodeled native sibling since first
+publication.
 These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.

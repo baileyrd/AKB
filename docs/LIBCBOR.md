@@ -7,12 +7,14 @@ model_refs:
   - library:pjk:libcbor
   - package:msys2:libcbor
   - library:yubico:libfido2
+  - library:pjk:libcbor@ucrt64
+  - library:pjk:libcbor@clang64
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
   - evidence:pjk:libcbor-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libcbor
@@ -92,9 +94,12 @@ key, since the protocol itself is CBOR-encoded end to end.
 
 ## Compatibility and Variants
 
-Whether other native environments (UCRT64, CLANG64, i686) in this
-catalog package libcbor separately was not confirmed while writing this
-page; this is recorded as an open item rather than assumed either way.
+**Correction, 2026-08-02**: this section previously stated it was
+unconfirmed whether other native environments packaged libcbor
+separately. They do: [libcbor (UCRT64)](LIBCBOR-UCRT64.md) and
+[libcbor (CLANG64)](LIBCBOR-CLANG64.md) are now modeled as separate
+catalog entities, each unblocking their own environment's libfido2
+sibling.
 
 ## Security Considerations
 
@@ -129,3 +134,5 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libfido2](LIBFIDO2.md)
+- [libcbor (UCRT64)](LIBCBOR-UCRT64.md)
+- [libcbor (CLANG64)](LIBCBOR-CLANG64.md)

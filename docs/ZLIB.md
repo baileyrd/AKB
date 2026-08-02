@@ -6,11 +6,12 @@ status: partial
 model_refs:
   - library:gnu:zlib
   - package:msys2:mingw-w64-ucrt-x86_64-zlib
+  - library:yubico:libfido2@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:zlib:manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # zlib
@@ -154,6 +155,7 @@ this library's unusually wide blast radius.
 - [libarchive](LIBARCHIVE.md)
 - [CMake](CMAKE.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
+- [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md)
 - [GNU GCC](GNU-GCC.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)

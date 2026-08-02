@@ -76358,10 +76358,16 @@
 | relationship:foundation-libraries:libedit-packaged-by-package | packaged-by | library:libedit:libedit | package:msys2:libedit | verified |
 | relationship:foundation-libraries:libedit-requires-ncurses | requires | library:libedit:libedit | component:gnu:ncurses | verified |
 | relationship:foundation-libraries:libedit-uses-msys-runtime | uses-runtime | library:libedit:libedit | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libfido2-clang64-requires-libcbor-clang64 | requires | library:yubico:libfido2@clang64 | library:pjk:libcbor@clang64 | verified |
+| relationship:foundation-libraries:libfido2-clang64-requires-openssl-clang64 | requires | library:yubico:libfido2@clang64 | library:openssl:openssl@clang64 | verified |
+| relationship:foundation-libraries:libfido2-clang64-requires-zlib-clang64 | requires | library:yubico:libfido2@clang64 | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:libfido2-packaged-by-package | packaged-by | library:yubico:libfido2 | package:msys2:libfido2 | verified |
 | relationship:foundation-libraries:libfido2-requires-libcbor | requires | library:yubico:libfido2 | library:pjk:libcbor | verified |
 | relationship:foundation-libraries:libfido2-requires-openssl | requires | library:yubico:libfido2 | component:openssl:openssl | verified |
 | relationship:foundation-libraries:libfido2-requires-zlib-msys | requires | library:yubico:libfido2 | library:gnu:zlib@msys | verified |
+| relationship:foundation-libraries:libfido2-ucrt64-requires-libcbor-ucrt64 | requires | library:yubico:libfido2@ucrt64 | library:pjk:libcbor@ucrt64 | verified |
+| relationship:foundation-libraries:libfido2-ucrt64-requires-openssl-ucrt64 | requires | library:yubico:libfido2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
+| relationship:foundation-libraries:libfido2-ucrt64-requires-zlib-ucrt64 | requires | library:yubico:libfido2@ucrt64 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:libfido2-uses-msys-runtime | uses-runtime | library:yubico:libfido2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgcrypt-clang64-requires-libgpg-error-clang64 | requires | library:gnupg:libgcrypt@clang64 | library:gnupg:libgpg-error@clang64 | verified |
 | relationship:foundation-libraries:libgcrypt-msys-packaged-by-package | packaged-by | library:gnupg:libgcrypt@msys | package:msys2:libgcrypt | verified |

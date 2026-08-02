@@ -9,11 +9,12 @@ model_refs:
   - library:curl:curl@ucrt64
   - library:libssh2:libssh2@ucrt64
   - library:mozilla:ca-certificates@ucrt64
+  - library:yubico:libfido2@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # OpenSSL (UCRT64)
@@ -179,4 +180,5 @@ methodology.
 - [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
 - [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
 - [libarchive](LIBARCHIVE.md)
+- [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md)
 - [OpenSSL (CLANG64)](OPENSSL-CLANG64.md)

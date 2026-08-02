@@ -32,6 +32,7 @@ jobs:
           python tools/build_explorer.py
           python tools/build_diagrams.py
           python tools/build_object_diagrams.py
+          python tools/build_volume_ledger.py
           python tools/build_catalog_views.py
           python tools/assess_akb_coverage.py
           git diff --exit-code

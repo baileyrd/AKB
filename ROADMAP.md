@@ -340,5 +340,36 @@ and each page says so.
 `tests/test_doc_links.py` was added alongside them: nothing had ever
 checked that a Markdown link points at a file that exists. All 290 pages
 pass, and the test was verified to fail on an introduced break.
-- [ ] Per-volume page and heading metrics in the coverage ledger
-- [ ] Replace the ledger's uniform "Partial" with the charter's eight coverage states
+- [x] Per-volume page and heading metrics in the coverage ledger
+- [x] Replace the ledger's uniform "Partial" with the charter's eight coverage states
+
+**Both closed 2026-08-02.** The ledger reported "Partial" for all twenty
+volumes, so a volume of 164 pages and a volume of 596 words across two
+stubs read identically. `tools/build_volume_ledger.py` now measures pages,
+`##` headings, words, words per page, and distinct evidence and model
+references per volume, writing them into a marker-delimited block. The
+coverage state is *not* computed — it is a judgment, authored in
+`model/volume-coverage.json` with a rationale per volume so a change to it
+appears in a diff beside its reasoning.
+
+Generated blocks are excluded from the prose counts, so a volume cannot
+inflate its word count by carrying more diagrams.
+
+What the measurement then showed, none of which was visible before:
+
+- Volume 6 holds 164 of 300 pages and 55.2% of all prose.
+- **Nine volumes cite no evidence record on any page** — 1, 10, 11, 12,
+  13, 14, 15, 16, 19. Their claims are authored rather than sourced, and
+  that is now stated on the ledger rather than hidden behind a uniform
+  label.
+- Volume 10 has the lowest prose density in the knowledge base at 179
+  words per page, while documenting an explorer that is itself built and
+  tested.
+- Three of the charter's eight states are in use: `partial`, `inferred`,
+  and `planned`. `inferred` marks Volumes 2, 7, 17, and 18 — sound
+  material reasoned from documentation rather than observed, which is a
+  gap in evidence class rather than in extent. Volume 12 is `planned`.
+
+`tests/test_volume_ledger.py` parses `charter/PROJECT-CHARTER.md` and
+fails if the declared state vocabulary drifts from the charter's, so the
+eight states cannot quietly become seven or nine.

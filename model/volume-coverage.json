@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Per-volume coverage state, authored. The charter requires coverage reports to distinguish unknown, not-applicable, planned, partial, verified, inferred, deprecated, and superseded states; this file is where that judgment is recorded so it is reviewable in a diff. Page and heading metrics are measured by tools/build_volume_ledger.py and are not authored here.",
+  "states": {
+    "unknown": "The volume's coverage has not been assessed.",
+    "not-applicable": "The volume does not apply to this knowledge base's scope.",
+    "planned": "The subject is identified and named but not yet addressed. Pages may exist as stubs.",
+    "partial": "The subject is addressed, with stated gaps. The default state for work in progress.",
+    "verified": "Every load-bearing claim rests on observation of the thing described.",
+    "inferred": "The material is sound but reasoned from documentation rather than observed. Distinct from partial: the gap is in evidence class, not in coverage extent.",
+    "deprecated": "Superseded material retained for resolvability.",
+    "superseded": "Replaced by another volume; retained as a pointer."
+  },
+  "volumes": {
+    "1": {
+      "state": "partial",
+      "rationale": "Five pages carrying the L0/L1/L2 baseline. Cites no evidence record on any page, so the layer and domain models are asserted rather than sourced."
+    },
+    "2": {
+      "state": "inferred",
+      "rationale": "Boundary pages by ADR 0001, reasoned from Microsoft's own documentation. The one host observation available is non-privileged; WMI operating-system and volume queries were denied by host access policy, so nothing about the filesystem or edition is observed."
+    },
+    "3": {
+      "state": "partial",
+      "rationale": "The runtime and its eight subsystems each have a page. Evidence is uneven by design and stated per page: five bounded probes cover process lifecycle, exec, signal delivery, symlink classification, and terminal-device presence. Path conversion, the mount table, and environment conversion have no observation of any kind."
+    },
+    "4": {
+      "state": "partial",
+      "rationale": "All six environments covered against the charter's eleven attributes. CLANGARM64 has no runtime observation at all - the observation host was x86_64 - so its behavioral sections are reasoned from CLANG64."
+    },
+    "5": {
+      "state": "partial",
+      "rationale": "Thirty-one per-tool pages covering every family in the role model. Evidence is upstream documentation throughout; no tool has been run on an MSYS2 host."
+    },
+    "6": {
+      "state": "partial",
+      "rationale": "The largest volume by an order of magnitude. Per-library pages plus seven category pages. No PE import analysis, header inventory, or file manifest exists for any library, because the deep-inventory pipeline has run against 2 of 15,711 packages."
+    },
+    "7": {
+      "state": "inferred",
+      "rationale": "Grounded in the pacman, pacman.conf, and alpm-hooks manual pages, which are Arch's. MSYS2's effective paths, repository sections, and signature policy remain uncaptured, so every page carries that caveat and none states MSYS2's actual configuration."
+    },
+    "8": {
+      "state": "partial",
+      "rationale": "Fifteen per-tool pages plus the LLVM umbrella. One bounded compile-and-execute probe exists; no build output beyond it has been observed, and no toolchain binary has been analysed."
+    },
+    "9": {
+      "state": "partial",
+      "rationale": "Eight pages from gitforwindows.org and the Git manual pages. Git Credential Manager's own repository was unreachable from this environment, so its internals are not independently verified, and no PE import analysis of any Git for Windows binary exists."
+    },
+    "10": {
+      "state": "partial",
+      "rationale": "Eight pages averaging fewer than two second-level headings each - the thinnest prose density in the knowledge base. The explorer itself is built and tested; the volume documenting it is not written to the same standard."
+    },
+    "11": {
+      "state": "partial",
+      "rationale": "The repository-to-package inventory is directly observed across 15,711 packages and 6 repositories, which is the strongest observational base in the knowledge base. The package-to-file inventory beneath it covers 2 packages."
+    },
+    "12": {
+      "state": "planned",
+      "rationale": "Two pages totalling under 600 words, citing no evidence. The volume names its subject - where architectural elements are implemented upstream - and does not yet address it. Recorded as planned rather than partial because there is no substantive material to be partial about."
+    },
+    "13": {
+      "state": "partial",
+      "rationale": "One authored page over a substantial generated base: the reverse-dependency impact report exceeds a thousand lines and the dependency edges are observed. The analysis exists; the volume interpreting it does not."
+    },
+    "14": {
+      "state": "partial",
+      "rationale": "Two pages. Recipes are ingested statically without executing PKGBUILDs, so build mechanics are modelled from declarations rather than from builds. MSYS2's effective makepkg.conf is uncaptured."
+    },
+    "15": {
+      "state": "partial",
+      "rationale": "One page. Every extension point cites a concrete implementation except external plugin, where none exists. The compatibility mechanism is documented and has never been exercised in this repository's history."
+    },
+    "16": {
+      "state": "partial",
+      "rationale": "One page carrying the threat model and supply-chain analysis. Cites no evidence record. The signing posture it would need to assess is the same one Volume 7 records as unestablished."
+    },
+    "17": {
+      "state": "inferred",
+      "rationale": "Explicitly contains no MSYS2 timings, because no Windows host running MSYS2 has ever been available. Hot-path costs are derived from published algorithms; the pacman transaction shape is the one measured part."
+    },
+    "18": {
+      "state": "inferred",
+      "rationale": "Five pages answering select, build, debug, package, migrate. No command on any of them has been executed by this knowledge base, and each page says so."
+    },
+    "19": {
+      "state": "partial",
+      "rationale": "Three pages covering upgrade, rollback, repair, migration, and refresh orchestration. Cites no evidence record; the procedures are authored rather than sourced or exercised."
+    },
+    "20": {
+      "state": "partial",
+      "rationale": "Reference appendices including terminology, requirements traceability, this ledger, and the AKB tooling benchmarks re-filed here from Volume 17. The only page in the knowledge base with a verified status sits in this volume."
+    }
+  }
+}

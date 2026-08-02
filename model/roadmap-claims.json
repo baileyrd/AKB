@@ -928,15 +928,42 @@
     ],
     "Per-volume page and heading metrics in the coverage ledger": [
       {
+        "type": "path_exists",
+        "path": "tools/build_volume_ledger.py"
+      },
+      {
+        "type": "path_exists",
+        "path": "tests/test_volume_ledger.py"
+      },
+      {
         "type": "term_in_docs",
-        "term": "pages / ",
+        "term": "Words/page",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "BEGIN GENERATED volume-metrics",
         "min_files": 1
       }
     ],
     "Replace the ledger's uniform \"Partial\" with the charter's eight coverage states": [
       {
+        "type": "path_exists",
+        "path": "model/volume-coverage.json"
+      },
+      {
         "type": "term_in_docs",
-        "term": "Not started",
+        "term": "`inferred`",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "`planned`",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "Why each volume carries the state it does",
         "min_files": 1
       }
     ],

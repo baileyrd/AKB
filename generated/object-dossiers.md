@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 2
+- Incoming relationships: 4
 
 ## `library:gnu:gmp`
 
@@ -5607,7 +5607,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 2
+- Incoming relationships: 5
 
 ## `library:gnu:libiconv@msys`
 
@@ -5626,6 +5626,15 @@
 - Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
 - Incoming relationships: 4
+
+## `library:gnu:libidn2@clang64`
+
+- Name: GNU libidn2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libidn2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
 
 ## `library:gnu:libidn2@ucrt64`
 
@@ -5698,6 +5707,15 @@
 - Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 5
+
+## `library:gnu:libunistring@clang64`
+
+- Name: GNU libunistring (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libunistring-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:libunistring@ucrt64`
 
@@ -6076,6 +6094,15 @@
 - Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
 - Incoming relationships: 3
+
+## `library:libpsl:libpsl@clang64`
+
+- Name: libpsl (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 0
 
 ## `library:libpsl:libpsl@ucrt64`
 

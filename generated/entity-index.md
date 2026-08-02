@@ -621,14 +621,15 @@
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 2 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
-| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 2 |
+| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 4 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
-| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 2 |
+| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 5 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
+| library:gnu:libidn2@clang64 | library | GNU libidn2 (CLANG64) | partial | 3 | 1 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 19 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
@@ -637,6 +638,7 @@
 | library:gnu:libtasn1@clang64 | library | GNU Libtasn1 (CLANG64) | partial | 0 | 1 |
 | library:gnu:libtasn1@ucrt64 | library | GNU Libtasn1 (UCRT64) | partial | 0 | 2 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 5 |
+| library:gnu:libunistring@clang64 | library | GNU libunistring (CLANG64) | partial | 1 | 2 |
 | library:gnu:libunistring@ucrt64 | library | libunistring (UCRT64) | partial | 1 | 3 |
 | library:gnu:mpfr | library | GNU MPFR | partial | 2 | 4 |
 | library:gnu:mpfr@clang64 | library | GNU MPFR (CLANG64) | partial | 1 | 1 |
@@ -679,6 +681,7 @@
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
 | library:libisl:isl@clang64 | library | isl (Integer Set Library) (CLANG64) | partial | 1 | 0 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
+| library:libpsl:libpsl@clang64 | library | libpsl (CLANG64) | partial | 4 | 0 |
 | library:libpsl:libpsl@ucrt64 | library | libpsl (UCRT64) | partial | 4 | 1 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |

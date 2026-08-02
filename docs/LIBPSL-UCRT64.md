@@ -152,3 +152,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md)
 - [GNU libunistring (UCRT64)](GNU-LIBUNISTRING-UCRT64.md)
+- [libpsl (CLANG64)](LIBPSL-CLANG64.md)

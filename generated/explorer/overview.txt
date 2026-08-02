@@ -626,6 +626,7 @@ Objects
 - library:gnu:libiconv@clang64 (library): GNU libiconv (CLANG64)
 - library:gnu:libiconv@msys (library): GNU libiconv (MSYS)
 - library:gnu:libidn2 (library): GNU libidn2
+- library:gnu:libidn2@clang64 (library): GNU libidn2 (CLANG64)
 - library:gnu:libidn2@ucrt64 (library): GNU libidn2 (UCRT64)
 - library:gnu:libintl (library): GNU libintl
 - library:gnu:libltdl (library): GNU Libltdl
@@ -634,6 +635,7 @@ Objects
 - library:gnu:libtasn1@clang64 (library): GNU Libtasn1 (CLANG64)
 - library:gnu:libtasn1@ucrt64 (library): GNU Libtasn1 (UCRT64)
 - library:gnu:libunistring (library): GNU libunistring
+- library:gnu:libunistring@clang64 (library): GNU libunistring (CLANG64)
 - library:gnu:libunistring@ucrt64 (library): libunistring (UCRT64)
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:mpfr@clang64 (library): GNU MPFR (CLANG64)
@@ -676,6 +678,7 @@ Objects
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libisl:isl@clang64 (library): isl (Integer Set Library) (CLANG64)
 - library:libpsl:libpsl (library): libpsl
+- library:libpsl:libpsl@clang64 (library): libpsl (CLANG64)
 - library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
 - library:libssh2:libssh2 (library): libssh2
 - library:libssh2:libssh2@ucrt64 (library): libssh2 (UCRT64)
@@ -16923,6 +16926,14 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:gnu:libunistring@clang64 --requires--> library:gnu:libiconv@clang64
+- library:gnu:libidn2@clang64 --requires--> library:gnu:gettext@clang64
+- library:gnu:libidn2@clang64 --requires--> library:gnu:libiconv@clang64
+- library:gnu:libidn2@clang64 --requires--> library:gnu:libunistring@clang64
+- library:libpsl:libpsl@clang64 --requires--> library:gnu:gettext@clang64
+- library:libpsl:libpsl@clang64 --requires--> library:gnu:libiconv@clang64
+- library:libpsl:libpsl@clang64 --requires--> library:gnu:libidn2@clang64
+- library:libpsl:libpsl@clang64 --requires--> library:gnu:libunistring@clang64
 - library:gnome:libxml2@clang64 --requires--> library:gnu:libiconv@clang64
 - library:tukaani:liblzma@clang64 --requires--> library:gnu:gettext@clang64
 - library:gnu:gettext@clang64 --requires--> library:gnu:libiconv@clang64

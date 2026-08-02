@@ -34,6 +34,9 @@ model_refs:
   - library:gnu:libtasn1@clang64
   - library:p11-glue:p11-kit@clang64
   - library:mozilla:ca-certificates@clang64
+  - library:gnu:libunistring@clang64
+  - library:gnu:libidn2@clang64
+  - library:libpsl:libpsl@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -305,8 +308,11 @@ flowchart LR
 [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md),
 [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md),
 [GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md),
-[p11-kit (CLANG64)](P11-KIT-CLANG64.md), and
-[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) are
+[p11-kit (CLANG64)](P11-KIT-CLANG64.md),
+[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md),
+[GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md),
+[GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md), and
+[libpsl (CLANG64)](LIBPSL-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -321,7 +327,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and twenty-seven pages are deliberately scoped to package/dependency-level
+All one hundred and thirty pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -901,7 +907,14 @@ retroactively unlocked, no new pages needed: both
 [libxml2 (CLANG64)](LIBXML2-CLANG64.md#dependencies) and
 [liblzma (CLANG64)](LIBLZMA-CLANG64.md#dependencies) had each left
 their own libiconv/gettext-runtime sub-dependency explicitly unmodeled
-pending those libraries' own pages, which this batch supplied. These
+pending those libraries' own pages, which this batch supplied. A second chain
+was scoped and built the same way, reusing the same
+[GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md) and
+[GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md) base already modeled
+this batch: [GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md)
+→ [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md) →
+[libpsl (CLANG64)](LIBPSL-CLANG64.md), all three closing full
+dependency coverage in sequence. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

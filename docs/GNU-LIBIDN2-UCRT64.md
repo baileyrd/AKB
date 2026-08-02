@@ -155,3 +155,4 @@ methodology.
 - [libpsl (UCRT64)](LIBPSL-UCRT64.md)
 - [GNU libunistring (UCRT64)](GNU-LIBUNISTRING-UCRT64.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)

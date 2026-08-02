@@ -76341,6 +76341,9 @@
 | relationship:foundation-libraries:libiconv-msys-packaged-by-package | packaged-by | library:gnu:libiconv@msys | package:msys2:libiconv | verified |
 | relationship:foundation-libraries:libiconv-msys-uses-msys-runtime | uses-runtime | library:gnu:libiconv@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libiconv-packaged-by-package | packaged-by | library:gnu:libiconv | package:msys2:mingw-w64-ucrt-x86_64-libiconv | verified |
+| relationship:foundation-libraries:libidn2-clang64-requires-gettext-clang64 | requires | library:gnu:libidn2@clang64 | library:gnu:gettext@clang64 | verified |
+| relationship:foundation-libraries:libidn2-clang64-requires-libiconv-clang64 | requires | library:gnu:libidn2@clang64 | library:gnu:libiconv@clang64 | verified |
+| relationship:foundation-libraries:libidn2-clang64-requires-libunistring-clang64 | requires | library:gnu:libidn2@clang64 | library:gnu:libunistring@clang64 | verified |
 | relationship:foundation-libraries:libidn2-packaged-by-package | packaged-by | library:gnu:libidn2 | package:msys2:libidn2 | verified |
 | relationship:foundation-libraries:libidn2-requires-libintl | requires | library:gnu:libidn2 | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libidn2-requires-libunistring | requires | library:gnu:libidn2 | library:gnu:libunistring | verified |
@@ -76371,6 +76374,10 @@
 | relationship:foundation-libraries:libngtcp2-ucrt64-requires-gnutls-ucrt64 | requires | library:nghttp2:libngtcp2@ucrt64 | library:gnutls:gnutls@ucrt64 | verified |
 | relationship:foundation-libraries:libngtcp2-ucrt64-requires-openssl-ucrt64 | requires | library:nghttp2:libngtcp2@ucrt64 | library:openssl:openssl@ucrt64 | verified |
 | relationship:foundation-libraries:libngtcp2-uses-msys-runtime | uses-runtime | library:nghttp2:libngtcp2 | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libpsl-clang64-requires-gettext-clang64 | requires | library:libpsl:libpsl@clang64 | library:gnu:gettext@clang64 | verified |
+| relationship:foundation-libraries:libpsl-clang64-requires-libiconv-clang64 | requires | library:libpsl:libpsl@clang64 | library:gnu:libiconv@clang64 | verified |
+| relationship:foundation-libraries:libpsl-clang64-requires-libidn2-clang64 | requires | library:libpsl:libpsl@clang64 | library:gnu:libidn2@clang64 | verified |
+| relationship:foundation-libraries:libpsl-clang64-requires-libunistring-clang64 | requires | library:libpsl:libpsl@clang64 | library:gnu:libunistring@clang64 | verified |
 | relationship:foundation-libraries:libpsl-packaged-by-package | packaged-by | library:libpsl:libpsl | package:msys2:libpsl | verified |
 | relationship:foundation-libraries:libpsl-requires-libidn2 | requires | library:libpsl:libpsl | library:gnu:libidn2 | verified |
 | relationship:foundation-libraries:libpsl-requires-libunistring | requires | library:libpsl:libpsl | library:gnu:libunistring | verified |
@@ -76395,6 +76402,7 @@
 | relationship:foundation-libraries:libssh2-uses-msys-runtime | uses-runtime | library:libssh2:libssh2 | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libtasn1-packaged-by-package | packaged-by | library:gnu:libtasn1 | package:msys2:libtasn1 | verified |
 | relationship:foundation-libraries:libtasn1-uses-msys-runtime | uses-runtime | library:gnu:libtasn1 | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libunistring-clang64-requires-libiconv-clang64 | requires | library:gnu:libunistring@clang64 | library:gnu:libiconv@clang64 | verified |
 | relationship:foundation-libraries:libunistring-packaged-by-package | packaged-by | library:gnu:libunistring | package:msys2:libunistring | verified |
 | relationship:foundation-libraries:libunistring-requires-libiconv-msys | requires | library:gnu:libunistring | library:gnu:libiconv@msys | verified |
 | relationship:foundation-libraries:libunistring-ucrt64-requires-libiconv | requires | library:gnu:libunistring@ucrt64 | library:gnu:libiconv | verified |

@@ -847,6 +847,60 @@
       "evidence_refs": ["evidence:mozilla:ca-certificates-manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:gnu:libunistring@clang64",
+      "kind": "library",
+      "name": "GNU libunistring (CLANG64)",
+      "summary": "The GNU Unicode string library, packaged in the CLANG64 environment and linking against GNU libiconv (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libunistring"],
+      "tags": ["library", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libunistring/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libunistring",
+        "role": "Unicode string handling"
+      },
+      "evidence_refs": ["evidence:gnu:libunistring-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libidn2@clang64",
+      "kind": "library",
+      "name": "GNU libidn2 (CLANG64)",
+      "summary": "The GNU Internationalized Domain Names (IDNA2008) library, packaged in the CLANG64 environment and linking against three libraries already documented in this knowledge base (GNU gettext, GNU libiconv, GNU libunistring, all CLANG64).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libidn2"],
+      "tags": ["library", "i18n", "network"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libidn/#libidn2",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libidn2",
+        "role": "internationalized domain name encoding"
+      },
+      "evidence_refs": ["evidence:gnu:libidn2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libpsl:libpsl@clang64",
+      "kind": "library",
+      "name": "libpsl (CLANG64)",
+      "summary": "The Public Suffix List library, packaged in the CLANG64 environment and linking against four libraries already documented in this knowledge base (GNU gettext, GNU libiconv, GNU libidn2, GNU libunistring, all CLANG64).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libpsl project",
+      "aliases": ["libpsl"],
+      "tags": ["library", "network"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://github.com/rockdaboot/libpsl",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libpsl",
+        "role": "Public Suffix List domain matching"
+      },
+      "evidence_refs": ["evidence:libpsl:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8849,6 +8903,102 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libunistring-clang64-requires-libiconv-clang64",
+      "type": "requires",
+      "source": "library:gnu:libunistring@clang64",
+      "target": "library:gnu:libiconv@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for libunistring's own Unicode string handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-clang64-requires-gettext-clang64",
+      "type": "requires",
+      "source": "library:gnu:libidn2@clang64",
+      "target": "library:gnu:gettext@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for libidn2's own diagnostic output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-clang64-requires-libiconv-clang64",
+      "type": "requires",
+      "source": "library:gnu:libidn2@clang64",
+      "target": "library:gnu:libiconv@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for libidn2's own domain-name encoding.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libidn2-clang64-requires-libunistring-clang64",
+      "type": "requires",
+      "source": "library:gnu:libidn2@clang64",
+      "target": "library:gnu:libunistring@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode normalization for libidn2's IDNA2008 domain-name encoding.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-clang64-requires-gettext-clang64",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@clang64",
+      "target": "library:gnu:gettext@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for libpsl's own diagnostic output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-clang64-requires-libiconv-clang64",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@clang64",
+      "target": "library:gnu:libiconv@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for libpsl's own domain-name handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-clang64-requires-libidn2-clang64",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@clang64",
+      "target": "library:gnu:libidn2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs internationalized domain name (IDNA2008) matching against the Public Suffix List.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libpsl-clang64-requires-libunistring-clang64",
+      "type": "requires",
+      "source": "library:libpsl:libpsl@clang64",
+      "target": "library:gnu:libunistring@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Unicode string handling for libpsl's own domain matching.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

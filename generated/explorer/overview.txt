@@ -623,6 +623,7 @@ Objects
 - library:bzip2:libbz2 (library): libbz2
 - library:c-ares:c-ares@clang64 (library): c-ares (CLANG64)
 - library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
+- library:cairographics:cairo (library): Cairo
 - library:curl:curl@clang64 (library): curl (CLANG64)
 - library:curl:curl@ucrt64 (library): curl (UCRT64)
 - library:curl:libcurl (library): libcurl
@@ -630,6 +631,9 @@ Objects
 - library:facebook:zstd (library): Zstandard (library)
 - library:facebook:zstd@clang64 (library): Zstandard (CLANG64)
 - library:facebook:zstd@msys-lib (library): Zstandard (MSYS library)
+- library:ffmpeg:ffmpeg (library): FFmpeg
+- library:gabime:spdlog (library): spdlog
+- library:gnome:gtk3 (library): GTK 3
 - library:gnome:libxml2 (library): libxml2
 - library:gnome:libxml2@clang64 (library): libxml2 (CLANG64)
 - library:gnome:libxml2@msys (library): libxml2 (MSYS)
@@ -686,6 +690,7 @@ Objects
 - library:google:brotli@clang64 (library): Brotli (CLANG64)
 - library:google:brotli@ucrt64 (library): Brotli (UCRT64)
 - library:google:cppdap (library): cppdap
+- library:google:googletest (library): GoogleTest
 - library:h5l:heimdal (library): Heimdal
 - library:h5l:heimdal-libs (library): Heimdal runtime libraries
 - library:jsoncpp:jsoncpp (library): JsonCpp
@@ -701,9 +706,11 @@ Objects
 - library:libffi:libffi@ucrt64 (library): libffi (UCRT64)
 - library:libisl:isl (library): isl (Integer Set Library)
 - library:libisl:isl@clang64 (library): isl (Integer Set Library) (CLANG64)
+- library:libpng:libpng (library): libpng
 - library:libpsl:libpsl (library): libpsl
 - library:libpsl:libpsl@clang64 (library): libpsl (CLANG64)
 - library:libpsl:libpsl@ucrt64 (library): libpsl (UCRT64)
+- library:libsndfile:libsndfile (library): libsndfile
 - library:libssh2:libssh2 (library): libssh2
 - library:libssh2:libssh2@clang64 (library): libssh2 (CLANG64)
 - library:libssh2:libssh2@ucrt64 (library): libssh2 (UCRT64)
@@ -17238,6 +17245,23 @@ Relationships
 - component:llvm:llvm --contains--> library:llvm:llvm-libs
 - component:llvm:llvm --contains--> library:llvm:clang-libs
 - component:llvm:llvm --contains--> library:llvm:libc++
+- library:cairographics:cairo --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-cairo
+- environment:msys2:ucrt64 --contains--> library:cairographics:cairo
+- library:gnome:gtk3 --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gtk3
+- environment:msys2:ucrt64 --contains--> library:gnome:gtk3
+- library:libsndfile:libsndfile --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libsndfile
+- environment:msys2:ucrt64 --contains--> library:libsndfile:libsndfile
+- library:ffmpeg:ffmpeg --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-ffmpeg
+- environment:msys2:ucrt64 --contains--> library:ffmpeg:ffmpeg
+- library:libpng:libpng --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-libpng
+- environment:msys2:ucrt64 --contains--> library:libpng:libpng
+- library:gabime:spdlog --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-spdlog
+- environment:msys2:ucrt64 --contains--> library:gabime:spdlog
+- library:google:googletest --packaged-by--> package:msys2:mingw-w64-ucrt-x86_64-gtest
+- environment:msys2:ucrt64 --contains--> library:google:googletest
+- library:libpng:libpng --requires--> library:gnu:zlib
+- library:cairographics:cairo --requires--> library:libpng:libpng
+- library:gnome:gtk3 --requires--> library:cairographics:cairo
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

@@ -69,7 +69,7 @@
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 316 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3102 |
 | environment:msys2:msys | environment | MSYS | planned | 73 | 800 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3900 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 48 | 3900 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -626,6 +626,7 @@
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 6 |
 | library:c-ares:c-ares@clang64 | library | c-ares (CLANG64) | partial | 0 | 1 |
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
+| library:cairographics:cairo | library | Cairo | partial | 2 | 2 |
 | library:curl:curl@clang64 | library | curl (CLANG64) | partial | 12 | 0 |
 | library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 12 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
@@ -633,6 +634,9 @@
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 7 |
 | library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 6 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 5 |
+| library:ffmpeg:ffmpeg | library | FFmpeg | partial | 1 | 1 |
+| library:gabime:spdlog | library | spdlog | partial | 1 | 1 |
+| library:gnome:gtk3 | library | GTK 3 | partial | 2 | 1 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 2 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
@@ -664,7 +668,7 @@
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 14 |
+| library:gnu:zlib | library | zlib | partial | 1 | 15 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 11 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
@@ -689,6 +693,7 @@
 | library:google:brotli@clang64 | library | Brotli (CLANG64) | partial | 0 | 2 |
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
+| library:google:googletest | library | GoogleTest | partial | 1 | 1 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 3 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
@@ -704,9 +709,11 @@
 | library:libffi:libffi@ucrt64 | library | libffi (UCRT64) | partial | 0 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
 | library:libisl:isl@clang64 | library | isl (Integer Set Library) (CLANG64) | partial | 1 | 0 |
+| library:libpng:libpng | library | libpng | partial | 2 | 2 |
 | library:libpsl:libpsl | library | libpsl | partial | 4 | 3 |
 | library:libpsl:libpsl@clang64 | library | libpsl (CLANG64) | partial | 4 | 1 |
 | library:libpsl:libpsl@ucrt64 | library | libpsl (UCRT64) | partial | 4 | 1 |
+| library:libsndfile:libsndfile | library | libsndfile | partial | 1 | 1 |
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
 | library:libssh2:libssh2@clang64 | library | libssh2 (CLANG64) | partial | 2 | 1 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
@@ -9274,7 +9281,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-c4core | package | mingw-w64-ucrt-x86_64-c4core | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-ca-certificates | package | mingw-w64-ucrt-x86_64-ca-certificates | verified | 3 | 12 |
 | package:msys2:mingw-w64-ucrt-x86_64-cabextract | package | mingw-w64-ucrt-x86_64-cabextract | verified | 4 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-cairo | package | mingw-w64-ucrt-x86_64-cairo | verified | 10 | 85 |
+| package:msys2:mingw-w64-ucrt-x86_64-cairo | package | mingw-w64-ucrt-x86_64-cairo | verified | 10 | 86 |
 | package:msys2:mingw-w64-ucrt-x86_64-cairomm | package | mingw-w64-ucrt-x86_64-cairomm | verified | 4 | 4 |
 | package:msys2:mingw-w64-ucrt-x86_64-cairomm-1.16 | package | mingw-w64-ucrt-x86_64-cairomm-1.16 | verified | 4 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-calceph | package | mingw-w64-ucrt-x86_64-calceph | verified | 4 | 0 |
@@ -9539,7 +9546,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-fd | package | mingw-w64-ucrt-x86_64-fd | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-fdk-aac | package | mingw-w64-ucrt-x86_64-fdk-aac | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-ffcall | package | mingw-w64-ucrt-x86_64-ffcall | verified | 3 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-ffmpeg | package | mingw-w64-ucrt-x86_64-ffmpeg | verified | 54 | 43 |
+| package:msys2:mingw-w64-ucrt-x86_64-ffmpeg | package | mingw-w64-ucrt-x86_64-ffmpeg | verified | 54 | 44 |
 | package:msys2:mingw-w64-ucrt-x86_64-ffmpeg-python | package | mingw-w64-ucrt-x86_64-ffmpeg-python | verified | 4 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-ffms2 | package | mingw-w64-ucrt-x86_64-ffms2 | verified | 3 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-ffnvcodec-headers | package | mingw-w64-ucrt-x86_64-ffnvcodec-headers | verified | 2 | 0 |
@@ -9775,13 +9782,13 @@
 | package:msys2:mingw-w64-ucrt-x86_64-gst-python | package | mingw-w64-ucrt-x86_64-gst-python | verified | 7 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gst-rtsp-server | package | mingw-w64-ucrt-x86_64-gst-rtsp-server | verified | 9 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-gstreamer | package | mingw-w64-ucrt-x86_64-gstreamer | verified | 5 | 22 |
-| package:msys2:mingw-w64-ucrt-x86_64-gtest | package | mingw-w64-ucrt-x86_64-gtest | verified | 3 | 0 |
+| package:msys2:mingw-w64-ucrt-x86_64-gtest | package | mingw-w64-ucrt-x86_64-gtest | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtk-doc | package | mingw-w64-ucrt-x86_64-gtk-doc | verified | 7 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtk-elementary-theme | package | mingw-w64-ucrt-x86_64-gtk-elementary-theme | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtk-update-icon-cache | package | mingw-w64-ucrt-x86_64-gtk-update-icon-cache | verified | 5 | 19 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtk-vnc | package | mingw-w64-ucrt-x86_64-gtk-vnc | verified | 12 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtk2 | package | mingw-w64-ucrt-x86_64-gtk2 | verified | 10 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-gtk3 | package | mingw-w64-ucrt-x86_64-gtk3 | verified | 13 | 62 |
+| package:msys2:mingw-w64-ucrt-x86_64-gtk3 | package | mingw-w64-ucrt-x86_64-gtk3 | verified | 13 | 63 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtk4 | package | mingw-w64-ucrt-x86_64-gtk4 | verified | 15 | 23 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtkada | package | mingw-w64-ucrt-x86_64-gtkada | verified | 9 | 2 |
 | package:msys2:mingw-w64-ucrt-x86_64-gtkdatabox | package | mingw-w64-ucrt-x86_64-gtkdatabox | verified | 6 | 0 |
@@ -10262,7 +10269,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libplacebo | package | mingw-w64-ucrt-x86_64-libplacebo | verified | 6 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-libplacebo-demos | package | mingw-w64-ucrt-x86_64-libplacebo-demos | verified | 5 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libplist | package | mingw-w64-ucrt-x86_64-libplist | verified | 3 | 4 |
-| package:msys2:mingw-w64-ucrt-x86_64-libpng | package | mingw-w64-ucrt-x86_64-libpng | verified | 3 | 119 |
+| package:msys2:mingw-w64-ucrt-x86_64-libpng | package | mingw-w64-ucrt-x86_64-libpng | verified | 3 | 120 |
 | package:msys2:mingw-w64-ucrt-x86_64-libpqxx | package | mingw-w64-ucrt-x86_64-libpqxx | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libpreferencepanes | package | mingw-w64-ucrt-x86_64-libpreferencepanes | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libprojectm | package | mingw-w64-ucrt-x86_64-libprojectm | verified | 3 | 0 |
@@ -10308,7 +10315,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-libsigsegv | package | mingw-w64-ucrt-x86_64-libsigsegv | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-libslirp | package | mingw-w64-ucrt-x86_64-libslirp | verified | 3 | 3 |
 | package:msys2:mingw-w64-ucrt-x86_64-libsmi | package | mingw-w64-ucrt-x86_64-libsmi | verified | 2 | 1 |
-| package:msys2:mingw-w64-ucrt-x86_64-libsndfile | package | mingw-w64-ucrt-x86_64-libsndfile | verified | 8 | 26 |
+| package:msys2:mingw-w64-ucrt-x86_64-libsndfile | package | mingw-w64-ucrt-x86_64-libsndfile | verified | 8 | 27 |
 | package:msys2:mingw-w64-ucrt-x86_64-libsodium | package | mingw-w64-ucrt-x86_64-libsodium | verified | 2 | 6 |
 | package:msys2:mingw-w64-ucrt-x86_64-libsoundio | package | mingw-w64-ucrt-x86_64-libsoundio | verified | 2 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-libsoup3 | package | mingw-w64-ucrt-x86_64-libsoup3 | verified | 8 | 13 |
@@ -12393,7 +12400,7 @@
 | package:msys2:mingw-w64-ucrt-x86_64-spatialindex | package | mingw-w64-ucrt-x86_64-spatialindex | verified | 2 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-spatialite-gui | package | mingw-w64-ucrt-x86_64-spatialite-gui | verified | 16 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-spatialite-tools | package | mingw-w64-ucrt-x86_64-spatialite-tools | verified | 6 | 0 |
-| package:msys2:mingw-w64-ucrt-x86_64-spdlog | package | mingw-w64-ucrt-x86_64-spdlog | verified | 3 | 7 |
+| package:msys2:mingw-w64-ucrt-x86_64-spdlog | package | mingw-w64-ucrt-x86_64-spdlog | verified | 3 | 8 |
 | package:msys2:mingw-w64-ucrt-x86_64-spdylay | package | mingw-w64-ucrt-x86_64-spdylay | verified | 3 | 0 |
 | package:msys2:mingw-w64-ucrt-x86_64-spectra | package | mingw-w64-ucrt-x86_64-spectra | verified | 3 | 1 |
 | package:msys2:mingw-w64-ucrt-x86_64-speex | package | mingw-w64-ucrt-x86_64-speex | verified | 4 | 5 |

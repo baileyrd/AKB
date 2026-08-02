@@ -6813,6 +6813,217 @@
         "evidence:llvm:command-guide-2026-08-02",
         "evidence:catalog:current"
       ]
+    },
+    {
+      "id": "library:cairographics:cairo",
+      "kind": "library",
+      "name": "Cairo",
+      "summary": "The most-depended-upon graphics library in this snapshot at 321 dependents across all environment variants.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "cairographics.org",
+      "aliases": [
+        "cairo"
+      ],
+      "tags": [
+        "library",
+        "graphics"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://www.cairographics.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-cairo",
+        "role": "2D vector graphics rendering with multiple output backends"
+      },
+      "evidence_refs": [
+        "evidence:cairo:project-site-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "library:gnome:gtk3",
+      "kind": "library",
+      "name": "GTK 3",
+      "summary": "The leading GTK-family widget toolkit in this snapshot at 234 dependents; GTK 4 is present at 88.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "The GNOME Project",
+      "aliases": [
+        "gtk 3"
+      ],
+      "tags": [
+        "library",
+        "gui",
+        "toolkit"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://www.gtk.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gtk3",
+        "role": "cross-platform widget toolkit"
+      },
+      "evidence_refs": [
+        "evidence:gtk:project-site-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "library:libsndfile:libsndfile",
+      "kind": "library",
+      "name": "libsndfile",
+      "summary": "The most-depended-upon dedicated audio library in this snapshot at 100 dependents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Erik de Castro Lopo",
+      "aliases": [
+        "libsndfile"
+      ],
+      "tags": [
+        "library",
+        "audio"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://libsndfile.github.io/libsndfile/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libsndfile",
+        "role": "sampled audio file I/O across container and codec formats"
+      },
+      "evidence_refs": [
+        "evidence:libsndfile:project-site-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "library:ffmpeg:ffmpeg",
+      "kind": "library",
+      "name": "FFmpeg",
+      "summary": "The most-depended-upon video/multimedia library in this snapshot at 161 dependents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "FFmpeg team",
+      "aliases": [
+        "ffmpeg"
+      ],
+      "tags": [
+        "library",
+        "video",
+        "multimedia"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://ffmpeg.org/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-ffmpeg",
+        "role": "multimedia decoding, encoding, transcoding, muxing, and filtering"
+      },
+      "evidence_refs": [
+        "evidence:ffmpeg:about-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "library:libpng:libpng",
+      "kind": "library",
+      "name": "libpng",
+      "summary": "The most-depended-upon imaging library in this snapshot at 471 dependents, and the fourth most-depended-upon library of any kind.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PNG Development Group",
+      "aliases": [
+        "libpng"
+      ],
+      "tags": [
+        "library",
+        "imaging"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "http://www.libpng.org/pub/png/libpng.html",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libpng",
+        "role": "reference PNG image encoding and decoding"
+      },
+      "evidence_refs": [
+        "evidence:libpng:project-site-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "library:gabime:spdlog",
+      "kind": "library",
+      "name": "spdlog",
+      "summary": "The most-depended-upon logging library in this snapshot at 27 dependents — an order of magnitude below every other category's leader.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Gabi Melman",
+      "aliases": [
+        "spdlog"
+      ],
+      "tags": [
+        "library",
+        "logging"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://github.com/gabime/spdlog",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-spdlog",
+        "role": "fast header-only/compiled C++ logging"
+      },
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "library:google:googletest",
+      "kind": "library",
+      "name": "GoogleTest",
+      "summary": "Packaged across six environment variants and recorded with zero dependents, because the catalog projection carries no build-time or check-time dependency edges.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Google",
+      "aliases": [
+        "googletest"
+      ],
+      "tags": [
+        "library",
+        "testing"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:ucrt64"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://google.github.io/googletest/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-gtest",
+        "role": "C++ unit test framework"
+      },
+      "evidence_refs": [
+        "evidence:googletest:project-site-2026-08-02",
+        "evidence:catalog:current"
+      ]
     }
   ],
   "relationships": [
@@ -17055,6 +17266,245 @@
       "evidence_refs": [
         "evidence:catalog:current"
       ]
+    },
+    {
+      "id": "relationship:library-categories:cairo-packaged-by",
+      "type": "packaged-by",
+      "source": "library:cairographics:cairo",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-cairo",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-cairo",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:cairographics:cairo",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:gtk3-packaged-by",
+      "type": "packaged-by",
+      "source": "library:gnome:gtk3",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gtk3",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-gtk3",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gnome:gtk3",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:libsndfile-packaged-by",
+      "type": "packaged-by",
+      "source": "library:libsndfile:libsndfile",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libsndfile",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-libsndfile",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:libsndfile:libsndfile",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ffmpeg-packaged-by",
+      "type": "packaged-by",
+      "source": "library:ffmpeg:ffmpeg",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-ffmpeg",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-ffmpeg",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:ffmpeg:ffmpeg",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:libpng-packaged-by",
+      "type": "packaged-by",
+      "source": "library:libpng:libpng",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-libpng",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-libpng",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:libpng:libpng",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:spdlog-packaged-by",
+      "type": "packaged-by",
+      "source": "library:gabime:spdlog",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-spdlog",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-spdlog",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:gabime:spdlog",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:googletest-packaged-by",
+      "type": "packaged-by",
+      "source": "library:google:googletest",
+      "target": "package:msys2:mingw-w64-ucrt-x86_64-gtest",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:ucrt64-contains-googletest",
+      "type": "contains",
+      "source": "environment:msys2:ucrt64",
+      "target": "library:google:googletest",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "Modeled against the UCRT64 variant; the package exists in four to six environment variants.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:libpng-requires-zlib",
+      "type": "requires",
+      "source": "library:libpng:libpng",
+      "target": "library:gnu:zlib",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Declared runtime dependency in the catalog snapshot; libpng's compression is zlib's DEFLATE.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current",
+        "evidence:libpng:project-site-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:cairo-requires-libpng",
+      "type": "requires",
+      "source": "library:cairographics:cairo",
+      "target": "library:libpng:libpng",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Declared runtime dependency in the catalog snapshot; cairo's PNG surface output.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:library-categories:gtk3-requires-cairo",
+      "type": "requires",
+      "source": "library:gnome:gtk3",
+      "target": "library:cairographics:cairo",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Declared runtime dependency in the catalog snapshot; GTK renders through cairo.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
     }
   ],
   "claims": [
@@ -17610,6 +18060,16 @@
       "notes": "Official c-ares project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-c-ares in the catalog snapshot."
     },
     {
+      "id": "evidence:cairo:project-site-2026-08-02",
+      "class": "primary",
+      "title": "Cairo (official project site)",
+      "locator": "https://www.cairographics.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for cairo's role as a 2D vector graphics library with multiple output backends. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
+    },
+    {
       "id": "evidence:cmake:documentation-2026-07-30",
       "class": "primary",
       "title": "CMake Documentation",
@@ -17688,6 +18148,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Zstandard project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-zstd in the catalog snapshot."
+    },
+    {
+      "id": "evidence:ffmpeg:about-2026-08-02",
+      "class": "primary",
+      "title": "FFmpeg — About",
+      "locator": "https://ffmpeg.org/about.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for FFmpeg's composition as a set of libraries (libavcodec, libavformat, libavfilter, libswscale, libswresample) plus command-line drivers. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
     },
     {
       "id": "evidence:git-for-windows:site-2026-08-02",
@@ -18170,6 +18640,36 @@
       "notes": "Official cppdap project page, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-cppdap in the catalog snapshot."
     },
     {
+      "id": "evidence:googletest:project-site-2026-08-02",
+      "class": "primary",
+      "title": "GoogleTest (official documentation site)",
+      "locator": "https://google.github.io/googletest/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for GoogleTest's role as a C++ test framework with an assertion and fixture model. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
+    },
+    {
+      "id": "evidence:gstreamer:project-site-2026-08-02",
+      "class": "primary",
+      "title": "GStreamer (official project site)",
+      "locator": "https://gstreamer.freedesktop.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for GStreamer's pipeline architecture, which differs structurally from FFmpeg's library-plus-driver shape. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
+    },
+    {
+      "id": "evidence:gtk:project-site-2026-08-02",
+      "class": "primary",
+      "title": "GTK (official project site)",
+      "locator": "https://www.gtk.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for GTK's role as a widget toolkit and its relationship to the GLib stack. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
+    },
+    {
       "id": "evidence:h5l:heimdal-manual-2026-07-30",
       "class": "primary",
       "title": "Heimdal Kerberos 5 (official project page)",
@@ -18270,6 +18770,16 @@
       "notes": "Official isl project site, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-isl in the catalog snapshot."
     },
     {
+      "id": "evidence:libpng:project-site-2026-08-02",
+      "class": "primary",
+      "title": "libpng (official project page)",
+      "locator": "https://www.libpng.org/pub/png/libpng.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for libpng's role as the reference PNG implementation and its dependence on zlib. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
+    },
+    {
       "id": "evidence:libpsl:manual-2026-07-30",
       "class": "primary",
       "title": "libpsl (GitHub project page)",
@@ -18278,6 +18788,26 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official libpsl project page, matching the project_url recorded for package:msys2:libpsl in the catalog snapshot."
+    },
+    {
+      "id": "evidence:libsdl:project-site-2026-08-02",
+      "class": "primary",
+      "title": "SDL (official project site)",
+      "locator": "https://www.libsdl.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for SDL's role as a cross-platform abstraction over audio, input, and rendering — the reason it appears in more than one category ranking. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
+    },
+    {
+      "id": "evidence:libsndfile:project-site-2026-08-02",
+      "class": "primary",
+      "title": "libsndfile (official project site)",
+      "locator": "https://libsndfile.github.io/libsndfile/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for libsndfile's role as a format-abstraction layer for sampled audio file I/O. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
     },
     {
       "id": "evidence:libssh2:manual-2026-07-30",
@@ -18748,6 +19278,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official pkgconf project repository, matching the project_url recorded for package:msys2:mingw-w64-ucrt-x86_64-pkgconf in the catalog snapshot."
+    },
+    {
+      "id": "evidence:qt:framework-2026-08-02",
+      "class": "primary",
+      "title": "Qt Framework (official product page)",
+      "locator": "https://www.qt.io/product/framework",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for Qt's scope as a cross-platform application framework rather than a widget toolkit alone. Retrieved and verified 200 on 2026-08-02. Describes the upstream project, not the MSYS2 build: no package file manifest or PE analysis exists for it here."
     },
     {
       "id": "evidence:repo:self-audit-2026-08-02",

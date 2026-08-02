@@ -57,6 +57,31 @@ flowchart LR
 4. Record supported family membership plus confidence and unresolved ambiguity.
 5. Use explicit ABI or runtime observations before making compatibility claims.
 
+## Category Coverage
+
+Seven categories are documented as categories rather than per library,
+each ranked from the catalog snapshot by dependents summed across all
+environment variants:
+
+| Category | Leader | Dependents |
+| --- | --- | ---: |
+| [GUI](LIBRARY-CATEGORY-GUI.md) | `glib2` (infrastructure); `qt6-base` is the leading toolkit | 735 / 637 |
+| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 |
+| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 |
+| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 |
+| [Audio](LIBRARY-CATEGORY-AUDIO.md) | `libsndfile` | 100 |
+| [Logging](LIBRARY-CATEGORY-LOGGING.md) | `spdlog` | 27 |
+| [Testing](LIBRARY-CATEGORY-TESTING.md) | `gtest` | **0** |
+
+The testing row is the important one. Its zero is not a fact about the
+ecosystem: the catalog projection carries no build-time or check-time
+dependency edges, so test frameworks — which are `checkdepends`, never
+runtime dependencies — are structurally invisible to it. Every ranking in
+this table therefore measures **runtime** centrality specifically, which
+is a real property but is not the same as importance. See
+[Library Category — Testing](LIBRARY-CATEGORY-TESTING.md) for the full
+statement of that gap and what closing it would take.
+
 ## Related Views
 
 - [Header and development-metadata indexes](HEADER-AND-METADATA-INDEXES.md)

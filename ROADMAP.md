@@ -150,14 +150,37 @@ say so.
 - [ ] Header and metadata indexes
 - [x] Library family classification
 - [x] Reverse dependency and impact analysis
-- [ ] Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories
+- [x] Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories
 
 The three cleared items are gated on Increment 1's extraction work:
 `generated/binary-dependency-report.md` is 22 lines and
 `generated/development-artifact-catalog.md` is 11 lines, both covering the
-same two packages. The seven library categories have zero pages and zero
-modelled entities, while `generated/library-candidates.md` ranks `libpng`
-tenth by dependent count across the whole catalog.
+same two packages.
+
+**Library categories closed 2026-08-02.** Seven pages, one per category,
+each ranked from the catalog snapshot by dependents summed across
+environment variants — which is the correction that matters, because
+`generated/library-candidates.md` counted variants separately and so
+ranked `libpng` tenth when it is fourth.
+
+The sharpest result is the testing page. Ten test frameworks are packaged
+across four to six environment variants each — roughly 47 packages — and
+the entire category records **one** dependent. That is not a fact about
+the ecosystem: `model/catalog/current.json` carries only
+`runtime-depends-on`, `optional-depends-on`, `published-in`, and
+`belongs-to-environment`. It has **no build-time or check-time dependency
+edges**, and a test framework is a `checkdepends`, never a runtime
+dependency. Every dependency ranking in this knowledge base therefore
+measures runtime centrality specifically, and is blind to the entire
+build-time half of the graph. The recipes carry those declarations and
+the recipe ingestion pipeline already exists, so this is a modelling gap
+rather than a collection gap — recorded here as work rather than left
+implicit.
+
+The logging page carries the other negative result: its leader has 27
+dependents against 471, 735, and 321 for imaging, GUI, and graphics. Three
+explanations are consistent with that and this knowledge base cannot yet
+distinguish them; header inventories would.
 
 ## Increment 6 — Git for Windows
 

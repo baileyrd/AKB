@@ -552,19 +552,37 @@
     ],
     "Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories": [
       {
-        "type": "term_in_docs",
-        "term": "libpng",
-        "min_files": 1
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-GRAPHICS.md"
       },
       {
-        "type": "term_in_docs",
-        "term": "freetype",
-        "min_files": 1
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-GUI.md"
       },
       {
-        "type": "term_in_docs",
-        "term": "gstreamer",
-        "min_files": 1
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-AUDIO.md"
+      },
+      {
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-VIDEO.md"
+      },
+      {
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-IMAGING.md"
+      },
+      {
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-LOGGING.md"
+      },
+      {
+        "type": "doc_exists",
+        "doc": "LIBRARY-CATEGORY-TESTING.md"
+      },
+      {
+        "type": "min_graph_entities_of_kind",
+        "kind": "library",
+        "count": 100
       }
     ],
     "Distribution boundary and divergence": [

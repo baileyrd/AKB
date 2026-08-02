@@ -593,7 +593,7 @@
 - Kind: `environment`
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 41
+- Outgoing relationships: 48
 - Incoming relationships: 3900
 
 ## `executable:msys2:/usr/bin/curl.exe`
@@ -5600,6 +5600,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:cairographics:cairo`
+
+- Name: Cairo
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:cairo:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:curl:curl@clang64`
 
 - Name: curl (CLANG64)
@@ -5662,6 +5671,33 @@
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 5
+
+## `library:ffmpeg:ffmpeg`
+
+- Name: FFmpeg
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:ffmpeg:about-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gabime:spdlog`
+
+- Name: spdlog
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:gnome:gtk3`
+
+- Name: GTK 3
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gtk:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 1
 
 ## `library:gnome:libxml2`
 
@@ -5949,7 +5985,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 14
+- Incoming relationships: 15
 
 ## `library:gnu:zlib@clang64`
 
@@ -6167,6 +6203,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 2
 
+## `library:google:googletest`
+
+- Name: GoogleTest
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:googletest:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
 ## `library:h5l:heimdal`
 
 - Name: Heimdal
@@ -6302,6 +6347,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 0
 
+## `library:libpng:libpng`
+
+- Name: libpng
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libpng:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 2
+
 ## `library:libpsl:libpsl`
 
 - Name: libpsl
@@ -6327,6 +6381,15 @@
 - Status: `partial`
 - Evidence: evidence:libpsl:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
+- Incoming relationships: 1
+
+## `library:libsndfile:libsndfile`
+
+- Name: libsndfile
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libsndfile:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 1
 - Incoming relationships: 1
 
 ## `library:libssh2:libssh2`
@@ -83439,7 +83502,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 85
+- Incoming relationships: 86
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-cairomm`
 
@@ -85824,7 +85887,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 54
-- Incoming relationships: 43
+- Incoming relationships: 44
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-ffmpeg-python`
 
@@ -87948,7 +88011,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gtk-doc`
 
@@ -88002,7 +88065,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 13
-- Incoming relationships: 62
+- Incoming relationships: 63
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-gtk4`
 
@@ -92331,7 +92394,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 119
+- Incoming relationships: 120
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libpqxx`
 
@@ -92745,7 +92808,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 26
+- Incoming relationships: 27
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-libsodium`
 
@@ -111510,7 +111573,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:mingw-w64-ucrt-x86_64-spdylay`
 

@@ -3,7 +3,7 @@ digraph level_5 {
   rankdir=TB;
   node [shape=box style=rounded fontname="sans-serif" fontsize=10];
   edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
-  label="Level 5 - Libraries (18 of 156 objects, ranked by graph degree)";
+  label="Level 5 - Libraries (18 of 163 objects, ranked by graph degree)";
   labelloc=t;
   n0 [label="GNU libintl" tooltip="library:gnu:libintl" URL="../generated/explorer/index.html#/object/library%3Agnu%3Alibintl"];
   n1 [label="libcurl" tooltip="library:curl:libcurl" URL="../generated/explorer/index.html#/object/library%3Acurl%3Alibcurl"];

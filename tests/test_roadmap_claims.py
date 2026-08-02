@@ -25,16 +25,31 @@ CLAIMS_PATH = ROOT / "model" / "roadmap-claims.json"
 ROADMAP_PATH = ROOT / "ROADMAP.md"
 ITEM_RE = re.compile(r"^\s*- \[([ xX])\]\s+(.+?)\s*$")
 
-# Mirrors the view definitions in tools/build_explorer.py.
+# Mirrors the view definitions in tools/build_explorer.py. A view projects by
+# entity kind, by tag, or by both.
 EXPLORER_VIEWS = {
-    "layers": ["layer"],
-    "packages": ["package", "package-artifact"],
-    "artifacts": ["dll", "executable", "import-library", "static-library", "filesystem-path"],
-    "libraries": ["library", "dll", "import-library", "static-library"],
-    "runtimes": ["runtime", "environment", "crt", "abi"],
-    "toolchains": ["toolchain", "compiler", "linker", "debugger", "build-system"],
-    "repositories": ["repository", "mirror", "source-repository"],
+    "layers": {"kinds": ["layer"]},
+    "packages": {"kinds": ["package", "package-artifact"]},
+    "artifacts": {"kinds": ["dll", "executable", "import-library", "static-library", "filesystem-path"]},
+    "libraries": {"kinds": ["library", "dll", "import-library", "static-library"]},
+    "runtimes": {"kinds": ["runtime", "environment", "crt", "abi"]},
+    "toolchains": {
+        "kinds": ["toolchain", "compiler", "linker", "debugger", "build-system"],
+        "tags": ["toolchain", "compiler", "linker", "debugger", "build-system"],
+    },
+    "repositories": {"kinds": ["repository", "mirror", "source-repository"]},
 }
+
+
+def view_members(graph, view):
+    spec = EXPLORER_VIEWS[view]
+    kinds = set(spec.get("kinds", []))
+    tags = set(spec.get("tags", []))
+    return [
+        entity
+        for entity in graph["entities"]
+        if entity["kind"] in kinds or (tags & set(entity.get("tags", [])))
+    ]
 
 # The drift assessment quotes absent terms verbatim; excluding it keeps a
 # report *about* missing coverage from counting *as* coverage.
@@ -123,8 +138,7 @@ def check(assertion, graph, inventory_kinds):
         )
 
     if kind == "explorer_view_nonempty":
-        wanted = EXPLORER_VIEWS[assertion["view"]]
-        actual = sum(1 for e in graph["entities"] if e["kind"] in wanted)
+        actual = len(view_members(graph, assertion["view"]))
         return actual > 0, f"explorer view '{assertion['view']}' resolves to {actual} objects"
 
     if kind == "min_observed_packages":

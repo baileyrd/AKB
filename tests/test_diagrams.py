@@ -1,3 +1,4 @@
+import re
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -50,6 +51,42 @@ class DiagramTests(unittest.TestCase):
         diagram = (ROOT / "diagrams" / "level-7-userland-applications.svg").read_text(encoding="utf-8")
         for route in ("environment%3Amsys2%3Amsys", "#/view/packages", "#/view/runtimes"):
             self.assertIn(route, diagram)
+
+    def test_every_view_a_diagram_links_to_resolves_to_objects(self):
+        """A shipped hyperlink must not land on an empty projection.
+
+        Asserting only that a link is present lets a diagram ship pointing at
+        a view that renders nothing; the toolchains view shipped that way
+        because it projected by an entity kind the graph never emits.
+        """
+        import sys
+
+        sys.path.insert(0, str(ROOT / "tools"))
+        sys.path.insert(0, str(ROOT / "tests"))
+        import akb
+        from test_roadmap_claims import EXPLORER_VIEWS, view_members
+
+        graph = akb.load_composed_graph()
+        linked = set()
+        for path in sorted((ROOT / "diagrams").glob("*.svg")):
+            for match in re.finditer(r"#/view/([a-z-]+)", path.read_text(encoding="utf-8")):
+                linked.add((path.name, match.group(1)))
+        self.assertTrue(linked, "no diagram links to any view")
+
+        empty = []
+        for diagram, view in sorted(linked):
+            if view == "evidenced":
+                members = [e for e in graph["entities"] if e.get("evidence_refs")]
+            else:
+                self.assertIn(view, EXPLORER_VIEWS, f"{diagram} links to unknown view '{view}'")
+                members = view_members(graph, view)
+            if not members:
+                empty.append(f"{diagram} -> #/view/{view}")
+        self.assertEqual(
+            empty,
+            [],
+            "diagrams link to views that render no objects:\n  " + "\n  ".join(empty),
+        )
 
 
 if __name__ == "__main__":

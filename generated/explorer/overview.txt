@@ -601,6 +601,14 @@ Objects
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
+- layer:msys2:1-windows-kernel-services (layer): Layer 1 — Windows kernel, security, process, and storage services
+- layer:msys2:2-windows-user-mode-apis (layer): Layer 2 — Windows user-mode APIs, console, filesystem, and loader
+- layer:msys2:3-msys-posix-runtime (layer): Layer 3 — MSYS POSIX runtime and process adaptation
+- layer:msys2:4-runtime-environments (layer): Layer 4 — MSYS and native runtime environments
+- layer:msys2:5-packages-and-repositories (layer): Layer 5 — Packages, repositories, and pacman
+- layer:msys2:6-toolchains-and-build-systems (layer): Layer 6 — Toolchains and build systems
+- layer:msys2:7-userland-and-libraries (layer): Layer 7 — GNU userland, libraries, IDEs, and developer tools
+- layer:msys2:8-users-and-automation (layer): Layer 8 — Users, applications, and automation
 - library:apache:apr-util@msys (library): Apache Portable Runtime Utility Library (APR-util)
 - library:apache:apr@msys (library): Apache Portable Runtime (APR)
 - library:apache:libserf@msys (library): Serf
@@ -16482,6 +16490,47 @@ Objects
 Relationships
 - ecosystem:msys2:msys2 --requires--> platform:microsoft:windows
 - environment:msys2:msys --uses-runtime--> runtime:msys2:msys-2.0.dll
+- ecosystem:msys2:msys2 --contains--> layer:msys2:1-windows-kernel-services
+- ecosystem:msys2:msys2 --contains--> layer:msys2:2-windows-user-mode-apis
+- ecosystem:msys2:msys2 --contains--> layer:msys2:3-msys-posix-runtime
+- ecosystem:msys2:msys2 --contains--> layer:msys2:4-runtime-environments
+- ecosystem:msys2:msys2 --contains--> layer:msys2:5-packages-and-repositories
+- ecosystem:msys2:msys2 --contains--> layer:msys2:6-toolchains-and-build-systems
+- ecosystem:msys2:msys2 --contains--> layer:msys2:7-userland-and-libraries
+- ecosystem:msys2:msys2 --contains--> layer:msys2:8-users-and-automation
+- layer:msys2:1-windows-kernel-services --contains--> platform:microsoft:windows
+- layer:msys2:3-msys-posix-runtime --contains--> runtime:msys2:msys-2.0.dll
+- layer:msys2:4-runtime-environments --contains--> environment:msys2:msys
+- layer:msys2:4-runtime-environments --contains--> environment:msys2:ucrt64
+- layer:msys2:4-runtime-environments --contains--> environment:msys2:clang64
+- layer:msys2:4-runtime-environments --contains--> environment:msys2:clangarm64
+- layer:msys2:4-runtime-environments --contains--> environment:msys2:mingw64
+- layer:msys2:4-runtime-environments --contains--> environment:msys2:mingw32
+- layer:msys2:5-packages-and-repositories --contains--> repository:msys2:msys
+- layer:msys2:5-packages-and-repositories --contains--> repository:msys2:ucrt64
+- layer:msys2:5-packages-and-repositories --contains--> repository:msys2:clang64
+- layer:msys2:5-packages-and-repositories --contains--> repository:msys2:clangarm64
+- layer:msys2:5-packages-and-repositories --contains--> repository:msys2:mingw64
+- layer:msys2:5-packages-and-repositories --contains--> repository:msys2:mingw32
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:gcc
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:binutils
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:gdb
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:llvm:clang
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:llvm:lld
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:llvm:lldb
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:cmake:cmake
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:mesonbuild:meson
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:ninja-build:ninja
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:pkgconf:pkgconf
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:autoconf
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:automake
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:libtool
+- layer:msys2:6-toolchains-and-build-systems --contains--> component:gnu:make
+- layer:msys2:7-userland-and-libraries --contains--> component:gnu:bash
+- layer:msys2:7-userland-and-libraries --contains--> component:gnu:coreutils
+- layer:msys2:7-userland-and-libraries --contains--> component:git:git
+- layer:msys2:7-userland-and-libraries --contains--> library:gnu:zlib
+- layer:msys2:7-userland-and-libraries --contains--> library:gnu:libstdc++
 - ecosystem:msys2:msys2 --contains--> environment:msys2:msys
 - ecosystem:msys2:msys2 --contains--> environment:msys2:ucrt64
 - ecosystem:msys2:msys2 --contains--> environment:msys2:clang64

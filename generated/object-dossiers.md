@@ -18,7 +18,7 @@
 - Status: `partial`
 - Evidence: evidence:cmake:documentation-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 11
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:curl:curl`
 
@@ -36,7 +36,7 @@
 - Status: `partial`
 - Evidence: evidence:git:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 8
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:autoconf`
 
@@ -45,7 +45,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:autoconf-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:automake`
 
@@ -54,7 +54,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:automake-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:bash`
 
@@ -63,7 +63,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:bash-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:binutils`
 
@@ -72,7 +72,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:binutils-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `component:gnu:coreutils`
 
@@ -81,7 +81,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:coreutils-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:cpio`
 
@@ -135,7 +135,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gcc-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 10
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:gdb`
 
@@ -144,7 +144,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gdb-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:grep`
 
@@ -171,7 +171,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libtool-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:make`
 
@@ -180,7 +180,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:make-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:nano`
 
@@ -261,7 +261,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:clang-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:llvm:lld`
 
@@ -270,7 +270,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:lld-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `component:llvm:lldb`
 
@@ -279,7 +279,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:lz4:lz4`
 
@@ -306,7 +306,7 @@
 - Status: `partial`
 - Evidence: evidence:mesonbuild:documentation-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:mintty:mintty`
 
@@ -324,7 +324,7 @@
 - Status: `partial`
 - Evidence: evidence:ninja-build:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `component:openssh:openssh`
 
@@ -360,7 +360,7 @@
 - Status: `partial`
 - Evidence: evidence:pkgconf:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `component:tukaani:xz`
 
@@ -512,7 +512,7 @@
 - Kind: `ecosystem`
 - Status: `partial`
 - Evidence: none recorded
-- Outgoing relationships: 7
+- Outgoing relationships: 15
 - Incoming relationships: 0
 
 ## `environment:msys2:clang64`
@@ -522,7 +522,7 @@
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
 - Outgoing relationships: 8
-- Incoming relationships: 3823
+- Incoming relationships: 3824
 
 ## `environment:msys2:clangarm64`
 
@@ -531,7 +531,7 @@
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
 - Outgoing relationships: 0
-- Incoming relationships: 3780
+- Incoming relationships: 3781
 
 ## `environment:msys2:mingw32`
 
@@ -540,7 +540,7 @@
 - Status: `deprecated`
 - Evidence: evidence:msys2:environments-2026-07-28
 - Outgoing relationships: 0
-- Incoming relationships: 315
+- Incoming relationships: 316
 
 ## `environment:msys2:mingw64`
 
@@ -549,7 +549,7 @@
 - Status: `deprecated`
 - Evidence: evidence:msys2:environments-2026-07-28
 - Outgoing relationships: 0
-- Incoming relationships: 3101
+- Incoming relationships: 3102
 
 ## `environment:msys2:msys`
 
@@ -558,7 +558,7 @@
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
 - Outgoing relationships: 71
-- Incoming relationships: 799
+- Incoming relationships: 800
 
 ## `environment:msys2:ucrt64`
 
@@ -567,7 +567,7 @@
 - Status: `partial`
 - Evidence: evidence:msys2:environments-2026-07-28
 - Outgoing relationships: 41
-- Incoming relationships: 3899
+- Incoming relationships: 3900
 
 ## `executable:msys2:/usr/bin/curl.exe`
 
@@ -5402,6 +5402,78 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `layer:msys2:1-windows-kernel-services`
+
+- Name: Layer 1 — Windows kernel, security, process, and storage services
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `layer:msys2:2-windows-user-mode-apis`
+
+- Name: Layer 2 — Windows user-mode APIs, console, filesystem, and loader
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `layer:msys2:3-msys-posix-runtime`
+
+- Name: Layer 3 — MSYS POSIX runtime and process adaptation
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `layer:msys2:4-runtime-environments`
+
+- Name: Layer 4 — MSYS and native runtime environments
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 6
+- Incoming relationships: 1
+
+## `layer:msys2:5-packages-and-repositories`
+
+- Name: Layer 5 — Packages, repositories, and pacman
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 6
+- Incoming relationships: 1
+
+## `layer:msys2:6-toolchains-and-build-systems`
+
+- Name: Layer 6 — Toolchains and build systems
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 14
+- Incoming relationships: 1
+
+## `layer:msys2:7-userland-and-libraries`
+
+- Name: Layer 7 — GNU userland, libraries, IDEs, and developer tools
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 5
+- Incoming relationships: 1
+
+## `layer:msys2:8-users-and-automation`
+
+- Name: Layer 8 — Users, applications, and automation
+- Kind: `layer`
+- Status: `partial`
+- Evidence: none recorded
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:apache:apr-util@msys`
 
 - Name: Apache Portable Runtime Utility Library (APR-util)
@@ -5715,7 +5787,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnu:libtasn1`
 
@@ -5850,7 +5922,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 13
+- Incoming relationships: 14
 
 ## `library:gnu:zlib@clang64`
 
@@ -148221,7 +148293,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `repository:msys2:clang64`
 
@@ -148230,7 +148302,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3822
+- Incoming relationships: 3823
 
 ## `repository:msys2:clangarm64`
 
@@ -148239,7 +148311,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3779
+- Incoming relationships: 3780
 
 ## `repository:msys2:mingw32`
 
@@ -148248,7 +148320,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 314
+- Incoming relationships: 315
 
 ## `repository:msys2:mingw64`
 
@@ -148257,7 +148329,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3100
+- Incoming relationships: 3101
 
 ## `repository:msys2:msys`
 
@@ -148266,7 +148338,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 798
+- Incoming relationships: 799
 
 ## `repository:msys2:ucrt64`
 
@@ -148275,7 +148347,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3898
+- Incoming relationships: 3899
 
 ## `runtime:msys2:msys-2.0.dll`
 
@@ -148284,7 +148356,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 0
-- Incoming relationships: 70
+- Incoming relationships: 71
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

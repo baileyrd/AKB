@@ -136,15 +136,21 @@ inside a Mermaid node label.
 - [x] Search, filters, breadcrumbs, and cross-references
 - [x] Progressive graph expansion and collapse
 - [x] Forward and reverse dependency navigation
-- [ ] Layer, package, library, runtime, toolchain, and repository views
+- [x] Layer, package, library, runtime, toolchain, and repository views
 - [x] Accessible SVG and textual fallbacks
 - [x] Large-graph performance tests
 - [ ] Graphical zoomable graph rendering in the explorer page
 
-The `layers` and `toolchains` views resolve to zero objects because
-`tools/build_explorer.py` filters them by an entity `kind` that is never
-emitted, while thirteen entities carry a `toolchain` tag and eight carry
-`build-system`. Six shipped diagram hyperlinks target those two views.
+**Closed 2026-08-02.** The `layers` and `toolchains` views had resolved to
+zero objects: `toolchains` projected only by an entity `kind` the graph
+never emits, and the eight layers documented in
+[the eight-layer architecture](docs/EIGHT-LAYER-ARCHITECTURE.md) had never
+been authored as entities despite `layer` being a valid kind. Views now
+project by kind, tag, or both, and the eight layers are modelled. All seven
+views resolve — `toolchains` to 17 objects, `layers` to 8 — and the six
+diagram hyperlinks that dead-ended in `toolchains` are live.
+`tests/test_diagrams.py` now fails the build if any diagram links to a view
+that renders nothing.
 
 ## Increment 8 — Assurance and operations
 

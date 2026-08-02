@@ -5,25 +5,25 @@
 | ID | Kind | Name | Status | Out | In |
 | --- | --- | --- | --- | ---: | ---: |
 | component:bzip2:bzip2 | component | bzip2 | partial | 3 | 1 |
-| component:cmake:cmake | component | CMake | partial | 11 | 1 |
+| component:cmake:cmake | component | CMake | partial | 11 | 2 |
 | component:curl:curl | component | curl | partial | 11 | 2 |
-| component:git:git | component | Git (MSYS2 package) | partial | 8 | 1 |
-| component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 1 |
-| component:gnu:automake | component | GNU Automake | partial | 2 | 1 |
-| component:gnu:bash | component | GNU Bash | partial | 2 | 1 |
-| component:gnu:binutils | component | GNU Binutils | partial | 5 | 3 |
-| component:gnu:coreutils | component | GNU Coreutils | partial | 5 | 1 |
+| component:git:git | component | Git (MSYS2 package) | partial | 8 | 2 |
+| component:gnu:autoconf | component | GNU Autoconf | partial | 2 | 2 |
+| component:gnu:automake | component | GNU Automake | partial | 2 | 2 |
+| component:gnu:bash | component | GNU Bash | partial | 2 | 2 |
+| component:gnu:binutils | component | GNU Binutils | partial | 5 | 4 |
+| component:gnu:coreutils | component | GNU Coreutils | partial | 5 | 2 |
 | component:gnu:cpio | component | GNU Cpio | partial | 3 | 1 |
 | component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
 | component:gnu:emacs | component | GNU Emacs | partial | 8 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 4 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 5 | 1 |
-| component:gnu:gcc | component | GCC | partial | 10 | 1 |
-| component:gnu:gdb | component | GDB | partial | 12 | 1 |
+| component:gnu:gcc | component | GCC | partial | 10 | 2 |
+| component:gnu:gdb | component | GDB | partial | 12 | 2 |
 | component:gnu:grep | component | GNU Grep | partial | 5 | 1 |
 | component:gnu:gzip | component | GNU Gzip | partial | 2 | 1 |
-| component:gnu:libtool | component | GNU Libtool | partial | 3 | 1 |
-| component:gnu:make | component | GNU Make | partial | 3 | 1 |
+| component:gnu:libtool | component | GNU Libtool | partial | 3 | 2 |
+| component:gnu:make | component | GNU Make | partial | 3 | 2 |
 | component:gnu:nano | component | GNU Nano | partial | 5 | 1 |
 | component:gnu:ncurses | component | ncurses | partial | 2 | 7 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
@@ -32,18 +32,18 @@
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 3 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
-| component:llvm:clang | component | Clang | partial | 4 | 1 |
-| component:llvm:lld | component | LLD | partial | 5 | 2 |
-| component:llvm:lldb | component | LLDB | partial | 6 | 1 |
+| component:llvm:clang | component | Clang | partial | 4 | 2 |
+| component:llvm:lld | component | LLD | partial | 5 | 3 |
+| component:llvm:lldb | component | LLDB | partial | 6 | 2 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
-| component:mesonbuild:meson | component | Meson | partial | 3 | 1 |
+| component:mesonbuild:meson | component | Meson | partial | 3 | 2 |
 | component:mintty:mintty | component | mintty | partial | 2 | 1 |
-| component:ninja-build:ninja | component | Ninja | partial | 1 | 3 |
+| component:ninja-build:ninja | component | Ninja | partial | 1 | 4 |
 | component:openssh:openssh | component | OpenSSH | partial | 7 | 2 |
 | component:openssl:openssl | component | OpenSSL | partial | 3 | 8 |
 | component:p7zip:p7zip | component | p7zip | partial | 2 | 1 |
-| component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 3 |
+| component:pkgconf:pkgconf | component | pkgconf | partial | 1 | 4 |
 | component:tukaani:xz | component | XZ Utils | partial | 5 | 1 |
 | component:vim:vim | component | Vim | partial | 6 | 1 |
 | component:zstd:zstd | component | Zstandard (zstd) | partial | 3 | 1 |
@@ -60,13 +60,13 @@
 | dll:windows:msys-2.0.dll | dll | msys-2.0.dll | verified | 0 | 1 |
 | dll:windows:msys-curl-4.dll | dll | msys-curl-4.dll | verified | 0 | 1 |
 | dll:windows:msys-z.dll | dll | msys-z.dll | verified | 0 | 1 |
-| ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 7 | 0 |
-| environment:msys2:clang64 | environment | CLANG64 | partial | 8 | 3823 |
-| environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3780 |
-| environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 315 |
-| environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3101 |
-| environment:msys2:msys | environment | MSYS | planned | 71 | 799 |
-| environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3899 |
+| ecosystem:msys2:msys2 | ecosystem | MSYS2 | partial | 15 | 0 |
+| environment:msys2:clang64 | environment | CLANG64 | partial | 8 | 3824 |
+| environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3781 |
+| environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 316 |
+| environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3102 |
+| environment:msys2:msys | environment | MSYS | planned | 71 | 800 |
+| environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3900 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
 | filesystem-path:msys2:/.mtree | filesystem-path | /.MTREE | verified | 0 | 2 |
@@ -604,6 +604,14 @@
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
+| layer:msys2:1-windows-kernel-services | layer | Layer 1 — Windows kernel, security, process, and storage services | partial | 1 | 1 |
+| layer:msys2:2-windows-user-mode-apis | layer | Layer 2 — Windows user-mode APIs, console, filesystem, and loader | partial | 0 | 1 |
+| layer:msys2:3-msys-posix-runtime | layer | Layer 3 — MSYS POSIX runtime and process adaptation | partial | 1 | 1 |
+| layer:msys2:4-runtime-environments | layer | Layer 4 — MSYS and native runtime environments | partial | 6 | 1 |
+| layer:msys2:5-packages-and-repositories | layer | Layer 5 — Packages, repositories, and pacman | partial | 6 | 1 |
+| layer:msys2:6-toolchains-and-build-systems | layer | Layer 6 — Toolchains and build systems | partial | 14 | 1 |
+| layer:msys2:7-userland-and-libraries | layer | Layer 7 — GNU userland, libraries, IDEs, and developer tools | partial | 5 | 1 |
+| layer:msys2:8-users-and-automation | layer | Layer 8 — Users, applications, and automation | partial | 0 | 1 |
 | library:apache:apr-util@msys | library | Apache Portable Runtime Utility Library (APR-util) | partial | 3 | 1 |
 | library:apache:apr@msys | library | Apache Portable Runtime (APR) | partial | 1 | 1 |
 | library:apache:libserf@msys | library | Serf | partial | 3 | 0 |
@@ -638,7 +646,7 @@
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
 | library:gnu:libintl | library | GNU libintl | partial | 3 | 19 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
-| library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 3 |
+| library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 4 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
 | library:gnu:libtasn1@clang64 | library | GNU Libtasn1 (CLANG64) | partial | 0 | 2 |
 | library:gnu:libtasn1@ucrt64 | library | GNU Libtasn1 (UCRT64) | partial | 0 | 2 |
@@ -653,7 +661,7 @@
 | library:gnu:readline | library | GNU Readline | partial | 2 | 2 |
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
-| library:gnu:zlib | library | zlib | partial | 1 | 13 |
+| library:gnu:zlib | library | zlib | partial | 1 | 14 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 11 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
@@ -16472,12 +16480,12 @@
 | package:msys2:zsh-doc | package | zsh-doc | verified | 2 | 0 |
 | package:msys2:zstd | package | zstd | verified | 4 | 5 |
 | pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc | pkg-config-module | /ucrt64/lib/pkgconfig/zlib.pc | verified | 0 | 1 |
-| platform:microsoft:windows | platform | Microsoft Windows | partial | 0 | 1 |
-| repository:msys2:clang64 | repository | clang64 | verified | 0 | 3822 |
-| repository:msys2:clangarm64 | repository | clangarm64 | verified | 0 | 3779 |
-| repository:msys2:mingw32 | repository | mingw32 | verified | 0 | 314 |
-| repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3100 |
-| repository:msys2:msys | repository | msys | verified | 0 | 798 |
-| repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3898 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 70 |
+| platform:microsoft:windows | platform | Microsoft Windows | partial | 0 | 2 |
+| repository:msys2:clang64 | repository | clang64 | verified | 0 | 3823 |
+| repository:msys2:clangarm64 | repository | clangarm64 | verified | 0 | 3780 |
+| repository:msys2:mingw32 | repository | mingw32 | verified | 0 | 315 |
+| repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3101 |
+| repository:msys2:msys | repository | msys | verified | 0 | 799 |
+| repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3899 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 71 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |

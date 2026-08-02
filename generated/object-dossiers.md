@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:gmp`
 
@@ -5825,6 +5825,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:gnupg:libassuan@clang64`
+
+- Name: libassuan (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
+
 ## `library:gnupg:libassuan@msys`
 
 - Name: libassuan (MSYS)
@@ -5843,6 +5852,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 1
 
+## `library:gnupg:libgcrypt@clang64`
+
+- Name: libgcrypt (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgcrypt-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
+
 ## `library:gnupg:libgcrypt@msys`
 
 - Name: libgcrypt (MSYS)
@@ -5860,6 +5878,15 @@
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 4
+
+## `library:gnupg:libgpg-error@clang64`
+
+- Name: libgpg-error (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 3
 
 ## `library:gnupg:libgpg-error@msys`
 
@@ -5887,6 +5914,15 @@
 - Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 1
+
+## `library:gnupg:libksba@clang64`
+
+- Name: libksba (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:libksba-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
 
 ## `library:gnupg:libksba@msys`
 

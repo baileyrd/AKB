@@ -149,3 +149,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libgpg-error](LIBGPG-ERROR.md)
 - [libassuan (MSYS)](LIBASSUAN-MSYS.md)
+- [libassuan (CLANG64)](LIBASSUAN-CLANG64.md)

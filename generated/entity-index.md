@@ -621,7 +621,7 @@
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 2 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
-| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 4 |
+| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 5 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
@@ -651,13 +651,17 @@
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 5 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
+| library:gnupg:libassuan@clang64 | library | libassuan (CLANG64) | partial | 1 | 0 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 3 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
+| library:gnupg:libgcrypt@clang64 | library | libgcrypt (CLANG64) | partial | 1 | 0 |
 | library:gnupg:libgcrypt@msys | library | libgcrypt (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 2 | 4 |
+| library:gnupg:libgpg-error@clang64 | library | libgpg-error (CLANG64) | partial | 1 | 3 |
 | library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 4 | 6 |
 | library:gnupg:libgpgme@msys | library | GPGME (MSYS) | partial | 3 | 0 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 1 |
+| library:gnupg:libksba@clang64 | library | libksba (CLANG64) | partial | 1 | 0 |
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |
 | library:gnupg:npth@msys | library | nPth (MSYS) | partial | 2 | 2 |

@@ -147,3 +147,4 @@ methodology.
 - [libgpg-error](LIBGPG-ERROR.md)
 - [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md)
 - [OpenSSL](OPENSSL.md)
+- [libgcrypt (CLANG64)](LIBGCRYPT-CLANG64.md)

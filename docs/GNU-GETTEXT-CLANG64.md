@@ -76,7 +76,7 @@ this knowledge base:
 
 The catalog snapshot records 136 relationships targeting
 `package:msys2:mingw-w64-clang-x86_64-gettext-runtime` — the widest
-reverse-dependency footprint of any library added in this batch. Four
+reverse-dependency footprint of any library added in this batch. Five
 are now modeled in this knowledge base:
 [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
 (`relationship:foundation-libraries:p11-kit-clang64-requires-gettext-clang64`,
@@ -85,9 +85,11 @@ added 2026-08-02), [liblzma (CLANG64)](LIBLZMA-CLANG64.md)
 added 2026-08-02, closing a gap that page had previously left
 explicitly unmodeled), [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)
 (`relationship:foundation-libraries:libidn2-clang64-requires-gettext-clang64`,
-added 2026-08-02), and [libpsl (CLANG64)](LIBPSL-CLANG64.md)
+added 2026-08-02), [libpsl (CLANG64)](LIBPSL-CLANG64.md)
 (`relationship:foundation-libraries:libpsl-clang64-requires-gettext-clang64`,
-added 2026-08-02). The remaining ~132 (a broad mix of CLANG64
+added 2026-08-02), and [libgpg-error (CLANG64)](LIBGPG-ERROR-CLANG64.md)
+(`relationship:foundation-libraries:libgpg-error-clang64-requires-gettext-clang64`,
+added 2026-08-02). The remaining ~131 (a broad mix of CLANG64
 packages including `appstream`, `atk`, `aspell`, and many others) are
 not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -140,7 +142,7 @@ The NLS runtime scope is backed by the official GNU gettext project
 page (`evidence:gnu:gettext-manual-2026-07-30`), the same evidence
 record [GNU gettext (UCRT64)](GNU-GETTEXT.md) cites. Package identity,
 version, license, and the recorded dependency edge are backed by the
-pacman catalog snapshot (`evidence:catalog:current`). Open: the ~132
+pacman catalog snapshot (`evidence:catalog:current`). Open: the ~131
 remaining recorded reverse dependents are not individually modeled in
 this knowledge base.
 
@@ -153,3 +155,4 @@ this knowledge base.
 - [liblzma (CLANG64)](LIBLZMA-CLANG64.md)
 - [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)
 - [libpsl (CLANG64)](LIBPSL-CLANG64.md)
+- [libgpg-error (CLANG64)](LIBGPG-ERROR-CLANG64.md)

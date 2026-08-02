@@ -648,13 +648,17 @@ Objects
 - library:gnu:zlib@clang64 (library): zlib (CLANG64)
 - library:gnu:zlib@msys (library): zlib (MSYS)
 - library:gnupg:libassuan (library): libassuan
+- library:gnupg:libassuan@clang64 (library): libassuan (CLANG64)
 - library:gnupg:libassuan@msys (library): libassuan (MSYS)
 - library:gnupg:libgcrypt (library): libgcrypt
+- library:gnupg:libgcrypt@clang64 (library): libgcrypt (CLANG64)
 - library:gnupg:libgcrypt@msys (library): libgcrypt (MSYS)
 - library:gnupg:libgpg-error (library): libgpg-error
+- library:gnupg:libgpg-error@clang64 (library): libgpg-error (CLANG64)
 - library:gnupg:libgpg-error@msys (library): libgpg-error (MSYS)
 - library:gnupg:libgpgme@msys (library): GPGME (MSYS)
 - library:gnupg:libksba (library): libksba
+- library:gnupg:libksba@clang64 (library): libksba (CLANG64)
 - library:gnupg:libksba@msys (library): libksba (MSYS)
 - library:gnupg:npth (library): nPth (New Portable Threads)
 - library:gnupg:npth@msys (library): nPth (MSYS)
@@ -16926,6 +16930,10 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:gnupg:libgpg-error@clang64 --requires--> library:gnu:gettext@clang64
+- library:gnupg:libgcrypt@clang64 --requires--> library:gnupg:libgpg-error@clang64
+- library:gnupg:libassuan@clang64 --requires--> library:gnupg:libgpg-error@clang64
+- library:gnupg:libksba@clang64 --requires--> library:gnupg:libgpg-error@clang64
 - library:gnu:libunistring@clang64 --requires--> library:gnu:libiconv@clang64
 - library:gnu:libidn2@clang64 --requires--> library:gnu:gettext@clang64
 - library:gnu:libidn2@clang64 --requires--> library:gnu:libiconv@clang64

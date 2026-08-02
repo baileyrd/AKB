@@ -76297,6 +76297,7 @@
 | relationship:foundation-libraries:libarchive-requires-libiconv | requires | library:libarchive:libarchive | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:libarchive-requires-pcre2 | requires | library:libarchive:libarchive | library:pcre:pcre2 | verified |
 | relationship:foundation-libraries:libarchive-requires-zlib | requires | library:libarchive:libarchive | library:gnu:zlib | verified |
+| relationship:foundation-libraries:libassuan-clang64-requires-libgpg-error-clang64 | requires | library:gnupg:libassuan@clang64 | library:gnupg:libgpg-error@clang64 | verified |
 | relationship:foundation-libraries:libassuan-msys-packaged-by-package | packaged-by | library:gnupg:libassuan@msys | package:msys2:libassuan | verified |
 | relationship:foundation-libraries:libassuan-msys-requires-libgpg-error-msys | requires | library:gnupg:libassuan@msys | library:gnupg:libgpg-error@msys | verified |
 | relationship:foundation-libraries:libassuan-msys-uses-msys-runtime | uses-runtime | library:gnupg:libassuan@msys | runtime:msys2:msys-2.0.dll | partial |
@@ -76323,11 +76324,13 @@
 | relationship:foundation-libraries:libfido2-requires-libcbor | requires | library:yubico:libfido2 | library:pjk:libcbor | verified |
 | relationship:foundation-libraries:libfido2-requires-zlib-msys | requires | library:yubico:libfido2 | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libfido2-uses-msys-runtime | uses-runtime | library:yubico:libfido2 | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libgcrypt-clang64-requires-libgpg-error-clang64 | requires | library:gnupg:libgcrypt@clang64 | library:gnupg:libgpg-error@clang64 | verified |
 | relationship:foundation-libraries:libgcrypt-msys-packaged-by-package | packaged-by | library:gnupg:libgcrypt@msys | package:msys2:libgcrypt | verified |
 | relationship:foundation-libraries:libgcrypt-msys-requires-libgpg-error-msys | requires | library:gnupg:libgcrypt@msys | library:gnupg:libgpg-error@msys | verified |
 | relationship:foundation-libraries:libgcrypt-msys-uses-msys-runtime | uses-runtime | library:gnupg:libgcrypt@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgcrypt-packaged-by-package | packaged-by | library:gnupg:libgcrypt | package:msys2:mingw-w64-ucrt-x86_64-libgcrypt | verified |
 | relationship:foundation-libraries:libgcrypt-requires-libgpg-error | requires | library:gnupg:libgcrypt | library:gnupg:libgpg-error | verified |
+| relationship:foundation-libraries:libgpg-error-clang64-requires-gettext-clang64 | requires | library:gnupg:libgpg-error@clang64 | library:gnu:gettext@clang64 | verified |
 | relationship:foundation-libraries:libgpg-error-msys-packaged-by-package | packaged-by | library:gnupg:libgpg-error@msys | package:msys2:libgpg-error | verified |
 | relationship:foundation-libraries:libgpg-error-msys-requires-libiconv-msys | requires | library:gnupg:libgpg-error@msys | library:gnu:libiconv@msys | verified |
 | relationship:foundation-libraries:libgpg-error-msys-requires-libintl | requires | library:gnupg:libgpg-error@msys | library:gnu:libintl | verified |
@@ -76354,6 +76357,7 @@
 | relationship:foundation-libraries:libintl-packaged-by-package | packaged-by | library:gnu:libintl | package:msys2:libintl | verified |
 | relationship:foundation-libraries:libintl-requires-libiconv-msys | requires | library:gnu:libintl | library:gnu:libiconv@msys | verified |
 | relationship:foundation-libraries:libintl-uses-msys-runtime | uses-runtime | library:gnu:libintl | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libksba-clang64-requires-libgpg-error-clang64 | requires | library:gnupg:libksba@clang64 | library:gnupg:libgpg-error@clang64 | verified |
 | relationship:foundation-libraries:libksba-msys-packaged-by-package | packaged-by | library:gnupg:libksba@msys | package:msys2:libksba | verified |
 | relationship:foundation-libraries:libksba-msys-requires-libgpg-error-msys | requires | library:gnupg:libksba@msys | library:gnupg:libgpg-error@msys | verified |
 | relationship:foundation-libraries:libksba-msys-uses-msys-runtime | uses-runtime | library:gnupg:libksba@msys | runtime:msys2:msys-2.0.dll | partial |

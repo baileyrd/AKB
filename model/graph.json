@@ -901,6 +901,78 @@
       "evidence_refs": ["evidence:libpsl:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:gnupg:libgpg-error@clang64",
+      "kind": "library",
+      "name": "libgpg-error (CLANG64)",
+      "summary": "The GnuPG error-code definitions library, packaged in the CLANG64 environment and linking against GNU gettext (CLANG64), already documented in this knowledge base. The base of the GnuPG crypto-stack chain in the CLANG64 environment.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libgpg-error"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/software/libgpg-error/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libgpg-error",
+        "role": "shared error-code definitions"
+      },
+      "evidence_refs": ["evidence:gnupg:libgpg-error-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libgcrypt@clang64",
+      "kind": "library",
+      "name": "libgcrypt (CLANG64)",
+      "summary": "GnuPG's primary low-level cryptographic library, packaged in the CLANG64 environment and linking against libgpg-error (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libgcrypt"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/software/libgcrypt/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libgcrypt",
+        "role": "symmetric/public-key cryptography"
+      },
+      "evidence_refs": ["evidence:gnupg:libgcrypt-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libassuan@clang64",
+      "kind": "library",
+      "name": "libassuan (CLANG64)",
+      "summary": "GnuPG's Assuan IPC protocol library, packaged in the CLANG64 environment and linking against libgpg-error (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libassuan"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/software/libassuan/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libassuan",
+        "role": "Assuan IPC protocol"
+      },
+      "evidence_refs": ["evidence:gnupg:libassuan-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnupg:libksba@clang64",
+      "kind": "library",
+      "name": "libksba (CLANG64)",
+      "summary": "GnuPG's X.509/CMS certificate parsing library, packaged in the CLANG64 environment and linking against libgpg-error (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libksba"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/software/libksba/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libksba",
+        "role": "X.509/CMS certificate parsing"
+      },
+      "evidence_refs": ["evidence:gnupg:libksba-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8903,6 +8975,54 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgpg-error-clang64-requires-gettext-clang64",
+      "type": "requires",
+      "source": "library:gnupg:libgpg-error@clang64",
+      "target": "library:gnu:gettext@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for libgpg-error's own diagnostic output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgcrypt-clang64-requires-libgpg-error-clang64",
+      "type": "requires",
+      "source": "library:gnupg:libgcrypt@clang64",
+      "target": "library:gnupg:libgpg-error@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs shared error-code definitions used across the GnuPG project's own library stack.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libassuan-clang64-requires-libgpg-error-clang64",
+      "type": "requires",
+      "source": "library:gnupg:libassuan@clang64",
+      "target": "library:gnupg:libgpg-error@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs shared error-code definitions used across the GnuPG project's own library stack.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libksba-clang64-requires-libgpg-error-clang64",
+      "type": "requires",
+      "source": "library:gnupg:libksba@clang64",
+      "target": "library:gnupg:libgpg-error@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs shared error-code definitions used across the GnuPG project's own library stack.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

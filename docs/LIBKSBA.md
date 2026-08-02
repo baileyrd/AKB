@@ -138,3 +138,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libgpg-error](LIBGPG-ERROR.md)
 - [libksba (MSYS)](LIBKSBA-MSYS.md)
+- [libksba (CLANG64)](LIBKSBA-CLANG64.md)

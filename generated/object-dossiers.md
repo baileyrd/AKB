@@ -6032,6 +6032,15 @@
 - Outgoing relationships: 5
 - Incoming relationships: 4
 
+## `library:lz4:liblz4`
+
+- Name: liblz4
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `library:mingw-w64:libwinpthread`
 
 - Name: libwinpthread

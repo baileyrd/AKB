@@ -125,3 +125,4 @@ inference, not a confirmed build-system fact.
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [Zstandard (zstd)](ZSTD.md)
+- [liblz4 (MSYS)](LIBLZ4-MSYS.md)

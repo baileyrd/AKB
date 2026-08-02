@@ -674,6 +674,7 @@
 | library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
+| library:lz4:liblz4 | library | liblz4 | partial | 0 | 0 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 5 |
 | library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |

@@ -433,6 +433,24 @@
       "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:lz4:liblz4",
+      "kind": "library",
+      "name": "liblz4",
+      "summary": "The LZ4 compression codec library, a distinct MSYS package from the lz4 CLI, linked by bsdcpio, bsdtar, MSYS libarchive, rsync, squashfs-tools, and subversion for LZ4-format compression support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yann Collet",
+      "aliases": ["liblz4"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://lz4.github.io/lz4/",
+        "packaged_as": "package:msys2:liblz4",
+        "role": "LZ4 compression codec"
+      },
+      "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",

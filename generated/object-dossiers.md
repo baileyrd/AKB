@@ -5402,6 +5402,33 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:apache:apr-util@msys`
+
+- Name: Apache Portable Runtime Utility Library (APR-util)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:apache:apr-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
+
+## `library:apache:apr@msys`
+
+- Name: Apache Portable Runtime (APR)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:apache:apr-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
+## `library:apache:libserf@msys`
+
+- Name: Serf
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:apache:serf-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 0
+
 ## `library:boost:boost`
 
 - Name: Boost
@@ -5715,7 +5742,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 11
+- Incoming relationships: 12
 
 ## `library:gnupg:libassuan`
 
@@ -6012,7 +6039,7 @@
 - Status: `partial`
 - Evidence: evidence:libxcrypt:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 5
+- Incoming relationships: 7
 
 ## `library:llvm:clang-libs`
 
@@ -6228,7 +6255,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:openssl:openssl@ucrt64`
 
@@ -6327,7 +6354,7 @@
 - Status: `partial`
 - Evidence: evidence:sqlite:documentation-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:sqlite:sqlite3`
 

@@ -559,6 +559,60 @@
       "evidence_refs": ["evidence:oberhumer:lzo-manual-2026-08-02", "evidence:catalog:current"]
     },
     {
+      "id": "library:apache:apr@msys",
+      "kind": "library",
+      "name": "Apache Portable Runtime (APR)",
+      "summary": "The Apache Portable Runtime, a cross-platform system abstraction library, packaged in the MSYS environment and linking against libxcrypt, consumed by Subversion (not yet a modeled entity) via apr-util.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Apache Software Foundation",
+      "aliases": ["apr", "APR"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://apr.apache.org/",
+        "packaged_as": "package:msys2:apr",
+        "role": "cross-platform system abstraction"
+      },
+      "evidence_refs": ["evidence:apache:apr-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:apache:apr-util@msys",
+      "kind": "library",
+      "name": "Apache Portable Runtime Utility Library (APR-util)",
+      "summary": "A companion library to the Apache Portable Runtime providing additional abstractions (XML parsing, database access), packaged in the MSYS environment and depended on by libserf and Subversion (not yet a modeled entity).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Apache Software Foundation",
+      "aliases": ["apr-util", "APR-util"],
+      "tags": ["library", "runtime"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://apr.apache.org/",
+        "packaged_as": "package:msys2:apr-util",
+        "role": "APR companion utility abstractions"
+      },
+      "evidence_refs": ["evidence:apache:apr-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:apache:libserf@msys",
+      "kind": "library",
+      "name": "Serf",
+      "summary": "A high-performance HTTP client library built on APR, packaged in the MSYS environment and depended on by Subversion (not yet a modeled entity) for its HTTP/WebDAV repository-access transport.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Apache Software Foundation",
+      "aliases": ["libserf", "Serf"],
+      "tags": ["library", "network"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://serf.apache.org/",
+        "packaged_as": "package:msys2:libserf",
+        "role": "HTTP/WebDAV client transport"
+      },
+      "evidence_refs": ["evidence:apache:serf-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8565,6 +8619,90 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:apr-requires-libxcrypt",
+      "type": "requires",
+      "source": "library:apache:apr@msys",
+      "target": "library:libxcrypt:libxcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs crypt()-family password hashing used by APR's own password-handling utility functions.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:apr-util-requires-apr",
+      "type": "requires",
+      "source": "library:apache:apr-util@msys",
+      "target": "library:apache:apr@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "APR-util is a companion library built directly atop APR's own abstractions.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:apr-util-requires-libsqlite",
+      "type": "requires",
+      "source": "library:apache:apr-util@msys",
+      "target": "library:sqlite:libsqlite@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs APR-util's optional SQLite database-access driver.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:apr-util-requires-libxcrypt",
+      "type": "requires",
+      "source": "library:apache:apr-util@msys",
+      "target": "library:libxcrypt:libxcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs crypt()-family password hashing used by APR-util's own password-handling utility functions.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libserf-requires-apr-util",
+      "type": "requires",
+      "source": "library:apache:libserf@msys",
+      "target": "library:apache:apr-util@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Serf is built atop APR/APR-util's cross-platform abstractions for its own I/O and buckets model.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libserf-requires-libopenssl",
+      "type": "requires",
+      "source": "library:apache:libserf@msys",
+      "target": "library:openssl:libopenssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs TLS support for Serf's HTTPS repository-access transport.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libserf-requires-zlib",
+      "type": "requires",
+      "source": "library:apache:libserf@msys",
+      "target": "library:gnu:zlib@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs HTTP response decompression for Serf's own transport layer.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:zip-family:zip-requires-libbz2",
       "type": "requires",
       "source": "component:info-zip:zip",
@@ -10435,6 +10573,26 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:apache:apr-manual-2026-08-02",
+      "class": "primary",
+      "title": "Apache Portable Runtime (official project site)",
+      "locator": "https://apr.apache.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Apache APR project site, matching the project_url recorded for package:msys2:apr and package:msys2:apr-util in the catalog snapshot."
+    },
+    {
+      "id": "evidence:apache:serf-manual-2026-08-02",
+      "class": "primary",
+      "title": "Serf (official project site)",
+      "locator": "https://serf.apache.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Apache Serf project site, matching the project_url recorded for package:msys2:libserf in the catalog snapshot."
     },
     {
       "id": "evidence:oberhumer:lzo-manual-2026-08-02",

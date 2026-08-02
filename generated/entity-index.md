@@ -604,6 +604,9 @@
 | header:msys2:/ucrt64/include/zconf.h | header | /ucrt64/include/zconf.h | verified | 0 | 1 |
 | header:msys2:/ucrt64/include/zlib.h | header | /ucrt64/include/zlib.h | verified | 0 | 1 |
 | import-library:msys2:/ucrt64/lib/libz.dll.a | import-library | /ucrt64/lib/libz.dll.a | verified | 0 | 1 |
+| library:apache:apr-util@msys | library | Apache Portable Runtime Utility Library (APR-util) | partial | 3 | 1 |
+| library:apache:apr@msys | library | Apache Portable Runtime (APR) | partial | 1 | 1 |
+| library:apache:libserf@msys | library | Serf | partial | 3 | 0 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 6 |
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
@@ -638,7 +641,7 @@
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 5 |
-| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 11 |
+| library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
@@ -671,7 +674,7 @@
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
-| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 5 |
+| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 7 |
 | library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
@@ -695,7 +698,7 @@
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
 | library:oberhumer:liblzo2@msys | library | LZO | partial | 0 | 0 |
-| library:openssl:libopenssl | library | libopenssl | partial | 0 | 5 |
+| library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
@@ -706,7 +709,7 @@
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |
 | library:rpm:popt@msys | library | popt (MSYS) | partial | 2 | 0 |
 | library:sasl:libsasl@msys | library | libsasl (MSYS) | partial | 4 | 0 |
-| library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 3 |
+| library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 4 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
 | library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |

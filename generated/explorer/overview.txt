@@ -601,6 +601,9 @@ Objects
 - header:msys2:/ucrt64/include/zconf.h (header): /ucrt64/include/zconf.h
 - header:msys2:/ucrt64/include/zlib.h (header): /ucrt64/include/zlib.h
 - import-library:msys2:/ucrt64/lib/libz.dll.a (import-library): /ucrt64/lib/libz.dll.a
+- library:apache:apr-util@msys (library): Apache Portable Runtime Utility Library (APR-util)
+- library:apache:apr@msys (library): Apache Portable Runtime (APR)
+- library:apache:libserf@msys (library): Serf
 - library:boost:boost (library): Boost
 - library:bzip2:libbz2 (library): libbz2
 - library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
@@ -16907,6 +16910,13 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:apache:apr@msys --requires--> library:libxcrypt:libxcrypt
+- library:apache:apr-util@msys --requires--> library:apache:apr@msys
+- library:apache:apr-util@msys --requires--> library:sqlite:libsqlite@msys
+- library:apache:apr-util@msys --requires--> library:libxcrypt:libxcrypt
+- library:apache:libserf@msys --requires--> library:apache:apr-util@msys
+- library:apache:libserf@msys --requires--> library:openssl:libopenssl
+- library:apache:libserf@msys --requires--> library:gnu:zlib@msys
 - component:info-zip:zip --requires--> library:bzip2:libbz2
 - component:info-zip:unzip --requires--> library:bzip2:libbz2
 - library:libarchive:libarchive@msys --requires--> library:bzip2:libbz2

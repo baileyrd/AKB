@@ -66,13 +66,18 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 13 relationships targeting
-`package:msys2:libexpat`. One is already modeled in this knowledge
+`package:msys2:libexpat`. Two are already modeled in this knowledge
 base: `package:msys2:git`
-(`relationship:ssh-curl-git:git-requires-expat-msys`). The remaining
-~12 recorded dependents (`bsdcpio`, `bsdtar`, `cmake` — the separate
-MSYS `cmake` package, distinct from the UCRT64 `cmake` package
-[CMake's own page](CMAKE.md) documents — `elinks`, `lftp`,
-`libarchive`, and others) are not individually modeled in this
+(`relationship:ssh-curl-git:git-requires-expat-msys`) and
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+(`relationship:foundation-libraries:libarchive-msys-requires-expat`,
+**correction, 2026-08-02**: this section had previously listed
+`libarchive` among the not-individually-modeled dependents, when it was
+in fact already modeled elsewhere in this knowledge base). The
+remaining ~11 recorded dependents (`bsdcpio`, `bsdtar`, `cmake` — the
+separate MSYS `cmake` package, distinct from the UCRT64 `cmake` package
+[CMake's own page](CMAKE.md) documents — `elinks`, `lftp`, and others)
+are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -126,10 +131,15 @@ a Git defect.
 XML parsing scope is backed by the official Expat project page
 (`evidence:libexpat:manual-2026-07-30`), the same evidence record
 [Expat (UCRT64)](EXPAT.md) cites. Package identity, version, and the
-modeled dependent edge are backed by the pacman catalog snapshot
+modeled dependent edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open, and explicitly out of scope for
-this page: the ~12 remaining recorded dependents not individually
-modeled, and header-level API surface / PE import/export-level
+this page: the ~11 remaining recorded dependents not individually
+modeled; `package:msys2:expat` — a distinct MSYS catalog package from
+this page's `libexpat`, cited but deliberately declined as a
+[APR-util](APR-UTIL-MSYS.md#dependencies) dependency edge per the same
+`pcre`/`pcre2` meta-package precedent documented on
+[libbz2](LIBBZ2.md#reverse-dependencies), and not itself modeled in
+this knowledge base; and header-level API surface / PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -140,3 +150,4 @@ methodology.
 - [Expat (UCRT64)](EXPAT.md)
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [APR-util](APR-UTIL-MSYS.md)

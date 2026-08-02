@@ -153,3 +153,5 @@ methodology.
 - [OpenSSH](OPENSSH.md)
 - [Vim](VIM.md)
 - [libsasl (MSYS)](LIBSASL-MSYS.md)
+- [APR](APR-MSYS.md)
+- [APR-util](APR-UTIL-MSYS.md)

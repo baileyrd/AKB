@@ -166,3 +166,4 @@ methodology.
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
 - [libsasl (MSYS)](LIBSASL-MSYS.md)
+- [Serf](LIBSERF-MSYS.md)

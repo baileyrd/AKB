@@ -183,3 +183,4 @@ methodology.
 - [GnuTLS](GNUTLS.md)
 - [libssh2](LIBSSH2.md)
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
+- [Serf](LIBSERF-MSYS.md)

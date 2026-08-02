@@ -69,17 +69,20 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 14 relationships targeting
-`package:msys2:libsqlite`. Three are now modeled in this knowledge base:
+`package:msys2:libsqlite`. Four are now modeled in this knowledge base:
 [GnuPG](GNUPG.md#dependencies)
 (`relationship:ssh-curl-git:gnupg-requires-libsqlite`, added
 2026-08-02, closing a gap in GnuPG's own dependency table),
 [Heimdal runtime libraries](HEIMDAL-LIBS.md#dependencies)
 (`relationship:foundation-libraries:heimdal-libs-requires-libsqlite`,
-added 2026-08-02, closing the same class of gap on that page), and
+added 2026-08-02, closing the same class of gap on that page),
 [libsasl (MSYS)](LIBSASL-MSYS.md)
 (`relationship:foundation-libraries:libsasl-requires-libsqlite`, added
 2026-08-02, backing SASL's SQL-backed authentication-secrets storage
-option). The remaining recorded dependents — `apr-util`, `cargo-c`,
+option), and [APR-util](APR-UTIL-MSYS.md)
+(`relationship:foundation-libraries:apr-util-requires-libsqlite`, added
+2026-08-02, backing APR-util's optional SQLite database-access
+driver). The remaining recorded dependents — `cargo-c`,
 `doxygen`, `libsqlite-devel`, `mutt`, `python`, `rust`,
 `sqlite-extensions`, `subversion`, `tcl-sqlite`, and `util-linux` — are
 not individually modeled in this knowledge base; see the
@@ -137,7 +140,7 @@ documentation (`evidence:sqlite:documentation-2026-07-30`), the same
 evidence record [SQLite (UCRT64)](SQLITE3.md) cites. Package identity,
 version, license, and the two recorded (of fourteen total) modeled
 dependent edges are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open: whether any of the eleven remaining
+(`evidence:catalog:current`). Open: whether any of the ten remaining
 reverse dependents (particularly `subversion` or `python`) warrant
 their own pages in a future batch, per this volume's ongoing
 gap-closing methodology.
@@ -149,3 +152,4 @@ gap-closing methodology.
 - [GnuPG](GNUPG.md)
 - [Heimdal runtime libraries](HEIMDAL-LIBS.md)
 - [libsasl (MSYS)](LIBSASL-MSYS.md)
+- [APR-util](APR-UTIL-MSYS.md)

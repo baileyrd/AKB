@@ -76206,6 +76206,10 @@
 | relationship:editors-pagers-terminals:vim-requires-libxcrypt | requires | component:vim:vim | library:libxcrypt:libxcrypt | verified |
 | relationship:editors-pagers-terminals:vim-uses-msys-runtime | uses-runtime | component:vim:vim | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:vim-uses-ncurses | requires | component:vim:vim | component:gnu:ncurses | verified |
+| relationship:foundation-libraries:apr-requires-libxcrypt | requires | library:apache:apr@msys | library:libxcrypt:libxcrypt | verified |
+| relationship:foundation-libraries:apr-util-requires-apr | requires | library:apache:apr-util@msys | library:apache:apr@msys | verified |
+| relationship:foundation-libraries:apr-util-requires-libsqlite | requires | library:apache:apr-util@msys | library:sqlite:libsqlite@msys | verified |
+| relationship:foundation-libraries:apr-util-requires-libxcrypt | requires | library:apache:apr-util@msys | library:libxcrypt:libxcrypt | verified |
 | relationship:foundation-libraries:boost-packaged-by-package | packaged-by | library:boost:boost | package:msys2:mingw-w64-ucrt-x86_64-boost | verified |
 | relationship:foundation-libraries:brotli-packaged-by-package | packaged-by | library:google:brotli | package:msys2:brotli | verified |
 | relationship:foundation-libraries:brotli-uses-msys-runtime | uses-runtime | library:google:brotli | runtime:msys2:msys-2.0.dll | partial |
@@ -76372,6 +76376,9 @@
 | relationship:foundation-libraries:libsasl-requires-libopenssl | requires | library:sasl:libsasl@msys | library:openssl:libopenssl | verified |
 | relationship:foundation-libraries:libsasl-requires-libsqlite | requires | library:sasl:libsasl@msys | library:sqlite:libsqlite@msys | verified |
 | relationship:foundation-libraries:libsasl-requires-libxcrypt | requires | library:sasl:libsasl@msys | library:libxcrypt:libxcrypt | verified |
+| relationship:foundation-libraries:libserf-requires-apr-util | requires | library:apache:libserf@msys | library:apache:apr-util@msys | verified |
+| relationship:foundation-libraries:libserf-requires-libopenssl | requires | library:apache:libserf@msys | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:libserf-requires-zlib | requires | library:apache:libserf@msys | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libssh2-packaged-by-package | packaged-by | library:libssh2:libssh2 | package:msys2:libssh2 | verified |
 | relationship:foundation-libraries:libssh2-requires-ca-certificates | requires | library:libssh2:libssh2 | library:mozilla:ca-certificates | verified |
 | relationship:foundation-libraries:libssh2-requires-openssl | requires | library:libssh2:libssh2 | component:openssl:openssl | verified |

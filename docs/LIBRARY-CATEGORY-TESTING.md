@@ -8,7 +8,7 @@ model_refs:
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:googletest:project-site-2026-08-02
-  - evidence:build-dependencies:current
+  - evidence:recipe-dependencies:current
   - evidence:catalog:current
 last_verified: 2026-08-02
 ---
@@ -58,35 +58,35 @@ and `%OPTDEPENDS%` from each package's `desc` record and dropped
 repository database the whole time — `%MAKEDEPENDS%` appears in 662 of the
 798 `msys` records — and simply were not read.
 
-`model/build-dependencies/current.json` now carries 54,035
-`build-depends-on` and 3,428 `check-depends-on` edges. `build-depends-on`
+`model/recipe-dependencies/current.json` now carries 60,560
+`build-depends-on` and 3,439 `check-depends-on` edges. `build-depends-on`
 is the largest single edge type in the composed graph, ahead of
 `runtime-depends-on` at 41,061.
 
 ## The ranking
 
-Dependents summed across all environment variants, now split by edge class.
-Catalog and runtime figures are from snapshot `20260729T113151Z`; build and
-check figures from the repository databases read 2026-08-02.
+Dependents summed across all environment variants, split by edge class.
+Runtime figures from catalog snapshot `20260729T113151Z`; build and check
+from the MSYS2 and MinGW-w64 PKGBUILD trees read 2026-08-02.
 
 | Library | Runtime | Build | Check | Total | Version | License |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| `gtest` (`library:google:googletest`) | 0 | 33 | 46 | **79** | 1.17.0-1 | BSD-3-Clause |
+| `gtest` (`library:google:googletest`) | 0 | 37 | 46 | **83** | 1.17.0-1 | BSD-3-Clause |
 | cppunit | 0 | 46 | 13 | **59** | 1.15.1-3 | LGPL-2.1-or-later |
 | catch (Catch2) | 0 | 21 | 0 | **21** | 3.15.3-1 | BSL-1.0 |
 | cunit | 0 | 9 | 5 | **14** | 2.1.3-4 | LGPL2.1 |
-| check | 0 | 11 | 0 | **11** | 0.15.2-4 | LGPL-2.1-or-later |
+| check | 0 | 12 | 0 | **12** | 0.15.2-4 | LGPL-2.1-or-later |
 | cmocka | 0 | 4 | 5 | **9** | 1.1.8-3 | Apache-2.0 |
 | doctest | 1 | 4 | 0 | **5** | 2.4.12-1 | MIT |
 | unittest-cpp | 0 | 0 | 4 | **4** | 2.0.0-2 | MIT |
 | cpputest | 0 | 0 | 0 | 0 | 4.0-2 | BSD-3-Clause |
 | bcunit | 0 | 0 | 0 | 0 | 5.4.88-1 | LGPL-2.0-or-later |
 
-The category totals 202 dependents rather than 1.
+The C and C++ side of the category totals 207 dependents rather than 1.
 
 ## The largest test framework in the catalog is not in that table
 
-`python-pytest` has **1,262 dependents — 1,254 of them check-time**. It is
+`python-pytest` has **1,328 dependents — 1,239 of them check-time**. It is
 the most-depended-upon test framework in the ecosystem by more than an
 order of magnitude, and it was entirely invisible before this fix, because
 a Python test framework is a `checkdepends` of a Python package and never a
@@ -96,13 +96,13 @@ The check-time leaders are all Python:
 
 | Package | Check-time dependents |
 | --- | ---: |
-| python-pytest | 1,254 |
+| python-pytest | 1,239 |
 | python-pytest-cov | 142 |
 | python-mock | 108 |
 | python-coverage | 79 |
 | python-pytest-mock | 64 |
-| python-pytest-xdist | 63 |
 | python-hypothesis | 60 |
+| python-pytest-xdist | 56 |
 | python-pytest-asyncio | 50 |
 
 That is the shape of the category: a large, concentrated Python testing
@@ -112,28 +112,33 @@ stack, and a smaller, more evenly spread C and C++ one where `gtest` and
 ## What the build-time ranking looks like generally
 
 The correction is not confined to testing. The top of the build-time
-ranking shares almost nothing with the runtime ranking:
+ranking shares nothing with the runtime ranking:
 
 | Package | Build-time dependents |
 | --- | ---: |
-| ninja | 4,455 |
-| cmake | 4,194 |
-| python-installer | 4,187 |
-| python-build | 4,132 |
-| python-setuptools | 3,206 |
-| autotools | 2,593 |
-| pkgconf | 2,081 |
-| python-pytest | 1,262 |
-| git | 1,259 |
-| python | 1,039 |
-| meson | 1,023 |
+| gcc | 4,991 |
+| clang | 4,776 |
+| ninja | 4,340 |
+| python-installer | 4,123 |
+| cmake | 4,081 |
+| python-build | 4,072 |
+| python-setuptools | 3,111 |
+| autotools | 2,577 |
+| pkgconf | 2,085 |
+| git | 1,150 |
+| meson | 1,021 |
 
 Compare the runtime leaders — `python` at 999, `zlib` at 299, `libpng` at
-471. **Not one of `ninja`, `cmake`, `python-installer`, `python-build`,
-`setuptools`, `autotools`, or `pkgconf` appears anywhere in a runtime
-ranking**, and between them they are declared by more packages than any
-runtime dependency in the catalog. The build-time graph is a different
-graph, and until now this knowledge base could not see it.
+471. **Not one of these appears anywhere in a runtime ranking**, and
+between them they are declared by more packages than any runtime
+dependency in the catalog.
+
+The two compilers at the top are the sharpest illustration of why the
+source matters. Recipes name `${MINGW_PACKAGE_PREFIX}-cc`; no package is
+called that, so the earlier repository-database projection dropped it, and
+**no package in the ecosystem had a build edge to its own compiler.**
+Reading the recipes and resolving the virtual provide puts `gcc` and
+`clang` where they belong.
 
 ## Two generations, and what the split says
 
@@ -141,7 +146,7 @@ graph, and until now this knowledge base could not see it.
 C++ frameworks in the xUnit tradition. `gtest`, `catch` (Catch2),
 `doctest`, `cmocka`, and `cpputest` are the current generation.
 
-The build/check split within a framework is informative. `gtest` at 33
+The build/check split within a framework is informative. `gtest` at 37
 build and 46 check is used predominantly as intended — a check-time
 dependency for running a suite. `cppunit` at 46 build and 13 check leans
 the other way, which is consistent with packages linking it rather than
@@ -161,14 +166,22 @@ not itself distributed.
 
 - Runtime counts, versions, and licenses are **observed** from catalog
   snapshot `20260729T113151Z`.
-- Build and check counts are **observed** from the six MSYS2 repository
-  databases read on 2026-08-02, projected additively — see
-  `tools/import_build_dependencies.py` for why the two dates are separate
-  and what that costs.
-- **10,195 of 67,703 declared build and check edges were dropped** because
-  one endpoint names a package absent from the 2026-07-29 catalog. Most are
-  virtual provides and packages added since. The projection counts them
-  rather than inventing entities for them.
+- Build and check counts are **observed** from 3,956 PKGBUILD files in the
+  `msys2/MSYS2-packages` and `msys2/MINGW-packages` trees, parsed
+  statically and never executed, and projected additively. See
+  `model/recipe-dependencies/README.md` for why the recipe rather than the
+  repository database, and why the two observation dates are separate.
+- **9,445 edges resolve through a virtual provide** rather than a package
+  name — overwhelmingly `${MINGW_PACKAGE_PREFIX}-cc` resolving to `gcc` or
+  `clang`. Each carries `resolved_via: provides` in its properties, so a
+  reader can discount them; edges matched on the package name itself carry
+  `resolved_via: name`.
+- **Dropped and counted rather than guessed at**: 1,221 declared names
+  matching neither a package nor a provide in the catalog, and 812 still
+  containing a shell expansion after variable substitution. Recipes using
+  conditional arrays (`makedepends=($([[ ... ]] && echo foo))`) defeat
+  static parsing, and their fragments are discarded rather than treated as
+  dependency names.
 - GoogleTest's documentation site was retrieved 2026-08-02 and verified 200.
 - **Only `gtest` is modelled as an entity.**
 - **No test framework has been built or run by this knowledge base**, and

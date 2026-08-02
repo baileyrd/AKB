@@ -9,7 +9,7 @@ model_refs:
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:gtk:project-site-2026-08-02
-  - evidence:build-dependencies:current
+  - evidence:recipe-dependencies:current
   - evidence:qt:framework-2026-08-02
   - evidence:catalog:current
 last_verified: 2026-08-02
@@ -48,19 +48,19 @@ Edits between the surrounding markers are overwritten on the next build.
 ## The ranking
 
 Recomputed 2026-08-02 against build-time edges, which this knowledge base
-could not see until `model/build-dependencies/current.json` was added.
+could not see until `model/recipe-dependencies/current.json` was added.
 Dependents summed across all environment variants. Runtime figures from
 catalog snapshot `20260729T113151Z`; build and check from the repository
 databases read 2026-08-02.
 
 | Library | Runtime | Build | Check | Total | Version | License |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| qt6-base | 637 | 458 | 0 | **1,095** | 6.11.1-1 | LGPL-3.0-only WITH Qt-GPL-exception |
+| qt6-base | 637 | 454 | 0 | **1,091** | 6.11.1-1 | LGPL-3.0-only WITH Qt-GPL-exception |
 | glib2 | 735 | 59 | 0 | **794** | 2.88.1-1 | LGPL |
 | qt5-base | 223 | 175 | 0 | **398** | 5.15.19+kde+r96-1 | LGPL-3.0-only WITH Qt-GPL-exception |
 | `gtk3` (`library:gnome:gtk3`) | 234 | 143 | 4 | **381** | 3.24.52-1 | LGPL-2.1-or-later |
-| pango | 235 | 92 | 0 | **327** | 1.58.0-1 | LGPL-2.1 |
-| gdk-pixbuf2 | 204 | 28 | 0 | **232** | 2.44.7-1 | LGPL-2.1-or-later |
+| pango | 235 | 88 | 0 | **323** | 1.58.0-1 | LGPL-2.1 |
+| gdk-pixbuf2 | 204 | 24 | 0 | **228** | 2.44.7-1 | LGPL-2.1-or-later |
 | gtk4 | 88 | 37 | 0 | **125** | 4.22.4-1 | LGPL-2.1-or-later |
 | atk | 37 | 0 | 0 | **37** | 2.60.5-1 | LGPL-2.1-or-later |
 | libadwaita | 23 | 0 | 0 | **23** | 1.9.1-1 | LGPL-2.1-or-later |
@@ -72,8 +72,8 @@ library at all — `glib2` is an object system, main-loop implementation, and
 portability layer that everything in the GTK stack requires and much
 outside it requires too.
 
-With build-time edges included, `qt6-base` leads at 1,095 and the ranking
-finally means what a reader expects it to mean. `qt6-base` gains 458 build
+With build-time edges included, `qt6-base` leads at 1,091 and the ranking
+finally means what a reader expects it to mean. `qt6-base` gains 454 build
 edges against `glib2`'s 59, which is the difference between a framework
 packages are *built against* and infrastructure they merely link.
 
@@ -87,7 +87,7 @@ Stripping out infrastructure leaves the actual toolkits:
 
 | Toolkit | Total | Runtime | Build | Nature |
 | --- | ---: | ---: | ---: | --- |
-| Qt 6 | 1,095 | 637 | 458 | full application framework |
+| Qt 6 | 1,091 | 637 | 454 | full application framework |
 | Qt 5 | 398 | 223 | 175 | previous Qt generation, still heavily depended on |
 | GTK 3 | 381 | 234 | 143 | widget toolkit over the GLib stack |
 | GTK 4 | 125 | 88 | 37 | current GTK generation |
@@ -96,7 +96,7 @@ Stripping out infrastructure leaves the actual toolkits:
 Three observations follow.
 
 **Qt is ahead of GTK, and the gap is wider than runtime edges showed.**
-Qt 5 and Qt 6 together reach 1,493 against GTK 3 and GTK 4's 506 — a ratio
+Qt 5 and Qt 6 together reach 1,489 against GTK 3 and GTK 4's 506 — a ratio
 of roughly 3:1, against 2.7:1 on runtime edges alone. Part of that is
 scope: Qt is documented upstream as a full cross-platform application
 framework — networking, threading, and more — rather than a widget set, so
@@ -168,9 +168,9 @@ What `makedepends` reliably carries is build-*only* dependencies:
   `autotools`, `pkgconf`;
 - header-only and code-generation packages — `vulkan-headers`, `nasm`,
   `gtk-doc`, `gobject-introspection`;
-- **`-devel` split packages on the MSYS side.** 87 of them receive 1,036
-  build edges between them; `zlib-devel` alone has 111, against `zlib`'s 9
-  runtime, because the MSYS side ships headers as a separate package.
+- **`-devel` split packages on the MSYS side**, because the MSYS side ships
+  headers as a separate package, so a recipe names `zlib-devel` at build
+  time and `zlib` at run time.
 
 Where a library *does* score build edges the signal is real — some recipes
 do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
@@ -178,8 +178,8 @@ do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
 between recipes. Read the build column as evidence of use, and never read
 its absence as evidence of non-use.
 
-**Check-time edges are near-absent from this category**, as they are from
-every category except testing: `check-depends-on` in this ecosystem is
+**Check-time edges are absent from this category**, as they are from every
+category except testing: `check-depends-on` in this ecosystem is
 overwhelmingly a Python-packaging phenomenon, concentrated on
 `python-pytest` and its plugins. See
 [Library Category — Testing](LIBRARY-CATEGORY-TESTING.md).
@@ -188,7 +188,7 @@ overwhelmingly a Python-packaging phenomenon, concentrated on
 
 - Build and check counts are **observed** from the six MSYS2 repository
   databases read 2026-08-02, projected additively into
-  `model/build-dependencies/current.json`. They carry a later observation
+  `model/recipe-dependencies/current.json`. They carry a later observation
   date than the runtime counts and versions above, which come from catalog
   snapshot `20260729T113151Z`; see `tools/import_build_dependencies.py` for
   why the two are separate.

@@ -1,4 +1,4 @@
-"""Cover the build-time and check-time dependency projection.
+"""Cover repository-database parsing of build-time and check-time dependencies.
 
 The catalog projection carried four relationship types and none of them was a
 build-time edge, because `import_repository_db.py` read `%DEPENDS%` and
@@ -7,14 +7,13 @@ build-time edge, because `import_repository_db.py` read `%DEPENDS%` and
 dependency, so ten of them recorded one dependent between them and every
 dependency ranking in this knowledge base was blind to half the graph.
 
-These tests hold the properties that keep the fix honest:
-
-- the two fields are actually parsed out of a `desc` record;
-- the projection is *additive* -- relationships only, no entities, no versions,
-  so it cannot silently restate the catalog's observations at a second date;
-- an edge whose endpoint is absent from the catalog is dropped and counted
-  rather than minting an entity;
-- the drop is disclosed in the evidence record rather than buried.
+`tools/import_repository_db.py` now reads both fields, and these tests hold
+that. The *projection* built from them has since been superseded: reading the
+PKGBUILDs directly resolves virtual provides such as `${MINGW_PACKAGE_PREFIX}-cc`,
+which the database importer had to drop, so no package had a build edge to its
+own compiler. See `tests/test_recipe_dependencies.py` and
+`model/recipe-dependencies/README.md`. The database path is kept for hosts
+without the recipe trees, so its parsing stays covered here.
 """
 
 from __future__ import annotations
@@ -92,63 +91,6 @@ class DescParsingTests(unittest.TestCase):
         self.assertEqual(ibd.dependency_name("ninja>=1.11"), ("ninja", ">=1.11"))
         self.assertEqual(ibd.dependency_name("bar: for bar support"), ("bar", ""))
         self.assertEqual(ibd.dependency_name("plain"), ("plain", ""))
-
-
-class ProjectionTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.projection = json.loads(ibd.OUTPUT.read_text(encoding="utf-8"))
-
-    def test_the_projection_is_additive(self):
-        """Relationships only. Entities or claims here would restate the
-        catalog's observations at a different date."""
-        self.assertEqual(self.projection["entities"], [])
-        self.assertEqual(self.projection["claims"], [])
-        self.assertEqual(len(self.projection["evidence"]), 1)
-
-    def test_it_contributes_only_build_and_check_edges(self):
-        types = {edge["type"] for edge in self.projection["relationships"]}
-        self.assertEqual(types, {"build-depends-on", "check-depends-on"})
-
-    def test_every_endpoint_exists_in_the_catalog(self):
-        catalog = ibd.catalog_package_ids()
-        for edge in self.projection["relationships"]:
-            self.assertIn(edge["source"], catalog, edge["id"])
-            self.assertIn(edge["target"], catalog, edge["id"])
-
-    def test_relationship_ids_are_unique(self):
-        identifiers = [edge["id"] for edge in self.projection["relationships"]]
-        self.assertEqual(len(identifiers), len(set(identifiers)))
-
-    def test_the_drop_is_disclosed_in_the_evidence_record(self):
-        notes = self.projection["evidence"][0]["notes"]
-        self.assertIn("dropped", notes)
-        self.assertIn("absent from the catalog", notes)
-        self.assertIn("later than, the package catalog", notes)
-
-    def test_it_reaches_the_composed_graph(self):
-        import akb  # pylint: disable=import-outside-toplevel
-
-        graph = akb.load_composed_graph()
-        types = {edge["type"] for edge in graph["relationships"]}
-        self.assertIn("build-depends-on", types)
-        self.assertIn("check-depends-on", types)
-
-    def test_the_defect_it_fixes_is_actually_fixed(self):
-        """Test frameworks were invisible. They must not be again."""
-        import akb  # pylint: disable=import-outside-toplevel
-
-        graph = akb.load_composed_graph()
-        gtest = "package:msys2:mingw-w64-ucrt-x86_64-gtest"
-        dependents = [
-            edge for edge in graph["relationships"]
-            if edge["target"] == gtest and edge["type"] in
-            {"build-depends-on", "check-depends-on"}
-        ]
-        self.assertGreater(
-            len(dependents), 0,
-            "gtest has no build-time dependents; the projection is not composed",
-        )
 
 
 if __name__ == "__main__":

@@ -18,9 +18,12 @@ CATALOG = ROOT / "model" / "catalog" / "current.json"
 INVENTORY = ROOT / "model" / "inventory" / "current.json"
 RUNTIME = ROOT / "model" / "runtime" / "current.json"
 RECIPES = ROOT / "model" / "recipes" / "current.json"
-# Additive: contributes build-time and check-time relationships only. See
-# tools/import_build_dependencies.py for why it is separate from CATALOG.
-BUILD_DEPENDENCIES = ROOT / "model" / "build-dependencies" / "current.json"
+# Additive: contributes build-time and check-time relationships only, from the
+# PKGBUILD trees. The recipe is what makepkg consumes, so it is the authority;
+# tools/import_build_dependencies.py reads the same two fields from the
+# repository databases and remains available where recipe trees are not, but
+# only one of the two may be composed or their shared edges double-count.
+RECIPE_DEPENDENCIES = ROOT / "model" / "recipe-dependencies" / "current.json"
 KINDS = ROOT / "model" / "vocabularies" / "entity-kinds.json"
 REL_TYPES = ROOT / "model" / "vocabularies" / "relationship-types.json"
 GENERATED = ROOT / "generated"
@@ -44,7 +47,7 @@ def load_composed_graph() -> dict[str, Any]:
         "claims": list(graph.get("claims", [])),
         "evidence": list(graph.get("evidence", [])),
     }
-    for projection_path in (CATALOG, RECIPES, INVENTORY, RUNTIME, BUILD_DEPENDENCIES):
+    for projection_path in (CATALOG, RECIPES, INVENTORY, RUNTIME, RECIPE_DEPENDENCIES):
         if projection_path.is_file():
             projection = load_json(projection_path)
             for key in composed:

@@ -421,7 +421,21 @@ def parse_pkgbuild(path: Path) -> dict[str, Any]:
     functions = sorted(
         set(re.findall(r"(?m)^\s*(prepare|pkgver|build|check|package(?:_[A-Za-z0-9_+-]+)?)\s*\(\s*\)", text))
     )
+    # Recipe-local scalars, by convention prefixed with `_`. Dependency and
+    # package names routinely interpolate them (`${MINGW_PACKAGE_PREFIX}-python-${_realname}`),
+    # so capturing them here is what lets a consumer resolve those names
+    # without re-reading the source tree. Only simple, non-substituted
+    # assignments are taken; anything containing a command substitution or a
+    # nested expansion is left out rather than guessed at.
+    variables = {
+        name: value.strip()
+        for name, _quote, value in re.findall(
+            r"""(?m)^[ \t]*(_[A-Za-z0-9_]+)=(["']?)([^"'\n#$`]*)\2[ \t]*(?:#.*)?$""", text
+        )
+        if value.strip()
+    }
     return {
+        "variables": variables,
         "pkgbase": scalar("pkgbase"),
         "pkgname": values("pkgname") or ([scalar("pkgname")] if scalar("pkgname") else []),
         "pkgver": scalar("pkgver"),

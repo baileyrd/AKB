@@ -10,7 +10,7 @@ model_refs:
 evidence_refs:
   - evidence:ffmpeg:about-2026-08-02
   - evidence:gstreamer:project-site-2026-08-02
-  - evidence:build-dependencies:current
+  - evidence:recipe-dependencies:current
   - evidence:catalog:current
 last_verified: 2026-08-02
 ---
@@ -52,30 +52,29 @@ all environment variants:
 
 | Library | Runtime | Build | Total | Version | License | Role |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| `ffmpeg` (`library:ffmpeg:ffmpeg`) | 161 | 54 | **215** | 8.1.2-1 | GPL-3.0-or-later | everything |
+| `ffmpeg` (`library:ffmpeg:ffmpeg`) | 161 | 42 | **203** | 8.1.2-1 | GPL-3.0-or-later | everything |
 | gstreamer | 85 | 12 | **97** | 1.28.5-1 | LGPL-2.1-or-later | pipeline framework |
-| libtheora | 36 | 8 | **44** | 1.2.0-1 | BSD-3-Clause | codec |
+| libtheora | 36 | 0 | **36** | 1.2.0-1 | BSD-3-Clause | codec |
 | aom | 23 | 12 | **35** | 3.14.1-1 | BSD-2-Clause | AV1 reference codec |
 | libass | 23 | 12 | **35** | 0.17.5-1 | ISC | subtitle rendering |
-| x265 | 21 | 12 | **33** | 4.2-2 | GPL | HEVC encoder |
 | dav1d | 32 | 0 | **32** | 1.5.4-1 | BSD-2-Clause | AV1 decoder |
 | svt-av1 | 19 | 12 | **31** | 4.2.0-1 | BSD-3-Clause-Clear | AV1 encoder |
+| x265 | 21 | 0 | **21** | 4.2-2 | GPL | HEVC encoder |
 | libvpx | 21 | 0 | **21** | 1.16.0-1 | BSD-3-Clause | VP8/VP9 codec |
 
-Recomputed 2026-08-02 against build-time edges. Runtime figures from
-catalog snapshot `20260729T113151Z`; build figures from the repository
-databases read 2026-08-02. Check-time edges are zero across this category.
+Recomputed 2026-08-02 against build-time edges read from the PKGBUILD
+trees. Runtime figures from catalog snapshot `20260729T113151Z`. Check-time
+edges are zero across this category.
 
 `ffmpeg` and `gstreamer` hold first and second on either measure. Below
-them the order rearranges: **`dav1d` falls from fourth to seventh** with
-zero build edges, while `aom`, `libass`, `x265`, and `svt-av1` — each with
-twelve — rise past it. `libvpx` likewise drops to last.
+them the order rearranges: `aom`, `libass`, and `svt-av1` — twelve build
+edges each — rise past `dav1d`, `x265`, and `libvpx`, which have none.
 
-That pattern is a packaging artifact rather than a usage one. The AV1
-encoders (`aom`, `svt-av1`, `x265`) are named in `makedepends` by the
-packages that build encoders; the decoders (`dav1d`, `libvpx`) are declared
-in `depends` because they are needed at runtime too. See the caveat below —
-`dav1d`'s zero is not evidence it is unused at build time.
+Read that with the caveat below rather than as a usage claim. Almost every
+codec here is declared in `depends` by the packages that use it, because a
+codec needed to build is needed to run. The twelve-edge cluster is the
+`gst-plugins-*` family naming its codecs in `makedepends`; the zeros are
+not evidence of anything.
 
 ## FFmpeg is a dependency hub, not a leaf
 
@@ -147,9 +146,9 @@ What `makedepends` reliably carries is build-*only* dependencies:
   `autotools`, `pkgconf`;
 - header-only and code-generation packages — `vulkan-headers`, `nasm`,
   `gtk-doc`, `gobject-introspection`;
-- **`-devel` split packages on the MSYS side.** 87 of them receive 1,036
-  build edges between them; `zlib-devel` alone has 111, against `zlib`'s 9
-  runtime, because the MSYS side ships headers as a separate package.
+- **`-devel` split packages on the MSYS side**, because the MSYS side ships
+  headers as a separate package, so a recipe names `zlib-devel` at build
+  time and `zlib` at run time.
 
 Where a library *does* score build edges the signal is real — some recipes
 do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
@@ -157,8 +156,8 @@ do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
 between recipes. Read the build column as evidence of use, and never read
 its absence as evidence of non-use.
 
-**Check-time edges are near-absent from this category**, as they are from
-every category except testing: `check-depends-on` in this ecosystem is
+**Check-time edges are absent from this category**, as they are from every
+category except testing: `check-depends-on` in this ecosystem is
 overwhelmingly a Python-packaging phenomenon, concentrated on
 `python-pytest` and its plugins. See
 [Library Category — Testing](LIBRARY-CATEGORY-TESTING.md).
@@ -167,7 +166,7 @@ overwhelmingly a Python-packaging phenomenon, concentrated on
 
 - Build and check counts are **observed** from the six MSYS2 repository
   databases read 2026-08-02, projected additively into
-  `model/build-dependencies/current.json`. They carry a later observation
+  `model/recipe-dependencies/current.json`. They carry a later observation
   date than the runtime counts and versions above, which come from catalog
   snapshot `20260729T113151Z`; see `tools/import_build_dependencies.py` for
   why the two are separate.

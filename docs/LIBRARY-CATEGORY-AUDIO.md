@@ -9,7 +9,7 @@ model_refs:
 evidence_refs:
   - evidence:libsndfile:project-site-2026-08-02
   - evidence:libsdl:project-site-2026-08-02
-  - evidence:build-dependencies:current
+  - evidence:recipe-dependencies:current
   - evidence:catalog:current
 last_verified: 2026-08-02
 ---
@@ -51,35 +51,28 @@ all environment variants:
 
 | Library | Runtime | Build | Total | Version | License | Layer |
 | --- | ---: | ---: | ---: | --- | --- | --- |
-| SDL2 | 158 | 0 | **158** | 2.32.10-1 | Zlib | output + input abstraction |
-| libvorbis | 98 | 27 | **125** | 1.3.7-2 | custom | codec |
+| SDL2 | 158 | 31 | **189** | 2.32.10-1 | Zlib | output + input abstraction |
+| libvorbis | 98 | 23 | **121** | 1.3.7-2 | custom | codec |
 | `libsndfile` (`library:libsndfile:libsndfile`) | 100 | 21 | **121** | 1.2.2-1 | LGPL-2.1-or-later | file I/O across formats |
-| openal | 70 | 43 | **113** | 1.25.2-1 | GPL-2.0-or-later | 3D audio output |
-| libogg | 75 | 8 | **83** | 1.3.6-1 | BSD-3-Clause | container |
+| openal | 70 | 47 | **117** | 1.25.2-1 | GPL-2.0-or-later | 3D audio output |
 | opus | 63 | 12 | **75** | 1.6.1-1 | BSD-3-Clause | codec |
+| libogg | 75 | 0 | **75** | 1.3.6-1 | BSD-3-Clause | container |
 | flac | 67 | 5 | **72** | 1.5.0-1 | custom Xiph/LGPL/GPL/FDL | codec |
 | portaudio | 57 | 14 | **71** | 1~19.7.0-5 | custom | output abstraction |
 | mpg123 | 32 | 10 | **42** | 1.33.5-1 | LGPL-2.1-or-later | codec (MP3) |
 
-Recomputed 2026-08-02 against build-time edges. Runtime figures from
-catalog snapshot `20260729T113151Z`; build figures from the repository
-databases read 2026-08-02. Check-time edges are zero across this category.
+Recomputed 2026-08-02 against build-time edges read from the PKGBUILD
+trees. Runtime figures from catalog snapshot `20260729T113151Z`. Check-time
+edges are zero across this category.
 
-Two positions change. **`libvorbis` overtakes `libsndfile`** (125 to 121),
-having trailed it 98 to 100 on runtime edges alone. And **`openal` climbs
-from fifth to fourth**, past `libogg`, on the strength of 43 build edges —
-the highest build-to-runtime ratio in the category at roughly 0.6:1, which
-fits a library games and engines compile against.
+Two positions change against the runtime-only ranking. **`libvorbis` draws
+level with `libsndfile`** at 121 apiece, having trailed it 98 to 100. And
+**`openal` climbs from fifth to fourth**, past `libogg`, on 47 build
+edges — the highest build-to-runtime ratio in the category at roughly
+0.67:1, which fits a library games and engines compile against.
 
-**SDL2 leads with zero build edges**, and that is the clearest illustration
-of the caveat below: `mingw-w64-ucrt-x86_64-SDL2_image` builds against SDL2
-and declares it in `depends`, not `makedepends`. Its zero means "declared
-as a runtime dependency", not "not used at build time".
-
-SDL2 is listed first by count but belongs to more than one category — it
-abstracts audio, input, and rendering together, which is why it also
-appears in the video ranking. Reading it as "the leading audio library"
-would overstate the audio-specific part of what it does.
+`libogg` gains nothing: it is a container format pulled in transitively by
+the codecs above it rather than named directly in recipes.
 
 ## Three layers, and they are cleanly separated
 
@@ -139,9 +132,9 @@ What `makedepends` reliably carries is build-*only* dependencies:
   `autotools`, `pkgconf`;
 - header-only and code-generation packages — `vulkan-headers`, `nasm`,
   `gtk-doc`, `gobject-introspection`;
-- **`-devel` split packages on the MSYS side.** 87 of them receive 1,036
-  build edges between them; `zlib-devel` alone has 111, against `zlib`'s 9
-  runtime, because the MSYS side ships headers as a separate package.
+- **`-devel` split packages on the MSYS side**, because the MSYS side ships
+  headers as a separate package, so a recipe names `zlib-devel` at build
+  time and `zlib` at run time.
 
 Where a library *does* score build edges the signal is real — some recipes
 do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
@@ -149,8 +142,8 @@ do name libraries in `makedepends`, such as `gst-plugins-bad` declaring
 between recipes. Read the build column as evidence of use, and never read
 its absence as evidence of non-use.
 
-**Check-time edges are near-absent from this category**, as they are from
-every category except testing: `check-depends-on` in this ecosystem is
+**Check-time edges are absent from this category**, as they are from every
+category except testing: `check-depends-on` in this ecosystem is
 overwhelmingly a Python-packaging phenomenon, concentrated on
 `python-pytest` and its plugins. See
 [Library Category — Testing](LIBRARY-CATEGORY-TESTING.md).
@@ -159,7 +152,7 @@ overwhelmingly a Python-packaging phenomenon, concentrated on
 
 - Build and check counts are **observed** from the six MSYS2 repository
   databases read 2026-08-02, projected additively into
-  `model/build-dependencies/current.json`. They carry a later observation
+  `model/recipe-dependencies/current.json`. They carry a later observation
   date than the runtime counts and versions above, which come from catalog
   snapshot `20260729T113151Z`; see `tools/import_build_dependencies.py` for
   why the two are separate.

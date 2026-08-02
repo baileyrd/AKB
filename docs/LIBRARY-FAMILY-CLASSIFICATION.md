@@ -63,78 +63,77 @@ Seven categories are documented as categories rather than per library,
 each ranked by dependents summed across all environment variants. All
 seven were recomputed against build-time edges on 2026-08-02: runtime
 figures come from catalog snapshot `20260729T113151Z`, build and check
-figures from the repository databases read 2026-08-02.
+figures from the MSYS2 and MinGW-w64 PKGBUILD trees read the same day.
 
 | Category | Leader | Runtime | Build + check | Total |
 | --- | --- | ---: | ---: | ---: |
-| [GUI](LIBRARY-CATEGORY-GUI.md) | `qt6-base` | 637 | 458 | **1,095** |
-| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 | 110 | **581** |
-| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 | 185 | **506** |
-| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 | 54 | **215** |
-| [Audio](LIBRARY-CATEGORY-AUDIO.md) | SDL2 | 158 | 0 | **158** |
-| [Testing](LIBRARY-CATEGORY-TESTING.md) | `gtest` | 0 | 79 | **79** |
+| [GUI](LIBRARY-CATEGORY-GUI.md) | `qt6-base` | 637 | 454 | **1,091** |
+| [Imaging](LIBRARY-CATEGORY-IMAGING.md) | `libpng` | 471 | 102 | **573** |
+| [Graphics](LIBRARY-CATEGORY-GRAPHICS.md) | `cairo` | 321 | 186 | **507** |
+| [Video](LIBRARY-CATEGORY-VIDEO.md) | `ffmpeg` | 161 | 42 | **203** |
+| [Audio](LIBRARY-CATEGORY-AUDIO.md) | SDL2 | 158 | 31 | **189** |
+| [Testing](LIBRARY-CATEGORY-TESTING.md) | `python-pytest` | 81 | 1,247 | **1,328** |
 | [Logging](LIBRARY-CATEGORY-LOGGING.md) | `spdlog` | 27 | 0 | **27** |
 
-**One category leader changed and four internal orderings moved:**
+**One category leader changed and three internal orderings moved:**
 
-- **GUI**: `qt6-base` (1,095) displaces `glib2` (794). The page previously
+- **GUI**: `qt6-base` (1,091) displaces `glib2` (794). The page previously
   had to explain that its leader was not a GUI library at all; it now is.
   Qt 5 also overtakes GTK 3, 398 to 381.
-- **Audio**: `libvorbis` (125) overtakes `libsndfile` (121), and `openal`
-  climbs from fifth to fourth on 43 build edges.
-- **Video**: `dav1d` falls from fourth to seventh with zero build edges
-  while `aom`, `libass`, `x265`, and `svt-av1` rise past it.
+- **Audio**: `libvorbis` draws level with `libsndfile` at 121, having
+  trailed it 98 to 100, and `openal` climbs from fifth to fourth on 47
+  build edges.
+- **Video**: `aom`, `libass`, and `svt-av1` rise past `dav1d`, `x265`, and
+  `libvpx`.
 - **Imaging**: `openjpeg2` rises from sixth to fifth past `lcms2`, at 99
   build against 119 runtime — the most build-weighted library in its
   category.
-- **Graphics**: `pixman` edges past `libepoxy`. `cairo` leads on either
-  measure.
+- **Testing** is not a reordering but a category that was invisible:
+  `python-pytest` at 1,328 is the most-depended-upon test framework in the
+  ecosystem, 1,239 of those check-time, and recorded nothing at all before
+  build and check edges existed.
 
-### How to read the build column
+### Where the build column comes from, and how to read it
 
-**A nonzero build count is a floor, not a measure.** MSYS2 recipes declare
-a library needed at both build and run time only once, in `depends` —
-`SDL2_image` builds against SDL2 and lists it in `DEPENDS`, with
-`MAKEDEPENDS` carrying only `cc` and `autotools`. What `makedepends`
+Two sources were built and compared, because the first turned out not to
+be trustworthy on its own.
+
+`tools/import_build_dependencies.py` reads `%MAKEDEPENDS%` and
+`%CHECKDEPENDS%` from the pacman **repository databases** — what the built
+package records. `tools/import_recipe_dependencies.py` reads the same two
+fields from the **PKGBUILD trees** — the declaration makepkg actually
+consumes. Measured against each other, the recipe confirms **93.7%** of the
+database's edges and adds 10,151 more, 92% of them virtual provides.
+
+The decisive difference is the compiler. Recipes name
+`${MINGW_PACKAGE_PREFIX}-cc`; no package is called that, so the database
+importer dropped it, and **under that projection not one package in the
+ecosystem had a build edge to its own compiler.** Resolving provides makes
+`gcc` (4,991) and `clang` (4,776) the two most-declared build dependencies
+in the catalog. The recipe projection is the one composed; the database
+tool is kept for hosts without the recipe trees.
+
+**A nonzero build count is still a floor, not a measure.** MSYS2 recipes
+declare a library needed at both build and run time only once, in
+`depends` — `SDL2_image` builds against SDL2 and lists it in `DEPENDS`,
+with `MAKEDEPENDS` carrying only `cc` and `autotools`. What `makedepends`
 reliably carries is build-*only* dependencies: toolchains and build
 systems, header and code-generation packages, and `-devel` split packages
-on the MSYS side (87 of them take 1,036 build edges between them; `zlib-devel`
-alone has 111 against `zlib`'s 9 runtime).
-
-So the build column is evidence of use, and its absence is not evidence of
-non-use. Each category page repeats this where its own numbers depend on
-it.
+on the MSYS side. So the build column is evidence of use, and its absence
+is not evidence of non-use. Each category page repeats this where its own
+numbers depend on it.
 
 **Check-time edges are a Python phenomenon.** Outside testing they are
 essentially zero across all six other categories — the only non-testing
-entry anywhere is `gtk3` at 4.
+entry anywhere is `gtk3` at 4 — and inside testing they are dominated by
+`python-pytest` and its plugins.
 
-**Corrected 2026-08-02.** The testing row previously read `0` and this
-section said so was an artifact rather than a fact — the catalog projection
-carried no build-time or check-time edges, because
-`tools/import_repository_db.py` read `%DEPENDS%` and `%OPTDEPENDS%` from
-each package's `desc` record and dropped `%MAKEDEPENDS%` and
-`%CHECKDEPENDS%`.
-
-That is fixed. `model/build-dependencies/current.json` carries 54,035
-`build-depends-on` and 3,428 `check-depends-on` edges, and
-`build-depends-on` is now the largest single edge type in the composed
-graph — ahead of `runtime-depends-on` at 41,061.
-
-Two results followed, in opposite directions:
-
-- **Testing was an artifact.** The category goes from 1 dependent to 202,
-  and `python-pytest` turns out to have 1,262 dependents — 1,254 of them
-  check-time — making it the most-depended-upon test framework in the
-  ecosystem by an order of magnitude, previously invisible.
-- **Logging was not.** Every logging library records zero on both new edge
-  classes. Its low counts are a fact about how logging is consumed.
-
-The build-time graph is a genuinely different graph. Its leaders — `ninja`
-(4,455), `cmake` (4,194), `python-installer` (4,187), `python-build`
-(4,132), `python-setuptools` (3,206), `autotools` (2,593), `pkgconf`
-(2,081) — do not appear anywhere in a runtime ranking, and between them
-are declared by more packages than any runtime dependency in the catalog.
+The build-time graph is a genuinely different graph. Its leaders — `gcc`
+4,991, `clang` 4,776, `ninja` 4,340, `python-installer` 4,123, `cmake`
+4,081, `python-build` 4,072, `python-setuptools` 3,111, `autotools` 2,577,
+`pkgconf` 2,085 — do not appear anywhere in a runtime ranking, and between
+them are declared by more packages than any runtime dependency in the
+catalog.
 
 All seven category pages now carry both measures. No ranking in this
 section is runtime-only any more.

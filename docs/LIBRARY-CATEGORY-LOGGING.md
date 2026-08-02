@@ -8,7 +8,7 @@ model_refs:
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:catalog:current
-  - evidence:build-dependencies:current
+  - evidence:recipe-dependencies:current
 last_verified: 2026-08-02
 ---
 
@@ -67,8 +67,8 @@ That is a measured result and it is worth stating rather than padding.
 When this page was first written, the leading suspicion was that the counts
 were an artifact: the catalog projection carried no build-time or check-time
 edges, so a library used only at build time was invisible. That gap has
-since been closed — `model/build-dependencies/current.json` now carries
-54,035 `build-depends-on` and 3,428 `check-depends-on` edges — and it
+since been closed — `model/recipe-dependencies/current.json` now carries
+60,560 `build-depends-on` and 3,439 `check-depends-on` edges — and it
 **does not rescue this category**:
 
 | Library | Runtime | Build | Check |
@@ -80,8 +80,9 @@ since been closed — `model/build-dependencies/current.json` now carries
 | log4cxx | 0 | 0 | 0 |
 
 Zero across the whole category on both new edge classes. The same fix took
-the testing category from 1 dependent to 202 and surfaced `python-pytest`
-at 1,262, so the instrument works; logging simply has nothing there.
+the testing category from 1 dependent to 207 on its C and C++ side and
+surfaced `python-pytest` at 1,328, so the instrument works; logging simply
+has nothing there.
 
 The low counts are therefore a fact about how logging is consumed, not
 about how it was measured.
@@ -137,8 +138,8 @@ linked into a native program is in the territory described by
 
 - Runtime dependent counts, variant counts, versions, and licenses are
   **observed** from catalog snapshot `20260729T113151Z`. The zero build-time
-  and check-time counts are **observed** from the six MSYS2 repository
-  databases read 2026-08-02.
+  and check-time counts are **observed** from 3,956 PKGBUILD files in the
+  MSYS2 and MinGW-w64 recipe trees, parsed statically on 2026-08-02.
 - **`spdlog`'s upstream project page was not retrievable**: github.com
   returned 403 through this environment's proxy. The entity records the
   project URL from package metadata, which is observed, but no primary

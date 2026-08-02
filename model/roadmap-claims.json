@@ -1050,18 +1050,18 @@
         "min_files": 1
       }
     ],
-    "Carry build-time and check-time dependency edges in the catalog projection": [
+    "Carry build-time and check-time dependency edges from the PKGBUILD recipes": [
       {
         "type": "path_exists",
-        "path": "tools/import_build_dependencies.py"
+        "path": "tools/import_recipe_dependencies.py"
       },
       {
         "type": "path_exists",
-        "path": "tests/test_build_dependencies.py"
+        "path": "tests/test_recipe_dependencies.py"
       },
       {
         "type": "path_exists",
-        "path": "model/build-dependencies/current.json"
+        "path": "model/recipe-dependencies/current.json"
       },
       {
         "type": "term_in_docs",
@@ -1071,6 +1071,11 @@
       {
         "type": "term_in_docs",
         "term": "python-pytest",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "resolved_via",
         "min_files": 1
       }
     ]

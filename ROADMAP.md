@@ -1,5 +1,27 @@
 # Architecture Knowledge Base Roadmap
 
+Every item below is bound to a machine-checkable claim in
+[`model/roadmap-claims.json`](model/roadmap-claims.json), enforced by
+`tests/test_roadmap_claims.py`.
+
+The rules that test enforces:
+
+1. Every roadmap item must have a claim entry. An item with no stated,
+   checkable definition of done cannot appear here.
+2. Every `[x]` item's assertions must currently hold. A box cannot be
+   ticked while the evidence for it does not exist.
+3. `[ ]` items carry their assertions too — that is what "done" will mean
+   when the box is ticked.
+
+**Correction, 2026-08-02**: this file previously recorded 66 of 66 items
+complete. A charter audit ([Charter Drift Assessment](docs/CHARTER-DRIFT-ASSESSMENT.md))
+found that fifteen of those checkmarks covered work that was not written,
+and that several charter deliverables had no roadmap entry at all and so
+were invisible as work. The false checkmarks are cleared below with their
+disproving evidence, and the missing work is added as Increments 9–12.
+A checked box removes an item from the backlog, so a wrong one is more
+costly than a missing one.
+
 ## Increment 0 — Foundation
 
 - [x] Governing charter
@@ -17,6 +39,11 @@
 
 ## Increment 1 — Evidence and inventory pipeline
 
+The collection *pipeline* is built and tested. Its *coverage* is 2 of
+15,711 packages (`generated/coverage-assessment.json` →
+`package_payload_coverage.percent` = 0.013), so the extraction items below
+are cleared: the capability exists, the extraction has not been performed.
+
 - [x] Register official upstream sources
 - [x] Discover and ingest enabled repository package metadata through pacman
 - [x] Preserve content-addressed catalog snapshots and integrity manifests
@@ -25,14 +52,16 @@
 - [x] Support on-demand and Windows Scheduled Task refresh
 - [x] Ingest repository database archives directly
 - [x] Statically ingest package recipes without executing PKGBUILDs
-- [x] Extract installed and repository package-file manifests
-- [x] Extract PE imports, exports, subsystem, architecture, and debug metadata
-- [x] Extract static/import archive members
-- [x] Index headers, pkg-config files, and CMake metadata
+- [x] Build the deep-inventory collection pipeline
+- [ ] Extract installed and repository package-file manifests
+- [ ] Extract PE imports, exports, subsystem, architecture, and debug metadata
+- [ ] Extract static/import archive members
+- [ ] Index headers, pkg-config files, and CMake metadata
 - [x] Record artifact checksums, versions, retrieval dates, and licenses
 - [x] Produce reproducible deep-inventory snapshot manifest
-- [x] Extract and analyze uninstalled binary payloads from package archives
+- [ ] Extract and analyze uninstalled binary payloads from package archives
 - [x] Resolve recipe source checksums against downloaded upstream payloads
+- [ ] Run deep inventory across the installed package set
 
 ## Increment 2 — Ecosystem baseline
 
@@ -43,13 +72,26 @@
 - [x] MSYS2 versus MinGW-w64 role model
 - [x] Bounded runtime observation and current-environment report
 - [x] Environment comparison and migration matrix
+- [ ] Per-environment architecture pages for MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, and MINGW32
+
+The charter requires each environment documented separately against eleven
+attributes. The matrix above satisfies the roadmap item as worded but not
+the charter requirement, so the per-environment work is added rather than
+folded into the existing checkmark.
 
 ## Increment 3 — Runtime and package management
 
 - [x] MSYS runtime initialization
-- [x] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
-- [x] pacman architecture and transaction sequences
-- [x] repository, mirror, signing, key, cache, hook, and database models
+- [ ] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
+- [ ] pacman architecture and transaction sequences
+- [ ] repository, mirror, signing, key, cache, hook, and database models
+- [ ] msys-2.0.dll subsystem architecture pages
+
+Volume 3 is two pages. Of the subsystems named in the item above,
+`mount manager`, `environment manager`, `process manager`, and
+`signal manager` appear in zero documentation pages. Volume 7 is two
+pages; `package signing` and `repository layout` appear in zero pages,
+and no page documents the sync-db/local-db formats.
 
 ## Increment 4 — Toolchains and userland
 
@@ -57,22 +99,36 @@
 - [x] CMake, Meson, Autotools, Make, Ninja, and pkg-config
 - [x] GNU userland component deep dives
 - [x] generated-artifact and build-flow mappings
+- [ ] GNU Diffutils and GNU Patch pages
+- [ ] LLVM umbrella page covering IR, codegen, and the llvm-* tool family
 
 ## Increment 5 — Package and library catalog
 
 - [x] Repository-to-package inventory
-- [x] Package-to-file inventory
-- [x] Binary-to-DLL dependency graph
-- [x] Header and metadata indexes
+- [ ] Package-to-file inventory
+- [ ] Binary-to-DLL dependency graph
+- [ ] Header and metadata indexes
 - [x] Library family classification
 - [x] Reverse dependency and impact analysis
+- [ ] Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories
+
+The three cleared items are gated on Increment 1's extraction work:
+`generated/binary-dependency-report.md` is 22 lines and
+`generated/development-artifact-catalog.md` is 11 lines, both covering the
+same two packages. The seven library categories have zero pages and zero
+modelled entities, while `generated/library-candidates.md` ranks `libpng`
+tenth by dependent count across the whole catalog.
 
 ## Increment 6 — Git for Windows
 
 - [x] Distribution boundary and divergence
-- [x] Launcher, Git Bash, Mintty, and shell startup
-- [x] Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading
+- [ ] Launcher, Git Bash, Mintty, and shell startup
+- [ ] Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading
 - [x] Package and source mappings
+
+Volume 9 is four pages. `MSYS interaction`, `HTTP transport`, and
+`credential manager` appear in zero Volume 9 pages; Mintty appears once,
+inside a Mermaid node label.
 
 ## Increment 7 — Explorer
 
@@ -80,15 +136,70 @@
 - [x] Search, filters, breadcrumbs, and cross-references
 - [x] Progressive graph expansion and collapse
 - [x] Forward and reverse dependency navigation
-- [x] Layer, package, library, runtime, toolchain, and repository views
+- [ ] Layer, package, library, runtime, toolchain, and repository views
 - [x] Accessible SVG and textual fallbacks
 - [x] Large-graph performance tests
+- [ ] Graphical zoomable graph rendering in the explorer page
+
+The `layers` and `toolchains` views resolve to zero objects because
+`tools/build_explorer.py` filters them by an entity `kind` that is never
+emitted, while thirteen entities carry a `toolchain` tag and eight carry
+`build-system`. Six shipped diagram hyperlinks target those two views.
 
 ## Increment 8 — Assurance and operations
 
 - [x] Threat model and supply-chain analysis
-- [x] Performance experiments and hot-path analysis
+- [ ] Performance experiments and hot-path analysis
 - [x] Upgrade, rollback, repair, and migration guides
 - [x] Developer and operator workflows
 - [x] Initial continuous refresh, difference reports, and historical snapshots
 - [x] Multi-source refresh orchestration, retention policy, and alerting
+
+`docs/PERFORMANCE-EXPERIMENTS.md` benchmarks this repository's own
+`validate`/`generate-indexes`/`build-explorer` operations. It contains no
+analysis of MSYS2 hot paths — fork emulation, path translation, mount-table
+lookup, or pacman transaction cost — which is what the item names.
+
+## Increment 9 — Windows platform
+
+The charter's Scope section names eight Windows subsystems. None had a
+roadmap entry, so none was ever visible as outstanding work. Volume 2 is
+one page of 485 words.
+
+- [ ] NT Kernel, Win32, and Console/ConPTY boundaries
+- [ ] Filesystem, Registry, Security, and Networking boundaries
+- [ ] ADR recording the contextual-scope narrowing for Windows internals
+
+## Increment 10 — Diagram generation
+
+The charter's Diagram Hierarchy section required Level 0 through Level 7
+drill-down with every diagram hyperlinking to related diagrams. No roadmap
+item mentioned diagrams. The eight SVGs in `diagrams/` contain zero
+hyperlinks to each other, are hand-authored rather than generated, and
+their level semantics do not match the charter ladder.
+
+- [ ] Generate diagrams from the composed model
+- [ ] Emit PlantUML and Graphviz alongside SVG
+- [ ] Renumber levels to the charter ladder and link parent, child, and sibling
+- [ ] Per-object dependency subgraphs on documentation pages
+
+## Increment 11 — Documentation as code
+
+The companion objective requires diagrams, indexes, reports, and repetitive
+object pages to be generated from the model. No tool in `tools/` writes
+into `docs/`; all 253 pages are hand-authored.
+
+- [ ] Generate mechanical object-page sections from the composed model
+- [ ] Validate documentation pages in `tools/akb.py`
+- [ ] Enforce the model schemas with jsonschema
+- [x] Enforce roadmap claims against evidence
+
+## Increment 12 — Volume balance
+
+Volume 6 holds 157 of 253 pages and 66.9% of all prose; Volume 18 has none.
+Eleven volumes hold fourteen pages between them.
+
+- [ ] Volume 17 performance architecture for the ecosystem
+- [ ] Volume 18 developer guide
+- [ ] Per-volume page and heading metrics in the coverage ledger
+- [ ] Replace the ledger's uniform "Partial" with the charter's eight coverage states

@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Machine-checkable definition of done for every ROADMAP.md item. Enforced by tests/test_roadmap_claims.py: every roadmap item must appear here, and every checked item's assertions must currently hold. Unchecked items carry their assertions as the gate for ticking the box later.",
+  "assertion_types": {
+    "path_exists": "path (repo-relative file or directory) exists",
+    "doc_exists": "docs/<doc> exists",
+    "min_lines": "path has at least lines lines",
+    "min_docs_in_volume": "at least count docs carry frontmatter volume: volume",
+    "term_in_volume": "term appears (case-insensitive) in at least min_files docs of that volume",
+    "term_in_docs": "term appears in at least min_files docs repo-wide, excluding CHARTER-DRIFT-ASSESSMENT.md",
+    "min_graph_entities_of_kind": "composed graph has at least count entities of kind",
+    "min_inventory_entities_of_kind": "model/inventory/current.json has at least count entities of kind",
+    "explorer_view_nonempty": "the named tools/build_explorer.py view resolves to at least one entity",
+    "min_observed_packages": "generated/coverage-assessment.json package_payload_coverage.observed_packages >= count"
+  },
+  "items": {
+    "Governing charter": [{ "type": "path_exists", "path": "charter/PROJECT-CHARTER.md" }],
+    "Information architecture": [{ "type": "path_exists", "path": "model/README.md" }],
+    "Twenty-volume master index": [{ "type": "doc_exists", "doc": "MASTER-VOLUME-INDEX.md" }],
+    "Documentation standard": [{ "type": "doc_exists", "doc": "DOCUMENTATION-STANDARD.md" }],
+    "Typed graph schema": [{ "type": "path_exists", "path": "model/schema/architecture-graph.schema.json" }],
+    "Entity and relationship vocabularies": [
+      { "type": "path_exists", "path": "model/vocabularies/entity-kinds.json" },
+      { "type": "path_exists", "path": "model/vocabularies/relationship-types.json" }
+    ],
+    "Bootstrap graph": [{ "type": "path_exists", "path": "model/graph.json" }],
+    "Source registry": [{ "type": "path_exists", "path": "evidence/source-registry.json" }],
+    "Validation and index generation": [
+      { "type": "path_exists", "path": "tools/akb.py" },
+      { "type": "path_exists", "path": "generated/entity-index.md" }
+    ],
+    "Architecture Decision Record template": [{ "type": "path_exists", "path": "charter/adr/TEMPLATE.md" }],
+    "Claim-level evidence implementation": [{ "type": "path_exists", "path": "generated/claim-evidence-index.md" }],
+    "Coverage metrics and quality gates": [
+      { "type": "path_exists", "path": "tools/assess_akb_coverage.py" },
+      { "type": "path_exists", "path": "generated/coverage-report.md" }
+    ],
+
+    "Register official upstream sources": [
+      { "type": "path_exists", "path": "evidence/source-registry.json" },
+      { "type": "path_exists", "path": "evidence/SOURCE-REGISTRY.md" }
+    ],
+    "Discover and ingest enabled repository package metadata through pacman": [
+      { "type": "path_exists", "path": "tools/import_package_catalog.py" },
+      { "type": "min_graph_entities_of_kind", "kind": "package", "count": 1000 }
+    ],
+    "Preserve content-addressed catalog snapshots and integrity manifests": [
+      { "type": "path_exists", "path": "evidence/snapshots" }
+    ],
+    "Generate package dependency and reverse-navigation relationships": [
+      { "type": "min_lines", "path": "generated/reverse-dependency-impact.md", "lines": 1000 }
+    ],
+    "Produce package addition, removal, and version-change reports": [
+      { "type": "path_exists", "path": "generated/catalog-change-report.md" }
+    ],
+    "Support on-demand and Windows Scheduled Task refresh": [
+      { "type": "path_exists", "path": "tools/Update-Akb.ps1" },
+      { "type": "path_exists", "path": "tools/Register-AkbRefreshTask.ps1" }
+    ],
+    "Ingest repository database archives directly": [
+      { "type": "path_exists", "path": "tools/import_repository_db.py" }
+    ],
+    "Statically ingest package recipes without executing PKGBUILDs": [
+      { "type": "path_exists", "path": "tools/import_recipe_tree.py" }
+    ],
+    "Build the deep-inventory collection pipeline": [
+      { "type": "path_exists", "path": "tools/deep_inventory.py" },
+      { "type": "path_exists", "path": "tools/import_deep_inventory.py" },
+      { "type": "path_exists", "path": "tests/test_deep_inventory.py" }
+    ],
+    "Extract installed and repository package-file manifests": [
+      { "type": "min_observed_packages", "count": 100 }
+    ],
+    "Extract PE imports, exports, subsystem, architecture, and debug metadata": [
+      { "type": "min_inventory_entities_of_kind", "kind": "dll", "count": 100 }
+    ],
+    "Extract static/import archive members": [
+      { "type": "min_inventory_entities_of_kind", "kind": "static-library", "count": 25 },
+      { "type": "min_inventory_entities_of_kind", "kind": "import-library", "count": 25 }
+    ],
+    "Index headers, pkg-config files, and CMake metadata": [
+      { "type": "min_inventory_entities_of_kind", "kind": "header", "count": 100 },
+      { "type": "min_inventory_entities_of_kind", "kind": "pkg-config-module", "count": 25 }
+    ],
+    "Record artifact checksums, versions, retrieval dates, and licenses": [
+      { "type": "path_exists", "path": "model/inventory/current.json" }
+    ],
+    "Produce reproducible deep-inventory snapshot manifest": [
+      { "type": "path_exists", "path": "evidence/inventory-snapshots" }
+    ],
+    "Extract and analyze uninstalled binary payloads from package archives": [
+      { "type": "path_exists", "path": "tools/import_package_archives.py" },
+      { "type": "min_lines", "path": "generated/binary-dependency-report.md", "lines": 200 }
+    ],
+    "Resolve recipe source checksums against downloaded upstream payloads": [
+      { "type": "path_exists", "path": "tools/verify_recipe_sources.py" }
+    ],
+    "Run deep inventory across the installed package set": [
+      { "type": "min_observed_packages", "count": 100 }
+    ],
+
+    "L0 ecosystem context": [{ "type": "doc_exists", "doc": "ECOSYSTEM-CONTEXT.md" }],
+    "L1 eight-layer architecture": [{ "type": "doc_exists", "doc": "EIGHT-LAYER-ARCHITECTURE.md" }],
+    "L2 domain decomposition": [{ "type": "doc_exists", "doc": "DOMAIN-DECOMPOSITION.md" }],
+    "Terminology and boundary decisions": [{ "type": "doc_exists", "doc": "TERMINOLOGY-AND-BOUNDARIES.md" }],
+    "MSYS2 versus MinGW-w64 role model": [{ "type": "doc_exists", "doc": "MSYS2-AND-MINGW-W64-ROLE-MODEL.md" }],
+    "Bounded runtime observation and current-environment report": [
+      { "type": "doc_exists", "doc": "RUNTIME-OBSERVATION-CONTRACT.md" },
+      { "type": "path_exists", "path": "tools/collect_runtime_observation.py" }
+    ],
+    "Environment comparison and migration matrix": [{ "type": "doc_exists", "doc": "RUNTIME-ENVIRONMENTS.md" }],
+    "Per-environment architecture pages for MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, and MINGW32": [
+      { "type": "min_docs_in_volume", "volume": 4, "count": 7 },
+      { "type": "term_in_volume", "volume": 4, "term": "CLANGARM64", "min_files": 1 },
+      { "type": "term_in_volume", "volume": 4, "term": "executable format", "min_files": 2 }
+    ],
+
+    "MSYS runtime initialization": [{ "type": "doc_exists", "doc": "MSYS-RUNTIME-INITIALIZATION.md" }],
+    "Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models": [
+      { "type": "min_docs_in_volume", "volume": 3, "count": 8 },
+      { "type": "term_in_docs", "term": "mount manager", "min_files": 1 },
+      { "type": "term_in_docs", "term": "signal manager", "min_files": 1 },
+      { "type": "term_in_docs", "term": "process manager", "min_files": 1 }
+    ],
+    "pacman architecture and transaction sequences": [
+      { "type": "doc_exists", "doc": "PACMAN-ARCHITECTURE.md" },
+      { "type": "term_in_volume", "volume": 7, "term": "local database", "min_files": 1 },
+      { "type": "term_in_volume", "volume": 7, "term": "dependency resolution", "min_files": 1 }
+    ],
+    "repository, mirror, signing, key, cache, hook, and database models": [
+      { "type": "min_docs_in_volume", "volume": 7, "count": 5 },
+      { "type": "term_in_docs", "term": "package signing", "min_files": 1 },
+      { "type": "term_in_docs", "term": "repository layout", "min_files": 1 }
+    ],
+    "msys-2.0.dll subsystem architecture pages": [
+      { "type": "min_docs_in_volume", "volume": 3, "count": 8 }
+    ],
+
+    "GCC, LLVM, Binutils, Clang, LLD, GDB, and LLDB": [
+      { "type": "doc_exists", "doc": "GNU-GCC.md" },
+      { "type": "doc_exists", "doc": "GNU-BINUTILS.md" },
+      { "type": "doc_exists", "doc": "CLANG.md" },
+      { "type": "doc_exists", "doc": "LLD.md" },
+      { "type": "doc_exists", "doc": "GNU-GDB.md" },
+      { "type": "doc_exists", "doc": "LLDB.md" }
+    ],
+    "CMake, Meson, Autotools, Make, Ninja, and pkg-config": [
+      { "type": "doc_exists", "doc": "CMAKE.md" },
+      { "type": "doc_exists", "doc": "MESON.md" },
+      { "type": "doc_exists", "doc": "NINJA.md" },
+      { "type": "doc_exists", "doc": "PKGCONF.md" },
+      { "type": "doc_exists", "doc": "GNU-MAKE.md" }
+    ],
+    "GNU userland component deep dives": [{ "type": "min_docs_in_volume", "volume": 5, "count": 15 }],
+    "generated-artifact and build-flow mappings": [{ "type": "doc_exists", "doc": "BUILD-SYSTEM-ROLE-MODEL.md" }],
+    "GNU Diffutils and GNU Patch pages": [
+      { "type": "doc_exists", "doc": "GNU-DIFFUTILS.md" },
+      { "type": "doc_exists", "doc": "GNU-PATCH.md" }
+    ],
+    "LLVM umbrella page covering IR, codegen, and the llvm-* tool family": [
+      { "type": "doc_exists", "doc": "LLVM.md" }
+    ],
+
+    "Repository-to-package inventory": [
+      { "type": "doc_exists", "doc": "REPOSITORY-PACKAGE-INVENTORY.md" },
+      { "type": "min_lines", "path": "generated/package-catalog.md", "lines": 1000 }
+    ],
+    "Package-to-file inventory": [{ "type": "min_observed_packages", "count": 100 }],
+    "Binary-to-DLL dependency graph": [
+      { "type": "doc_exists", "doc": "BINARY-DLL-DEPENDENCY-GRAPH.md" },
+      { "type": "min_lines", "path": "generated/binary-dependency-report.md", "lines": 200 }
+    ],
+    "Header and metadata indexes": [
+      { "type": "doc_exists", "doc": "HEADER-AND-METADATA-INDEXES.md" },
+      { "type": "min_lines", "path": "generated/development-artifact-catalog.md", "lines": 200 }
+    ],
+    "Library family classification": [{ "type": "doc_exists", "doc": "LIBRARY-FAMILY-CLASSIFICATION.md" }],
+    "Reverse dependency and impact analysis": [
+      { "type": "doc_exists", "doc": "REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md" },
+      { "type": "min_lines", "path": "generated/reverse-dependency-impact.md", "lines": 1000 }
+    ],
+    "Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories": [
+      { "type": "term_in_docs", "term": "libpng", "min_files": 1 },
+      { "type": "term_in_docs", "term": "freetype", "min_files": 1 },
+      { "type": "term_in_docs", "term": "gstreamer", "min_files": 1 }
+    ],
+
+    "Distribution boundary and divergence": [{ "type": "doc_exists", "doc": "GIT-FOR-WINDOWS-BOUNDARY.md" }],
+    "Launcher, Git Bash, Mintty, and shell startup": [
+      { "type": "doc_exists", "doc": "GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md" },
+      { "type": "term_in_volume", "volume": 9, "term": "mintty", "min_files": 1 }
+    ],
+    "Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading": [
+      { "type": "term_in_volume", "volume": 9, "term": "MSYS interaction", "min_files": 1 },
+      { "type": "term_in_volume", "volume": 9, "term": "HTTP transport", "min_files": 1 },
+      { "type": "term_in_volume", "volume": 9, "term": "credential manager", "min_files": 1 }
+    ],
+    "Package and source mappings": [{ "type": "doc_exists", "doc": "GIT-FOR-WINDOWS-PACKAGE-SOURCE-MAPPINGS.md" }],
+
+    "Stable object routes and deep links": [
+      { "type": "doc_exists", "doc": "EXPLORER-STABLE-ROUTES.md" },
+      { "type": "path_exists", "path": "generated/explorer/index.html" }
+    ],
+    "Search, filters, breadcrumbs, and cross-references": [
+      { "type": "doc_exists", "doc": "EXPLORER-SEARCH-AND-NAVIGATION.md" }
+    ],
+    "Progressive graph expansion and collapse": [
+      { "type": "doc_exists", "doc": "EXPLORER-PROGRESSIVE-EXPANSION.md" }
+    ],
+    "Forward and reverse dependency navigation": [
+      { "type": "doc_exists", "doc": "EXPLORER-DEPENDENCY-NAVIGATION.md" }
+    ],
+    "Layer, package, library, runtime, toolchain, and repository views": [
+      { "type": "doc_exists", "doc": "EXPLORER-DOMAIN-VIEWS.md" },
+      { "type": "explorer_view_nonempty", "view": "layers" },
+      { "type": "explorer_view_nonempty", "view": "packages" },
+      { "type": "explorer_view_nonempty", "view": "libraries" },
+      { "type": "explorer_view_nonempty", "view": "runtimes" },
+      { "type": "explorer_view_nonempty", "view": "toolchains" },
+      { "type": "explorer_view_nonempty", "view": "repositories" }
+    ],
+    "Accessible SVG and textual fallbacks": [
+      { "type": "doc_exists", "doc": "EXPLORER-ACCESSIBLE-FALLBACKS.md" },
+      { "type": "path_exists", "path": "generated/explorer/overview.txt" }
+    ],
+    "Large-graph performance tests": [
+      { "type": "doc_exists", "doc": "EXPLORER-LARGE-GRAPH-PERFORMANCE.md" },
+      { "type": "path_exists", "path": "tools/benchmark_akb.py" }
+    ],
+    "Graphical zoomable graph rendering in the explorer page": [
+      { "type": "term_in_docs", "term": "viewBox", "min_files": 1 }
+    ],
+
+    "Threat model and supply-chain analysis": [{ "type": "doc_exists", "doc": "THREAT-MODEL-AND-SUPPLY-CHAIN.md" }],
+    "Performance experiments and hot-path analysis": [
+      { "type": "min_docs_in_volume", "volume": 17, "count": 2 },
+      { "type": "term_in_volume", "volume": 17, "term": "path translation", "min_files": 1 }
+    ],
+    "Upgrade, rollback, repair, and migration guides": [
+      { "type": "doc_exists", "doc": "UPGRADE-ROLLBACK-REPAIR-MIGRATION.md" }
+    ],
+    "Developer and operator workflows": [{ "type": "doc_exists", "doc": "DEVELOPER-OPERATOR-WORKFLOWS.md" }],
+    "Initial continuous refresh, difference reports, and historical snapshots": [
+      { "type": "path_exists", "path": "generated/catalog-changes.json" },
+      { "type": "path_exists", "path": "evidence/snapshots" }
+    ],
+    "Multi-source refresh orchestration, retention policy, and alerting": [
+      { "type": "doc_exists", "doc": "MULTI-SOURCE-REFRESH-POLICY.md" },
+      { "type": "path_exists", "path": "evidence/refresh-policy.json" }
+    ],
+
+    "NT Kernel, Win32, and Console/ConPTY boundaries": [
+      { "type": "min_docs_in_volume", "volume": 2, "count": 4 },
+      { "type": "term_in_volume", "volume": 2, "term": "ConPTY", "min_files": 1 }
+    ],
+    "Filesystem, Registry, Security, and Networking boundaries": [
+      { "type": "min_docs_in_volume", "volume": 2, "count": 8 },
+      { "type": "term_in_volume", "volume": 2, "term": "Registry", "min_files": 1 }
+    ],
+    "ADR recording the contextual-scope narrowing for Windows internals": [
+      { "type": "path_exists", "path": "charter/adr/0001-windows-platform-contextual-scope.md" }
+    ],
+
+    "Generate diagrams from the composed model": [
+      { "type": "path_exists", "path": "tools/build_diagrams.py" }
+    ],
+    "Emit PlantUML and Graphviz alongside SVG": [
+      { "type": "path_exists", "path": "diagrams/level-0.puml" },
+      { "type": "path_exists", "path": "diagrams/level-0.dot" }
+    ],
+    "Renumber levels to the charter ladder and link parent, child, and sibling": [
+      { "type": "path_exists", "path": "tools/build_diagrams.py" },
+      { "type": "term_in_docs", "term": "level-5.svg", "min_files": 1 }
+    ],
+    "Per-object dependency subgraphs on documentation pages": [
+      { "type": "term_in_docs", "term": "```mermaid", "min_files": 100 }
+    ],
+
+    "Generate mechanical object-page sections from the composed model": [
+      { "type": "path_exists", "path": "tools/build_object_pages.py" }
+    ],
+    "Validate documentation pages in `tools/akb.py`": [
+      { "type": "term_in_docs", "term": "validate_docs", "min_files": 1 }
+    ],
+    "Enforce the model schemas with jsonschema": [
+      { "type": "path_exists", "path": "tests/test_schema_conformance.py" }
+    ],
+    "Enforce roadmap claims against evidence": [
+      { "type": "path_exists", "path": "model/roadmap-claims.json" },
+      { "type": "path_exists", "path": "tests/test_roadmap_claims.py" }
+    ],
+
+    "Volume 17 performance architecture for the ecosystem": [
+      { "type": "min_docs_in_volume", "volume": 17, "count": 2 }
+    ],
+    "Volume 18 developer guide": [{ "type": "min_docs_in_volume", "volume": 18, "count": 1 }],
+    "Per-volume page and heading metrics in the coverage ledger": [
+      { "type": "term_in_docs", "term": "pages / ", "min_files": 1 }
+    ],
+    "Replace the ledger's uniform \"Partial\" with the charter's eight coverage states": [
+      { "type": "term_in_docs", "term": "Not started", "min_files": 1 }
+    ]
+  }
+}

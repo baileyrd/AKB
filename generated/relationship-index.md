@@ -77250,6 +77250,14 @@
 | relationship:layers:msys2-contains-layer-6 | contains | ecosystem:msys2:msys2 | layer:msys2:6-toolchains-and-build-systems | partial |
 | relationship:layers:msys2-contains-layer-7 | contains | ecosystem:msys2:msys2 | layer:msys2:7-userland-and-libraries | partial |
 | relationship:layers:msys2-contains-layer-8 | contains | ecosystem:msys2:msys2 | layer:msys2:8-users-and-automation | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-environment-manager | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:environment-manager | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-filesystem-layer | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:filesystem-layer | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-mount-manager | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:mount-manager | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-path-conversion | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:path-conversion | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-posix-api | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:posix-api | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-process-manager | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:process-manager | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-pty-console | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:pty-console | partial |
+| relationship:msys-runtime:msys-2-0-dll-contains-signal-manager | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:signal-manager | partial |
 | relationship:ssh-curl-git:curl-packaged-by-package | packaged-by | component:curl:curl | package:msys2:curl | verified |
 | relationship:ssh-curl-git:curl-requires-ca-certificates | requires | component:curl:curl | library:mozilla:ca-certificates | verified |
 | relationship:ssh-curl-git:curl-requires-libcurl | requires | component:curl:curl | library:curl:libcurl | verified |

@@ -5,8 +5,9 @@ volume: 3
 status: partial
 model_refs:
   - runtime:msys2:msys-2.0.dll
-evidence_refs: []
-last_verified: 2026-07-30
+evidence_refs:
+  - evidence:msys2:runtime-behavior-probes-2026-07-30
+last_verified: 2026-08-02
 ---
 
 # MSYS Runtime Behavior Architecture Map
@@ -16,14 +17,21 @@ is the navigation companion to this map. It distinguishes MSYS-dependent
 execution from native environment execution before drilling into individual
 adaptation concerns.
 
-| Concern | MSYS runtime responsibility | Windows-facing boundary | Required deep evidence |
-| --- | --- | --- | --- |
-| Process creation | Present POSIX process semantics where supported | Windows process creation and handles | Runtime source and controlled probes |
-| `fork()` / `exec()` | Adapt POSIX lifecycle expectations | Process image, inheritance, loader | Version-qualified implementation analysis |
-| Signals | Map POSIX signal behavior to available host mechanisms | Threads, processes, console control | Behavioral test matrix |
-| Paths and mounts | Translate MSYS paths and virtual mount rules | Drive/UNC/filesystem namespaces | Mount table and path-conversion observations |
-| Filesystem and symlinks | Present POSIX-like file operations | NTFS/ReFS/Win32 semantics | Filesystem probes by host/version |
-| PTY and console | Provide terminal-facing abstractions | Console, ConPTY, pipes | Terminal integration tests |
+**Update, 2026-08-02**: each row below now has its own subsystem page, and
+the runtime itself has one at [msys-2.0.dll](MSYS-2-0-DLL.md). The rows
+remain the responsibility summary; the pages carry the architecture and the
+per-subsystem evidence boundary.
+
+| Concern | Subsystem page | MSYS runtime responsibility | Windows-facing boundary | Required deep evidence |
+| --- | --- | --- | --- | --- |
+| Process creation | [Process Manager](MSYS-PROCESS-MANAGER.md) | Present POSIX process semantics where supported | Windows process creation and handles | Runtime source and controlled probes |
+| `fork()` / `exec()` | [Process Manager](MSYS-PROCESS-MANAGER.md) | Adapt POSIX lifecycle expectations | Process image, inheritance, loader | Version-qualified implementation analysis |
+| Signals | [Signal Manager](MSYS-SIGNAL-MANAGER.md) | Map POSIX signal behavior to available host mechanisms | Threads, processes, console control | Behavioral test matrix |
+| Paths and mounts | [Path Conversion](MSYS-PATH-CONVERSION.md), [Mount Manager](MSYS-MOUNT-MANAGER.md) | Translate MSYS paths and virtual mount rules | Drive/UNC/filesystem namespaces | Mount table and path-conversion observations |
+| Filesystem and symlinks | [Filesystem Layer](MSYS-FILESYSTEM-LAYER.md) | Present POSIX-like file operations | NTFS/ReFS/Win32 semantics | Filesystem probes by host/version |
+| PTY and console | [PTY and Console](MSYS-PTY-AND-CONSOLE.md) | Provide terminal-facing abstractions | Console, ConPTY, pipes | Terminal integration tests |
+| Environment | [Environment Manager](MSYS-ENVIRONMENT-MANAGER.md) | Store and convert environment variables at the boundary | Windows process environment block | Conversion observations |
+| POSIX API | [POSIX API Surface](MSYS-POSIX-API.md) | Export the POSIX C API and translate to Win32 | Win32 API | Exported-symbol and header inventory |
 
 ## Boundary Rule
 

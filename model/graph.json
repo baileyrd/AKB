@@ -8,6 +8,206 @@
   },
   "entities": [
     {
+      "id": "subsystem:msys2:process-manager",
+      "kind": "subsystem",
+      "name": "Process Manager",
+      "summary": "POSIX process creation, fork emulation, exec, and process-table management within msys-2.0.dll. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:signal-manager",
+      "kind": "subsystem",
+      "name": "Signal Manager",
+      "summary": "POSIX signal generation, delivery, and disposition mapped onto Windows thread and process primitives. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:path-conversion",
+      "kind": "subsystem",
+      "name": "Path Conversion",
+      "summary": "Translation between POSIX path forms and Win32 path forms at the process and argument boundary. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:mount-manager",
+      "kind": "subsystem",
+      "name": "Mount Manager",
+      "summary": "The virtual mount table that maps POSIX path prefixes onto Windows filesystem locations. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:filesystem-layer",
+      "kind": "subsystem",
+      "name": "Filesystem Layer",
+      "summary": "POSIX file-operation semantics, including symlink representation, over NTFS and Win32 file APIs. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:pty-console",
+      "kind": "subsystem",
+      "name": "PTY and Console",
+      "summary": "Pseudo-terminal allocation and the terminal-device namespace bridging POSIX terminal semantics to Windows console and ConPTY. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:environment-manager",
+      "kind": "subsystem",
+      "name": "Environment Manager",
+      "summary": "Environment-variable storage and the POSIX/Win32 conversion applied when crossing the process boundary. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "subsystem:msys2:posix-api",
+      "kind": "subsystem",
+      "name": "POSIX API Surface",
+      "summary": "The POSIX C API msys-2.0.dll exports to MSYS-linked programs, and the boundary at which calls become Win32 calls. Modeled 2026-08-02. The charter requires each MSYS runtime subsystem to have its own architecture; they existed only as rows in a responsibility table.",
+      "status": "partial",
+      "confidence": "medium",
+      "authority": "MSYS2",
+      "aliases": [],
+      "tags": [
+        "subsystem",
+        "posix-compatibility"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "parent_runtime": "runtime:msys2:msys-2.0.dll"
+      },
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
       "id": "ecosystem:msys2:msys2",
       "kind": "ecosystem",
       "name": "MSYS2",
@@ -3822,6 +4022,118 @@
     }
   ],
   "relationships": [
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-process-manager",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:process-manager",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-signal-manager",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:signal-manager",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-path-conversion",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:path-conversion",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-mount-manager",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:mount-manager",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-filesystem-layer",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:filesystem-layer",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-pty-console",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:pty-console",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-environment-manager",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:environment-manager",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:msys-runtime:msys-2-0-dll-contains-posix-api",
+      "type": "contains",
+      "source": "runtime:msys2:msys-2.0.dll",
+      "target": "subsystem:msys2:posix-api",
+      "status": "partial",
+      "confidence": "medium",
+      "scope": "runtime-subsystem",
+      "condition": "Subsystem decomposition of the MSYS POSIX runtime, modeled 2026-08-02 from the responsibility map. Boundaries are documented responsibilities, not observed module boundaries in the runtime binary.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:cygwin:user-guide-2026-08-02"
+      ]
+    },
     {
       "id": "relationship:bootstrap:msys2-on-windows",
       "type": "requires",
@@ -12297,6 +12609,26 @@
     }
   ],
   "evidence": [
+    {
+      "id": "evidence:cygwin:user-guide-2026-08-02",
+      "class": "primary",
+      "title": "Cygwin User's Guide",
+      "locator": "https://cygwin.com/cygwin-ug-net/cygwin-ug-net.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Canonical documentation for the Cygwin POSIX emulation layer from which the MSYS2 runtime is derived. Cited for documented POSIX-adaptation behavior. MSYS2's runtime is a fork with its own path-translation and mount behavior, so Cygwin documentation establishes the derived design, not MSYS2-specific parity."
+    },
+    {
+      "id": "evidence:msys2:runtime-behavior-probes-2026-07-30",
+      "class": "observed",
+      "title": "Bounded MSYS runtime behavior probes (MSYS 3.6.10, x86_64)",
+      "locator": "docs/MSYS-RUNTIME-BEHAVIOR-MAP.md#controlled-local-observation",
+      "retrieved_at": "2026-07-30T00:00:00Z",
+      "upstream_version": "3.6.10",
+      "integrity": null,
+      "notes": "Five bounded probes run through the isolated MSYS x86_64 shell by the --behavior collector: process lifecycle, shell exec, USR1 signal delivery, symlink creation and classification, and terminal-device namespace presence. Five-second bound per probe. Raw output retained locally per the retention policy rather than committed. Establishes exact command outcomes only, not POSIX parity."
+    },
     {
       "id": "evidence:repo:self-audit-2026-08-02",
       "class": "derived",

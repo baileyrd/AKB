@@ -337,6 +337,11 @@
         "type": "term_in_docs",
         "term": "process manager",
         "min_files": 1
+      },
+      {
+        "type": "min_graph_entities_of_kind",
+        "kind": "subsystem",
+        "count": 8
       }
     ],
     "pacman architecture and transaction sequences": [

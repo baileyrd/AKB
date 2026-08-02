@@ -148355,7 +148355,7 @@
 - Kind: `runtime`
 - Status: `partial`
 - Evidence: none recorded
-- Outgoing relationships: 0
+- Outgoing relationships: 8
 - Incoming relationships: 71
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
@@ -148364,5 +148364,77 @@
 - Kind: `static-library`
 - Status: `verified`
 - Evidence: evidence:inventory:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:environment-manager`
+
+- Name: Environment Manager
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:filesystem-layer`
+
+- Name: Filesystem Layer
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:mount-manager`
+
+- Name: Mount Manager
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:path-conversion`
+
+- Name: Path Conversion
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:posix-api`
+
+- Name: POSIX API Surface
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:process-manager`
+
+- Name: Process Manager
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:pty-console`
+
+- Name: PTY and Console
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `subsystem:msys2:signal-manager`
+
+- Name: Signal Manager
+- Kind: `subsystem`
+- Status: `partial`
+- Evidence: evidence:cygwin:user-guide-2026-08-02
 - Outgoing relationships: 0
 - Incoming relationships: 1

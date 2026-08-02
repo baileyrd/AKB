@@ -16487,5 +16487,13 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3101 |
 | repository:msys2:msys | repository | msys | verified | 0 | 799 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3899 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 0 | 71 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 8 | 71 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |
+| subsystem:msys2:environment-manager | subsystem | Environment Manager | partial | 0 | 1 |
+| subsystem:msys2:filesystem-layer | subsystem | Filesystem Layer | partial | 0 | 1 |
+| subsystem:msys2:mount-manager | subsystem | Mount Manager | partial | 0 | 1 |
+| subsystem:msys2:path-conversion | subsystem | Path Conversion | partial | 0 | 1 |
+| subsystem:msys2:posix-api | subsystem | POSIX API Surface | partial | 0 | 1 |
+| subsystem:msys2:process-manager | subsystem | Process Manager | partial | 0 | 1 |
+| subsystem:msys2:pty-console | subsystem | PTY and Console | partial | 0 | 1 |
+| subsystem:msys2:signal-manager | subsystem | Signal Manager | partial | 0 | 1 |

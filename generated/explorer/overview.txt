@@ -16486,8 +16486,24 @@ Objects
 - repository:msys2:ucrt64 (repository): ucrt64
 - runtime:msys2:msys-2.0.dll (runtime): msys-2.0.dll
 - static-library:msys2:/ucrt64/lib/libz.a (static-library): /ucrt64/lib/libz.a
+- subsystem:msys2:environment-manager (subsystem): Environment Manager
+- subsystem:msys2:filesystem-layer (subsystem): Filesystem Layer
+- subsystem:msys2:mount-manager (subsystem): Mount Manager
+- subsystem:msys2:path-conversion (subsystem): Path Conversion
+- subsystem:msys2:posix-api (subsystem): POSIX API Surface
+- subsystem:msys2:process-manager (subsystem): Process Manager
+- subsystem:msys2:pty-console (subsystem): PTY and Console
+- subsystem:msys2:signal-manager (subsystem): Signal Manager
 
 Relationships
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:process-manager
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:signal-manager
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:path-conversion
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:mount-manager
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:filesystem-layer
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:pty-console
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:environment-manager
+- runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:posix-api
 - ecosystem:msys2:msys2 --requires--> platform:microsoft:windows
 - environment:msys2:msys --uses-runtime--> runtime:msys2:msys-2.0.dll
 - ecosystem:msys2:msys2 --contains--> layer:msys2:1-windows-kernel-services

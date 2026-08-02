@@ -84,16 +84,20 @@ goes from 1 page to 7.
 ## Increment 3 — Runtime and package management
 
 - [x] MSYS runtime initialization
-- [ ] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
+- [x] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
 - [ ] pacman architecture and transaction sequences
 - [ ] repository, mirror, signing, key, cache, hook, and database models
-- [ ] msys-2.0.dll subsystem architecture pages
+- [x] msys-2.0.dll subsystem architecture pages
 
-Volume 3 is two pages. Of the subsystems named in the item above,
-`mount manager`, `environment manager`, `process manager`, and
-`signal manager` appear in zero documentation pages. Volume 7 is two
-pages; `package signing` and `repository layout` appear in zero pages,
-and no page documents the sync-db/local-db formats.
+**Partly closed 2026-08-02.** Volume 3 goes from 2 pages to 11: the runtime
+itself now has a page, and each of its eight documented subsystems has one,
+modeled as `subsystem:msys2:*` entities under `runtime:msys2:msys-2.0.dll`.
+The pages carry the five bounded 2026-07-30 probes where they apply and
+state plainly where they do not — path conversion, the mount table, and
+environment conversion have no observation at all.
+
+Volume 7 remains two pages; `package signing` and `repository layout` appear
+in zero pages, and no page documents the sync-db/local-db formats.
 
 ## Increment 4 — Toolchains and userland
 

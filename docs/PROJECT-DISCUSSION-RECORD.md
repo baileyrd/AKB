@@ -1,3 +1,13 @@
+---
+id: doc:volume-20:project-discussion-record
+title: AKB Project Discussion Record
+volume: 20
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # AKB Project Discussion Record
 
 ## Document status

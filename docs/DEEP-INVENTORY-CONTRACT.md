@@ -1,3 +1,13 @@
+---
+id: doc:volume-11:deep-inventory-contract
+title: Deep Inventory Evidence Contract
+volume: 11
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Deep Inventory Evidence Contract
 
 ## Purpose

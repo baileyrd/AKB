@@ -1,3 +1,13 @@
+---
+id: doc:volume-4:runtime-observation-contract
+title: Runtime Observation Contract
+volume: 4
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Runtime Observation Contract
 
 Bootstrap 0.4 records bounded, local observations for one active MSYS2

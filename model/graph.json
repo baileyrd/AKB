@@ -12298,6 +12298,16 @@
   ],
   "evidence": [
     {
+      "id": "evidence:repo:self-audit-2026-08-02",
+      "class": "derived",
+      "title": "AKB charter drift audit (repository self-audit)",
+      "locator": "docs/CHARTER-DRIFT-ASSESSMENT.md",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Structured audit of this repository against its originating project charter. Six dimension auditors with an independent verifier re-deriving each finding from source; 54 findings survived refutation, 4 were refuted and dropped, 57 charter requirements were found honored. Headline figures were re-verified by hand after the audit. Derived rather than primary: the evidence is this repository's own state at commit 81a47f4, not an external source."
+    },
+    {
       "id": "evidence:msys2:environments-2026-07-28",
       "class": "primary",
       "title": "MSYS2 Environments",

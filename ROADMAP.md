@@ -203,7 +203,7 @@ object pages to be generated from the model. No tool in `tools/` writes
 into `docs/`; all 253 pages are hand-authored.
 
 - [ ] Generate mechanical object-page sections from the composed model
-- [ ] Validate documentation pages in `tools/akb.py`
+- [x] Validate documentation pages in `tools/akb.py`
 - [ ] Enforce the model schemas with jsonschema
 - [x] Enforce roadmap claims against evidence
 

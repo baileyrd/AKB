@@ -1,3 +1,13 @@
+---
+id: doc:volume-11:package-archive-analysis
+title: Uninstalled Package Archive Analysis
+volume: 11
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Uninstalled Package Archive Analysis
 
 `tools/analyze_package_archive.py` statically analyzes a downloaded package

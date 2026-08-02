@@ -168,6 +168,7 @@ say so.
 - [x] Library family classification
 - [x] Reverse dependency and impact analysis
 - [x] Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories
+- [x] Carry build-time and check-time dependency edges in the catalog projection
 
 **The three cleared items are BLOCKED behind Increment 1's extraction
 work**, which needs a Windows host with MSYS2 installed — see
@@ -184,24 +185,45 @@ environment variants — which is the correction that matters, because
 `generated/library-candidates.md` counted variants separately and so
 ranked `libpng` tenth when it is fourth.
 
-The sharpest result is the testing page. Ten test frameworks are packaged
-across four to six environment variants each — roughly 47 packages — and
-the entire category records **one** dependent. That is not a fact about
-the ecosystem: `model/catalog/current.json` carries only
-`runtime-depends-on`, `optional-depends-on`, `published-in`, and
-`belongs-to-environment`. It has **no build-time or check-time dependency
-edges**, and a test framework is a `checkdepends`, never a runtime
-dependency. Every dependency ranking in this knowledge base therefore
-measures runtime centrality specifically, and is blind to the entire
-build-time half of the graph. The recipes carry those declarations and
-the recipe ingestion pipeline already exists, so this is a modelling gap
-rather than a collection gap — recorded here as work rather than left
-implicit.
+The sharpest result was the testing page. Ten test frameworks across
+roughly 47 packages recorded **one** dependent between them — not a fact
+about the ecosystem but a gap in the projection, which carried no
+build-time or check-time edges at all.
 
-The logging page carries the other negative result: its leader has 27
-dependents against 471, 735, and 321 for imaging, GUI, and graphics. Three
-explanations are consistent with that and this knowledge base cannot yet
-distinguish them; header inventories would.
+**That gap is closed, 2026-08-02.** `tools/import_repository_db.py` read
+`%DEPENDS%` and `%OPTDEPENDS%` from each package's `desc` record and
+dropped `%MAKEDEPENDS%` and `%CHECKDEPENDS%`. Both were in the repository
+database the whole time — `%MAKEDEPENDS%` appears in 662 of the 798 `msys`
+records. `model/build-dependencies/current.json` now carries 54,035
+`build-depends-on` and 3,428 `check-depends-on` edges, and
+`build-depends-on` is the largest single edge type in the composed graph,
+ahead of `runtime-depends-on` at 41,061.
+
+It is an **additive** projection rather than a catalog refresh, and
+deliberately so: the committed catalog snapshot's source archives are no
+longer byte-identical on the mirror, and in four days 1,082 of 15,711
+packages changed version. Re-collecting to add build edges would have
+silently invalidated every version quoted in prose across the
+documentation. So the projection contributes relationships only, emits an
+edge only when both endpoints already exist in the catalog, and drops and
+counts the rest — 10,195 of 67,703 declared. Two dates, both recorded,
+neither overwriting the other.
+
+What it revealed:
+
+- **Testing goes from 1 dependent to 202**, and `python-pytest` turns out
+  to have 1,262 — 1,254 of them check-time — making it the ecosystem's
+  most-depended-upon test framework by an order of magnitude while being
+  completely invisible.
+- **The build-time graph is a different graph.** Its leaders — `ninja`
+  4,455, `cmake` 4,194, `python-installer` 4,187, `python-build` 4,132,
+  `python-setuptools` 3,206, `autotools` 2,593, `pkgconf` 2,081 — appear
+  nowhere in any runtime ranking, and between them are declared by more
+  packages than any runtime dependency in the catalog.
+- **Logging was not an artifact.** Every logging library records zero on
+  both new edge classes, so that category's low counts are a real fact
+  about how logging is consumed. One of the logging page's three candidate
+  explanations is ruled out by measurement rather than left open.
 
 ## Increment 6 — Git for Windows
 

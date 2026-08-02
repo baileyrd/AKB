@@ -204,7 +204,12 @@ def build_catalog(
         if (
             source_name not in package_names
             or target_name not in package_names
-            or relation not in {"runtime-depends-on", "optional-depends-on"}
+            or relation not in {
+                "runtime-depends-on",
+                "optional-depends-on",
+                "build-depends-on",
+                "check-depends-on",
+            }
         ):
             unresolved.append(edge)
             continue

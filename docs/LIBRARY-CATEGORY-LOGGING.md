@@ -8,6 +8,7 @@ model_refs:
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:catalog:current
+  - evidence:build-dependencies:current
 last_verified: 2026-08-02
 ---
 
@@ -60,23 +61,50 @@ below the next-smallest category's**, and the whole category totals 52
 dependents.
 
 That is a measured result and it is worth stating rather than padding.
-Three explanations are consistent with it, and this knowledge base cannot
-currently distinguish between them:
+
+### One candidate explanation is now ruled out
+
+When this page was first written, the leading suspicion was that the counts
+were an artifact: the catalog projection carried no build-time or check-time
+edges, so a library used only at build time was invisible. That gap has
+since been closed — `model/build-dependencies/current.json` now carries
+54,035 `build-depends-on` and 3,428 `check-depends-on` edges — and it
+**does not rescue this category**:
+
+| Library | Runtime | Build | Check |
+| --- | ---: | ---: | ---: |
+| spdlog | 27 | 0 | 0 |
+| glog | 18 | 0 | 0 |
+| ng-log | 4 | 0 | 0 |
+| log4cpp | 3 | 0 | 0 |
+| log4cxx | 0 | 0 | 0 |
+
+Zero across the whole category on both new edge classes. The same fix took
+the testing category from 1 dependent to 202 and surfaced `python-pytest`
+at 1,262, so the instrument works; logging simply has nothing there.
+
+The low counts are therefore a fact about how logging is consumed, not
+about how it was measured.
+
+### What remains
+
+Two explanations survive, and this knowledge base still cannot distinguish
+them:
 
 1. **C and C++ projects commonly write their own logging** rather than
    taking a dependency, so the libraries exist without accumulating
    dependents.
-2. **Header-only usage is invisible here.** `spdlog` is usable
-   header-only. A project that vendors or `#include`s it without declaring
-   a package dependency contributes nothing to this count. The catalog
-   records declared package dependencies, not source-level usage.
-3. **Logging is often provided by a framework** rather than a dedicated
-   library. Qt, GLib, and Boost all carry logging facilities, and a
-   project using those does not appear in this table.
+2. **Header-only usage is invisible to any package-dependency model.**
+   `spdlog` is usable header-only. A project that vendors or `#include`s it
+   without declaring a package dependency contributes nothing to any count
+   here, runtime or build-time. Distinguishing this needs header
+   inventories, which the deep-inventory pipeline produces and which have
+   been collected for 2 of 15,711 packages — see
+   [The Deep-Inventory Blocker](DEEP-INVENTORY-BLOCKER.md).
 
-Explanation 2 is the one this knowledge base could test and has not: it
-needs header inventories, which the deep-inventory pipeline produces and
-which have been collected for 2 of 15,711 packages.
+A third — that frameworks like Qt, GLib, and Boost provide logging, so
+projects using them never appear here — is consistent with the data but is
+not separately testable from package metadata either.
 
 ## What the category contains
 
@@ -107,8 +135,10 @@ linked into a native program is in the territory described by
 
 ## Evidence and Gaps
 
-- Dependent counts, variant counts, versions, and licenses are
-  **observed** from the catalog snapshot.
+- Runtime dependent counts, variant counts, versions, and licenses are
+  **observed** from catalog snapshot `20260729T113151Z`. The zero build-time
+  and check-time counts are **observed** from the six MSYS2 repository
+  databases read 2026-08-02.
 - **`spdlog`'s upstream project page was not retrievable**: github.com
   returned 403 through this environment's proxy. The entity records the
   project URL from package metadata, which is observed, but no primary
@@ -116,9 +146,10 @@ linked into a native program is in the territory described by
   set without a verified upstream citation, and it is recorded here rather
   than papered over.
 - **Only `spdlog` is modelled as an entity.**
-- The three candidate explanations for the low counts are stated as
-  candidates. Distinguishing them requires header and file inventories
-  that do not exist yet.
+- One of the three original candidate explanations - that the counts were
+  a projection artifact - is now **ruled out** by direct measurement. The
+  two that survive are stated as candidates, and distinguishing them
+  requires header and file inventories that do not exist yet.
 
 ## Related Objects
 

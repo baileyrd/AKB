@@ -1049,6 +1049,30 @@
         "term": "claim:library:zlib:hub",
         "min_files": 1
       }
+    ],
+    "Carry build-time and check-time dependency edges in the catalog projection": [
+      {
+        "type": "path_exists",
+        "path": "tools/import_build_dependencies.py"
+      },
+      {
+        "type": "path_exists",
+        "path": "tests/test_build_dependencies.py"
+      },
+      {
+        "type": "path_exists",
+        "path": "model/build-dependencies/current.json"
+      },
+      {
+        "type": "term_in_docs",
+        "term": "build-depends-on",
+        "min_files": 2
+      },
+      {
+        "type": "term_in_docs",
+        "term": "python-pytest",
+        "min_files": 1
+      }
     ]
   }
 }

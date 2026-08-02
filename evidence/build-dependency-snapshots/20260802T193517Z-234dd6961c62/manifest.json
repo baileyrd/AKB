@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-02T19:35:17.071787Z",
+  "collector": "tools/import_build_dependencies.py",
+  "source_archives": [
+    {
+      "repository": "msys",
+      "name": "msys.db",
+      "sha256": "d8b5404f690262681ace47361f85f297742d9faea2bf20051f0127f255b473fa"
+    },
+    {
+      "repository": "ucrt64",
+      "name": "ucrt64.db",
+      "sha256": "7649649149d97286f33859c6fa7d643ec9360419acde7048be8bfccf5307598e"
+    },
+    {
+      "repository": "clang64",
+      "name": "clang64.db",
+      "sha256": "1fc67461a7168ac6a5d8c0cfd33e6ee5af45caa067036dd95dc145a5f5ef235a"
+    },
+    {
+      "repository": "clangarm64",
+      "name": "clangarm64.db",
+      "sha256": "525931123e4522283bdf28eed7852b7501fbed5b2249774f3ea3485f707ab353"
+    },
+    {
+      "repository": "mingw64",
+      "name": "mingw64.db",
+      "sha256": "914ed0e4c22b1840008fc95ef48f173e6f19d9382d328ce19191c2f8d938e8bc"
+    },
+    {
+      "repository": "mingw32",
+      "name": "mingw32.db",
+      "sha256": "5b09c93e0895dcc5ecd2aec56738fae184e58e00e3d8b7c45dbc2665dd982616"
+    }
+  ],
+  "statistics": {
+    "collected": 67703,
+    "projected": 57463,
+    "dropped": 10195,
+    "build": 54035,
+    "check": 3428
+  }
+}

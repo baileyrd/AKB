@@ -172,26 +172,26 @@ flowchart LR
     u6 -->|optional-depends-on| subject
     u7["task"]
     u7 -->|optional-depends-on| subject
-    d0["ca-certificates"]
-    subject -->|runtime-depends-on| d0
-    d1["libcurl"]
-    subject -->|runtime-depends-on| d1
-    d2["libnghttp2"]
+    d0["autotools"]
+    subject -->|build-depends-on| d0
+    d1["brotli-devel"]
+    subject -->|build-depends-on| d1
+    d2["ca-certificates"]
     subject -->|runtime-depends-on| d2
-    d3["libnghttp3"]
-    subject -->|runtime-depends-on| d3
-    d4["libngtcp2"]
+    d3["gcc"]
+    subject -->|build-depends-on| d3
+    d4["libcurl"]
     subject -->|runtime-depends-on| d4
-    d5["libpsl"]
-    subject -->|runtime-depends-on| d5
-    d6["libunistring"]
+    d5["libidn2-devel"]
+    subject -->|build-depends-on| d5
+    d6["libnghttp2"]
     subject -->|runtime-depends-on| d6
-    d7["openssl"]
-    subject -->|runtime-depends-on| d7
+    d7["libnghttp2-devel"]
+    subject -->|build-depends-on| d7
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `package:msys2:curl` in the composed graph: 8 dependents and 9 dependencies, of which 1 are omitted here for legibility.
+Dependencies and dependents of `package:msys2:curl` in the composed graph: 8 dependents and 22 dependencies, of which 14 are omitted here for legibility.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

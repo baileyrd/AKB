@@ -139,3 +139,4 @@ methodology.
 - [GNU Libtasn1 (MSYS)](GNU-LIBTASN1.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
 - [p11-kit (UCRT64)](P11-KIT-UCRT64.md)
+- [GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md)

@@ -148,3 +148,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [p11-kit (UCRT64)](P11-KIT-UCRT64.md)
+- [ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md)

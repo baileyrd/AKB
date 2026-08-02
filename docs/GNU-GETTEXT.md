@@ -159,3 +159,4 @@ methodology remains open.
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)
+- [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)

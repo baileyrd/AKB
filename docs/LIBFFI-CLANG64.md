@@ -69,12 +69,15 @@ The CLANG64 `package:msys2:mingw-w64-clang-x86_64-libffi` declares no
 ## Reverse Dependencies
 
 The catalog snapshot records 19 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-libffi`. One is now modeled in
+`package:msys2:mingw-w64-clang-x86_64-libffi`. Two are now modeled in
 this knowledge base: [LLVM libraries](LLVM-LIBS.md)
-(`relationship:foundation-libraries:llvm-libs-requires-libffi-clang64`).
-The remaining ~18 recorded dependents (a broad mix of CLANG64 packages
-including `glib2`, `gobject-introspection`, `python`, `python-cffi`,
-`qemu`, and `ruby`) are not individually modeled in this knowledge
+(`relationship:foundation-libraries:llvm-libs-requires-libffi-clang64`)
+and [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
+(`relationship:foundation-libraries:p11-kit-clang64-requires-libffi-clang64`,
+added 2026-08-02). The remaining ~17 recorded dependents (a broad mix
+of CLANG64 packages including `glib2`, `gobject-introspection`,
+`python`, `python-cffi`, `qemu`, and `ruby`) are not individually
+modeled in this knowledge
 base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -131,7 +134,7 @@ identity, version, license, and the one modeled dependent edge are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the exact internal LLVM subsystem consuming libffi was not
 directly confirmed. Also explicitly out of scope for this page: the
-~18 remaining recorded dependents not individually modeled, and
+~17 remaining recorded dependents not individually modeled, and
 header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -142,3 +145,4 @@ methodology.
 - [LLVM libraries](LLVM-LIBS.md)
 - [libffi (MSYS)](LIBFFI-MSYS.md)
 - [libffi (UCRT64)](LIBFFI-UCRT64.md)
+- [p11-kit (CLANG64)](P11-KIT-CLANG64.md)

@@ -621,10 +621,12 @@
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 1 | 2 |
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
+| library:gnu:gettext@clang64 | library | GNU gettext (CLANG64) | partial | 1 | 1 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
+| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 1 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
@@ -632,6 +634,7 @@
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 3 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
+| library:gnu:libtasn1@clang64 | library | GNU Libtasn1 (CLANG64) | partial | 0 | 1 |
 | library:gnu:libtasn1@ucrt64 | library | GNU Libtasn1 (UCRT64) | partial | 0 | 2 |
 | library:gnu:libunistring | library | GNU libunistring | partial | 3 | 5 |
 | library:gnu:libunistring@ucrt64 | library | libunistring (UCRT64) | partial | 1 | 3 |
@@ -670,7 +673,7 @@
 | library:libedit:libedit | library | libedit | partial | 2 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 4 |
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 3 |
-| library:libffi:libffi@clang64 | library | libffi (CLANG64) | partial | 0 | 1 |
+| library:libffi:libffi@clang64 | library | libffi (CLANG64) | partial | 0 | 2 |
 | library:libffi:libffi@msys | library | libffi (MSYS) | partial | 0 | 1 |
 | library:libffi:libffi@ucrt64 | library | libffi (UCRT64) | partial | 0 | 1 |
 | library:libisl:isl | library | isl (Integer Set Library) | partial | 2 | 2 |
@@ -691,6 +694,7 @@
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 4 |
+| library:mozilla:ca-certificates@clang64 | library | ca-certificates (CLANG64) | partial | 1 | 0 |
 | library:mozilla:ca-certificates@ucrt64 | library | ca-certificates (UCRT64) | partial | 1 | 1 |
 | library:multiprecision:mpc | library | GNU MPC | partial | 3 | 2 |
 | library:multiprecision:mpc@clang64 | library | GNU MPC (CLANG64) | partial | 2 | 0 |
@@ -709,6 +713,7 @@
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
+| library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 1 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 3 |

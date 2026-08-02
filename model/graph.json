@@ -757,6 +757,96 @@
       "evidence_refs": ["evidence:c-ares:project-site-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:gnu:libiconv@clang64",
+      "kind": "library",
+      "name": "GNU libiconv (CLANG64)",
+      "summary": "The GNU character-set conversion library, packaged in the CLANG64 environment with zero own catalog dependencies and 78 recorded reverse dependents, including the CLANG64 sibling of GNU gettext.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libiconv"],
+      "tags": ["library", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libiconv/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libiconv",
+        "role": "character-set conversion"
+      },
+      "evidence_refs": ["evidence:gnu:libiconv-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:gettext@clang64",
+      "kind": "library",
+      "name": "GNU gettext (CLANG64)",
+      "summary": "The GNU internationalization (NLS) runtime library, packaged in the CLANG64 environment as gettext-runtime and linking against GNU libiconv (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["gettext", "libintl"],
+      "tags": ["library", "gnu-userland", "i18n"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/gettext/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-gettext-runtime",
+        "role": "native-language message translation runtime"
+      },
+      "evidence_refs": ["evidence:gnu:gettext-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:libtasn1@clang64",
+      "kind": "library",
+      "name": "GNU Libtasn1 (CLANG64)",
+      "summary": "The GNU ASN.1 (Abstract Syntax Notation One) library, packaged in the CLANG64 environment with zero own catalog dependencies, consumed by p11-kit (CLANG64) for ASN.1-encoded structure parsing.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["libtasn1"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/libtasn1/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libtasn1",
+        "role": "ASN.1 structure parsing"
+      },
+      "evidence_refs": ["evidence:gnu:libtasn1-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:p11-glue:p11-kit@clang64",
+      "kind": "library",
+      "name": "p11-kit (CLANG64)",
+      "summary": "A PKCS#11 module loader and coordination layer, packaged in the CLANG64 environment and linking against three libraries already documented in this knowledge base (GNU gettext, libffi, GNU Libtasn1, all CLANG64), consumed by ca-certificates (CLANG64) and GnuTLS (CLANG64, not yet modeled).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "p11-glue project",
+      "aliases": ["p11-kit"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://p11-glue.github.io/p11-glue/p11-kit.html",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-p11-kit",
+        "role": "PKCS#11 module coordination"
+      },
+      "evidence_refs": ["evidence:p11-glue:p11-kit-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mozilla:ca-certificates@clang64",
+      "kind": "library",
+      "name": "ca-certificates (CLANG64)",
+      "summary": "The Mozilla CA certificate bundle, packaged in the CLANG64 environment and linking against p11-kit (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Mozilla",
+      "aliases": ["ca-certificates"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://wiki.mozilla.org/CA",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-ca-certificates",
+        "role": "trusted CA certificate bundle"
+      },
+      "evidence_refs": ["evidence:mozilla:ca-certificates-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8759,6 +8849,66 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:gettext-clang64-requires-libiconv-clang64",
+      "type": "requires",
+      "source": "library:gnu:gettext@clang64",
+      "target": "library:gnu:libiconv@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for gettext-runtime's own message-catalog handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-clang64-requires-gettext-clang64",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit@clang64",
+      "target": "library:gnu:gettext@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for p11-kit's own diagnostic output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-clang64-requires-libffi-clang64",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit@clang64",
+      "target": "library:libffi:libffi@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs p11-kit's dynamic PKCS#11 module loading and calling-convention bridging.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:p11-kit-clang64-requires-libtasn1-clang64",
+      "type": "requires",
+      "source": "library:p11-glue:p11-kit@clang64",
+      "target": "library:gnu:libtasn1@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs ASN.1-encoded structure parsing for PKCS#11 module coordination.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ca-certificates-clang64-requires-p11-kit-clang64",
+      "type": "requires",
+      "source": "library:mozilla:ca-certificates@clang64",
+      "target": "library:p11-glue:p11-kit@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs trust-anchor registration and coordination through the p11-kit PKCS#11 trust module.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

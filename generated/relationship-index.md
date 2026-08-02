@@ -76214,6 +76214,7 @@
 | relationship:foundation-libraries:brotli-packaged-by-package | packaged-by | library:google:brotli | package:msys2:brotli | verified |
 | relationship:foundation-libraries:brotli-uses-msys-runtime | uses-runtime | library:google:brotli | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:bzip2-requires-libbz2 | requires | component:bzip2:bzip2 | library:bzip2:libbz2 | verified |
+| relationship:foundation-libraries:ca-certificates-clang64-requires-p11-kit-clang64 | requires | library:mozilla:ca-certificates@clang64 | library:p11-glue:p11-kit@clang64 | verified |
 | relationship:foundation-libraries:ca-certificates-packaged-by-package | packaged-by | library:mozilla:ca-certificates | package:msys2:ca-certificates | verified |
 | relationship:foundation-libraries:ca-certificates-ucrt64-requires-p11-kit-ucrt64 | requires | library:mozilla:ca-certificates@ucrt64 | library:p11-glue:p11-kit@ucrt64 | verified |
 | relationship:foundation-libraries:clang-libs-packaged-by-package | packaged-by | library:llvm:clang-libs | package:msys2:mingw-w64-clang-x86_64-clang-libs | verified |
@@ -76243,6 +76244,7 @@
 | relationship:foundation-libraries:file-requires-libzstd | requires | library:darwinsys:file | library:facebook:zstd@msys-lib | verified |
 | relationship:foundation-libraries:file-requires-zlib-msys | requires | library:darwinsys:file | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:file-uses-msys-runtime | uses-runtime | library:darwinsys:file | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:gettext-clang64-requires-libiconv-clang64 | requires | library:gnu:gettext@clang64 | library:gnu:libiconv@clang64 | verified |
 | relationship:foundation-libraries:gettext-packaged-by-package | packaged-by | library:gnu:gettext | package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime | verified |
 | relationship:foundation-libraries:gettext-requires-libiconv | requires | library:gnu:gettext | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:gmp-msys-packaged-by-package | packaged-by | library:gnu:gmp@msys | package:msys2:gmp | verified |
@@ -76472,6 +76474,9 @@
 | relationship:foundation-libraries:npth-msys-packaged-by-package | packaged-by | library:gnupg:npth@msys | package:msys2:libnpth | verified |
 | relationship:foundation-libraries:npth-msys-uses-msys-runtime | uses-runtime | library:gnupg:npth@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:npth-packaged-by-package | packaged-by | library:gnupg:npth | package:msys2:mingw-w64-ucrt-x86_64-npth | verified |
+| relationship:foundation-libraries:p11-kit-clang64-requires-gettext-clang64 | requires | library:p11-glue:p11-kit@clang64 | library:gnu:gettext@clang64 | verified |
+| relationship:foundation-libraries:p11-kit-clang64-requires-libffi-clang64 | requires | library:p11-glue:p11-kit@clang64 | library:libffi:libffi@clang64 | verified |
+| relationship:foundation-libraries:p11-kit-clang64-requires-libtasn1-clang64 | requires | library:p11-glue:p11-kit@clang64 | library:gnu:libtasn1@clang64 | verified |
 | relationship:foundation-libraries:p11-kit-packaged-by-package | packaged-by | library:p11-glue:p11-kit | package:msys2:libp11-kit | verified |
 | relationship:foundation-libraries:p11-kit-requires-libffi-msys | requires | library:p11-glue:p11-kit | library:libffi:libffi@msys | verified |
 | relationship:foundation-libraries:p11-kit-requires-libintl | requires | library:p11-glue:p11-kit | library:gnu:libintl | verified |

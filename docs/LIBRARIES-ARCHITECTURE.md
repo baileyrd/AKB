@@ -29,6 +29,11 @@ model_refs:
   - library:multiprecision:mpc@clang64
   - library:google:brotli@clang64
   - library:c-ares:c-ares@clang64
+  - library:gnu:libiconv@clang64
+  - library:gnu:gettext@clang64
+  - library:gnu:libtasn1@clang64
+  - library:p11-glue:p11-kit@clang64
+  - library:mozilla:ca-certificates@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -295,8 +300,13 @@ flowchart LR
 [Nettle (CLANG64)](NETTLE-CLANG64.md),
 [isl (CLANG64)](LIBISL-CLANG64.md),
 [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md),
-[Brotli (CLANG64)](BROTLI-CLANG64.md), and
-[c-ares (CLANG64)](C-ARES-CLANG64.md) are
+[Brotli (CLANG64)](BROTLI-CLANG64.md),
+[c-ares (CLANG64)](C-ARES-CLANG64.md),
+[GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md),
+[GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md),
+[GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md),
+[p11-kit (CLANG64)](P11-KIT-CLANG64.md), and
+[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -311,7 +321,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and twenty-two pages are deliberately scoped to package/dependency-level
+All one hundred and twenty-seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -873,7 +883,19 @@ with no catalog dependencies of their own. Adding
 [c-ares (CLANG64)](C-ARES-CLANG64.md) also corrected a now-stale claim
 on [c-ares (UCRT64)'s](C-ARES-UCRT64.md) own page, which had
 originally and correctly stated no CLANG64 sibling existed at the time
-it was written. These
+it was written. A deeper chain followed the same vector: scoping
+[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) required
+walking its full dependency tree first — `ca-certificates` →
+`p11-kit` → {`gettext-runtime`, `libffi` (already modeled),
+`libtasn1`} → `libiconv` — five CLANG64 entities in total, four newly
+modeled ([GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md),
+[GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md),
+[GNU Libtasn1 (CLANG64)](GNU-LIBTASN1-CLANG64.md), and
+[p11-kit (CLANG64)](P11-KIT-CLANG64.md)) alongside
+[ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md) itself, each
+closing full dependency coverage as its own prerequisites were modeled
+in sequence — mirroring the same scope-first-then-build discipline
+used for the earlier APR/APR-util/Serf (MSYS) chain. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

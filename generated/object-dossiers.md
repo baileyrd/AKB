@@ -5555,6 +5555,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 10
 
+## `library:gnu:gettext@clang64`
+
+- Name: GNU gettext (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
+
 ## `library:gnu:gmp`
 
 - Name: GNU MP (GMP)
@@ -5590,6 +5599,15 @@
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 8
+
+## `library:gnu:libiconv@clang64`
+
+- Name: GNU libiconv (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:gnu:libiconv@msys`
 
@@ -5653,6 +5671,15 @@
 - Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 3
+
+## `library:gnu:libtasn1@clang64`
+
+- Name: GNU Libtasn1 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:libtasn1-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:gnu:libtasn1@ucrt64`
 
@@ -6003,7 +6030,7 @@
 - Status: `partial`
 - Evidence: evidence:libffi:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:libffi:libffi@msys`
 
@@ -6185,6 +6212,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 4
 
+## `library:mozilla:ca-certificates@clang64`
+
+- Name: ca-certificates (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mozilla:ca-certificates-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
+
 ## `library:mozilla:ca-certificates@ucrt64`
 
 - Name: ca-certificates (UCRT64)
@@ -6346,6 +6382,15 @@
 - Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
 - Incoming relationships: 2
+
+## `library:p11-glue:p11-kit@clang64`
+
+- Name: p11-kit (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:p11-glue:p11-kit-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
 
 ## `library:p11-glue:p11-kit@ucrt64`
 

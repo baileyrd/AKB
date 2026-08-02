@@ -142,3 +142,4 @@ methodology.
 - [zlib](ZLIB.md)
 - [libarchive](LIBARCHIVE.md)
 - [GDB](GNU-GDB.md)
+- [GNU libiconv (CLANG64)](GNU-LIBICONV-CLANG64.md)

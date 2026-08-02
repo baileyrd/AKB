@@ -158,3 +158,4 @@ methodology.
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
 - [GNU Libtasn1 (UCRT64)](GNU-LIBTASN1-UCRT64.md)
 - [libffi (UCRT64)](LIBFFI-UCRT64.md)
+- [p11-kit (CLANG64)](P11-KIT-CLANG64.md)

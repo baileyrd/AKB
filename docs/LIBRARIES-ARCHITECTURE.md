@@ -21,6 +21,7 @@ model_refs:
   - library:apache:apr@msys
   - library:apache:apr-util@msys
   - library:apache:libserf@msys
+  - library:gnupg:libgpgme@msys
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -184,6 +185,7 @@ evidence_refs:
   - evidence:oberhumer:lzo-manual-2026-08-02
   - evidence:apache:apr-manual-2026-08-02
   - evidence:apache:serf-manual-2026-08-02
+  - evidence:gnupg:gpgme-manual-2026-08-02
 last_verified: 2026-08-02
 ---
 
@@ -279,7 +281,8 @@ flowchart LR
 [libsasl (MSYS)](LIBSASL-MSYS.md),
 [popt (MSYS)](POPT-MSYS.md),
 [LZO (MSYS)](LIBLZO2-MSYS.md), [APR](APR-MSYS.md),
-[APR-util](APR-UTIL-MSYS.md), and [Serf](LIBSERF-MSYS.md) are
+[APR-util](APR-UTIL-MSYS.md), [Serf](LIBSERF-MSYS.md), and
+[GPGME (MSYS)](LIBGPGME-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -294,7 +297,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and fourteen pages are deliberately scoped to package/dependency-level
+All one hundred and fifteen pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -809,7 +812,16 @@ in passing: [Expat (MSYS)'s](EXPAT-MSYS.md#reverse-dependencies) own
 reverse-dependency list had listed `libarchive` among its
 not-individually-modeled dependents, when
 [libarchive (MSYS)](LIBARCHIVE-MSYS.md) was in fact already modeled
-elsewhere in this knowledge base — corrected in place. These
+elsewhere in this knowledge base — corrected in place. A final citation
+sweep across all `docs/*.md` files for unmodeled `package:msys2:*`
+references (the same method that surfaced libsqlite) found one more
+genuine gap: `package:msys2:libgpgme` had been cited as an unmodeled
+reverse dependent on both
+[libassuan (MSYS)'s](LIBASSUAN-MSYS.md#reverse-dependencies) and
+[libgpg-error (MSYS)'s](LIBGPG-ERROR-MSYS.md#reverse-dependencies) own
+pages. [GPGME (MSYS)](LIBGPGME-MSYS.md) closes it with full 3/3
+dependency coverage (GnuPG, libassuan (MSYS), libgpg-error (MSYS), all
+already modeled), the sixth full-coverage addition this session. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

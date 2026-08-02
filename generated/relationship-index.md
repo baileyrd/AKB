@@ -76331,6 +76331,9 @@
 | relationship:foundation-libraries:libgpg-error-msys-uses-msys-runtime | uses-runtime | library:gnupg:libgpg-error@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgpg-error-packaged-by-package | packaged-by | library:gnupg:libgpg-error | package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | verified |
 | relationship:foundation-libraries:libgpg-error-requires-gettext | requires | library:gnupg:libgpg-error | library:gnu:gettext | verified |
+| relationship:foundation-libraries:libgpgme-requires-gnupg | requires | library:gnupg:libgpgme@msys | component:gnupg:gnupg | verified |
+| relationship:foundation-libraries:libgpgme-requires-libassuan | requires | library:gnupg:libgpgme@msys | library:gnupg:libassuan@msys | verified |
+| relationship:foundation-libraries:libgpgme-requires-libgpg-error | requires | library:gnupg:libgpgme@msys | library:gnupg:libgpg-error@msys | verified |
 | relationship:foundation-libraries:libhogweed-msys-requires-gmp-msys | requires | library:nettle:libhogweed@msys | library:gnu:gmp@msys | verified |
 | relationship:foundation-libraries:libiconv-msys-packaged-by-package | packaged-by | library:gnu:libiconv@msys | package:msys2:libiconv | verified |
 | relationship:foundation-libraries:libiconv-msys-uses-msys-runtime | uses-runtime | library:gnu:libiconv@msys | runtime:msys2:msys-2.0.dll | partial |

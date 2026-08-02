@@ -613,6 +613,24 @@
       "evidence_refs": ["evidence:apache:serf-manual-2026-08-02", "evidence:catalog:current"]
     },
     {
+      "id": "library:gnupg:libgpgme@msys",
+      "kind": "library",
+      "name": "GPGME (MSYS)",
+      "summary": "The GnuPG Made Easy (GPGME) library, a high-level wrapper around GnuPG's own OpenPGP/CMS engines, packaged in the MSYS environment and linking against three libraries already documented in this knowledge base (GnuPG, libassuan (MSYS), libgpg-error (MSYS)), consumed by mutt, neomutt, and pacutils for programmatic access to GnuPG's cryptographic operations.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GnuPG project",
+      "aliases": ["libgpgme", "GPGME"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://gnupg.org/related_software/gpgme/",
+        "packaged_as": "package:msys2:libgpgme",
+        "role": "high-level GnuPG API wrapper"
+      },
+      "evidence_refs": ["evidence:gnupg:gpgme-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8619,6 +8637,42 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:libgpgme-requires-gnupg",
+      "type": "requires",
+      "source": "library:gnupg:libgpgme@msys",
+      "target": "component:gnupg:gnupg",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "GPGME wraps and delegates to GnuPG's own OpenPGP/CMS engines rather than reimplementing cryptographic protocol logic itself.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgpgme-requires-libassuan",
+      "type": "requires",
+      "source": "library:gnupg:libgpgme@msys",
+      "target": "library:gnupg:libassuan@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the Assuan IPC protocol GPGME uses to communicate with the GnuPG engine processes it wraps.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libgpgme-requires-libgpg-error",
+      "type": "requires",
+      "source": "library:gnupg:libgpgme@msys",
+      "target": "library:gnupg:libgpg-error@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs shared error-code definitions used across the GnuPG project's own library stack, the same rationale documented for GnuPG's own dependency on this package.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:foundation-libraries:apr-requires-libxcrypt",
       "type": "requires",
       "source": "library:apache:apr@msys",
@@ -10573,6 +10627,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:gnupg:gpgme-manual-2026-08-02",
+      "class": "primary",
+      "title": "GPGME (official project page)",
+      "locator": "https://gnupg.org/related_software/gpgme/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official GPGME project page, matching the project_url recorded for package:msys2:libgpgme in the catalog snapshot."
     },
     {
       "id": "evidence:apache:apr-manual-2026-08-02",

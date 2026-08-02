@@ -77,8 +77,10 @@ The catalog snapshot records 4 relationships targeting
 `package:msys2:libassuan`: `package:msys2:gnupg`
 (`relationship:ssh-curl-git:gnupg-requires-libassuan` in this knowledge
 base's graph, corrected 2026-07-30 to point here instead of the UCRT64
-package), its own `-devel` subpackage, `package:msys2:libgpgme`, and
-`package:msys2:pinentry`.
+package), its own `-devel` subpackage,
+[GPGME (MSYS)](LIBGPGME-MSYS.md)
+(`relationship:foundation-libraries:libgpgme-requires-libassuan`, added
+2026-08-02), and `package:msys2:pinentry`.
 
 ## Configuration
 
@@ -136,3 +138,4 @@ are backed by the pacman catalog snapshot (`evidence:catalog:current`).
 - [GnuPG](GNUPG.md)
 - [libassuan (UCRT64)](LIBASSUAN.md)
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
+- [GPGME (MSYS)](LIBGPGME-MSYS.md)

@@ -95,7 +95,9 @@ transitive requirement flowing through the three libraries above),
 (`relationship:foundation-libraries:libassuan-msys-requires-libgpg-error-msys`),
 `package:msys2:libgcrypt`
 (`relationship:foundation-libraries:libgcrypt-msys-requires-libgpg-error-msys`),
-`package:msys2:libgpgme`, `package:msys2:libksba`
+[GPGME (MSYS)](LIBGPGME-MSYS.md)
+(`relationship:foundation-libraries:libgpgme-requires-libgpg-error`,
+added 2026-08-02), `package:msys2:libksba`
 (`relationship:foundation-libraries:libksba-msys-requires-libgpg-error-msys`),
 and `package:msys2:pinentry`.
 
@@ -161,4 +163,5 @@ pacman catalog snapshot (`evidence:catalog:current`).
 - [libassuan (MSYS)](LIBASSUAN-MSYS.md)
 - [libksba (MSYS)](LIBKSBA-MSYS.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GPGME (MSYS)](LIBGPGME-MSYS.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

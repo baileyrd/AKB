@@ -96,7 +96,12 @@ dependency above) backs the `gpg2keys_curl` key-fetching helper.
 
 ## Reverse Dependencies
 
-The snapshot records 4 relationships targeting `package:msys2:gnupg`. See
+The snapshot records 4 relationships targeting `package:msys2:gnupg`.
+One is now modeled in this knowledge base:
+[GPGME (MSYS)](LIBGPGME-MSYS.md)
+(`relationship:foundation-libraries:libgpgme-requires-gnupg`, added
+2026-08-02 — GPGME wraps and delegates to GnuPG's own OpenPGP/CMS
+engines). See
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -180,6 +185,7 @@ version-qualified security review noted above.
 - [libcurl](LIBCURL.md)
 - [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
 - [libsqlite (MSYS)](LIBSQLITE-MSYS.md)
+- [GPGME (MSYS)](LIBGPGME-MSYS.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [libbz2](LIBBZ2.md)

@@ -28,7 +28,7 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 6 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 4 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 16 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 16 | 2 |
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 3 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
@@ -643,11 +643,12 @@
 | library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 5 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
-| library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 2 |
+| library:gnupg:libassuan@msys | library | libassuan (MSYS) | partial | 3 | 3 |
 | library:gnupg:libgcrypt | library | libgcrypt | partial | 2 | 1 |
 | library:gnupg:libgcrypt@msys | library | libgcrypt (MSYS) | partial | 3 | 2 |
 | library:gnupg:libgpg-error | library | libgpg-error | partial | 2 | 4 |
-| library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 4 | 5 |
+| library:gnupg:libgpg-error@msys | library | libgpg-error (MSYS) | partial | 4 | 6 |
+| library:gnupg:libgpgme@msys | library | GPGME (MSYS) | partial | 3 | 0 |
 | library:gnupg:libksba | library | libksba | partial | 2 | 1 |
 | library:gnupg:libksba@msys | library | libksba (MSYS) | partial | 3 | 2 |
 | library:gnupg:npth | library | nPth (New Portable Threads) | partial | 1 | 1 |

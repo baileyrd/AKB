@@ -225,7 +225,7 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 16
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:greenwood:less`
 
@@ -5760,7 +5760,7 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:libassuan-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:gnupg:libgcrypt`
 
@@ -5796,7 +5796,16 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 5
+- Incoming relationships: 6
+
+## `library:gnupg:libgpgme@msys`
+
+- Name: GPGME (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnupg:gpgme-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 0
 
 ## `library:gnupg:libksba`
 

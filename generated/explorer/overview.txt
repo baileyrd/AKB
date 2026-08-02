@@ -645,6 +645,7 @@ Objects
 - library:gnupg:libgcrypt@msys (library): libgcrypt (MSYS)
 - library:gnupg:libgpg-error (library): libgpg-error
 - library:gnupg:libgpg-error@msys (library): libgpg-error (MSYS)
+- library:gnupg:libgpgme@msys (library): GPGME (MSYS)
 - library:gnupg:libksba (library): libksba
 - library:gnupg:libksba@msys (library): libksba (MSYS)
 - library:gnupg:npth (library): nPth (New Portable Threads)
@@ -16910,6 +16911,9 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:gnupg:libgpgme@msys --requires--> component:gnupg:gnupg
+- library:gnupg:libgpgme@msys --requires--> library:gnupg:libassuan@msys
+- library:gnupg:libgpgme@msys --requires--> library:gnupg:libgpg-error@msys
 - library:apache:apr@msys --requires--> library:libxcrypt:libxcrypt
 - library:apache:apr-util@msys --requires--> library:apache:apr@msys
 - library:apache:apr-util@msys --requires--> library:sqlite:libsqlite@msys

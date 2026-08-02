@@ -146,6 +146,29 @@ package installs is an inference pending file-inventory evidence; the
 behavior map remains open; and `xargs`' batching behavior against the
 Windows-equivalent argument-length limit has not been directly observed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Findutils"]
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["GNU libintl"]
+    subject -->|requires| d1
+    d2["msys-2.0.dll"]
+    subject -->|uses-runtime| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:findutils` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

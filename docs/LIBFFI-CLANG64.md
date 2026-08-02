@@ -139,6 +139,27 @@ header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libffi (CLANG64)"]
+    u0["LLVM libraries"]
+    u0 -->|requires| subject
+    u1["p11-kit (CLANG64)"]
+    u1 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libffi:libffi@clang64` in the composed graph: 2 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

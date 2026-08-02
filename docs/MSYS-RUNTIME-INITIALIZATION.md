@@ -54,3 +54,36 @@ runtime-model work rather than inferred here.
 - [Ecosystem context](ECOSYSTEM-CONTEXT.md)
 - [Runtime environments](RUNTIME-ENVIRONMENTS.md)
 - [Eight-layer architecture](EIGHT-LAYER-ARCHITECTURE.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["msys-2.0.dll"]
+    u0["bzip2"]
+    u0 -->|uses-runtime| subject
+    u1["curl"]
+    u1 -->|uses-runtime| subject
+    u2["Git (MSYS2 package)"]
+    u2 -->|uses-runtime| subject
+    u3["GNU Autoconf"]
+    u3 -->|uses-runtime| subject
+    u4["GNU Automake"]
+    u4 -->|uses-runtime| subject
+    u5["GNU Bash"]
+    u5 -->|uses-runtime| subject
+    u6["GNU Coreutils"]
+    u6 -->|uses-runtime| subject
+    u7["GNU Cpio"]
+    u7 -->|uses-runtime| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `runtime:msys2:msys-2.0.dll` in the composed graph: 70 dependents and 0 dependencies, of which 62 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

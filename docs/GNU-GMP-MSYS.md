@@ -142,6 +142,33 @@ modeled, and header-level API surface / PE import/export-level evidence,
 per the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MP (MSYS)"]
+    u0["GNU Coreutils"]
+    u0 -->|requires| subject
+    u1["GNU MPFR (MSYS)"]
+    u1 -->|requires| subject
+    u2["GnuTLS"]
+    u2 -->|requires| subject
+    u3["libhogweed"]
+    u3 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:gmp@msys` in the composed graph: 4 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

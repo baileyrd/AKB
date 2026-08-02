@@ -175,6 +175,39 @@ the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:cmake:feature-dependencies`. No open items beyond the
 general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["CMake"]
+    d0["pkgconf"]
+    subject -->|requires| d0
+    d1["curl (UCRT64)"]
+    subject -->|requires| d1
+    d2["zlib"]
+    subject -->|requires| d2
+    d3["cppdap"]
+    subject -->|requires| d3
+    d4["JsonCpp"]
+    subject -->|requires| d4
+    d5["libarchive"]
+    subject -->|requires| d5
+    d6["Expat"]
+    subject -->|requires| d6
+    d7["libuv"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:cmake:cmake` in the composed graph: 0 dependents and 9 dependencies, of which 1 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

@@ -144,6 +144,37 @@ whether this build is the narrow or wide-character variant, and whether
 mintty's terminfo entry is accurate in this environment, are both
 unconfirmed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ncurses"]
+    u0["GNU Emacs"]
+    u0 -->|requires| subject
+    u1["GNU Nano"]
+    u1 -->|requires| subject
+    u2["less"]
+    u2 -->|requires| subject
+    u3["Vim"]
+    u3 -->|requires| subject
+    u4["GNU Readline (MSYS)"]
+    u4 -->|requires| subject
+    u5["libedit"]
+    u5 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:ncurses` in the composed graph: 6 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

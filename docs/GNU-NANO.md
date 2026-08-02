@@ -129,6 +129,31 @@ purpose of the `file` dependency is a medium-confidence inference, not a
 manual-confirmed fact; the unresolved `sh` dependency is explained by
 `generated/unresolved-dependencies.json`, not merely asserted.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Nano"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["file"]
+    subject -->|requires| d1
+    d2["GNU libintl"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:nano` in the composed graph: 0 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

@@ -168,6 +168,41 @@ evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib (MSYS)"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["GNU Emacs"]
+    u1 -->|requires| subject
+    u2["GnuPG"]
+    u2 -->|requires| subject
+    u3["Serf"]
+    u3 -->|requires| subject
+    u4["libcurl"]
+    u4 -->|requires| subject
+    u5["file"]
+    u5 -->|requires| subject
+    u6["libxml2 (MSYS)"]
+    u6 -->|requires| subject
+    u7["GnuTLS"]
+    u7 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib@msys` in the composed graph: 11 dependents and 1 dependency, of which 3 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

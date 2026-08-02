@@ -147,6 +147,35 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libidn2 (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (UCRT64)"]
+    u1 -->|requires| subject
+    u2["libpsl (UCRT64)"]
+    u2 -->|requires| subject
+    d0["GNU gettext"]
+    subject -->|requires| d0
+    d1["GNU libiconv"]
+    subject -->|requires| d1
+    d2["libunistring (UCRT64)"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libidn2@ucrt64` in the composed graph: 3 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

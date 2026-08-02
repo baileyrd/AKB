@@ -136,6 +136,33 @@ snapshot (`evidence:catalog:current`) via
 integrations beyond Perl are compiled into this build has not been directly
 observed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Vim"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["GNU libiconv (MSYS)"]
+    subject -->|requires| d1
+    d2["GNU libintl"]
+    subject -->|requires| d2
+    d3["libxcrypt"]
+    subject -->|requires| d3
+    d4["msys-2.0.dll"]
+    subject -->|uses-runtime| d4
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:vim:vim` in the composed graph: 0 dependents and 5 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

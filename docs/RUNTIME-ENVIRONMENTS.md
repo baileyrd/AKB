@@ -75,6 +75,25 @@ on the x86_64 observation host. Per-package availability and exact tool
 versions are time-sensitive and must be answered from a catalog or runtime
 observation.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `environment:msys2:msys` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [Runtime observation contract](RUNTIME-OBSERVATION-CONTRACT.md)

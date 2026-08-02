@@ -131,6 +131,27 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:pkgconf:pkg-config-substitute`. No open items beyond the
 general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["pkgconf"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    u1["Meson"]
+    u1 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:pkgconf:pkgconf` in the composed graph: 2 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

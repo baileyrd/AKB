@@ -138,6 +138,29 @@ are backed by the pacman catalog snapshot (`evidence:catalog:current`).
 No open items beyond the general header-level/PE evidence exclusion
 this volume applies throughout.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libngtcp2 (CLANG64)"]
+    u0["curl (CLANG64)"]
+    u0 -->|requires| subject
+    d0["GnuTLS (CLANG64)"]
+    subject -->|requires| d0
+    d1["OpenSSL (CLANG64)"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:nghttp2:libngtcp2@clang64` in the composed graph: 1 dependent and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

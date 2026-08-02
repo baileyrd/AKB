@@ -146,6 +146,27 @@ edge are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open: the twelve recorded reverse
 dependents are not individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ca-certificates (CLANG64)"]
+    u0["curl (CLANG64)"]
+    u0 -->|requires| subject
+    d0["p11-kit (CLANG64)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mozilla:ca-certificates@clang64` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

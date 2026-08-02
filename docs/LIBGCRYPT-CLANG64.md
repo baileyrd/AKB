@@ -140,6 +140,25 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the nineteen recorded reverse dependents are not individually
 modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libgcrypt (CLANG64)"]
+    d0["libgpg-error (CLANG64)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libgcrypt@clang64` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

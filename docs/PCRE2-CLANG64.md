@@ -143,6 +143,33 @@ by the pacman catalog snapshot (`evidence:catalog:current`). Open: the
 ~33 remaining recorded reverse dependents are not individually modeled
 in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["PCRE2 (CLANG64)"]
+    u0["ncurses (CLANG64)"]
+    u0 -->|requires| subject
+    u1["libarchive (CLANG64)"]
+    u1 -->|requires| subject
+    d0["bzip2 (CLANG64)"]
+    subject -->|requires| d0
+    d1["zlib (CLANG64)"]
+    subject -->|requires| d1
+    d2["WinEditLine (CLANG64)"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:pcre:pcre2@clang64` in the composed graph: 2 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

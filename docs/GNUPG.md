@@ -168,6 +168,41 @@ versioned MSYS siblings, now corrected and documented on the `(MSYS)`
 pages linked in Dependencies above. No open items beyond the general
 version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GnuPG"]
+    u0["GPGME (MSYS)"]
+    u0 -->|requires| subject
+    d0["libbz2"]
+    subject -->|requires| d0
+    d1["libcurl"]
+    subject -->|requires| d1
+    d2["GNU libiconv (MSYS)"]
+    subject -->|requires| d2
+    d3["GNU libintl"]
+    subject -->|requires| d3
+    d4["GNU Readline (MSYS)"]
+    subject -->|requires| d4
+    d5["zlib (MSYS)"]
+    subject -->|requires| d5
+    d6["libassuan (MSYS)"]
+    subject -->|requires| d6
+    d7["libgcrypt (MSYS)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnupg:gnupg` in the composed graph: 1 dependent and 15 dependencies, of which 7 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

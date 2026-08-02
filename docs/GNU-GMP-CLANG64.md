@@ -138,6 +138,33 @@ are not individually modeled in this knowledge base, though the CLANG64
 siblings of MPFR, MPC, isl, and Nettle are flagged above as candidates
 for a future batch, per this volume's ongoing gap-closing methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MP (GMP) (CLANG64)"]
+    u0["GNU MPFR (CLANG64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (CLANG64)"]
+    u1 -->|requires| subject
+    u2["isl (Integer Set Library) (CLANG6…"]
+    u2 -->|requires| subject
+    u3["GNU MPC (CLANG64)"]
+    u3 -->|requires| subject
+    u4["Nettle (CLANG64)"]
+    u4 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:gmp@clang64` in the composed graph: 5 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

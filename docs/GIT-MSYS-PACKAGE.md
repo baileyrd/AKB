@@ -152,6 +152,37 @@ pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:git:msys-package-boundary`. No open items beyond the
 general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Git (MSYS2 package)"]
+    d0["curl"]
+    subject -->|requires| d0
+    d1["OpenSSH"]
+    subject -->|requires| d1
+    d2["OpenSSL"]
+    subject -->|requires| d2
+    d3["GNU libintl"]
+    subject -->|requires| d3
+    d4["Expat (MSYS)"]
+    subject -->|requires| d4
+    d5["PCRE2 (MSYS)"]
+    subject -->|requires| d5
+    d6["msys-2.0.dll"]
+    subject -->|uses-runtime| d6
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:git:git` in the composed graph: 0 dependents and 7 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

@@ -167,6 +167,35 @@ and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["p11-kit"]
+    u0["GnuTLS"]
+    u0 -->|requires| subject
+    u1["ca-certificates"]
+    u1 -->|requires| subject
+    d0["GNU libintl"]
+    subject -->|requires| d0
+    d1["GNU Libtasn1"]
+    subject -->|requires| d1
+    d2["libffi (MSYS)"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:p11-glue:p11-kit` in the composed graph: 2 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

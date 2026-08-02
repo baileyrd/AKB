@@ -128,6 +128,27 @@ and license are backed by the pacman catalog snapshot
 (`evidence:catalog:current`). Open: the ~17 remaining recorded reverse dependents
 are not individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Brotli (CLANG64)"]
+    u0["curl (CLANG64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (CLANG64)"]
+    u1 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:google:brotli@clang64` in the composed graph: 2 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

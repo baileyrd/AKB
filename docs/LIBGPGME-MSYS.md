@@ -137,6 +137,29 @@ confirmed, and the six recorded reverse dependents (`libgpgme-devel`,
 `mutt`, `neomutt`, `pacutils`, `pacutils-devel`, `python-pyalpm`) are
 not individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GPGME (MSYS)"]
+    d0["GnuPG"]
+    subject -->|requires| d0
+    d1["libassuan (MSYS)"]
+    subject -->|requires| d1
+    d2["libgpg-error (MSYS)"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libgpgme@msys` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

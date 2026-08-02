@@ -143,6 +143,31 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the four remaining recorded reverse dependents are not
 individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libunistring (CLANG64)"]
+    u0["GNU libidn2 (CLANG64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (CLANG64)"]
+    u1 -->|requires| subject
+    u2["libpsl (CLANG64)"]
+    u2 -->|requires| subject
+    d0["GNU libiconv (CLANG64)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libunistring@clang64` in the composed graph: 3 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

@@ -146,6 +146,31 @@ the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:binutils:compressed-debug-sections`. No open items beyond
 the general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Binutils"]
+    d0["Zstandard (library)"]
+    subject -->|requires| d0
+    d1["GNU gettext"]
+    subject -->|requires| d1
+    d2["zlib"]
+    subject -->|requires| d2
+    d3["libwinpthread"]
+    subject -->|requires| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:binutils` in the composed graph: 0 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

@@ -140,6 +140,27 @@ dependency on the MSYS package is explained by
 `generated/unresolved-dependencies.json`, not merely asserted. No open
 items beyond the general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Make"]
+    d0["GNU libintl"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:make` in the composed graph: 0 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

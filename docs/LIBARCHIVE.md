@@ -192,6 +192,41 @@ API surface plus PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libarchive"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    d0["BLAKE2 (libb2) (UCRT64)"]
+    subject -->|requires| d0
+    d1["bzip2 (UCRT64)"]
+    subject -->|requires| d1
+    d2["Zstandard (library)"]
+    subject -->|requires| d2
+    d3["GNU libiconv"]
+    subject -->|requires| d3
+    d4["zlib"]
+    subject -->|requires| d4
+    d5["Expat"]
+    subject -->|requires| d5
+    d6["LZ4 (UCRT64)"]
+    subject -->|requires| d6
+    d7["OpenSSL (UCRT64)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libarchive:libarchive` in the composed graph: 1 dependent and 10 dependencies, of which 2 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

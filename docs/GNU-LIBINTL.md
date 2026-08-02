@@ -177,6 +177,43 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libintl"]
+    u0["Git (MSYS2 package)"]
+    u0 -->|requires| subject
+    u1["GNU Coreutils"]
+    u1 -->|requires| subject
+    u2["GNU Cpio"]
+    u2 -->|requires| subject
+    u3["GNU Findutils"]
+    u3 -->|requires| subject
+    u4["GNU Awk (gawk)"]
+    u4 -->|requires| subject
+    u5["GNU Grep"]
+    u5 -->|requires| subject
+    u6["GNU Make"]
+    u6 -->|requires| subject
+    u7["GNU Nano"]
+    u7 -->|requires| subject
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libintl` in the composed graph: 18 dependents and 2 dependencies, of which 10 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

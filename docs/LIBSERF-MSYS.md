@@ -131,6 +131,29 @@ confirmed, and `subversion` — the reason this entire APR/APR-util/Serf
 chain was modeled — is not itself yet a modeled entity in this
 knowledge base; it remains a candidate for a future batch.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Serf"]
+    d0["Apache Portable Runtime Utility L…"]
+    subject -->|requires| d0
+    d1["zlib (MSYS)"]
+    subject -->|requires| d1
+    d2["libopenssl"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:apache:libserf@msys` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

@@ -135,6 +135,35 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the ~72 remaining recorded dependents are not individually
 modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libiconv (CLANG64)"]
+    u0["libxml2 (CLANG64)"]
+    u0 -->|requires| subject
+    u1["GNU gettext (CLANG64)"]
+    u1 -->|requires| subject
+    u2["GNU libidn2 (CLANG64)"]
+    u2 -->|requires| subject
+    u3["GNU libunistring (CLANG64)"]
+    u3 -->|requires| subject
+    u4["libarchive (CLANG64)"]
+    u4 -->|requires| subject
+    u5["libpsl (CLANG64)"]
+    u5 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libiconv@clang64` in the composed graph: 6 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

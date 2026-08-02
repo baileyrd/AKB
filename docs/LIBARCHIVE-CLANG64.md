@@ -163,6 +163,39 @@ pacman catalog snapshot (`evidence:catalog:current`). Open: the
 twenty-one recorded reverse dependents are not individually modeled in
 this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libarchive (CLANG64)"]
+    d0["BLAKE2 (libb2) (CLANG64)"]
+    subject -->|requires| d0
+    d1["bzip2 (CLANG64)"]
+    subject -->|requires| d1
+    d2["Zstandard (CLANG64)"]
+    subject -->|requires| d2
+    d3["GNU libiconv (CLANG64)"]
+    subject -->|requires| d3
+    d4["zlib (CLANG64)"]
+    subject -->|requires| d4
+    d5["Expat (CLANG64)"]
+    subject -->|requires| d5
+    d6["LZ4 (CLANG64)"]
+    subject -->|requires| d6
+    d7["OpenSSL (CLANG64)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libarchive:libarchive@clang64` in the composed graph: 0 dependents and 10 dependencies, of which 2 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

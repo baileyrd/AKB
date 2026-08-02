@@ -153,6 +153,33 @@ catalog snapshot (`evidence:catalog:current`). Open: the ~117 remaining
 recorded dependents are not individually modeled in this knowledge
 base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["OpenSSL (CLANG64)"]
+    u0["curl (CLANG64)"]
+    u0 -->|requires| subject
+    u1["libarchive (CLANG64)"]
+    u1 -->|requires| subject
+    u2["libssh2 (CLANG64)"]
+    u2 -->|requires| subject
+    u3["libngtcp2 (CLANG64)"]
+    u3 -->|requires| subject
+    u4["libfido2 (CLANG64)"]
+    u4 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:openssl:openssl@clang64` in the composed graph: 5 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

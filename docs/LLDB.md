@@ -142,6 +142,33 @@ Open: the exact Windows-debugging-API mechanism LLDB uses on this platform
 has not been directly observed, the same open item already flagged for
 [GDB](GNU-GDB.md#evidence-assumptions-and-open-questions).
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["LLDB"]
+    d0["libxml2 (CLANG64)"]
+    subject -->|requires| d0
+    d1["zlib (CLANG64)"]
+    subject -->|requires| d1
+    d2["Clang libraries"]
+    subject -->|requires| d2
+    d3["LLVM libraries"]
+    subject -->|requires| d3
+    d4["liblzma (XZ Utils library, CLANG6…"]
+    subject -->|requires| d4
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:llvm:lldb` in the composed graph: 0 dependents and 5 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

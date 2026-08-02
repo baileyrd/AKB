@@ -159,6 +159,27 @@ and PE import/export-level ABI evidence, which the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology calls for and which this page does not attempt to supply.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libstdc++"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    d0["libwinpthread"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libstdc++` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

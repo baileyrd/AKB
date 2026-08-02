@@ -1088,3 +1088,24 @@ outcome, or repository-wide byte coverage without further evidence.
 - Volume 8: [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md)
 - Volume 11: [Package file inventory](PACKAGE-FILE-INVENTORY.md)
 - Volume 13: [Reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libstdc++"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    d0["libwinpthread"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libstdc++` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

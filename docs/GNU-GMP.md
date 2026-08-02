@@ -132,6 +132,37 @@ and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MP (GMP)"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    u1["GDB"]
+    u1 -->|requires| subject
+    u2["GNU MPFR"]
+    u2 -->|requires| subject
+    u3["GnuTLS (UCRT64)"]
+    u3 -->|requires| subject
+    u4["isl (Integer Set Library)"]
+    u4 -->|requires| subject
+    u5["GNU MPC"]
+    u5 -->|requires| subject
+    u6["Nettle"]
+    u6 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:gmp` in the composed graph: 7 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

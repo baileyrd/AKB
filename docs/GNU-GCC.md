@@ -174,6 +174,39 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:gcc:optimizer-arithmetic-libraries`. No open items beyond
 the general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GCC"]
+    d0["Zstandard (library)"]
+    subject -->|requires| d0
+    d1["GNU MP (GMP)"]
+    subject -->|requires| d1
+    d2["libstdc++"]
+    subject -->|requires| d2
+    d3["GNU MPFR"]
+    subject -->|requires| d3
+    d4["zlib"]
+    subject -->|requires| d4
+    d5["isl (Integer Set Library)"]
+    subject -->|requires| d5
+    d6["winpthreads"]
+    subject -->|requires| d6
+    d7["GNU MPC"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:gcc` in the composed graph: 0 dependents and 8 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

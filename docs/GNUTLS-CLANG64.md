@@ -167,6 +167,41 @@ edges are backed by the pacman catalog snapshot
 dependents (including the separate CLANG64-native `gnupg` and `emacs`
 packages) are not individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GnuTLS (CLANG64)"]
+    u0["libngtcp2 (CLANG64)"]
+    u0 -->|requires| subject
+    d0["Zstandard (CLANG64)"]
+    subject -->|requires| d0
+    d1["GNU gettext (CLANG64)"]
+    subject -->|requires| d1
+    d2["GNU MP (GMP) (CLANG64)"]
+    subject -->|requires| d2
+    d3["GNU libidn2 (CLANG64)"]
+    subject -->|requires| d3
+    d4["GNU Libtasn1 (CLANG64)"]
+    subject -->|requires| d4
+    d5["GNU libunistring (CLANG64)"]
+    subject -->|requires| d5
+    d6["zlib (CLANG64)"]
+    subject -->|requires| d6
+    d7["Brotli (CLANG64)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnutls:gnutls@clang64` in the composed graph: 1 dependent and 11 dependencies, of which 3 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

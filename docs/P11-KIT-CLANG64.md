@@ -144,6 +144,33 @@ version, license, and all recorded dependency/dependent edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the remaining recorded dependents not individually modeled.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["p11-kit (CLANG64)"]
+    u0["GnuTLS (CLANG64)"]
+    u0 -->|requires| subject
+    u1["ca-certificates (CLANG64)"]
+    u1 -->|requires| subject
+    d0["GNU gettext (CLANG64)"]
+    subject -->|requires| d0
+    d1["GNU Libtasn1 (CLANG64)"]
+    subject -->|requires| d1
+    d2["libffi (CLANG64)"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:p11-glue:p11-kit@clang64` in the composed graph: 2 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

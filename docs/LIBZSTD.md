@@ -154,6 +154,35 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Zstandard (library)"]
+    u0["GNU Binutils"]
+    u0 -->|requires| subject
+    u1["GCC"]
+    u1 -->|requires| subject
+    u2["GDB"]
+    u2 -->|requires| subject
+    u3["curl (UCRT64)"]
+    u3 -->|requires| subject
+    u4["GnuTLS (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libarchive"]
+    u5 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:facebook:zstd` in the composed graph: 6 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

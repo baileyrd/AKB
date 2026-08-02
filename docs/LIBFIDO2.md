@@ -163,6 +163,33 @@ page: header-level API surface and PE import/export-level evidence, per
 the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libfido2"]
+    u0["OpenSSH"]
+    u0 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["zlib (MSYS)"]
+    subject -->|requires| d1
+    d2["libcbor"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:yubico:libfido2` in the composed graph: 1 dependent and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

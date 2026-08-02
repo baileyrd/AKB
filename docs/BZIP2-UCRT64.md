@@ -139,6 +139,27 @@ snapshot (`evidence:catalog:current`). Open: the ~44 remaining recorded
 reverse dependents are not individually modeled in this knowledge
 base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["bzip2 (UCRT64)"]
+    u0["libarchive"]
+    u0 -->|requires| subject
+    u1["PCRE2"]
+    u1 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:bzip2:bzip2@ucrt64` in the composed graph: 2 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

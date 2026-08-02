@@ -139,6 +139,31 @@ package libsasl separately was not confirmed, and the five recorded
 reverse dependents (`cyrus-sasl`, `libsasl-devel`, `mutt`, `neomutt`,
 `subversion`) are not individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libsasl (MSYS)"]
+    d0["Heimdal runtime libraries"]
+    subject -->|requires| d0
+    d1["libxcrypt"]
+    subject -->|requires| d1
+    d2["libopenssl"]
+    subject -->|requires| d2
+    d3["libsqlite (MSYS)"]
+    subject -->|requires| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:sasl:libsasl@msys` in the composed graph: 0 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

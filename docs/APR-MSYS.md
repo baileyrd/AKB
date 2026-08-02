@@ -127,6 +127,27 @@ and `subversion` (a reverse dependent of both this package and
 [APR-util](APR-UTIL-MSYS.md)) is not yet a modeled entity in this
 knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Apache Portable Runtime (APR)"]
+    u0["Apache Portable Runtime Utility L…"]
+    u0 -->|requires| subject
+    d0["libxcrypt"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:apache:apr@msys` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

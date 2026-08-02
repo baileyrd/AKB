@@ -134,6 +134,25 @@ are backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the two remaining recorded reverse dependents (`python`,
 `qt6-base`) are not individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["BLAKE2 (libb2) (UCRT64)"]
+    u0["libarchive"]
+    u0 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:blake2:libb2@ucrt64` in the composed graph: 1 dependent and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

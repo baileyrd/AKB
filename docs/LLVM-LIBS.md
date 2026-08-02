@@ -152,6 +152,37 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["LLVM libraries"]
+    u0["LLD"]
+    u0 -->|requires| subject
+    u1["LLDB"]
+    u1 -->|requires| subject
+    u2["Clang libraries"]
+    u2 -->|requires| subject
+    d0["Zstandard (CLANG64)"]
+    subject -->|requires| d0
+    d1["libxml2 (CLANG64)"]
+    subject -->|requires| d1
+    d2["zlib (CLANG64)"]
+    subject -->|requires| d2
+    d3["libffi (CLANG64)"]
+    subject -->|requires| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:llvm:llvm-libs` in the composed graph: 3 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

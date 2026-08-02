@@ -139,6 +139,29 @@ catalog snapshot (`evidence:catalog:current`). Open: the recorded
 reverse dependents are not individually modeled in this knowledge
 base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libssh2 (CLANG64)"]
+    u0["curl (CLANG64)"]
+    u0 -->|requires| subject
+    d0["zlib (CLANG64)"]
+    subject -->|requires| d0
+    d1["OpenSSL (CLANG64)"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libssh2:libssh2@clang64` in the composed graph: 1 dependent and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

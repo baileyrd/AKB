@@ -145,6 +145,31 @@ reverse dependents (particularly `subversion` or `python`) warrant
 their own pages in a future batch, per this volume's ongoing
 gap-closing methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libsqlite (MSYS)"]
+    u0["GnuPG"]
+    u0 -->|requires| subject
+    u1["Apache Portable Runtime Utility L…"]
+    u1 -->|requires| subject
+    u2["Heimdal runtime libraries"]
+    u2 -->|requires| subject
+    u3["libsasl (MSYS)"]
+    u3 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:sqlite:libsqlite@msys` in the composed graph: 4 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

@@ -132,6 +132,37 @@ Package identity, version, license, and all five dependency edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`). No open
 items beyond the general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["OpenSSH"]
+    u0["Git (MSYS2 package)"]
+    u0 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["Heimdal"]
+    subject -->|requires| d1
+    d2["libedit"]
+    subject -->|requires| d2
+    d3["libxcrypt"]
+    subject -->|requires| d3
+    d4["libfido2"]
+    subject -->|requires| d4
+    d5["msys-2.0.dll"]
+    subject -->|uses-runtime| d5
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:openssh:openssh` in the composed graph: 1 dependent and 6 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

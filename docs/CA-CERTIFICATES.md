@@ -155,6 +155,33 @@ the pacman catalog snapshot (`evidence:catalog:current`). Open: whether
 other native environments package ca-certificates separately was not
 confirmed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ca-certificates"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["libcurl"]
+    u1 -->|requires| subject
+    u2["libssh2"]
+    u2 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["p11-kit"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mozilla:ca-certificates` in the composed graph: 3 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

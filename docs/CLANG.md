@@ -151,6 +151,27 @@ version, license, and all recorded dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). No open items beyond
 the general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Clang"]
+    d0["Clang libraries"]
+    subject -->|requires| d0
+    d1["winpthreads (CLANG64)"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:llvm:clang` in the composed graph: 0 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Toolchain Role Model](TOOLCHAIN-ROLE-MODEL.md)

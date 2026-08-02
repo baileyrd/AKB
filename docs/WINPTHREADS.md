@@ -148,6 +148,27 @@ new stub-package evidence complicated rather than confirmed the initial
 theory — a deliberate record of updating a claim when new evidence
 warrants it, not just adding new claims.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["winpthreads"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    d0["libwinpthread"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mingw-w64:winpthreads` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

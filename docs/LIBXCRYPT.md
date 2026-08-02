@@ -147,6 +147,37 @@ header-level API surface and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libxcrypt"]
+    u0["OpenSSH"]
+    u0 -->|requires| subject
+    u1["Vim"]
+    u1 -->|requires| subject
+    u2["Apache Portable Runtime Utility L…"]
+    u2 -->|requires| subject
+    u3["Apache Portable Runtime (APR)"]
+    u3 -->|requires| subject
+    u4["Heimdal runtime libraries"]
+    u4 -->|requires| subject
+    u5["libsasl (MSYS)"]
+    u5 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libxcrypt:libxcrypt` in the composed graph: 6 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

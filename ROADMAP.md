@@ -192,7 +192,7 @@ subgraphs remain outstanding.
 - [x] Generate diagrams from the composed model
 - [x] Emit PlantUML and Graphviz alongside SVG
 - [x] Renumber levels to the charter ladder and link parent, child, and sibling
-- [ ] Per-object dependency subgraphs on documentation pages
+- [x] Per-object dependency subgraphs on documentation pages
 
 ## Increment 11 — Documentation as code
 

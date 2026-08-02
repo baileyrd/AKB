@@ -146,6 +146,37 @@ catalog snapshot (`evidence:catalog:current`). Open: whether this build
 includes a GUI toolkit and the exact role of the `glib2` dependency in this
 specific console-oriented package have not been directly confirmed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Emacs"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["libxml2 (MSYS)"]
+    subject -->|requires| d1
+    d2["GNU libiconv (MSYS)"]
+    subject -->|requires| d2
+    d3["zlib (MSYS)"]
+    subject -->|requires| d3
+    d4["GnuTLS"]
+    subject -->|requires| d4
+    d5["libhogweed"]
+    subject -->|requires| d5
+    d6["msys-2.0.dll"]
+    subject -->|uses-runtime| d6
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:emacs` in the composed graph: 0 dependents and 7 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)

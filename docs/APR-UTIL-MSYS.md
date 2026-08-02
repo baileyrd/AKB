@@ -138,6 +138,31 @@ environments package APR-util separately was not confirmed; the
 (see Dependencies above); and `subversion` is not yet a modeled entity
 in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Apache Portable Runtime Utility L…"]
+    u0["Serf"]
+    u0 -->|requires| subject
+    d0["Apache Portable Runtime (APR)"]
+    subject -->|requires| d0
+    d1["libxcrypt"]
+    subject -->|requires| d1
+    d2["libsqlite (MSYS)"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:apache:apr-util@msys` in the composed graph: 1 dependent and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

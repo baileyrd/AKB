@@ -156,6 +156,39 @@ seven recorded reverse dependents (`cmake`, `libarchive-devel`, `nnn`,
 `pacutils`, `pacutils-devel`, `pkgfile`, `python-pyalpm`) are not
 individually modeled in this knowledge base.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libarchive (MSYS)"]
+    d0["libbz2"]
+    subject -->|requires| d0
+    d1["Zstandard (MSYS library)"]
+    subject -->|requires| d1
+    d2["GNU libiconv (MSYS)"]
+    subject -->|requires| d2
+    d3["zlib (MSYS)"]
+    subject -->|requires| d3
+    d4["Expat (MSYS)"]
+    subject -->|requires| d4
+    d5["liblz4"]
+    subject -->|requires| d5
+    d6["libopenssl"]
+    subject -->|requires| d6
+    d7["liblzma (MSYS)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libarchive:libarchive@msys` in the composed graph: 0 dependents and 8 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)

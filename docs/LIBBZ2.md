@@ -170,3 +170,4 @@ methodology.
 - [PCRE2 (MSYS)](PCRE2-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [bzip2 (CLANG64)](BZIP2-CLANG64.md)

@@ -168,3 +168,4 @@ individually modeled in this knowledge base.
 - [libopenssl](LIBOPENSSL.md)
 - [libzstd (MSYS)](LIBZSTD-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

@@ -137,3 +137,4 @@ methodology.
 - [libarchive](LIBARCHIVE.md)
 - [GDB](GNU-GDB.md)
 - [Expat (MSYS)](EXPAT-MSYS.md)
+- [Expat (CLANG64)](EXPAT-CLANG64.md)

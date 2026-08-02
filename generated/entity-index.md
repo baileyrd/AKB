@@ -607,7 +607,9 @@
 | library:apache:apr-util@msys | library | Apache Portable Runtime Utility Library (APR-util) | partial | 3 | 1 |
 | library:apache:apr@msys | library | Apache Portable Runtime (APR) | partial | 1 | 1 |
 | library:apache:libserf@msys | library | Serf | partial | 3 | 0 |
+| library:blake2:libb2@clang64 | library | BLAKE2 (libb2) (CLANG64) | partial | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
+| library:bzip2:bzip2@clang64 | library | bzip2 (CLANG64) | partial | 0 | 2 |
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 6 |
 | library:c-ares:c-ares@clang64 | library | c-ares (CLANG64) | partial | 0 | 0 |
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
@@ -615,7 +617,7 @@
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
 | library:darwinsys:file | library | file | partial | 6 | 2 |
 | library:facebook:zstd | library | Zstandard (library) | partial | 1 | 7 |
-| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 3 |
+| library:facebook:zstd@clang64 | library | Zstandard (CLANG64) | partial | 1 | 4 |
 | library:facebook:zstd@msys-lib | library | Zstandard (MSYS library) | partial | 2 | 5 |
 | library:gnome:libxml2 | library | libxml2 | partial | 3 | 1 |
 | library:gnome:libxml2@clang64 | library | libxml2 (CLANG64) | partial | 2 | 2 |
@@ -626,7 +628,7 @@
 | library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 4 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
-| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 5 |
+| library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 6 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@clang64 | library | GNU libidn2 (CLANG64) | partial | 3 | 1 |
@@ -648,7 +650,7 @@
 | library:gnu:readline@msys | library | GNU Readline (MSYS) | partial | 3 | 4 |
 | library:gnu:termcap | library | GNU termcap | partial | 1 | 2 |
 | library:gnu:zlib | library | zlib | partial | 1 | 12 |
-| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 6 |
+| library:gnu:zlib@clang64 | library | zlib (CLANG64) | partial | 1 | 8 |
 | library:gnu:zlib@msys | library | zlib (MSYS) | partial | 2 | 12 |
 | library:gnupg:libassuan | library | libassuan | partial | 2 | 1 |
 | library:gnupg:libassuan@clang64 | library | libassuan (CLANG64) | partial | 1 | 0 |
@@ -675,9 +677,11 @@
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 3 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
+| library:libarchive:libarchive@clang64 | library | libarchive (CLANG64) | partial | 10 | 0 |
 | library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
 | library:libedit:libedit | library | libedit | partial | 2 | 3 |
 | library:libexpat:expat | library | Expat | partial | 1 | 4 |
+| library:libexpat:expat@clang64 | library | Expat (CLANG64) | partial | 0 | 1 |
 | library:libexpat:expat@msys | library | Expat (MSYS) | partial | 2 | 3 |
 | library:libffi:libffi@clang64 | library | libffi (CLANG64) | partial | 0 | 2 |
 | library:libffi:libffi@msys | library | libffi (MSYS) | partial | 0 | 1 |
@@ -696,11 +700,13 @@
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
 | library:lz4:liblz4 | library | liblz4 | partial | 0 | 1 |
+| library:lz4:lz4@clang64 | library | LZ4 (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:libwinpthread | library | libwinpthread | partial | 1 | 5 |
 | library:mingw-w64:libwinpthread@clang64 | library | libwinpthread (CLANG64) | partial | 0 | 1 |
 | library:mingw-w64:winpthreads | library | winpthreads | partial | 2 | 2 |
 | library:mingw-w64:winpthreads@clang64 | library | winpthreads (CLANG64) | partial | 1 | 1 |
 | library:mingweditline:wineditline | library | WinEditLine | partial | 1 | 2 |
+| library:mingweditline:wineditline@clang64 | library | WinEditLine (CLANG64) | partial | 0 | 1 |
 | library:mozilla:ca-certificates | library | ca-certificates | partial | 1 | 4 |
 | library:mozilla:ca-certificates@clang64 | library | ca-certificates (CLANG64) | partial | 1 | 0 |
 | library:mozilla:ca-certificates@ucrt64 | library | ca-certificates (UCRT64) | partial | 1 | 1 |
@@ -719,13 +725,14 @@
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
 | library:oberhumer:liblzo2@msys | library | LZO | partial | 0 | 0 |
 | library:openssl:libopenssl | library | libopenssl | partial | 0 | 6 |
-| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 1 |
+| library:openssl:openssl@clang64 | library | OpenSSL (CLANG64) | partial | 0 | 2 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:p11-glue:p11-kit@clang64 | library | p11-kit (CLANG64) | partial | 3 | 1 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
 | library:pcre:pcre | library | PCRE (MSYS) | partial | 2 | 2 |
 | library:pcre:pcre2 | library | PCRE2 | partial | 3 | 3 |
+| library:pcre:pcre2@clang64 | library | PCRE2 (CLANG64) | partial | 3 | 1 |
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |
@@ -734,7 +741,7 @@
 | library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 4 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
-| library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 1 | 1 |
+| library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 1 | 2 |
 | library:tukaani:liblzma@msys | library | liblzma (MSYS) | partial | 0 | 3 |
 | library:unicode:icu | library | ICU (International Components for Unicode) | partial | 1 | 1 |
 | library:xxhash:xxhash | library | xxHash | partial | 1 | 2 |

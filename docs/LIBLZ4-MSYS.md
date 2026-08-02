@@ -142,3 +142,4 @@ volume's ongoing gap-closing methodology.
 - [libzstd (MSYS)](LIBZSTD-MSYS.md)
 - [liblzma (MSYS)](LIBLZMA-MSYS.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [LZ4 (CLANG64)](LZ4-CLANG64.md)

@@ -151,3 +151,4 @@ methodology.
 - [Git (MSYS2 package)](GIT-MSYS-PACKAGE.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
 - [APR-util](APR-UTIL-MSYS.md)
+- [Expat (CLANG64)](EXPAT-CLANG64.md)

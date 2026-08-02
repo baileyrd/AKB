@@ -78,10 +78,12 @@ dependencies receive elsewhere in this volume.
 ## Reverse Dependencies
 
 The catalog snapshot records 121 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-openssl`. One is now modeled in
+`package:msys2:mingw-w64-clang-x86_64-openssl`. Two are now modeled in
 this knowledge base: [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 (`relationship:foundation-libraries:libssh2-clang64-requires-openssl-clang64`,
-added 2026-08-02). The remaining ~120 recorded dependents (a broad mix
+added 2026-08-02) and [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+(`relationship:foundation-libraries:libarchive-clang64-requires-openssl-clang64`,
+added 2026-08-02). The remaining ~119 recorded dependents (a broad mix
 of CLANG64 packages including `apr-util`, `arrow`, `curl`, `curl-gnutls`,
 and many others) are not individually modeled in this knowledge base;
 see the
@@ -142,7 +144,7 @@ official OpenSSL project site
 (`evidence:openssl:project-site-2026-07-30`), the same evidence record
 [OpenSSL (UCRT64)](OPENSSL-UCRT64.md) cites. Package identity, version,
 license, and the one modeled dependent edge are backed by the pacman
-catalog snapshot (`evidence:catalog:current`). Open: the ~120 remaining
+catalog snapshot (`evidence:catalog:current`). Open: the ~119 remaining
 recorded dependents are not individually modeled in this knowledge
 base.
 
@@ -154,3 +156,4 @@ base.
 - [libopenssl (MSYS)](LIBOPENSSL.md)
 - [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)
 - [ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

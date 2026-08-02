@@ -189,6 +189,7 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [CMake](CMAKE.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 - [Expat](EXPAT.md)
 - [GNU libiconv](GNU-LIBICONV.md)
 - [PCRE2](PCRE2.md)

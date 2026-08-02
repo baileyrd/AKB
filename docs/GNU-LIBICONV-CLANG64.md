@@ -66,8 +66,10 @@ toolchain runtime support.
 ## Reverse Dependencies
 
 The catalog snapshot records 78 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-libiconv`. Five are now modeled
-in this knowledge base: [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
+`package:msys2:mingw-w64-clang-x86_64-libiconv`. Six are now modeled
+in this knowledge base: [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+(`relationship:foundation-libraries:libarchive-clang64-requires-libiconv-clang64`,
+added 2026-08-02), [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
 (`relationship:foundation-libraries:gettext-clang64-requires-libiconv-clang64`,
 added 2026-08-02), [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
 (`relationship:foundation-libraries:libxml2-clang64-requires-libiconv-clang64`,
@@ -78,7 +80,7 @@ added 2026-08-02), [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)
 (`relationship:foundation-libraries:libidn2-clang64-requires-libiconv-clang64`,
 added 2026-08-02), and [libpsl (CLANG64)](LIBPSL-CLANG64.md)
 (`relationship:foundation-libraries:libpsl-clang64-requires-libiconv-clang64`,
-added 2026-08-02). The remaining ~73 are not individually modeled in
+added 2026-08-02). The remaining ~72 are not individually modeled in
 this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -128,9 +130,9 @@ treated as a libiconv defect.
 Character-set conversion scope is backed by the official GNU libiconv
 project page (`evidence:gnu:libiconv-manual-2026-07-30`), the same
 evidence record [GNU libiconv (UCRT64)](GNU-LIBICONV.md) cites. Package
-identity, version, license, and the one modeled dependent edge are
+identity, version, license, and the six modeled dependent edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
-Open: the ~73 remaining recorded dependents are not individually
+Open: the ~72 remaining recorded dependents are not individually
 modeled in this knowledge base.
 
 ## Related Objects
@@ -142,4 +144,5 @@ modeled in this knowledge base.
 - [libxml2 (CLANG64)](LIBXML2-CLANG64.md)
 - [GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md)
 - [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 - [libpsl (CLANG64)](LIBPSL-CLANG64.md)

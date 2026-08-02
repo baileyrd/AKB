@@ -145,4 +145,5 @@ methodology.
 - [zlib](ZLIB.md)
 - [libarchive](LIBARCHIVE.md)
 - [WinEditLine](WINEDITLINE.md)
+- [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
 - [PCRE2 (MSYS)](PCRE2-MSYS.md)

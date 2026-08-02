@@ -136,3 +136,4 @@ package file-inventory evidence.
 - [XZ Utils](XZ-UTILS.md)
 - [libbz2](LIBBZ2.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)
+- [bzip2 (CLANG64)](BZIP2-CLANG64.md)

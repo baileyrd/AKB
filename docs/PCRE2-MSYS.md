@@ -142,3 +142,4 @@ methodology.
 - [less](LESS.md)
 - [PCRE2 (UCRT64)](PCRE2.md)
 - [PCRE (MSYS)](PCRE-MSYS.md)
+- [PCRE2 (CLANG64)](PCRE2-CLANG64.md)

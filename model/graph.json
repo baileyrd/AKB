@@ -1009,6 +1009,132 @@
       "evidence_refs": ["evidence:libssh2:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:bzip2:bzip2@clang64",
+      "kind": "library",
+      "name": "bzip2 (CLANG64)",
+      "summary": "The Burrows-Wheeler compression codec, packaged in the CLANG64 environment bundling both CLI and library in one package (unlike the MSYS environment's CLI/libbz2 split), with zero own catalog dependencies and 48 recorded reverse dependents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Julian Seward",
+      "aliases": ["bzip2"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://sourceware.org/bzip2/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-bzip2",
+        "role": "Burrows-Wheeler compression"
+      },
+      "evidence_refs": ["evidence:bzip2:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:blake2:libb2@clang64",
+      "kind": "library",
+      "name": "BLAKE2 (libb2) (CLANG64)",
+      "summary": "The BLAKE2 cryptographic hash function library, packaged in the CLANG64 environment with zero own catalog dependencies, consumed by libarchive (CLANG64) for BLAKE2-based checksums. The first BLAKE2-family entity modeled in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "BLAKE2 project",
+      "aliases": ["libb2", "BLAKE2"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://blake2.net/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libb2",
+        "role": "BLAKE2 cryptographic hashing"
+      },
+      "evidence_refs": ["evidence:blake2:project-site-2026-08-02", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:lz4:lz4@clang64",
+      "kind": "library",
+      "name": "LZ4 (CLANG64)",
+      "summary": "The LZ4 compression codec, packaged in the CLANG64 environment bundling both CLI and library in one package (unlike the MSYS environment's lz4/liblz4 split), with zero own catalog dependencies and 26 recorded reverse dependents.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yann Collet",
+      "aliases": ["lz4"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://lz4.github.io/lz4/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-lz4",
+        "role": "LZ4 compression codec"
+      },
+      "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:mingweditline:wineditline@clang64",
+      "kind": "library",
+      "name": "WinEditLine (CLANG64)",
+      "summary": "A native-Windows-Console readline-style line-editing library, packaged in the CLANG64 environment with zero own catalog dependencies, consumed by pcre2 (CLANG64) for its interactive test/demo tooling.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "MinGW Editline project",
+      "aliases": ["wineditline", "WinEditLine"],
+      "tags": ["library", "terminal"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://mingweditline.sourceforge.io/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-wineditline",
+        "role": "native-Windows-Console line editing"
+      },
+      "evidence_refs": ["evidence:mingweditline:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libexpat:expat@clang64",
+      "kind": "library",
+      "name": "Expat (CLANG64)",
+      "summary": "An XML parser library, packaged in the CLANG64 environment with zero own catalog dependencies, consumed by libarchive (CLANG64) for XML-based archive format support.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Expat project",
+      "aliases": ["expat"],
+      "tags": ["library", "xml"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://libexpat.github.io/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-expat",
+        "role": "XML parsing"
+      },
+      "evidence_refs": ["evidence:libexpat:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:pcre:pcre2@clang64",
+      "kind": "library",
+      "name": "PCRE2 (CLANG64)",
+      "summary": "A library implementing Perl 5-style regular expressions, packaged in the CLANG64 environment and linking against three libraries already documented in this knowledge base (bzip2, WinEditLine, zlib, all CLANG64).",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "PCRE project",
+      "aliases": ["pcre2"],
+      "tags": ["library", "text"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://pcre.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-pcre2",
+        "role": "Perl-compatible regular expressions"
+      },
+      "evidence_refs": ["evidence:pcre:pcre2-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:libarchive:libarchive@clang64",
+      "kind": "library",
+      "name": "libarchive (CLANG64)",
+      "summary": "A multi-format archive and compression library, packaged in the CLANG64 environment and linking against ten libraries already documented in this knowledge base (bzip2, Expat, BLAKE2, GNU libiconv, LZ4, OpenSSL, PCRE2, liblzma, zlib, Zstandard, all CLANG64) -- the widest single-pass dependency closure of any library added this session.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "libarchive project",
+      "aliases": ["libarchive"],
+      "tags": ["library", "archive"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.libarchive.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-libarchive",
+        "role": "multi-format archive reading and writing"
+      },
+      "evidence_refs": ["evidence:libarchive:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -9015,6 +9141,162 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:pcre2-clang64-requires-bzip2-clang64",
+      "type": "requires",
+      "source": "library:pcre:pcre2@clang64",
+      "target": "library:bzip2:bzip2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs bzip2-compressed test-data handling in pcre2's own build/test tooling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-clang64-requires-wineditline-clang64",
+      "type": "requires",
+      "source": "library:pcre:pcre2@clang64",
+      "target": "library:mingweditline:wineditline@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs interactive line editing for pcre2's own test/demo tooling on native Windows Console.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-clang64-requires-zlib-clang64",
+      "type": "requires",
+      "source": "library:pcre:pcre2@clang64",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs compressed test-data handling in pcre2's own build/test tooling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-bzip2-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:bzip2:bzip2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the bzip2 compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-expat-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:libexpat:expat@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs XML parsing for libarchive's xar and other XML-based archive format support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-libb2-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:blake2:libb2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs BLAKE2-based checksum support within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-libiconv-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:gnu:libiconv@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for archive entry filenames and metadata across encodings.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-lz4-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:lz4:lz4@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the LZ4 compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-openssl-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:openssl:openssl@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs cryptographic hashing and encrypted-archive support.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-pcre2-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:pcre:pcre2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs regular-expression matching used in libarchive's own filename-pattern matching logic.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-liblzma-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:tukaani:liblzma@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the XZ/LZMA compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-zlib-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:gnu:zlib@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the gzip/DEFLATE compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-clang64-requires-zstd-clang64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive@clang64",
+      "target": "library:facebook:zstd@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the Zstandard compression filter within libarchive's supported archive formats.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:foundation-libraries:libssh2-clang64-requires-openssl-clang64",
       "type": "requires",
       "source": "library:libssh2:libssh2@clang64",
@@ -11497,6 +11779,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GnuPG project site, matching the project_url recorded for package:msys2:gnupg in the catalog snapshot."
+    },
+    {
+      "id": "evidence:blake2:project-site-2026-08-02",
+      "class": "primary",
+      "title": "BLAKE2 (official project site)",
+      "locator": "https://blake2.net/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official BLAKE2 project site, matching the project_url recorded for package:msys2:mingw-w64-clang-x86_64-libb2 in the catalog snapshot."
     },
     {
       "id": "evidence:openssl:project-site-2026-07-30",

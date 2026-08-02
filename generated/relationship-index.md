@@ -76284,6 +76284,16 @@
 | relationship:foundation-libraries:isl-packaged-by-package | packaged-by | library:libisl:isl | package:msys2:mingw-w64-ucrt-x86_64-isl | verified |
 | relationship:foundation-libraries:isl-requires-gmp | requires | library:libisl:isl | library:gnu:gmp | verified |
 | relationship:foundation-libraries:jsoncpp-packaged-by-package | packaged-by | library:jsoncpp:jsoncpp | package:msys2:mingw-w64-ucrt-x86_64-jsoncpp | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-bzip2-clang64 | requires | library:libarchive:libarchive@clang64 | library:bzip2:bzip2@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-expat-clang64 | requires | library:libarchive:libarchive@clang64 | library:libexpat:expat@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-libb2-clang64 | requires | library:libarchive:libarchive@clang64 | library:blake2:libb2@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-libiconv-clang64 | requires | library:libarchive:libarchive@clang64 | library:gnu:libiconv@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-liblzma-clang64 | requires | library:libarchive:libarchive@clang64 | library:tukaani:liblzma@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-lz4-clang64 | requires | library:libarchive:libarchive@clang64 | library:lz4:lz4@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-openssl-clang64 | requires | library:libarchive:libarchive@clang64 | library:openssl:openssl@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-pcre2-clang64 | requires | library:libarchive:libarchive@clang64 | library:pcre:pcre2@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-zlib-clang64 | requires | library:libarchive:libarchive@clang64 | library:gnu:zlib@clang64 | verified |
+| relationship:foundation-libraries:libarchive-clang64-requires-zstd-clang64 | requires | library:libarchive:libarchive@clang64 | library:facebook:zstd@clang64 | verified |
 | relationship:foundation-libraries:libarchive-msys-requires-expat | requires | library:libarchive:libarchive@msys | library:libexpat:expat@msys | verified |
 | relationship:foundation-libraries:libarchive-msys-requires-libbz2 | requires | library:libarchive:libarchive@msys | library:bzip2:libbz2 | verified |
 | relationship:foundation-libraries:libarchive-msys-requires-libiconv | requires | library:libarchive:libarchive@msys | library:gnu:libiconv@msys | verified |
@@ -76503,6 +76513,9 @@
 | relationship:foundation-libraries:p11-kit-uses-msys-runtime | uses-runtime | library:p11-glue:p11-kit | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre-packaged-by-package | packaged-by | library:pcre:pcre | package:msys2:libpcre | verified |
 | relationship:foundation-libraries:pcre-uses-msys-runtime | uses-runtime | library:pcre:pcre | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:pcre2-clang64-requires-bzip2-clang64 | requires | library:pcre:pcre2@clang64 | library:bzip2:bzip2@clang64 | verified |
+| relationship:foundation-libraries:pcre2-clang64-requires-wineditline-clang64 | requires | library:pcre:pcre2@clang64 | library:mingweditline:wineditline@clang64 | verified |
+| relationship:foundation-libraries:pcre2-clang64-requires-zlib-clang64 | requires | library:pcre:pcre2@clang64 | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:pcre2-msys-packaged-by-package | packaged-by | library:pcre:pcre2@msys | package:msys2:libpcre2_8 | verified |
 | relationship:foundation-libraries:pcre2-msys-uses-msys-runtime | uses-runtime | library:pcre:pcre2@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |

@@ -67,14 +67,17 @@ runtime support.
 ## Reverse Dependencies
 
 The catalog snapshot records 86 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-zstd`. Two are already modeled in
+`package:msys2:mingw-w64-clang-x86_64-zstd`. Three are already modeled in
 this knowledge base: `package:msys2:mingw-w64-clang-x86_64-lld`
-(`relationship:toolchain:lld-requires-zstd-clang64`) and
+(`relationship:toolchain:lld-requires-zstd-clang64`),
 `package:msys2:mingw-w64-clang-x86_64-llvm-libs`
 (`relationship:foundation-libraries:llvm-libs-requires-zstd-clang64`,
 correcting [LLVM libraries'](LLVM-LIBS.md) own prior incorrect
 no-dependencies claim; LLDB itself still does not depend on zstd, per
-LLDB's own dependency table). The remaining ~84 recorded dependents (a
+LLDB's own dependency table), and
+[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+(`relationship:foundation-libraries:libarchive-clang64-requires-zstd-clang64`,
+added 2026-08-02). The remaining ~83 recorded dependents (a
 broad mix of CLANG64 packages, mirroring the UCRT64 sibling's own broad
 reverse-dependency set) are not individually modeled in this knowledge
 base; see the
@@ -130,7 +133,7 @@ site (`evidence:facebook:zstd-manual-2026-07-30`), the same evidence
 record [Zstandard (library)](LIBZSTD.md) cites. Package identity,
 version, and the modeled dependent edge are backed by the pacman
 catalog snapshot (`evidence:catalog:current`). Open, and explicitly out
-of scope for this page: the ~85 remaining recorded dependents not
+of scope for this page: the ~83 remaining recorded dependents not
 individually modeled, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -144,3 +147,4 @@ methodology.
 - [LLD](LLD.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

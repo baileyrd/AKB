@@ -72,11 +72,13 @@ page of its own).
 ## Reverse Dependencies
 
 The catalog snapshot records 41 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-xz`. One is now modeled in this
+`package:msys2:mingw-w64-clang-x86_64-xz`. Two are now modeled in this
 knowledge base: [LLDB](LLDB.md)
-(`relationship:foundation-libraries:lldb-requires-liblzma-clang64`).
-The remaining ~40 recorded dependents (a broad mix of CLANG64 packages
-including `boost-libs`, `imagemagick`, `libarchive`, `qemu`, and
+(`relationship:foundation-libraries:lldb-requires-liblzma-clang64`) and
+[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+(`relationship:foundation-libraries:libarchive-clang64-requires-liblzma-clang64`,
+added 2026-08-02). The remaining ~39 recorded dependents (a broad mix
+of CLANG64 packages including `boost-libs`, `imagemagick`, `qemu`, and
 `rustup`) are not individually modeled in this knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -144,3 +146,4 @@ methodology.
 - [XZ Utils](XZ-UTILS.md)
 - [LLDB](LLDB.md)
 - [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

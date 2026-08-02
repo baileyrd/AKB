@@ -127,3 +127,4 @@ inference, not a confirmed build-system fact.
 - [Zstandard (zstd)](ZSTD.md)
 - [liblz4 (MSYS)](LIBLZ4-MSYS.md)
 - [LZO (MSYS)](LIBLZO2-MSYS.md)
+- [LZ4 (CLANG64)](LZ4-CLANG64.md)

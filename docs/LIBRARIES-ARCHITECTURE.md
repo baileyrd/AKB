@@ -43,6 +43,13 @@ model_refs:
   - library:gnupg:libksba@clang64
   - library:openssl:openssl@clang64
   - library:libssh2:libssh2@clang64
+  - library:bzip2:bzip2@clang64
+  - library:blake2:libb2@clang64
+  - library:lz4:lz4@clang64
+  - library:mingweditline:wineditline@clang64
+  - library:libexpat:expat@clang64
+  - library:pcre:pcre2@clang64
+  - library:libarchive:libarchive@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -158,6 +165,7 @@ evidence_refs:
   - evidence:libisl:manual-2026-07-30
   - evidence:mingw-w64:libwinpthread-manual-2026-07-30
   - evidence:pcre:pcre2-manual-2026-07-30
+  - evidence:blake2:project-site-2026-08-02
   - evidence:gnupg:libgpg-error-manual-2026-07-30
   - evidence:gnupg:libgcrypt-manual-2026-07-30
   - evidence:gnupg:libassuan-manual-2026-07-30
@@ -323,8 +331,15 @@ flowchart LR
 [libgcrypt (CLANG64)](LIBGCRYPT-CLANG64.md),
 [libassuan (CLANG64)](LIBASSUAN-CLANG64.md),
 [libksba (CLANG64)](LIBKSBA-CLANG64.md),
-[OpenSSL (CLANG64)](OPENSSL-CLANG64.md), and
-[libssh2 (CLANG64)](LIBSSH2-CLANG64.md) are
+[OpenSSL (CLANG64)](OPENSSL-CLANG64.md),
+[libssh2 (CLANG64)](LIBSSH2-CLANG64.md),
+[bzip2 (CLANG64)](BZIP2-CLANG64.md),
+[BLAKE2 (libb2) (CLANG64)](LIBB2-CLANG64.md),
+[LZ4 (CLANG64)](LZ4-CLANG64.md),
+[WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md),
+[Expat (CLANG64)](EXPAT-CLANG64.md),
+[PCRE2 (CLANG64)](PCRE2-CLANG64.md), and
+[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -339,7 +354,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and thirty-six pages are deliberately scoped to package/dependency-level
+All one hundred and forty-three pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -943,11 +958,23 @@ them. A fourth chain closed
 reverse dependents, the widest footprint of any library added this
 batch — unblocking [libssh2 (CLANG64)](LIBSSH2-CLANG64.md) (2/2:
 OpenSSL and [zlib (CLANG64)](ZLIB-CLANG64.md), already modeled) in the
-same pass. This is the first CLANG64 candidate closed from the
-larger `curl`/`libarchive` (CLANG64) cluster this batch scoped but did
-not fully model — both remain open, each still blocked on further
-CLANG64 siblings (`libbz2`, `liblz4`, `liblzma`, `libzstd`) not yet
-added. These
+same pass. A follow-up batch then closed the rest of the
+[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) cluster entirely: five
+more zero-dependency base libraries —
+[bzip2 (CLANG64)](BZIP2-CLANG64.md),
+[BLAKE2 (libb2) (CLANG64)](LIBB2-CLANG64.md) (the first BLAKE2-family
+entity modeled in this knowledge base),
+[LZ4 (CLANG64)](LZ4-CLANG64.md),
+[WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md), and
+[Expat (CLANG64)](EXPAT-CLANG64.md) — then
+[PCRE2 (CLANG64)](PCRE2-CLANG64.md) (3/3: bzip2, WinEditLine, zlib),
+and finally [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md) itself,
+closing all ten of its own catalog dependencies (bzip2, Expat, BLAKE2,
+GNU libiconv, LZ4, OpenSSL, PCRE2, liblzma, zlib, Zstandard) in a
+single pass — the widest single-pass dependency closure of any library
+added this session. `curl` (CLANG64) remains open for a future batch;
+its own dependency set now mostly overlaps with libraries this batch
+already modeled. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

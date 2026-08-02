@@ -5429,6 +5429,15 @@
 - Outgoing relationships: 3
 - Incoming relationships: 0
 
+## `library:blake2:libb2@clang64`
+
+- Name: BLAKE2 (libb2) (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:blake2:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:boost:boost`
 
 - Name: Boost
@@ -5437,6 +5446,15 @@
 - Evidence: evidence:boost:documentation-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 1
+
+## `library:bzip2:bzip2@clang64`
+
+- Name: bzip2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
 
 ## `library:bzip2:libbz2`
 
@@ -5508,7 +5526,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:facebook:zstd@msys-lib`
 
@@ -5607,7 +5625,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 5
+- Incoming relationships: 6
 
 ## `library:gnu:libiconv@msys`
 
@@ -5805,7 +5823,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 6
+- Incoming relationships: 8
 
 ## `library:gnu:zlib@msys`
 
@@ -6041,6 +6059,15 @@
 - Outgoing relationships: 8
 - Incoming relationships: 2
 
+## `library:libarchive:libarchive@clang64`
+
+- Name: libarchive (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 10
+- Incoming relationships: 0
+
 ## `library:libarchive:libarchive@msys`
 
 - Name: libarchive (MSYS)
@@ -6067,6 +6094,15 @@
 - Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 4
+
+## `library:libexpat:expat@clang64`
+
+- Name: Expat (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:libexpat:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:libexpat:expat@msys`
 
@@ -6230,6 +6266,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:lz4:lz4@clang64`
+
+- Name: LZ4 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:mingw-w64:libwinpthread`
 
 - Name: libwinpthread
@@ -6274,6 +6319,15 @@
 - Evidence: evidence:mingweditline:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
 - Incoming relationships: 2
+
+## `library:mingweditline:wineditline@clang64`
+
+- Name: WinEditLine (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:mingweditline:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
 
 ## `library:mozilla:ca-certificates`
 
@@ -6444,7 +6498,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:openssl:openssl@ucrt64`
 
@@ -6499,6 +6553,15 @@
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 3
+
+## `library:pcre:pcre2@clang64`
+
+- Name: PCRE2 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 3
+- Incoming relationships: 1
 
 ## `library:pcre:pcre2@msys`
 
@@ -6579,7 +6642,7 @@
 - Status: `partial`
 - Evidence: evidence:tukaani:xz-library-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:tukaani:liblzma@msys`
 

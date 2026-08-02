@@ -604,7 +604,9 @@ Objects
 - library:apache:apr-util@msys (library): Apache Portable Runtime Utility Library (APR-util)
 - library:apache:apr@msys (library): Apache Portable Runtime (APR)
 - library:apache:libserf@msys (library): Serf
+- library:blake2:libb2@clang64 (library): BLAKE2 (libb2) (CLANG64)
 - library:boost:boost (library): Boost
+- library:bzip2:bzip2@clang64 (library): bzip2 (CLANG64)
 - library:bzip2:libbz2 (library): libbz2
 - library:c-ares:c-ares@clang64 (library): c-ares (CLANG64)
 - library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
@@ -672,9 +674,11 @@ Objects
 - library:h5l:heimdal-libs (library): Heimdal runtime libraries
 - library:jsoncpp:jsoncpp (library): JsonCpp
 - library:libarchive:libarchive (library): libarchive
+- library:libarchive:libarchive@clang64 (library): libarchive (CLANG64)
 - library:libarchive:libarchive@msys (library): libarchive (MSYS)
 - library:libedit:libedit (library): libedit
 - library:libexpat:expat (library): Expat
+- library:libexpat:expat@clang64 (library): Expat (CLANG64)
 - library:libexpat:expat@msys (library): Expat (MSYS)
 - library:libffi:libffi@clang64 (library): libffi (CLANG64)
 - library:libffi:libffi@msys (library): libffi (MSYS)
@@ -693,11 +697,13 @@ Objects
 - library:llvm:libc++ (library): libc++
 - library:llvm:llvm-libs (library): LLVM libraries
 - library:lz4:liblz4 (library): liblz4
+- library:lz4:lz4@clang64 (library): LZ4 (CLANG64)
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:libwinpthread@clang64 (library): libwinpthread (CLANG64)
 - library:mingw-w64:winpthreads (library): winpthreads
 - library:mingw-w64:winpthreads@clang64 (library): winpthreads (CLANG64)
 - library:mingweditline:wineditline (library): WinEditLine
+- library:mingweditline:wineditline@clang64 (library): WinEditLine (CLANG64)
 - library:mozilla:ca-certificates (library): ca-certificates
 - library:mozilla:ca-certificates@clang64 (library): ca-certificates (CLANG64)
 - library:mozilla:ca-certificates@ucrt64 (library): ca-certificates (UCRT64)
@@ -723,6 +729,7 @@ Objects
 - library:p11-glue:p11-kit@ucrt64 (library): p11-kit (UCRT64)
 - library:pcre:pcre (library): PCRE (MSYS)
 - library:pcre:pcre2 (library): PCRE2
+- library:pcre:pcre2@clang64 (library): PCRE2 (CLANG64)
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
 - library:pjk:libcbor (library): libcbor
 - library:rhash:rhash (library): RHash
@@ -16932,6 +16939,19 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:pcre:pcre2@clang64 --requires--> library:bzip2:bzip2@clang64
+- library:pcre:pcre2@clang64 --requires--> library:mingweditline:wineditline@clang64
+- library:pcre:pcre2@clang64 --requires--> library:gnu:zlib@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:bzip2:bzip2@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:libexpat:expat@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:blake2:libb2@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:gnu:libiconv@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:lz4:lz4@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:openssl:openssl@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:pcre:pcre2@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:tukaani:liblzma@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:gnu:zlib@clang64
+- library:libarchive:libarchive@clang64 --requires--> library:facebook:zstd@clang64
 - library:libssh2:libssh2@clang64 --requires--> library:openssl:openssl@clang64
 - library:libssh2:libssh2@clang64 --requires--> library:gnu:zlib@clang64
 - library:gnupg:libgpg-error@clang64 --requires--> library:gnu:gettext@clang64

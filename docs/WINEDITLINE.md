@@ -151,3 +151,4 @@ methodology.
 - [PCRE2](PCRE2.md)
 - [libedit](LIBEDIT.md)
 - [GNU Readline](GNU-READLINE.md)
+- [WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md)

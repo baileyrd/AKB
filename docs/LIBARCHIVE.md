@@ -14,6 +14,9 @@ model_refs:
   - library:facebook:zstd
   - library:tukaani:liblzma
   - library:openssl:openssl@ucrt64
+  - library:bzip2:bzip2@ucrt64
+  - library:lz4:lz4@ucrt64
+  - library:blake2:libb2@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:libarchive:manual-2026-07-30
@@ -99,16 +102,17 @@ library-entity pages of their own, and the three missing edges
 (`relationship:toolchain:libarchive-requires-zstd`,
 `relationship:toolchain:libarchive-requires-liblzma`,
 `relationship:toolchain:libarchive-requires-openssl-ucrt64`) are added.
-Of the remaining three, **correction, 2026-08-02**: two are now
+Of the remaining three, **correction, 2026-08-02**: all three are now
 individually modeled and their edges added — [bzip2 (UCRT64)](BZIP2-UCRT64.md)
 (`relationship:foundation-libraries:libarchive-requires-bzip2-ucrt64`,
 backing the bzip2 compression filter within libarchive's supported
-archive formats) and [LZ4 (UCRT64)](LZ4-UCRT64.md)
+archive formats), [LZ4 (UCRT64)](LZ4-UCRT64.md)
 (`relationship:foundation-libraries:libarchive-requires-lz4-ucrt64`,
-backing the LZ4 compression filter). Only
-`mingw-w64-ucrt-x86_64-libb2` remains an UCRT64-native package not
-individually modeled as its own library entity in this knowledge base,
-so no formal `requires` edge is added for it.
+backing the LZ4 compression filter), and
+[BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md)
+(`relationship:foundation-libraries:libarchive-requires-libb2-ucrt64`,
+backing BLAKE2-based checksum support) — reaching full 10/10 catalog
+dependency coverage for this UCRT64 package.
 
 ## Reverse Dependencies
 
@@ -203,3 +207,4 @@ methodology.
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [bzip2 (UCRT64)](BZIP2-UCRT64.md)
 - [LZ4 (UCRT64)](LZ4-UCRT64.md)
+- [BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md)

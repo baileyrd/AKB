@@ -159,6 +159,7 @@ model_refs:
   - library:pjk:libcbor@clang64
   - library:yubico:libfido2@ucrt64
   - library:yubico:libfido2@clang64
+  - library:blake2:libb2@ucrt64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -361,7 +362,8 @@ flowchart LR
 [bzip2 (UCRT64)](BZIP2-UCRT64.md), [LZ4 (UCRT64)](LZ4-UCRT64.md),
 [ncurses (CLANG64)](NCURSES-CLANG64.md), [libcbor (UCRT64)](LIBCBOR-UCRT64.md),
 [libcbor (CLANG64)](LIBCBOR-CLANG64.md), [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md),
-and [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md) are
+[libfido2 (CLANG64)](LIBFIDO2-CLANG64.md), and
+[BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -376,7 +378,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and fifty-six pages are deliberately scoped to package/dependency-level
+All one hundred and fifty-seven pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -1047,7 +1049,12 @@ per-environment [libcbor (UCRT64)](LIBCBOR-UCRT64.md)/
 unblock them — closing an item
 [libfido2's](LIBFIDO2.md#architectural-classification) own page had
 flagged as an existing-but-unmodeled native sibling since first
-publication.
+publication. A last item closed
+[libarchive's](LIBARCHIVE.md#dependencies) own final declined UCRT64
+dependency: [BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md), reaching full
+10/10 catalog dependency coverage for that package and also correcting
+a stale claim on [BLAKE2 (libb2) (CLANG64)'s](LIBB2-CLANG64.md#architectural-classification)
+own page, which had stated no UCRT64 sibling existed.
 These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.

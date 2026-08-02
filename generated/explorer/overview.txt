@@ -605,6 +605,7 @@ Objects
 - library:apache:apr@msys (library): Apache Portable Runtime (APR)
 - library:apache:libserf@msys (library): Serf
 - library:blake2:libb2@clang64 (library): BLAKE2 (libb2) (CLANG64)
+- library:blake2:libb2@ucrt64 (library): BLAKE2 (libb2) (UCRT64)
 - library:boost:boost (library): Boost
 - library:bzip2:bzip2@clang64 (library): bzip2 (CLANG64)
 - library:bzip2:bzip2@ucrt64 (library): bzip2 (UCRT64)
@@ -16986,6 +16987,7 @@ Relationships
 - library:pcre:pcre2 --requires--> library:bzip2:bzip2@ucrt64
 - library:libarchive:libarchive --requires--> library:bzip2:bzip2@ucrt64
 - library:libarchive:libarchive --requires--> library:lz4:lz4@ucrt64
+- library:libarchive:libarchive --requires--> library:blake2:libb2@ucrt64
 - library:gnu:ncurses@clang64 --requires--> library:pcre:pcre2@clang64
 - library:pcre:pcre2@clang64 --requires--> library:bzip2:bzip2@clang64
 - library:pcre:pcre2@clang64 --requires--> library:mingweditline:wineditline@clang64

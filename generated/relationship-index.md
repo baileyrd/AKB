@@ -76330,6 +76330,7 @@
 | relationship:foundation-libraries:libarchive-packaged-by-package | packaged-by | library:libarchive:libarchive | package:msys2:mingw-w64-ucrt-x86_64-libarchive | verified |
 | relationship:foundation-libraries:libarchive-requires-bzip2-ucrt64 | requires | library:libarchive:libarchive | library:bzip2:bzip2@ucrt64 | verified |
 | relationship:foundation-libraries:libarchive-requires-expat | requires | library:libarchive:libarchive | library:libexpat:expat | verified |
+| relationship:foundation-libraries:libarchive-requires-libb2-ucrt64 | requires | library:libarchive:libarchive | library:blake2:libb2@ucrt64 | verified |
 | relationship:foundation-libraries:libarchive-requires-libiconv | requires | library:libarchive:libarchive | library:gnu:libiconv | verified |
 | relationship:foundation-libraries:libarchive-requires-lz4-ucrt64 | requires | library:libarchive:libarchive | library:lz4:lz4@ucrt64 | verified |
 | relationship:foundation-libraries:libarchive-requires-pcre2 | requires | library:libarchive:libarchive | library:pcre:pcre2 | verified |

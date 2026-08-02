@@ -7,6 +7,7 @@ model_refs:
   - library:blake2:libb2@clang64
   - package:msys2:mingw-w64-clang-x86_64-libb2
   - library:libarchive:libarchive@clang64
+  - library:blake2:libb2@ucrt64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:blake2:project-site-2026-08-02
@@ -31,9 +32,10 @@ reference.
 `library:blake2:libb2@clang64` is packaged as
 `package:msys2:mingw-w64-clang-x86_64-libb2` (version `0.98.1-3` in
 the current catalog snapshot, license `CC0`). It belongs to the
-CLANG64 environment. No MSYS or UCRT64 sibling package was found in
-this catalog snapshot, so this is currently the sole catalog entity
-for this project in this knowledge base.
+CLANG64 environment. **Correction, 2026-08-02**: this section
+previously stated no MSYS or UCRT64 sibling package was found in this
+catalog snapshot; a UCRT64 sibling does exist and is now modeled as
+[BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md). No MSYS sibling was found.
 
 ## Responsibilities
 
@@ -123,8 +125,7 @@ project site (`evidence:blake2:project-site-2026-08-02`), matching the
 `project_url` recorded for `package:msys2:mingw-w64-clang-x86_64-libb2`
 in the catalog. Package identity, version, license, and the recorded
 dependent edge are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open: whether other native environments
-package libb2 separately was not confirmed, and the two remaining
+(`evidence:catalog:current`). Open: the two remaining
 recorded reverse dependents (`python`, `qt6-base`) are not individually
 modeled in this knowledge base.
 
@@ -134,3 +135,4 @@ modeled in this knowledge base.
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 - [libgcrypt (CLANG64)](LIBGCRYPT-CLANG64.md)
 - [Nettle (CLANG64)](NETTLE-CLANG64.md)
+- [BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md)

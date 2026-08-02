@@ -608,6 +608,7 @@
 | library:apache:apr@msys | library | Apache Portable Runtime (APR) | partial | 1 | 1 |
 | library:apache:libserf@msys | library | Serf | partial | 3 | 0 |
 | library:blake2:libb2@clang64 | library | BLAKE2 (libb2) (CLANG64) | partial | 0 | 1 |
+| library:blake2:libb2@ucrt64 | library | BLAKE2 (libb2) (UCRT64) | partial | 0 | 1 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:bzip2:bzip2@clang64 | library | bzip2 (CLANG64) | partial | 0 | 2 |
 | library:bzip2:bzip2@ucrt64 | library | bzip2 (UCRT64) | partial | 0 | 2 |
@@ -680,7 +681,7 @@
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
 | library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 3 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
-| library:libarchive:libarchive | library | libarchive | partial | 10 | 2 |
+| library:libarchive:libarchive | library | libarchive | partial | 11 | 2 |
 | library:libarchive:libarchive@clang64 | library | libarchive (CLANG64) | partial | 10 | 0 |
 | library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
 | library:libedit:libedit | library | libedit | partial | 3 | 3 |

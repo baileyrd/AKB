@@ -5438,6 +5438,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 1
 
+## `library:blake2:libb2@ucrt64`
+
+- Name: BLAKE2 (libb2) (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:blake2:project-site-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
 ## `library:boost:boost`
 
 - Name: Boost
@@ -6092,7 +6101,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 10
+- Outgoing relationships: 11
 - Incoming relationships: 2
 
 ## `library:libarchive:libarchive@clang64`

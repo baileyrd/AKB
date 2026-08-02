@@ -1045,6 +1045,24 @@
       "evidence_refs": ["evidence:blake2:project-site-2026-08-02", "evidence:catalog:current"]
     },
     {
+      "id": "library:blake2:libb2@ucrt64",
+      "kind": "library",
+      "name": "BLAKE2 (libb2) (UCRT64)",
+      "summary": "The BLAKE2 cryptographic hash function library, packaged in the UCRT64 environment with zero own catalog dependencies, consumed by libarchive (UCRT64) for BLAKE2-based checksums. Added 2026-08-02, closing an item LIBARCHIVE.md had explicitly left declined as not individually modeled.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "BLAKE2 project",
+      "aliases": ["libb2", "BLAKE2"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://blake2.net/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-libb2",
+        "role": "BLAKE2 cryptographic hashing"
+      },
+      "evidence_refs": ["evidence:blake2:project-site-2026-08-02", "evidence:catalog:current"]
+    },
+    {
       "id": "library:lz4:lz4@clang64",
       "kind": "library",
       "name": "LZ4 (CLANG64)",
@@ -9773,6 +9791,18 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs reading and writing the LZ4 compression filter within libarchive's supported archive formats, the same rationale already documented for the CLANG64 sibling edge. Added 2026-08-02, correcting LIBARCHIVE.md's own prior statement that this dependency would not be modeled as a formal edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-libb2-ucrt64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:blake2:libb2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs BLAKE2-based checksum support within libarchive's supported archive formats, the same rationale already documented for the CLANG64 sibling edge. Added 2026-08-02, closing the last of LIBARCHIVE.md's own three previously-declined UCRT64-native dependencies.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

@@ -12,7 +12,7 @@ model_refs:
   - environment:msys2:mingw32
 evidence_refs:
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # MSYS2 Runtime Environment Comparison and Migration Matrix
@@ -32,14 +32,25 @@ handled from the MSYS control plane, then project into each native environment.
 
 ## Architectural Classification
 
-| Environment | Prefix | Default toolchain | Architecture | C runtime | C++ library | Lifecycle |
-| --- | --- | --- | --- | --- | --- | --- |
-| MSYS | `/usr` | GCC | x86_64 | Cygwin-compatible runtime | libstdc++ | Active system environment |
-| UCRT64 | `/ucrt64` | GCC | x86_64 | UCRT | libstdc++ | Default recommendation |
-| CLANG64 | `/clang64` | LLVM/Clang + LLD | x86_64 | UCRT | libc++ | Active |
-| CLANGARM64 | `/clangarm64` | LLVM/Clang + LLD | AArch64 | UCRT | libc++ | Active |
-| MINGW64 | `/mingw64` | GCC | x86_64 | MSVCRT | libstdc++ | Deprecated by MSYS2 on 2026-03-15 |
-| MINGW32 | `/mingw32` | GCC | i686 | MSVCRT | libstdc++ | In phase-out |
+Each environment has its own page covering the full attribute set — ABI,
+compiler, runtime, CRT, linker, executable format, package repository,
+strengths, weaknesses, compatibility, and migration strategy. This table is
+the comparison; the pages are the architecture.
+
+| Environment | Prefix | Default toolchain | Architecture | C runtime | C++ library | Packages | Lifecycle |
+| --- | --- | --- | --- | --- | --- | ---: | --- |
+| [MSYS](ENVIRONMENT-MSYS.md) | `/usr` | GCC | x86_64 | Cygwin-compatible runtime | libstdc++ | 798 | Active system environment |
+| [UCRT64](ENVIRONMENT-UCRT64.md) | `/ucrt64` | GCC | x86_64 | UCRT | libstdc++ | 3,898 | Default recommendation |
+| [CLANG64](ENVIRONMENT-CLANG64.md) | `/clang64` | LLVM/Clang + LLD | x86_64 | UCRT | libc++ | 3,822 | Active |
+| [CLANGARM64](ENVIRONMENT-CLANGARM64.md) | `/clangarm64` | LLVM/Clang + LLD | AArch64 | UCRT | libc++ | 3,779 | Active |
+| [MINGW64](ENVIRONMENT-MINGW64.md) | `/mingw64` | GCC | x86_64 | MSVCRT | libstdc++ | 3,100 | Deprecated by MSYS2 on 2026-03-15 |
+| [MINGW32](ENVIRONMENT-MINGW32.md) | `/mingw32` | GCC | i686 | MSVCRT | libstdc++ | 314 | In phase-out |
+
+Package counts are from the current pacman catalog snapshot
+(`evidence:catalog:current`). They are the clearest available signal of
+where packaging effort sits: UCRT64 leads, MINGW64 trails the active
+environments by about 20%, and MINGW32 carries 12× fewer packages than
+UCRT64.
 
 ## Boundaries
 
@@ -96,6 +107,12 @@ Edits between the surrounding markers are overwritten on the next build.
 
 ## Related Objects
 
+- [MSYS](ENVIRONMENT-MSYS.md)
+- [UCRT64](ENVIRONMENT-UCRT64.md)
+- [CLANG64](ENVIRONMENT-CLANG64.md)
+- [CLANGARM64](ENVIRONMENT-CLANGARM64.md)
+- [MINGW64](ENVIRONMENT-MINGW64.md)
+- [MINGW32](ENVIRONMENT-MINGW32.md)
 - [Runtime observation contract](RUNTIME-OBSERVATION-CONTRACT.md)
 - [Self-updating knowledge base](SELF-UPDATING-KNOWLEDGE-BASE.md)
 - [Master volume index](MASTER-VOLUME-INDEX.md)

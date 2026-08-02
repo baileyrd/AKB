@@ -72,12 +72,14 @@ are cleared: the capability exists, the extraction has not been performed.
 - [x] MSYS2 versus MinGW-w64 role model
 - [x] Bounded runtime observation and current-environment report
 - [x] Environment comparison and migration matrix
-- [ ] Per-environment architecture pages for MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, and MINGW32
+- [x] Per-environment architecture pages for MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, and MINGW32
 
-The charter requires each environment documented separately against eleven
-attributes. The matrix above satisfies the roadmap item as worded but not
-the charter requirement, so the per-environment work is added rather than
-folded into the existing checkmark.
+**Closed 2026-08-02.** The charter requires each environment documented
+separately against eleven attributes; the matrix satisfied the roadmap item
+as worded but not the charter requirement. Six pages now cover ABI, compiler,
+runtime, CRT, linker, executable format, package repository, strengths,
+weaknesses, compatibility, and migration strategy per environment. Volume 4
+goes from 1 page to 7.
 
 ## Increment 3 — Runtime and package management
 

@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 0
+- Incoming relationships: 1
 
 ## `library:gnu:gmp@msys`
 
@@ -5680,6 +5680,15 @@
 - Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 4
+
+## `library:gnu:mpfr@clang64`
+
+- Name: GNU MPFR (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:mpfr-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
 
 ## `library:gnu:mpfr@msys`
 

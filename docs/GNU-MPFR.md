@@ -130,3 +130,4 @@ methodology.
 - [GCC](GNU-GCC.md)
 - [GDB](GNU-GDB.md)
 - [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)
+- [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)

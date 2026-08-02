@@ -148,3 +148,4 @@ methodology, also remain open.
 - [GNU MPFR (UCRT64)](GNU-MPFR.md)
 - [GNU MP (MSYS)](GNU-GMP-MSYS.md)
 - [gawk](GNU-AWK.md)
+- [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)

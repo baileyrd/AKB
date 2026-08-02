@@ -649,6 +649,24 @@
       "evidence_refs": ["evidence:gnu:gmp-manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:gnu:mpfr@clang64",
+      "kind": "library",
+      "name": "GNU MPFR (CLANG64)",
+      "summary": "The GNU MPFR correctly-rounded floating-point arithmetic library, packaged in the CLANG64 environment and linking against GMP (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["mpfr", "GNU MPFR"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.mpfr.org",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-mpfr",
+        "role": "correctly-rounded floating-point arithmetic"
+      },
+      "evidence_refs": ["evidence:gnu:mpfr-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8651,6 +8669,18 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:mpfr-clang64-requires-gmp-clang64",
+      "type": "requires",
+      "source": "library:gnu:mpfr@clang64",
+      "target": "library:gnu:gmp@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "MPFR is built directly atop GMP's own arbitrary-precision integer and floating-point primitives, adding correctly-rounded semantics.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

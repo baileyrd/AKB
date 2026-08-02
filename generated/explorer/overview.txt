@@ -632,6 +632,7 @@ Objects
 - library:gnu:libunistring (library): GNU libunistring
 - library:gnu:libunistring@ucrt64 (library): libunistring (UCRT64)
 - library:gnu:mpfr (library): GNU MPFR
+- library:gnu:mpfr@clang64 (library): GNU MPFR (CLANG64)
 - library:gnu:mpfr@msys (library): GNU MPFR (MSYS)
 - library:gnu:ncurses@ucrt64 (library): ncurses (UCRT64)
 - library:gnu:readline (library): GNU Readline
@@ -16912,6 +16913,7 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:gnu:mpfr@clang64 --requires--> library:gnu:gmp@clang64
 - library:gnupg:libgpgme@msys --requires--> component:gnupg:gnupg
 - library:gnupg:libgpgme@msys --requires--> library:gnupg:libassuan@msys
 - library:gnupg:libgpgme@msys --requires--> library:gnupg:libgpg-error@msys

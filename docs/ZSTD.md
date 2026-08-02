@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:zstd:zstd
   - package:msys2:zstd
+  - library:facebook:zstd@msys-lib
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -59,7 +60,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Codec library | `package:msys2:libzstd` | The `zstd` CLI links against `libzstd`, its shared codec library, following the same library/CLI split pattern documented for [bzip2](BZIP2.md#dependencies) and [XZ Utils](XZ-UTILS.md#dependencies). |
+| Codec library | `package:msys2:libzstd` | The `zstd` CLI links against `libzstd`, its shared codec library, following the same library/CLI split pattern documented for [bzip2](BZIP2.md#dependencies) and [XZ Utils](XZ-UTILS.md#dependencies). Documented fully in [Zstandard (MSYS library)](LIBZSTD-MSYS.md). |
 | C/C++ runtime | `package:msys2:gcc-libs` | Standard GCC-toolchain runtime libraries (`libgcc`/`libstdc++`) for a package built with GCC in this environment. |
 
 ## Reverse Dependencies

@@ -691,7 +691,31 @@ third distinct liblzma-named catalog entity in this knowledge base
 alongside [liblzma (UCRT64)](LIBLZMA.md) and
 [liblzma (CLANG64)](LIBLZMA-CLANG64.md); modeling it also closed
 [XZ Utils'](XZ-UTILS.md#dependencies) own long-cited-but-unlinked
-`libiconv` sub-dependency in the same pass. These pages are a starting point for this
+`libiconv` sub-dependency in the same pass. A further re-run of the
+volume-wide audit closed eleven more edges between entities already
+documented elsewhere in this knowledge base — no new pages: five
+already-modeled MSYS components
+([GNU Grep](GNU-GREP.md#dependencies), [GNU Findutils](GNU-FINDUTILS.md#dependencies),
+[GNU Tar](GNU-TAR.md#dependencies), [GNU Emacs](GNU-EMACS.md#dependencies),
+and [Vim](VIM.md#dependencies)) had each cited
+[GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md) by name without a
+corresponding graph edge, closing the same class of gap found earlier
+for [XZ Utils](XZ-UTILS.md); [Zstandard (MSYS CLI tool)'s](ZSTD.md#dependencies)
+own split-library edge onto [Zstandard (MSYS library)](LIBZSTD-MSYS.md)
+was similarly unlinked; [GnuPG's](GNUPG.md#dependencies) own
+`libgpg-error` edge and [libgpg-error's](LIBGPG-ERROR.md#dependencies)
+own `gettext` edge were both cited with "documented fully in" links
+that had no backing graph edge — the former also corrected a stale note
+on [libgpg-error (MSYS)'s](LIBGPG-ERROR-MSYS.md#reverse-dependencies)
+own page, which had explicitly declined to model GnuPG as a direct
+dependent; [libstdc++'s](LIBSTDCXX.md#dependencies) own documented
+`libwinpthread` dependency was missing its edge, the same
+graph-completeness class as the GCC/Binutils/Clang findings earlier
+this session; and [libxml2 (CLANG64)'s](LIBXML2-CLANG64.md#dependencies)
+own zlib edge had been incorrectly grouped with its still-unmodeled
+libiconv sub-dependency and declined, when zlib (CLANG64) was in fact
+already modeled; and [GNU Cpio's](GNU-CPIO.md#dependencies) own
+`libintl` edge, cited by name but never graphed. These pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 
 ## Family navigation

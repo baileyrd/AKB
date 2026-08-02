@@ -89,7 +89,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:cpio-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `component:gnu:ed`
@@ -107,7 +107,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:emacs-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 7
+- Outgoing relationships: 8
 - Incoming relationships: 1
 
 ## `component:gnu:findutils`
@@ -116,7 +116,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:findutils-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnu:gawk`
@@ -152,7 +152,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:grep-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 4
+- Outgoing relationships: 5
 - Incoming relationships: 1
 
 ## `component:gnu:gzip`
@@ -215,7 +215,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnu:tar-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 1
 
 ## `component:gnupg:gnupg`
@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 14
+- Outgoing relationships: 15
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -377,7 +377,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:vim:documentation-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 6
 - Incoming relationships: 1
 
 ## `component:zstd:zstd`
@@ -386,7 +386,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:zstd:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 2
+- Outgoing relationships: 3
 - Incoming relationships: 1
 
 ## `dll:msys2:/ucrt64/bin/zlib1.dll`
@@ -5481,7 +5481,7 @@
 - Status: `partial`
 - Evidence: evidence:facebook:zstd-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:gnome:libxml2`
 
@@ -5498,7 +5498,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnome:libxml2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 0
+- Outgoing relationships: 1
 - Incoming relationships: 2
 
 ## `library:gnome:libxml2@msys`
@@ -5517,7 +5517,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gettext-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `library:gnu:gmp`
 
@@ -5553,7 +5553,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 8
+- Incoming relationships: 13
 
 ## `library:gnu:libidn2`
 
@@ -5580,7 +5580,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libintl-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 17
+- Incoming relationships: 18
 
 ## `library:gnu:libltdl`
 
@@ -5597,7 +5597,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnu:libstdcxx-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 3
 
 ## `library:gnu:libtasn1`
@@ -5706,7 +5706,7 @@
 - Status: `partial`
 - Evidence: evidence:zlib:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnu:zlib@msys`
 
@@ -5759,7 +5759,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 1
+- Outgoing relationships: 2
 - Incoming relationships: 4
 
 ## `library:gnupg:libgpg-error@msys`
@@ -5769,7 +5769,7 @@
 - Status: `partial`
 - Evidence: evidence:gnupg:libgpg-error-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:gnupg:libksba`
 
@@ -6039,7 +6039,7 @@
 - Status: `partial`
 - Evidence: evidence:mingw-w64:libwinpthread-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:mingw-w64:libwinpthread@clang64`
 

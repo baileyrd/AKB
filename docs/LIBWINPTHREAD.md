@@ -73,12 +73,16 @@ reverse-dependency count recorded in this knowledge base, behind only
 [zlib](ZLIB.md#reverse-dependencies)'s 299 and
 [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s 167, reflecting that
 nearly any multithreaded program built in this environment links against
-it. One is now modeled in this knowledge base:
+it. Two are now modeled in this knowledge base:
 [GNU Binutils](GNU-BINUTILS.md#dependencies)
 (`relationship:toolchain:binutils-requires-libwinpthread`, added
 2026-07-30 to close a gap in
 [Binutils' own dependency table](GNU-BINUTILS.md#dependencies), which
-had cited this package by name without a corresponding graph edge). See
+had cited this package by name without a corresponding graph edge), and
+[libstdc++](LIBSTDCXX.md#dependencies)
+(`relationship:toolchain:libstdcxx-requires-libwinpthread`, added
+2026-07-30, closing the same kind of gap on gcc-libs' own dependency
+list). See
 the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.

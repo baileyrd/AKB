@@ -87,9 +87,10 @@ dependency.
 ## Reverse Dependencies
 
 The catalog snapshot records 6 relationships targeting
-`package:msys2:libgpg-error`: `package:msys2:gnupg` (a direct catalog
-dependency, though not modeled as a separate graph edge here since
-GnuPG's documented requirement flows through the three libraries above),
+`package:msys2:libgpg-error`: `package:msys2:gnupg`
+(`relationship:ssh-curl-git:gnupg-requires-libgpg-error-msys`, added
+2026-07-30 — a direct catalog dependency, alongside GnuPG's own
+transitive requirement flowing through the three libraries above),
 `package:msys2:libassuan`
 (`relationship:foundation-libraries:libassuan-msys-requires-libgpg-error-msys`),
 `package:msys2:libgcrypt`

@@ -7,6 +7,7 @@ model_refs:
   - library:gnome:libxml2@clang64
   - package:msys2:mingw-w64-clang-x86_64-libxml2
   - component:llvm:lldb
+  - library:gnu:zlib@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:gnome:libxml2-manual-2026-07-30
@@ -68,10 +69,14 @@ MSYS/UCRT64/CLANG64 sibling groups.
 ## Dependencies
 
 The CLANG64 `package:msys2:mingw-w64-clang-x86_64-libxml2` declares
-dependencies on `mingw-w64-clang-x86_64-libiconv` and
-`mingw-w64-clang-x86_64-zlib` — both CLANG64-environment sibling
-packages, not individually modeled as separate dependency edges from
-this entity in this knowledge base.
+dependencies on `mingw-w64-clang-x86_64-libiconv` (not individually
+modeled as a separate dependency edge from this entity in this
+knowledge base) and [zlib (CLANG64)](ZLIB-CLANG64.md)
+(`relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64`,
+added 2026-07-30 — **correction**: this section had previously grouped
+this edge with the still-unmodeled libiconv sub-dependency, but
+zlib (CLANG64) is in fact already modeled elsewhere in this knowledge
+base).
 
 ## Reverse Dependencies
 
@@ -135,11 +140,12 @@ being treated as an LLDB defect.
 XML parsing library scope is backed by the official libxml2 project
 wiki (`evidence:gnome:libxml2-manual-2026-07-30`), the same evidence
 record [libxml2 (UCRT64)](LIBXML2.md) cites. Package identity, version,
-license, and the one modeled dependent edge are backed by the pacman
-catalog snapshot (`evidence:catalog:current`). Open, and explicitly out
-of scope for this page: the ~125 remaining recorded dependents not
-individually modeled, this package's own libiconv/zlib sub-dependencies,
-and header-level API surface / PE import/export-level evidence, per the
+license, and the recorded dependency and dependent edges are backed by
+the pacman catalog snapshot (`evidence:catalog:current`). Open, and
+explicitly out of scope for this page: the ~125 remaining recorded
+dependents not individually modeled, this package's own libiconv
+sub-dependency, and header-level API surface / PE import/export-level
+evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
@@ -150,3 +156,4 @@ methodology.
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
 - [LLDB](LLDB.md)
 - [LLVM libraries](LLVM-LIBS.md)
+- [zlib (CLANG64)](ZLIB-CLANG64.md)

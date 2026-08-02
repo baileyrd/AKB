@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:findutils
   - package:msys2:findutils
   - library:gnu:libintl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -68,7 +69,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling for filenames, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling for filenames, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 
 ## Reverse Dependencies
@@ -150,5 +151,6 @@ Windows-equivalent argument-length limit has not been directly observed.
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Grep](GNU-GREP.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [MSYS Runtime Behavior Map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:vim
   - library:libxcrypt:libxcrypt
   - library:gnu:libintl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -63,7 +64,7 @@ The catalog snapshot records five `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Password/crypt hashing | `package:msys2:libxcrypt` | Backs Vim's built-in file-encryption feature (`:X`, `-x`), which uses `crypt()`-family hashing. Documented fully in [libxcrypt](LIBXCRYPT.md). |
 | Embedded Perl scripting | `package:msys2:perl` | Backs optional built-in Perl-interpreter integration, enabling embedded scripting via `:perl` (`claim:component:vim:perl-integration`), an equivalent feature category to Vim's optional Python/Lua/Ruby interpreter integrations. |
@@ -142,5 +143,6 @@ observed.
 - [GNU Ed](GNU-ED.md)
 - [GNU Nano](GNU-NANO.md)
 - [GNU Emacs](GNU-EMACS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [libxcrypt](LIBXCRYPT.md)
 - [GNU libintl](GNU-LIBINTL.md)

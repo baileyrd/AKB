@@ -16982,6 +16982,17 @@ Relationships
 - component:tukaani:xz --requires--> library:tukaani:liblzma@msys
 - component:tukaani:xz --requires--> library:gnu:libiconv@msys
 - library:darwinsys:file --requires--> library:tukaani:liblzma@msys
+- component:gnu:grep --requires--> library:gnu:libiconv@msys
+- component:gnu:findutils --requires--> library:gnu:libiconv@msys
+- component:gnu:tar --requires--> library:gnu:libiconv@msys
+- component:gnu:emacs --requires--> library:gnu:libiconv@msys
+- component:vim:vim --requires--> library:gnu:libiconv@msys
+- component:zstd:zstd --requires--> library:facebook:zstd@msys-lib
+- component:gnupg:gnupg --requires--> library:gnupg:libgpg-error@msys
+- library:gnupg:libgpg-error --requires--> library:gnu:gettext
+- library:gnu:libstdc++ --requires--> library:mingw-w64:libwinpthread
+- library:gnome:libxml2@clang64 --requires--> library:gnu:zlib@clang64
+- component:gnu:cpio --requires--> library:gnu:libintl
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

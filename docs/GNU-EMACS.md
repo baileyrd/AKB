@@ -9,6 +9,7 @@ model_refs:
   - library:gnome:libxml2@msys
   - library:gnu:zlib@msys
   - library:nettle:libhogweed@msys
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -72,7 +73,7 @@ in this volume, each mapping to a specific built-in Emacs feature:
 | Terminal capability library | `package:msys2:ncurses` | Screen drawing and cursor control in this console build, the same shared dependency documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
 | Compression support | `package:msys2:zlib` | Backs Emacs' built-in "auto-compression mode," which transparently reads and writes compressed files. Documented fully in [zlib (MSYS)](ZLIB-MSYS.md). |
 | XML/HTML parsing | `package:msys2:libxml2` | Backs Emacs' built-in libxml2-based parsing, used by features such as the `eww` web browser and `libxml-parse-html-region`. Documented fully in [libxml2 (MSYS)](LIBXML2-MSYS.md). |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | TLS/network security | `package:msys2:libgnutls` | Backs Emacs' Network Security Manager and TLS-based network connections. Documented fully in [GnuTLS](GNUTLS.md). |
 | Cryptographic primitives | `package:msys2:libhogweed` | Part of the Nettle cryptographic library, a dependency of GnuTLS above rather than a separate Emacs feature in its own right. Documented fully in [Hogweed (MSYS)](LIBHOGWEED-MSYS.md). |
 | Core application framework | `package:msys2:glib2` | GLib event-loop/utility library; this MSYS console build's exact reliance on it (versus being present only for a shared GUI-toolkit build variant) has not been directly confirmed. |
@@ -156,3 +157,4 @@ specific console-oriented package have not been directly confirmed.
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

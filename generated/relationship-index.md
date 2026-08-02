@@ -40,6 +40,7 @@
 | relationship:archive-compression:zip-packaged-by-package | packaged-by | component:info-zip:zip | package:msys2:zip | verified |
 | relationship:archive-compression:zip-uses-msys-runtime | uses-runtime | component:info-zip:zip | runtime:msys2:msys-2.0.dll | partial |
 | relationship:archive-compression:zstd-packaged-by-package | packaged-by | component:zstd:zstd | package:msys2:zstd | verified |
+| relationship:archive-compression:zstd-requires-libzstd-msys | requires | component:zstd:zstd | library:facebook:zstd@msys-lib | verified |
 | relationship:archive-compression:zstd-uses-msys-runtime | uses-runtime | component:zstd:zstd | runtime:msys2:msys-2.0.dll | partial |
 | relationship:autotools:autoconf-packaged-by-package | packaged-by | component:gnu:autoconf | package:msys2:autoconf2.71 | verified |
 | relationship:autotools:autoconf-uses-msys-runtime | uses-runtime | component:gnu:autoconf | runtime:msys2:msys-2.0.dll | partial |
@@ -76200,6 +76201,7 @@
 | relationship:editors-pagers-terminals:ncurses-packaged-by-package | packaged-by | component:gnu:ncurses | package:msys2:ncurses | verified |
 | relationship:editors-pagers-terminals:ncurses-uses-msys-runtime | uses-runtime | component:gnu:ncurses | runtime:msys2:msys-2.0.dll | partial |
 | relationship:editors-pagers-terminals:vim-packaged-by-package | packaged-by | component:vim:vim | package:msys2:vim | verified |
+| relationship:editors-pagers-terminals:vim-requires-libiconv-msys | requires | component:vim:vim | library:gnu:libiconv@msys | verified |
 | relationship:editors-pagers-terminals:vim-requires-libintl | requires | component:vim:vim | library:gnu:libintl | verified |
 | relationship:editors-pagers-terminals:vim-requires-libxcrypt | requires | component:vim:vim | library:libxcrypt:libxcrypt | verified |
 | relationship:editors-pagers-terminals:vim-uses-msys-runtime | uses-runtime | component:vim:vim | runtime:msys2:msys-2.0.dll | partial |
@@ -76315,6 +76317,7 @@
 | relationship:foundation-libraries:libgpg-error-msys-requires-libintl | requires | library:gnupg:libgpg-error@msys | library:gnu:libintl | verified |
 | relationship:foundation-libraries:libgpg-error-msys-uses-msys-runtime | uses-runtime | library:gnupg:libgpg-error@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:libgpg-error-packaged-by-package | packaged-by | library:gnupg:libgpg-error | package:msys2:mingw-w64-ucrt-x86_64-libgpg-error | verified |
+| relationship:foundation-libraries:libgpg-error-requires-gettext | requires | library:gnupg:libgpg-error | library:gnu:gettext | verified |
 | relationship:foundation-libraries:libhogweed-msys-requires-gmp-msys | requires | library:nettle:libhogweed@msys | library:gnu:gmp@msys | verified |
 | relationship:foundation-libraries:libiconv-msys-packaged-by-package | packaged-by | library:gnu:libiconv@msys | package:msys2:libiconv | verified |
 | relationship:foundation-libraries:libiconv-msys-uses-msys-runtime | uses-runtime | library:gnu:libiconv@msys | runtime:msys2:msys-2.0.dll | partial |
@@ -76373,6 +76376,7 @@
 | relationship:foundation-libraries:libwinpthread-packaged-by-package | packaged-by | library:mingw-w64:libwinpthread | package:msys2:mingw-w64-ucrt-x86_64-libwinpthread | verified |
 | relationship:foundation-libraries:libxcrypt-packaged-by-package | packaged-by | library:libxcrypt:libxcrypt | package:msys2:libxcrypt | verified |
 | relationship:foundation-libraries:libxcrypt-uses-msys-runtime | uses-runtime | library:libxcrypt:libxcrypt | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64 | requires | library:gnome:libxml2@clang64 | library:gnu:zlib@clang64 | verified |
 | relationship:foundation-libraries:libxml2-msys-packaged-by-package | packaged-by | library:gnome:libxml2@msys | package:msys2:libxml2 | verified |
 | relationship:foundation-libraries:libxml2-msys-requires-readline-msys | requires | library:gnome:libxml2@msys | library:gnu:readline@msys | verified |
 | relationship:foundation-libraries:libxml2-msys-requires-zlib-msys | requires | library:gnome:libxml2@msys | library:gnu:zlib@msys | verified |
@@ -76515,11 +76519,14 @@
 | relationship:gnu-userland:coreutils-requires-libiconv-msys | requires | component:gnu:coreutils | library:gnu:libiconv@msys | verified |
 | relationship:gnu-userland:coreutils-requires-libintl | requires | component:gnu:coreutils | library:gnu:libintl | verified |
 | relationship:gnu-userland:coreutils-uses-msys-runtime | uses-runtime | component:gnu:coreutils | runtime:msys2:msys-2.0.dll | partial |
+| relationship:gnu-userland:cpio-requires-libintl | requires | component:gnu:cpio | library:gnu:libintl | verified |
 | relationship:gnu-userland:emacs-requires-gnutls | requires | component:gnu:emacs | library:gnutls:gnutls | verified |
 | relationship:gnu-userland:emacs-requires-libhogweed-msys | requires | component:gnu:emacs | library:nettle:libhogweed@msys | verified |
+| relationship:gnu-userland:emacs-requires-libiconv-msys | requires | component:gnu:emacs | library:gnu:libiconv@msys | verified |
 | relationship:gnu-userland:emacs-requires-libxml2-msys | requires | component:gnu:emacs | library:gnome:libxml2@msys | verified |
 | relationship:gnu-userland:emacs-requires-zlib-msys | requires | component:gnu:emacs | library:gnu:zlib@msys | verified |
 | relationship:gnu-userland:findutils-packaged-by-package | packaged-by | component:gnu:findutils | package:msys2:findutils | verified |
+| relationship:gnu-userland:findutils-requires-libiconv-msys | requires | component:gnu:findutils | library:gnu:libiconv@msys | verified |
 | relationship:gnu-userland:findutils-requires-libintl | requires | component:gnu:findutils | library:gnu:libintl | verified |
 | relationship:gnu-userland:findutils-uses-msys-runtime | uses-runtime | component:gnu:findutils | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:gawk-packaged-by-package | packaged-by | component:gnu:gawk | package:msys2:gawk | verified |
@@ -76528,6 +76535,7 @@
 | relationship:gnu-userland:gawk-requires-mpfr-msys | requires | component:gnu:gawk | library:gnu:mpfr@msys | verified |
 | relationship:gnu-userland:gawk-uses-msys-runtime | uses-runtime | component:gnu:gawk | runtime:msys2:msys-2.0.dll | partial |
 | relationship:gnu-userland:grep-packaged-by-package | packaged-by | component:gnu:grep | package:msys2:grep | verified |
+| relationship:gnu-userland:grep-requires-libiconv-msys | requires | component:gnu:grep | library:gnu:libiconv@msys | verified |
 | relationship:gnu-userland:grep-requires-libintl | requires | component:gnu:grep | library:gnu:libintl | verified |
 | relationship:gnu-userland:grep-requires-pcre | requires | component:gnu:grep | library:pcre:pcre | verified |
 | relationship:gnu-userland:grep-uses-msys-runtime | uses-runtime | component:gnu:grep | runtime:msys2:msys-2.0.dll | partial |
@@ -76540,6 +76548,7 @@
 | relationship:gnu-userland:sed-packaged-by-package | packaged-by | component:gnu:sed | package:msys2:sed | verified |
 | relationship:gnu-userland:sed-requires-libintl | requires | component:gnu:sed | library:gnu:libintl | verified |
 | relationship:gnu-userland:sed-uses-msys-runtime | uses-runtime | component:gnu:sed | runtime:msys2:msys-2.0.dll | partial |
+| relationship:gnu-userland:tar-requires-libiconv-msys | requires | component:gnu:tar | library:gnu:libiconv@msys | verified |
 | relationship:inventory:imports-dll-0943995334683ca1d4cb | imports-dll | executable:msys2:/usr/bin/curl.exe | dll:windows:kernel32.dll | verified |
 | relationship:inventory:imports-dll-189721d86432b0e07eee | imports-dll | dll:msys2:/ucrt64/bin/zlib1.dll | dll:windows:api-ms-win-crt-stdio-l1-1-0.dll | verified |
 | relationship:inventory:imports-dll-2e01ef161166f723c43e | imports-dll | dll:msys2:/ucrt64/bin/zlib1.dll | dll:windows:api-ms-win-crt-convert-l1-1-0.dll | verified |
@@ -77121,6 +77130,7 @@
 | relationship:ssh-curl-git:gnupg-requires-libbz2 | requires | component:gnupg:gnupg | library:bzip2:libbz2 | verified |
 | relationship:ssh-curl-git:gnupg-requires-libcurl | requires | component:gnupg:gnupg | library:curl:libcurl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libgcrypt | requires | component:gnupg:gnupg | library:gnupg:libgcrypt@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-libgpg-error-msys | requires | component:gnupg:gnupg | library:gnupg:libgpg-error@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libiconv-msys | requires | component:gnupg:gnupg | library:gnu:libiconv@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libintl | requires | component:gnupg:gnupg | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libksba | requires | component:gnupg:gnupg | library:gnupg:libksba@msys | verified |
@@ -77195,6 +77205,7 @@
 | relationship:toolchain:libarchive-requires-liblzma | requires | library:libarchive:libarchive | library:tukaani:liblzma | verified |
 | relationship:toolchain:libarchive-requires-openssl-ucrt64 | requires | library:libarchive:libarchive | library:openssl:openssl@ucrt64 | verified |
 | relationship:toolchain:libarchive-requires-zstd | requires | library:libarchive:libarchive | library:facebook:zstd | verified |
+| relationship:toolchain:libstdcxx-requires-libwinpthread | requires | library:gnu:libstdc++ | library:mingw-w64:libwinpthread | verified |
 | relationship:toolchain:lld-compatible-with-binutils | compatible-with | component:llvm:lld | component:gnu:binutils | partial |
 | relationship:toolchain:lld-packaged-by-package | packaged-by | component:llvm:lld | package:msys2:mingw-w64-clang-x86_64-lld | verified |
 | relationship:toolchain:lld-requires-llvm-libs | requires | component:llvm:lld | library:llvm:llvm-libs | verified |

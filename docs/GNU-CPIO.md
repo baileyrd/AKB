@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:gnu:cpio
   - package:msys2:cpio
+  - library:gnu:libintl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -57,9 +58,11 @@ select which files to include beyond the stream it is given.
 ## Dependencies
 
 The catalog snapshot records one `runtime-depends-on` edge for
-`package:msys2:cpio`: `package:msys2:libintl`, the same gettext-based
-message-translation (NLS) rationale documented for
-[GNU Coreutils](GNU-COREUTILS.md).
+`package:msys2:cpio`: [GNU libintl](GNU-LIBINTL.md)
+(`package:msys2:libintl`,
+`relationship:gnu-userland:cpio-requires-libintl`, added 2026-07-30),
+the same gettext-based message-translation (NLS) rationale documented
+for [GNU Coreutils](GNU-COREUTILS.md).
 
 ## Reverse Dependencies
 
@@ -126,3 +129,4 @@ version-qualified security review implied above.
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Tar](GNU-TAR.md)
 - [GNU Findutils](GNU-FINDUTILS.md)
+- [GNU libintl](GNU-LIBINTL.md)

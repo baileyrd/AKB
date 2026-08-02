@@ -65,9 +65,12 @@ packages for UCRT64.
 
 libstdc++ is bundled with `package:msys2:mingw-w64-ucrt-x86_64-gcc-libs`,
 which itself records two `runtime-depends-on` edges in the catalog
-snapshot: `mingw-w64-ucrt-x86_64-libwinpthread` (threading support) and
+snapshot: [libwinpthread](LIBWINPTHREAD.md) (threading support,
+`relationship:toolchain:libstdcxx-requires-libwinpthread`, added
+2026-07-30) and
 `mingw-w64-ucrt-x86_64-tzdata` (timezone database, backing C++20's
-`<chrono>` timezone support). The package also `provides` the
+`<chrono>` timezone support, not individually modeled in this
+knowledge base). The package also `provides` the
 `mingw-w64-ucrt-x86_64-cc-libs` virtual capability, which
 [libc++](LIBCXX.md#dependencies) in this same environment depends on for
 low-level compiler runtime support even when a project chooses libc++ over

@@ -73,12 +73,15 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 24 relationships targeting
-`package:msys2:libzstd`. Two are already modeled in this knowledge
+`package:msys2:libzstd`. Three are already modeled in this knowledge
 base: `package:msys2:libcurl`
-(`relationship:foundation-libraries:libcurl-requires-libzstd`) and
+(`relationship:foundation-libraries:libcurl-requires-libzstd`),
 `package:msys2:file`
-(`relationship:foundation-libraries:file-requires-libzstd`). The
-remaining ~22 recorded dependents (`bsdcpio`, `bsdtar`, `ccache`,
+(`relationship:foundation-libraries:file-requires-libzstd`), and
+`package:msys2:zstd`
+(`relationship:archive-compression:zstd-requires-libzstd-msys`, added
+2026-07-30, documented fully in [Zstandard (MSYS CLI tool)](ZSTD.md)).
+The remaining ~21 recorded dependents (`bsdcpio`, `bsdtar`, `ccache`,
 `elinks`, `libarchive`, `llvm-libs` — a different, CLANG64-environment
 `llvm-libs` dependency than this knowledge base's own
 [LLVM libraries](LLVM-LIBS.md) entity, distinct catalog objects — and

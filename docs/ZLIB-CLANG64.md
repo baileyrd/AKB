@@ -72,15 +72,19 @@ runtime support.
 ## Reverse Dependencies
 
 The catalog snapshot records 285 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-zlib`. Three are already modeled
+`package:msys2:mingw-w64-clang-x86_64-zlib`. Four are already modeled
 in this knowledge base: `package:msys2:mingw-w64-clang-x86_64-lld`
 (`relationship:toolchain:lld-requires-zlib-clang64`),
 `package:msys2:mingw-w64-clang-x86_64-lldb`
-(`relationship:toolchain:lldb-requires-zlib-clang64`), and
+(`relationship:toolchain:lldb-requires-zlib-clang64`),
 `package:msys2:mingw-w64-clang-x86_64-llvm-libs`
 (`relationship:foundation-libraries:llvm-libs-requires-zlib-clang64`,
 correcting [LLVM libraries'](LLVM-LIBS.md) own prior incorrect
-no-dependencies claim). The remaining ~282 recorded dependents (a broad
+no-dependencies claim), and
+`package:msys2:mingw-w64-clang-x86_64-libxml2`
+(`relationship:foundation-libraries:libxml2-clang64-requires-zlib-clang64`,
+correcting [libxml2 (CLANG64)'s](LIBXML2-CLANG64.md) own prior declined
+edge). The remaining ~281 recorded dependents (a broad
 mix of CLANG64 packages) are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -148,3 +152,4 @@ methodology.
 - [LLDB](LLDB.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [Zstandard (CLANG64)](LIBZSTD-CLANG64.md)
+- [libxml2 (CLANG64)](LIBXML2-CLANG64.md)

@@ -5562,7 +5562,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:gnu:gmp@msys`
 
@@ -6202,6 +6202,15 @@
 - Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:nettle:nettle@clang64`
+
+- Name: Nettle (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:nettle:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
 
 ## `library:nettle:nettle@msys`
 

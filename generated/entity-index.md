@@ -621,7 +621,7 @@
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
-| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 1 |
+| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 2 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
@@ -693,6 +693,7 @@
 | library:nettle:libhogweed@msys | library | libhogweed | partial | 1 | 2 |
 | library:nettle:libnettle@msys | library | libnettle | partial | 1 | 2 |
 | library:nettle:nettle | library | Nettle | partial | 2 | 2 |
+| library:nettle:nettle@clang64 | library | Nettle (CLANG64) | partial | 1 | 0 |
 | library:nettle:nettle@msys | library | Nettle (MSYS) | partial | 3 | 2 |
 | library:nghttp2:libnghttp2 | library | libnghttp2 | partial | 2 | 3 |
 | library:nghttp2:libnghttp2@ucrt64 | library | libnghttp2 (UCRT64) | partial | 0 | 1 |

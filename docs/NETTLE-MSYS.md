@@ -153,3 +153,4 @@ elsewhere in this volume's methodology.
 - [GnuTLS](GNUTLS.md)
 - [libnettle (MSYS)](LIBNETTLE-MSYS.md)
 - [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
+- [Nettle (CLANG64)](NETTLE-CLANG64.md)

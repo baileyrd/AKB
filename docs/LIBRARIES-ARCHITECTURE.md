@@ -24,6 +24,7 @@ model_refs:
   - library:gnupg:libgpgme@msys
   - library:gnu:gmp@clang64
   - library:gnu:mpfr@clang64
+  - library:nettle:nettle@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -285,8 +286,9 @@ flowchart LR
 [LZO (MSYS)](LIBLZO2-MSYS.md), [APR](APR-MSYS.md),
 [APR-util](APR-UTIL-MSYS.md), [Serf](LIBSERF-MSYS.md),
 [GPGME (MSYS)](LIBGPGME-MSYS.md),
-[GMP (CLANG64)](GNU-GMP-CLANG64.md), and
-[GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md) are
+[GMP (CLANG64)](GNU-GMP-CLANG64.md),
+[GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md), and
+[Nettle (CLANG64)](NETTLE-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -301,7 +303,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and seventeen pages are deliberately scoped to package/dependency-level
+All one hundred and eighteen pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -843,7 +845,14 @@ future batch rather than added speculatively. One of those candidates
 was closed immediately: [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md),
 whose sole non-boilerplate dependency, GMP (CLANG64), had just been
 modeled in the same batch, giving it full 1/1 coverage on arrival —
-the seventh full-coverage addition this session. These
+the seventh full-coverage addition this session. A second GMP
+(CLANG64) candidate closed the same way:
+[Nettle (CLANG64)](NETTLE-CLANG64.md), whose sole non-boilerplate
+dependency is also GMP (CLANG64), the eighth full-coverage addition.
+Two candidates remain open on GMP (CLANG64)'s own page for a future
+batch: `mpc` and `isl` (CLANG64), both of which depend on GMP and MPFR
+together, so [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md) unblocks them
+similarly. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

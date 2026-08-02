@@ -76460,6 +76460,7 @@
 | relationship:foundation-libraries:msys-contains-pcre2-msys | contains | environment:msys2:msys | library:pcre:pcre2@msys | partial |
 | relationship:foundation-libraries:msys-contains-readline-msys | contains | environment:msys2:msys | library:gnu:readline@msys | partial |
 | relationship:foundation-libraries:msys-contains-zlib-msys | contains | environment:msys2:msys | library:gnu:zlib@msys | partial |
+| relationship:foundation-libraries:nettle-clang64-requires-gmp-clang64 | requires | library:nettle:nettle@clang64 | library:gnu:gmp@clang64 | verified |
 | relationship:foundation-libraries:nettle-msys-packaged-by-package | packaged-by | library:nettle:nettle@msys | package:msys2:nettle | verified |
 | relationship:foundation-libraries:nettle-msys-requires-libnettle-msys | requires | library:nettle:nettle@msys | library:nettle:libnettle@msys | verified |
 | relationship:foundation-libraries:nettle-msys-uses-msys-runtime | uses-runtime | library:nettle:nettle@msys | runtime:msys2:msys-2.0.dll | partial |

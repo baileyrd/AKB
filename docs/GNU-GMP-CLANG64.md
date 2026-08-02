@@ -68,16 +68,17 @@ already documented for [GMP (UCRT64)](GNU-GMP.md#dependencies).
 ## Reverse Dependencies
 
 The catalog snapshot records 60 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-gmp`. One is now modeled in this
+`package:msys2:mingw-w64-clang-x86_64-gmp`. Two are now modeled in this
 knowledge base: [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)
 (`relationship:foundation-libraries:mpfr-clang64-requires-gmp-clang64`,
-added 2026-08-02). The remaining 59 are not individually
-modeled in this knowledge base, though several are the CLANG64
+added 2026-08-02) and [Nettle (CLANG64)](NETTLE-CLANG64.md)
+(`relationship:foundation-libraries:nettle-clang64-requires-gmp-clang64`,
+added 2026-08-02). The remaining 58 are not individually
+modeled in this knowledge base, though two are the CLANG64
 siblings of libraries already documented as MSYS/UCRT64 entities
 elsewhere in this volume: `mingw-w64-clang-x86_64-mpc`
-([GNU MPC](GNU-MPC.md)), `mingw-w64-clang-x86_64-isl`
-([isl](LIBISL.md)), and `mingw-w64-clang-x86_64-nettle`
-([Nettle](NETTLE.md)) — each a candidate for its own CLANG64 sibling
+([GNU MPC](GNU-MPC.md)) and `mingw-w64-clang-x86_64-isl`
+([isl](LIBISL.md)) — each a candidate for its own CLANG64 sibling
 page in a future batch. See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -131,7 +132,7 @@ The arithmetic model is backed by the official GMP project site
 (`evidence:gnu:gmp-manual-2026-07-30`), the same evidence record
 [GMP (UCRT64)](GNU-GMP.md) cites. Package identity, version, license,
 and reverse-dependency count are backed by the pacman catalog snapshot
-(`evidence:catalog:current`). Open: 59 of the 60 recorded reverse dependents
+(`evidence:catalog:current`). Open: 58 of the 60 recorded reverse dependents
 are not individually modeled in this knowledge base, though the CLANG64
 siblings of MPFR, MPC, isl, and Nettle are flagged above as candidates
 for a future batch, per this volume's ongoing gap-closing methodology.
@@ -146,3 +147,4 @@ for a future batch, per this volume's ongoing gap-closing methodology.
 - [isl (Integer Set Library)](LIBISL.md)
 - [Nettle](NETTLE.md)
 - [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)
+- [Nettle (CLANG64)](NETTLE-CLANG64.md)

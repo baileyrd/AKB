@@ -690,6 +690,7 @@ Objects
 - library:nettle:libhogweed@msys (library): libhogweed
 - library:nettle:libnettle@msys (library): libnettle
 - library:nettle:nettle (library): Nettle
+- library:nettle:nettle@clang64 (library): Nettle (CLANG64)
 - library:nettle:nettle@msys (library): Nettle (MSYS)
 - library:nghttp2:libnghttp2 (library): libnghttp2
 - library:nghttp2:libnghttp2@ucrt64 (library): libnghttp2 (UCRT64)
@@ -16913,6 +16914,7 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
 - library:rpm:popt@msys --requires--> library:gnu:libintl
+- library:nettle:nettle@clang64 --requires--> library:gnu:gmp@clang64
 - library:gnu:mpfr@clang64 --requires--> library:gnu:gmp@clang64
 - library:gnupg:libgpgme@msys --requires--> component:gnupg:gnupg
 - library:gnupg:libgpgme@msys --requires--> library:gnupg:libassuan@msys

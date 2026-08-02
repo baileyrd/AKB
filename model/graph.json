@@ -667,6 +667,24 @@
       "evidence_refs": ["evidence:gnu:mpfr-manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:nettle:nettle@clang64",
+      "kind": "library",
+      "name": "Nettle (CLANG64)",
+      "summary": "A low-level cryptographic library, packaged in the CLANG64 environment and linking against GMP (CLANG64), already documented in this knowledge base.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Niels Möller",
+      "aliases": ["nettle"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.lysator.liu.se/~nisse/nettle",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-nettle",
+        "role": "low-level cryptographic primitives"
+      },
+      "evidence_refs": ["evidence:nettle:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8669,6 +8687,18 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:nettle-clang64-requires-gmp-clang64",
+      "type": "requires",
+      "source": "library:nettle:nettle@clang64",
+      "target": "library:gnu:gmp@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Nettle uses GMP's arbitrary-precision arithmetic for its public-key cryptography primitives (RSA, DSA).",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

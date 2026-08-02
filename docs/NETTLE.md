@@ -155,3 +155,4 @@ methodology.
 - [Nettle (MSYS)](NETTLE-MSYS.md)
 - [GnuPG](GNUPG.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [Nettle (CLANG64)](NETTLE-CLANG64.md)

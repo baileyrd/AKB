@@ -30,10 +30,12 @@ reference.
 
 `library:c-ares:c-ares@ucrt64` is packaged in the UCRT64 environment as
 `package:msys2:mingw-w64-ucrt-x86_64-c-ares` (version `1.34.8-1` in the
-current catalog snapshot, license `MIT`). No MSYS- or CLANG64-packaged
-c-ares sibling was found in this catalog snapshot, so unlike several
-other libraries documented in this volume, this is currently the sole
-catalog entity for this project.
+current catalog snapshot, license `MIT`). **Correction, 2026-08-02**:
+this page previously stated no MSYS- or CLANG64-packaged c-ares
+sibling was found — that was true only at the time of writing; a
+CLANG64 sibling has since been modeled, see
+[c-ares (CLANG64)](C-ARES-CLANG64.md). No MSYS-packaged c-ares sibling
+was found in this catalog snapshot.
 
 ## Responsibilities
 
@@ -122,8 +124,7 @@ project site (`evidence:c-ares:project-site-2026-07-30`), matching the
 `package:msys2:mingw-w64-ucrt-x86_64-c-ares` in the catalog. Package
 identity, version, license, and the one modeled dependent edge are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
-Open: whether other environments package c-ares separately was not
-confirmed. Also explicitly out of scope for this page: the ~9 remaining
+Also explicitly out of scope for this page: the ~9 remaining
 recorded dependents not individually modeled, and header-level API
 surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
@@ -133,3 +134,4 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
+- [c-ares (CLANG64)](C-ARES-CLANG64.md)

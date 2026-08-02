@@ -609,6 +609,7 @@
 | library:apache:libserf@msys | library | Serf | partial | 3 | 0 |
 | library:boost:boost | library | Boost | partial | 1 | 1 |
 | library:bzip2:libbz2 | library | libbz2 | partial | 0 | 6 |
+| library:c-ares:c-ares@clang64 | library | c-ares (CLANG64) | partial | 0 | 0 |
 | library:c-ares:c-ares@ucrt64 | library | c-ares (UCRT64) | partial | 0 | 1 |
 | library:curl:curl@ucrt64 | library | curl (UCRT64) | partial | 12 | 1 |
 | library:curl:libcurl | library | libcurl | partial | 14 | 3 |
@@ -658,6 +659,7 @@
 | library:gnutls:gnutls | library | GnuTLS | partial | 10 | 3 |
 | library:gnutls:gnutls@ucrt64 | library | GnuTLS (UCRT64) | partial | 11 | 1 |
 | library:google:brotli | library | Brotli | partial | 2 | 2 |
+| library:google:brotli@clang64 | library | Brotli (CLANG64) | partial | 0 | 0 |
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |

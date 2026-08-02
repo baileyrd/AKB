@@ -141,3 +141,4 @@ methodology.
 - [Brotli (MSYS)](BROTLI.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [Brotli (CLANG64)](BROTLI-CLANG64.md)

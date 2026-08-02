@@ -27,6 +27,8 @@ model_refs:
   - library:nettle:nettle@clang64
   - library:libisl:isl@clang64
   - library:multiprecision:mpc@clang64
+  - library:google:brotli@clang64
+  - library:c-ares:c-ares@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -291,8 +293,10 @@ flowchart LR
 [GMP (CLANG64)](GNU-GMP-CLANG64.md),
 [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md),
 [Nettle (CLANG64)](NETTLE-CLANG64.md),
-[isl (CLANG64)](LIBISL-CLANG64.md), and
-[GNU MPC (CLANG64)](GNU-MPC-CLANG64.md) are
+[isl (CLANG64)](LIBISL-CLANG64.md),
+[GNU MPC (CLANG64)](GNU-MPC-CLANG64.md),
+[Brotli (CLANG64)](BROTLI-CLANG64.md), and
+[c-ares (CLANG64)](C-ARES-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -307,7 +311,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and twenty pages are deliberately scoped to package/dependency-level
+All one hundred and twenty-two pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -860,7 +864,16 @@ pattern — the ninth full-coverage addition this session. The
 last candidate, [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md), closed the
 same batch with full 2/2 coverage (GMP and MPFR, both CLANG64), the
 tenth full-coverage addition this session — completing every
-concrete future-batch candidate the GMP (CLANG64) chain flagged. These
+concrete future-batch candidate the GMP (CLANG64) chain flagged. The
+triple-environment scan was then applied more broadly: two more
+zero-dependency CLANG64 siblings of already-modeled UCRT64 libraries
+were added, [Brotli (CLANG64)](BROTLI-CLANG64.md) and
+[c-ares (CLANG64)](C-ARES-CLANG64.md), each trivially at full coverage
+with no catalog dependencies of their own. Adding
+[c-ares (CLANG64)](C-ARES-CLANG64.md) also corrected a now-stale claim
+on [c-ares (UCRT64)'s](C-ARES-UCRT64.md) own page, which had
+originally and correctly stated no CLANG64 sibling existed at the time
+it was written. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

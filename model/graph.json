@@ -721,6 +721,42 @@
       "evidence_refs": ["evidence:multiprecision:mpc-manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:google:brotli@clang64",
+      "kind": "library",
+      "name": "Brotli (CLANG64)",
+      "summary": "Google's Brotli general-purpose compression library, packaged in the CLANG64 environment with zero own catalog dependencies and 19 recorded reverse dependents, including the CLANG64 sibling of curl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Google",
+      "aliases": ["brotli"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://github.com/google/brotli",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-brotli",
+        "role": "Brotli compression codec"
+      },
+      "evidence_refs": ["evidence:google:brotli-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:c-ares:c-ares@clang64",
+      "kind": "library",
+      "name": "c-ares (CLANG64)",
+      "summary": "The c-ares asynchronous DNS resolution library, packaged in the CLANG64 environment with zero own catalog dependencies and 10 recorded reverse dependents, including the CLANG64 sibling of curl.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "c-ares project",
+      "aliases": ["c-ares"],
+      "tags": ["library", "network"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://c-ares.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-c-ares",
+        "role": "asynchronous DNS resolution"
+      },
+      "evidence_refs": ["evidence:c-ares:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",

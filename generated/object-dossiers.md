@@ -5447,6 +5447,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 6
 
+## `library:c-ares:c-ares@clang64`
+
+- Name: c-ares (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:c-ares:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `library:c-ares:c-ares@ucrt64`
 
 - Name: c-ares (UCRT64)
@@ -5887,6 +5896,15 @@
 - Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:google:brotli@clang64`
+
+- Name: Brotli (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:google:brotli-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 0
 
 ## `library:google:brotli@ucrt64`
 

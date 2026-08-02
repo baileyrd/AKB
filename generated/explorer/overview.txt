@@ -606,6 +606,7 @@ Objects
 - library:apache:libserf@msys (library): Serf
 - library:boost:boost (library): Boost
 - library:bzip2:libbz2 (library): libbz2
+- library:c-ares:c-ares@clang64 (library): c-ares (CLANG64)
 - library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
 - library:curl:curl@ucrt64 (library): curl (UCRT64)
 - library:curl:libcurl (library): libcurl
@@ -655,6 +656,7 @@ Objects
 - library:gnutls:gnutls (library): GnuTLS
 - library:gnutls:gnutls@ucrt64 (library): GnuTLS (UCRT64)
 - library:google:brotli (library): Brotli
+- library:google:brotli@clang64 (library): Brotli (CLANG64)
 - library:google:brotli@ucrt64 (library): Brotli (UCRT64)
 - library:google:cppdap (library): cppdap
 - library:h5l:heimdal (library): Heimdal

@@ -1,17 +1,25 @@
 ---
-id: doc:volume-17:performance-experiments
-title: AKB Performance Experiments and Hot Paths
-volume: 17
+id: doc:volume-20:performance-experiments
+title: AKB Tooling Performance Experiments
+volume: 20
 status: partial
 model_refs: []
 evidence_refs: []
-last_verified: 2026-07-28
+last_verified: 2026-08-02
 ---
 
-# AKB Performance Experiments and Hot Paths
+# AKB Tooling Performance Experiments
+
+> **This page is about this repository's own tooling, not about MSYS2.**
+> It was filed under Volume 17 (Performance) until 2026-08-02, which made
+> the volume appear covered while the ecosystem's actual hot paths had no
+> analysis at all. The ecosystem page is
+> [MSYS2 Ecosystem Performance Architecture](ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md).
+> This one is a Volume 20 reference appendix: how to benchmark the AKB's
+> own generators as the graph grows.
 
 Run `py -3 tools/benchmark_akb.py --repetitions 10` to produce a JSON report
-for the current composed graph. The experiment measures three hot paths:
+for the current composed graph. The experiment measures three operations:
 
 | Operation | Purpose | Interpretation |
 | --- | --- | --- |
@@ -32,3 +40,8 @@ an experiment, not a CI performance gate: wall-clock thresholds vary by host.
   to 80 nodes; and
 - large-graph tests exercise 2,000 objects and 4,000 edges independently of
   a particular developer machine's browser performance.
+
+## Related Objects
+
+- [MSYS2 Ecosystem Performance Architecture](ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md)
+  — the Volume 17 page this one was standing in for.

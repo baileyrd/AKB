@@ -674,14 +674,36 @@
     ],
     "Performance experiments and hot-path analysis": [
       {
-        "type": "min_docs_in_volume",
+        "type": "doc_exists",
+        "doc": "ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md",
+        "lines": 200
+      },
+      {
+        "type": "term_in_volume",
         "volume": 17,
-        "count": 2
+        "term": "fork",
+        "min_files": 1
       },
       {
         "type": "term_in_volume",
         "volume": 17,
         "term": "path translation",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_volume",
+        "volume": 17,
+        "term": "mount table",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_volume",
+        "volume": 17,
+        "term": "transaction",
         "min_files": 1
       }
     ],
@@ -814,7 +836,17 @@
       {
         "type": "min_docs_in_volume",
         "volume": 17,
-        "count": 2
+        "count": 1
+      },
+      {
+        "type": "doc_exists",
+        "doc": "ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md"
+      },
+      {
+        "type": "term_in_volume",
+        "volume": 17,
+        "term": "pacman",
+        "min_files": 1
       }
     ],
     "Volume 18 developer guide": [

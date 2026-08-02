@@ -174,16 +174,29 @@ that renders nothing.
 ## Increment 8 — Assurance and operations
 
 - [x] Threat model and supply-chain analysis
-- [ ] Performance experiments and hot-path analysis
+- [x] Performance experiments and hot-path analysis
 - [x] Upgrade, rollback, repair, and migration guides
 - [x] Developer and operator workflows
 - [x] Initial continuous refresh, difference reports, and historical snapshots
 - [x] Multi-source refresh orchestration, retention policy, and alerting
 
-`docs/PERFORMANCE-EXPERIMENTS.md` benchmarks this repository's own
-`validate`/`generate-indexes`/`build-explorer` operations. It contains no
-analysis of MSYS2 hot paths — fork emulation, path translation, mount-table
-lookup, or pacman transaction cost — which is what the item names.
+**Closed 2026-08-02.** `docs/PERFORMANCE-EXPERIMENTS.md` benchmarked this
+repository's own `validate`/`generate-indexes`/`build-explorer` operations
+while filed under Volume 17, which made the volume look covered. It is now
+Volume 20 and says so at the top.
+[Ecosystem Performance Architecture](docs/ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md)
+covers the four hot paths the item names: fork emulation, path translation,
+mount-table lookup, and pacman transaction cost.
+
+It contains no MSYS2 timings and says so in its first paragraph, because no
+Windows host was available. What it does contain: the published `fork`
+algorithm with the cost properties that follow from it, the one quantified
+figure upstream stands behind (substituting `spawn` for `fork`/`exec`
+"increased compilation speeds by twenty to thirty percent"), the documented
+longest-prefix mount-table rule, the executability-probe I/O cost, and the
+pacman transaction shape measured from this repository's own catalog
+projection — 44,683 dependency edges over 15,711 packages, mean out-degree
+2.84, `python` at 999 dependents.
 
 ## Increment 9 — Windows platform
 
@@ -252,7 +265,7 @@ outliers and normalising them is added above rather than blessed.
 Volume 6 holds 157 of 253 pages and 66.9% of all prose; Volume 18 has none.
 Eleven volumes hold fourteen pages between them.
 
-- [ ] Volume 17 performance architecture for the ecosystem
+- [x] Volume 17 performance architecture for the ecosystem
 - [ ] Volume 18 developer guide
 - [ ] Per-volume page and heading metrics in the coverage ledger
 - [ ] Replace the ledger's uniform "Partial" with the charter's eight coverage states

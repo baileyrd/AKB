@@ -3,7 +3,7 @@
 - Snapshot: `20260729T113151Z-a2c48f8738b1`
 - Entities: **15717**
 - Relationships: **76105**
-- Authored documents: **284**
+- Authored documents: **285**
 - Linked SVG diagrams: **8**
 
 ## Package payload coverage

@@ -6711,6 +6711,108 @@
         "evidence:tukaani:xz-library-manual-2026-07-30",
         "evidence:catalog:current"
       ]
+    },
+    {
+      "id": "component:gnu:diffutils",
+      "kind": "component",
+      "name": "GNU Diffutils",
+      "summary": "The GNU file-comparison suite (diff, diff3, sdiff, cmp), packaged in the MSYS environment and the source of the patch format the ecosystem's build recipes depend on.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": [
+        "diffutils",
+        "diff"
+      ],
+      "tags": [
+        "gnu-userland",
+        "utilities",
+        "component"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/diffutils",
+        "packaged_as": "package:msys2:diffutils",
+        "role": "line-oriented file and directory comparison"
+      },
+      "evidence_refs": [
+        "evidence:gnu:diff-1-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "component:gnu:patch",
+      "kind": "component",
+      "name": "GNU Patch",
+      "summary": "Applies diff listings to original files. The consumer side of the diff format and the mechanism by which MSYS2 package recipes carry source modifications.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": [
+        "patch"
+      ],
+      "tags": [
+        "gnu-userland",
+        "utilities",
+        "component"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/patch/patch.html",
+        "packaged_as": "package:msys2:patch",
+        "role": "applying difference listings to source trees"
+      },
+      "evidence_refs": [
+        "evidence:gnu:patch-1-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "component:llvm:llvm",
+      "kind": "component",
+      "name": "LLVM",
+      "summary": "The LLVM compiler infrastructure: the SSA-based typed intermediate representation, the target-independent code generator, and the llvm-* tool family. The umbrella under which Clang, LLD, and LLDB sit.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "LLVM Project",
+      "aliases": [
+        "llvm",
+        "LLVM Project"
+      ],
+      "tags": [
+        "toolchain",
+        "compiler",
+        "component",
+        "llvm"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:clang64",
+          "environment:msys2:clangarm64",
+          "environment:msys2:ucrt64",
+          "environment:msys2:mingw64",
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://llvm.org/",
+        "packaged_as": "package:msys2:llvm",
+        "role": "intermediate representation, code generation, and object-tool family"
+      },
+      "evidence_refs": [
+        "evidence:llvm:langref-2026-08-02",
+        "evidence:llvm:codegen-2026-08-02",
+        "evidence:llvm:command-guide-2026-08-02",
+        "evidence:catalog:current"
+      ]
     }
   ],
   "relationships": [
@@ -16711,6 +16813,248 @@
       "evidence_refs": [
         "evidence:catalog:current"
       ]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-diffutils",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:diffutils",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:diffutils-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:diffutils",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of diffutils, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:msys2:environments-2026-07-28"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:diffutils-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:diffutils",
+      "target": "package:msys2:diffutils",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:msys-contains-patch",
+      "type": "contains",
+      "source": "environment:msys2:msys",
+      "target": "component:gnu:patch",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "environment",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:patch-uses-msys-runtime",
+      "type": "uses-runtime",
+      "source": "component:gnu:patch",
+      "target": "runtime:msys2:msys-2.0.dll",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "runtime",
+      "condition": "Applies to the MSYS-packaged build of patch, not to any native (non-MSYS) build.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:msys2:environments-2026-07-28"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:patch-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:gnu:patch",
+      "target": "package:msys2:patch",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:diffutils-requires-libintl",
+      "type": "requires",
+      "source": "component:gnu:diffutils",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS).",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:diffutils-requires-libiconv",
+      "type": "requires",
+      "source": "component:gnu:diffutils",
+      "target": "library:gnu:libiconv",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Declared runtime dependency of package:msys2:diffutils in the catalog snapshot.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:patch-optionally-requires-ed",
+      "type": "optional-depends-on",
+      "source": "component:gnu:patch",
+      "target": "component:gnu:ed",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Declared optional dependency: 'ed: for patch -e functionality'. patch feeds ed-format diffs to ed(1) through a pipe rather than applying them itself.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current",
+        "evidence:gnu:patch-1-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:gnu-userland:patch-consumes-diffutils-format",
+      "type": "reads",
+      "source": "component:gnu:patch",
+      "target": "component:gnu:diffutils",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "format",
+      "condition": "patch consumes the difference listings diff produces; the coupling is the format, not a link-time dependency.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:gnu:patch-1-2026-08-02"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-packaged-by-package",
+      "type": "packaged-by",
+      "source": "component:llvm:llvm",
+      "target": "package:msys2:llvm",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "packaging",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-contains-clang",
+      "type": "contains",
+      "source": "component:llvm:llvm",
+      "target": "component:llvm:clang",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "project",
+      "condition": "Same upstream project and release train; packaged separately in MSYS2.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:llvm:command-guide-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-contains-lld",
+      "type": "contains",
+      "source": "component:llvm:llvm",
+      "target": "component:llvm:lld",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "project",
+      "condition": "Same upstream project and release train; packaged separately in MSYS2.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:llvm:command-guide-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-contains-lldb",
+      "type": "contains",
+      "source": "component:llvm:llvm",
+      "target": "component:llvm:lldb",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "project",
+      "condition": "Same upstream project and release train; packaged separately in MSYS2.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:llvm:command-guide-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-contains-llvm-libs",
+      "type": "contains",
+      "source": "component:llvm:llvm",
+      "target": "library:llvm:llvm-libs",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "project",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-contains-clang-libs",
+      "type": "contains",
+      "source": "component:llvm:llvm",
+      "target": "library:llvm:clang-libs",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "project",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
+    {
+      "id": "relationship:llvm:llvm-contains-libcxx",
+      "type": "contains",
+      "source": "component:llvm:llvm",
+      "target": "library:llvm:libc++",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "project",
+      "condition": "",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
     }
   ],
   "claims": [
@@ -17456,6 +17800,16 @@
       "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
     },
     {
+      "id": "evidence:gnu:diff-1-2026-08-02",
+      "class": "primary",
+      "title": "diff(1) manual page",
+      "locator": "https://man7.org/linux/man-pages/man1/diff.1.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "GNU Diffutils' diff manual page. Cited for the output formats, the three-valued exit status, and the --strip-trailing-cr / --text / --binary options that make the CRLF question explicit. Mirrored on man7.org because gnu.org returned 403 through this environment's proxy; the text is the upstream manual page, but the MSYS2 build's actual option set has not been observed."
+    },
+    {
       "id": "evidence:gnu:ed-manual-2026-07-30",
       "class": "primary",
       "title": "GNU Ed (official project page)",
@@ -17664,6 +18018,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Ncurses project site, matching the project_url recorded for package:msys2:ncurses in the catalog snapshot."
+    },
+    {
+      "id": "evidence:gnu:patch-1-2026-08-02",
+      "class": "primary",
+      "title": "patch(1) manual page",
+      "locator": "https://man7.org/linux/man-pages/man1/patch.1.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "GNU Patch manual page. Cited for format auto-detection, the fuzz algorithm and its default maximum of 2, reject-file behavior, and the --binary option's explicit statement about Windows line-ending transformation. Mirrored on man7.org because gnu.org returned 403 through this environment's proxy."
     },
     {
       "id": "evidence:gnu:readline-manual-2026-07-30",
@@ -17964,6 +18328,36 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official Clang documentation index. Used for the compiler-driver model and default backend-linker invocation. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:llvm:codegen-2026-08-02",
+      "class": "primary",
+      "title": "The LLVM Target-Independent Code Generator",
+      "locator": "https://llvm.org/docs/CodeGenerator.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the code-generation pipeline stages and the design assumption that an optimal pattern-matching instruction selector permits both fast JIT compilation and aggressive offline optimisation."
+    },
+    {
+      "id": "evidence:llvm:command-guide-2026-08-02",
+      "class": "primary",
+      "title": "LLVM Command Guide",
+      "locator": "https://llvm.org/docs/CommandGuide/index.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for the llvm-* tool inventory and upstream's own split between basic commands and the tools it describes as 'GNU binutils replacements'. Lists what LLVM ships; which of them the MSYS2 llvm-tools package installs is not established here, as no package file manifest has been collected."
+    },
+    {
+      "id": "evidence:llvm:langref-2026-08-02",
+      "class": "primary",
+      "title": "LLVM Language Reference Manual",
+      "locator": "https://llvm.org/docs/LangRef.html",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Cited for LLVM IR's defining properties: SSA-based, typed, and existing in three equivalent forms (in-memory IR, on-disk bitcode, human-readable assembly). Describes LLVM upstream, not the MSYS2 build."
     },
     {
       "id": "evidence:llvm:libcxx-manual-2026-07-30",

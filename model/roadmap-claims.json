@@ -456,12 +456,42 @@
       {
         "type": "doc_exists",
         "doc": "GNU-PATCH.md"
+      },
+      {
+        "type": "term_in_docs",
+        "term": "fuzz factor",
+        "min_files": 1
+      },
+      {
+        "type": "min_graph_entities_of_kind",
+        "kind": "component",
+        "count": 22
       }
     ],
     "LLVM umbrella page covering IR, codegen, and the llvm-* tool family": [
       {
         "type": "doc_exists",
         "doc": "LLVM.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LLVM.md",
+        "lines": 150
+      },
+      {
+        "type": "term_in_docs",
+        "term": "Static Single Assignment",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "llvm-objdump",
+        "min_files": 1
+      },
+      {
+        "type": "term_in_docs",
+        "term": "Register Allocation",
+        "min_files": 1
       }
     ],
     "Repository-to-package inventory": [

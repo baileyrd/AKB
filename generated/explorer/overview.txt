@@ -11,6 +11,7 @@ Objects
 - component:gnu:binutils (component): GNU Binutils
 - component:gnu:coreutils (component): GNU Coreutils
 - component:gnu:cpio (component): GNU Cpio
+- component:gnu:diffutils (component): GNU Diffutils
 - component:gnu:ed (component): GNU Ed
 - component:gnu:emacs (component): GNU Emacs
 - component:gnu:findutils (component): GNU Findutils
@@ -23,6 +24,7 @@ Objects
 - component:gnu:make (component): GNU Make
 - component:gnu:nano (component): GNU Nano
 - component:gnu:ncurses (component): ncurses
+- component:gnu:patch (component): GNU Patch
 - component:gnu:sed (component): GNU Sed
 - component:gnu:tar (component): GNU Tar
 - component:gnupg:gnupg (component): GnuPG
@@ -32,6 +34,7 @@ Objects
 - component:llvm:clang (component): Clang
 - component:llvm:lld (component): LLD
 - component:llvm:lldb (component): LLDB
+- component:llvm:llvm (component): LLVM
 - component:lz4:lz4 (component): LZ4
 - component:lzip:lzip (component): Lzip
 - component:mesonbuild:meson (component): Meson
@@ -17218,6 +17221,23 @@ Relationships
 - library:gnu:libstdc++ --requires--> library:mingw-w64:libwinpthread
 - library:gnome:libxml2@clang64 --requires--> library:gnu:zlib@clang64
 - component:gnu:cpio --requires--> library:gnu:libintl
+- environment:msys2:msys --contains--> component:gnu:diffutils
+- component:gnu:diffutils --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:diffutils --packaged-by--> package:msys2:diffutils
+- environment:msys2:msys --contains--> component:gnu:patch
+- component:gnu:patch --uses-runtime--> runtime:msys2:msys-2.0.dll
+- component:gnu:patch --packaged-by--> package:msys2:patch
+- component:gnu:diffutils --requires--> library:gnu:libintl
+- component:gnu:diffutils --requires--> library:gnu:libiconv
+- component:gnu:patch --optional-depends-on--> component:gnu:ed
+- component:gnu:patch --reads--> component:gnu:diffutils
+- component:llvm:llvm --packaged-by--> package:msys2:llvm
+- component:llvm:llvm --contains--> component:llvm:clang
+- component:llvm:llvm --contains--> component:llvm:lld
+- component:llvm:llvm --contains--> component:llvm:lldb
+- component:llvm:llvm --contains--> library:llvm:llvm-libs
+- component:llvm:llvm --contains--> library:llvm:clang-libs
+- component:llvm:llvm --contains--> library:llvm:libc++
 - package:msys2:ack --published-in--> repository:msys2:msys
 - package:msys2:ack --belongs-to-environment--> environment:msys2:msys
 - package:msys2:ansible --published-in--> repository:msys2:msys

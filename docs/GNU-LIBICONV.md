@@ -141,24 +141,26 @@ methodology.
 ```mermaid
 flowchart LR
     subject["GNU libiconv"]
-    u0["GDB"]
+    u0["GNU Diffutils"]
     u0 -->|requires| subject
-    u1["libxml2"]
+    u1["GDB"]
     u1 -->|requires| subject
-    u2["GNU gettext"]
+    u2["libxml2"]
     u2 -->|requires| subject
-    u3["GNU libidn2 (UCRT64)"]
+    u3["GNU gettext"]
     u3 -->|requires| subject
-    u4["libunistring (UCRT64)"]
+    u4["GNU libidn2 (UCRT64)"]
     u4 -->|requires| subject
-    u5["libarchive"]
+    u5["libunistring (UCRT64)"]
     u5 -->|requires| subject
-    u6["libpsl (UCRT64)"]
+    u6["libarchive"]
     u6 -->|requires| subject
+    u7["libpsl (UCRT64)"]
+    u7 -->|requires| subject
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `library:gnu:libiconv` in the composed graph: 7 dependents and 0 dependencies.
+Dependencies and dependents of `library:gnu:libiconv` in the composed graph: 8 dependents and 0 dependencies.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

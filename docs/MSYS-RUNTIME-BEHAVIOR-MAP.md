@@ -96,7 +96,7 @@ flowchart LR
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `runtime:msys2:msys-2.0.dll` in the composed graph: 70 dependents and 0 dependencies, of which 62 are omitted here for legibility.
+Dependencies and dependents of `runtime:msys2:msys-2.0.dll` in the composed graph: 72 dependents and 0 dependencies, of which 64 are omitted here for legibility.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

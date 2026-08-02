@@ -190,15 +190,15 @@ flowchart LR
     u1 -->|requires| subject
     u2["GNU Cpio"]
     u2 -->|requires| subject
-    u3["GNU Findutils"]
+    u3["GNU Diffutils"]
     u3 -->|requires| subject
-    u4["GNU Awk (gawk)"]
+    u4["GNU Findutils"]
     u4 -->|requires| subject
-    u5["GNU Grep"]
+    u5["GNU Awk (gawk)"]
     u5 -->|requires| subject
-    u6["GNU Make"]
+    u6["GNU Grep"]
     u6 -->|requires| subject
-    u7["GNU Nano"]
+    u7["GNU Make"]
     u7 -->|requires| subject
     d0["GNU libiconv (MSYS)"]
     subject -->|requires| d0
@@ -207,7 +207,7 @@ flowchart LR
     style subject stroke-width:3px
 ```
 
-Dependencies and dependents of `library:gnu:libintl` in the composed graph: 18 dependents and 2 dependencies, of which 10 are omitted here for legibility.
+Dependencies and dependents of `library:gnu:libintl` in the composed graph: 19 dependents and 2 dependencies, of which 11 are omitted here for legibility.
 
 Generated from the composed model by `tools/build_object_diagrams.py`.
 Edits between the surrounding markers are overwritten on the next build.

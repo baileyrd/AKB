@@ -92,6 +92,15 @@
 - Outgoing relationships: 3
 - Incoming relationships: 1
 
+## `component:gnu:diffutils`
+
+- Name: GNU Diffutils
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:diff-1-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 2
+
 ## `component:gnu:ed`
 
 - Name: GNU Ed
@@ -99,7 +108,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:ed-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `component:gnu:emacs`
 
@@ -200,6 +209,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 7
 
+## `component:gnu:patch`
+
+- Name: GNU Patch
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:gnu:patch-1-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 1
+
 ## `component:gnu:sed`
 
 - Name: GNU Sed
@@ -261,7 +279,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:clang-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `component:llvm:lld`
 
@@ -270,7 +288,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:lld-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `component:llvm:lldb`
 
@@ -279,7 +297,16 @@
 - Status: `partial`
 - Evidence: evidence:llvm:lldb-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 3
+
+## `component:llvm:llvm`
+
+- Name: LLVM
+- Kind: `component`
+- Status: `partial`
+- Evidence: evidence:llvm:langref-2026-08-02, evidence:llvm:codegen-2026-08-02, evidence:llvm:command-guide-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 7
+- Incoming relationships: 0
 
 ## `component:lz4:lz4`
 
@@ -557,7 +584,7 @@
 - Kind: `environment`
 - Status: `planned`
 - Evidence: evidence:msys2:environments-2026-07-28
-- Outgoing relationships: 71
+- Outgoing relationships: 73
 - Incoming relationships: 800
 
 ## `environment:msys2:ucrt64`
@@ -5715,7 +5742,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 1
-- Incoming relationships: 8
+- Incoming relationships: 9
 
 ## `library:gnu:libiconv@clang64`
 
@@ -5769,7 +5796,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libintl-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 19
+- Incoming relationships: 20
 
 ## `library:gnu:libltdl`
 
@@ -6354,7 +6381,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:clang-libs-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 3
+- Incoming relationships: 4
 
 ## `library:llvm:libc++`
 
@@ -6363,7 +6390,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:libcxx-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:llvm:llvm-libs`
 
@@ -6372,7 +6399,7 @@
 - Status: `partial`
 - Evidence: evidence:llvm:llvm-libs-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 5
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:lz4:liblz4`
 
@@ -7713,7 +7740,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 4
-- Incoming relationships: 9
+- Incoming relationships: 10
 
 ## `package:msys2:docbook-dsssl`
 
@@ -9972,7 +9999,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:llvm-libs`
 
@@ -145368,7 +145395,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `package:msys2:patchutils`
 
@@ -148365,7 +148392,7 @@
 - Status: `partial`
 - Evidence: none recorded
 - Outgoing relationships: 8
-- Incoming relationships: 71
+- Incoming relationships: 73
 
 ## `static-library:msys2:/ucrt64/lib/libz.a`
 

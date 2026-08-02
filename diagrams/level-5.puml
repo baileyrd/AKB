@@ -17,26 +17,27 @@ rectangle "GNU gettext" as n9 <<library>>
 rectangle "zlib (CLANG64)" as n10 <<library>>
 rectangle "GnuTLS (CLANG64)" as n11 <<library>>
 rectangle "GnuTLS (UCRT64)" as n12 <<library>>
-rectangle "libgpg-error (MSYS)" as n13 <<library>>
-rectangle "libarchive (CLANG64)" as n14 <<library>>
-rectangle "GNU MP (GMP)" as n15 <<library>>
-rectangle "GNU libiconv" as n16 <<library>>
-rectangle "Heimdal runtime libraries" as n17 <<library>>
-n9 --> n16 : requires
-n7 --> n16 : requires
+rectangle "GNU libiconv" as n13 <<library>>
+rectangle "libgpg-error (MSYS)" as n14 <<library>>
+rectangle "libarchive (CLANG64)" as n15 <<library>>
+rectangle "LLVM libraries" as n16 <<library>>
+rectangle "GNU MP (GMP)" as n17 <<library>>
+n9 --> n13 : requires
+n7 --> n13 : requires
 n7 --> n3 : requires
 n6 --> n0 : requires
-n13 --> n0 : requires
+n14 --> n0 : requires
 n6 --> n2 : requires
 n0 --> n2 : requires
-n13 --> n2 : requires
+n14 --> n2 : requires
 n1 --> n4 : requires
 n11 --> n10 : requires
 n8 --> n10 : requires
-n14 --> n10 : requires
+n15 --> n10 : requires
+n16 --> n10 : requires
 n5 --> n3 : requires
 n12 --> n9 : requires
-n12 --> n15 : requires
+n12 --> n17 : requires
 n12 --> n3 : requires
 n6 --> n4 : requires
 note bottom : Parent level-4

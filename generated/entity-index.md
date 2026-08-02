@@ -14,7 +14,8 @@
 | component:gnu:binutils | component | GNU Binutils | partial | 5 | 4 |
 | component:gnu:coreutils | component | GNU Coreutils | partial | 5 | 2 |
 | component:gnu:cpio | component | GNU Cpio | partial | 3 | 1 |
-| component:gnu:ed | component | GNU Ed | partial | 2 | 1 |
+| component:gnu:diffutils | component | GNU Diffutils | partial | 4 | 2 |
+| component:gnu:ed | component | GNU Ed | partial | 2 | 2 |
 | component:gnu:emacs | component | GNU Emacs | partial | 8 | 1 |
 | component:gnu:findutils | component | GNU Findutils | partial | 4 | 1 |
 | component:gnu:gawk | component | GNU Awk (gawk) | partial | 5 | 1 |
@@ -26,15 +27,17 @@
 | component:gnu:make | component | GNU Make | partial | 3 | 2 |
 | component:gnu:nano | component | GNU Nano | partial | 5 | 1 |
 | component:gnu:ncurses | component | ncurses | partial | 2 | 7 |
+| component:gnu:patch | component | GNU Patch | partial | 4 | 1 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 4 | 1 |
 | component:gnupg:gnupg | component | GnuPG | partial | 16 | 2 |
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 3 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
-| component:llvm:clang | component | Clang | partial | 4 | 2 |
-| component:llvm:lld | component | LLD | partial | 5 | 3 |
-| component:llvm:lldb | component | LLDB | partial | 6 | 2 |
+| component:llvm:clang | component | Clang | partial | 4 | 3 |
+| component:llvm:lld | component | LLD | partial | 5 | 4 |
+| component:llvm:lldb | component | LLDB | partial | 6 | 3 |
+| component:llvm:llvm | component | LLVM | partial | 7 | 0 |
 | component:lz4:lz4 | component | LZ4 | partial | 2 | 1 |
 | component:lzip:lzip | component | Lzip | partial | 2 | 1 |
 | component:mesonbuild:meson | component | Meson | partial | 3 | 2 |
@@ -65,7 +68,7 @@
 | environment:msys2:clangarm64 | environment | CLANGARM64 | partial | 0 | 3781 |
 | environment:msys2:mingw32 | environment | MINGW32 | deprecated | 0 | 316 |
 | environment:msys2:mingw64 | environment | MINGW64 | deprecated | 0 | 3102 |
-| environment:msys2:msys | environment | MSYS | planned | 71 | 800 |
+| environment:msys2:msys | environment | MSYS | planned | 73 | 800 |
 | environment:msys2:ucrt64 | environment | UCRT64 | partial | 41 | 3900 |
 | executable:msys2:/usr/bin/curl.exe | executable | /usr/bin/curl.exe | verified | 4 | 1 |
 | filesystem-path:msys2:/.buildinfo | filesystem-path | /.BUILDINFO | verified | 0 | 2 |
@@ -638,13 +641,13 @@
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 5 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
-| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
+| library:gnu:libiconv | library | GNU libiconv | partial | 1 | 9 |
 | library:gnu:libiconv@clang64 | library | GNU libiconv (CLANG64) | partial | 0 | 6 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@clang64 | library | GNU libidn2 (CLANG64) | partial | 3 | 3 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
-| library:gnu:libintl | library | GNU libintl | partial | 3 | 19 |
+| library:gnu:libintl | library | GNU libintl | partial | 3 | 20 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 4 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
@@ -709,9 +712,9 @@
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
 | library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 7 |
-| library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
-| library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
-| library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
+| library:llvm:clang-libs | library | Clang libraries | partial | 2 | 4 |
+| library:llvm:libc++ | library | libc++ | partial | 2 | 3 |
+| library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 5 |
 | library:lz4:liblz4 | library | liblz4 | partial | 0 | 1 |
 | library:lz4:lz4@clang64 | library | LZ4 (CLANG64) | partial | 0 | 1 |
 | library:lz4:lz4@ucrt64 | library | LZ4 (UCRT64) | partial | 0 | 1 |
@@ -860,7 +863,7 @@
 | package:msys2:dejagnu | package | dejagnu | verified | 3 | 0 |
 | package:msys2:dialog | package | dialog | verified | 4 | 1 |
 | package:msys2:diffstat | package | diffstat | verified | 2 | 2 |
-| package:msys2:diffutils | package | diffutils | verified | 4 | 9 |
+| package:msys2:diffutils | package | diffutils | verified | 4 | 10 |
 | package:msys2:docbook-dsssl | package | docbook-dsssl | verified | 4 | 0 |
 | package:msys2:docbook-mathml | package | docbook-mathml | verified | 3 | 0 |
 | package:msys2:docbook-sgml | package | docbook-sgml | verified | 3 | 0 |
@@ -1111,7 +1114,7 @@
 | package:msys2:libzstd | package | libzstd | verified | 3 | 25 |
 | package:msys2:libzstd-devel | package | libzstd-devel | verified | 3 | 1 |
 | package:msys2:lld | package | lld | verified | 4 | 0 |
-| package:msys2:llvm | package | llvm | verified | 3 | 2 |
+| package:msys2:llvm | package | llvm | verified | 3 | 3 |
 | package:msys2:llvm-libs | package | llvm-libs | verified | 7 | 4 |
 | package:msys2:lndir | package | lndir | verified | 2 | 0 |
 | package:msys2:localepurge | package | localepurge | verified | 2 | 0 |
@@ -16155,7 +16158,7 @@
 | package:msys2:pacutils-devel | package | pacutils-devel | verified | 9 | 0 |
 | package:msys2:parallel | package | parallel | verified | 3 | 0 |
 | package:msys2:pass | package | pass | verified | 7 | 0 |
-| package:msys2:patch | package | patch | verified | 3 | 2 |
+| package:msys2:patch | package | patch | verified | 3 | 3 |
 | package:msys2:patchutils | package | patchutils | verified | 3 | 0 |
 | package:msys2:pax | package | pax | verified | 2 | 0 |
 | package:msys2:pcre | package | pcre | verified | 10 | 1 |
@@ -16488,7 +16491,7 @@
 | repository:msys2:mingw64 | repository | mingw64 | verified | 0 | 3101 |
 | repository:msys2:msys | repository | msys | verified | 0 | 799 |
 | repository:msys2:ucrt64 | repository | ucrt64 | verified | 0 | 3899 |
-| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 8 | 71 |
+| runtime:msys2:msys-2.0.dll | runtime | msys-2.0.dll | partial | 8 | 73 |
 | static-library:msys2:/ucrt64/lib/libz.a | static-library | /ucrt64/lib/libz.a | verified | 0 | 1 |
 | subsystem:msys2:environment-manager | subsystem | Environment Manager | partial | 0 | 1 |
 | subsystem:msys2:filesystem-layer | subsystem | Filesystem Layer | partial | 0 | 1 |

@@ -12,7 +12,7 @@ evidence_refs:
   - evidence:lz4:manual-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # LZ4
@@ -128,3 +128,4 @@ inference, not a confirmed build-system fact.
 - [liblz4 (MSYS)](LIBLZ4-MSYS.md)
 - [LZO (MSYS)](LIBLZO2-MSYS.md)
 - [LZ4 (CLANG64)](LZ4-CLANG64.md)
+- [LZ4 (UCRT64)](LZ4-UCRT64.md)

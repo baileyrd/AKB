@@ -12,7 +12,7 @@ evidence_refs:
   - evidence:bzip2:project-site-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # bzip2
@@ -137,3 +137,4 @@ package file-inventory evidence.
 - [libbz2](LIBBZ2.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)
 - [bzip2 (CLANG64)](BZIP2-CLANG64.md)
+- [bzip2 (UCRT64)](BZIP2-UCRT64.md)

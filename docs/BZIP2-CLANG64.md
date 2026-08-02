@@ -135,6 +135,7 @@ base.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [bzip2 (MSYS)](BZIP2.md)
+- [bzip2 (UCRT64)](BZIP2-UCRT64.md)
 - [libbz2](LIBBZ2.md)
 - [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

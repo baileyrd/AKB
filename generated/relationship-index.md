@@ -76328,8 +76328,10 @@
 | relationship:foundation-libraries:libarchive-msys-requires-libzstd | requires | library:libarchive:libarchive@msys | library:facebook:zstd@msys-lib | verified |
 | relationship:foundation-libraries:libarchive-msys-requires-zlib | requires | library:libarchive:libarchive@msys | library:gnu:zlib@msys | verified |
 | relationship:foundation-libraries:libarchive-packaged-by-package | packaged-by | library:libarchive:libarchive | package:msys2:mingw-w64-ucrt-x86_64-libarchive | verified |
+| relationship:foundation-libraries:libarchive-requires-bzip2-ucrt64 | requires | library:libarchive:libarchive | library:bzip2:bzip2@ucrt64 | verified |
 | relationship:foundation-libraries:libarchive-requires-expat | requires | library:libarchive:libarchive | library:libexpat:expat | verified |
 | relationship:foundation-libraries:libarchive-requires-libiconv | requires | library:libarchive:libarchive | library:gnu:libiconv | verified |
+| relationship:foundation-libraries:libarchive-requires-lz4-ucrt64 | requires | library:libarchive:libarchive | library:lz4:lz4@ucrt64 | verified |
 | relationship:foundation-libraries:libarchive-requires-pcre2 | requires | library:libarchive:libarchive | library:pcre:pcre2 | verified |
 | relationship:foundation-libraries:libarchive-requires-zlib | requires | library:libarchive:libarchive | library:gnu:zlib | verified |
 | relationship:foundation-libraries:libassuan-clang64-requires-libgpg-error-clang64 | requires | library:gnupg:libassuan@clang64 | library:gnupg:libgpg-error@clang64 | verified |
@@ -76520,6 +76522,7 @@
 | relationship:foundation-libraries:msys-contains-pcre2-msys | contains | environment:msys2:msys | library:pcre:pcre2@msys | partial |
 | relationship:foundation-libraries:msys-contains-readline-msys | contains | environment:msys2:msys | library:gnu:readline@msys | partial |
 | relationship:foundation-libraries:msys-contains-zlib-msys | contains | environment:msys2:msys | library:gnu:zlib@msys | partial |
+| relationship:foundation-libraries:ncurses-clang64-requires-pcre2-clang64 | requires | library:gnu:ncurses@clang64 | library:pcre:pcre2@clang64 | verified |
 | relationship:foundation-libraries:nettle-clang64-requires-gmp-clang64 | requires | library:nettle:nettle@clang64 | library:gnu:gmp@clang64 | verified |
 | relationship:foundation-libraries:nettle-msys-packaged-by-package | packaged-by | library:nettle:nettle@msys | package:msys2:nettle | verified |
 | relationship:foundation-libraries:nettle-msys-requires-libnettle-msys | requires | library:nettle:nettle@msys | library:nettle:libnettle@msys | verified |
@@ -76548,6 +76551,7 @@
 | relationship:foundation-libraries:pcre2-msys-packaged-by-package | packaged-by | library:pcre:pcre2@msys | package:msys2:libpcre2_8 | verified |
 | relationship:foundation-libraries:pcre2-msys-uses-msys-runtime | uses-runtime | library:pcre:pcre2@msys | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |
+| relationship:foundation-libraries:pcre2-requires-bzip2-ucrt64 | requires | library:pcre:pcre2 | library:bzip2:bzip2@ucrt64 | verified |
 | relationship:foundation-libraries:pcre2-requires-wineditline | requires | library:pcre:pcre2 | library:mingweditline:wineditline | verified |
 | relationship:foundation-libraries:pcre2-requires-zlib | requires | library:pcre:pcre2 | library:gnu:zlib | verified |
 | relationship:foundation-libraries:popt-msys-requires-libiconv | requires | library:rpm:popt@msys | library:gnu:libiconv@msys | verified |

@@ -153,4 +153,5 @@ unconfirmed.
 - [Vim](VIM.md)
 - [mintty](MINTTY.md)
 - [ncurses (UCRT64)](NCURSES-UCRT64.md)
+- [ncurses (CLANG64)](NCURSES-CLANG64.md)
 - [libedit](LIBEDIT.md)

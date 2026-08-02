@@ -130,5 +130,6 @@ dependents are not individually modeled in this knowledge base.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [LZ4](LZ4.md)
+- [LZ4 (UCRT64)](LZ4-UCRT64.md)
 - [liblz4 (MSYS)](LIBLZ4-MSYS.md)
 - [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)

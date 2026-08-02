@@ -10,6 +10,7 @@ model_refs:
   - library:mingweditline:wineditline@clang64
   - library:gnu:zlib@clang64
   - library:libarchive:libarchive@clang64
+  - library:gnu:ncurses@clang64
   - environment:msys2:clang64
 evidence_refs:
   - evidence:pcre:pcre2-manual-2026-07-30
@@ -76,10 +77,12 @@ knowledge base:
 ## Reverse Dependencies
 
 The catalog snapshot records 34 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-pcre2`. One is now modeled in
+`package:msys2:mingw-w64-clang-x86_64-pcre2`. Two are now modeled in
 this knowledge base: [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 (`relationship:foundation-libraries:libarchive-clang64-requires-pcre2-clang64`,
-added 2026-08-02). The remaining ~33 recorded dependents (a broad mix
+added 2026-08-02) and [ncurses (CLANG64)](NCURSES-CLANG64.md)
+(`relationship:foundation-libraries:ncurses-clang64-requires-pcre2-clang64`,
+added 2026-08-02). The remaining ~32 recorded dependents (a broad mix
 of CLANG64 packages including `android-tools`, `crystal`, `ctags`,
 `gdal`, `git` — a separate CLANG64-native git package, distinct from
 this knowledge base's MSYS [Git](GIT-MSYS-PACKAGE.md) entity — and

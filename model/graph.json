@@ -1063,6 +1063,42 @@
       "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:bzip2:bzip2@ucrt64",
+      "kind": "library",
+      "name": "bzip2 (UCRT64)",
+      "summary": "The Burrows-Wheeler compression codec, packaged in the UCRT64 environment bundling both CLI and library in one package (unlike the MSYS environment's CLI/libbz2 split), consumed by PCRE2 (UCRT64) and libarchive (UCRT64), with 46 recorded reverse dependents. Added 2026-08-02 to close a gap both PCRE2.md and LIBARCHIVE.md had already cited by package name but left unmodeled.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Julian Seward",
+      "aliases": ["bzip2"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://sourceware.org/bzip2/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-bzip2",
+        "role": "Burrows-Wheeler compression"
+      },
+      "evidence_refs": ["evidence:bzip2:project-site-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:lz4:lz4@ucrt64",
+      "kind": "library",
+      "name": "LZ4 (UCRT64)",
+      "summary": "The LZ4 compression codec, packaged in the UCRT64 environment bundling both CLI and library in one package (unlike the MSYS environment's lz4/liblz4 split), consumed by libarchive (UCRT64) for the LZ4 compression filter, with 25 recorded reverse dependents. Added 2026-08-02 to close a gap LIBARCHIVE.md had already cited by package name but left unmodeled.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Yann Collet",
+      "aliases": ["lz4"],
+      "tags": ["library", "compression"],
+      "applicability": {"environment_ids": ["environment:msys2:ucrt64"]},
+      "properties": {
+        "upstream_project": "https://lz4.github.io/lz4/",
+        "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-lz4",
+        "role": "LZ4 compression codec"
+      },
+      "evidence_refs": ["evidence:lz4:manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "library:mingweditline:wineditline@clang64",
       "kind": "library",
       "name": "WinEditLine (CLANG64)",
@@ -3146,6 +3182,24 @@
       "properties": {
         "upstream_project": "https://www.gnu.org/software/ncurses/",
         "packaged_as": "package:msys2:mingw-w64-ucrt-x86_64-ncurses",
+        "role": "terminal-capability and screen-handling library"
+      },
+      "evidence_refs": ["evidence:gnu:ncurses-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
+      "id": "library:gnu:ncurses@clang64",
+      "kind": "library",
+      "name": "ncurses (CLANG64)",
+      "summary": "The ncurses terminal-capability library, packaged in the CLANG64 environment specifically, a separately built, separate catalog entity from ncurses (MSYS) and ncurses (UCRT64), depending on PCRE2 (CLANG64) for its own regular-expression support. Added 2026-08-02 to close a gap surfaced by a triple-environment catalog scan.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Free Software Foundation",
+      "aliases": ["ncurses"],
+      "tags": ["library", "terminal"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://www.gnu.org/software/ncurses/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-ncurses",
         "role": "terminal-capability and screen-handling library"
       },
       "evidence_refs": ["evidence:gnu:ncurses-manual-2026-07-30", "evidence:catalog:current"]
@@ -9539,6 +9593,54 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs HTTP Content-Encoding: zstd decompression.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:pcre2-requires-bzip2-ucrt64",
+      "type": "requires",
+      "source": "library:pcre:pcre2",
+      "target": "library:bzip2:bzip2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs pcre2grep's support for searching bzip2-compressed files, the same rationale already documented for the CLANG64 sibling edge. Added 2026-08-02, formalizing a dependency PCRE2.md's own dependency table already cited by package name but had left unmodeled.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-bzip2-ucrt64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:bzip2:bzip2@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the bzip2 compression filter within libarchive's supported archive formats, the same rationale already documented for the CLANG64 sibling edge. Added 2026-08-02, correcting LIBARCHIVE.md's own prior statement that this dependency would not be modeled as a formal edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libarchive-requires-lz4-ucrt64",
+      "type": "requires",
+      "source": "library:libarchive:libarchive",
+      "target": "library:lz4:lz4@ucrt64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs reading and writing the LZ4 compression filter within libarchive's supported archive formats, the same rationale already documented for the CLANG64 sibling edge. Added 2026-08-02, correcting LIBARCHIVE.md's own prior statement that this dependency would not be modeled as a formal edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:ncurses-clang64-requires-pcre2-clang64",
+      "type": "requires",
+      "source": "library:gnu:ncurses@clang64",
+      "target": "library:pcre:pcre2@clang64",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs regular-expression support within ncurses, the same rationale already documented for the UCRT64 sibling's dependency on PCRE2 (UCRT64). Added 2026-08-02.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

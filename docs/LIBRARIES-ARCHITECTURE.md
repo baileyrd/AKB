@@ -152,6 +152,9 @@ model_refs:
   - library:p11-glue:p11-kit@ucrt64
   - library:gnutls:gnutls@ucrt64
   - library:tukaani:liblzma@msys
+  - library:bzip2:bzip2@ucrt64
+  - library:lz4:lz4@ucrt64
+  - library:gnu:ncurses@clang64
 evidence_refs:
   - evidence:gnu:libstdcxx-manual-2026-07-30
   - evidence:llvm:libcxx-manual-2026-07-30
@@ -220,6 +223,7 @@ evidence_refs:
   - evidence:apache:apr-manual-2026-08-02
   - evidence:apache:serf-manual-2026-08-02
   - evidence:gnupg:gpgme-manual-2026-08-02
+  - evidence:mozilla:ca-certificates-manual-2026-07-30
 last_verified: 2026-08-02
 ---
 
@@ -348,8 +352,10 @@ flowchart LR
 [libnghttp2 (CLANG64)](LIBNGHTTP2-CLANG64.md),
 [libnghttp3 (CLANG64)](LIBNGHTTP3-CLANG64.md),
 [GnuTLS (CLANG64)](GNUTLS-CLANG64.md),
-[libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md), and
-[curl (CLANG64)](CURL-CLANG64.md) are
+[libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md),
+[curl (CLANG64)](CURL-CLANG64.md),
+[bzip2 (UCRT64)](BZIP2-UCRT64.md), [LZ4 (UCRT64)](LZ4-UCRT64.md), and
+[ncurses (CLANG64)](NCURSES-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -364,7 +370,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and forty-eight pages are deliberately scoped to package/dependency-level
+All one hundred and fifty-two pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -996,7 +1002,37 @@ catalog dependencies in a single pass, completing the CLANG64
 network-transfer library cluster entirely and mirroring the same
 full-coverage milestone [curl (UCRT64)](CURL-UCRT64.md#dependencies)
 and [libcurl (MSYS)](LIBCURL.md#dependencies) reached earlier this
-session. These
+session. A follow-on correction batch fixed a genuine false claim
+rather than adding coverage: [ca-certificates'](CA-CERTIFICATES.md#dependencies)
+own Dependencies section had stated the catalog recorded no
+`runtime-depends-on` edges at all, when it in fact records six — two
+now modeled as `requires` edges onto [OpenSSL](OPENSSL.md) and
+[p11-kit](P11-KIT.md), the remaining four being out-of-scope CLI-tool
+citations consistent with this volume's existing policy. The p11-kit
+edge itself was found via a fresh triple-environment scan that flagged
+`package:msys2:p11-kit` — a distinct, thin CLI/meta-package from the
+already-modeled `package:msys2:libp11-kit` — as unmodeled; rather than
+add a new entity for it (the same declined-meta-package precedent
+already established for `pcre`/`pcre2` and `expat`/`libexpat`), its one
+real dependent relationship was modeled directly from ca-certificates
+onto the existing p11-kit library entity. A re-run of the
+catalog-vs-graph audit then found two more citation-only gaps:
+[libedit's](LIBEDIT.md#dependencies) own `ncurses` dependency and
+[libfido2's](LIBFIDO2.md#dependencies) own `openssl` dependency were
+both already cited by package name but never given formal `requires`
+edges — the latter correcting libfido2's own prior stated rationale for
+declining to model it, which did not hold up against this volume's
+established practice. A further batch closed three more real gaps the
+triple-environment scan surfaced: [bzip2 (UCRT64)](BZIP2-UCRT64.md) and
+[LZ4 (UCRT64)](LZ4-UCRT64.md), both previously cited by package name on
+[PCRE2's](PCRE2.md#dependencies) and/or
+[libarchive's](LIBARCHIVE.md#dependencies) own dependency tables but
+explicitly left unmodeled ("not individually modeled as their own
+library entities," now corrected), and
+[ncurses (CLANG64)](NCURSES-CLANG64.md), completing the ncurses
+MSYS/UCRT64/CLANG64 sibling triple this volume had left partially
+covered since [ncurses (UCRT64)](NCURSES-UCRT64.md) was first added.
+These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

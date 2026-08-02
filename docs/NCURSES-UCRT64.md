@@ -13,7 +13,7 @@ model_refs:
 evidence_refs:
   - evidence:gnu:ncurses-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # ncurses (UCRT64)
@@ -148,5 +148,6 @@ methodology.
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [ncurses (MSYS)](NCURSES.md)
+- [ncurses (CLANG64)](NCURSES-CLANG64.md)
 - [GDB](GNU-GDB.md)
 - [PCRE2](PCRE2.md)

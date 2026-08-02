@@ -607,6 +607,7 @@ Objects
 - library:blake2:libb2@clang64 (library): BLAKE2 (libb2) (CLANG64)
 - library:boost:boost (library): Boost
 - library:bzip2:bzip2@clang64 (library): bzip2 (CLANG64)
+- library:bzip2:bzip2@ucrt64 (library): bzip2 (UCRT64)
 - library:bzip2:libbz2 (library): libbz2
 - library:c-ares:c-ares@clang64 (library): c-ares (CLANG64)
 - library:c-ares:c-ares@ucrt64 (library): c-ares (UCRT64)
@@ -643,6 +644,7 @@ Objects
 - library:gnu:mpfr (library): GNU MPFR
 - library:gnu:mpfr@clang64 (library): GNU MPFR (CLANG64)
 - library:gnu:mpfr@msys (library): GNU MPFR (MSYS)
+- library:gnu:ncurses@clang64 (library): ncurses (CLANG64)
 - library:gnu:ncurses@ucrt64 (library): ncurses (UCRT64)
 - library:gnu:readline (library): GNU Readline
 - library:gnu:readline@msys (library): GNU Readline (MSYS)
@@ -700,6 +702,7 @@ Objects
 - library:llvm:llvm-libs (library): LLVM libraries
 - library:lz4:liblz4 (library): liblz4
 - library:lz4:lz4@clang64 (library): LZ4 (CLANG64)
+- library:lz4:lz4@ucrt64 (library): LZ4 (UCRT64)
 - library:mingw-w64:libwinpthread (library): libwinpthread
 - library:mingw-w64:libwinpthread@clang64 (library): libwinpthread (CLANG64)
 - library:mingw-w64:winpthreads (library): winpthreads
@@ -16970,6 +16973,10 @@ Relationships
 - library:curl:curl@clang64 --requires--> library:openssl:openssl@clang64
 - library:curl:curl@clang64 --requires--> library:gnu:zlib@clang64
 - library:curl:curl@clang64 --requires--> library:facebook:zstd@clang64
+- library:pcre:pcre2 --requires--> library:bzip2:bzip2@ucrt64
+- library:libarchive:libarchive --requires--> library:bzip2:bzip2@ucrt64
+- library:libarchive:libarchive --requires--> library:lz4:lz4@ucrt64
+- library:gnu:ncurses@clang64 --requires--> library:pcre:pcre2@clang64
 - library:pcre:pcre2@clang64 --requires--> library:bzip2:bzip2@clang64
 - library:pcre:pcre2@clang64 --requires--> library:mingweditline:wineditline@clang64
 - library:pcre:pcre2@clang64 --requires--> library:gnu:zlib@clang64

@@ -18,7 +18,7 @@ model_refs:
 evidence_refs:
   - evidence:libarchive:manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libarchive
@@ -99,12 +99,16 @@ library-entity pages of their own, and the three missing edges
 (`relationship:toolchain:libarchive-requires-zstd`,
 `relationship:toolchain:libarchive-requires-liblzma`,
 `relationship:toolchain:libarchive-requires-openssl-ucrt64`) are added.
-The remaining three —
-`mingw-w64-ucrt-x86_64-bzip2`, `mingw-w64-ucrt-x86_64-libb2`, and
-`mingw-w64-ucrt-x86_64-lz4` —
-remain UCRT64-native packages not individually modeled as their own
-library entities in this knowledge base, so no formal `requires` edges
-are added for them.
+Of the remaining three, **correction, 2026-08-02**: two are now
+individually modeled and their edges added — [bzip2 (UCRT64)](BZIP2-UCRT64.md)
+(`relationship:foundation-libraries:libarchive-requires-bzip2-ucrt64`,
+backing the bzip2 compression filter within libarchive's supported
+archive formats) and [LZ4 (UCRT64)](LZ4-UCRT64.md)
+(`relationship:foundation-libraries:libarchive-requires-lz4-ucrt64`,
+backing the LZ4 compression filter). Only
+`mingw-w64-ucrt-x86_64-libb2` remains an UCRT64-native package not
+individually modeled as its own library entity in this knowledge base,
+so no formal `requires` edge is added for it.
 
 ## Reverse Dependencies
 
@@ -197,3 +201,5 @@ methodology.
 - [Zstandard (library)](LIBZSTD.md)
 - [liblzma (UCRT64)](LIBLZMA.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+- [bzip2 (UCRT64)](BZIP2-UCRT64.md)
+- [LZ4 (UCRT64)](LZ4-UCRT64.md)

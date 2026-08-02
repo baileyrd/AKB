@@ -5456,6 +5456,15 @@
 - Outgoing relationships: 0
 - Incoming relationships: 2
 
+## `library:bzip2:bzip2@ucrt64`
+
+- Name: bzip2 (UCRT64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:bzip2:project-site-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 2
+
 ## `library:bzip2:libbz2`
 
 - Name: libbz2
@@ -5780,6 +5789,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 1
 
+## `library:gnu:ncurses@clang64`
+
+- Name: ncurses (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:ncurses-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 0
+
 ## `library:gnu:ncurses@ucrt64`
 
 - Name: ncurses (UCRT64)
@@ -6074,7 +6092,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:libarchive:manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 8
+- Outgoing relationships: 10
 - Incoming relationships: 2
 
 ## `library:libarchive:libarchive@clang64`
@@ -6287,6 +6305,15 @@
 ## `library:lz4:lz4@clang64`
 
 - Name: LZ4 (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 1
+
+## `library:lz4:lz4@ucrt64`
+
+- Name: LZ4 (UCRT64)
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:lz4:manual-2026-07-30, evidence:catalog:current
@@ -6596,7 +6623,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 3
+- Outgoing relationships: 4
 - Incoming relationships: 3
 
 ## `library:pcre:pcre2@clang64`
@@ -6606,7 +6633,7 @@
 - Status: `partial`
 - Evidence: evidence:pcre:pcre2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 1
+- Incoming relationships: 2
 
 ## `library:pcre:pcre2@msys`
 

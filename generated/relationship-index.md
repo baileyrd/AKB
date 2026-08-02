@@ -76368,6 +76368,10 @@
 | relationship:foundation-libraries:libpsl-ucrt64-requires-libidn2-ucrt64 | requires | library:libpsl:libpsl@ucrt64 | library:gnu:libidn2@ucrt64 | verified |
 | relationship:foundation-libraries:libpsl-ucrt64-requires-libunistring-ucrt64 | requires | library:libpsl:libpsl@ucrt64 | library:gnu:libunistring@ucrt64 | verified |
 | relationship:foundation-libraries:libpsl-uses-msys-runtime | uses-runtime | library:libpsl:libpsl | runtime:msys2:msys-2.0.dll | partial |
+| relationship:foundation-libraries:libsasl-requires-heimdal-libs | requires | library:sasl:libsasl@msys | library:h5l:heimdal-libs | verified |
+| relationship:foundation-libraries:libsasl-requires-libopenssl | requires | library:sasl:libsasl@msys | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:libsasl-requires-libsqlite | requires | library:sasl:libsasl@msys | library:sqlite:libsqlite@msys | verified |
+| relationship:foundation-libraries:libsasl-requires-libxcrypt | requires | library:sasl:libsasl@msys | library:libxcrypt:libxcrypt | verified |
 | relationship:foundation-libraries:libssh2-packaged-by-package | packaged-by | library:libssh2:libssh2 | package:msys2:libssh2 | verified |
 | relationship:foundation-libraries:libssh2-requires-ca-certificates | requires | library:libssh2:libssh2 | library:mozilla:ca-certificates | verified |
 | relationship:foundation-libraries:libssh2-requires-openssl | requires | library:libssh2:libssh2 | component:openssl:openssl | verified |

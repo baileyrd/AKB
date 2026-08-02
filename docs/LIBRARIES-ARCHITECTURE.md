@@ -15,6 +15,7 @@ model_refs:
   - library:boost:boost
   - library:sqlite:sqlite3
   - library:sqlite:libsqlite@msys
+  - library:sasl:libsasl@msys
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -173,6 +174,7 @@ evidence_refs:
   - evidence:libssh2:manual-2026-07-30
   - evidence:libffi:project-site-2026-07-30
   - evidence:c-ares:project-site-2026-07-30
+  - evidence:cyrusimap:libsasl-manual-2026-08-02
 last_verified: 2026-08-02
 ---
 
@@ -263,8 +265,9 @@ flowchart LR
 [GnuTLS (UCRT64)](GNUTLS-UCRT64.md),
 [liblzma (MSYS)](LIBLZMA-MSYS.md), [liblz4 (MSYS)](LIBLZ4-MSYS.md),
 [libarchive (MSYS)](LIBARCHIVE-MSYS.md),
-[xxHash (MSYS)](XXHASH-MSYS.md), and
-[libsqlite (MSYS)](LIBSQLITE-MSYS.md) are
+[xxHash (MSYS)](XXHASH-MSYS.md),
+[libsqlite (MSYS)](LIBSQLITE-MSYS.md), and
+[libsasl (MSYS)](LIBSASL-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -279,7 +282,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and eight pages are deliberately scoped to package/dependency-level
+All one hundred and nine pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -758,7 +761,15 @@ on both [GnuPG's](GNUPG.md#dependencies) and
 dependency tables without a corresponding graph edge or page of its
 own; both edges are now added, and [SQLite (UCRT64)'s](SQLITE3.md#boundaries)
 own page (which had already flagged the MSYS/UCRT64 distinction by
-name) now links to it directly. These
+name) now links to it directly. [libsqlite's](LIBSQLITE-MSYS.md) own
+reverse-dependency list then surfaced a fourth full-coverage candidate:
+[libsasl (MSYS)](LIBSASL-MSYS.md), the Cyrus SASL authentication
+library, whose four own catalog dependencies (libxcrypt, libopenssl,
+Heimdal runtime libraries, libsqlite (MSYS)) were all already modeled
+entities, letting this addition close its complete dependency footprint
+in one pass, the same full-coverage pattern
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md) demonstrated earlier this
+batch. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

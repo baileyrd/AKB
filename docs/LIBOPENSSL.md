@@ -165,3 +165,4 @@ methodology.
 - [libngtcp2](LIBNGTCP2.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [libsasl (MSYS)](LIBSASL-MSYS.md)

@@ -152,3 +152,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [OpenSSH](OPENSSH.md)
 - [Vim](VIM.md)
+- [libsasl (MSYS)](LIBSASL-MSYS.md)

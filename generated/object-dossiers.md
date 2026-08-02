@@ -5868,7 +5868,7 @@
 - Status: `partial`
 - Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 6
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:jsoncpp:jsoncpp`
 
@@ -6012,7 +6012,7 @@
 - Status: `partial`
 - Evidence: evidence:libxcrypt:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:llvm:clang-libs`
 
@@ -6219,7 +6219,7 @@
 - Status: `partial`
 - Evidence: evidence:openssl:project-site-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 4
+- Incoming relationships: 5
 
 ## `library:openssl:openssl@ucrt64`
 
@@ -6293,6 +6293,15 @@
 - Outgoing relationships: 2
 - Incoming relationships: 2
 
+## `library:sasl:libsasl@msys`
+
+- Name: libsasl (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:cyrusimap:libsasl-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 4
+- Incoming relationships: 0
+
 ## `library:sqlite:libsqlite@msys`
 
 - Name: libsqlite (MSYS)
@@ -6300,7 +6309,7 @@
 - Status: `partial`
 - Evidence: evidence:sqlite:documentation-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 0
-- Incoming relationships: 2
+- Incoming relationships: 3
 
 ## `library:sqlite:sqlite3`
 

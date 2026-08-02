@@ -655,7 +655,7 @@
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
-| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 2 |
+| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 3 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
 | library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
@@ -671,7 +671,7 @@
 | library:libssh2:libssh2 | library | libssh2 | partial | 5 | 2 |
 | library:libssh2:libssh2@ucrt64 | library | libssh2 (UCRT64) | partial | 2 | 1 |
 | library:libuv:libuv | library | libuv | partial | 1 | 2 |
-| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 4 |
+| library:libxcrypt:libxcrypt | library | libxcrypt | partial | 2 | 5 |
 | library:llvm:clang-libs | library | Clang libraries | partial | 2 | 3 |
 | library:llvm:libc++ | library | libc++ | partial | 2 | 2 |
 | library:llvm:llvm-libs | library | LLVM libraries | partial | 5 | 4 |
@@ -694,7 +694,7 @@
 | library:nghttp2:libnghttp3@ucrt64 | library | libnghttp3 (UCRT64) | partial | 0 | 1 |
 | library:nghttp2:libngtcp2 | library | libngtcp2 | partial | 3 | 3 |
 | library:nghttp2:libngtcp2@ucrt64 | library | libngtcp2 (UCRT64) | partial | 2 | 1 |
-| library:openssl:libopenssl | library | libopenssl | partial | 0 | 4 |
+| library:openssl:libopenssl | library | libopenssl | partial | 0 | 5 |
 | library:openssl:openssl@ucrt64 | library | OpenSSL (UCRT64) | partial | 0 | 4 |
 | library:p11-glue:p11-kit | library | p11-kit | partial | 5 | 2 |
 | library:p11-glue:p11-kit@ucrt64 | library | p11-kit (UCRT64) | partial | 3 | 2 |
@@ -703,7 +703,8 @@
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |
-| library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 2 |
+| library:sasl:libsasl@msys | library | libsasl (MSYS) | partial | 4 | 0 |
+| library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 3 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
 | library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |

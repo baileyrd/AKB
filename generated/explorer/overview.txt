@@ -700,6 +700,7 @@ Objects
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
 - library:pjk:libcbor (library): libcbor
 - library:rhash:rhash (library): RHash
+- library:sasl:libsasl@msys (library): libsasl (MSYS)
 - library:sqlite:libsqlite@msys (library): libsqlite (MSYS)
 - library:sqlite:sqlite3 (library): SQLite
 - library:tukaani:liblzma (library): liblzma (XZ Utils library)
@@ -16898,6 +16899,10 @@ Relationships
 - component:gnupg:gnupg --requires--> library:bzip2:libbz2
 - component:gnupg:gnupg --requires--> library:sqlite:libsqlite@msys
 - library:h5l:heimdal-libs --requires--> library:sqlite:libsqlite@msys
+- library:sasl:libsasl@msys --requires--> library:libxcrypt:libxcrypt
+- library:sasl:libsasl@msys --requires--> library:openssl:libopenssl
+- library:sasl:libsasl@msys --requires--> library:h5l:heimdal-libs
+- library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
 - component:info-zip:zip --requires--> library:bzip2:libbz2
 - component:info-zip:unzip --requires--> library:bzip2:libbz2
 - library:libarchive:libarchive@msys --requires--> library:bzip2:libbz2

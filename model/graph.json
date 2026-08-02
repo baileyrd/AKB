@@ -505,6 +505,24 @@
       "evidence_refs": ["evidence:sqlite:documentation-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:sasl:libsasl@msys",
+      "kind": "library",
+      "name": "libsasl (MSYS)",
+      "summary": "The Cyrus Simple Authentication and Security Layer (SASL) library, packaged in the MSYS environment and linking against four other libraries already documented in this knowledge base (libxcrypt, libopenssl, Heimdal runtime libraries, libsqlite), consumed by mutt, neomutt, and Subversion for pluggable authentication mechanisms.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Cyrus SASL project",
+      "aliases": ["libsasl", "Cyrus SASL"],
+      "tags": ["library", "security"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.cyrusimap.org/sasl/",
+        "packaged_as": "package:msys2:libsasl",
+        "role": "pluggable authentication (SASL) framework"
+      },
+      "evidence_refs": ["evidence:cyrusimap:libsasl-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8439,6 +8457,54 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:libsasl-requires-libxcrypt",
+      "type": "requires",
+      "source": "library:sasl:libsasl@msys",
+      "target": "library:libxcrypt:libxcrypt",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs crypt()-family password hashing for SASL mechanisms that verify local password hashes.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libsasl-requires-libopenssl",
+      "type": "requires",
+      "source": "library:sasl:libsasl@msys",
+      "target": "library:openssl:libopenssl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs cryptographic support for SASL mechanisms such as SCRAM and DIGEST-MD5.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libsasl-requires-heimdal-libs",
+      "type": "requires",
+      "source": "library:sasl:libsasl@msys",
+      "target": "library:h5l:heimdal-libs",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs the GSSAPI SASL mechanism, which delegates to Heimdal's Kerberos V5 implementation for authentication.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:libsasl-requires-libsqlite",
+      "type": "requires",
+      "source": "library:sasl:libsasl@msys",
+      "target": "library:sqlite:libsqlite@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs SASL's SQL-backed authentication-secrets storage option (sasldb via SQLite).",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:zip-family:zip-requires-libbz2",
       "type": "requires",
       "source": "component:info-zip:zip",
@@ -10309,6 +10375,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:cyrusimap:libsasl-manual-2026-08-02",
+      "class": "primary",
+      "title": "Cyrus SASL (official project site)",
+      "locator": "https://www.cyrusimap.org/sasl/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official Cyrus SASL project site, matching the project_url recorded for package:msys2:libsasl in the catalog snapshot."
     },
     {
       "id": "evidence:lz4:manual-2026-07-30",

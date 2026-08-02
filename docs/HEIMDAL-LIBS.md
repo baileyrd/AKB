@@ -98,7 +98,10 @@ The catalog snapshot records 4 relationships targeting
 `package:msys2:heimdal-libs`: `package:msys2:heimdal`
 (`relationship:foundation-libraries:heimdal-requires-heimdal-libs` in
 this knowledge base's graph), its own `-devel` subpackage,
-`package:msys2:libsasl`, and `package:msys2:neomutt`.
+[libsasl (MSYS)](LIBSASL-MSYS.md)
+(`relationship:foundation-libraries:libsasl-requires-heimdal-libs`,
+added 2026-08-02, backing libsasl's GSSAPI mechanism), and
+`package:msys2:neomutt`.
 
 ## Configuration
 
@@ -170,3 +173,4 @@ methodology.
 - [libopenssl](LIBOPENSSL.md)
 - [libedit](LIBEDIT.md)
 - [libxcrypt](LIBXCRYPT.md)
+- [libsasl (MSYS)](LIBSASL-MSYS.md)

@@ -5,8 +5,10 @@ volume: 7
 status: partial
 model_refs:
   - ecosystem:msys2:msys2
-evidence_refs: []
-last_verified: 2026-07-30
+  - package-manager:archlinux:pacman
+evidence_refs:
+  - evidence:pacman:pacman-8-2026-08-02
+last_verified: 2026-08-02
 ---
 
 # Pacman Architecture and Transaction Model
@@ -52,6 +54,23 @@ standard hook directory contained no hook files at that instant.
 This is configuration and retained-state evidence only. It does not establish
 mirror availability, signature verification outcomes, transaction behavior, or
 the behavior of absent/custom hooks.
+
+## Mechanism pages
+
+**Added 2026-08-02.** This page states the AKB's boundaries and collection
+rules for pacman. The mechanism itself is documented across five pages, and
+`pacman` is now modeled as `package-manager:archlinux:pacman` — it had no
+entity despite being the subject of this volume.
+
+- [Transaction model](PACMAN-TRANSACTIONS.md) — operations, dependency
+  resolution, version-comparison ordering
+- [Database model](PACMAN-DATABASE-MODEL.md) — sync versus local databases
+- [Repository layout](PACMAN-REPOSITORY-LAYOUT.md) — sections, mirrors,
+  precedence
+- [Package signing](PACMAN-PACKAGE-SIGNING.md) — SigLevel and
+  LocalFileSigLevel
+- [Hooks and cache](PACMAN-HOOKS-AND-CACHE.md) — alpm hook format, cache
+  directories
 
 ## Related Views
 

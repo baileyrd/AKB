@@ -62,6 +62,19 @@ flowchart LR
 4. Observe local database, cache, and hooks before and after a controlled
    transaction.
 
+## Mechanism pages
+
+The boundary table above states what evidence each concern requires. The
+mechanism behind each row is documented separately:
+[repository layout](PACMAN-REPOSITORY-LAYOUT.md),
+[package signing](PACMAN-PACKAGE-SIGNING.md),
+[database model](PACMAN-DATABASE-MODEL.md), and
+[hooks and cache](PACMAN-HOOKS-AND-CACHE.md).
+
+**None of the collection rules in the table above has been executed.** No
+MSYS2 `pacman.conf` is captured, no transaction observed, no hook set
+inventoried, no effective path recorded.
+
 ## Related Views
 
 - [Pacman architecture and transaction model](PACMAN-ARCHITECTURE.md)

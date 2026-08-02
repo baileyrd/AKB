@@ -608,7 +608,7 @@
 | layer:msys2:2-windows-user-mode-apis | layer | Layer 2 — Windows user-mode APIs, console, filesystem, and loader | partial | 0 | 1 |
 | layer:msys2:3-msys-posix-runtime | layer | Layer 3 — MSYS POSIX runtime and process adaptation | partial | 1 | 1 |
 | layer:msys2:4-runtime-environments | layer | Layer 4 — MSYS and native runtime environments | partial | 6 | 1 |
-| layer:msys2:5-packages-and-repositories | layer | Layer 5 — Packages, repositories, and pacman | partial | 6 | 1 |
+| layer:msys2:5-packages-and-repositories | layer | Layer 5 — Packages, repositories, and pacman | partial | 7 | 1 |
 | layer:msys2:6-toolchains-and-build-systems | layer | Layer 6 — Toolchains and build systems | partial | 14 | 1 |
 | layer:msys2:7-userland-and-libraries | layer | Layer 7 — GNU userland, libraries, IDEs, and developer tools | partial | 5 | 1 |
 | layer:msys2:8-users-and-automation | layer | Layer 8 — Users, applications, and automation | partial | 0 | 1 |
@@ -768,6 +768,7 @@
 | library:yubico:libfido2 | library | libfido2 | partial | 5 | 2 |
 | library:yubico:libfido2@clang64 | library | libfido2 (CLANG64) | partial | 3 | 0 |
 | library:yubico:libfido2@ucrt64 | library | libfido2 (UCRT64) | partial | 3 | 0 |
+| package-manager:archlinux:pacman | package-manager | pacman | partial | 1 | 1 |
 | package:msys2:ack | package | ack | verified | 3 | 0 |
 | package:msys2:ansible | package | ansible | verified | 4 | 0 |
 | package:msys2:ansible-core | package | ansible-core | verified | 10 | 1 |
@@ -16146,7 +16147,7 @@
 | package:msys2:openssl-docs | package | openssl-docs | verified | 2 | 0 |
 | package:msys2:p11-kit | package | p11-kit | verified | 3 | 1 |
 | package:msys2:p7zip | package | p7zip | verified | 4 | 3 |
-| package:msys2:pacman | package | pacman | verified | 12 | 7 |
+| package:msys2:pacman | package | pacman | verified | 12 | 8 |
 | package:msys2:pacman-contrib | package | pacman-contrib | verified | 6 | 1 |
 | package:msys2:pacman-mirrors | package | pacman-mirrors | verified | 2 | 2 |
 | package:msys2:pactoys | package | pactoys | verified | 4 | 0 |

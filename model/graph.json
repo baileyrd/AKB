@@ -8,6 +8,37 @@
   },
   "entities": [
     {
+      "id": "package-manager:archlinux:pacman",
+      "kind": "package-manager",
+      "name": "pacman",
+      "summary": "The package manager MSYS2 uses, packaged as package:msys2:pacman (version 6.1.0-25 in the current catalog snapshot). Runs in the MSYS environment and installs into every environment's prefix, which makes MSYS the control plane for the whole distribution. Modeled 2026-08-02: pacman is named throughout the charter and is the subject of Volume 7, but had no entity and no page referenced it.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "Arch Linux",
+      "aliases": [
+        "pacman",
+        "alpm"
+      ],
+      "tags": [
+        "package-manager",
+        "system-package"
+      ],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "properties": {
+        "upstream_project": "https://www.archlinux.org/pacman/",
+        "packaged_as": "package:msys2:pacman",
+        "role": "package management and transaction execution"
+      },
+      "evidence_refs": [
+        "evidence:pacman:pacman-8-2026-08-02",
+        "evidence:catalog:current"
+      ]
+    },
+    {
       "id": "subsystem:msys2:process-manager",
       "kind": "subsystem",
       "name": "Process Manager",
@@ -4022,6 +4053,32 @@
     }
   ],
   "relationships": [
+    {
+      "id": "relationship:pacman:layer-5-contains-pacman",
+      "type": "contains",
+      "source": "layer:msys2:5-packages-and-repositories",
+      "target": "package-manager:archlinux:pacman",
+      "status": "partial",
+      "confidence": "high",
+      "scope": "architecture-layer",
+      "condition": "Representative member anchoring layer navigation; not an exhaustive membership list.",
+      "properties": {},
+      "evidence_refs": []
+    },
+    {
+      "id": "relationship:pacman:pacman-packaged-by-msys",
+      "type": "packaged-by",
+      "source": "package-manager:archlinux:pacman",
+      "target": "package:msys2:pacman",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "package-catalog",
+      "condition": "pacman is itself an MSYS-environment package, so the tool that manages the distribution is managed by the distribution.",
+      "properties": {},
+      "evidence_refs": [
+        "evidence:catalog:current"
+      ]
+    },
     {
       "id": "relationship:msys-runtime:msys-2-0-dll-contains-process-manager",
       "type": "contains",
@@ -12609,6 +12666,36 @@
     }
   ],
   "evidence": [
+    {
+      "id": "evidence:pacman:pacman-8-2026-08-02",
+      "class": "primary",
+      "title": "pacman(8) manual page",
+      "locator": "https://man.archlinux.org/man/pacman.8",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Operations, transaction options, version-comparison ordering, and default database and cache locations. These are the Arch Linux manual pages for pacman, which is the authoritative reference for the tool. MSYS2 ships pacman but places its root, database, and cache under the MSYS2 installation rather than at the Arch defaults, and enables its own repositories. Documented pacman behavior therefore establishes the mechanism, not MSYS2's effective paths or configuration, which this knowledge base has not captured from a controlled observation."
+    },
+    {
+      "id": "evidence:pacman:pacman-conf-5-2026-08-02",
+      "class": "primary",
+      "title": "pacman.conf(5) manual page",
+      "locator": "https://man.archlinux.org/man/pacman.conf.5",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Repository sections, Server and Include directives, repository precedence, SigLevel and LocalFileSigLevel, DBPath and CacheDir. These are the Arch Linux manual pages for pacman, which is the authoritative reference for the tool. MSYS2 ships pacman but places its root, database, and cache under the MSYS2 installation rather than at the Arch defaults, and enables its own repositories. Documented pacman behavior therefore establishes the mechanism, not MSYS2's effective paths or configuration, which this knowledge base has not captured from a controlled observation."
+    },
+    {
+      "id": "evidence:pacman:alpm-hooks-5-2026-08-02",
+      "class": "primary",
+      "title": "alpm-hooks(5) manual page",
+      "locator": "https://man.archlinux.org/man/alpm-hooks.5",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Hook file format: Trigger Operation/Type/Target, Action When/Exec/Depends/AbortOnFail/NeedsTargets, hook directory and alphabetical ordering. These are the Arch Linux manual pages for pacman, which is the authoritative reference for the tool. MSYS2 ships pacman but places its root, database, and cache under the MSYS2 installation rather than at the Arch defaults, and enables its own repositories. Documented pacman behavior therefore establishes the mechanism, not MSYS2's effective paths or configuration, which this knowledge base has not captured from a controlled observation."
+    },
     {
       "id": "evidence:cygwin:user-guide-2026-08-02",
       "class": "primary",

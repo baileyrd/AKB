@@ -5444,7 +5444,7 @@
 - Kind: `layer`
 - Status: `partial`
 - Evidence: none recorded
-- Outgoing relationships: 6
+- Outgoing relationships: 7
 - Incoming relationships: 1
 
 ## `layer:msys2:6-toolchains-and-build-systems`
@@ -6877,6 +6877,15 @@
 - Evidence: evidence:yubico:libfido2-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
 - Incoming relationships: 0
+
+## `package-manager:archlinux:pacman`
+
+- Name: pacman
+- Kind: `package-manager`
+- Status: `partial`
+- Evidence: evidence:pacman:pacman-8-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 1
+- Incoming relationships: 1
 
 ## `package:msys2:ack`
 
@@ -145287,7 +145296,7 @@
 - Status: `verified`
 - Evidence: evidence:catalog:current
 - Outgoing relationships: 12
-- Incoming relationships: 7
+- Incoming relationships: 8
 
 ## `package:msys2:pacman-contrib`
 

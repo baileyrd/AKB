@@ -77258,6 +77258,8 @@
 | relationship:msys-runtime:msys-2-0-dll-contains-process-manager | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:process-manager | partial |
 | relationship:msys-runtime:msys-2-0-dll-contains-pty-console | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:pty-console | partial |
 | relationship:msys-runtime:msys-2-0-dll-contains-signal-manager | contains | runtime:msys2:msys-2.0.dll | subsystem:msys2:signal-manager | partial |
+| relationship:pacman:layer-5-contains-pacman | contains | layer:msys2:5-packages-and-repositories | package-manager:archlinux:pacman | partial |
+| relationship:pacman:pacman-packaged-by-msys | packaged-by | package-manager:archlinux:pacman | package:msys2:pacman | verified |
 | relationship:ssh-curl-git:curl-packaged-by-package | packaged-by | component:curl:curl | package:msys2:curl | verified |
 | relationship:ssh-curl-git:curl-requires-ca-certificates | requires | component:curl:curl | library:mozilla:ca-certificates | verified |
 | relationship:ssh-curl-git:curl-requires-libcurl | requires | component:curl:curl | library:curl:libcurl | verified |

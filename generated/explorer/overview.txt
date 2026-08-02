@@ -765,6 +765,7 @@ Objects
 - library:yubico:libfido2 (library): libfido2
 - library:yubico:libfido2@clang64 (library): libfido2 (CLANG64)
 - library:yubico:libfido2@ucrt64 (library): libfido2 (UCRT64)
+- package-manager:archlinux:pacman (package-manager): pacman
 - package:msys2:ack (package): ack
 - package:msys2:ansible (package): ansible
 - package:msys2:ansible-core (package): ansible-core
@@ -16496,6 +16497,8 @@ Objects
 - subsystem:msys2:signal-manager (subsystem): Signal Manager
 
 Relationships
+- layer:msys2:5-packages-and-repositories --contains--> package-manager:archlinux:pacman
+- package-manager:archlinux:pacman --packaged-by--> package:msys2:pacman
 - runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:process-manager
 - runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:signal-manager
 - runtime:msys2:msys-2.0.dll --contains--> subsystem:msys2:path-conversion

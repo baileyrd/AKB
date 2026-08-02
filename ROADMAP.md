@@ -85,8 +85,8 @@ goes from 1 page to 7.
 
 - [x] MSYS runtime initialization
 - [x] Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models
-- [ ] pacman architecture and transaction sequences
-- [ ] repository, mirror, signing, key, cache, hook, and database models
+- [x] pacman architecture and transaction sequences
+- [x] repository, mirror, signing, key, cache, hook, and database models
 - [x] msys-2.0.dll subsystem architecture pages
 
 **Partly closed 2026-08-02.** Volume 3 goes from 2 pages to 11: the runtime
@@ -96,8 +96,13 @@ The pages carry the five bounded 2026-07-30 probes where they apply and
 state plainly where they do not — path conversion, the mount table, and
 environment conversion have no observation at all.
 
-Volume 7 remains two pages; `package signing` and `repository layout` appear
-in zero pages, and no page documents the sync-db/local-db formats.
+**Volume 7 closed 2026-08-02** to the same standard: 2 pages to 7, covering
+the transaction model, sync/local database split, repository sections and
+precedence, signature policy, and the alpm hook format — each grounded in
+the pacman manual pages rather than recalled. `pacman` itself is now modeled
+as `package-manager:archlinux:pacman`; it had no entity at all. Every page
+carries the standing caveat that the manual pages are Arch's and MSYS2's
+effective paths and configuration remain uncaptured.
 
 ## Increment 4 — Toolchains and userland
 

@@ -620,10 +620,10 @@
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
-| library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 14 |
+| library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |
 | library:gnu:libidn2 | library | GNU libidn2 | partial | 4 | 4 |
 | library:gnu:libidn2@ucrt64 | library | GNU libidn2 (UCRT64) | partial | 3 | 3 |
-| library:gnu:libintl | library | GNU libintl | partial | 3 | 18 |
+| library:gnu:libintl | library | GNU libintl | partial | 3 | 19 |
 | library:gnu:libltdl | library | GNU Libltdl | partial | 2 | 2 |
 | library:gnu:libstdc++ | library | libstdc++ | partial | 2 | 3 |
 | library:gnu:libtasn1 | library | GNU Libtasn1 | partial | 2 | 3 |
@@ -703,6 +703,7 @@
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |
+| library:rpm:popt@msys | library | popt (MSYS) | partial | 2 | 0 |
 | library:sasl:libsasl@msys | library | libsasl (MSYS) | partial | 4 | 0 |
 | library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 3 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |

@@ -76472,6 +76472,8 @@
 | relationship:foundation-libraries:pcre2-packaged-by-package | packaged-by | library:pcre:pcre2 | package:msys2:mingw-w64-ucrt-x86_64-pcre2 | verified |
 | relationship:foundation-libraries:pcre2-requires-wineditline | requires | library:pcre:pcre2 | library:mingweditline:wineditline | verified |
 | relationship:foundation-libraries:pcre2-requires-zlib | requires | library:pcre:pcre2 | library:gnu:zlib | verified |
+| relationship:foundation-libraries:popt-msys-requires-libiconv | requires | library:rpm:popt@msys | library:gnu:libiconv@msys | verified |
+| relationship:foundation-libraries:popt-msys-requires-libintl | requires | library:rpm:popt@msys | library:gnu:libintl | verified |
 | relationship:foundation-libraries:readline-msys-packaged-by-package | packaged-by | library:gnu:readline@msys | package:msys2:libreadline | verified |
 | relationship:foundation-libraries:readline-msys-requires-ncurses | requires | library:gnu:readline@msys | component:gnu:ncurses | verified |
 | relationship:foundation-libraries:readline-msys-uses-msys-runtime | uses-runtime | library:gnu:readline@msys | runtime:msys2:msys-2.0.dll | partial |

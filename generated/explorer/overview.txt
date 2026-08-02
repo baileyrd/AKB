@@ -700,6 +700,7 @@ Objects
 - library:pcre:pcre2@msys (library): PCRE2 (MSYS)
 - library:pjk:libcbor (library): libcbor
 - library:rhash:rhash (library): RHash
+- library:rpm:popt@msys (library): popt (MSYS)
 - library:sasl:libsasl@msys (library): libsasl (MSYS)
 - library:sqlite:libsqlite@msys (library): libsqlite (MSYS)
 - library:sqlite:sqlite3 (library): SQLite
@@ -16903,6 +16904,8 @@ Relationships
 - library:sasl:libsasl@msys --requires--> library:openssl:libopenssl
 - library:sasl:libsasl@msys --requires--> library:h5l:heimdal-libs
 - library:sasl:libsasl@msys --requires--> library:sqlite:libsqlite@msys
+- library:rpm:popt@msys --requires--> library:gnu:libiconv@msys
+- library:rpm:popt@msys --requires--> library:gnu:libintl
 - component:info-zip:zip --requires--> library:bzip2:libbz2
 - component:info-zip:unzip --requires--> library:bzip2:libbz2
 - library:libarchive:libarchive@msys --requires--> library:bzip2:libbz2

@@ -5553,7 +5553,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libiconv-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
-- Incoming relationships: 14
+- Incoming relationships: 15
 
 ## `library:gnu:libidn2`
 
@@ -5580,7 +5580,7 @@
 - Status: `partial`
 - Evidence: evidence:gnu:libintl-manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 3
-- Incoming relationships: 18
+- Incoming relationships: 19
 
 ## `library:gnu:libltdl`
 
@@ -6292,6 +6292,15 @@
 - Evidence: evidence:rhash:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
 - Incoming relationships: 2
+
+## `library:rpm:popt@msys`
+
+- Name: popt (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:rpm:popt-manual-2026-08-02, evidence:catalog:current
+- Outgoing relationships: 2
+- Incoming relationships: 0
 
 ## `library:sasl:libsasl@msys`
 

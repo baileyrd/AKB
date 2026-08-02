@@ -523,6 +523,24 @@
       "evidence_refs": ["evidence:cyrusimap:libsasl-manual-2026-08-02", "evidence:catalog:current"]
     },
     {
+      "id": "library:rpm:popt@msys",
+      "kind": "library",
+      "name": "popt (MSYS)",
+      "summary": "A command-line option parser library originating from the RPM project, packaged in the MSYS environment and linking against two libraries already documented in this knowledge base (GNU libiconv, GNU libintl), consumed by rsync for command-line argument parsing.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "RPM project",
+      "aliases": ["popt"],
+      "tags": ["library", "utility"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "http://rpm.org/",
+        "packaged_as": "package:msys2:popt",
+        "role": "command-line option parsing"
+      },
+      "evidence_refs": ["evidence:rpm:popt-manual-2026-08-02", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8505,6 +8523,30 @@
       "evidence_refs": ["evidence:catalog:current"]
     },
     {
+      "id": "relationship:foundation-libraries:popt-msys-requires-libiconv",
+      "type": "requires",
+      "source": "library:rpm:popt@msys",
+      "target": "library:gnu:libiconv@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs character-set conversion for popt's command-line argument and message handling.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:popt-msys-requires-libintl",
+      "type": "requires",
+      "source": "library:rpm:popt@msys",
+      "target": "library:gnu:libintl",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs gettext-based message translation (NLS) for popt's own diagnostic and help output.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
       "id": "relationship:zip-family:zip-requires-libbz2",
       "type": "requires",
       "source": "component:info-zip:zip",
@@ -10375,6 +10417,16 @@
       "upstream_version": null,
       "integrity": null,
       "notes": "Official GNU Cpio manual. Used for cpio/tar-format archive semantics. MSYS2-specific packaging, version, and dependency data are sourced separately from the pacman catalog snapshot (evidence:catalog:current)."
+    },
+    {
+      "id": "evidence:rpm:popt-manual-2026-08-02",
+      "class": "primary",
+      "title": "popt (rpm.org project site)",
+      "locator": "http://rpm.org/",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Official rpm.org project site, matching the project_url recorded for package:msys2:popt in the catalog snapshot."
     },
     {
       "id": "evidence:cyrusimap:libsasl-manual-2026-08-02",

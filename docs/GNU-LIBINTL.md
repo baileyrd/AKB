@@ -198,3 +198,4 @@ methodology.
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
 - [GNU libidn2](GNU-LIBIDN2.md)
 - [p11-kit](P11-KIT.md)
+- [popt (MSYS)](POPT-MSYS.md)

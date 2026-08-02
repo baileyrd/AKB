@@ -187,13 +187,24 @@ lookup, or pacman transaction cost — which is what the item names.
 
 ## Increment 9 — Windows platform
 
-The charter's Scope section names eight Windows subsystems. None had a
-roadmap entry, so none was ever visible as outstanding work. Volume 2 is
-one page of 485 words.
+**Closed 2026-08-02.** The charter's Scope section names eight Windows
+subsystems; none had a roadmap entry, so none was visible as work. Volume 2
+goes from 1 page to 8 — one boundary page per subsystem, plus the existing
+table now linking to each.
 
-- [ ] NT Kernel, Win32, and Console/ConPTY boundaries
-- [ ] Filesystem, Registry, Security, and Networking boundaries
-- [ ] ADR recording the contextual-scope narrowing for Windows internals
+They are deliberately *boundary* pages, not Windows internals: what MSYS2
+depends on, where the claim stops, what evidence an exact claim needs, and
+what this knowledge base holds. ADR 0001 records that narrowing, which
+`PROJECT-CHARTER.md` had made without one.
+
+The filesystem page carries the sharpest finding: WMI volume queries were
+denied by host policy, so volume type — the leading candidate explanation
+for Volume 3's unexplained `ln -s` / `test -L` discrepancy — is precisely
+what this volume was prevented from collecting.
+
+- [x] NT Kernel, Win32, and Console/ConPTY boundaries
+- [x] Filesystem, Registry, Security, and Networking boundaries
+- [x] ADR recording the contextual-scope narrowing for Windows internals
 
 ## Increment 10 — Diagram generation
 

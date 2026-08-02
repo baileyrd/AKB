@@ -12667,6 +12667,36 @@
   ],
   "evidence": [
     {
+      "id": "evidence:microsoft:pseudoconsoles-2026-08-02",
+      "class": "primary",
+      "title": "Pseudoconsoles (ConPTY) — Microsoft Learn",
+      "locator": "https://learn.microsoft.com/en-us/windows/console/pseudoconsoles",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "The Windows pseudoconsole API that terminal integration depends on. Cited at boundary level only. Per charter/adr/0001, Windows internals are documented to the depth needed to explain observable MSYS2 behavior and no further; this establishes the host contract MSYS2 depends on, not Windows implementation."
+    },
+    {
+      "id": "evidence:microsoft:file-naming-2026-08-02",
+      "class": "primary",
+      "title": "Naming Files, Paths, and Namespaces — Microsoft Learn",
+      "locator": "https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "Win32 path forms, drive letters, UNC, and the extended-length prefix. Cited at boundary level only. Per charter/adr/0001, Windows internals are documented to the depth needed to explain observable MSYS2 behavior and no further; this establishes the host contract MSYS2 depends on, not Windows implementation."
+    },
+    {
+      "id": "evidence:microsoft:dll-search-order-2026-08-02",
+      "class": "primary",
+      "title": "Dynamic-link library search order — Microsoft Learn",
+      "locator": "https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-search-order",
+      "retrieved_at": "2026-08-02T00:00:00Z",
+      "upstream_version": null,
+      "integrity": null,
+      "notes": "The loader search order that determines which DLL a PE image resolves. Cited at boundary level only. Per charter/adr/0001, Windows internals are documented to the depth needed to explain observable MSYS2 behavior and no further; this establishes the host contract MSYS2 depends on, not Windows implementation."
+    },
+    {
       "id": "evidence:git-for-windows:site-2026-08-02",
       "class": "primary",
       "title": "Git for Windows (official site)",

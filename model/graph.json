@@ -631,6 +631,24 @@
       "evidence_refs": ["evidence:gnupg:gpgme-manual-2026-08-02", "evidence:catalog:current"]
     },
     {
+      "id": "library:gnu:gmp@clang64",
+      "kind": "library",
+      "name": "GNU MP (GMP) (CLANG64)",
+      "summary": "The GNU Multiple Precision Arithmetic Library, packaged in the CLANG64 environment with zero own dependencies and 60 recorded reverse dependents, including the CLANG64 siblings of GNU MPFR, GNU MPC, isl, and Nettle already documented in this knowledge base as UCRT64/MSYS entities.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "GNU Project",
+      "aliases": ["gmp", "GNU MP"],
+      "tags": ["library", "math"],
+      "applicability": {"environment_ids": ["environment:msys2:clang64"]},
+      "properties": {
+        "upstream_project": "https://gmplib.org/",
+        "packaged_as": "package:msys2:mingw-w64-clang-x86_64-gmp",
+        "role": "arbitrary-precision arithmetic"
+      },
+      "evidence_refs": ["evidence:gnu:gmp-manual-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",

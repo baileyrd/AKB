@@ -5555,6 +5555,15 @@
 - Outgoing relationships: 1
 - Incoming relationships: 8
 
+## `library:gnu:gmp@clang64`
+
+- Name: GNU MP (GMP) (CLANG64)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:gnu:gmp-manual-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
+- Incoming relationships: 0
+
 ## `library:gnu:gmp@msys`
 
 - Name: GNU MP (MSYS)

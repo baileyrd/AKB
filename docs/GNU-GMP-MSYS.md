@@ -150,3 +150,4 @@ methodology.
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)
 - [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
+- [GMP (CLANG64)](GNU-GMP-CLANG64.md)

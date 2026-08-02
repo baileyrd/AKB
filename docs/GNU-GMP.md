@@ -141,3 +141,4 @@ methodology.
 - [GCC](GNU-GCC.md)
 - [GDB](GNU-GDB.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [GMP (CLANG64)](GNU-GMP-CLANG64.md)

@@ -22,6 +22,7 @@ model_refs:
   - library:apache:apr-util@msys
   - library:apache:libserf@msys
   - library:gnupg:libgpgme@msys
+  - library:gnu:gmp@clang64
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -281,8 +282,9 @@ flowchart LR
 [libsasl (MSYS)](LIBSASL-MSYS.md),
 [popt (MSYS)](POPT-MSYS.md),
 [LZO (MSYS)](LIBLZO2-MSYS.md), [APR](APR-MSYS.md),
-[APR-util](APR-UTIL-MSYS.md), [Serf](LIBSERF-MSYS.md), and
-[GPGME (MSYS)](LIBGPGME-MSYS.md) are
+[APR-util](APR-UTIL-MSYS.md), [Serf](LIBSERF-MSYS.md),
+[GPGME (MSYS)](LIBGPGME-MSYS.md), and
+[GMP (CLANG64)](GNU-GMP-CLANG64.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -297,7 +299,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and fifteen pages are deliberately scoped to package/dependency-level
+All one hundred and sixteen pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -821,7 +823,21 @@ reverse dependent on both
 [libgpg-error (MSYS)'s](LIBGPG-ERROR-MSYS.md#reverse-dependencies) own
 pages. [GPGME (MSYS)](LIBGPGME-MSYS.md) closes it with full 3/3
 dependency coverage (GnuPG, libassuan (MSYS), libgpg-error (MSYS), all
-already modeled), the sixth full-coverage addition this session. These
+already modeled), the sixth full-coverage addition this session. A
+third discovery vector was then tried: a systematic MSYS/UCRT64/CLANG64
+triple-coverage scan across every packaged library base name, comparing
+which environments the catalog actually packages against which are
+modeled here. This surfaced a genuinely large number of pre-existing,
+already-flagged "whether other environments package X separately was
+not confirmed" open items — a much broader undertaking than the
+targeted gap-closing this batch otherwise performed, and out of scope
+for a single pass. One bounded, high-leverage item was pulled from it:
+[GMP (CLANG64)](GNU-GMP-CLANG64.md), a zero-dependency library with 60
+reverse dependents, several of which are the CLANG64 siblings of
+libraries this volume already documents as MSYS/UCRT64 entities
+([GNU MPFR](GNU-MPFR.md), [GNU MPC](GNU-MPC.md), [isl](LIBISL.md),
+[Nettle](NETTLE.md)) — each now flagged as a concrete candidate for a
+future batch rather than added speculatively. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

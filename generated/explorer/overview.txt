@@ -618,6 +618,7 @@ Objects
 - library:gnome:libxml2@msys (library): libxml2 (MSYS)
 - library:gnu:gettext (library): GNU gettext
 - library:gnu:gmp (library): GNU MP (GMP)
+- library:gnu:gmp@clang64 (library): GNU MP (GMP) (CLANG64)
 - library:gnu:gmp@msys (library): GNU MP (MSYS)
 - library:gnu:libiconv (library): GNU libiconv
 - library:gnu:libiconv@msys (library): GNU libiconv (MSYS)

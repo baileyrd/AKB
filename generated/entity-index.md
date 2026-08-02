@@ -621,6 +621,7 @@
 | library:gnome:libxml2@msys | library | libxml2 (MSYS) | partial | 4 | 2 |
 | library:gnu:gettext | library | GNU gettext | partial | 2 | 10 |
 | library:gnu:gmp | library | GNU MP (GMP) | partial | 1 | 8 |
+| library:gnu:gmp@clang64 | library | GNU MP (GMP) (CLANG64) | partial | 0 | 0 |
 | library:gnu:gmp@msys | library | GNU MP (MSYS) | partial | 2 | 5 |
 | library:gnu:libiconv | library | GNU libiconv | partial | 1 | 8 |
 | library:gnu:libiconv@msys | library | GNU libiconv (MSYS) | partial | 2 | 15 |

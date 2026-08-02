@@ -88,7 +88,7 @@ stack plus archive, terminal, and database libraries:
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Interactive line editing | `package:msys2:libreadline` | Backs interactive prompts in GnuPG's command-line tools. Documented fully in [GNU Readline (MSYS)](GNU-READLINE-MSYS.md). |
-| Key/passphrase database | `package:msys2:libsqlite` | Backs GnuPG's key- and trust-database storage. |
+| Key/passphrase database | `package:msys2:libsqlite` | Backs GnuPG's key- and trust-database storage (`relationship:ssh-curl-git:gnupg-requires-libsqlite`, added 2026-08-02). Documented fully in [libsqlite (MSYS)](LIBSQLITE-MSYS.md). |
 | Passphrase entry | `package:msys2:pinentry` | A separate, dedicated program GnuPG launches to securely prompt for passphrases, keeping passphrase entry isolated from the calling terminal/application. |
 
 An optional dependency on `curl` (distinct from the `libcurl` runtime
@@ -179,6 +179,7 @@ version-qualified security review noted above.
 - [GNU libintl](GNU-LIBINTL.md)
 - [libcurl](LIBCURL.md)
 - [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
+- [libsqlite (MSYS)](LIBSQLITE-MSYS.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [libbz2](LIBBZ2.md)

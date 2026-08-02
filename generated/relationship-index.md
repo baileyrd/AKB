@@ -76267,6 +76267,7 @@
 | relationship:foundation-libraries:heimdal-libs-packaged-by-package | packaged-by | library:h5l:heimdal-libs | package:msys2:heimdal-libs | verified |
 | relationship:foundation-libraries:heimdal-libs-requires-libedit | requires | library:h5l:heimdal-libs | library:libedit:libedit | verified |
 | relationship:foundation-libraries:heimdal-libs-requires-libopenssl | requires | library:h5l:heimdal-libs | library:openssl:libopenssl | verified |
+| relationship:foundation-libraries:heimdal-libs-requires-libsqlite | requires | library:h5l:heimdal-libs | library:sqlite:libsqlite@msys | verified |
 | relationship:foundation-libraries:heimdal-libs-requires-libxcrypt | requires | library:h5l:heimdal-libs | library:libxcrypt:libxcrypt | verified |
 | relationship:foundation-libraries:heimdal-libs-uses-msys-runtime | uses-runtime | library:h5l:heimdal-libs | runtime:msys2:msys-2.0.dll | partial |
 | relationship:foundation-libraries:heimdal-packaged-by-package | packaged-by | library:h5l:heimdal | package:msys2:heimdal | verified |
@@ -77143,6 +77144,7 @@
 | relationship:ssh-curl-git:gnupg-requires-libintl | requires | component:gnupg:gnupg | library:gnu:libintl | verified |
 | relationship:ssh-curl-git:gnupg-requires-libksba | requires | component:gnupg:gnupg | library:gnupg:libksba@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-libreadline | requires | component:gnupg:gnupg | library:gnu:readline@msys | verified |
+| relationship:ssh-curl-git:gnupg-requires-libsqlite | requires | component:gnupg:gnupg | library:sqlite:libsqlite@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-nettle | requires | component:gnupg:gnupg | library:nettle:nettle@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-npth | requires | component:gnupg:gnupg | library:gnupg:npth@msys | verified |
 | relationship:ssh-curl-git:gnupg-requires-zlib-msys | requires | component:gnupg:gnupg | library:gnu:zlib@msys | verified |

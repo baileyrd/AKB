@@ -28,7 +28,7 @@
 | component:gnu:ncurses | component | ncurses | partial | 2 | 6 |
 | component:gnu:sed | component | GNU Sed | partial | 3 | 1 |
 | component:gnu:tar | component | GNU Tar | partial | 4 | 1 |
-| component:gnupg:gnupg | component | GnuPG | partial | 15 | 1 |
+| component:gnupg:gnupg | component | GnuPG | partial | 16 | 1 |
 | component:greenwood:less | component | less | partial | 4 | 1 |
 | component:info-zip:unzip | component | Info-ZIP UnZip | partial | 3 | 1 |
 | component:info-zip:zip | component | Info-ZIP Zip | partial | 3 | 1 |
@@ -655,7 +655,7 @@
 | library:google:brotli@ucrt64 | library | Brotli (UCRT64) | partial | 0 | 2 |
 | library:google:cppdap | library | cppdap | partial | 1 | 2 |
 | library:h5l:heimdal | library | Heimdal | partial | 3 | 2 |
-| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 5 | 2 |
+| library:h5l:heimdal-libs | library | Heimdal runtime libraries | partial | 6 | 2 |
 | library:jsoncpp:jsoncpp | library | JsonCpp | partial | 1 | 2 |
 | library:libarchive:libarchive | library | libarchive | partial | 8 | 2 |
 | library:libarchive:libarchive@msys | library | libarchive (MSYS) | partial | 8 | 0 |
@@ -703,6 +703,7 @@
 | library:pcre:pcre2@msys | library | PCRE2 (MSYS) | partial | 2 | 3 |
 | library:pjk:libcbor | library | libcbor | partial | 2 | 2 |
 | library:rhash:rhash | library | RHash | partial | 2 | 2 |
+| library:sqlite:libsqlite@msys | library | libsqlite (MSYS) | partial | 0 | 2 |
 | library:sqlite:sqlite3 | library | SQLite | partial | 2 | 1 |
 | library:tukaani:liblzma | library | liblzma (XZ Utils library) | partial | 2 | 3 |
 | library:tukaani:liblzma@clang64 | library | liblzma (XZ Utils library, CLANG64) | partial | 0 | 1 |

@@ -82,8 +82,12 @@ password hashing,
 added 2026-07-30 — correcting a prior version of this paragraph that
 only noted libxcrypt among heimdal-libs' *reverse* dependents' own
 dependency set rather than as heimdal-libs' own direct forward
-dependency). Beyond these three edges, the remainder of this package's
-own dependencies (`libdb`, `libsqlite`) are not individually modeled in
+dependency) — and [libsqlite (MSYS)](LIBSQLITE-MSYS.md) (Kerberos
+credential-cache and database backend support,
+`relationship:foundation-libraries:heimdal-libs-requires-libsqlite`,
+added 2026-08-02, closing this section's own prior "not individually
+modeled" note). Beyond these four edges, the remainder of this
+package's own dependencies (`libdb`) is not individually modeled in
 this knowledge base; this page's scope is otherwise limited to
 confirming and documenting the [Heimdal](HEIMDAL.md) dependency
 relationship.
@@ -152,7 +156,7 @@ identity, version, and the modeled dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open: whether
 other native environments package heimdal-libs separately was not
 confirmed. Also explicitly out of scope for this page: this package's
-remaining `libdb`/`libsqlite` sub-dependencies, and header-level API
+remaining `libdb` sub-dependency, and header-level API
 surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
@@ -162,6 +166,7 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Heimdal](HEIMDAL.md)
 - [OpenSSH](OPENSSH.md)
+- [libsqlite (MSYS)](LIBSQLITE-MSYS.md)
 - [libopenssl](LIBOPENSSL.md)
 - [libedit](LIBEDIT.md)
 - [libxcrypt](LIBXCRYPT.md)

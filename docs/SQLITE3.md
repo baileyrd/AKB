@@ -50,10 +50,12 @@ is a thin client over that library, not a separate server the way
 client/server databases work; there is no separate SQLite "server" process
 to document. This page's `packaged_as` citation is the UCRT64 native
 build, `mingw-w64-ucrt-x86_64-sqlite3`. [GnuPG](GNUPG.md#dependencies)
-depends on a *different*, separately packaged MSYS-environment build,
+and [Heimdal runtime libraries](HEIMDAL-LIBS.md#dependencies) depend on
+a *different*, separately packaged MSYS-environment build,
 `package:msys2:libsqlite` — the same upstream SQLite project, but a
-distinct package this page does not track dependency edges against; the
-two should not be conflated as the same catalog entity.
+distinct package, now modeled in its own right on
+[libsqlite (MSYS)](LIBSQLITE-MSYS.md); the two should not be conflated
+as the same catalog entity.
 
 ## Interfaces
 
@@ -79,8 +81,10 @@ to function as a database engine; it does not — SQL applications embedding
 
 The snapshot records 49 relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-sqlite3` (this figure does not
-include [GnuPG](GNUPG.md#dependencies), which depends on the separate
-`libsqlite` package instead, per Boundaries above). See the
+include [GnuPG](GNUPG.md#dependencies) or
+[Heimdal runtime libraries](HEIMDAL-LIBS.md#dependencies), which each
+depend on the separate [libsqlite (MSYS)](LIBSQLITE-MSYS.md) package
+instead, per Boundaries above). See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -150,3 +154,4 @@ methodology.
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GnuPG](GNUPG.md)
 - [zlib](ZLIB.md)
+- [libsqlite (MSYS)](LIBSQLITE-MSYS.md)

@@ -224,7 +224,7 @@
 - Kind: `component`
 - Status: `partial`
 - Evidence: evidence:gnupg:project-site-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 15
+- Outgoing relationships: 16
 - Incoming relationships: 1
 
 ## `component:greenwood:less`
@@ -5867,7 +5867,7 @@
 - Kind: `library`
 - Status: `partial`
 - Evidence: evidence:h5l:heimdal-manual-2026-07-30, evidence:catalog:current
-- Outgoing relationships: 5
+- Outgoing relationships: 6
 - Incoming relationships: 2
 
 ## `library:jsoncpp:jsoncpp`
@@ -6291,6 +6291,15 @@
 - Status: `partial`
 - Evidence: evidence:rhash:manual-2026-07-30, evidence:catalog:current
 - Outgoing relationships: 2
+- Incoming relationships: 2
+
+## `library:sqlite:libsqlite@msys`
+
+- Name: libsqlite (MSYS)
+- Kind: `library`
+- Status: `partial`
+- Evidence: evidence:sqlite:documentation-2026-07-30, evidence:catalog:current
+- Outgoing relationships: 0
 - Incoming relationships: 2
 
 ## `library:sqlite:sqlite3`

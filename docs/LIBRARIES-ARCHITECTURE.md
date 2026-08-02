@@ -14,6 +14,7 @@ model_refs:
   - library:unicode:icu
   - library:boost:boost
   - library:sqlite:sqlite3
+  - library:sqlite:libsqlite@msys
   - library:gnu:readline
   - library:gnu:gmp
   - library:gnu:mpfr
@@ -261,8 +262,9 @@ flowchart LR
 [p11-kit (UCRT64)](P11-KIT-UCRT64.md),
 [GnuTLS (UCRT64)](GNUTLS-UCRT64.md),
 [liblzma (MSYS)](LIBLZMA-MSYS.md), [liblz4 (MSYS)](LIBLZ4-MSYS.md),
-[libarchive (MSYS)](LIBARCHIVE-MSYS.md), and
-[xxHash (MSYS)](XXHASH-MSYS.md) are
+[libarchive (MSYS)](LIBARCHIVE-MSYS.md),
+[xxHash (MSYS)](XXHASH-MSYS.md), and
+[libsqlite (MSYS)](LIBSQLITE-MSYS.md) are
 this volume's first
 per-library pages. The
 first pair resolved the "C++ library" row the
@@ -277,7 +279,7 @@ corrected while writing [SQLite](SQLITE3.md): GnuPG depends on a
 *separate*, MSYS-environment `libsqlite` package, not the UCRT64
 `sqlite3` package this page documents — the same upstream project, two
 distinct catalog entities, now stated explicitly rather than conflated.
-All one hundred and seven pages are deliberately scoped to package/dependency-level
+All one hundred and eight pages are deliberately scoped to package/dependency-level
 evidence only — package identity, bundling, provides/depends
 relationships, and reverse-dependency counts — and all explicitly flag
 that the fuller methodology below (headers, `pkg-config`/CMake metadata,
@@ -746,7 +748,17 @@ a distinct catalog entity from this volume's earlier UCRT64
 `xxhash` CLI package, with zero own dependencies and four
 not-yet-modeled reverse dependents (`ccache`, `libxxhash-devel`,
 `rsync`, `xxhash`); it closes [xxHash's](XXHASH.md) own prior open
-question about whether other environments package it separately. These
+question about whether other environments package it separately. A
+scan of the remaining unmodeled reverse dependents of the split-library
+additions above then found a second gap of the citation kind rather
+than the split-library kind: [libsqlite (MSYS)](LIBSQLITE-MSYS.md) —
+zero own dependencies, 14 reverse dependents — had been cited by name
+on both [GnuPG's](GNUPG.md#dependencies) and
+[Heimdal runtime libraries'](HEIMDAL-LIBS.md#dependencies) own
+dependency tables without a corresponding graph edge or page of its
+own; both edges are now added, and [SQLite (UCRT64)'s](SQLITE3.md#boundaries)
+own page (which had already flagged the MSYS/UCRT64 distinction by
+name) now links to it directly. These
 pages are a starting point for this
 volume, not a demonstration that its full evidence model is populated.
 

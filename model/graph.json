@@ -487,6 +487,24 @@
       "evidence_refs": ["evidence:xxhash:manual-2026-07-30", "evidence:catalog:current"]
     },
     {
+      "id": "library:sqlite:libsqlite@msys",
+      "kind": "library",
+      "name": "libsqlite (MSYS)",
+      "summary": "The MSYS-environment SQLite3 library, a distinct catalog package from the UCRT64 SQLite already documented in this knowledge base, cited by name but not previously modeled as a dependency of both GnuPG and Heimdal runtime libraries.",
+      "status": "partial",
+      "confidence": "high",
+      "authority": "SQLite project",
+      "aliases": ["libsqlite"],
+      "tags": ["library", "database"],
+      "applicability": {"environment_ids": ["environment:msys2:msys"]},
+      "properties": {
+        "upstream_project": "https://www.sqlite.org/",
+        "packaged_as": "package:msys2:libsqlite",
+        "role": "embedded SQL database engine"
+      },
+      "evidence_refs": ["evidence:sqlite:documentation-2026-07-30", "evidence:catalog:current"]
+    },
+    {
       "id": "component:gnu:ed",
       "kind": "component",
       "name": "GNU Ed",
@@ -8393,6 +8411,30 @@
       "confidence": "verified",
       "scope": "runtime",
       "condition": "Backs compressed OpenPGP packet handling, per the OpenPGP standard's built-in compression support, alongside zlib.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:ssh-curl-git:gnupg-requires-libsqlite",
+      "type": "requires",
+      "source": "component:gnupg:gnupg",
+      "target": "library:sqlite:libsqlite@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs GnuPG's key- and trust-database storage, added 2026-08-02 to close a gap in GnuPG's own dependency table, which had cited this package by name without a corresponding graph edge.",
+      "properties": {},
+      "evidence_refs": ["evidence:catalog:current"]
+    },
+    {
+      "id": "relationship:foundation-libraries:heimdal-libs-requires-libsqlite",
+      "type": "requires",
+      "source": "library:h5l:heimdal-libs",
+      "target": "library:sqlite:libsqlite@msys",
+      "status": "verified",
+      "confidence": "verified",
+      "scope": "runtime",
+      "condition": "Backs Heimdal's Kerberos credential-cache and database backend support, added 2026-08-02 to close a gap in Heimdal runtime libraries' own dependency table, which had cited this package by name without a corresponding graph edge.",
       "properties": {},
       "evidence_refs": ["evidence:catalog:current"]
     },

@@ -49,6 +49,32 @@ class RefreshGeneratorTests(unittest.TestCase):
             f"refresh on a Windows host would leave CI red: {missing}",
         )
 
+    def test_refresh_accumulates_the_inventory_projection(self) -> None:
+        """A refresh must not discard evidence it cannot re-collect.
+
+        `model/inventory/current.json` is three accumulated
+        `scope=package-archive` snapshots — downloaded payloads analysed byte
+        by byte. A refresh collects `scope=installed` through pacman, a
+        different modality rather than a newer version of the same
+        observation. Importing without `--accumulate` replaces 552 entities
+        with that run's handful and drops `evidence:inventory:current`, which
+        two documentation pages cite, so `akb.py validate-docs` then fails on
+        a tree the operator has no obvious way to repair.
+
+        `merge_projection` is unit-tested in tests/test_deep_inventory.py.
+        What nothing checked was that the refresh path actually reaches it.
+        """
+        text = REFRESH.read_text(encoding="utf-8")
+        call = re.search(r'^.*import_deep_inventory\.py.*$', text, re.M)
+        self.assertIsNotNone(call, "Update-Akb.ps1 no longer imports the deep inventory")
+        self.assertIn(
+            "--accumulate",
+            call.group(0),
+            "tools/Update-Akb.ps1 imports the deep inventory without --accumulate, so a "
+            "refresh would discard the retained package-archive projection and the "
+            "evidence record two documentation pages cite",
+        )
+
     def test_every_named_generator_exists(self) -> None:
         missing = sorted(
             name for name in set(ci_generators()) | set(refresh_generators())

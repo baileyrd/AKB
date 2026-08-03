@@ -156,6 +156,43 @@ The scale of the run is a policy choice rather than a technical one:
 against the installed set alone. See
 [AKB developer workflow](DEVELOPER-WORKFLOW.md).
 
+## Why the refresh accumulates
+
+`Update-Akb.ps1` imports with `--accumulate`, and that flag is load-bearing
+rather than incidental.
+
+`model/inventory/current.json` is not one collection. It is three
+accumulated snapshots, all `scope=package-archive` — downloaded payloads
+for zlib, curl, and zstd, analysed byte by byte:
+
+| Snapshot | Artifacts |
+| --- | ---: |
+| `20260729T115414Z-93c5b258a95b` | 6 |
+| `20260729T122656Z-dfc0f9333b82` | 532 |
+| `20260729T122657Z-eac21b0c1bb8` | 11 |
+
+A host refresh collects `scope=installed` through pacman. That is a
+different collection modality, **not a newer version of the same
+observation**, and it cannot reproduce archive-payload analysis of
+packages that are not installed. Importing without `--accumulate` replaces
+the 552 accumulated entities with whatever the run collected, and drops the
+`evidence:inventory:current` record that this page and
+[the reverse-dependency analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
+both cite — so `akb.py validate-docs` fails immediately afterwards, on a
+tree whose operator did nothing wrong. Measured against a synthetic
+collection: 552 entities to 9, and two unresolved evidence references.
+
+`tests/test_refresh_generators.py` fails the build if that flag is dropped.
+
+**The cost, stated rather than hidden.** An accumulated projection only
+grows. A file removed from a package keeps its entity forever, and nothing
+retires it. What makes that honest rather than silent is that every entity
+carries the snapshot evidence it came from, so an object observed once in
+July and never again is visibly attributed to that July snapshot. Retiring
+stale objects needs a reconciliation pass that does not exist yet, and
+until it does, entity counts in this projection are a high-water mark and
+not a current inventory.
+
 ## Standing statement
 
 Until that run happens, every one of the nine items stays unchecked, and

@@ -66,7 +66,7 @@
     },
     "14": {
       "state": "partial",
-      "rationale": "Two pages. Recipes are ingested statically without executing PKGBUILDs, so build mechanics are modelled from declarations rather than from builds. MSYS2's effective makepkg.conf is uncaptured."
+      "rationale": "Three pages: the role model, the artifact-flow mapping, and a 2026-08-03 measurement of which build systems the ecosystem actually declares. CMake 4,110 against autotools 2,575 and Meson 1,010; ninja leads the raw count at 4,382 only because both CMake and Meson generate it, which the page says rather than letting the table imply otherwise. The finding that outranks all of them: Python packaging tooling holds ranks 5-7, above autotools, because 25.6% of the catalog is python-* — 997 distinct projects before environment expansion. Recipes are still ingested without executing PKGBUILDs, so every figure is a declaration rather than an observed build, and MSYS2's effective makepkg.conf remains uncaptured."
     },
     "15": {
       "state": "partial",

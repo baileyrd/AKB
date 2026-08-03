@@ -83,6 +83,52 @@ class ExplorerTests(unittest.TestCase):
         self.assertLess(svg_text.count('<rect '), 81)
         self.assertTrue(d3_file_exists)
 
+    def test_packed_payload_round_trips_the_whole_graph(self) -> None:
+        """The wire format is an encoding, so it must lose nothing."""
+        graph = EXPLORER.load_graph()
+        entities = sorted(graph["entities"], key=lambda item: item["id"])
+        packed = EXPLORER.pack(entities, graph["relationships"])
+        self.assertEqual(len(packed["e"]), len(entities))
+        self.assertEqual(len(packed["r"]), len(graph["relationships"]),
+                         "an edge was dropped, so an endpoint is not a composed entity")
+        decoded = {
+            (packed["e"][source]["id"], packed["e"][target]["id"], packed["t"][kind])
+            for source, target, kind in packed["r"]
+        }
+        self.assertEqual(
+            decoded,
+            {(edge["source"], edge["target"], edge["type"]) for edge in graph["relationships"]},
+        )
+
+    def test_packed_entities_keep_every_field_the_views_read(self) -> None:
+        """Dropping a field the page renders would blank a section silently."""
+        graph = EXPLORER.load_graph()
+        entities = sorted(graph["entities"], key=lambda item: item["id"])
+        packed = EXPLORER.pack(entities, graph["relationships"])
+        for original, slim in zip(entities, packed["e"]):
+            self.assertEqual(original["id"], slim["id"])
+            for field in EXPLORER.ENTITY_FIELDS:
+                value = original.get(field)
+                if value in (None, "", [], {}):
+                    self.assertNotIn(field, slim, "empty values must not be embedded")
+                else:
+                    self.assertIn(field, slim, f"{original['id']} lost its {field}")
+                    self.assertEqual(slim[field], value)
+
+    def test_embedded_page_stays_under_its_size_ceiling(self) -> None:
+        """A tracked file regenerated every build cannot grow without limit."""
+        rendered = (ROOT / "generated" / "explorer" / "index.html")
+        self.assertTrue(rendered.is_file(), "run tools/build_explorer.py first")
+        size = rendered.stat().st_size
+        self.assertLessEqual(
+            size,
+            EXPLORER.MAX_INDEX_BYTES,
+            f"generated/explorer/index.html is {size / 1024 / 1024:.1f} MiB, over the "
+            f"{EXPLORER.MAX_INDEX_BYTES / 1024 / 1024:.0f} MiB ceiling. Shrink the payload "
+            "or raise MAX_INDEX_BYTES deliberately — do not let it drift past GitHub's "
+            "50 MB warning unnoticed.",
+        )
+
     def test_vendor_d3_source_file_exists_and_is_named_correctly(self) -> None:
         self.assertTrue(EXPLORER.VENDOR_D3.is_file())
         first_line = EXPLORER.VENDOR_D3.read_text(encoding="utf-8").split("\n", 1)[0]

@@ -57,8 +57,8 @@
       "rationale": "The repository-to-package inventory is directly observed across 15,711 packages and 6 repositories, the strongest observational base in the knowledge base. The package-to-file inventory beneath it covers 2, with three further archive payloads analysed separately. docs/DEEP-INVENTORY-BLOCKER.md states what the remaining nine roadmap items wait on, which statements elsewhere are qualified by it, and the command that would close it."
     },
     "12": {
-      "state": "planned",
-      "rationale": "Two pages totalling under 600 words, citing no evidence. The volume names its subject - where architectural elements are implemented upstream - and does not yet address it. Recorded as planned rather than partial because there is no substantive material to be partial about."
+      "state": "partial",
+      "rationale": "Two pages. The provenance model and its collection boundary were already authored; what was missing was any measurement of the trees themselves. A 2026-08-03 pass added the measured shape from the recipe projection: 3,498 recipes across MSYS2-packages (458) and MINGW-packages (3,040) declaring 13,656 packages, 58% of recipes producing exactly four through ${MINGW_PACKAGE_PREFIX} expansion. Every figure is a floor, because the projection records a recipe only when one of its dependencies resolves. No claim ties a published archive to the recipe that names it; that needs source retrieval, patch application, and build evidence for one revision, which exists only for the bounded zlib slice."
     },
     "13": {
       "state": "partial",

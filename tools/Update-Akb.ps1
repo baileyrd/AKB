@@ -17,6 +17,16 @@ $ErrorActionPreference = "Stop"
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
 $catalogDirectory = Join-Path $root "work\catalog"
 
+# Fail here, with the fix in the message, rather than several steps later with
+# a misleading one. On a Windows host with no Python installed, `python`
+# resolves to the Microsoft Store alias stub, which prints its own advice and
+# exits 9009 — which this script would otherwise report as "Package catalog
+# import failed." The repository's own documentation uses `py -3`.
+& $Python --version 2>&1 | Out-Null
+if ($LASTEXITCODE -ne 0) {
+    throw "'$Python' is not a working Python interpreter (exit $LASTEXITCODE). On Windows, pass -Python py, or install Python and put it on PATH."
+}
+
 & (Join-Path $PSScriptRoot "catalog-msys2-packages.ps1") `
     -Msys2Root $Msys2Root `
     -OutputDirectory $catalogDirectory `
@@ -63,7 +73,7 @@ if ($LASTEXITCODE -ne 0) { throw "AKB validation or generation failed." }
 # step in .github/workflows/validate.yml. CI regenerates all of these and then
 # runs `git diff --exit-code`, so a refresh that skips one leaves the working
 # tree in a state CI rejects.
-foreach ($generator in @("build_explorer.py", "build_diagrams.py", "build_object_diagrams.py", "build_catalog_views.py", "assess_akb_coverage.py")) {
+foreach ($generator in @("build_explorer.py", "build_diagrams.py", "build_object_diagrams.py", "build_object_facts.py", "build_volume_ledger.py", "build_catalog_views.py", "assess_akb_coverage.py")) {
     & $Python (Join-Path $PSScriptRoot $generator)
     if ($LASTEXITCODE -ne 0) { throw "$generator failed." }
 }

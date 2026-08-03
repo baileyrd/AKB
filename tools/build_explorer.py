@@ -17,6 +17,29 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "generated" / "explorer"
 VENDOR_D3 = ROOT / "tools" / "vendor" / "d3.v7.min.js"
 
+# Fields the rendered page actually reads. `confidence`, `authority`, and
+# `applicability` are modelled on every entity and displayed by none of the
+# views, so embedding them cost megabytes and rendered nothing. Anything a
+# view starts reading has to be added here as well as used in the script.
+ENTITY_FIELDS = (
+    "id",
+    "kind",
+    "name",
+    "status",
+    "summary",
+    "tags",
+    "aliases",
+    "properties",
+    "evidence_refs",
+)
+
+# Ceiling for the embedded page, enforced by tests/test_explorer.py. The
+# page is a single tracked file regenerated on every build, so unbounded
+# growth shows up in every diff and every clone. GitHub warns above 50 MB;
+# this leaves room for the graph to roughly double before the ceiling
+# forces a decision rather than letting the file quietly pass 50 MB.
+MAX_INDEX_BYTES = 32 * 1024 * 1024
+
 
 def load_graph() -> dict:
     """Load the validated composed graph through the canonical generator."""
@@ -32,6 +55,39 @@ def route_for(identifier: str) -> str:
     return "#/object/" + quote(identifier, safe="")
 
 
+def pack(entities: list[dict], relationships: list[dict]) -> dict:
+    """Return the compact wire form the page decodes back into graph shape.
+
+    Every relationship carried ten fields, seven of which no view read, and
+    repeated both endpoint identifiers in full — so `source` and `target`
+    alone outweighed the entities they pointed at. Endpoints become indexes
+    into the entity array and the type becomes an index into a table of the
+    19 distinct values, which is what makes the payload bounded by the graph
+    rather than by the length of its identifiers.
+
+    An edge whose endpoint is not a composed entity is dropped: the page can
+    neither render nor navigate it, and `akb.validate` rejects the graph
+    before this runs, so a nonzero drop count means the caller bypassed it.
+    """
+    index = {entity["id"]: number for number, entity in enumerate(entities)}
+    types = sorted({edge["type"] for edge in relationships})
+    type_index = {name: number for number, name in enumerate(types)}
+    slim = [
+        {
+            field: entity[field]
+            for field in ENTITY_FIELDS
+            if entity.get(field) not in (None, "", [], {})
+        }
+        for entity in entities
+    ]
+    edges = [
+        [index[edge["source"]], index[edge["target"]], type_index[edge["type"]]]
+        for edge in relationships
+        if edge["source"] in index and edge["target"] in index
+    ]
+    return {"e": slim, "t": types, "r": edges}
+
+
 def build(graph: dict, output: Path = OUTPUT) -> list[Path]:
     """Write a no-dependency static explorer and an accessible object index."""
     output.mkdir(parents=True, exist_ok=True)
@@ -41,14 +97,27 @@ def build(graph: dict, output: Path = OUTPUT) -> list[Path]:
     for edge in graph["relationships"]:
         outgoing[edge["source"]].append(edge)
         incoming[edge["target"]].append(edge)
-    data = {"entities": entities, "relationships": graph["relationships"]}
+    data = pack(entities, graph["relationships"])
     rows = "\n".join(
         f'<li><a href="{route_for(item["id"])}">{html.escape(item["name"])}</a> '
         f'<code>{html.escape(item["id"])}</code></li>'
         for item in entities
     )
     script = """
-const data = __DATA__;
+// The payload arrives packed: entities carry only the fields the views read,
+// and each edge is [sourceIndex, targetIndex, typeIndex] against the entity
+// array and a table of the distinct type names. Decoding here restores the
+// {source, target, type} shape every view below already expects, so the
+// wire format stays an encoding concern rather than leaking into rendering.
+const packed = __DATA__;
+const data = {
+  entities: packed.e,
+  relationships: packed.r.map(([source, target, type]) => ({
+    source: packed.e[source].id,
+    target: packed.e[target].id,
+    type: packed.t[type],
+  })),
+};
 const byId = Object.fromEntries(data.entities.map(item => [item.id, item]));
 const esc = value => String(value).replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
 const route = id => '#/object/' + encodeURIComponent(id);
@@ -211,7 +280,10 @@ function renderObject(item, id, root) {
   root.querySelectorAll('.expand').forEach(button => button.addEventListener('click', () => { const list = root.querySelector(`ul[data-direction="${button.dataset.direction}"]`); const expanded = button.getAttribute('aria-expanded') === 'true'; list.querySelectorAll('li[hidden]').forEach(row => row.hidden = expanded); button.setAttribute('aria-expanded', String(!expanded)); button.textContent = expanded ? `Show ${list.querySelectorAll('li[hidden]').length} more` : 'Collapse relationships'; }));
 }
 addEventListener('hashchange', render); render();
-""".replace("__DATA__", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
+""".replace(
+        "__DATA__",
+        json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
+    )
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AKB Explorer</title>
 <style>body{{font:16px system-ui,sans-serif;max-width:70rem;margin:auto;padding:1rem}}code{{overflow-wrap:anywhere}}a{{color:#0645ad}}dt{{font-weight:bold}}dd{{margin:0 0 1rem}}</style></head>

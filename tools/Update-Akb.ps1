@@ -51,7 +51,16 @@ if (-not $SkipDeepInventory) {
     & (Join-Path $PSScriptRoot "Collect-AkbDeepInventory.ps1") @collectorArguments
     if ($LASTEXITCODE -ne 0) { throw "Deep inventory collection failed." }
 
-    & $Python (Join-Path $PSScriptRoot "import_deep_inventory.py") $inventoryDirectory
+    # --accumulate, because the projection holds evidence this run cannot
+    # reproduce. model/inventory/current.json is three accumulated
+    # package-archive snapshots — downloaded payloads for zlib, curl, and
+    # zstd, analysed byte by byte. A refresh here collects scope=installed
+    # through pacman, which is a different modality, not a newer version of
+    # the same observation. Without this flag the refresh would discard 552
+    # entities and the evidence record two documentation pages cite, and
+    # `akb.py validate-docs` would then fail on a tree the operator has no
+    # obvious way to repair.
+    & $Python (Join-Path $PSScriptRoot "import_deep_inventory.py") $inventoryDirectory --accumulate
     if ($LASTEXITCODE -ne 0) { throw "Deep inventory import failed." }
 }
 

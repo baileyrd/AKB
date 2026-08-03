@@ -81,16 +81,16 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 13 | Dependency Analysis | `partial` | 2 | 11 | 1,766 | 883 | 4 | 5 |
 | 14 | Build Systems | `partial` | 2 | 7 | 1,486 | 743 | 1 | 10 |
 | 15 | Extension and Plugin Architecture | `partial` | 1 | 5 | 966 | 966 | 1 | 0 |
-| 16 | Security | `partial` | 1 | 7 | 1,271 | 1,271 | 2 | 0 |
+| 16 | Security | `partial` | 2 | 12 | 1,839 | 920 | 3 | 3 |
 | 17 | Performance | `inferred` | 1 | 8 | 2,258 | 2,258 | 5 | 7 |
 | 18 | Developer Guide | `inferred` | 6 | 45 | 5,644 | 941 | 14 | 10 |
 | 19 | Operations Guide | `partial` | 4 | 23 | 2,297 | 574 | 1 | 0 |
 | 20 | Reference Appendices | `partial` | 8 | 44 | 15,557 | 1,945 | 2 | 0 |
-| | **Total** | | **303** | **3,756** | **217,461** | | | |
+| | **Total** | | **304** | **3,761** | **218,029** | | | |
 
 ### What the numbers say
 
-- Volume 6 (Libraries) holds 164 of 303 pages and 52.6% of all prose.
+- Volume 6 (Libraries) holds 164 of 304 pages and 52.5% of all prose.
 - Volume 10 (Interactive Architecture Explorer) has the lowest prose density at 274 words per page.
 - 2 of the charter's 8 coverage states are in use. Unused: `unknown`, `not-applicable`, `planned`, `verified`, `deprecated`, `superseded`.
 
@@ -139,7 +139,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 
 **15 Extension and Plugin Architecture — `partial`.** One page. Every extension point cites a concrete implementation except external plugin, where none exists. The compatibility mechanism is documented and has never been exercised in this repository's history.
 
-**16 Security — `partial`.** One page carrying the threat model and supply-chain analysis. Cites no evidence record. The signing posture it would need to assess is the same one Volume 7 records as unestablished.
+**16 Security — `partial`.** Two pages: the threat model, and a 2026-08-03 measurement of how wide each trust surface actually is. 15,696 packages declare an upstream host and 36.2% of them resolve to github.com, with the top ten hosts covering 51.4% — a concentration the threat model reasons about but never measured. Also recorded: 444 plain-http and 4 ftp project URLs, and 115 of 420 license identifiers not SPDX-prefixed. All of it reads declared catalog metadata; nothing inspects package contents, and signature coverage remains one verified archive rather than a catalog-wide measure.
 
 **17 Performance — `inferred`.** Contains no MSYS2 timings. Controlled observations exist on real MSYS2 installations, but none of them timed anything, so hot-path costs are derived from published algorithms; the pacman transaction shape is the one measured part.
 

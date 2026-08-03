@@ -74,7 +74,7 @@
     },
     "16": {
       "state": "partial",
-      "rationale": "One page carrying the threat model and supply-chain analysis. Cites no evidence record. The signing posture it would need to assess is the same one Volume 7 records as unestablished."
+      "rationale": "Two pages: the threat model, and a 2026-08-03 measurement of how wide each trust surface actually is. 15,696 packages declare an upstream host and 36.2% of them resolve to github.com, with the top ten hosts covering 51.4% — a concentration the threat model reasons about but never measured. Also recorded: 444 plain-http and 4 ftp project URLs, and 115 of 420 license identifiers not SPDX-prefixed. All of it reads declared catalog metadata; nothing inspects package contents, and signature coverage remains one verified archive rather than a catalog-wide measure."
     },
     "17": {
       "state": "inferred",

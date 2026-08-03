@@ -1,3 +1,12 @@
 # Catalog fixtures are integrity-test inputs. Their manifests hash exact bytes,
 # so line-ending conversion must never alter them on checkout.
 tests/fixtures/catalog/*.csv -text
+
+# Retained evidence payloads are hashed byte-for-byte in their own manifests,
+# and tools/import_deep_inventory.py refuses to import a snapshot whose files
+# do not match. These were committed from a Windows host with CRLF endings, so
+# a checkout that normalises them silently invalidates every retained snapshot
+# — the integrity gate then blocks re-import of collections that are genuinely
+# intact. Same reasoning as the catalog fixtures above.
+evidence/inventory-snapshots/**/*.jsonl -text
+evidence/snapshots/**/*.jsonl -text

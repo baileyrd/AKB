@@ -78,7 +78,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 10 | Interactive Architecture Explorer | `partial` | 8 | 14 | 2,190 | 274 | 1 | 4 |
 | 11 | Package Catalog | `partial` | 9 | 31 | 5,233 | 581 | 5 | 16 |
 | 12 | Source Code Organization | `partial` | 2 | 6 | 1,063 | 532 | 2 | 3 |
-| 13 | Dependency Analysis | `partial` | 1 | 5 | 1,007 | 1,007 | 3 | 3 |
+| 13 | Dependency Analysis | `partial` | 2 | 11 | 1,766 | 883 | 4 | 5 |
 | 14 | Build Systems | `partial` | 2 | 7 | 1,486 | 743 | 1 | 10 |
 | 15 | Extension and Plugin Architecture | `partial` | 1 | 5 | 966 | 966 | 1 | 0 |
 | 16 | Security | `partial` | 1 | 7 | 1,271 | 1,271 | 2 | 0 |
@@ -86,11 +86,11 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 18 | Developer Guide | `inferred` | 6 | 45 | 5,644 | 941 | 14 | 10 |
 | 19 | Operations Guide | `partial` | 4 | 23 | 2,297 | 574 | 1 | 0 |
 | 20 | Reference Appendices | `partial` | 8 | 44 | 15,557 | 1,945 | 2 | 0 |
-| | **Total** | | **302** | **3,750** | **216,702** | | | |
+| | **Total** | | **303** | **3,756** | **217,461** | | | |
 
 ### What the numbers say
 
-- Volume 6 (Libraries) holds 164 of 302 pages and 52.8% of all prose.
+- Volume 6 (Libraries) holds 164 of 303 pages and 52.6% of all prose.
 - Volume 10 (Interactive Architecture Explorer) has the lowest prose density at 274 words per page.
 - 2 of the charter's 8 coverage states are in use. Unused: `unknown`, `not-applicable`, `planned`, `verified`, `deprecated`, `superseded`.
 
@@ -133,7 +133,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 
 **12 Source Code Organization — `partial`.** Two pages. The provenance model and its collection boundary were already authored; what was missing was any measurement of the trees themselves. A 2026-08-03 pass added the measured shape from the recipe projection: 3,498 recipes across MSYS2-packages (458) and MINGW-packages (3,040) declaring 13,656 packages, 58% of recipes producing exactly four through ${MINGW_PACKAGE_PREFIX} expansion. Every figure is a floor, because the projection records a recipe only when one of its dependencies resolves. No claim ties a published archive to the recipe that names it; that needs source retrieval, patch application, and build evidence for one revision, which exists only for the bounded zlib slice.
 
-**13 Dependency Analysis — `partial`.** One authored page over a substantial generated base: the reverse-dependency impact report exceeds a thousand lines and the dependency edges are observed. The analysis exists; the volume interpreting it does not.
+**13 Dependency Analysis — `partial`.** Two pages: the interpretation model, and a 2026-08-03 measurement of the graph it interprets. Build-time edges are 55.8% of 108,770 dependency edges and did not exist before 2026-08-02, so every dependency statement made here before that date described 41% of the graph. The build and runtime rankings share no member of their top tens. The graph is cyclic — the GCC bootstrap cycle is present, and 14 self-loops are genuine self-hosting declarations — so anything topologically ordering it must handle that explicitly. Every edge is declared rather than observed; binary linkage covers 2 of 15,711 packages.
 
 **14 Build Systems — `partial`.** Two pages. Recipes are ingested statically without executing PKGBUILDs, so build mechanics are modelled from declarations rather than from builds. MSYS2's effective makepkg.conf is uncaptured.
 

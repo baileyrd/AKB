@@ -105,6 +105,15 @@ def check(assertion, graph, inventory_kinds):
         actual = len(target.read_text(encoding="utf-8").splitlines())
         return actual >= assertion["lines"], f"{assertion['path']} has {actual} lines, need {assertion['lines']}"
 
+    if kind == "min_entries_in_dir":
+        target = ROOT / assertion["path"]
+        if not target.is_dir():
+            return False, f"{assertion['path']} is not a directory"
+        actual = len(list(target.iterdir()))
+        return actual >= assertion["count"], (
+            f"{assertion['path']} holds {actual} entries, need {assertion['count']}"
+        )
+
     if kind == "term_in_path":
         target = ROOT / assertion["path"]
         if not target.exists():

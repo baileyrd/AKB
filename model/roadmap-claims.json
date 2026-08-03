@@ -6,6 +6,7 @@
     "doc_exists": "docs/<doc> exists",
     "min_lines": "path has at least lines lines",
     "term_in_path": "term appears verbatim in the file at path",
+    "min_entries_in_dir": "the directory at path holds at least count entries",
     "min_docs_in_volume": "at least count docs carry frontmatter volume: volume",
     "term_in_volume": "term appears (case-insensitive) in at least min_files docs of that volume",
     "term_in_docs": "term appears in at least min_files docs repo-wide, excluding CHARTER-DRIFT-ASSESSMENT.md",
@@ -20,30 +21,55 @@
       {
         "type": "path_exists",
         "path": "charter/PROJECT-CHARTER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "charter/PROJECT-CHARTER.md",
+        "lines": 40
       }
     ],
     "Information architecture": [
       {
         "type": "path_exists",
         "path": "model/README.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/README.md",
+        "lines": 27
       }
     ],
     "Twenty-volume master index": [
       {
         "type": "doc_exists",
         "doc": "MASTER-VOLUME-INDEX.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/MASTER-VOLUME-INDEX.md",
+        "lines": 40
       }
     ],
     "Documentation standard": [
       {
         "type": "doc_exists",
         "doc": "DOCUMENTATION-STANDARD.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DOCUMENTATION-STANDARD.md",
+        "lines": 40
       }
     ],
     "Typed graph schema": [
       {
         "type": "path_exists",
         "path": "model/schema/architecture-graph.schema.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/schema/architecture-graph.schema.json",
+        "lines": 40
       }
     ],
     "Entity and relationship vocabularies": [
@@ -52,20 +78,40 @@
         "path": "model/vocabularies/entity-kinds.json"
       },
       {
+        "type": "min_lines",
+        "path": "model/vocabularies/entity-kinds.json",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "model/vocabularies/relationship-types.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/vocabularies/relationship-types.json",
+        "lines": 40
       }
     ],
     "Bootstrap graph": [
       {
         "type": "path_exists",
         "path": "model/graph.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/graph.json",
+        "lines": 40
       }
     ],
     "Source registry": [
       {
         "type": "path_exists",
         "path": "evidence/source-registry.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "evidence/source-registry.json",
+        "lines": 12
       }
     ],
     "Validation and index generation": [
@@ -74,20 +120,40 @@
         "path": "tools/akb.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/akb.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "generated/entity-index.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/entity-index.md",
+        "lines": 40
       }
     ],
     "Architecture Decision Record template": [
       {
         "type": "path_exists",
         "path": "charter/adr/TEMPLATE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "charter/adr/TEMPLATE.md",
+        "lines": 40
       }
     ],
     "Claim-level evidence implementation": [
       {
         "type": "path_exists",
         "path": "generated/claim-evidence-index.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/claim-evidence-index.md",
+        "lines": 40
       }
     ],
     "Coverage metrics and quality gates": [
@@ -96,8 +162,18 @@
         "path": "tools/assess_akb_coverage.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/assess_akb_coverage.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "generated/coverage-report.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/coverage-report.md",
+        "lines": 11
       }
     ],
     "Register official upstream sources": [
@@ -106,14 +182,29 @@
         "path": "evidence/source-registry.json"
       },
       {
+        "type": "min_lines",
+        "path": "evidence/source-registry.json",
+        "lines": 12
+      },
+      {
         "type": "path_exists",
         "path": "evidence/SOURCE-REGISTRY.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "evidence/SOURCE-REGISTRY.md",
+        "lines": 23
       }
     ],
     "Discover and ingest enabled repository package metadata through pacman": [
       {
         "type": "path_exists",
         "path": "tools/import_package_catalog.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/import_package_catalog.py",
+        "lines": 40
       },
       {
         "type": "min_graph_entities_of_kind",
@@ -125,6 +216,11 @@
       {
         "type": "path_exists",
         "path": "evidence/snapshots"
+      },
+      {
+        "type": "min_entries_in_dir",
+        "path": "evidence/snapshots",
+        "count": 1
       }
     ],
     "Generate package dependency and reverse-navigation relationships": [
@@ -138,6 +234,11 @@
       {
         "type": "path_exists",
         "path": "generated/catalog-change-report.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/catalog-change-report.md",
+        "lines": 40
       }
     ],
     "Support on-demand and Windows Scheduled Task refresh": [
@@ -146,20 +247,40 @@
         "path": "tools/Update-Akb.ps1"
       },
       {
+        "type": "min_lines",
+        "path": "tools/Update-Akb.ps1",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tools/Register-AkbRefreshTask.ps1"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/Register-AkbRefreshTask.ps1",
+        "lines": 20
       }
     ],
     "Ingest repository database archives directly": [
       {
         "type": "path_exists",
         "path": "tools/import_repository_db.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/import_repository_db.py",
+        "lines": 40
       }
     ],
     "Statically ingest package recipes without executing PKGBUILDs": [
       {
         "type": "path_exists",
         "path": "tools/import_recipe_tree.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/import_recipe_tree.py",
+        "lines": 40
       }
     ],
     "Build the deep-inventory collection pipeline": [
@@ -168,12 +289,27 @@
         "path": "tools/deep_inventory.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/deep_inventory.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tools/import_deep_inventory.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/import_deep_inventory.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tests/test_deep_inventory.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tests/test_deep_inventory.py",
+        "lines": 40
       }
     ],
     "Extract installed and repository package-file manifests": [
@@ -184,6 +320,11 @@
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Extract PE imports, exports, subsystem, architecture, and debug metadata": [
@@ -195,6 +336,11 @@
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Extract static/import archive members": [
@@ -211,6 +357,11 @@
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Index headers, pkg-config files, and CMake metadata": [
@@ -227,18 +378,33 @@
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Record artifact checksums, versions, retrieval dates, and licenses": [
       {
         "type": "path_exists",
         "path": "model/inventory/current.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/inventory/current.json",
+        "lines": 40
       }
     ],
     "Produce reproducible deep-inventory snapshot manifest": [
       {
         "type": "path_exists",
         "path": "evidence/inventory-snapshots"
+      },
+      {
+        "type": "min_entries_in_dir",
+        "path": "evidence/inventory-snapshots",
+        "count": 1
       }
     ],
     "Extract and analyze uninstalled binary payloads from package archives": [
@@ -248,18 +414,33 @@
       },
       {
         "type": "min_lines",
+        "path": "tools/import_package_archives.py",
+        "lines": 40
+      },
+      {
+        "type": "min_lines",
         "path": "generated/binary-dependency-report.md",
         "lines": 200
       },
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Resolve recipe source checksums against downloaded upstream payloads": [
       {
         "type": "path_exists",
         "path": "tools/verify_recipe_sources.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/verify_recipe_sources.py",
+        "lines": 40
       }
     ],
     "Run deep inventory across the installed package set": [
@@ -270,36 +451,66 @@
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "L0 ecosystem context": [
       {
         "type": "doc_exists",
         "doc": "ECOSYSTEM-CONTEXT.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/ECOSYSTEM-CONTEXT.md",
+        "lines": 40
       }
     ],
     "L1 eight-layer architecture": [
       {
         "type": "doc_exists",
         "doc": "EIGHT-LAYER-ARCHITECTURE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/EIGHT-LAYER-ARCHITECTURE.md",
+        "lines": 40
       }
     ],
     "L2 domain decomposition": [
       {
         "type": "doc_exists",
         "doc": "DOMAIN-DECOMPOSITION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DOMAIN-DECOMPOSITION.md",
+        "lines": 40
       }
     ],
     "Terminology and boundary decisions": [
       {
         "type": "doc_exists",
         "doc": "TERMINOLOGY-AND-BOUNDARIES.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/TERMINOLOGY-AND-BOUNDARIES.md",
+        "lines": 40
       }
     ],
     "MSYS2 versus MinGW-w64 role model": [
       {
         "type": "doc_exists",
         "doc": "MSYS2-AND-MINGW-W64-ROLE-MODEL.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/MSYS2-AND-MINGW-W64-ROLE-MODEL.md",
+        "lines": 40
       }
     ],
     "Bounded runtime observation and current-environment report": [
@@ -308,14 +519,29 @@
         "doc": "RUNTIME-OBSERVATION-CONTRACT.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/RUNTIME-OBSERVATION-CONTRACT.md",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tools/collect_runtime_observation.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/collect_runtime_observation.py",
+        "lines": 40
       }
     ],
     "Environment comparison and migration matrix": [
       {
         "type": "doc_exists",
         "doc": "RUNTIME-ENVIRONMENTS.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/RUNTIME-ENVIRONMENTS.md",
+        "lines": 40
       }
     ],
     "Per-environment architecture pages for MSYS, UCRT64, CLANG64, CLANGARM64, MINGW64, and MINGW32": [
@@ -341,6 +567,11 @@
       {
         "type": "doc_exists",
         "doc": "MSYS-RUNTIME-INITIALIZATION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/MSYS-RUNTIME-INITIALIZATION.md",
+        "lines": 40
       }
     ],
     "Process, fork, exec, signal, path, mount, filesystem, symlink, and PTY models": [
@@ -374,6 +605,11 @@
       {
         "type": "doc_exists",
         "doc": "PACMAN-ARCHITECTURE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/PACMAN-ARCHITECTURE.md",
+        "lines": 40
       },
       {
         "type": "term_in_volume",
@@ -418,24 +654,54 @@
         "doc": "GNU-GCC.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/GNU-GCC.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "GNU-BINUTILS.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/GNU-BINUTILS.md",
+        "lines": 40
       },
       {
         "type": "doc_exists",
         "doc": "CLANG.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/CLANG.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "LLD.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LLD.md",
+        "lines": 40
       },
       {
         "type": "doc_exists",
         "doc": "GNU-GDB.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/GNU-GDB.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "LLDB.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LLDB.md",
+        "lines": 40
       }
     ],
     "CMake, Meson, Autotools, Make, Ninja, and pkg-config": [
@@ -444,20 +710,45 @@
         "doc": "CMAKE.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/CMAKE.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "MESON.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/MESON.md",
+        "lines": 40
       },
       {
         "type": "doc_exists",
         "doc": "NINJA.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/NINJA.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "PKGCONF.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/PKGCONF.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "GNU-MAKE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/GNU-MAKE.md",
+        "lines": 40
       }
     ],
     "GNU userland component deep dives": [
@@ -471,6 +762,11 @@
       {
         "type": "doc_exists",
         "doc": "BUILD-SYSTEM-ROLE-MODEL.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/BUILD-SYSTEM-ROLE-MODEL.md",
+        "lines": 40
       }
     ],
     "GNU Diffutils and GNU Patch pages": [
@@ -479,8 +775,18 @@
         "doc": "GNU-DIFFUTILS.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/GNU-DIFFUTILS.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "GNU-PATCH.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/GNU-PATCH.md",
+        "lines": 40
       },
       {
         "type": "term_in_docs",
@@ -526,6 +832,11 @@
       },
       {
         "type": "min_lines",
+        "path": "docs/REPOSITORY-PACKAGE-INVENTORY.md",
+        "lines": 40
+      },
+      {
+        "type": "min_lines",
         "path": "generated/package-catalog.md",
         "lines": 1000
       }
@@ -538,6 +849,11 @@
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Binary-to-DLL dependency graph": [
@@ -547,12 +863,22 @@
       },
       {
         "type": "min_lines",
+        "path": "docs/BINARY-DLL-DEPENDENCY-GRAPH.md",
+        "lines": 40
+      },
+      {
+        "type": "min_lines",
         "path": "generated/binary-dependency-report.md",
         "lines": 200
       },
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Header and metadata indexes": [
@@ -562,24 +888,44 @@
       },
       {
         "type": "min_lines",
+        "path": "docs/HEADER-AND-METADATA-INDEXES.md",
+        "lines": 40
+      },
+      {
+        "type": "min_lines",
         "path": "generated/development-artifact-catalog.md",
         "lines": 200
       },
       {
         "type": "doc_exists",
         "doc": "DEEP-INVENTORY-BLOCKER.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEEP-INVENTORY-BLOCKER.md",
+        "lines": 40
       }
     ],
     "Library family classification": [
       {
         "type": "doc_exists",
         "doc": "LIBRARY-FAMILY-CLASSIFICATION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-FAMILY-CLASSIFICATION.md",
+        "lines": 40
       }
     ],
     "Reverse dependency and impact analysis": [
       {
         "type": "doc_exists",
         "doc": "REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md",
+        "lines": 40
       },
       {
         "type": "min_lines",
@@ -593,28 +939,63 @@
         "doc": "LIBRARY-CATEGORY-GRAPHICS.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-GRAPHICS.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "LIBRARY-CATEGORY-GUI.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-GUI.md",
+        "lines": 40
       },
       {
         "type": "doc_exists",
         "doc": "LIBRARY-CATEGORY-AUDIO.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-AUDIO.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "LIBRARY-CATEGORY-VIDEO.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-VIDEO.md",
+        "lines": 40
       },
       {
         "type": "doc_exists",
         "doc": "LIBRARY-CATEGORY-IMAGING.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-IMAGING.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "LIBRARY-CATEGORY-LOGGING.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-LOGGING.md",
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "LIBRARY-CATEGORY-TESTING.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/LIBRARY-CATEGORY-TESTING.md",
+        "lines": 40
       },
       {
         "type": "min_graph_entities_of_kind",
@@ -626,12 +1007,22 @@
       {
         "type": "doc_exists",
         "doc": "GIT-FOR-WINDOWS-BOUNDARY.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/GIT-FOR-WINDOWS-BOUNDARY.md",
+        "lines": 40
       }
     ],
     "Launcher, Git Bash, Mintty, and shell startup": [
       {
         "type": "doc_exists",
         "doc": "GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md",
+        "lines": 40
       },
       {
         "type": "term_in_volume",
@@ -664,6 +1055,11 @@
       {
         "type": "doc_exists",
         "doc": "GIT-FOR-WINDOWS-PACKAGE-SOURCE-MAPPINGS.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/GIT-FOR-WINDOWS-PACKAGE-SOURCE-MAPPINGS.md",
+        "lines": 40
       }
     ],
     "Stable object routes and deep links": [
@@ -672,32 +1068,62 @@
         "doc": "EXPLORER-STABLE-ROUTES.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-STABLE-ROUTES.md",
+        "lines": 15
+      },
+      {
         "type": "path_exists",
         "path": "generated/explorer/index.html"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/explorer/index.html",
+        "lines": 40
       }
     ],
     "Search, filters, breadcrumbs, and cross-references": [
       {
         "type": "doc_exists",
         "doc": "EXPLORER-SEARCH-AND-NAVIGATION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-SEARCH-AND-NAVIGATION.md",
+        "lines": 13
       }
     ],
     "Progressive graph expansion and collapse": [
       {
         "type": "doc_exists",
         "doc": "EXPLORER-PROGRESSIVE-EXPANSION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-PROGRESSIVE-EXPANSION.md",
+        "lines": 12
       }
     ],
     "Forward and reverse dependency navigation": [
       {
         "type": "doc_exists",
         "doc": "EXPLORER-DEPENDENCY-NAVIGATION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-DEPENDENCY-NAVIGATION.md",
+        "lines": 13
       }
     ],
     "Layer, package, library, runtime, toolchain, and repository views": [
       {
         "type": "doc_exists",
         "doc": "EXPLORER-DOMAIN-VIEWS.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-DOMAIN-VIEWS.md",
+        "lines": 40
       },
       {
         "type": "explorer_view_nonempty",
@@ -730,8 +1156,18 @@
         "doc": "EXPLORER-ACCESSIBLE-FALLBACKS.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-ACCESSIBLE-FALLBACKS.md",
+        "lines": 13
+      },
+      {
         "type": "path_exists",
         "path": "generated/explorer/overview.txt"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/explorer/overview.txt",
+        "lines": 40
       }
     ],
     "Large-graph performance tests": [
@@ -740,8 +1176,18 @@
         "doc": "EXPLORER-LARGE-GRAPH-PERFORMANCE.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/EXPLORER-LARGE-GRAPH-PERFORMANCE.md",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tools/benchmark_akb.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/benchmark_akb.py",
+        "lines": 40
       }
     ],
     "Graphical zoomable graph rendering in the explorer page": [
@@ -779,6 +1225,11 @@
       {
         "type": "doc_exists",
         "doc": "THREAT-MODEL-AND-SUPPLY-CHAIN.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/THREAT-MODEL-AND-SUPPLY-CHAIN.md",
+        "lines": 40
       }
     ],
     "Performance experiments and hot-path analysis": [
@@ -820,18 +1271,33 @@
       {
         "type": "doc_exists",
         "doc": "UPGRADE-ROLLBACK-REPAIR-MIGRATION.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/UPGRADE-ROLLBACK-REPAIR-MIGRATION.md",
+        "lines": 40
       }
     ],
     "Developer and operator workflows": [
       {
         "type": "doc_exists",
         "doc": "DEVELOPER-WORKFLOW.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEVELOPER-WORKFLOW.md",
+        "lines": 40
       }
     ],
     "Initial continuous refresh, difference reports, and historical snapshots": [
       {
         "type": "path_exists",
         "path": "generated/catalog-changes.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "generated/catalog-changes.json",
+        "lines": 40
       },
       {
         "type": "path_exists",
@@ -844,8 +1310,18 @@
         "doc": "MULTI-SOURCE-REFRESH-POLICY.md"
       },
       {
+        "type": "min_lines",
+        "path": "docs/MULTI-SOURCE-REFRESH-POLICY.md",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "evidence/refresh-policy.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "evidence/refresh-policy.json",
+        "lines": 18
       }
     ],
     "NT Kernel, Win32, and Console/ConPTY boundaries": [
@@ -878,12 +1354,22 @@
       {
         "type": "path_exists",
         "path": "charter/adr/0001-windows-platform-contextual-scope.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "charter/adr/0001-windows-platform-contextual-scope.md",
+        "lines": 40
       }
     ],
     "Generate diagrams from the composed model": [
       {
         "type": "path_exists",
         "path": "tools/build_diagrams.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/build_diagrams.py",
+        "lines": 40
       }
     ],
     "Emit PlantUML and Graphviz alongside SVG": [
@@ -892,14 +1378,29 @@
         "path": "diagrams/level-0.puml"
       },
       {
+        "type": "min_lines",
+        "path": "diagrams/level-0.puml",
+        "lines": 22
+      },
+      {
         "type": "path_exists",
         "path": "diagrams/level-0.dot"
+      },
+      {
+        "type": "min_lines",
+        "path": "diagrams/level-0.dot",
+        "lines": 22
       }
     ],
     "Renumber levels to the charter ladder and link parent, child, and sibling": [
       {
         "type": "path_exists",
         "path": "tools/build_diagrams.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tools/build_diagrams.py",
+        "lines": 40
       },
       {
         "type": "term_in_docs",
@@ -920,8 +1421,18 @@
         "path": "tools/build_object_facts.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/build_object_facts.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tests/test_object_facts.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tests/test_object_facts.py",
+        "lines": 40
       },
       {
         "type": "term_in_docs",
@@ -940,6 +1451,11 @@
         "path": "tests/test_doc_validation.py"
       },
       {
+        "type": "min_lines",
+        "path": "tests/test_doc_validation.py",
+        "lines": 40
+      },
+      {
         "type": "term_in_docs",
         "term": "validate-docs",
         "min_files": 1
@@ -951,8 +1467,18 @@
         "path": "model/roadmap-claims.json"
       },
       {
+        "type": "min_lines",
+        "path": "model/roadmap-claims.json",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tests/test_roadmap_claims.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tests/test_roadmap_claims.py",
+        "lines": 40
       }
     ],
     "Volume 17 performance architecture for the ecosystem": [
@@ -964,6 +1490,11 @@
       {
         "type": "doc_exists",
         "doc": "ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md",
+        "lines": 40
       },
       {
         "type": "term_in_volume",
@@ -981,6 +1512,11 @@
       {
         "type": "doc_exists",
         "doc": "DEVELOPER-GUIDE.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "docs/DEVELOPER-GUIDE.md",
+        "lines": 40
       },
       {
         "type": "term_in_volume",
@@ -1007,8 +1543,18 @@
         "path": "tools/build_volume_ledger.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/build_volume_ledger.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tests/test_volume_ledger.py"
+      },
+      {
+        "type": "min_lines",
+        "path": "tests/test_volume_ledger.py",
+        "lines": 40
       },
       {
         "type": "term_in_docs",
@@ -1025,6 +1571,11 @@
       {
         "type": "path_exists",
         "path": "model/volume-coverage.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/volume-coverage.json",
+        "lines": 40
       },
       {
         "type": "term_in_docs",
@@ -1048,12 +1599,27 @@
         "path": "tools/schema_check.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/schema_check.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tests/test_schema_conformance.py"
       },
       {
+        "type": "min_lines",
+        "path": "tests/test_schema_conformance.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "charter/adr/0002-dependency-free-schema-checking.md"
+      },
+      {
+        "type": "min_lines",
+        "path": "charter/adr/0002-dependency-free-schema-checking.md",
+        "lines": 40
       }
     ],
     "Normalise the nine three-segment claim identifiers": [
@@ -1072,12 +1638,27 @@
         "path": "tools/import_recipe_dependencies.py"
       },
       {
+        "type": "min_lines",
+        "path": "tools/import_recipe_dependencies.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "tests/test_recipe_dependencies.py"
       },
       {
+        "type": "min_lines",
+        "path": "tests/test_recipe_dependencies.py",
+        "lines": 40
+      },
+      {
         "type": "path_exists",
         "path": "model/recipe-dependencies/current.json"
+      },
+      {
+        "type": "min_lines",
+        "path": "model/recipe-dependencies/current.json",
+        "lines": 40
       },
       {
         "type": "term_in_docs",

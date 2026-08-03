@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:findutils
   - package:msys2:findutils
   - library:gnu:libintl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -17,6 +18,38 @@ last_verified: 2026-07-30
 ---
 
 # GNU Findutils
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:findutils` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/findutils> |
+| Packaged as | `package:msys2:findutils` |
+| Version (observed) | 4.10.0-3 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 2.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:findutils-manual-2026-07-30` — GNU Findutils Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:findutils:role` (`inference`, `high`) — GNU Findutils packages the file-locating and command-construction utilities (including `find` and `xargs`) for the MSYS environment.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -68,7 +101,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling for filenames, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling for filenames, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 
 ## Reverse Dependencies
@@ -145,10 +178,34 @@ package installs is an inference pending file-inventory evidence; the
 behavior map remains open; and `xargs`' batching behavior against the
 Windows-equivalent argument-length limit has not been directly observed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Findutils"]
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["GNU libintl"]
+    subject -->|requires| d1
+    d2["msys-2.0.dll"]
+    subject -->|uses-runtime| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:findutils` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [GNU Grep](GNU-GREP.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [MSYS Runtime Behavior Map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

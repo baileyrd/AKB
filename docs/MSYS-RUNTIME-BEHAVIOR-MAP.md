@@ -6,27 +6,48 @@ status: partial
 model_refs:
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
-  - evidence:msys-runtime:git-for-windows-comparative-observation-2026-07-30
-  - evidence:msys-runtime:fork-emulation-observation-2026-07-31
-  - evidence:msys-runtime:cross-installation-toolchain-observation-2026-07-31
-last_verified: 2026-07-31
+last_verified: 2026-08-02
 ---
 
 # MSYS Runtime Behavior Architecture Map
 
-The [Level 3 runtime-boundary diagram](../diagrams/level-3-msys-runtime-boundary.svg)
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `runtime:msys2:msys-2.0.dll` |
+| Kind | `runtime` |
+| Status | `partial` |
+| Confidence | `verified` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
+The [Level 2 subsystem diagram](../diagrams/level-2.svg)
 is the navigation companion to this map. It distinguishes MSYS-dependent
 execution from native environment execution before drilling into individual
 adaptation concerns.
 
-| Concern | MSYS runtime responsibility | Windows-facing boundary | Required deep evidence |
-| --- | --- | --- | --- |
-| Process creation | Present POSIX process semantics where supported | Windows process creation and handles | Runtime source and controlled probes |
-| `fork()` / `exec()` | Adapt POSIX lifecycle expectations | Process image, inheritance, loader | Version-qualified implementation analysis |
-| Signals | Map POSIX signal behavior to available host mechanisms | Threads, processes, console control | Behavioral test matrix |
-| Paths and mounts | Translate MSYS paths and virtual mount rules | Drive/UNC/filesystem namespaces | Mount table and path-conversion observations |
-| Filesystem and symlinks | Present POSIX-like file operations | NTFS/ReFS/Win32 semantics | Filesystem probes by host/version |
-| PTY and console | Provide terminal-facing abstractions | Console, ConPTY, pipes | Terminal integration tests |
+**Update, 2026-08-02**: each row below now has its own subsystem page, and
+the runtime itself has one at [msys-2.0.dll](MSYS-2-0-DLL.md). The rows
+remain the responsibility summary; the pages carry the architecture and the
+per-subsystem evidence boundary.
+
+| Concern | Subsystem page | MSYS runtime responsibility | Windows-facing boundary | Required deep evidence |
+| --- | --- | --- | --- | --- |
+| Process creation | [Process Manager](MSYS-PROCESS-MANAGER.md) | Present POSIX process semantics where supported | Windows process creation and handles | Runtime source and controlled probes |
+| `fork()` / `exec()` | [Process Manager](MSYS-PROCESS-MANAGER.md) | Adapt POSIX lifecycle expectations | Process image, inheritance, loader | Version-qualified implementation analysis |
+| Signals | [Signal Manager](MSYS-SIGNAL-MANAGER.md) | Map POSIX signal behavior to available host mechanisms | Threads, processes, console control | Behavioral test matrix |
+| Paths and mounts | [Path Conversion](MSYS-PATH-CONVERSION.md), [Mount Manager](MSYS-MOUNT-MANAGER.md) | Translate MSYS paths and virtual mount rules | Drive/UNC/filesystem namespaces | Mount table and path-conversion observations |
+| Filesystem and symlinks | [Filesystem Layer](MSYS-FILESYSTEM-LAYER.md) | Present POSIX-like file operations | NTFS/ReFS/Win32 semantics | Filesystem probes by host/version |
+| PTY and console | [PTY and Console](MSYS-PTY-AND-CONSOLE.md) | Provide terminal-facing abstractions | Console, ConPTY, pipes | Terminal integration tests |
+| Environment | [Environment Manager](MSYS-ENVIRONMENT-MANAGER.md) | Store and convert environment variables at the boundary | Windows process environment block | Conversion observations |
+| POSIX API | [POSIX API Surface](MSYS-POSIX-API.md) | Export the POSIX C API and translate to Win32 | Win32 API | Exported-symbol and header inventory |
 
 ## Boundary Rule
 
@@ -155,3 +176,36 @@ integration tests" evidence this row's Concern column still calls for.
 
 - [Runtime initialization](MSYS-RUNTIME-INITIALIZATION.md)
 - [Runtime environments](RUNTIME-ENVIRONMENTS.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["msys-2.0.dll"]
+    u0["bzip2"]
+    u0 -->|uses-runtime| subject
+    u1["curl"]
+    u1 -->|uses-runtime| subject
+    u2["Git (MSYS2 package)"]
+    u2 -->|uses-runtime| subject
+    u3["GNU Autoconf"]
+    u3 -->|uses-runtime| subject
+    u4["GNU Automake"]
+    u4 -->|uses-runtime| subject
+    u5["GNU Bash"]
+    u5 -->|uses-runtime| subject
+    u6["GNU Coreutils"]
+    u6 -->|uses-runtime| subject
+    u7["GNU Cpio"]
+    u7 -->|uses-runtime| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `runtime:msys2:msys-2.0.dll` in the composed graph: 72 dependents and 0 dependencies, of which 64 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

@@ -77,8 +77,10 @@ python tools/build_explorer.py
 
 Generated files are written beneath `generated/`; open
 `generated/explorer/index.html` for the static, deep-linkable architecture
-explorer. Its typed views include packages, artifacts, libraries, runtimes,
-toolchains, repositories, and objects with attached evidence.
+explorer. Its typed views include layers, packages, artifacts, libraries,
+runtimes, toolchains, repositories, and objects with attached evidence. A
+view projects by entity kind, by tag, or by both — see
+[explorer domain views](docs/EXPLORER-DOMAIN-VIEWS.md).
 
 The checked-in official catalog snapshot includes package, library-candidate,
 and reverse-dependency-impact views in `generated/`. Start with the linked

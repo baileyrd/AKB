@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # libksba
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libksba` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnupg.org/related_software/libksba/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libksba` |
+| Version (observed) | 1.6.8-1 |
+| License (observed) | GPL |
+| Architecture (observed) | any |
+| Installed size (observed) | 820.9 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libksba-manual-2026-07-30` — libksba (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Libksba is a CMS and X.509 certificate access library, used to back
@@ -133,8 +161,28 @@ this page: header-level API surface and PE import/export-level evidence,
 per the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libksba"]
+    d0["libgpg-error"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libksba` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libgpg-error](LIBGPG-ERROR.md)
 - [libksba (MSYS)](LIBKSBA-MSYS.md)
+- [libksba (CLANG64)](LIBKSBA-CLANG64.md)

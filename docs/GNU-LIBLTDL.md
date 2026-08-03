@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # GNU Libltdl
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libltdl` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/libtool> |
+| Packaged as | `package:msys2:libltdl` |
+| Version (observed) | 2.5.4-5 |
+| License (observed) | spdx:LGPL-2.0-or-later WITH Libtool-exception |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 173.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libtool-manual-2026-07-30` — GNU Libtool (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GNU Libltdl is a system-independent `dlopen()` wrapper library, providing
@@ -129,6 +157,27 @@ of scope for this page: header-level API surface and PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Libltdl"]
+    u0["GNU Libtool"]
+    u0 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libltdl` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libksba (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libksba@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://www.gnupg.org/related_software/libksba/> |
+| Packaged as | `package:msys2:libksba` |
+| Version (observed) | 1.8.0-1 |
+| License (observed) | spdx:LGPL-3.0-or-later OR GPL-2.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 291.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libksba-manual-2026-07-30` — libksba (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** `libksba` package
@@ -126,6 +154,29 @@ The X.509/CMS parsing role is backed by the official libksba project page
 recorded dependency/dependent edges (including the 2026-07-30 correction
 to `relationship:ssh-curl-git:gnupg-requires-libksba`) are backed by the
 pacman catalog snapshot (`evidence:catalog:current`).
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libksba (MSYS)"]
+    u0["GnuPG"]
+    u0 -->|requires| subject
+    d0["libgpg-error (MSYS)"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libksba@msys` in the composed graph: 1 dependent and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

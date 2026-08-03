@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # winpthreads (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:mingw-w64:winpthreads@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | MinGW-w64 project |
+| Environments | `clang64` |
+| Upstream | <https://www.mingw-w64.org/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-winpthreads` |
+| Version (observed) | 14.0.0.r220.gd999af622-1 |
+| License (observed) | spdx:MIT AND BSD-3-Clause-Clear |
+| Architecture (observed) | any |
+| Installed size (observed) | 307.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mingw-w64:libwinpthread-manual-2026-07-30` — MinGW-w64 (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** winpthreads package
@@ -143,6 +171,27 @@ this page: the remaining recorded dependents not individually modeled,
 and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["winpthreads (CLANG64)"]
+    u0["Clang"]
+    u0 -->|requires| subject
+    d0["libwinpthread (CLANG64)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mingw-w64:winpthreads@clang64` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

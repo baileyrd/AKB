@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # libssh2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libssh2:libssh2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libssh2 project |
+| Environments | `msys` |
+| Upstream | <https://libssh2.org/> |
+| Packaged as | `package:msys2:libssh2` |
+| Version (observed) | 1.11.1-1 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 363.4 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libssh2:manual-2026-07-30` — libssh2 (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libssh2 is a client-side C library implementing the SSH2 protocol. This
@@ -148,6 +176,33 @@ API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libssh2"]
+    u0["libcurl"]
+    u0 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["zlib (MSYS)"]
+    subject -->|requires| d1
+    d2["ca-certificates"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libssh2:libssh2` in the composed graph: 1 dependent and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -157,3 +212,4 @@ methodology.
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [ca-certificates](CA-CERTIFICATES.md)
 - [OpenSSL](OPENSSL.md)
+- [libssh2 (CLANG64)](LIBSSH2-CLANG64.md)

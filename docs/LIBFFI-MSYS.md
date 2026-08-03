@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # libffi (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libffi:libffi@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libffi project |
+| Environments | `msys` |
+| Upstream | <https://sourceware.org/libffi/> |
+| Packaged as | `package:msys2:libffi` |
+| Version (observed) | 3.7.1-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 52.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libffi:project-site-2026-07-30` — libffi (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** libffi package
@@ -134,6 +162,25 @@ this page: the remaining recorded dependents not individually modeled,
 and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libffi (MSYS)"]
+    u0["p11-kit"]
+    u0 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libffi:libffi@msys` in the composed graph: 1 dependent and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

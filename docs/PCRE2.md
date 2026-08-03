@@ -12,10 +12,42 @@ model_refs:
 evidence_refs:
   - evidence:pcre:pcre2-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # PCRE2
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:pcre:pcre2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Philip Hazel / PCRE2 maintainers |
+| Environments | `ucrt64` |
+| Upstream | <https://pcre.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-pcre2` |
+| Version (observed) | 10.47-1 |
+| License (observed) | spdx:BSD-3-Clause |
+| Architecture (observed) | any |
+| Installed size (observed) | 7.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pcre:pcre2-manual-2026-07-30` — PCRE2 (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:pcre2:wineditline-interactive-tool` (`inference`, `high`) — pcre2's dependency on wineditline backs interactive line editing in its bundled pcre2test tool, the Windows port of the BSD editline library serving a comparable role to GNU Readline elsewhere in this volume.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -67,8 +99,8 @@ The catalog snapshot records three `runtime-depends-on` edges for
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
 | Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs `pcre2grep`'s support for searching gzip-compressed files, the same `zgrep`-style composition pattern documented for [GNU Gzip](GNU-GZIP.md#dependencies). |
-| Interactive line editing | `mingw-w64-ucrt-x86_64-wineditline` | Backs interactive line editing in the bundled `pcre2test` tool, a Windows port of the BSD editline library serving a comparable role to [GNU Readline](GNU-READLINE.md) elsewhere in this volume (`claim:library:pcre2-wineditline-interactive-tool`). Documented fully in [WinEditLine](WINEDITLINE.md). |
-| Compression (bzip2) | `mingw-w64-ucrt-x86_64-bzip2` | Backs `pcre2grep`'s support for searching bzip2-compressed files; this is a separate UCRT64 `bzip2` package, distinct from the MSYS-environment `bzip2` component already documented in Volume 5. |
+| Interactive line editing | `mingw-w64-ucrt-x86_64-wineditline` | Backs interactive line editing in the bundled `pcre2test` tool, a Windows port of the BSD editline library serving a comparable role to [GNU Readline](GNU-READLINE.md) elsewhere in this volume (`claim:library:pcre2:wineditline-interactive-tool`). Documented fully in [WinEditLine](WINEDITLINE.md). |
+| Compression (bzip2) | `mingw-w64-ucrt-x86_64-bzip2` | Backs `pcre2grep`'s support for searching bzip2-compressed files; this is a separate UCRT64 `bzip2` package, distinct from the MSYS-environment `bzip2` component already documented in Volume 5. **Correction, 2026-08-02**: this dependency is now formally modeled as [bzip2 (UCRT64)](BZIP2-UCRT64.md) (`relationship:foundation-libraries:pcre2-requires-bzip2-ucrt64`); it had previously only been cited here by package name. |
 
 ## Reverse Dependencies
 
@@ -130,11 +162,38 @@ already recorded for `package:msys2:mingw-w64-ucrt-x86_64-pcre2` in the
 catalog. Package identity, version, license, and all three dependency
 edges are backed by the pacman catalog snapshot
 (`evidence:catalog:current`) via
-`claim:library:pcre2-wineditline-interactive-tool`. Open, and explicitly
+`claim:library:pcre2:wineditline-interactive-tool`. Open, and explicitly
 out of scope for this page: header-level API surface and PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["PCRE2"]
+    u0["ncurses (UCRT64)"]
+    u0 -->|requires| subject
+    u1["libarchive"]
+    u1 -->|requires| subject
+    d0["bzip2 (UCRT64)"]
+    subject -->|requires| d0
+    d1["zlib"]
+    subject -->|requires| d1
+    d2["WinEditLine"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:pcre:pcre2` in the composed graph: 2 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 
@@ -145,4 +204,6 @@ methodology.
 - [zlib](ZLIB.md)
 - [libarchive](LIBARCHIVE.md)
 - [WinEditLine](WINEDITLINE.md)
+- [PCRE2 (CLANG64)](PCRE2-CLANG64.md)
 - [PCRE2 (MSYS)](PCRE2-MSYS.md)
+- [bzip2 (UCRT64)](BZIP2-UCRT64.md)

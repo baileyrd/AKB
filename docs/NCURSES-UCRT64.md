@@ -13,10 +13,38 @@ model_refs:
 evidence_refs:
   - evidence:gnu:ncurses-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # ncurses (UCRT64)
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:ncurses@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/ncurses/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-ncurses` |
+| Version (observed) | 6.6-4 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 15.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:ncurses-manual-2026-07-30` — GNU Ncurses (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -145,9 +173,31 @@ cc-libs/libsystre sub-dependencies, and header-level API surface
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ncurses (UCRT64)"]
+    u0["GDB"]
+    u0 -->|requires| subject
+    d0["PCRE2"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:ncurses@ucrt64` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [ncurses (MSYS)](NCURSES.md)
+- [ncurses (CLANG64)](NCURSES-CLANG64.md)
 - [GDB](GNU-GDB.md)
 - [PCRE2](PCRE2.md)

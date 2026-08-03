@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # Lzip
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:lzip:lzip` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Antonio Diaz Diaz |
+| Environments | `msys` |
+| Upstream | <https://www.nongnu.org/lzip/lzip.html> |
+| Packaged as | `package:msys2:lzip` |
+| Version (observed) | 1.26-1 |
+| License (observed) | spdx:GPL-2.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 147.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:lzip:manual-2026-07-30` — Lzip (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Lzip compresses a single file using an LZMA-based algorithm, with a format
@@ -113,6 +141,25 @@ the `project_url` already recorded for `package:msys2:lzip` in the catalog.
 Package identity, version, license, and the gcc-libs dependency are backed
 by the pacman catalog snapshot (`evidence:catalog:current`). No open items
 beyond the general version-qualified security review noted above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Lzip"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:lzip:lzip` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

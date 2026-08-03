@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # PCRE2 (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:pcre:pcre2@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | PCRE project |
+| Environments | `msys` |
+| Upstream | <https://www.pcre.org/> |
+| Packaged as | `package:msys2:libpcre2_8` |
+| Version (observed) | 10.47-1 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 433.4 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pcre:pcre2-manual-2026-07-30` — PCRE2 (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** PCRE2 package
@@ -135,6 +163,29 @@ evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["PCRE2 (MSYS)"]
+    u0["Git (MSYS2 package)"]
+    u0 -->|requires| subject
+    u1["less"]
+    u1 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:pcre:pcre2@msys` in the composed graph: 2 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -142,3 +193,4 @@ methodology.
 - [less](LESS.md)
 - [PCRE2 (UCRT64)](PCRE2.md)
 - [PCRE (MSYS)](PCRE-MSYS.md)
+- [PCRE2 (CLANG64)](PCRE2-CLANG64.md)

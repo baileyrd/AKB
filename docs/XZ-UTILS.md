@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # XZ Utils
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:tukaani:xz` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Tukaani Project |
+| Environments | `msys` |
+| Upstream | <https://tukaani.org/xz/> |
+| Packaged as | `package:msys2:xz` |
+| Version (observed) | 5.8.3-1 |
+| License (observed) | GPL;LGPL;custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 4.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:tukaani:xz-project-site-2026-07-30` — XZ Utils (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 XZ Utils compresses and decompresses a single file or stream using the
@@ -133,6 +161,31 @@ Package identity, version, license, and dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open: the default
 thread-count behavior of `-T0` has not been directly observed in this
 environment.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["XZ Utils"]
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["GNU libintl"]
+    subject -->|requires| d1
+    d2["liblzma (MSYS)"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:tukaani:xz` in the composed graph: 0 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

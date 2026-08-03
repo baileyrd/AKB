@@ -20,6 +20,38 @@ last_verified: 2026-07-30
 
 # GNU Awk (gawk)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:gawk` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/gawk/> |
+| Packaged as | `package:msys2:gawk` |
+| Version (observed) | 5.4.1-1 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 5.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gawk-manual-2026-07-30` — GNU Awk User's Guide (gawk manual) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:gawk:provides-awk` (`fact`, `verified`) — The MSYS gawk package provides the `awk` command.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Gawk is GNU's implementation of the POSIX awk pattern-scanning and
@@ -150,6 +182,31 @@ snapshot (`evidence:catalog:current`). The unresolved `sh` dependency is
 explained by `generated/unresolved-dependencies.json`, not merely asserted.
 Open: whether the MSYS2 build enables dynamically loaded extensions (`-l`)
 by default has not been directly observed.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Awk (gawk)"]
+    d0["GNU libintl"]
+    subject -->|requires| d0
+    d1["GNU MPFR (MSYS)"]
+    subject -->|requires| d1
+    d2["GNU Readline (MSYS)"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:gawk` in the composed graph: 0 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

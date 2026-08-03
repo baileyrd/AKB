@@ -1,3 +1,13 @@
+---
+id: doc:volume-20:documentation-standard
+title: Documentation Standard
+volume: 20
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Documentation Standard
 
 ## Required metadata
@@ -91,3 +101,38 @@ claim it supports.
 - Use Windows paths and POSIX paths exactly as observed and state the active
   translation context.
 
+
+## Enforcement
+
+The required metadata above is checked, not merely stated:
+
+```bash
+python tools/akb.py validate-docs
+```
+
+`akb.validate_docs()` opens every `docs/*.md` and fails the build when a page
+
+- has no YAML frontmatter block;
+- omits `id`, `title`, `volume`, `status`, or `last_verified`;
+- declares a `volume` outside the twenty-volume range;
+- declares a `status` outside `planned` / `partial` / `verified`;
+- cites a `model_refs` entry that does not resolve to an entity in the
+  composed graph;
+- cites an `evidence_refs` entry that resolves to neither a graph evidence
+  record nor a registered source in `evidence/source-registry.json`;
+- carries unbalanced or duplicated generated-block markers.
+
+CI runs it alongside `python tools/akb.py validate`, and
+`tests/test_doc_validation.py` covers both the parser and the corpus.
+
+**Added 2026-08-02.** Until then `akb.py validate` operated only on the
+composed JSON graph and never opened a Markdown file, so ten pages carried
+no frontmatter at all — in violation of the "every authored page begins
+with" rule above — and four pages cited evidence that did not resolve. The
+rule existed; nothing checked it.
+
+Heading conformance is **not** yet enforced. The required-heading list above
+runs to 21 entries and six of them appear on no page, so a check would fail
+the entire corpus today. Closing that gap means either authoring the missing
+sections or amending this list and recording the reduction — tracked as a
+Volume 20 item rather than left as an unstated exception.

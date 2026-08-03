@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # Brotli (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:google:brotli@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Google |
+| Environments | `ucrt64` |
+| Upstream | <https://github.com/google/brotli> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-brotli` |
+| Version (observed) | 1.2.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:google:brotli-manual-2026-07-30` — Brotli (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** Brotli package
@@ -135,9 +163,31 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Brotli (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (UCRT64)"]
+    u1 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:google:brotli@ucrt64` in the composed graph: 2 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Brotli (MSYS)](BROTLI.md)
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [Brotli (CLANG64)](BROTLI-CLANG64.md)

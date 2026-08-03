@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # Zstandard (MSYS library)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:facebook:zstd@msys-lib` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Meta (Facebook) |
+| Environments | `msys` |
+| Upstream | <https://facebook.github.io/zstd/> |
+| Packaged as | `package:msys2:libzstd` |
+| Version (observed) | 1.5.7-1 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:facebook:zstd-manual-2026-07-30` — Zstandard (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `libzstd`, the MSYS-packaged Zstandard compression
@@ -73,12 +101,15 @@ The catalog snapshot records no `runtime-depends-on` edges for
 ## Reverse Dependencies
 
 The catalog snapshot records 24 relationships targeting
-`package:msys2:libzstd`. Two are already modeled in this knowledge
+`package:msys2:libzstd`. Three are already modeled in this knowledge
 base: `package:msys2:libcurl`
-(`relationship:foundation-libraries:libcurl-requires-libzstd`) and
+(`relationship:foundation-libraries:libcurl-requires-libzstd`),
 `package:msys2:file`
-(`relationship:foundation-libraries:file-requires-libzstd`). The
-remaining ~22 recorded dependents (`bsdcpio`, `bsdtar`, `ccache`,
+(`relationship:foundation-libraries:file-requires-libzstd`), and
+`package:msys2:zstd`
+(`relationship:archive-compression:zstd-requires-libzstd-msys`, added
+2026-07-30, documented fully in [Zstandard (MSYS CLI tool)](ZSTD.md)).
+The remaining ~21 recorded dependents (`bsdcpio`, `bsdtar`, `ccache`,
 `elinks`, `libarchive`, `llvm-libs` — a different, CLANG64-environment
 `llvm-libs` dependency than this knowledge base's own
 [LLVM libraries](LLVM-LIBS.md) entity, distinct catalog objects — and
@@ -143,6 +174,33 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Zstandard (MSYS library)"]
+    u0["Zstandard (zstd)"]
+    u0 -->|requires| subject
+    u1["libcurl"]
+    u1 -->|requires| subject
+    u2["file"]
+    u2 -->|requires| subject
+    u3["libarchive (MSYS)"]
+    u3 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:facebook:zstd@msys-lib` in the composed graph: 4 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -151,3 +209,4 @@ methodology.
 - [Zstandard (MSYS CLI tool)](ZSTD.md)
 - [libcurl](LIBCURL.md)
 - [file](FILE.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)

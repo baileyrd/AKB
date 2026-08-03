@@ -12,13 +12,42 @@ model_refs:
   - library:libffi:libffi@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
+  - library:mozilla:ca-certificates
 evidence_refs:
   - evidence:p11-glue:p11-kit-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # p11-kit
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:p11-glue:p11-kit` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | p11-glue project |
+| Environments | `msys` |
+| Upstream | <https://p11-glue.freedesktop.org/p11-kit.html> |
+| Packaged as | `package:msys2:libp11-kit` |
+| Version (observed) | 0.26.4-1 |
+| License (observed) | spdx:BSD-3-Clause |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:p11-glue:p11-kit-manual-2026-07-30` — p11-kit (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -90,7 +119,18 @@ The catalog snapshot records 3 relationships targeting
 (`relationship:foundation-libraries:gnutls-requires-p11-kit` in this
 knowledge base's graph), its own `-devel` subpackage, and a separate
 `package:msys2:p11-kit` package (the project's own command-line tools,
-distinct from this library package).
+distinct from this library package). That separate `p11-kit` package is
+itself depended on by `package:msys2:ca-certificates`; rather than model
+the thin, unmodeled `p11-kit` CLI/meta-package as a new entity, this
+transitive dependency is modeled directly from
+[ca-certificates](CA-CERTIFICATES.md) to this library
+(`relationship:foundation-libraries:ca-certificates-requires-p11-kit-msys`,
+added 2026-08-02 while correcting that page's own prior false
+"no runtime-depends-on edges" claim) — backing trust-anchor registration
+and coordination through the p11-kit PKCS#11 trust module, the same
+rationale already documented for the
+[UCRT64](CA-CERTIFICATES-UCRT64.md#dependencies) and
+[CLANG64](CA-CERTIFICATES-CLANG64.md#dependencies) siblings.
 
 ## Configuration
 
@@ -155,6 +195,35 @@ and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["p11-kit"]
+    u0["GnuTLS"]
+    u0 -->|requires| subject
+    u1["ca-certificates"]
+    u1 -->|requires| subject
+    d0["GNU libintl"]
+    subject -->|requires| d0
+    d1["GNU Libtasn1"]
+    subject -->|requires| d1
+    d2["libffi (MSYS)"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:p11-glue:p11-kit` in the composed graph: 2 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -163,3 +232,4 @@ methodology, also remain open.
 - [GNU libintl](GNU-LIBINTL.md)
 - [libffi (MSYS)](LIBFFI-MSYS.md)
 - [p11-kit (UCRT64)](P11-KIT-UCRT64.md)
+- [ca-certificates](CA-CERTIFICATES.md)

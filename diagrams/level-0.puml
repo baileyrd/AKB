@@ -1,0 +1,30 @@
+@startuml level-0
+' Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+title Level 0 - Ecosystem context
+header 11 of 11 objects, ranked by graph degree
+skinparam componentStyle rectangle
+skinparam defaultFontName sans-serif
+rectangle "MSYS2" as n0 <<ecosystem>>
+rectangle "Microsoft Windows" as n1 <<platform>>
+rectangle "msys-2.0.dll" as n2 <<runtime>>
+rectangle "Layer 1 — Windows kernel, security, process, and storage services" as n3 <<layer>>
+rectangle "Layer 2 — Windows user-mode APIs, console, filesystem, and loader" as n4 <<layer>>
+rectangle "Layer 3 — MSYS POSIX runtime and process adaptation" as n5 <<layer>>
+rectangle "Layer 4 — MSYS and native runtime environments" as n6 <<layer>>
+rectangle "Layer 5 — Packages, repositories, and pacman" as n7 <<layer>>
+rectangle "Layer 6 — Toolchains and build systems" as n8 <<layer>>
+rectangle "Layer 7 — GNU userland, libraries, IDEs, and developer tools" as n9 <<layer>>
+rectangle "Layer 8 — Users, applications, and automation" as n10 <<layer>>
+n0 --> n1 : requires
+n3 --> n1 : contains
+n5 --> n2 : contains
+n0 --> n3 : contains
+n0 --> n4 : contains
+n0 --> n5 : contains
+n0 --> n6 : contains
+n0 --> n7 : contains
+n0 --> n8 : contains
+n0 --> n9 : contains
+n0 --> n10 : contains
+note bottom : Child level-1
+@enduml

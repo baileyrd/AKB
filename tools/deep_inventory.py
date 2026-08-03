@@ -390,27 +390,133 @@ def parse_cmake(path: Path) -> dict[str, Any]:
     }
 
 
-def _shell_array(text: str, name: str) -> list[str]:
-    match = re.search(
-        rf"(?ms)^\s*{re.escape(name)}\s*=\s*\((.*?)\)", text
-    )
-    if not match:
+def _array_body(text: str, name: str) -> str | None:
+    """Return the text between an array's parentheses, matching them properly.
+
+    A non-greedy scan to the first `)` truncates any array containing a
+    command substitution, and silently loses every element after it. In
+    `makedepends=(a b $([[ ... ]] || echo c) d e)` it keeps `a b` and drops
+    `d` and `e` -- real declared dependencies, gone without a warning.
+    """
+    opening = re.search(rf"(?m)^[ \t]*{re.escape(name)}[ \t]*=[ \t]*\(", text)
+    if not opening:
+        return None
+    depth, index, length = 1, opening.end(), len(text)
+    quote: str | None = None
+    while index < length and depth:
+        char = text[index]
+        if quote:
+            if char == quote:
+                quote = None
+        elif char == "#" and (text[index - 1].isspace() or text[index - 1] == "("):
+            # Skip the comment during the scan, not after it. Commented-out
+            # entries carry English prose, and prose carries apostrophes:
+            # `#"...-ruby" unable to find ruby's pkgconfig file` opens a
+            # phantom single quote that swallows the array's closing paren.
+            newline = text.find("\n", index)
+            index = length if newline < 0 else newline
+            continue
+        elif char in "'\"":
+            quote = char
+        elif char == "(":
+            depth += 1
+        elif char == ")":
+            depth -= 1
+            if not depth:
+                return text[opening.end():index]
+        index += 1
+    return None  # unterminated array: report nothing rather than guess
+
+
+def _strip_comments(body: str) -> str:
+    """Remove `#` comments, which are otherwise tokenised as dependency names.
+
+    An array may carry an explanatory comment on its own line. Word-by-word
+    tokenisation turns `# Note: the following dependencies are carried from
+    vtk` into eleven dependency names, none of which exist.
+    """
+    out: list[str] = []
+    for line in body.splitlines():
+        quote: str | None = None
+        cut = None
+        for index, char in enumerate(line):
+            if quote:
+                if char == quote:
+                    quote = None
+            elif char in "'\"":
+                quote = char
+            elif char == "#" and (index == 0 or line[index - 1].isspace()):
+                cut = index
+                break
+        out.append(line if cut is None else line[:cut])
+    return "\n".join(out)
+
+
+def _drop_substitutions(body: str) -> tuple[str, int]:
+    """Remove `$( ... )` and `$(( ... ))` spans, returning how many were dropped.
+
+    Their contents are shell to execute, not names to read: a conditional
+    such as `$([[ ${CARCH} == aarch64 ]] || echo pkg)` yields tokens like
+    `[[`, `aarch64`, `]]`, and `echo`. The dependency inside it is real but
+    conditional, and this parser does not evaluate conditions -- so the span
+    is dropped and counted rather than recorded as unconditional.
+    """
+    out: list[str] = []
+    index, length, dropped = 0, len(body), 0
+    while index < length:
+        if body[index] == "$" and index + 1 < length and body[index + 1] == "(":
+            depth, scan = 1, index + 2
+            while scan < length and depth:
+                if body[scan] == "(":
+                    depth += 1
+                elif body[scan] == ")":
+                    depth -= 1
+                scan += 1
+            index = scan
+            dropped += 1
+            continue
+        out.append(body[index])
+        index += 1
+    return "".join(out), dropped
+
+
+# Shell keywords and operators that survive tokenisation of a malformed or
+# unusual array. They are never package names.
+_SHELL_WORDS = frozenset({
+    "if", "then", "else", "elif", "fi", "for", "do", "done", "while", "case",
+    "esac", "in", "echo", "test", "true", "false", "&&", "||", "|", ";", "&",
+    "[[", "]]", "[", "]", "{", "}", "!", "(", ")", "\\",
+})
+
+
+def _shell_array(text: str, name: str) -> tuple[list[str], int]:
+    """Return an array's elements, and the count of substitutions dropped."""
+    body = _array_body(text, name)
+    if body is None:
         scalar = re.search(rf"(?m)^\s*{re.escape(name)}\s*=\s*(['\"]?)(.*?)\1\s*$", text)
-        return [scalar.group(2)] if scalar and scalar.group(2) else []
-    return re.findall(r"(?:'([^']*)'|\"([^\"]*)\"|([^\s#]+))", match.group(1))
+        return ([scalar.group(2)] if scalar and scalar.group(2) else []), 0
+    body, dropped = _drop_substitutions(_strip_comments(body))
+    elements: list[str] = []
+    for single, double, bare in re.findall(
+        r"(?:'([^']*)'|\"([^\"]*)\"|([^\s'\"]+))", body
+    ):
+        value = single or double or bare
+        if value and value not in _SHELL_WORDS:
+            elements.append(value)
+    return elements, dropped
 
 
 def parse_pkgbuild(path: Path) -> dict[str, Any]:
     """Statically extract declarative PKGBUILD fields without executing shell code."""
     text = path.read_text(encoding="utf-8", errors="replace")
 
+    dropped_substitutions = 0
+
     def values(name: str) -> list[str]:
-        raw = _shell_array(text, name)
-        parsed = [
-            next((value for value in item if value), "") if isinstance(item, tuple) else item
-            for item in raw
-        ]
-        return [value for value in parsed if value]
+        nonlocal dropped_substitutions
+        elements, dropped = _shell_array(text, name)
+        dropped_substitutions += dropped
+        return [value for value in elements if value]
 
     def scalar(name: str) -> str:
         match = re.search(
@@ -421,7 +527,30 @@ def parse_pkgbuild(path: Path) -> dict[str, Any]:
     functions = sorted(
         set(re.findall(r"(?m)^\s*(prepare|pkgver|build|check|package(?:_[A-Za-z0-9_+-]+)?)\s*\(\s*\)", text))
     )
-    return {
+    # Recipe-local scalars, by convention prefixed with `_`. Dependency and
+    # package names routinely interpolate them (`${MINGW_PACKAGE_PREFIX}-python-${_realname}`),
+    # so capturing them here is what lets a consumer resolve those names
+    # without re-reading the source tree. Only simple, non-substituted
+    # assignments are taken; anything containing a command substitution or a
+    # nested expansion is left out rather than guessed at.
+    variables = {
+        name: value.strip()
+        for name, _quote, value in re.findall(
+            r"""(?m)^[ \t]*(_[A-Za-z0-9_]+)=(["']?)([^"'\n#$`]*)\2[ \t]*(?:#.*)?$""", text
+        )
+        if value.strip()
+    }
+    # Recipe-local arrays, e.g. `_plugins_deps=(...)`, which other arrays
+    # splice in with `"${_plugins_deps[@]}"`. Captured for the same reason as
+    # the scalars: without them the reference resolves to nothing.
+    local_arrays = {
+        found: values(found)
+        for found in sorted(set(re.findall(r"(?m)^[ \t]*(_[A-Za-z0-9_]+)[ \t]*=[ \t]*\(", text)))
+    }
+
+    parsed: dict[str, Any] = {
+        "local_arrays": {k: v for k, v in local_arrays.items() if v},
+        "variables": variables,
         "pkgbase": scalar("pkgbase"),
         "pkgname": values("pkgname") or ([scalar("pkgname")] if scalar("pkgname") else []),
         "pkgver": scalar("pkgver"),
@@ -441,6 +570,11 @@ def parse_pkgbuild(path: Path) -> dict[str, Any]:
         "functions": functions,
         "dynamic_fields": sorted(set(re.findall(r"\$\([^)]+\)|\$\{?[\w@#?-]+\}?", text))),
     }
+    # Assigned after the dict is built, not inside it: every `values()` call
+    # above increments the counter, and a dict literal evaluates its entries
+    # in order, so naming it earlier would always record zero.
+    parsed["conditional_spans_dropped"] = dropped_substitutions
+    return parsed
 
 
 def run(command: list[str]) -> list[str]:

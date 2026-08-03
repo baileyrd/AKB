@@ -21,6 +21,34 @@ last_verified: 2026-07-30
 
 # file
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:darwinsys:file` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Ian Darwin / file project |
+| Environments | `msys` |
+| Upstream | <https://www.darwinsys.com/file/> |
+| Packaged as | `package:msys2:file` |
+| Version (observed) | 5.48-1 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 10.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:darwinsys:file-manual-2026-07-30` — file (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 file is a file-type identification utility and library (`libmagic`),
@@ -154,6 +182,35 @@ API surface and PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["file"]
+    u0["GNU Nano"]
+    u0 -->|requires| subject
+    d0["libbz2"]
+    subject -->|requires| d0
+    d1["Zstandard (MSYS library)"]
+    subject -->|requires| d1
+    d2["zlib (MSYS)"]
+    subject -->|requires| d2
+    d3["liblzma (MSYS)"]
+    subject -->|requires| d3
+    d4["msys-2.0.dll"]
+    subject -->|uses-runtime| d4
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:darwinsys:file` in the composed graph: 1 dependent and 5 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

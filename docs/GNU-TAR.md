@@ -7,6 +7,7 @@ model_refs:
   - component:gnu:tar
   - package:msys2:tar
   - library:gnu:libintl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -17,6 +18,34 @@ last_verified: 2026-07-30
 ---
 
 # GNU Tar
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:tar` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/tar/tar.html> |
+| Packaged as | `package:msys2:tar` |
+| Version (observed) | 1.35-3 |
+| License (observed) | GPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 2.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:tar-manual-2026-07-30` — GNU Tar Manual (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -64,7 +93,8 @@ package-dependency concern, addressed below.
 ## Dependencies
 
 The catalog snapshot records two `runtime-depends-on` edges for
-`package:msys2:tar`: `package:msys2:libiconv` and
+`package:msys2:tar`: [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
+(`package:msys2:libiconv`) and
 [GNU libintl](GNU-LIBINTL.md) (`package:msys2:libintl`),
 matching the same character-set-conversion and NLS rationale documented for
 [GNU Coreutils](GNU-COREUTILS.md). Notably, no dependency edge is recorded
@@ -149,6 +179,29 @@ build links compression codecs directly or forks external programs is
 unconfirmed pending PE import analysis, and the symlink-fidelity discrepancy
 already flagged in the runtime behavior map remains open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Tar"]
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["GNU libintl"]
+    subject -->|requires| d1
+    d2["msys-2.0.dll"]
+    subject -->|uses-runtime| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:tar` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -156,5 +209,6 @@ already flagged in the runtime behavior map remains open.
 - [bzip2](BZIP2.md)
 - [XZ Utils](XZ-UTILS.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [MSYS Runtime Behavior Map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
 - [MSYS Runtime Initialization](MSYS-RUNTIME-INITIALIZATION.md)

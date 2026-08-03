@@ -1,0 +1,44 @@
+@startuml level-5
+' Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+title Level 5 - Libraries
+header 18 of 163 objects, ranked by graph degree
+skinparam componentStyle rectangle
+skinparam defaultFontName sans-serif
+rectangle "GNU libintl" as n0 <<library>>
+rectangle "zlib" as n1 <<library>>
+rectangle "libcurl" as n2 <<library>>
+rectangle "GNU libiconv (MSYS)" as n3 <<library>>
+rectangle "zlib (MSYS)" as n4 <<library>>
+rectangle "curl (UCRT64)" as n5 <<library>>
+rectangle "GnuTLS" as n6 <<library>>
+rectangle "libarchive" as n7 <<library>>
+rectangle "curl (CLANG64)" as n8 <<library>>
+rectangle "GNU gettext" as n9 <<library>>
+rectangle "libstdc++" as n10 <<library>>
+rectangle "zlib (CLANG64)" as n11 <<library>>
+rectangle "GnuTLS (CLANG64)" as n12 <<library>>
+rectangle "GnuTLS (UCRT64)" as n13 <<library>>
+rectangle "GNU libiconv" as n14 <<library>>
+rectangle "libgpg-error (MSYS)" as n15 <<library>>
+rectangle "libarchive (CLANG64)" as n16 <<library>>
+rectangle "LLVM libraries" as n17 <<library>>
+n8 --> n11 : requires
+n5 --> n1 : requires
+n9 --> n14 : requires
+n12 --> n11 : requires
+n6 --> n3 : requires
+n6 --> n0 : requires
+n6 --> n4 : requires
+n13 --> n9 : requires
+n13 --> n1 : requires
+n16 --> n11 : requires
+n7 --> n14 : requires
+n7 --> n1 : requires
+n2 --> n4 : requires
+n15 --> n3 : requires
+n15 --> n0 : requires
+n0 --> n3 : requires
+n17 --> n11 : requires
+note bottom : Parent level-4
+note bottom : Child level-6
+@enduml

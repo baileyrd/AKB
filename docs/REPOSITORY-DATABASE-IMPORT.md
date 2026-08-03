@@ -1,3 +1,13 @@
+---
+id: doc:volume-11:repository-database-import
+title: Repository Database Archive Import
+volume: 11
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Repository Database Archive Import
 
 `tools/import_repository_db.py` reads pacman repository database archives

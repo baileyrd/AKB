@@ -53,7 +53,13 @@ const byId = Object.fromEntries(data.entities.map(item => [item.id, item]));
 const esc = value => String(value).replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
 const route = id => '#/object/' + encodeURIComponent(id);
 const isDependency = edge => edge.type.includes('depends-on') || edge.type === 'requires' || edge.type === 'imports-dll';
-const views = {layers:['layer'], packages:['package','package-artifact'], artifacts:['dll','executable','import-library','static-library','filesystem-path'], libraries:['library','dll','import-library','static-library'], runtimes:['runtime','environment','crt','abi'], toolchains:['toolchain','compiler','linker','debugger','build-system'], repositories:['repository','mirror','source-repository'], evidenced:[]};
+// A view projects the graph by entity kind, by tag, or by both. Toolchain
+// tools are modelled as components carrying a toolchain/build-system tag
+// rather than as a dedicated kind, so a kind-only projection renders that
+// view empty while the objects exist. Keep in sync with EXPLORER_VIEWS in
+// tests/test_roadmap_claims.py.
+const views = {layers:{kinds:['layer']}, packages:{kinds:['package','package-artifact']}, artifacts:{kinds:['dll','executable','import-library','static-library','filesystem-path']}, libraries:{kinds:['library','dll','import-library','static-library']}, runtimes:{kinds:['runtime','environment','crt','abi']}, toolchains:{kinds:['toolchain','compiler','linker','debugger','build-system'], tags:['toolchain','compiler','linker','debugger','build-system']}, repositories:{kinds:['repository','mirror','source-repository']}, evidenced:{}};
+const inView = (entry, spec) => (spec.kinds || []).includes(entry.kind) || (spec.tags || []).some(tag => (entry.tags || []).includes(tag));
 const viewRoute = name => '#/view/' + name;
 const graphViewRoute = name => '#/graph/' + name;
 const graphNodeRoute = id => '#/graph-node/' + encodeURIComponent(id);
@@ -163,9 +169,9 @@ function renderGraph(root, seedIds, title, opts) {
 }
 function graphViewMembers(name) {
   if (name === '__all__') return data.entities.map(entry => entry.id);
-  const kinds = views[name];
-  if (!kinds) return null;
-  return (name === 'evidenced' ? data.entities.filter(entry => (entry.evidence_refs || []).length) : data.entities.filter(entry => kinds.includes(entry.kind))).map(entry => entry.id);
+  const spec = views[name];
+  if (!spec) return null;
+  return (name === 'evidenced' ? data.entities.filter(entry => (entry.evidence_refs || []).length) : data.entities.filter(entry => inView(entry, spec))).map(entry => entry.id);
 }
 function render() {
   const hash = location.hash || '#/';
@@ -190,7 +196,7 @@ function render() {
     renderGraph(root, members, name, {});
     return;
   }
-  if (hash.startsWith('#/view/')) { const kinds = views[view]; if (!kinds) { root.innerHTML = `${viewLinks()}<h1>Unknown view</h1><p><a href="#/">Return to the explorer index.</a></p>`; return; } const members = view === 'evidenced' ? data.entities.filter(entry => (entry.evidence_refs || []).length) : data.entities.filter(entry => kinds.includes(entry.kind)); root.innerHTML = `${viewLinks()}<nav aria-label="Breadcrumb"><a href="#/">Explorer</a> / <span aria-current="page">${esc(view)}</span></nav><h1>${esc(view)} view <a class="graph-link" href="${graphViewRoute(view)}">View as graph</a></h1><p>${members.length} ${view === 'evidenced' ? 'objects with attached evidence' : 'typed objects'}.</p><ul>${members.map(entry => `<li><a href="${route(entry.id)}">${esc(entry.name)}</a> <code>${esc(entry.kind)}</code></li>`).join('') || '<li>No objects in the current projection.</li>'}</ul>`; return; }
+  if (hash.startsWith('#/view/')) { const spec = views[view]; if (!spec) { root.innerHTML = `${viewLinks()}<h1>Unknown view</h1><p><a href="#/">Return to the explorer index.</a></p>`; return; } const members = view === 'evidenced' ? data.entities.filter(entry => (entry.evidence_refs || []).length) : data.entities.filter(entry => inView(entry, spec)); root.innerHTML = `${viewLinks()}<nav aria-label="Breadcrumb"><a href="#/">Explorer</a> / <span aria-current="page">${esc(view)}</span></nav><h1>${esc(view)} view <a class="graph-link" href="${graphViewRoute(view)}">View as graph</a></h1><p>${members.length} ${view === 'evidenced' ? 'objects with attached evidence' : 'typed objects'}.</p><ul>${members.map(entry => `<li><a href="${route(entry.id)}">${esc(entry.name)}</a> <code>${esc(entry.kind)}</code></li>`).join('') || '<li>No objects in the current projection.</li>'}</ul>`; return; }
   const item = byId[id];
   if (!item) { root.innerHTML = index(); bindIndex(); return; }
   renderObject(item, id, root);

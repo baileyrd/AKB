@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libnghttp3
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nghttp2:libnghttp3` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | nghttp2 project |
+| Environments | `msys` |
+| Upstream | <https://nghttp2.org/nghttp3> |
+| Packaged as | `package:msys2:libnghttp3` |
+| Version (observed) | 1.18.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 174.6 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nghttp2:libnghttp3-manual-2026-07-30` — nghttp3 project page (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libnghttp3 implements the HTTP/3 protocol as a C library, providing the
@@ -138,6 +166,29 @@ page: header-level API surface and PE import/export-level evidence, per
 the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, remain open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libnghttp3"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["libcurl"]
+    u1 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:nghttp2:libnghttp3` in the composed graph: 2 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -145,3 +196,4 @@ methodology, remain open.
 - [libnghttp2](LIBNGHTTP2.md)
 - [libngtcp2](LIBNGTCP2.md)
 - [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md)
+- [libnghttp3 (CLANG64)](LIBNGHTTP3-CLANG64.md)

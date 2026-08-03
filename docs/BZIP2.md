@@ -12,10 +12,42 @@ evidence_refs:
   - evidence:bzip2:project-site-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # bzip2
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:bzip2:bzip2` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Julian Seward |
+| Environments | `msys` |
+| Upstream | <http://www.bzip.org> |
+| Packaged as | `package:msys2:bzip2` |
+| Version (observed) | 1.0.8-4 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 306.6 KB |
+
+**Evidence on this object**
+
+- `evidence:bzip2:project-site-2026-07-30` — bzip2 and libbzip2 (official project site) (`primary`, retrieved 2026-07-30)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+**Claims about this object**
+
+- `claim:component:bzip2:libbz2-split` (`inference`, `high`) — The MSYS bzip2 CLI package is split from and links against libbz2, its shared compression library, rather than bundling the codec statically.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -128,6 +160,27 @@ the pacman catalog snapshot (`evidence:catalog:current`). Open: whether this
 environment's package includes `bzip2recover` is unconfirmed pending
 package file-inventory evidence.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["bzip2"]
+    d0["libbz2"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:bzip2:bzip2` in the composed graph: 0 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -136,3 +189,5 @@ package file-inventory evidence.
 - [XZ Utils](XZ-UTILS.md)
 - [libbz2](LIBBZ2.md)
 - [Package File Inventory](PACKAGE-FILE-INVENTORY.md)
+- [bzip2 (CLANG64)](BZIP2-CLANG64.md)
+- [bzip2 (UCRT64)](BZIP2-UCRT64.md)

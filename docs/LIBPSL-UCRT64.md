@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # libpsl (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libpsl:libpsl@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libpsl project |
+| Environments | `ucrt64` |
+| Upstream | <https://github.com/rockdaboot/libpsl> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libpsl` |
+| Version (observed) | 0.21.5-3 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 271.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libpsl:manual-2026-07-30` — libpsl (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** libpsl package
@@ -145,6 +173,33 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libpsl (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    d0["GNU gettext"]
+    subject -->|requires| d0
+    d1["GNU libiconv"]
+    subject -->|requires| d1
+    d2["GNU libidn2 (UCRT64)"]
+    subject -->|requires| d2
+    d3["libunistring (UCRT64)"]
+    subject -->|requires| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libpsl:libpsl@ucrt64` in the composed graph: 1 dependent and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -152,3 +207,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [GNU libidn2 (UCRT64)](GNU-LIBIDN2-UCRT64.md)
 - [GNU libunistring (UCRT64)](GNU-LIBUNISTRING-UCRT64.md)
+- [libpsl (CLANG64)](LIBPSL-CLANG64.md)

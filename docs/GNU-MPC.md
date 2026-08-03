@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # GNU MPC
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:multiprecision:mpc` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | The MPC team (Andreas Enge et al.) |
+| Environments | `ucrt64` |
+| Upstream | <https://www.multiprecision.org> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-mpc` |
+| Version (observed) | 1.4.1-1 |
+| License (observed) | spdx:LGPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 549.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:multiprecision:mpc-manual-2026-07-30` — GNU MPC (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 MPC provides multiple-precision complex-number arithmetic, built on both
@@ -120,9 +148,33 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MPC"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    d0["GNU MP (GMP)"]
+    subject -->|requires| d0
+    d1["GNU MPFR"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:multiprecision:mpc` in the composed graph: 1 dependent and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU MP (GMP)](GNU-GMP.md)
 - [GNU MPFR](GNU-MPFR.md)
 - [GCC](GNU-GCC.md)
+- [GNU MPC (CLANG64)](GNU-MPC-CLANG64.md)

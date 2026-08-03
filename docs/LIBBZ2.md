@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # libbz2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:bzip2:libbz2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Julian Seward |
+| Environments | `msys` |
+| Upstream | <http://www.bzip.org> |
+| Packaged as | `package:msys2:libbz2` |
+| Version (observed) | 1.0.8-4 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 65.7 KB |
+
+**Evidence on this object**
+
+- `evidence:bzip2:project-site-2026-07-30` — bzip2 and libbzip2 (official project site) (`primary`, retrieved 2026-07-30)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libbz2 is the Burrows-Wheeler-transform compression codec library split
@@ -158,6 +186,35 @@ header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libbz2"]
+    u0["bzip2"]
+    u0 -->|requires| subject
+    u1["GnuPG"]
+    u1 -->|requires| subject
+    u2["Info-ZIP UnZip"]
+    u2 -->|requires| subject
+    u3["Info-ZIP Zip"]
+    u3 -->|requires| subject
+    u4["file"]
+    u4 -->|requires| subject
+    u5["libarchive (MSYS)"]
+    u5 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:bzip2:libbz2` in the composed graph: 6 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -169,3 +226,5 @@ methodology.
 - [PCRE (MSYS)](PCRE-MSYS.md)
 - [PCRE2 (MSYS)](PCRE2-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [bzip2 (CLANG64)](BZIP2-CLANG64.md)

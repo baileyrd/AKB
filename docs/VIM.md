@@ -8,6 +8,7 @@ model_refs:
   - package:msys2:vim
   - library:libxcrypt:libxcrypt
   - library:gnu:libintl
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -18,6 +19,38 @@ last_verified: 2026-07-30
 ---
 
 # Vim
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:vim:vim` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Bram Moolenaar / Vim community |
+| Environments | `msys` |
+| Upstream | <https://www.vim.org> |
+| Packaged as | `package:msys2:vim` |
+| Version (observed) | 9.2.0858-1 |
+| License (observed) | spdx:Vim |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 61.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:vim:documentation-2026-07-30` — Vim (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:vim:perl-integration` (`inference`, `high`) — Vim's dependency on perl reflects optional built-in Perl-interpreter integration, enabling embedded Perl scripting via :perl.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -63,7 +96,7 @@ The catalog snapshot records five `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Password/crypt hashing | `package:msys2:libxcrypt` | Backs Vim's built-in file-encryption feature (`:X`, `-x`), which uses `crypt()`-family hashing. Documented fully in [libxcrypt](LIBXCRYPT.md). |
 | Embedded Perl scripting | `package:msys2:perl` | Backs optional built-in Perl-interpreter integration, enabling embedded scripting via `:perl` (`claim:component:vim:perl-integration`), an equivalent feature category to Vim's optional Python/Lua/Ruby interpreter integrations. |
@@ -135,6 +168,33 @@ snapshot (`evidence:catalog:current`) via
 integrations beyond Perl are compiled into this build has not been directly
 observed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Vim"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["GNU libiconv (MSYS)"]
+    subject -->|requires| d1
+    d2["GNU libintl"]
+    subject -->|requires| d2
+    d3["libxcrypt"]
+    subject -->|requires| d3
+    d4["msys-2.0.dll"]
+    subject -->|uses-runtime| d4
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:vim:vim` in the composed graph: 0 dependents and 5 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -142,5 +202,6 @@ observed.
 - [GNU Ed](GNU-ED.md)
 - [GNU Nano](GNU-NANO.md)
 - [GNU Emacs](GNU-EMACS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [libxcrypt](LIBXCRYPT.md)
 - [GNU libintl](GNU-LIBINTL.md)

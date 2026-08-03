@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # GNU MPFR (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:mpfr@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `msys` |
+| Upstream | <https://www.mpfr.org/> |
+| Packaged as | `package:msys2:mpfr` |
+| Version (observed) | 4.2.2-1 |
+| License (observed) | spdx:LGPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 852.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:mpfr-manual-2026-07-30` — GNU MPFR (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** MPFR package (`mpfr`)
@@ -142,9 +170,31 @@ API surface and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MPFR (MSYS)"]
+    u0["GNU Awk (gawk)"]
+    u0 -->|requires| subject
+    d0["GNU MP (MSYS)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:mpfr@msys` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU MPFR (UCRT64)](GNU-MPFR.md)
 - [GNU MP (MSYS)](GNU-GMP-MSYS.md)
 - [gawk](GNU-AWK.md)
+- [GNU MPFR (CLANG64)](GNU-MPFR-CLANG64.md)

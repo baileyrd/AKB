@@ -26,6 +26,38 @@ last_verified: 2026-07-30
 
 # GDB
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:gdb` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/gdb/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gdb` |
+| Version (observed) | 17.2-1 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 15.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gdb-manual-2026-07-30` — GNU Debugger (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:gdb:python-scripting` (`inference`, `high`) — GDB's dependency on python backs its Python scripting API (pretty-printers, gdb.execute), and its optional dependency on python-pygments backs syntax-highlighted source-code display.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GDB is the default debugger for GCC-oriented MinGW-w64 environments,
@@ -153,6 +185,39 @@ pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:gdb:python-scripting`. Open: the exact Windows-debugging-API
 mechanism GDB uses on this platform (versus its more commonly documented
 ptrace-based backend) has not been directly observed.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GDB"]
+    d0["Zstandard (library)"]
+    subject -->|requires| d0
+    d1["GNU gettext"]
+    subject -->|requires| d1
+    d2["GNU MP (GMP)"]
+    subject -->|requires| d2
+    d3["GNU libiconv"]
+    subject -->|requires| d3
+    d4["GNU MPFR"]
+    subject -->|requires| d4
+    d5["ncurses (UCRT64)"]
+    subject -->|requires| d5
+    d6["GNU Readline"]
+    subject -->|requires| d6
+    d7["zlib"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:gdb` in the composed graph: 0 dependents and 11 dependencies, of which 3 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -26,6 +26,34 @@ last_verified: 2026-07-30
 
 # GnuTLS
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnutls:gnutls` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuTLS project |
+| Environments | `msys` |
+| Upstream | <https://www.gnutls.org/> |
+| Packaged as | `package:msys2:libgnutls` |
+| Version (observed) | 3.8.13-2 |
+| License (observed) | spdx:GPL-3.0-or-later;spdx:LGPL-2.1-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 3.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnutls:manual-2026-07-30` — GnuTLS (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GnuTLS implements TLS/SSL and related cryptographic protocols, and it is
@@ -179,6 +207,43 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, also remain open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GnuTLS"]
+    u0["GNU Emacs"]
+    u0 -->|requires| subject
+    u1["GnuPG"]
+    u1 -->|requires| subject
+    d0["GNU MP (MSYS)"]
+    subject -->|requires| d0
+    d1["GNU libiconv (MSYS)"]
+    subject -->|requires| d1
+    d2["GNU libidn2"]
+    subject -->|requires| d2
+    d3["GNU libintl"]
+    subject -->|requires| d3
+    d4["GNU Libtasn1"]
+    subject -->|requires| d4
+    d5["zlib (MSYS)"]
+    subject -->|requires| d5
+    d6["libnettle"]
+    subject -->|requires| d6
+    d7["p11-kit"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnutls:gnutls` in the composed graph: 2 dependents and 9 dependencies, of which 1 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -195,3 +260,4 @@ methodology, also remain open.
 - [GNU libintl](GNU-LIBINTL.md)
 - [p11-kit](P11-KIT.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

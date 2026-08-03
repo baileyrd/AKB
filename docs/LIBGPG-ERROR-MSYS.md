@@ -22,6 +22,34 @@ last_verified: 2026-07-30
 
 # libgpg-error (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libgpg-error@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://gnupg.org> |
+| Packaged as | `package:msys2:libgpg-error` |
+| Version (observed) | 1.61-1 |
+| License (observed) | spdx:LGPL-2.1-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 814.5 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libgpg-error-manual-2026-07-30` — GnuPG project site (libgpg-error) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** `libgpg-error` package
@@ -87,14 +115,17 @@ dependency.
 ## Reverse Dependencies
 
 The catalog snapshot records 6 relationships targeting
-`package:msys2:libgpg-error`: `package:msys2:gnupg` (a direct catalog
-dependency, though not modeled as a separate graph edge here since
-GnuPG's documented requirement flows through the three libraries above),
+`package:msys2:libgpg-error`: `package:msys2:gnupg`
+(`relationship:ssh-curl-git:gnupg-requires-libgpg-error-msys`, added
+2026-07-30 — a direct catalog dependency, alongside GnuPG's own
+transitive requirement flowing through the three libraries above),
 `package:msys2:libassuan`
 (`relationship:foundation-libraries:libassuan-msys-requires-libgpg-error-msys`),
 `package:msys2:libgcrypt`
 (`relationship:foundation-libraries:libgcrypt-msys-requires-libgpg-error-msys`),
-`package:msys2:libgpgme`, `package:msys2:libksba`
+[GPGME (MSYS)](LIBGPGME-MSYS.md)
+(`relationship:foundation-libraries:libgpgme-requires-libgpg-error`,
+added 2026-08-02), `package:msys2:libksba`
 (`relationship:foundation-libraries:libksba-msys-requires-libgpg-error-msys`),
 and `package:msys2:pinentry`.
 
@@ -151,6 +182,39 @@ record [libgpg-error (UCRT64)](LIBGPG-ERROR.md) cites. Package identity,
 version, and the recorded dependency/dependent edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`).
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libgpg-error (MSYS)"]
+    u0["GnuPG"]
+    u0 -->|requires| subject
+    u1["libassuan (MSYS)"]
+    u1 -->|requires| subject
+    u2["libgcrypt (MSYS)"]
+    u2 -->|requires| subject
+    u3["GPGME (MSYS)"]
+    u3 -->|requires| subject
+    u4["libksba (MSYS)"]
+    u4 -->|requires| subject
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["GNU libintl"]
+    subject -->|requires| d1
+    d2["msys-2.0.dll"]
+    subject -->|uses-runtime| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libgpg-error@msys` in the composed graph: 5 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -160,4 +224,5 @@ pacman catalog snapshot (`evidence:catalog:current`).
 - [libassuan (MSYS)](LIBASSUAN-MSYS.md)
 - [libksba (MSYS)](LIBKSBA-MSYS.md)
 - [GNU libintl](GNU-LIBINTL.md)
+- [GPGME (MSYS)](LIBGPGME-MSYS.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

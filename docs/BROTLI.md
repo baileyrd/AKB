@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # Brotli
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:google:brotli` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Google |
+| Environments | `msys` |
+| Upstream | <https://github.com/google/brotli> |
+| Packaged as | `package:msys2:brotli` |
+| Version (observed) | 1.2.0-1 |
+| License (observed) | MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 984.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:google:brotli-manual-2026-07-30` — Brotli (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Brotli is a general-purpose compression algorithm and library developed
@@ -125,6 +153,27 @@ explicitly out of scope for this page: header-level API surface
 and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Brotli"]
+    u0["libcurl"]
+    u0 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:google:brotli` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

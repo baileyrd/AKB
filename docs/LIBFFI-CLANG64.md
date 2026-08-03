@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # libffi (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libffi:libffi@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libffi project |
+| Environments | `clang64` |
+| Upstream | <https://sourceware.org/libffi> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libffi` |
+| Version (observed) | 3.7.1-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 133.5 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libffi:project-site-2026-07-30` — libffi (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** libffi package
@@ -69,12 +97,15 @@ The CLANG64 `package:msys2:mingw-w64-clang-x86_64-libffi` declares no
 ## Reverse Dependencies
 
 The catalog snapshot records 19 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-libffi`. One is now modeled in
+`package:msys2:mingw-w64-clang-x86_64-libffi`. Two are now modeled in
 this knowledge base: [LLVM libraries](LLVM-LIBS.md)
-(`relationship:foundation-libraries:llvm-libs-requires-libffi-clang64`).
-The remaining ~18 recorded dependents (a broad mix of CLANG64 packages
-including `glib2`, `gobject-introspection`, `python`, `python-cffi`,
-`qemu`, and `ruby`) are not individually modeled in this knowledge
+(`relationship:foundation-libraries:llvm-libs-requires-libffi-clang64`)
+and [p11-kit (CLANG64)](P11-KIT-CLANG64.md)
+(`relationship:foundation-libraries:p11-kit-clang64-requires-libffi-clang64`,
+added 2026-08-02). The remaining ~17 recorded dependents (a broad mix
+of CLANG64 packages including `glib2`, `gobject-introspection`,
+`python`, `python-cffi`, `qemu`, and `ruby`) are not individually
+modeled in this knowledge
 base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
@@ -131,10 +162,31 @@ identity, version, license, and the one modeled dependent edge are
 backed by the pacman catalog snapshot (`evidence:catalog:current`).
 Open: the exact internal LLVM subsystem consuming libffi was not
 directly confirmed. Also explicitly out of scope for this page: the
-~18 remaining recorded dependents not individually modeled, and
+~17 remaining recorded dependents not individually modeled, and
 header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libffi (CLANG64)"]
+    u0["LLVM libraries"]
+    u0 -->|requires| subject
+    u1["p11-kit (CLANG64)"]
+    u1 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libffi:libffi@clang64` in the composed graph: 2 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 
@@ -142,3 +194,4 @@ methodology.
 - [LLVM libraries](LLVM-LIBS.md)
 - [libffi (MSYS)](LIBFFI-MSYS.md)
 - [libffi (UCRT64)](LIBFFI-UCRT64.md)
+- [p11-kit (CLANG64)](P11-KIT-CLANG64.md)

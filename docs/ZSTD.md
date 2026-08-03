@@ -6,6 +6,7 @@ status: partial
 model_refs:
   - component:zstd:zstd
   - package:msys2:zstd
+  - library:facebook:zstd@msys-lib
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -16,6 +17,34 @@ last_verified: 2026-07-30
 ---
 
 # Zstandard (zstd)
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:zstd:zstd` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Meta Platforms / Yann Collet |
+| Environments | `msys` |
+| Upstream | <https://facebook.github.io/zstd/> |
+| Packaged as | `package:msys2:zstd` |
+| Version (observed) | 1.5.7-1 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 757.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zstd:project-site-2026-07-30` — Zstandard (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -59,7 +88,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Codec library | `package:msys2:libzstd` | The `zstd` CLI links against `libzstd`, its shared codec library, following the same library/CLI split pattern documented for [bzip2](BZIP2.md#dependencies) and [XZ Utils](XZ-UTILS.md#dependencies). |
+| Codec library | `package:msys2:libzstd` | The `zstd` CLI links against `libzstd`, its shared codec library, following the same library/CLI split pattern documented for [bzip2](BZIP2.md#dependencies) and [XZ Utils](XZ-UTILS.md#dependencies). Documented fully in [Zstandard (MSYS library)](LIBZSTD-MSYS.md). |
 | C/C++ runtime | `package:msys2:gcc-libs` | Standard GCC-toolchain runtime libraries (`libgcc`/`libstdc++`) for a package built with GCC in this environment. |
 
 ## Reverse Dependencies
@@ -115,6 +144,27 @@ catalog. Package identity, version, license, and dependency edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`). No
 open items beyond the general version-qualified security review noted
 above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Zstandard (zstd)"]
+    d0["Zstandard (MSYS library)"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:zstd:zstd` in the composed graph: 0 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

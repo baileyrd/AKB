@@ -9,15 +9,45 @@ model_refs:
   - component:openssh:openssh
   - library:pjk:libcbor
   - library:gnu:zlib@msys
+  - library:yubico:libfido2@ucrt64
+  - library:yubico:libfido2@clang64
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
   - evidence:yubico:libfido2-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libfido2
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:yubico:libfido2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Yubico |
+| Environments | `msys` |
+| Upstream | <https://developers.yubico.com/libfido2/> |
+| Packaged as | `package:msys2:libfido2` |
+| Version (observed) | 1.17.0-1 |
+| License (observed) | BSD-2-Clause |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 220.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:yubico:libfido2-manual-2026-07-30` — libfido2 (official Yubico developer page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -38,6 +68,9 @@ snapshot), authored by Yubico. A separately packaged, native
 documents the MSYS package specifically, since that is the one
 [OpenSSH](OPENSSH.md#dependencies) actually depends on — the same
 MSYS-vs-native distinction applied consistently across this volume.
+**Update, 2026-08-02**: the native siblings flagged here are now
+modeled — [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md) and
+[libfido2 (CLANG64)](LIBFIDO2-CLANG64.md).
 
 ## Responsibilities
 
@@ -67,20 +100,23 @@ The MSYS `package:msys2:libfido2` declares dependencies on
 [libcbor](LIBCBOR.md) (a CBOR binary-format parsing library used by the
 FIDO2 protocol's own data encoding,
 `relationship:foundation-libraries:libfido2-requires-libcbor`),
-`package:msys2:openssl`, and [zlib (MSYS)](ZLIB-MSYS.md)
+[OpenSSL](OPENSSL.md) (`package:msys2:openssl`,
+`relationship:foundation-libraries:libfido2-requires-openssl` — backs
+FIDO2/U2F cryptographic operations such as ECDSA/EdDSA signature
+verification and hashing; formalized as a graph edge 2026-08-02,
+**correcting** this paragraph's prior statement that it declined to add
+a formal edge here — that rationale did not hold up: this is a real,
+directly-declared, catalog-verified dependency distinct from
+[OpenSSH's](OPENSSH.md#dependencies) own separate, direct dependency on
+the same package, and this volume's practice is to model such edges),
+and [zlib (MSYS)](ZLIB-MSYS.md)
 (`package:msys2:zlib`,
 `relationship:foundation-libraries:libfido2-requires-zlib-msys`) — a
 correction: this paragraph previously (incorrectly) identified the zlib
 dependency as this knowledge base's existing UCRT64
 `library:gnu:zlib` entity; it is in fact the separately versioned MSYS
 package, distinct from both the UCRT64 and CLANG64 zlib siblings this
-knowledge base also documents. `package:msys2:openssl` correctly
-matches this knowledge base's existing `component:openssl:openssl`
-packaged form, though this page does not add a formal `requires` edge
-for it since libfido2's use is a build/runtime linkage rather than a
-documented architectural relationship distinct from
-[OpenSSH's](OPENSSH.md#dependencies) own separate, direct dependency on
-`package:msys2:openssl`.
+knowledge base also documents.
 
 ## Reverse Dependencies
 
@@ -155,6 +191,33 @@ page: header-level API surface and PE import/export-level evidence, per
 the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libfido2"]
+    u0["OpenSSH"]
+    u0 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["zlib (MSYS)"]
+    subject -->|requires| d1
+    d2["libcbor"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:yubico:libfido2` in the composed graph: 1 dependent and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -163,3 +226,5 @@ methodology.
 - [libxcrypt](LIBXCRYPT.md)
 - [libcbor](LIBCBOR.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
+- [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md)
+- [libfido2 (CLANG64)](LIBFIDO2-CLANG64.md)

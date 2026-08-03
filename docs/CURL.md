@@ -25,6 +25,34 @@ last_verified: 2026-07-30
 
 # curl
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:curl:curl` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Daniel Stenberg / curl project |
+| Environments | `msys` |
+| Upstream | <https://curl.se/> |
+| Packaged as | `package:msys2:curl` |
+| Version (observed) | 8.21.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1015.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:curl:project-site-2026-07-30` — curl (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Curl is a multi-protocol command-line file-transfer client, and it is the
@@ -148,6 +176,41 @@ version, license, and all nine dependency edges are backed by the pacman
 catalog snapshot (`evidence:catalog:current`). No open items beyond the
 general version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["curl"]
+    u0["Git (MSYS2 package)"]
+    u0 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["libcurl"]
+    subject -->|requires| d1
+    d2["GNU libunistring"]
+    subject -->|requires| d2
+    d3["zlib (MSYS)"]
+    subject -->|requires| d3
+    d4["libpsl"]
+    subject -->|requires| d4
+    d5["ca-certificates"]
+    subject -->|requires| d5
+    d6["libnghttp2"]
+    subject -->|requires| d6
+    d7["libnghttp3"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:curl:curl` in the composed graph: 1 dependent and 10 dependencies, of which 2 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -162,3 +225,4 @@ general version-qualified security review noted above.
 - [libcurl](LIBCURL.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [ca-certificates](CA-CERTIFICATES.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

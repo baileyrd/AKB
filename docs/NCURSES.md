@@ -8,14 +8,47 @@ model_refs:
   - package:msys2:ncurses
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
+  - library:libedit:libedit
 evidence_refs:
   - evidence:gnu:ncurses-manual-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # ncurses
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:ncurses` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/ncurses/> |
+| Packaged as | `package:msys2:ncurses` |
+| Version (observed) | 6.6-2 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 10.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:ncurses-manual-2026-07-30` — GNU Ncurses (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:ncurses:hub` (`observation`, `verified`) — ncurses is the most-depended-upon package observed in this catalog snapshot among the tools modeled in this knowledge base, reflecting its role as the shared terminal-capability library underlying nearly every interactive text-mode program.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -76,7 +109,10 @@ documented across this volume so far, including bash's 46 at the package
 level for a different reason (bash is depended on broadly as the `sh`
 provider across the whole distribution, while ncurses is depended on
 specifically by interactive text-mode programs). This is the
-directly observed basis for `claim:component:ncurses:hub`. See the
+directly observed basis for `claim:component:ncurses:hub`. Among these,
+[libedit](LIBEDIT.md) is now individually modeled
+(`relationship:foundation-libraries:libedit-requires-ncurses`, added
+2026-08-02). See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -140,6 +176,37 @@ whether this build is the narrow or wide-character variant, and whether
 mintty's terminfo entry is accurate in this environment, are both
 unconfirmed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ncurses"]
+    u0["GNU Emacs"]
+    u0 -->|requires| subject
+    u1["GNU Nano"]
+    u1 -->|requires| subject
+    u2["less"]
+    u2 -->|requires| subject
+    u3["Vim"]
+    u3 -->|requires| subject
+    u4["GNU Readline (MSYS)"]
+    u4 -->|requires| subject
+    u5["libedit"]
+    u5 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:ncurses` in the composed graph: 6 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -149,3 +216,5 @@ unconfirmed.
 - [Vim](VIM.md)
 - [mintty](MINTTY.md)
 - [ncurses (UCRT64)](NCURSES-UCRT64.md)
+- [ncurses (CLANG64)](NCURSES-CLANG64.md)
+- [libedit](LIBEDIT.md)

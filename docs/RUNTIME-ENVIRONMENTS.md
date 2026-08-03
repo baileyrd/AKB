@@ -12,8 +12,7 @@ model_refs:
   - environment:msys2:mingw32
 evidence_refs:
   - evidence:msys2:environments-2026-07-28
-  - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # MSYS2 Runtime Environment Comparison and Migration Matrix
@@ -24,23 +23,34 @@ This page compares the six modeled MSYS2 environments. It is a decision aid,
 not an ABI-compatibility guarantee. Package names, installed artifacts, and
 current tool versions belong to the generated inventory.
 
-The [Level 4 environment matrix](../diagrams/level-4-environment-matrix.svg)
+The [Level 2 subsystem diagram](../diagrams/level-2.svg)
 provides linked navigation for the architecture, CRT, and lifecycle axes.
 
-The linked [Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
+The linked [Level 4 package diagram](../diagrams/level-4.svg)
 shows where this comparison sits: repository metadata and package payloads are
 handled from the MSYS control plane, then project into each native environment.
 
 ## Architectural Classification
 
-| Environment | Prefix | Default toolchain | Architecture | C runtime | C++ library | Lifecycle |
-| --- | --- | --- | --- | --- | --- | --- |
-| MSYS | `/usr` | GCC | x86_64 | Cygwin-compatible runtime | libstdc++ | Active system environment |
-| UCRT64 | `/ucrt64` | GCC | x86_64 | UCRT | libstdc++ | Default recommendation |
-| CLANG64 | `/clang64` | LLVM/Clang + LLD | x86_64 | UCRT | libc++ | Active |
-| CLANGARM64 | `/clangarm64` | LLVM/Clang + LLD | AArch64 | UCRT | libc++ | Active |
-| MINGW64 | `/mingw64` | GCC | x86_64 | MSVCRT | libstdc++ | Deprecated by MSYS2 on 2026-03-15 |
-| MINGW32 | `/mingw32` | GCC | i686 | MSVCRT | libstdc++ | In phase-out |
+Each environment has its own page covering the full attribute set — ABI,
+compiler, runtime, CRT, linker, executable format, package repository,
+strengths, weaknesses, compatibility, and migration strategy. This table is
+the comparison; the pages are the architecture.
+
+| Environment | Prefix | Default toolchain | Architecture | C runtime | C++ library | Packages | Lifecycle |
+| --- | --- | --- | --- | --- | --- | ---: | --- |
+| [MSYS](ENVIRONMENT-MSYS.md) | `/usr` | GCC | x86_64 | Cygwin-compatible runtime | libstdc++ | 798 | Active system environment |
+| [UCRT64](ENVIRONMENT-UCRT64.md) | `/ucrt64` | GCC | x86_64 | UCRT | libstdc++ | 3,898 | Default recommendation |
+| [CLANG64](ENVIRONMENT-CLANG64.md) | `/clang64` | LLVM/Clang + LLD | x86_64 | UCRT | libc++ | 3,822 | Active |
+| [CLANGARM64](ENVIRONMENT-CLANGARM64.md) | `/clangarm64` | LLVM/Clang + LLD | AArch64 | UCRT | libc++ | 3,779 | Active |
+| [MINGW64](ENVIRONMENT-MINGW64.md) | `/mingw64` | GCC | x86_64 | MSVCRT | libstdc++ | 3,100 | Deprecated by MSYS2 on 2026-03-15 |
+| [MINGW32](ENVIRONMENT-MINGW32.md) | `/mingw32` | GCC | i686 | MSVCRT | libstdc++ | 314 | In phase-out |
+
+Package counts are from the current pacman catalog snapshot
+(`evidence:catalog:current`). They are the clearest available signal of
+where packaging effort sits: UCRT64 leads, MINGW64 trails the active
+environments by about 20%, and MINGW32 carries 12× fewer packages than
+UCRT64.
 
 ## Boundaries
 
@@ -100,8 +110,33 @@ on the x86_64 observation host. Per-package availability and exact tool
 versions are time-sensitive and must be answered from a catalog or runtime
 observation.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `environment:msys2:msys` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
+- [MSYS](ENVIRONMENT-MSYS.md)
+- [UCRT64](ENVIRONMENT-UCRT64.md)
+- [CLANG64](ENVIRONMENT-CLANG64.md)
+- [CLANGARM64](ENVIRONMENT-CLANGARM64.md)
+- [MINGW64](ENVIRONMENT-MINGW64.md)
+- [MINGW32](ENVIRONMENT-MINGW32.md)
 - [Runtime observation contract](RUNTIME-OBSERVATION-CONTRACT.md)
 - [Self-updating knowledge base](SELF-UPDATING-KNOWLEDGE-BASE.md)
 - [Master volume index](MASTER-VOLUME-INDEX.md)

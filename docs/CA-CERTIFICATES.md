@@ -18,6 +18,34 @@ evidence_refs:
 
 # ca-certificates
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:mozilla:ca-certificates` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Mozilla |
+| Environments | `msys` |
+| Upstream | <https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/> |
+| Packaged as | `package:msys2:ca-certificates` |
+| Version (observed) | 20250419-1 |
+| License (observed) | MPL;GPL |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mozilla:ca-certificates-manual-2026-07-30` — Mozilla CA Certificate Program (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 ca-certificates is a curated bundle of common Certificate Authority root
@@ -148,6 +176,33 @@ identity, version, and the two modeled dependent edges are backed by
 the pacman catalog snapshot (`evidence:catalog:current`). Open: whether
 other native environments package ca-certificates separately was not
 confirmed.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ca-certificates"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["libcurl"]
+    u1 -->|requires| subject
+    u2["libssh2"]
+    u2 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["p11-kit"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mozilla:ca-certificates` in the composed graph: 3 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

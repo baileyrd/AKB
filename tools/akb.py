@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -17,6 +18,12 @@ CATALOG = ROOT / "model" / "catalog" / "current.json"
 INVENTORY = ROOT / "model" / "inventory" / "current.json"
 RUNTIME = ROOT / "model" / "runtime" / "current.json"
 RECIPES = ROOT / "model" / "recipes" / "current.json"
+# Additive: contributes build-time and check-time relationships only, from the
+# PKGBUILD trees. The recipe is what makepkg consumes, so it is the authority;
+# tools/import_build_dependencies.py reads the same two fields from the
+# repository databases and remains available where recipe trees are not, but
+# only one of the two may be composed or their shared edges double-count.
+RECIPE_DEPENDENCIES = ROOT / "model" / "recipe-dependencies" / "current.json"
 KINDS = ROOT / "model" / "vocabularies" / "entity-kinds.json"
 REL_TYPES = ROOT / "model" / "vocabularies" / "relationship-types.json"
 GENERATED = ROOT / "generated"
@@ -40,7 +47,7 @@ def load_composed_graph() -> dict[str, Any]:
         "claims": list(graph.get("claims", [])),
         "evidence": list(graph.get("evidence", [])),
     }
-    for projection_path in (CATALOG, RECIPES, INVENTORY, RUNTIME):
+    for projection_path in (CATALOG, RECIPES, INVENTORY, RUNTIME, RECIPE_DEPENDENCIES):
         if projection_path.is_file():
             projection = load_json(projection_path)
             for key in composed:
@@ -106,6 +113,17 @@ def validate() -> dict[str, int]:
         if claim["subject"] not in known_entities:
             errors.append(f"{claim['id']}: unknown subject {claim['subject']}")
 
+    # `properties` is free-form, so identifier-valued properties are not
+    # covered by the checks above and a typo in one would pass silently.
+    # packaged_as is the one that carries architectural weight: it binds a
+    # library or component to the catalog package that ships it.
+    for entity in entities:
+        packaged_as = (entity.get("properties") or {}).get("packaged_as")
+        if packaged_as and packaged_as not in known_entities:
+            errors.append(
+                f"{entity['id']}: packaged_as does not resolve: {packaged_as}"
+            )
+
     if errors:
         raise ValidationError("\n".join(errors))
 
@@ -115,6 +133,123 @@ def validate() -> dict[str, int]:
         "claims": len(graph.get("claims", [])),
         "evidence": len(graph.get("evidence", [])),
     }
+
+
+DOCS = ROOT / "docs"
+SOURCE_REGISTRY = ROOT / "evidence" / "source-registry.json"
+
+REQUIRED_FRONTMATTER = ("id", "title", "volume", "status", "last_verified")
+ALLOWED_DOC_STATUS = {"planned", "partial", "verified"}
+FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.S)
+SCALAR_KEY = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*):[ \t]*(.*)$")
+GENERATED_MARKERS = (
+    "<!-- BEGIN GENERATED dependency-subgraph -->",
+    "<!-- END GENERATED dependency-subgraph -->",
+)
+
+
+def parse_frontmatter(text: str) -> dict[str, Any] | None:
+    """Parse the leading YAML block.
+
+    Deliberately minimal rather than a YAML dependency: it reads the scalar
+    keys and the two list forms this project's pages actually use. Anything
+    it cannot read is reported as an error rather than silently skipped.
+    """
+    match = FRONTMATTER.match(text)
+    if not match:
+        return None
+    fields: dict[str, Any] = {}
+    key: str | None = None
+    for line in match.group(1).splitlines():
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if line.startswith((" ", "\t")):
+            stripped = line.strip()
+            if stripped.startswith("- ") and key:
+                fields.setdefault(key, []).append(stripped[2:].strip())
+            continue
+        scalar = SCALAR_KEY.match(line)
+        if not scalar:
+            continue
+        key, value = scalar.group(1), scalar.group(2).strip()
+        if value in ("[]", "{}"):
+            fields[key] = []
+        elif value:
+            fields[key] = value
+        else:
+            fields[key] = []
+    return fields
+
+
+def known_source_ids() -> set[str]:
+    if not SOURCE_REGISTRY.is_file():
+        return set()
+    registry = load_json(SOURCE_REGISTRY)
+    entries = registry if isinstance(registry, list) else registry.get("sources", [])
+    return {entry["id"] for entry in entries if isinstance(entry, dict) and "id" in entry}
+
+
+def validate_docs() -> dict[str, int]:
+    """Validate authored documentation pages against the documentation standard.
+
+    `validate()` operates only on the composed JSON graph and never opens a
+    Markdown file, so a page could reference an entity that does not exist,
+    omit its status, or carry an unbalanced generated block without any check
+    noticing. This closes that gap.
+    """
+    graph = load_composed_graph()
+    known_entities = {item["id"] for item in graph["entities"]}
+    # A page may cite either a graph evidence record or a registered source.
+    known_evidence = {item["id"] for item in graph.get("evidence", [])} | known_source_ids()
+
+    errors: list[str] = []
+    pages = sorted(DOCS.glob("*.md"))
+    for path in pages:
+        name = path.name
+        text = path.read_text(encoding="utf-8")
+
+        fields = parse_frontmatter(text)
+        if fields is None:
+            errors.append(f"{name}: no YAML frontmatter block")
+            continue
+
+        for key in REQUIRED_FRONTMATTER:
+            if key not in fields:
+                errors.append(f"{name}: missing required frontmatter key {key!r}")
+
+        volume = fields.get("volume")
+        if volume is not None:
+            try:
+                number = int(str(volume))
+            except ValueError:
+                errors.append(f"{name}: volume {volume!r} is not an integer")
+            else:
+                if not 1 <= number <= 20:
+                    errors.append(f"{name}: volume {number} outside the twenty-volume range")
+
+        status = fields.get("status")
+        if status is not None and str(status) not in ALLOWED_DOC_STATUS:
+            errors.append(
+                f"{name}: status {status!r} not one of {sorted(ALLOWED_DOC_STATUS)}"
+            )
+
+        for ref in fields.get("model_refs", []) or []:
+            if ref not in known_entities:
+                errors.append(f"{name}: model_ref does not resolve: {ref}")
+        for ref in fields.get("evidence_refs", []) or []:
+            if ref not in known_evidence:
+                errors.append(f"{name}: evidence_ref does not resolve: {ref}")
+
+        begin, end = (text.count(marker) for marker in GENERATED_MARKERS)
+        if begin != end:
+            errors.append(f"{name}: unbalanced generated-block markers ({begin} begin, {end} end)")
+        if begin > 1:
+            errors.append(f"{name}: {begin} generated blocks, expected at most one")
+
+    if errors:
+        raise ValidationError("\n".join(errors))
+
+    return {"pages": len(pages)}
 
 
 def escape_cell(value: object) -> str:
@@ -233,7 +368,9 @@ def generate() -> list[Path]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("validate", "generate", "all"))
+    parser.add_argument(
+        "command", choices=("validate", "validate-docs", "generate", "all")
+    )
     args = parser.parse_args()
 
     try:
@@ -243,6 +380,9 @@ def main() -> int:
                 "Validated "
                 + ", ".join(f"{value} {key}" for key, value in counts.items())
             )
+        if args.command in {"validate-docs", "all"}:
+            counts = validate_docs()
+            print(f"Validated {counts['pages']} documentation pages")
         if args.command in {"generate", "all"}:
             for output in generate():
                 print(f"Generated {output.relative_to(ROOT)}")

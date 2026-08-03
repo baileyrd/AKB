@@ -18,6 +18,38 @@ last_verified: 2026-07-30
 
 # LLD
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:llvm:lld` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | LLVM Project |
+| Environments | `clang64` |
+| Upstream | <https://lld.llvm.org/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-lld` |
+| Version (observed) | 22.1.8-2 |
+| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| Architecture (observed) | any |
+| Installed size (observed) | 50.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:llvm:lld-manual-2026-07-30` — LLD (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:lld:provides-binutils-capability` (`fact`, `verified`) — The MSYS2 lld package declares that it provides the binutils virtual capability in the CLANG64 environment, letting packages that depend on a generic binutils-like toolchain resolve against LLD instead of GNU Binutils.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 LLD is the LLVM project's linker, invoked by [Clang](CLANG.md) as its
@@ -135,6 +167,29 @@ Package identity, version, license, and all recorded dependency edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:lld:provides-binutils-capability`. No open items beyond
 the general version-qualified security review noted above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["LLD"]
+    d0["Zstandard (CLANG64)"]
+    subject -->|requires| d0
+    d1["zlib (CLANG64)"]
+    subject -->|requires| d1
+    d2["LLVM libraries"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:llvm:lld` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

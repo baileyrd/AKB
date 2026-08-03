@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # isl (Integer Set Library)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libisl:isl` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | The isl team (Sven Verdoolaege et al.) |
+| Environments | `ucrt64` |
+| Upstream | <https://libisl.sourceforge.io/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-isl` |
+| Version (observed) | 0.28-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 12.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libisl:manual-2026-07-30` — isl (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Isl manipulates sets and relations of integer points bounded by linear
@@ -122,8 +150,30 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["isl (Integer Set Library)"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    d0["GNU MP (GMP)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libisl:isl` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GNU MP (GMP)](GNU-GMP.md)
 - [GCC](GNU-GCC.md)
+- [isl (CLANG64)](LIBISL-CLANG64.md)

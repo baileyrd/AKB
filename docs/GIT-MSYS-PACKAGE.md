@@ -20,6 +20,39 @@ last_verified: 2026-07-30
 
 # Git (MSYS2 package)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:git:git` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Linus Torvalds / Git community (Junio C Hamano, maintainer) |
+| Environments | `msys` |
+| Upstream | <https://git-scm.com/> |
+| Packaged as | `package:msys2:git` |
+| Version (observed) | 2.55.0-1 |
+| License (observed) | spdx:GPL-2.0-only |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 40.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:git:project-site-2026-07-30` — Git (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:git:msys-package-boundary` (`fact`, `high`) — The git component modeled in this volume is the plain MSYS2-packaged git, distinct from the separately distributed Git for Windows product documented in Volume 9; both distributions track upstream Git 2.55.0 as of their respective 2026-07-29 and 2026-07-30 observations, but have separate package and release provenance.
+- `claim:component:git:nano-fallback-editor` (`inference`, `high`) — Git's runtime dependency on nano reflects its use as a guaranteed-present fallback editor for commit messages and interactive commands when no EDITOR/core.editor/VISUAL is configured, not a build-time requirement of Git's own functionality.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `package:msys2:git`, the plain MSYS2 package for Git —
@@ -151,6 +184,37 @@ pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:git:nano-fallback-editor` and
 `claim:component:git:msys-package-boundary`. No open items beyond the
 general version-qualified security review noted above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Git (MSYS2 package)"]
+    d0["curl"]
+    subject -->|requires| d0
+    d1["OpenSSH"]
+    subject -->|requires| d1
+    d2["OpenSSL"]
+    subject -->|requires| d2
+    d3["GNU libintl"]
+    subject -->|requires| d3
+    d4["Expat (MSYS)"]
+    subject -->|requires| d4
+    d5["PCRE2 (MSYS)"]
+    subject -->|requires| d5
+    d6["msys-2.0.dll"]
+    subject -->|uses-runtime| d6
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:git:git` in the composed graph: 0 dependents and 7 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

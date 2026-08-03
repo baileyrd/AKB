@@ -12,12 +12,44 @@ last_verified: 2026-07-31
 
 # Generated Artifact and Build-Flow Mappings
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Jean-loup Gailly and Mark Adler |
+| Environments | `ucrt64` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-zlib` |
+| Version (observed) | 1.3.2-2 |
+| License (observed) | spdx:Zlib |
+| Architecture (observed) | any |
+| Installed size (observed) | 427.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:zlib:hub` (`observation`, `verified`) — zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 Build-flow mappings explain how a selected source revision and configuration
 produce observed outputs without collapsing distinct stages into one
 ``built-from`` assertion. The canonical graph keeps the recipe, package
 artifact, and installed artifact separate.
 
-The [Level 6 toolchain flow](../diagrams/level-6-toolchain-build-flow.svg)
+The [Level 3 component diagram](../diagrams/level-3.svg)
 links this model to toolchain, artifact, and evidence Explorer views.
 
 ```mermaid
@@ -122,3 +154,36 @@ abstract stage table above, no worked attempt.
 - [Toolchain role model](TOOLCHAIN-ROLE-MODEL.md)
 - [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)
 - [Source code organization](SOURCE-CODE-ORGANIZATION.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    u1["GNU Binutils"]
+    u1 -->|requires| subject
+    u2["GCC"]
+    u2 -->|requires| subject
+    u3["GDB"]
+    u3 -->|requires| subject
+    u4["curl (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libxml2"]
+    u5 -->|requires| subject
+    u6["GnuTLS (UCRT64)"]
+    u6 -->|requires| subject
+    u7["libarchive"]
+    u7 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib` in the composed graph: 13 dependents and 0 dependencies, of which 5 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

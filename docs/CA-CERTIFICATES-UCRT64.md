@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # ca-certificates (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:mozilla:ca-certificates@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Mozilla |
+| Environments | `ucrt64` |
+| Upstream | <https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-ca-certificates` |
+| Version (observed) | 20250419-1 |
+| License (observed) | MPL;GPL |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mozilla:ca-certificates-manual-2026-07-30` — Mozilla CA Certificate Program (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** ca-certificates package
@@ -145,6 +173,27 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["ca-certificates (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    d0["p11-kit (UCRT64)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mozilla:ca-certificates@ucrt64` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -152,3 +201,4 @@ methodology.
 - [curl (UCRT64)](CURL-UCRT64.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [p11-kit (UCRT64)](P11-KIT-UCRT64.md)
+- [ca-certificates (CLANG64)](CA-CERTIFICATES-CLANG64.md)

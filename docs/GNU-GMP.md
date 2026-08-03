@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # GNU MP (GMP)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:gmp` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://gmplib.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gmp` |
+| Version (observed) | 6.3.0-2 |
+| License (observed) | LGPL3;GPL |
+| Architecture (observed) | any |
+| Installed size (observed) | 3.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gmp-manual-2026-07-30` — GNU MP (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GMP provides arbitrary-precision arithmetic on integers, rationals, and
@@ -132,6 +160,37 @@ and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MP (GMP)"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    u1["GDB"]
+    u1 -->|requires| subject
+    u2["GNU MPFR"]
+    u2 -->|requires| subject
+    u3["GnuTLS (UCRT64)"]
+    u3 -->|requires| subject
+    u4["isl (Integer Set Library)"]
+    u4 -->|requires| subject
+    u5["GNU MPC"]
+    u5 -->|requires| subject
+    u6["Nettle"]
+    u6 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:gmp` in the composed graph: 7 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -141,3 +200,4 @@ methodology.
 - [GCC](GNU-GCC.md)
 - [GDB](GNU-GDB.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [GMP (CLANG64)](GNU-GMP-CLANG64.md)

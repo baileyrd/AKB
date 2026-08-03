@@ -118,3 +118,22 @@ DLL-compatibility or loader-resolution claim.
 - [Git for Windows boundary](GIT-FOR-WINDOWS-BOUNDARY.md)
 - [Git for Windows launcher and shell startup](GIT-FOR-WINDOWS-LAUNCHER-STARTUP.md)
 - [MSYS runtime behavior map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS2"]
+    d0["Microsoft Windows"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `ecosystem:msys2:msys2` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

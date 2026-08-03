@@ -1,0 +1,25 @@
+// Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+digraph level_1 {
+  rankdir=TB;
+  node [shape=box style=rounded fontname="sans-serif" fontsize=10];
+  edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
+  label="Level 1 - Layered architecture (9 of 9 objects, ranked by graph degree)";
+  labelloc=t;
+  n0 [label="MSYS2" tooltip="ecosystem:msys2:msys2" URL="../generated/explorer/index.html#/object/ecosystem%3Amsys2%3Amsys2"];
+  n1 [label="Layer 1 — Windows kernel, security, process, and storage services" tooltip="layer:msys2:1-windows-kernel-services" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A1-windows-kernel-services"];
+  n2 [label="Layer 2 — Windows user-mode APIs, console, filesystem, and loader" tooltip="layer:msys2:2-windows-user-mode-apis" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A2-windows-user-mode-apis"];
+  n3 [label="Layer 3 — MSYS POSIX runtime and process adaptation" tooltip="layer:msys2:3-msys-posix-runtime" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A3-msys-posix-runtime"];
+  n4 [label="Layer 4 — MSYS and native runtime environments" tooltip="layer:msys2:4-runtime-environments" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A4-runtime-environments"];
+  n5 [label="Layer 5 — Packages, repositories, and pacman" tooltip="layer:msys2:5-packages-and-repositories" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A5-packages-and-repositories"];
+  n6 [label="Layer 6 — Toolchains and build systems" tooltip="layer:msys2:6-toolchains-and-build-systems" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A6-toolchains-and-build-systems"];
+  n7 [label="Layer 7 — GNU userland, libraries, IDEs, and developer tools" tooltip="layer:msys2:7-userland-and-libraries" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A7-userland-and-libraries"];
+  n8 [label="Layer 8 — Users, applications, and automation" tooltip="layer:msys2:8-users-and-automation" URL="../generated/explorer/index.html#/object/layer%3Amsys2%3A8-users-and-automation"];
+  n0 -> n1 [label="contains"];
+  n0 -> n2 [label="contains"];
+  n0 -> n3 [label="contains"];
+  n0 -> n4 [label="contains"];
+  n0 -> n5 [label="contains"];
+  n0 -> n6 [label="contains"];
+  n0 -> n7 [label="contains"];
+  n0 -> n8 [label="contains"];
+}

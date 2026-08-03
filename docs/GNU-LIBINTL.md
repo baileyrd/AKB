@@ -33,6 +33,34 @@ last_verified: 2026-07-30
 
 # GNU libintl
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libintl` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/gettext/> |
+| Packaged as | `package:msys2:libintl` |
+| Version (observed) | 0.22.5-1 |
+| License (observed) | GPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 108.6 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libintl-manual-2026-07-30` — GNU gettext (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GNU libintl is the runtime half of GNU gettext — the internationalized
@@ -177,6 +205,43 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libintl"]
+    u0["Git (MSYS2 package)"]
+    u0 -->|requires| subject
+    u1["GNU Coreutils"]
+    u1 -->|requires| subject
+    u2["GNU Cpio"]
+    u2 -->|requires| subject
+    u3["GNU Diffutils"]
+    u3 -->|requires| subject
+    u4["GNU Findutils"]
+    u4 -->|requires| subject
+    u5["GNU Awk (gawk)"]
+    u5 -->|requires| subject
+    u6["GNU Grep"]
+    u6 -->|requires| subject
+    u7["GNU Make"]
+    u7 -->|requires| subject
+    d0["GNU libiconv (MSYS)"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libintl` in the composed graph: 19 dependents and 2 dependencies, of which 11 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -198,3 +263,4 @@ methodology.
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
 - [GNU libidn2](GNU-LIBIDN2.md)
 - [p11-kit](P11-KIT.md)
+- [popt (MSYS)](POPT-MSYS.md)

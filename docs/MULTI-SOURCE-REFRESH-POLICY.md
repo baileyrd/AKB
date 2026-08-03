@@ -1,3 +1,13 @@
+---
+id: doc:volume-19:multi-source-refresh-policy
+title: Multi-Source Refresh Policy
+volume: 19
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Multi-Source Refresh Policy
 
 The machine-readable policy in `evidence/refresh-policy.json` assigns a

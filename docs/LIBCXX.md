@@ -17,6 +17,39 @@ last_verified: 2026-07-30
 
 # libc++
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:llvm:libc++` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | LLVM Project |
+| Environments | `clang64`, `ucrt64` |
+| Upstream | <https://libcxx.llvm.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libc++` |
+| Version (observed) | 22.1.8-1 |
+| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| Architecture (observed) | any |
+| Installed size (observed) | 19.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:llvm:libcxx-manual-2026-07-30` — libc++ (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:libcxx:cc-libs-capability` (`fact`, `verified`) — In CLANG64, the libc++ package itself provides the gcc-libs/cc-libs virtual capability, since no separate GCC runtime package exists in that environment; in UCRT64, libc++ instead depends on the cc-libs capability that gcc-libs provides there.
+- `claim:library:libcxx:cross-environment-availability` (`fact`, `verified`) — libc++ is packaged for UCRT64 and MINGW64 as well as CLANG64, meaning a project can opt into libc++ even in a GCC-oriented environment rather than being restricted to libstdc++.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libc++ is the LLVM project's implementation of the C++ standard library,
@@ -35,7 +68,7 @@ the LLVM Project. This page cites the UCRT64 package,
 `package:msys2:mingw-w64-ucrt-x86_64-libc++` (version `22.1.8-1`, license
 `Apache-2.0 WITH LLVM-exception`); separate `mingw-w64-clang-x86_64-libc++`
 and `mingw-w64-x86_64-libc++` packages exist for CLANG64 and MINGW64
-respectively (`claim:library:libcxx-cross-environment-availability`). This
+respectively (`claim:library:libcxx:cross-environment-availability`). This
 page is scoped to Volume 6's package/dependency-level evidence; the fuller
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology (headers, `pkg-config`/CMake metadata, PE import/export
@@ -70,7 +103,7 @@ enumerate.
 
 The catalog snapshot shows an environment-dependent dependency structure
 for libc++, precisely reflecting where a GCC runtime package does and does
-not exist (`claim:library:libcxx-cc-libs-capability`):
+not exist (`claim:library:libcxx:cc-libs-capability`):
 
 | Environment | Dependency | Architectural reason |
 | --- | --- | --- |
@@ -141,8 +174,8 @@ against one C++ library is the documented resolution.
 
 The environment-dependent dependency structure and cross-environment
 packaging are backed by the pacman catalog snapshot
-(`evidence:catalog:current`) via `claim:library:libcxx-cc-libs-capability`
-and `claim:library:libcxx-cross-environment-availability`; the library's
+(`evidence:catalog:current`) via `claim:library:libcxx:cc-libs-capability`
+and `claim:library:libcxx:cross-environment-availability`; the library's
 general architecture is backed by the official libc++ project site
 (`evidence:llvm:libcxx-manual-2026-07-30`). Open, and explicitly out of
 scope for this page: header-level API surface, `pkg-config`/CMake metadata,

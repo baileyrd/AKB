@@ -1,3 +1,13 @@
+---
+id: doc:volume-11:package-archive-analysis
+title: Uninstalled Package Archive Analysis
+volume: 11
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Uninstalled Package Archive Analysis
 
 `tools/analyze_package_archive.py` statically analyzes a downloaded package
@@ -8,7 +18,7 @@ parsers used for installed inventory. It also preserves safe symbolic and hard
 links as path records, so library aliases can be projected as explicit
 `links-to` relationships rather than being silently omitted.
 
-The [Level 5 evidence flow](../diagrams/level-5-package-artifact-evidence.svg)
+The [Level 6 executable and DLL diagram](../diagrams/level-6.svg)
 shows the deliberate boundary between declared repository metadata and
 observed package-payload artifacts.
 

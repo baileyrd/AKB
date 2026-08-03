@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # GNU libunistring (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libunistring@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/libunistring> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libunistring` |
+| Version (observed) | 1.4.2-1 |
+| License (observed) | spdx:LGPL-3.0-or-later OR GPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 6.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libunistring-manual-2026-07-30` — GNU libunistring (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** libunistring package
@@ -144,6 +172,31 @@ and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libunistring (UCRT64)"]
+    u0["GNU libidn2 (UCRT64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (UCRT64)"]
+    u1 -->|requires| subject
+    u2["libpsl (UCRT64)"]
+    u2 -->|requires| subject
+    d0["GNU libiconv"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libunistring@ucrt64` in the composed graph: 3 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -152,3 +205,4 @@ methodology.
 - [libpsl (UCRT64)](LIBPSL-UCRT64.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
 - [GNU libiconv](GNU-LIBICONV.md)
+- [GNU libunistring (CLANG64)](GNU-LIBUNISTRING-CLANG64.md)

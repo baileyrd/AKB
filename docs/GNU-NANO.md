@@ -19,6 +19,34 @@ last_verified: 2026-07-30
 
 # GNU Nano
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:nano` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.nano-editor.org> |
+| Packaged as | `package:msys2:nano` |
+| Version (observed) | 9.1-1 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 3.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:nano-manual-2026-07-30` — GNU Nano (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Nano is a small, easy-to-use full-screen text editor descended from Pico,
@@ -128,6 +156,31 @@ pacman catalog snapshot (`evidence:catalog:current`). Open: the exact
 purpose of the `file` dependency is a medium-confidence inference, not a
 manual-confirmed fact; the unresolved `sh` dependency is explained by
 `generated/unresolved-dependencies.json`, not merely asserted.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Nano"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["file"]
+    subject -->|requires| d1
+    d2["GNU libintl"]
+    subject -->|requires| d2
+    d3["msys-2.0.dll"]
+    subject -->|uses-runtime| d3
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:nano` in the composed graph: 0 dependents and 4 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -21,6 +21,34 @@ last_verified: 2026-07-30
 
 # OpenSSH
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:openssh:openssh` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | OpenBSD Project |
+| Environments | `msys` |
+| Upstream | <https://www.openssh.com/portable.html> |
+| Packaged as | `package:msys2:openssh` |
+| Version (observed) | 10.4p1-1 |
+| License (observed) | spdx:LicenseRef-OpenSSH |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 7.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:openssh:project-site-2026-07-30` — OpenSSH (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 OpenSSH implements the SSH protocol suite for secure remote login, command
@@ -131,6 +159,37 @@ site (`evidence:openssh:project-site-2026-07-30`), matching the
 Package identity, version, license, and all five dependency edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`). No open
 items beyond the general version-qualified security review noted above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["OpenSSH"]
+    u0["Git (MSYS2 package)"]
+    u0 -->|requires| subject
+    d0["OpenSSL"]
+    subject -->|requires| d0
+    d1["Heimdal"]
+    subject -->|requires| d1
+    d2["libedit"]
+    subject -->|requires| d2
+    d3["libxcrypt"]
+    subject -->|requires| d3
+    d4["libfido2"]
+    subject -->|requires| d4
+    d5["msys-2.0.dll"]
+    subject -->|uses-runtime| d5
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:openssh:openssh` in the composed graph: 1 dependent and 6 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

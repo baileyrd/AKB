@@ -18,6 +18,38 @@ last_verified: 2026-07-30
 
 # less
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:greenwood:less` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Mark Nudelman |
+| Environments | `msys` |
+| Upstream | <http://www.greenwoodsoftware.com/less> |
+| Packaged as | `package:msys2:less` |
+| Version (observed) | 704-1 |
+| License (observed) | GPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 306.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:less:project-site-2026-07-30` — less (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:less:pcre-search` (`inference`, `high`) — less's dependency on libpcre2_8 backs Perl-compatible regular-expression support in its search functionality.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Less is a pager: it displays text a screen at a time with backward and
@@ -124,6 +156,29 @@ version, license, and both dependency edges are backed by the pacman
 catalog snapshot (`evidence:catalog:current`) via
 `claim:component:less:pcre-search`. No open items beyond the general
 version-qualified security review implied above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["less"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["PCRE2 (MSYS)"]
+    subject -->|requires| d1
+    d2["msys-2.0.dll"]
+    subject -->|uses-runtime| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:greenwood:less` in the composed graph: 0 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

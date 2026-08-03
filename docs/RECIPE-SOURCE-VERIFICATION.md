@@ -1,3 +1,13 @@
+---
+id: doc:volume-12:recipe-source-verification
+title: Recipe Source Verification
+volume: 12
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Recipe Source Verification
 
 `tools/verify_recipe_sources.py` reads `recipes.jsonl` from the static deep

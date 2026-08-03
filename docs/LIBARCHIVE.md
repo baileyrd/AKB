@@ -14,14 +14,45 @@ model_refs:
   - library:facebook:zstd
   - library:tukaani:liblzma
   - library:openssl:openssl@ucrt64
+  - library:bzip2:bzip2@ucrt64
+  - library:lz4:lz4@ucrt64
+  - library:blake2:libb2@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:libarchive:manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libarchive
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:libarchive:libarchive` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | libarchive project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.libarchive.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libarchive` |
+| Version (observed) | 3.8.8-2 |
+| License (observed) | spdx:BSD-2-Clause |
+| Architecture (observed) | any |
+| Installed size (observed) | 5.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:libarchive:manual-2026-07-30` — libarchive (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -99,12 +130,17 @@ library-entity pages of their own, and the three missing edges
 (`relationship:toolchain:libarchive-requires-zstd`,
 `relationship:toolchain:libarchive-requires-liblzma`,
 `relationship:toolchain:libarchive-requires-openssl-ucrt64`) are added.
-The remaining three —
-`mingw-w64-ucrt-x86_64-bzip2`, `mingw-w64-ucrt-x86_64-libb2`, and
-`mingw-w64-ucrt-x86_64-lz4` —
-remain UCRT64-native packages not individually modeled as their own
-library entities in this knowledge base, so no formal `requires` edges
-are added for them.
+Of the remaining three, **correction, 2026-08-02**: all three are now
+individually modeled and their edges added — [bzip2 (UCRT64)](BZIP2-UCRT64.md)
+(`relationship:foundation-libraries:libarchive-requires-bzip2-ucrt64`,
+backing the bzip2 compression filter within libarchive's supported
+archive formats), [LZ4 (UCRT64)](LZ4-UCRT64.md)
+(`relationship:foundation-libraries:libarchive-requires-lz4-ucrt64`,
+backing the LZ4 compression filter), and
+[BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md)
+(`relationship:foundation-libraries:libarchive-requires-libb2-ucrt64`,
+backing BLAKE2-based checksum support) — reaching full 10/10 catalog
+dependency coverage for this UCRT64 package.
 
 ## Reverse Dependencies
 
@@ -173,19 +209,58 @@ project site (`evidence:libarchive:manual-2026-07-30`), matching the
 `project_url` already recorded for
 `package:msys2:mingw-w64-ucrt-x86_64-libarchive` in the catalog. Package
 identity, version, and the recorded dependency/dependent edges are backed
-by the pacman catalog snapshot (`evidence:catalog:current`). Open:
-whether other native environments package libarchive separately was not
-confirmed. Also explicitly out of scope for this page: the six
+by the pacman catalog snapshot (`evidence:catalog:current`). **Update,
+2026-08-02**: the MSYS environment does package libarchive separately —
+see [libarchive (MSYS)](LIBARCHIVE-MSYS.md), a distinct catalog entity
+now modeled in this knowledge base with its own, wider dependency set.
+Also explicitly out of scope for this page: the six
 UCRT64-native compression/crypto sub-dependencies not individually
 modeled as separate components in this knowledge base, and header-level
 API surface plus PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libarchive"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    d0["BLAKE2 (libb2) (UCRT64)"]
+    subject -->|requires| d0
+    d1["bzip2 (UCRT64)"]
+    subject -->|requires| d1
+    d2["Zstandard (library)"]
+    subject -->|requires| d2
+    d3["GNU libiconv"]
+    subject -->|requires| d3
+    d4["zlib"]
+    subject -->|requires| d4
+    d5["Expat"]
+    subject -->|requires| d5
+    d6["LZ4 (UCRT64)"]
+    subject -->|requires| d6
+    d7["OpenSSL (UCRT64)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:libarchive:libarchive` in the composed graph: 1 dependent and 10 dependencies, of which 2 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [CMake](CMAKE.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
 - [Expat](EXPAT.md)
 - [GNU libiconv](GNU-LIBICONV.md)
 - [PCRE2](PCRE2.md)
@@ -193,3 +268,6 @@ methodology.
 - [Zstandard (library)](LIBZSTD.md)
 - [liblzma (UCRT64)](LIBLZMA.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+- [bzip2 (UCRT64)](BZIP2-UCRT64.md)
+- [LZ4 (UCRT64)](LZ4-UCRT64.md)
+- [BLAKE2 (libb2) (UCRT64)](LIBB2-UCRT64.md)

@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # zlib (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | zlib project |
+| Environments | `clang64` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-zlib` |
+| Version (observed) | 1.3.2-2 |
+| License (observed) | spdx:Zlib |
+| Architecture (observed) | any |
+| Installed size (observed) | 382.6 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** zlib package
@@ -144,6 +172,39 @@ modeled, and header-level API surface / PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib (CLANG64)"]
+    u0["LLD"]
+    u0 -->|requires| subject
+    u1["LLDB"]
+    u1 -->|requires| subject
+    u2["curl (CLANG64)"]
+    u2 -->|requires| subject
+    u3["libxml2 (CLANG64)"]
+    u3 -->|requires| subject
+    u4["GnuTLS (CLANG64)"]
+    u4 -->|requires| subject
+    u5["libarchive (CLANG64)"]
+    u5 -->|requires| subject
+    u6["libssh2 (CLANG64)"]
+    u6 -->|requires| subject
+    u7["LLVM libraries"]
+    u7 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib@clang64` in the composed graph: 10 dependents and 0 dependencies, of which 2 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -22,6 +22,34 @@ last_verified: 2026-07-30
 
 # GNU libiconv (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libiconv@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/libiconv/> |
+| Packaged as | `package:msys2:libiconv` |
+| Version (observed) | 1.19-1 |
+| License (observed) | LGPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libiconv-manual-2026-07-30` — GNU libiconv (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** GNU libiconv package
@@ -80,7 +108,7 @@ The catalog snapshot records no `runtime-depends-on` edges for
 The catalog snapshot records 59 relationships targeting
 `package:msys2:libiconv` — tied with [GNU libintl's](GNU-LIBINTL.md) own
 count as the widest MSYS-only reverse-dependency footprint found this
-session. Seven are already modeled in this knowledge base:
+session. Twelve are already modeled in this knowledge base:
 `package:msys2:libgnutls`
 (`relationship:foundation-libraries:gnutls-msys-requires-libiconv-msys`),
 `package:msys2:gnupg`
@@ -93,10 +121,22 @@ session. Seven are already modeled in this knowledge base:
 (`relationship:foundation-libraries:libunistring-requires-libiconv-msys`),
 `package:msys2:libgpg-error`
 (`relationship:foundation-libraries:libgpg-error-msys-requires-libiconv-msys`),
-and `package:msys2:xz`
-(`relationship:archive-compression:xz-requires-libiconv-msys`, added
-2026-07-30, documented fully in [XZ Utils](XZ-UTILS.md)).
-The remaining ~52 recorded dependents (`binutils`, `bison`, `git`'s own
+`package:msys2:xz`
+(`relationship:archive-compression:xz-requires-libiconv-msys`,
+documented fully in [XZ Utils](XZ-UTILS.md)),
+`package:msys2:grep`
+(`relationship:gnu-userland:grep-requires-libiconv-msys`, added
+2026-07-30), `package:msys2:findutils`
+(`relationship:gnu-userland:findutils-requires-libiconv-msys`, added
+2026-07-30), `package:msys2:tar`
+(`relationship:gnu-userland:tar-requires-libiconv-msys`, added
+2026-07-30), `package:msys2:emacs`
+(`relationship:gnu-userland:emacs-requires-libiconv-msys`, added
+2026-07-30), and `package:msys2:vim`
+(`relationship:editors-pagers-terminals:vim-requires-libiconv-msys`,
+added 2026-07-30) — the last five closing gaps each citing page's own
+dependency table had left standing without a corresponding graph edge.
+The remaining ~47 recorded dependents (`binutils`, `bison`, `git`'s own
 build tooling, and many others) are not individually modeled in this
 knowledge base; see the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
@@ -160,6 +200,41 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libiconv (MSYS)"]
+    u0["GNU Coreutils"]
+    u0 -->|requires| subject
+    u1["GNU Emacs"]
+    u1 -->|requires| subject
+    u2["GNU Findutils"]
+    u2 -->|requires| subject
+    u3["GNU Grep"]
+    u3 -->|requires| subject
+    u4["GNU Tar"]
+    u4 -->|requires| subject
+    u5["GnuPG"]
+    u5 -->|requires| subject
+    u6["XZ Utils"]
+    u6 -->|requires| subject
+    u7["Vim"]
+    u7 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libiconv@msys` in the composed graph: 14 dependents and 1 dependency, of which 6 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -171,3 +246,10 @@ methodology.
 - [GNU libunistring](GNU-LIBUNISTRING.md)
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
 - [XZ Utils](XZ-UTILS.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [GNU Grep](GNU-GREP.md)
+- [GNU Findutils](GNU-FINDUTILS.md)
+- [GNU Tar](GNU-TAR.md)
+- [GNU Emacs](GNU-EMACS.md)
+- [Vim](VIM.md)
+- [popt (MSYS)](POPT-MSYS.md)

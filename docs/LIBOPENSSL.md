@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libopenssl
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:openssl:libopenssl` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | OpenSSL Project |
+| Environments | `msys` |
+| Upstream | <https://openssl-library.org> |
+| Packaged as | `package:msys2:libopenssl` |
+| Version (observed) | 3.6.3-1 |
+| License (observed) | spdx:Apache-2.0 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 6.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:openssl:project-site-2026-07-30` — OpenSSL (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libopenssl is the OpenSSL runtime library package split from
@@ -157,6 +185,35 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libopenssl"]
+    u0["OpenSSL"]
+    u0 -->|requires| subject
+    u1["Serf"]
+    u1 -->|requires| subject
+    u2["Heimdal runtime libraries"]
+    u2 -->|requires| subject
+    u3["libarchive (MSYS)"]
+    u3 -->|requires| subject
+    u4["libngtcp2"]
+    u4 -->|requires| subject
+    u5["libsasl (MSYS)"]
+    u5 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:openssl:libopenssl` in the composed graph: 6 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -164,3 +221,6 @@ methodology.
 - [Heimdal runtime libraries](HEIMDAL-LIBS.md)
 - [libngtcp2](LIBNGTCP2.md)
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
+- [libsasl (MSYS)](LIBSASL-MSYS.md)
+- [Serf](LIBSERF-MSYS.md)

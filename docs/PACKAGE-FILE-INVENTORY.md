@@ -14,6 +14,38 @@ last_verified: 2026-07-31
 
 # Package-to-File Inventory Model
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Jean-loup Gailly and Mark Adler |
+| Environments | `ucrt64` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-zlib` |
+| Version (observed) | 1.3.2-2 |
+| License (observed) | spdx:Zlib |
+| Architecture (observed) | any |
+| Installed size (observed) | 427.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:zlib:hub` (`observation`, `verified`) — zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 The package-to-file inventory maps a package record to package-owned paths
 within a verified inventory snapshot. It deliberately separates a declared
 repository file manifest, a file found under a local installation root, and
@@ -128,3 +160,36 @@ analyzed) or extend beyond these three packages.
 - [Repository-to-package inventory](REPOSITORY-PACKAGE-INVENTORY.md)
 - [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)
 - [Build artifact and flow mappings](BUILD-ARTIFACT-FLOW-MAPPINGS.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    u1["GNU Binutils"]
+    u1 -->|requires| subject
+    u2["GCC"]
+    u2 -->|requires| subject
+    u3["GDB"]
+    u3 -->|requires| subject
+    u4["curl (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libxml2"]
+    u5 -->|requires| subject
+    u6["GnuTLS (UCRT64)"]
+    u6 -->|requires| subject
+    u7["libarchive"]
+    u7 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib` in the composed graph: 13 dependents and 0 dependencies, of which 5 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

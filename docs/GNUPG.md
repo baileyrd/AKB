@@ -29,6 +29,34 @@ last_verified: 2026-07-30
 
 # GnuPG
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnupg:gnupg` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Werner Koch / GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://gnupg.org/> |
+| Packaged as | `package:msys2:gnupg` |
+| Version (observed) | 2.4.9-1 |
+| License (observed) | GPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 11.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:project-site-2026-07-30` — GnuPG (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 GnuPG implements the OpenPGP standard for encryption, decryption, and
@@ -78,7 +106,7 @@ stack plus archive, terminal, and database libraries:
 | --- | --- | --- |
 | Symmetric/public-key cryptography | `package:msys2:libgcrypt` | GnuPG's primary low-level cryptographic library, independent of OpenSSL's. Documented fully in [libgcrypt (MSYS)](LIBGCRYPT-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libgcrypt](LIBGCRYPT.md) package, which GnuPG does not actually depend on. |
 | Low-level crypto primitives | `package:msys2:nettle` | Backs additional cryptographic primitives; a different MSYS-packaged catalog entity from the UCRT64 Nettle library documented as a GnuTLS dependency for [GNU Emacs](GNU-EMACS.md#dependencies). Documented fully in [Nettle (MSYS)](NETTLE-MSYS.md) — corrected 2026-07-30 from an earlier link to the UCRT64 [Nettle](NETTLE.md) package. |
-| GnuPG error codes | `package:msys2:libgpg-error` | Shared error-code definitions used across the GnuPG project's own library stack. Documented fully in [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md). |
+| GnuPG error codes | `package:msys2:libgpg-error` | Shared error-code definitions used across the GnuPG project's own library stack (`relationship:ssh-curl-git:gnupg-requires-libgpg-error-msys`, added 2026-07-30). Documented fully in [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md). |
 | IPC between GnuPG components | `package:msys2:libassuan` | Backs the Assuan IPC protocol GnuPG uses for communication between `gpg`, `dirmngr`, and other GnuPG-family helper processes. Documented fully in [libassuan (MSYS)](LIBASSUAN-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libassuan](LIBASSUAN.md) package. |
 | Certificate/CMS handling | `package:msys2:libksba` | Backs X.509/CMS certificate parsing, used specifically by GnuPG's S/MIME support (`gpgsm`) despite GnuPG's primary focus being OpenPGP rather than X.509. Documented fully in [libksba (MSYS)](LIBKSBA-MSYS.md) — corrected 2026-07-30 from an earlier link to the separately versioned UCRT64 [libksba](LIBKSBA.md) package. |
 | Threading | `package:msys2:libnpth` | GnuPG's own portable threading library (New/Nth Pth), used internally for concurrent operations. Documented fully in [nPth (MSYS)](NPTH-MSYS.md) — corrected 2026-07-30 from an earlier link to the UCRT64 [nPth](NPTH.md) package. |
@@ -88,7 +116,7 @@ stack plus archive, terminal, and database libraries:
 | Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | Native-language messages | `package:msys2:libintl` | gettext-based message translation (NLS). Documented fully in [GNU libintl](GNU-LIBINTL.md). |
 | Interactive line editing | `package:msys2:libreadline` | Backs interactive prompts in GnuPG's command-line tools. Documented fully in [GNU Readline (MSYS)](GNU-READLINE-MSYS.md). |
-| Key/passphrase database | `package:msys2:libsqlite` | Backs GnuPG's key- and trust-database storage. |
+| Key/passphrase database | `package:msys2:libsqlite` | Backs GnuPG's key- and trust-database storage (`relationship:ssh-curl-git:gnupg-requires-libsqlite`, added 2026-08-02). Documented fully in [libsqlite (MSYS)](LIBSQLITE-MSYS.md). |
 | Passphrase entry | `package:msys2:pinentry` | A separate, dedicated program GnuPG launches to securely prompt for passphrases, keeping passphrase entry isolated from the calling terminal/application. |
 
 An optional dependency on `curl` (distinct from the `libcurl` runtime
@@ -96,7 +124,12 @@ dependency above) backs the `gpg2keys_curl` key-fetching helper.
 
 ## Reverse Dependencies
 
-The snapshot records 4 relationships targeting `package:msys2:gnupg`. See
+The snapshot records 4 relationships targeting `package:msys2:gnupg`.
+One is now modeled in this knowledge base:
+[GPGME (MSYS)](LIBGPGME-MSYS.md)
+(`relationship:foundation-libraries:libgpgme-requires-gnupg`, added
+2026-08-02 — GPGME wraps and delegates to GnuPG's own OpenPGP/CMS
+engines). See
 the [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -163,6 +196,41 @@ versioned MSYS siblings, now corrected and documented on the `(MSYS)`
 pages linked in Dependencies above. No open items beyond the general
 version-qualified security review noted above.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GnuPG"]
+    u0["GPGME (MSYS)"]
+    u0 -->|requires| subject
+    d0["libbz2"]
+    subject -->|requires| d0
+    d1["libcurl"]
+    subject -->|requires| d1
+    d2["GNU libiconv (MSYS)"]
+    subject -->|requires| d2
+    d3["GNU libintl"]
+    subject -->|requires| d3
+    d4["GNU Readline (MSYS)"]
+    subject -->|requires| d4
+    d5["zlib (MSYS)"]
+    subject -->|requires| d5
+    d6["libassuan (MSYS)"]
+    subject -->|requires| d6
+    d7["libgcrypt (MSYS)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnupg:gnupg` in the composed graph: 1 dependent and 15 dependencies, of which 7 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -179,6 +247,8 @@ version-qualified security review noted above.
 - [GNU libintl](GNU-LIBINTL.md)
 - [libcurl](LIBCURL.md)
 - [GNU Readline (MSYS)](GNU-READLINE-MSYS.md)
+- [libsqlite (MSYS)](LIBSQLITE-MSYS.md)
+- [GPGME (MSYS)](LIBGPGME-MSYS.md)
 - [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [libbz2](LIBBZ2.md)

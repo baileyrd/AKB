@@ -1,0 +1,43 @@
+// Generated from the composed model by tools/build_diagrams.py - do not edit by hand.
+digraph level_5 {
+  rankdir=TB;
+  node [shape=box style=rounded fontname="sans-serif" fontsize=10];
+  edge [fontname="sans-serif" fontsize=8 color="#8896ab"];
+  label="Level 5 - Libraries (18 of 163 objects, ranked by graph degree)";
+  labelloc=t;
+  n0 [label="GNU libintl" tooltip="library:gnu:libintl" URL="../generated/explorer/index.html#/object/library%3Agnu%3Alibintl"];
+  n1 [label="zlib" tooltip="library:gnu:zlib" URL="../generated/explorer/index.html#/object/library%3Agnu%3Azlib"];
+  n2 [label="libcurl" tooltip="library:curl:libcurl" URL="../generated/explorer/index.html#/object/library%3Acurl%3Alibcurl"];
+  n3 [label="GNU libiconv (MSYS)" tooltip="library:gnu:libiconv@msys" URL="../generated/explorer/index.html#/object/library%3Agnu%3Alibiconv%40msys"];
+  n4 [label="zlib (MSYS)" tooltip="library:gnu:zlib@msys" URL="../generated/explorer/index.html#/object/library%3Agnu%3Azlib%40msys"];
+  n5 [label="curl (UCRT64)" tooltip="library:curl:curl@ucrt64" URL="../generated/explorer/index.html#/object/library%3Acurl%3Acurl%40ucrt64"];
+  n6 [label="GnuTLS" tooltip="library:gnutls:gnutls" URL="../generated/explorer/index.html#/object/library%3Agnutls%3Agnutls"];
+  n7 [label="libarchive" tooltip="library:libarchive:libarchive" URL="../generated/explorer/index.html#/object/library%3Alibarchive%3Alibarchive"];
+  n8 [label="curl (CLANG64)" tooltip="library:curl:curl@clang64" URL="../generated/explorer/index.html#/object/library%3Acurl%3Acurl%40clang64"];
+  n9 [label="GNU gettext" tooltip="library:gnu:gettext" URL="../generated/explorer/index.html#/object/library%3Agnu%3Agettext"];
+  n10 [label="libstdc++" tooltip="library:gnu:libstdc++" URL="../generated/explorer/index.html#/object/library%3Agnu%3Alibstdc%2B%2B"];
+  n11 [label="zlib (CLANG64)" tooltip="library:gnu:zlib@clang64" URL="../generated/explorer/index.html#/object/library%3Agnu%3Azlib%40clang64"];
+  n12 [label="GnuTLS (CLANG64)" tooltip="library:gnutls:gnutls@clang64" URL="../generated/explorer/index.html#/object/library%3Agnutls%3Agnutls%40clang64"];
+  n13 [label="GnuTLS (UCRT64)" tooltip="library:gnutls:gnutls@ucrt64" URL="../generated/explorer/index.html#/object/library%3Agnutls%3Agnutls%40ucrt64"];
+  n14 [label="GNU libiconv" tooltip="library:gnu:libiconv" URL="../generated/explorer/index.html#/object/library%3Agnu%3Alibiconv"];
+  n15 [label="libgpg-error (MSYS)" tooltip="library:gnupg:libgpg-error@msys" URL="../generated/explorer/index.html#/object/library%3Agnupg%3Alibgpg-error%40msys"];
+  n16 [label="libarchive (CLANG64)" tooltip="library:libarchive:libarchive@clang64" URL="../generated/explorer/index.html#/object/library%3Alibarchive%3Alibarchive%40clang64"];
+  n17 [label="LLVM libraries" tooltip="library:llvm:llvm-libs" URL="../generated/explorer/index.html#/object/library%3Allvm%3Allvm-libs"];
+  n8 -> n11 [label="requires"];
+  n5 -> n1 [label="requires"];
+  n9 -> n14 [label="requires"];
+  n12 -> n11 [label="requires"];
+  n6 -> n3 [label="requires"];
+  n6 -> n0 [label="requires"];
+  n6 -> n4 [label="requires"];
+  n13 -> n9 [label="requires"];
+  n13 -> n1 [label="requires"];
+  n16 -> n11 [label="requires"];
+  n7 -> n14 [label="requires"];
+  n7 -> n1 [label="requires"];
+  n2 -> n4 [label="requires"];
+  n15 -> n3 [label="requires"];
+  n15 -> n0 [label="requires"];
+  n0 -> n3 [label="requires"];
+  n17 -> n11 [label="requires"];
+}

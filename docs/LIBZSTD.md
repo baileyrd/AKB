@@ -19,6 +19,34 @@ last_verified: 2026-07-31
 
 # Zstandard (library)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:facebook:zstd` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Meta (Facebook) |
+| Environments | `ucrt64` |
+| Upstream | <https://facebook.github.io/zstd/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-zstd` |
+| Version (observed) | 1.5.7-2 |
+| License (observed) | spdx:BSD-3-Clause OR GPL-2.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 3.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:facebook:zstd-manual-2026-07-30` — Zstandard (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Zstandard (zstd) is a fast lossless compression library, and this page
@@ -194,6 +222,35 @@ are now covered by the 2026-07-31 archive analysis
 in Family Classification above. Still open: the ~92 remaining recorded
 dependents not individually modeled and the separate CLANG64-packaged
 zstd library ([LLD](LLD.md)/[LLDB](LLDB.md) dependency).
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Zstandard (library)"]
+    u0["GNU Binutils"]
+    u0 -->|requires| subject
+    u1["GCC"]
+    u1 -->|requires| subject
+    u2["GDB"]
+    u2 -->|requires| subject
+    u3["curl (UCRT64)"]
+    u3 -->|requires| subject
+    u4["GnuTLS (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libarchive"]
+    u5 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:facebook:zstd` in the composed graph: 6 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libngtcp2 (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nghttp2:libngtcp2@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | nghttp2 project |
+| Environments | `ucrt64` |
+| Upstream | <https://nghttp2.org/ngtcp2> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-ngtcp2` |
+| Version (observed) | 1.24.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.6 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nghttp2:libngtcp2-manual-2026-07-30` — ngtcp2 project page (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** libngtcp2 package
@@ -136,6 +164,29 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libngtcp2 (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    d0["GnuTLS (UCRT64)"]
+    subject -->|requires| d0
+    d1["OpenSSL (UCRT64)"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:nghttp2:libngtcp2@ucrt64` in the composed graph: 1 dependent and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -144,3 +195,4 @@ methodology.
 - [OpenSSL (UCRT64)](OPENSSL-UCRT64.md)
 - [libnghttp3 (UCRT64)](LIBNGHTTP3-UCRT64.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [libngtcp2 (CLANG64)](LIBNGTCP2-CLANG64.md)

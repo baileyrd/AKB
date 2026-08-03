@@ -18,6 +18,38 @@ last_verified: 2026-07-30
 
 # Info-ZIP Zip
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:info-zip:zip` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Info-ZIP |
+| Environments | `msys` |
+| Upstream | <http://www.info-zip.org/Zip.html> |
+| Packaged as | `package:msys2:zip` |
+| Version (observed) | 3.0-5 |
+| License (observed) | BSD |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 473.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:info-zip:zip-manual-2026-07-30` — Info-ZIP Zip (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:zip-family:bzip2-method` (`inference`, `high`) — Zip and UnZip support the bzip2 compression method within .zip archives, explaining their libbz2 dependency.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Zip creates PKZIP-compatible `.zip` archives, combining archiving and
@@ -116,6 +148,27 @@ Package identity, version, license, and the libbz2 dependency are backed by
 the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:zip-family:bzip2-method`. No open items beyond the general
 version-qualified security review implied above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Info-ZIP Zip"]
+    d0["libbz2"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:info-zip:zip` in the composed graph: 0 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -27,6 +27,34 @@ last_verified: 2026-07-30
 
 # GnuTLS (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnutls:gnutls@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuTLS project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnutls.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gnutls` |
+| Version (observed) | 3.8.13-3 |
+| License (observed) | spdx:GPL-3.0-or-later;spdx:LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 14.3 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnutls:manual-2026-07-30` — GnuTLS (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** GnuTLS package
@@ -184,6 +212,41 @@ surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GnuTLS (UCRT64)"]
+    u0["libngtcp2 (UCRT64)"]
+    u0 -->|requires| subject
+    d0["Zstandard (library)"]
+    subject -->|requires| d0
+    d1["GNU gettext"]
+    subject -->|requires| d1
+    d2["GNU MP (GMP)"]
+    subject -->|requires| d2
+    d3["GNU libidn2 (UCRT64)"]
+    subject -->|requires| d3
+    d4["GNU Libtasn1 (UCRT64)"]
+    subject -->|requires| d4
+    d5["libunistring (UCRT64)"]
+    subject -->|requires| d5
+    d6["zlib"]
+    subject -->|requires| d6
+    d7["Brotli (UCRT64)"]
+    subject -->|requires| d7
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnutls:gnutls@ucrt64` in the composed graph: 1 dependent and 11 dependencies, of which 3 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -198,3 +261,4 @@ methodology.
 - [Nettle](NETTLE.md)
 - [GNU MP](GNU-GMP.md)
 - [libwinpthread](LIBWINPTHREAD.md)
+- [GnuTLS (CLANG64)](GNUTLS-CLANG64.md)

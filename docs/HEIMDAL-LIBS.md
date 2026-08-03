@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # Heimdal runtime libraries
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:h5l:heimdal-libs` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Heimdal Project |
+| Environments | `msys` |
+| Upstream | <https://www.h5l.org/> |
+| Packaged as | `package:msys2:heimdal-libs` |
+| Version (observed) | 7.8.0-5 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 2.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:h5l:heimdal-manual-2026-07-30` — Heimdal Kerberos 5 (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `heimdal-libs`, the runtime shared-library half of
@@ -82,8 +110,12 @@ password hashing,
 added 2026-07-30 — correcting a prior version of this paragraph that
 only noted libxcrypt among heimdal-libs' *reverse* dependents' own
 dependency set rather than as heimdal-libs' own direct forward
-dependency). Beyond these three edges, the remainder of this package's
-own dependencies (`libdb`, `libsqlite`) are not individually modeled in
+dependency) — and [libsqlite (MSYS)](LIBSQLITE-MSYS.md) (Kerberos
+credential-cache and database backend support,
+`relationship:foundation-libraries:heimdal-libs-requires-libsqlite`,
+added 2026-08-02, closing this section's own prior "not individually
+modeled" note). Beyond these four edges, the remainder of this
+package's own dependencies (`libdb`) is not individually modeled in
 this knowledge base; this page's scope is otherwise limited to
 confirming and documenting the [Heimdal](HEIMDAL.md) dependency
 relationship.
@@ -94,7 +126,10 @@ The catalog snapshot records 4 relationships targeting
 `package:msys2:heimdal-libs`: `package:msys2:heimdal`
 (`relationship:foundation-libraries:heimdal-requires-heimdal-libs` in
 this knowledge base's graph), its own `-devel` subpackage,
-`package:msys2:libsasl`, and `package:msys2:neomutt`.
+[libsasl (MSYS)](LIBSASL-MSYS.md)
+(`relationship:foundation-libraries:libsasl-requires-heimdal-libs`,
+added 2026-08-02, backing libsasl's GSSAPI mechanism), and
+`package:msys2:neomutt`.
 
 ## Configuration
 
@@ -152,16 +187,49 @@ identity, version, and the modeled dependency edges are backed by the
 pacman catalog snapshot (`evidence:catalog:current`). Open: whether
 other native environments package heimdal-libs separately was not
 confirmed. Also explicitly out of scope for this page: this package's
-remaining `libdb`/`libsqlite` sub-dependencies, and header-level API
+remaining `libdb` sub-dependency, and header-level API
 surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Heimdal runtime libraries"]
+    u0["Heimdal"]
+    u0 -->|requires| subject
+    u1["libsasl (MSYS)"]
+    u1 -->|requires| subject
+    d0["libedit"]
+    subject -->|requires| d0
+    d1["libxcrypt"]
+    subject -->|requires| d1
+    d2["libopenssl"]
+    subject -->|requires| d2
+    d3["libsqlite (MSYS)"]
+    subject -->|requires| d3
+    d4["msys-2.0.dll"]
+    subject -->|uses-runtime| d4
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:h5l:heimdal-libs` in the composed graph: 2 dependents and 5 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [Heimdal](HEIMDAL.md)
 - [OpenSSH](OPENSSH.md)
+- [libsqlite (MSYS)](LIBSQLITE-MSYS.md)
 - [libopenssl](LIBOPENSSL.md)
 - [libedit](LIBEDIT.md)
 - [libxcrypt](LIBXCRYPT.md)
+- [libsasl (MSYS)](LIBSASL-MSYS.md)

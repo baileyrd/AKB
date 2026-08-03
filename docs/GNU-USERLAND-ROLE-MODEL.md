@@ -70,7 +70,7 @@ last_verified: 2026-07-30
 
 # GNU Userland Role Model
 
-The [Level 7 userland and applications view](../diagrams/level-7-userland-applications.svg)
+The [Level 3 component diagram](../diagrams/level-3.svg)
 connects this role model to shell, package, runtime, and Git for Windows paths.
 
 | Component family | Role | Boundary | Per-tool page |
@@ -122,3 +122,22 @@ environment variables as controlled observations when diagnosing behavior.
 
 - [MSYS runtime initialization](MSYS-RUNTIME-INITIALIZATION.md)
 - [Runtime behavior map](MSYS-RUNTIME-BEHAVIOR-MAP.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `environment:msys2:msys` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

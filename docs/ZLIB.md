@@ -21,12 +21,44 @@ last_verified: 2026-07-30
 
 # zlib
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Jean-loup Gailly and Mark Adler |
+| Environments | `ucrt64` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-zlib` |
+| Version (observed) | 1.3.2-2 |
+| License (observed) | spdx:Zlib |
+| Architecture (observed) | any |
+| Installed size (observed) | 427.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:zlib:hub` (`observation`, `verified`) — zlib is the most-depended-upon package observed in this catalog snapshot among all components and libraries modeled in this knowledge base, with 299 recorded reverse dependents, exceeding gcc-libs' 167.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Zlib implements the DEFLATE compression algorithm behind gzip, PKZIP, and
 countless other formats and libraries, and — per this snapshot — it is the
 most-depended-upon package among the components and libraries this
-knowledge base actually models (`claim:library:zlib-hub`), not the
+knowledge base actually models (`claim:library:zlib:hub`), not the
 highest reverse-dependency count in the full generated catalog view,
 where several undocumented packages (Python, glib2, Qt6, Perl) exceed
 it — see Reverse Dependencies below. This page documents its
@@ -48,7 +80,7 @@ analysis) is now applied here — the first library in this knowledge base
 to receive it — via a static analysis of the package archive itself; see
 Interfaces and Evidence below. **Update, 2026-07-31**: a second library,
 [zstd (UCRT64)](LIBZSTD.md#family-classification), now has this same
-treatment. The other 102 documented library pages do not yet have it
+treatment. The other documented library pages — 157 exist as of 2026-08-02 — do not yet have it
 and remain scoped to package/dependency-level evidence only.
 
 ## Responsibilities
@@ -116,7 +148,7 @@ consistent with zlib's small, self-contained, widely portable design.
 The snapshot records **299** relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-zlib` — the largest reverse-dependency
 count of any *modeled* component or library in this knowledge base
-(`claim:library:zlib-hub`), exceeding [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s
+(`claim:library:zlib:hub`), exceeding [gcc-libs](LIBSTDCXX.md#reverse-dependencies)'s
 167 and far exceeding [ncurses](NCURSES.md#reverse-dependencies)'s 40.
 **Correction, 2026-07-30**: this is not the largest count in the full
 generated catalog view — `generated/reverse-dependency-impact.json`
@@ -197,7 +229,7 @@ The compression model is backed by the official zlib manual
 recorded for `package:msys2:mingw-w64-ucrt-x86_64-zlib` in the catalog.
 Package identity, version, license, and the reverse-dependency count are
 backed by the pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:zlib-hub`. The Family Classification section above is
+`claim:library:zlib:hub`. The Family Classification section above is
 backed by a local, hash-verified package-archive static analysis
 (`evidence:zlib:ucrt64-archive-analysis-2026-07-29`), local-only per
 [Local-Only Evidence Retention](LOCAL-EVIDENCE-RETENTION.md) and
@@ -206,6 +238,39 @@ same archive. Still open: no version-qualified CVE review has been
 performed despite this library's unusually wide blast radius; the family
 classification applied here has not yet been applied to the other 103
 documented library pages.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib"]
+    u0["CMake"]
+    u0 -->|requires| subject
+    u1["GNU Binutils"]
+    u1 -->|requires| subject
+    u2["GCC"]
+    u2 -->|requires| subject
+    u3["GDB"]
+    u3 -->|requires| subject
+    u4["curl (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libxml2"]
+    u5 -->|requires| subject
+    u6["GnuTLS (UCRT64)"]
+    u6 -->|requires| subject
+    u7["libarchive"]
+    u7 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib` in the composed graph: 13 dependents and 0 dependencies, of which 5 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

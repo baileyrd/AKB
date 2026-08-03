@@ -59,4 +59,13 @@ if (-not $SkipRuntimeObservation) {
 & $Python (Join-Path $PSScriptRoot "akb.py") all
 if ($LASTEXITCODE -ne 0) { throw "AKB validation or generation failed." }
 
+# Keep this list in step with the "Verify generated indexes are reproducible"
+# step in .github/workflows/validate.yml. CI regenerates all of these and then
+# runs `git diff --exit-code`, so a refresh that skips one leaves the working
+# tree in a state CI rejects.
+foreach ($generator in @("build_explorer.py", "build_diagrams.py", "build_object_diagrams.py", "build_catalog_views.py", "assess_akb_coverage.py")) {
+    & $Python (Join-Path $PSScriptRoot $generator)
+    if ($LASTEXITCODE -ne 0) { throw "$generator failed." }
+}
+
 Write-Host "MSYS2 Architecture Knowledge Base refresh completed."

@@ -1,3 +1,13 @@
+---
+id: doc:volume-19:self-updating-knowledge-base
+title: Self-Updating Knowledge Base Architecture
+volume: 19
+status: partial
+model_refs: []
+evidence_refs: []
+last_verified: 2026-08-02
+---
+
 # Self-Updating Knowledge Base Architecture
 
 ## Purpose

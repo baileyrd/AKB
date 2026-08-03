@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # GNU MP (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:gmp@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `msys` |
+| Upstream | <https://gmplib.org/> |
+| Packaged as | `package:msys2:gmp` |
+| Version (observed) | 6.3.0-2 |
+| License (observed) | LGPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 748.3 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gmp-manual-2026-07-30` — GNU MP (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** GNU Multiple Precision
@@ -142,6 +170,33 @@ modeled, and header-level API surface / PE import/export-level evidence,
 per the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU MP (MSYS)"]
+    u0["GNU Coreutils"]
+    u0 -->|requires| subject
+    u1["GNU MPFR (MSYS)"]
+    u1 -->|requires| subject
+    u2["GnuTLS"]
+    u2 -->|requires| subject
+    u3["libhogweed"]
+    u3 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:gmp@msys` in the composed graph: 4 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -150,3 +205,4 @@ methodology.
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [GNU MPFR (MSYS)](GNU-MPFR-MSYS.md)
 - [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
+- [GMP (CLANG64)](GNU-GMP-CLANG64.md)

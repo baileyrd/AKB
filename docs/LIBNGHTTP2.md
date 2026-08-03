@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # libnghttp2
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nghttp2:libnghttp2` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | nghttp2 project |
+| Environments | `msys` |
+| Upstream | <https://nghttp2.org/> |
+| Packaged as | `package:msys2:libnghttp2` |
+| Version (observed) | 1.69.0-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 165.6 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nghttp2:libnghttp2-manual-2026-07-30` — nghttp2 project site (libnghttp2) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libnghttp2 implements the framing layer of HTTP/2 as a reusable C
@@ -135,6 +163,29 @@ evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology, remain open.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libnghttp2"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["libcurl"]
+    u1 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:nghttp2:libnghttp2` in the composed graph: 2 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -142,3 +193,4 @@ methodology, remain open.
 - [libnghttp3](LIBNGHTTP3.md)
 - [libngtcp2](LIBNGTCP2.md)
 - [libnghttp2 (UCRT64)](LIBNGHTTP2-UCRT64.md)
+- [libnghttp2 (CLANG64)](LIBNGHTTP2-CLANG64.md)

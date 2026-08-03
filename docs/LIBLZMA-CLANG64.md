@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # liblzma (XZ Utils library, CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:tukaani:liblzma@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Tukaani project |
+| Environments | `clang64` |
+| Upstream | <https://tukaani.org/xz> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-xz` |
+| Version (observed) | 5.8.3-1 |
+| License (observed) | spdx:0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 4.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:tukaani:xz-library-manual-2026-07-30` — XZ Utils / liblzma (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** xz package specifically
@@ -136,6 +164,29 @@ gettext-runtime sub-dependency, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["liblzma (XZ Utils library, CLANG6…"]
+    u0["LLDB"]
+    u0 -->|requires| subject
+    u1["libarchive (CLANG64)"]
+    u1 -->|requires| subject
+    d0["GNU gettext (CLANG64)"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:tukaani:liblzma@clang64` in the composed graph: 2 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

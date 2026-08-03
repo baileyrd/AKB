@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # Zstandard (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:facebook:zstd@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Meta (Facebook) |
+| Environments | `clang64` |
+| Upstream | <https://facebook.github.io/zstd/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-zstd` |
+| Version (observed) | 1.5.7-2 |
+| License (observed) | spdx:BSD-3-Clause OR GPL-2.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:facebook:zstd-manual-2026-07-30` — Zstandard (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** Zstandard package
@@ -67,14 +95,19 @@ runtime support.
 ## Reverse Dependencies
 
 The catalog snapshot records 86 relationships targeting
-`package:msys2:mingw-w64-clang-x86_64-zstd`. Two are already modeled in
-this knowledge base: `package:msys2:mingw-w64-clang-x86_64-lld`
-(`relationship:toolchain:lld-requires-zstd-clang64`) and
+`package:msys2:mingw-w64-clang-x86_64-zstd`. Four are already modeled in
+this knowledge base: [curl (CLANG64)](CURL-CLANG64.md)
+(`relationship:foundation-libraries:curl-clang64-requires-zstd-clang64`,
+added 2026-08-02), `package:msys2:mingw-w64-clang-x86_64-lld`
+(`relationship:toolchain:lld-requires-zstd-clang64`),
 `package:msys2:mingw-w64-clang-x86_64-llvm-libs`
 (`relationship:foundation-libraries:llvm-libs-requires-zstd-clang64`,
 correcting [LLVM libraries'](LLVM-LIBS.md) own prior incorrect
 no-dependencies claim; LLDB itself still does not depend on zstd, per
-LLDB's own dependency table). The remaining ~84 recorded dependents (a
+LLDB's own dependency table), and
+[libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+(`relationship:foundation-libraries:libarchive-clang64-requires-zstd-clang64`,
+added 2026-08-02). The remaining ~82 recorded dependents (a
 broad mix of CLANG64 packages, mirroring the UCRT64 sibling's own broad
 reverse-dependency set) are not individually modeled in this knowledge
 base; see the
@@ -130,11 +163,38 @@ site (`evidence:facebook:zstd-manual-2026-07-30`), the same evidence
 record [Zstandard (library)](LIBZSTD.md) cites. Package identity,
 version, and the modeled dependent edge are backed by the pacman
 catalog snapshot (`evidence:catalog:current`). Open, and explicitly out
-of scope for this page: the ~85 remaining recorded dependents not
+of scope for this page: the ~82 remaining recorded dependents not
 individually modeled, and header-level API surface / PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Zstandard (CLANG64)"]
+    u0["LLD"]
+    u0 -->|requires| subject
+    u1["curl (CLANG64)"]
+    u1 -->|requires| subject
+    u2["GnuTLS (CLANG64)"]
+    u2 -->|requires| subject
+    u3["libarchive (CLANG64)"]
+    u3 -->|requires| subject
+    u4["LLVM libraries"]
+    u4 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:facebook:zstd@clang64` in the composed graph: 5 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 
@@ -144,3 +204,5 @@ methodology.
 - [LLD](LLD.md)
 - [LLVM libraries](LLVM-LIBS.md)
 - [zlib (CLANG64)](ZLIB-CLANG64.md)
+- [libarchive (CLANG64)](LIBARCHIVE-CLANG64.md)
+- [curl (CLANG64)](CURL-CLANG64.md)

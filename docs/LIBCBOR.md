@@ -7,15 +7,45 @@ model_refs:
   - library:pjk:libcbor
   - package:msys2:libcbor
   - library:yubico:libfido2
+  - library:pjk:libcbor@ucrt64
+  - library:pjk:libcbor@clang64
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
   - evidence:pjk:libcbor-manual-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # libcbor
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:pjk:libcbor` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | PJK (Pavel Kalvoda) |
+| Environments | `msys` |
+| Upstream | <https://github.com/PJK/libcbor> |
+| Packaged as | `package:msys2:libcbor` |
+| Version (observed) | 0.14.0-2 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 63.8 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:pjk:libcbor-manual-2026-07-30` — libcbor (GitHub project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -92,9 +122,12 @@ key, since the protocol itself is CBOR-encoded end to end.
 
 ## Compatibility and Variants
 
-Whether other native environments (UCRT64, CLANG64, i686) in this
-catalog package libcbor separately was not confirmed while writing this
-page; this is recorded as an open item rather than assumed either way.
+**Correction, 2026-08-02**: this section previously stated it was
+unconfirmed whether other native environments packaged libcbor
+separately. They do: [libcbor (UCRT64)](LIBCBOR-UCRT64.md) and
+[libcbor (CLANG64)](LIBCBOR-CLANG64.md) are now modeled as separate
+catalog entities, each unblocking their own environment's libfido2
+sibling.
 
 ## Security Considerations
 
@@ -125,7 +158,30 @@ API surface and PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libcbor"]
+    u0["libfido2"]
+    u0 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:pjk:libcbor` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [libfido2](LIBFIDO2.md)
+- [libcbor (UCRT64)](LIBCBOR-UCRT64.md)
+- [libcbor (CLANG64)](LIBCBOR-CLANG64.md)

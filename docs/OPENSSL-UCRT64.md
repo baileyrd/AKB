@@ -9,14 +9,43 @@ model_refs:
   - library:curl:curl@ucrt64
   - library:libssh2:libssh2@ucrt64
   - library:mozilla:ca-certificates@ucrt64
+  - library:yubico:libfido2@ucrt64
   - environment:msys2:ucrt64
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
   - evidence:catalog:current
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # OpenSSL (UCRT64)
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:openssl:openssl@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | OpenSSL Project |
+| Environments | `ucrt64` |
+| Upstream | <https://openssl-library.org> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-openssl` |
+| Version (observed) | 3.6.3-1 |
+| License (observed) | spdx:Apache-2.0 |
+| Architecture (observed) | any |
+| Installed size (observed) | 58.9 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:openssl:project-site-2026-07-30` — OpenSSL (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -170,6 +199,33 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["OpenSSL (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    u1["libarchive"]
+    u1 -->|requires| subject
+    u2["libssh2 (UCRT64)"]
+    u2 -->|requires| subject
+    u3["libngtcp2 (UCRT64)"]
+    u3 -->|requires| subject
+    u4["libfido2 (UCRT64)"]
+    u4 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:openssl:openssl@ucrt64` in the composed graph: 5 dependents and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -179,3 +235,5 @@ methodology.
 - [libssh2 (UCRT64)](LIBSSH2-UCRT64.md)
 - [ca-certificates (UCRT64)](CA-CERTIFICATES-UCRT64.md)
 - [libarchive](LIBARCHIVE.md)
+- [libfido2 (UCRT64)](LIBFIDO2-UCRT64.md)
+- [OpenSSL (CLANG64)](OPENSSL-CLANG64.md)

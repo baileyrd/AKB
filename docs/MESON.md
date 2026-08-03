@@ -15,6 +15,38 @@ last_verified: 2026-07-30
 
 # Meson
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:mesonbuild:meson` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Jussi Pakkanen / Meson development team |
+| Environments | `ucrt64` |
+| Upstream | <https://mesonbuild.com/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-meson` |
+| Version (observed) | 1.11.2-1 |
+| License (observed) | spdx:Apache-2.0 |
+| Architecture (observed) | any |
+| Installed size (observed) | 15.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mesonbuild:documentation-2026-07-30` — Meson Build System Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:meson:ninja-backend` (`fact`, `verified`) — Meson's dependency on ninja reflects Ninja as its default and primary build backend: Meson generates build files that Ninja executes rather than compiling directly.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Meson is a high-productivity build-system generator, prioritizing fast
@@ -141,6 +173,25 @@ identity, version, license, and all recorded dependency edges are backed
 by the pacman catalog snapshot (`evidence:catalog:current`) via
 `claim:component:meson:ninja-backend`. No open items beyond the general
 version-qualified security review noted above.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Meson"]
+    d0["pkgconf"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:mesonbuild:meson` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

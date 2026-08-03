@@ -17,6 +17,38 @@ last_verified: 2026-07-30
 
 # GNU Bash
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:bash` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/bash/> |
+| Packaged as | `package:msys2:bash` |
+| Version (observed) | 5.3.015-1 |
+| License (observed) | spdx:GPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 12.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:bash-manual-2026-07-30` — GNU Bash Reference Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:bash:provides-sh` (`fact`, `verified`) — The MSYS bash package provides the `sh` command.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Bash is the shell that fronts every MSYS2 session. This page documents its
@@ -166,6 +198,25 @@ Open: the distribution-patched `/etc/bash.bashrc` startup-file claim above
 is recorded at `medium` confidence and needs a controlled observation against
 an installed package to raise to `verified`; PE import analysis to confirm
 bash's linked runtime libraries is likewise open.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Bash"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:bash` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

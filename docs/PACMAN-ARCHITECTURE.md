@@ -13,8 +13,10 @@ last_verified: 2026-07-31
 
 # Pacman Architecture and Transaction Model
 
-The linked [Level 2 runtime and package flow](../diagrams/level-2-runtime-package-flow.svg)
-separates the repository and payload evidence path from runtime behavior.
+The linked [Level 2 subsystem diagram](../diagrams/level-2.svg) — part of the
+generated [diagram ladder](DIAGRAM-HIERARCHY.md) that replaced the retired
+hand-authored `level-2-runtime-package-flow.svg` — separates the repository and
+payload evidence path from runtime behavior.
 
 ```mermaid
 flowchart LR
@@ -122,3 +124,22 @@ rollback, or repair behavior, which remain untested.
 
 - [Self-updating knowledge base](SELF-UPDATING-KNOWLEDGE-BASE.md)
 - [Domain decomposition](DOMAIN-DECOMPOSITION.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS2"]
+    d0["Microsoft Windows"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `ecosystem:msys2:msys2` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

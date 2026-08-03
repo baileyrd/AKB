@@ -9,6 +9,7 @@ model_refs:
   - library:gnome:libxml2@msys
   - library:gnu:zlib@msys
   - library:nettle:libhogweed@msys
+  - library:gnu:libiconv@msys
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
 evidence_refs:
@@ -19,6 +20,34 @@ last_verified: 2026-07-30
 ---
 
 # GNU Emacs
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:emacs` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/emacs/> |
+| Packaged as | `package:msys2:emacs` |
+| Version (observed) | 30.2-1 |
+| License (observed) | GPL3 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 200.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:emacs-manual-2026-07-30` — GNU Emacs Manual (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -72,7 +101,7 @@ in this volume, each mapping to a specific built-in Emacs feature:
 | Terminal capability library | `package:msys2:ncurses` | Screen drawing and cursor control in this console build, the same shared dependency documented as a hub in [ncurses](NCURSES.md#reverse-dependencies). |
 | Compression support | `package:msys2:zlib` | Backs Emacs' built-in "auto-compression mode," which transparently reads and writes compressed files. Documented fully in [zlib (MSYS)](ZLIB-MSYS.md). |
 | XML/HTML parsing | `package:msys2:libxml2` | Backs Emacs' built-in libxml2-based parsing, used by features such as the `eww` web browser and `libxml-parse-html-region`. Documented fully in [libxml2 (MSYS)](LIBXML2-MSYS.md). |
-| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). |
+| Character-set conversion | `package:msys2:libiconv` | Portable multibyte/character-set handling, matching the same rationale documented for [GNU Coreutils](GNU-COREUTILS.md). Documented fully in [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md). |
 | TLS/network security | `package:msys2:libgnutls` | Backs Emacs' Network Security Manager and TLS-based network connections. Documented fully in [GnuTLS](GNUTLS.md). |
 | Cryptographic primitives | `package:msys2:libhogweed` | Part of the Nettle cryptographic library, a dependency of GnuTLS above rather than a separate Emacs feature in its own right. Documented fully in [Hogweed (MSYS)](LIBHOGWEED-MSYS.md). |
 | Core application framework | `package:msys2:glib2` | GLib event-loop/utility library; this MSYS console build's exact reliance on it (versus being present only for a shared GUI-toolkit build variant) has not been directly confirmed. |
@@ -145,6 +174,37 @@ catalog snapshot (`evidence:catalog:current`). Open: whether this build
 includes a GUI toolkit and the exact role of the `glib2` dependency in this
 specific console-oriented package have not been directly confirmed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Emacs"]
+    d0["ncurses"]
+    subject -->|requires| d0
+    d1["libxml2 (MSYS)"]
+    subject -->|requires| d1
+    d2["GNU libiconv (MSYS)"]
+    subject -->|requires| d2
+    d3["zlib (MSYS)"]
+    subject -->|requires| d3
+    d4["GnuTLS"]
+    subject -->|requires| d4
+    d5["libhogweed"]
+    subject -->|requires| d5
+    d6["msys-2.0.dll"]
+    subject -->|uses-runtime| d6
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:emacs` in the composed graph: 0 dependents and 7 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -156,3 +216,4 @@ specific console-oriented package have not been directly confirmed.
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
 - [zlib (MSYS)](ZLIB-MSYS.md)
 - [Hogweed (MSYS)](LIBHOGWEED-MSYS.md)
+- [GNU libiconv (MSYS)](GNU-LIBICONV-MSYS.md)

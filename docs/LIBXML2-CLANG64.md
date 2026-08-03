@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # libxml2 (CLANG64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnome:libxml2@clang64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Daniel Veillard / GNOME project |
+| Environments | `clang64` |
+| Upstream | <https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-libxml2` |
+| Version (observed) | 2.15.3-1 |
+| License (observed) | spdx:MIT |
+| Architecture (observed) | any |
+| Installed size (observed) | 5.1 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnome:libxml2-manual-2026-07-30` — libxml2 (official project wiki) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **CLANG64-environment** libxml2 package
@@ -146,6 +174,31 @@ individually modeled, this package's own libiconv/zlib sub-dependencies,
 and header-level API surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libxml2 (CLANG64)"]
+    u0["LLDB"]
+    u0 -->|requires| subject
+    u1["LLVM libraries"]
+    u1 -->|requires| subject
+    d0["GNU libiconv (CLANG64)"]
+    subject -->|requires| d0
+    d1["zlib (CLANG64)"]
+    subject -->|requires| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnome:libxml2@clang64` in the composed graph: 2 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

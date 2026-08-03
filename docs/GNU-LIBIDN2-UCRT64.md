@@ -20,6 +20,34 @@ last_verified: 2026-07-30
 
 # GNU libidn2 (UCRT64)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libidn2@ucrt64` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GNU Project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/libidn/#libidn2> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libidn2` |
+| Version (observed) | 2.3.8-4 |
+| License (observed) | spdx:GPL-2.0-or-later;spdx:LGPL-3.0-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 755.9 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libidn2-manual-2026-07-30` — GNU libidn2 (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **UCRT64-environment** libidn2 package
@@ -147,6 +175,35 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU libidn2 (UCRT64)"]
+    u0["curl (UCRT64)"]
+    u0 -->|requires| subject
+    u1["GnuTLS (UCRT64)"]
+    u1 -->|requires| subject
+    u2["libpsl (UCRT64)"]
+    u2 -->|requires| subject
+    d0["GNU gettext"]
+    subject -->|requires| d0
+    d1["GNU libiconv"]
+    subject -->|requires| d1
+    d2["libunistring (UCRT64)"]
+    subject -->|requires| d2
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libidn2@ucrt64` in the composed graph: 3 dependents and 3 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -155,3 +212,4 @@ methodology.
 - [libpsl (UCRT64)](LIBPSL-UCRT64.md)
 - [GNU libunistring (UCRT64)](GNU-LIBUNISTRING-UCRT64.md)
 - [GnuTLS (UCRT64)](GNUTLS-UCRT64.md)
+- [GNU libidn2 (CLANG64)](GNU-LIBIDN2-CLANG64.md)

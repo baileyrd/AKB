@@ -16,6 +16,34 @@ last_verified: 2026-07-30
 
 # WinEditLine
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:mingweditline:wineditline` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | mingweditline project |
+| Environments | `ucrt64` |
+| Upstream | <https://mingweditline.sourceforge.io/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-wineditline` |
+| Version (observed) | 2.208-1 |
+| License (observed) | spdx:BSD-3-Clause |
+| Architecture (observed) | any |
+| Installed size (observed) | 290.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mingweditline:manual-2026-07-30` — WinEditLine (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 WinEditLine is an implementation of the BSD EditLine API for the native
@@ -59,7 +87,7 @@ either — libedit and Readline both operate within the MSYS/POSIX-emulated
 terminal environment, while WinEditLine targets the native Windows Console
 API directly, already noted on
 [PCRE2's own page](PCRE2.md#dependencies)
-(`claim:library:pcre2-wineditline-interactive-tool`).
+(`claim:library:pcre2:wineditline-interactive-tool`).
 
 ## Interfaces
 
@@ -145,9 +173,29 @@ import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["WinEditLine"]
+    u0["PCRE2"]
+    u0 -->|requires| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mingweditline:wineditline` in the composed graph: 1 dependent and 0 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [PCRE2](PCRE2.md)
 - [libedit](LIBEDIT.md)
 - [GNU Readline](GNU-READLINE.md)
+- [WinEditLine (CLANG64)](WINEDITLINE-CLANG64.md)

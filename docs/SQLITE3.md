@@ -16,6 +16,38 @@ last_verified: 2026-07-30
 
 # SQLite
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:sqlite:sqlite3` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | D. Richard Hipp / SQLite Consortium |
+| Environments | `ucrt64` |
+| Upstream | <https://www.sqlite.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-sqlite3` |
+| Version (observed) | 3.53.4-1 |
+| License (observed) | PublicDomain |
+| Architecture (observed) | any |
+| Installed size (observed) | 20.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:sqlite:documentation-2026-07-30` — SQLite (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:sqlite3:tcl-test-dependency` (`inference`, `high`) — SQLite's dependency on tcl reflects its own canonical test-suite tooling, which is Tcl-based, bundled into this package rather than a runtime requirement of the SQL engine itself.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 SQLite is a self-contained, serverless SQL database engine implemented as
@@ -50,10 +82,12 @@ is a thin client over that library, not a separate server the way
 client/server databases work; there is no separate SQLite "server" process
 to document. This page's `packaged_as` citation is the UCRT64 native
 build, `mingw-w64-ucrt-x86_64-sqlite3`. [GnuPG](GNUPG.md#dependencies)
-depends on a *different*, separately packaged MSYS-environment build,
+and [Heimdal runtime libraries](HEIMDAL-LIBS.md#dependencies) depend on
+a *different*, separately packaged MSYS-environment build,
 `package:msys2:libsqlite` — the same upstream SQLite project, but a
-distinct package this page does not track dependency edges against; the
-two should not be conflated as the same catalog entity.
+distinct package, now modeled in its own right on
+[libsqlite (MSYS)](LIBSQLITE-MSYS.md); the two should not be conflated
+as the same catalog entity.
 
 ## Interfaces
 
@@ -68,7 +102,7 @@ The catalog snapshot records two `runtime-depends-on` edges for
 
 | Dependency | Package | Architectural reason |
 | --- | --- | --- |
-| Tcl interpreter | `mingw-w64-ucrt-x86_64-tcl` | SQLite's canonical test suite is Tcl-based; this dependency most plausibly reflects that test/development tooling bundled into the package rather than a runtime requirement of the SQL engine itself (`claim:library:sqlite3-tcl-test-dependency`). |
+| Tcl interpreter | `mingw-w64-ucrt-x86_64-tcl` | SQLite's canonical test suite is Tcl-based; this dependency most plausibly reflects that test/development tooling bundled into the package rather than a runtime requirement of the SQL engine itself (`claim:library:sqlite3:tcl-test-dependency`). |
 | Compression | `mingw-w64-ucrt-x86_64-zlib` | Backs SQLite's optional compression-related extensions and utilities. |
 
 The `tcl` dependency is easy to misread as SQLite requiring a Tcl runtime
@@ -79,8 +113,10 @@ to function as a database engine; it does not — SQL applications embedding
 
 The snapshot records 49 relationships targeting
 `package:msys2:mingw-w64-ucrt-x86_64-sqlite3` (this figure does not
-include [GnuPG](GNUPG.md#dependencies), which depends on the separate
-`libsqlite` package instead, per Boundaries above). See the
+include [GnuPG](GNUPG.md#dependencies) or
+[Heimdal runtime libraries](HEIMDAL-LIBS.md#dependencies), which each
+depend on the separate [libsqlite (MSYS)](LIBSQLITE-MSYS.md) package
+instead, per Boundaries above). See the
 [reverse dependency impact analysis](REVERSE-DEPENDENCY-IMPACT-ANALYSIS.md)
 for the current full list.
 
@@ -139,14 +175,34 @@ are backed by the official SQLite project site
 already recorded for `package:msys2:mingw-w64-ucrt-x86_64-sqlite3` in the
 catalog. Package identity, version, license, and both dependency edges are
 backed by the pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:sqlite3-tcl-test-dependency`. Open, and explicitly out of
+`claim:library:sqlite3:tcl-test-dependency`. Open, and explicitly out of
 scope for this page: header-level API surface and PE import/export-level
 evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["SQLite"]
+    d0["zlib"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:sqlite:sqlite3` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GnuPG](GNUPG.md)
 - [zlib](ZLIB.md)
+- [libsqlite (MSYS)](LIBSQLITE-MSYS.md)

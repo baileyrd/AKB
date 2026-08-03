@@ -12,10 +12,42 @@ evidence_refs:
   - evidence:lz4:manual-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # LZ4
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:lz4:lz4` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Yann Collet |
+| Environments | `msys` |
+| Upstream | <https://lz4.github.io/lz4/> |
+| Packaged as | `package:msys2:lz4` |
+| Version (observed) | 1.10.0-1 |
+| License (observed) | LGPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 965.9 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:lz4:manual-2026-07-30` — LZ4 (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:lz4:self-versioned-dependency` (`inference`, `medium`) — The MSYS lz4 package's declared dependency on lz4 itself reflects a version-pinned constraint against its own bundled shared library rather than a distinct dependency package.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -121,7 +153,30 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`). Open:
 the exact reason for the self-versioned dependency is a medium-confidence
 inference, not a confirmed build-system fact.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["LZ4"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:lz4:lz4` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
 - [Zstandard (zstd)](ZSTD.md)
+- [liblz4 (MSYS)](LIBLZ4-MSYS.md)
+- [LZO (MSYS)](LIBLZO2-MSYS.md)
+- [LZ4 (CLANG64)](LZ4-CLANG64.md)
+- [LZ4 (UCRT64)](LZ4-UCRT64.md)

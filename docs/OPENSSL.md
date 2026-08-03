@@ -9,14 +9,44 @@ model_refs:
   - library:openssl:libopenssl
   - environment:msys2:msys
   - runtime:msys2:msys-2.0.dll
+  - library:mozilla:ca-certificates
+  - library:yubico:libfido2
 evidence_refs:
   - evidence:openssl:project-site-2026-07-30
   - evidence:catalog:current
   - evidence:msys2:environments-2026-07-28
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # OpenSSL
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:openssl:openssl` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | OpenSSL Software Foundation / OpenSSL project |
+| Environments | `msys` |
+| Upstream | <https://openssl-library.org> |
+| Packaged as | `package:msys2:openssl` |
+| Version (observed) | 3.6.3-1 |
+| License (observed) | spdx:Apache-2.0 |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 1.4 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:openssl:project-site-2026-07-30` — OpenSSL (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 ## Purpose
 
@@ -66,6 +96,20 @@ cryptography library (the CLI/library split noted above). Documented
 fully in [libopenssl](LIBOPENSSL.md). Optional
 dependencies on `ca-certificates` and `perl` support certificate-chain
 verification and OpenSSL's Perl-based test/build tooling, respectively.
+
+## Reverse Dependencies (ca-certificates, libfido2)
+
+**Added 2026-08-02**: [ca-certificates](CA-CERTIFICATES.md) records a
+`requires` edge to this component
+(`relationship:foundation-libraries:ca-certificates-requires-openssl-msys`)
+— backing certificate-bundle processing ca-certificates' own install-time
+hooks perform, added while correcting that page's own prior false
+"no runtime-depends-on edges" claim. The exact mechanism was not
+confirmed. Separately, [libfido2](LIBFIDO2.md) records a `requires` edge
+(`relationship:foundation-libraries:libfido2-requires-openssl`) backing
+FIDO2/U2F cryptographic operations, formalizing a dependency that page
+had previously cited by package name but declined to model. Both edges
+are counted among the 21 reverse dependents noted below.
 
 ## Reverse Dependencies
 
@@ -137,6 +181,41 @@ no version-qualified CVE review has been performed, and which dependents
 are ABI-compatible with this exact build has not been independently
 confirmed.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["OpenSSL"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["Git (MSYS2 package)"]
+    u1 -->|requires| subject
+    u2["OpenSSH"]
+    u2 -->|requires| subject
+    u3["libcurl"]
+    u3 -->|requires| subject
+    u4["libssh2"]
+    u4 -->|requires| subject
+    u5["ca-certificates"]
+    u5 -->|requires| subject
+    u6["libfido2"]
+    u6 -->|requires| subject
+    d0["libopenssl"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:openssl:openssl` in the composed graph: 7 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [GNU Userland Role Model](GNU-USERLAND-ROLE-MODEL.md)
@@ -146,3 +225,5 @@ confirmed.
 - [GnuPG](GNUPG.md)
 - [libopenssl](LIBOPENSSL.md)
 - [libssh2](LIBSSH2.md)
+- [ca-certificates](CA-CERTIFICATES.md)
+- [libfido2](LIBFIDO2.md)

@@ -17,6 +17,38 @@ last_verified: 2026-07-30
 
 # GNU Automake
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:gnu:automake` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `msys` |
+| Upstream | <https://www.gnu.org/software/automake/> |
+| Packaged as | `package:msys2:automake-wrapper` |
+| Version (observed) | 20260320-1 |
+| License (observed) | spdx:GPL-2.0-only |
+| Architecture (observed) | any |
+| Installed size (observed) | 9.1 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:automake-manual-2026-07-30` — GNU Automake (official project page) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:component:automake:versioned-dispatch` (`fact`, `verified`) — MSYS2 packages automake as multiple side-by-side versioned packages (automake1.11 through automake1.18 in this snapshot), with automake-wrapper acting as a version-dispatching frontend that provides the generic automake/aclocal commands.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Automake generates portable `Makefile.in` files from higher-level
@@ -146,6 +178,25 @@ backed by the pacman catalog snapshot (`evidence:catalog:current`) via
 the wrapper uses to select a version (and `gawk`'s precise role in it) is
 a medium-confidence inference pending direct inspection of the wrapper
 script's source.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU Automake"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:gnu:automake` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -16,6 +16,38 @@ last_verified: 2026-07-30
 
 # GNU gettext
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:gettext` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://www.gnu.org/software/gettext/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` |
+| Version (observed) | 1.0-1 |
+| License (observed) | spdx:GPL-3.0-or-later AND LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 2.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:gettext-manual-2026-07-30` — GNU gettext Manual (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:gettext:package-split` (`fact`, `verified`) — GNU gettext is split into three separate MSYS2 packages: gettext-runtime (the libintl runtime library), gettext-tools (msgfmt/xgettext/msginit and other CLI tools), and gettext-libtextstyle (a terminal text-styling library used by the tools); this page models the runtime component.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Gettext provides native-language support (NLS): the `libintl` runtime
@@ -37,7 +69,7 @@ page cites `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` (version
 runtime piece. `gettext-tools` (the `msgfmt`/`xgettext`/`msginit` CLI
 programs) and `gettext-libtextstyle` (a terminal text-styling library used
 by those tools) are separate packages
-(`claim:library:gettext-package-split`), not covered individually by this
+(`claim:library:gettext:package-split`), not covered individually by this
 page.
 
 ## Responsibilities
@@ -149,13 +181,48 @@ itself.
 The NLS runtime model and the runtime/tools/libtextstyle package split are
 backed by the official GNU gettext manual
 (`evidence:gnu:gettext-manual-2026-07-30`) and the pacman catalog snapshot
-(`evidence:catalog:current`) via `claim:library:gettext-package-split`.
+(`evidence:catalog:current`) via `claim:library:gettext:package-split`.
 Package identity, version, license, and dependency edges are backed by the
 catalog snapshot as well. Open, and explicitly out of scope for this page:
 the `gettext-tools` and `gettext-libtextstyle` packages are not documented
 individually, and header-level API surface / PE import-export evidence per
 the [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology remains open.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["GNU gettext"]
+    u0["GNU Binutils"]
+    u0 -->|requires| subject
+    u1["GDB"]
+    u1 -->|requires| subject
+    u2["GNU libidn2 (UCRT64)"]
+    u2 -->|requires| subject
+    u3["libgpg-error"]
+    u3 -->|requires| subject
+    u4["GnuTLS (UCRT64)"]
+    u4 -->|requires| subject
+    u5["libpsl (UCRT64)"]
+    u5 -->|requires| subject
+    u6["p11-kit (UCRT64)"]
+    u6 -->|requires| subject
+    u7["RHash"]
+    u7 -->|requires| subject
+    d0["GNU libiconv"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:gettext` in the composed graph: 9 dependents and 1 dependency, of which 1 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 
@@ -165,3 +232,4 @@ methodology remains open.
 - [GNU Coreutils](GNU-COREUTILS.md)
 - [GNU Binutils](GNU-BINUTILS.md)
 - [GDB](GNU-GDB.md)
+- [GNU gettext (CLANG64)](GNU-GETTEXT-CLANG64.md)

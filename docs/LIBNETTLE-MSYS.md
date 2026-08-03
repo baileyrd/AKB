@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libnettle (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:nettle:libnettle@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Niels Möller |
+| Environments | `msys` |
+| Upstream | <https://www.lysator.liu.se/~nisse/nettle/> |
+| Packaged as | `package:msys2:libnettle` |
+| Version (observed) | 4.0-1 |
+| License (observed) | spdx:GPL-2.0-or-later OR LGPL-3.0-or-later |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 300.9 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:nettle:manual-2026-07-30` — Nettle (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents `libnettle`, the base Nettle cryptographic library
@@ -140,6 +168,29 @@ explicitly out of scope for this page: header-level API surface and PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libnettle"]
+    u0["GnuTLS"]
+    u0 -->|requires| subject
+    u1["Nettle (MSYS)"]
+    u1 -->|requires| subject
+    d0["libhogweed"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:nettle:libnettle@msys` in the composed graph: 2 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

@@ -85,9 +85,20 @@ def package_rows(fields: dict[str, list[str]], repository: str) -> tuple[dict[st
         "provides": ";".join(values("PROVIDES")), "conflicts": ";".join(values("CONFLICTS")),
         "replaces": ";".join(values("REPLACES")), "download_size": values("CSIZE")[0] if values("CSIZE") else "",
         "installed_size": values("ISIZE")[0] if values("ISIZE") else "", "build_date": values("BUILDDATE")[0] if values("BUILDDATE") else "",
+        # MAKEDEPENDS and CHECKDEPENDS are present in the repository database and
+        # were previously dropped on the floor, which made every dependency
+        # ranking in this knowledge base blind to the build-time half of the
+        # graph: a test framework is a checkdepends and never a runtime
+        # dependency, so ten of them recorded one dependent between them.
+        "build_dependencies": ";".join(values("MAKEDEPENDS")), "check_dependencies": ";".join(values("CHECKDEPENDS")),
     }
     edges: list[dict[str, str]] = []
-    for relation, field in (("runtime-depends-on", "DEPENDS"), ("optional-depends-on", "OPTDEPENDS")):
+    for relation, field in (
+        ("runtime-depends-on", "DEPENDS"),
+        ("optional-depends-on", "OPTDEPENDS"),
+        ("build-depends-on", "MAKEDEPENDS"),
+        ("check-depends-on", "CHECKDEPENDS"),
+    ):
         for dependency in values(field):
             target, constraint = dependency_name(dependency.split(":", 1)[0])
             if target:

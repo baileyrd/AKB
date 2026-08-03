@@ -7,7 +7,7 @@ model_refs:
   - ecosystem:msys2:msys2
 evidence_refs:
   - evidence:git-for-windows:local-installation-observation-2026-07-30
-last_verified: 2026-07-30
+last_verified: 2026-08-02
 ---
 
 # Git for Windows Distribution Boundary
@@ -55,6 +55,20 @@ evidence only; it does not establish launcher behavior, transport
 selection, or bundled component versions for any invocation context not
 directly observed.
 
+## Component pages
+
+**Added 2026-08-02.** The charter names thirteen Git for Windows components.
+Four now have pages beyond the launcher and transport-boundary models:
+
+- [Git Bash and MSYS interaction](GIT-FOR-WINDOWS-GIT-BASH.md) — the shell,
+  mintty as terminal host, and the MSYS/native execution boundary
+- [Credential manager](GIT-FOR-WINDOWS-CREDENTIAL-MANAGER.md) — the helper
+  protocol and the manager the distribution ships
+- [HTTP transport](GIT-FOR-WINDOWS-HTTP-TRANSPORT.md) — cURL, and the
+  openssl/schannel trust-store divergence
+- [DLL loading](GIT-FOR-WINDOWS-DLL-LOADING.md) — resolution across the
+  MSYS/native split
+
 ## Related Views
 
 - [GNU userland role model](GNU-USERLAND-ROLE-MODEL.md)
@@ -62,3 +76,22 @@ directly observed.
   package's own architecture and dependencies, distinct from this page's
   Git for Windows product boundary
 - [MSYS2 and MinGW-w64 role model](MSYS2-AND-MINGW-W64-ROLE-MODEL.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS2"]
+    d0["Microsoft Windows"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `ecosystem:msys2:msys2` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

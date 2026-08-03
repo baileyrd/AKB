@@ -22,6 +22,34 @@ last_verified: 2026-07-30
 
 # zlib (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:zlib@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | zlib project |
+| Environments | `msys` |
+| Upstream | <https://www.zlib.net/> |
+| Packaged as | `package:msys2:zlib` |
+| Version (observed) | 1.3.2-1 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 92.5 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** zlib package specifically
@@ -168,6 +196,41 @@ evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["zlib (MSYS)"]
+    u0["curl"]
+    u0 -->|requires| subject
+    u1["GNU Emacs"]
+    u1 -->|requires| subject
+    u2["GnuPG"]
+    u2 -->|requires| subject
+    u3["Serf"]
+    u3 -->|requires| subject
+    u4["libcurl"]
+    u4 -->|requires| subject
+    u5["file"]
+    u5 -->|requires| subject
+    u6["libxml2 (MSYS)"]
+    u6 -->|requires| subject
+    u7["GnuTLS"]
+    u7 -->|requires| subject
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:zlib@msys` in the composed graph: 11 dependents and 1 dependency, of which 3 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
@@ -179,6 +242,8 @@ methodology.
 - [libcurl](LIBCURL.md)
 - [libfido2](LIBFIDO2.md)
 - [file](FILE.md)
+- [libarchive (MSYS)](LIBARCHIVE-MSYS.md)
 - [GnuTLS](GNUTLS.md)
 - [libssh2](LIBSSH2.md)
 - [libxml2 (MSYS)](LIBXML2-MSYS.md)
+- [Serf](LIBSERF-MSYS.md)

@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libassuan (MSYS)
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libassuan@msys` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `msys` |
+| Upstream | <https://gnupg.org/related_software/libassuan> |
+| Packaged as | `package:msys2:libassuan` |
+| Version (observed) | 3.0.2-1 |
+| License (observed) | GPL |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 213.7 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libassuan-manual-2026-07-30` — libassuan (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 This page documents the **MSYS-environment** `libassuan` package
@@ -77,8 +105,10 @@ The catalog snapshot records 4 relationships targeting
 `package:msys2:libassuan`: `package:msys2:gnupg`
 (`relationship:ssh-curl-git:gnupg-requires-libassuan` in this knowledge
 base's graph, corrected 2026-07-30 to point here instead of the UCRT64
-package), its own `-devel` subpackage, `package:msys2:libgpgme`, and
-`package:msys2:pinentry`.
+package), its own `-devel` subpackage,
+[GPGME (MSYS)](LIBGPGME-MSYS.md)
+(`relationship:foundation-libraries:libgpgme-requires-libassuan`, added
+2026-08-02), and `package:msys2:pinentry`.
 
 ## Configuration
 
@@ -130,9 +160,35 @@ version, and the recorded dependency/dependent edges (including the
 2026-07-30 correction to `relationship:ssh-curl-git:gnupg-requires-libassuan`)
 are backed by the pacman catalog snapshot (`evidence:catalog:current`).
 
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libassuan (MSYS)"]
+    u0["GnuPG"]
+    u0 -->|requires| subject
+    u1["GPGME (MSYS)"]
+    u1 -->|requires| subject
+    d0["libgpg-error (MSYS)"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libassuan@msys` in the composed graph: 2 dependents and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
+
 ## Related Objects
 
 - [MSYS2 Library Architecture](LIBRARIES-ARCHITECTURE.md)
 - [GnuPG](GNUPG.md)
 - [libassuan (UCRT64)](LIBASSUAN.md)
 - [libgpg-error (MSYS)](LIBGPG-ERROR-MSYS.md)
+- [GPGME (MSYS)](LIBGPGME-MSYS.md)

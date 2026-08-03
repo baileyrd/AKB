@@ -40,3 +40,22 @@ The MSYS environment supports package management, shell scripting, and POSIX-dep
 ## Evidence and Gaps
 
 The context is based on the [official MSYS2 introduction](https://www.msys2.org/wiki/MSYS2-introduction/), retrieved 2026-07-28. L1 layering and L2 domain decomposition remain separate planned increments.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["MSYS2"]
+    d0["Microsoft Windows"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `ecosystem:msys2:msys2` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

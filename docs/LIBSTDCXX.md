@@ -16,6 +16,38 @@ last_verified: 2026-07-30
 
 # libstdc++
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnu:libstdc++` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Free Software Foundation |
+| Environments | `ucrt64` |
+| Upstream | <https://gcc.gnu.org/onlinedocs/libstdc++/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gcc-libs` |
+| Version (observed) | 16.1.0-5 |
+| License (observed) | spdx:GPL-3.0-or-later WITH GCC-exception-3.1 AND LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 3.5 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnu:libstdcxx-manual-2026-07-30` — The GNU C++ Library Documentation (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:libstdcxx:bundled-in-gcc-libs` (`fact`, `verified`) — libstdc++ is not packaged as a standalone MSYS2 package; it is bundled inside gcc-libs alongside libgcc, libgomp, and other GCC runtime support libraries.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 libstdc++ is GCC's implementation of the C++ standard library, and it
@@ -48,7 +80,7 @@ section below.
 libstdc++ is not packaged standalone in this environment: it is bundled
 inside `gcc-libs` alongside `libgcc` (low-level compiler runtime support)
 and `libgomp` (OpenMP runtime), rather than shipped as its own MSYS2
-package (`claim:library:libstdcxx-bundled-in-gcc-libs`). It is not the
+package (`claim:library:libstdcxx:bundled-in-gcc-libs`). It is not the
 only C++ standard library available in this environment; see
 [libc++](LIBCXX.md) for the LLVM alternative, which this environment also
 packages for UCRT64.
@@ -71,7 +103,7 @@ snapshot: `mingw-w64-ucrt-x86_64-libwinpthread` (threading support) and
 `mingw-w64-ucrt-x86_64-cc-libs` virtual capability, which
 [libc++](LIBCXX.md#dependencies) in this same environment depends on for
 low-level compiler runtime support even when a project chooses libc++ over
-libstdc++ (`claim:library:libcxx-cc-libs-capability`). The
+libstdc++ (`claim:library:libcxx:cc-libs-capability`). The
 libwinpthread edge is now modeled in this knowledge base
 (`relationship:foundation-libraries:libstdcxx-requires-libwinpthread`,
 added 2026-07-30 — this page's own prose had named it without a
@@ -162,13 +194,44 @@ documented resolution rather than mixing.
 
 Bundling and dependency facts are backed by the pacman catalog snapshot
 (`evidence:catalog:current`) via
-`claim:library:libstdcxx-bundled-in-gcc-libs`; the library's general
+`claim:library:libstdcxx:bundled-in-gcc-libs`; the library's general
 architecture is backed by the official libstdc++ documentation
 (`evidence:gnu:libstdcxx-manual-2026-07-30`). Open, and explicitly out of
 scope for this page: header-level API surface, `pkg-config`/CMake metadata,
 and PE import/export-level ABI evidence, which the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology calls for and which this page does not attempt to supply.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libstdc++"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    u1["GNU termcap"]
+    u1 -->|requires| subject
+    u2["libassuan"]
+    u2 -->|requires| subject
+    u3["nPth (New Portable Threads)"]
+    u3 -->|requires| subject
+    u4["cppdap"]
+    u4 -->|requires| subject
+    u5["JsonCpp"]
+    u5 -->|requires| subject
+    d0["libwinpthread"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnu:libstdc++` in the composed graph: 6 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

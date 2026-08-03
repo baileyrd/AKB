@@ -17,6 +17,34 @@ last_verified: 2026-07-30
 
 # p7zip
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `component:p7zip:p7zip` |
+| Kind | `component` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | p7zip project |
+| Environments | `msys` |
+| Upstream | <https://github.com/p7zip-project/p7zip> |
+| Packaged as | `package:msys2:p7zip` |
+| Version (observed) | 17.06-1 |
+| License (observed) | LGPL;custom:unRAR |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 10.8 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:p7zip:project-site-2026-07-30` — p7zip (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 P7zip is a command-line port of 7-Zip, supporting the high-ratio `.7z`
@@ -123,6 +151,25 @@ Package identity, version, license, and the gcc-libs dependency are backed
 by the pacman catalog snapshot (`evidence:catalog:current`). Open: the
 `bash` dependency's exact cause and whether RAR-format support is enabled
 in this build are both unconfirmed pending package file-inventory evidence.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["p7zip"]
+    d0["msys-2.0.dll"]
+    subject -->|uses-runtime| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `component:p7zip:p7zip` in the composed graph: 0 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

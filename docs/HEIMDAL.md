@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # Heimdal
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:h5l:heimdal` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | Heimdal Project |
+| Environments | `msys` |
+| Upstream | <https://www.h5l.org/> |
+| Packaged as | `package:msys2:heimdal` |
+| Version (observed) | 7.8.0-5 |
+| License (observed) | custom |
+| Architecture (observed) | x86_64 |
+| Installed size (observed) | 3.0 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:h5l:heimdal-manual-2026-07-30` — Heimdal Kerberos 5 (official project page) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Heimdal implements the Kerberos V5 network authentication protocol,
@@ -147,6 +175,29 @@ out of scope for this page: header-level API surface and PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Heimdal"]
+    u0["OpenSSH"]
+    u0 -->|requires| subject
+    d0["Heimdal runtime libraries"]
+    subject -->|requires| d0
+    d1["msys-2.0.dll"]
+    subject -->|uses-runtime| d1
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:h5l:heimdal` in the composed graph: 1 dependent and 2 dependencies.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

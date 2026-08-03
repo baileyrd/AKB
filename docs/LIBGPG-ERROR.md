@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # libgpg-error
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:gnupg:libgpg-error` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | GnuPG project |
+| Environments | `ucrt64` |
+| Upstream | <https://gnupg.org> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libgpg-error` |
+| Version (observed) | 1.61-1 |
+| License (observed) | spdx:LGPL-2.1-or-later |
+| Architecture (observed) | any |
+| Installed size (observed) | 1.7 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:gnupg:libgpg-error-manual-2026-07-30` — GnuPG project site (libgpg-error) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Libgpg-error provides a shared set of error-code definitions used across
@@ -129,6 +157,31 @@ explicitly out of scope for this page: header-level API surface and PE
 import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["libgpg-error"]
+    u0["libassuan"]
+    u0 -->|requires| subject
+    u1["libgcrypt"]
+    u1 -->|requires| subject
+    u2["libksba"]
+    u2 -->|requires| subject
+    d0["GNU gettext"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:gnupg:libgpg-error` in the composed graph: 3 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

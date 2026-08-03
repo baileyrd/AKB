@@ -18,6 +18,34 @@ last_verified: 2026-07-30
 
 # Clang libraries
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:llvm:clang-libs` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `high` |
+| Authority | LLVM Project |
+| Environments | `clang64` |
+| Upstream | <https://clang.llvm.org/> |
+| Packaged as | `package:msys2:mingw-w64-clang-x86_64-clang-libs` |
+| Version (observed) | 22.1.8-2 |
+| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| Architecture (observed) | any |
+| Installed size (observed) | 94.2 MB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:llvm:clang-libs-manual-2026-07-30` — Clang (official project site) (`primary`, retrieved 2026-07-30)
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 The Clang libraries package provides Clang's own shared libraries
@@ -141,6 +169,29 @@ recorded dependents not individually modeled, and header-level API
 surface / PE import/export-level evidence, per the
 [Library Family Classification](LIBRARY-FAMILY-CLASSIFICATION.md)
 methodology.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["Clang libraries"]
+    u0["Clang"]
+    u0 -->|requires| subject
+    u1["LLDB"]
+    u1 -->|requires| subject
+    d0["LLVM libraries"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:llvm:clang-libs` in the composed graph: 2 dependents and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

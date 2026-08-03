@@ -17,6 +17,38 @@ last_verified: 2026-07-30
 
 # winpthreads
 
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `library:mingw-w64:winpthreads` |
+| Kind | `library` |
+| Status | `partial` |
+| Confidence | `low` |
+| Authority | MinGW-w64 project |
+| Environments | `ucrt64` |
+| Upstream | <https://www.mingw-w64.org/> |
+| Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-winpthreads` |
+| Version (observed) | 14.0.0.r220.gd999af622-1 |
+| License (observed) | spdx:MIT AND BSD-3-Clause-Clear |
+| Architecture (observed) | any |
+| Installed size (observed) | 450.0 KB |
+
+**Evidence on this object**
+
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:mingw-w64:libwinpthread-manual-2026-07-30` — MinGW-w64 (official project site) (`primary`, retrieved 2026-07-30)
+
+**Claims about this object**
+
+- `claim:library:winpthreads:libwinpthread-split` (`inference`, `low`) — The MSYS2 winpthreads package's exact relationship to libwinpthread is unresolved from package-level evidence alone: the version-pinned dependency and near-identical summaries are consistent with a development/runtime split, but a separate winpthreads-stub package that provides/conflicts with winpthreads (a near-empty, 8-byte-installed placeholder swappable for it) argues against a simple dev-headers theory and toward winpthreads containing a real, optionally-replaceable implementation component instead. Neither theory is confirmed against file contents.
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
+
 ## Purpose
 
 Winpthreads is a version-pinned companion package to
@@ -47,7 +79,7 @@ installed, license `NONE`), and exists for CLANG64, CLANGARM64, and
 MINGW64 as well as UCRT64. A package a project can swap for an empty
 stub is a poor fit for "required development headers" — that pattern
 reads more like an optional or replaceable implementation component.
-Both theories remain unconfirmed (`claim:library:winpthreads-libwinpthread-split`,
+Both theories remain unconfirmed (`claim:library:winpthreads:libwinpthread-split`,
 recorded at `low` confidence after this finding, down from the earlier
 `medium`).
 
@@ -134,7 +166,7 @@ Not established at package/dependency-level evidence.
 Package identity, version, both dependency edges, and the
 `winpthreads-stub` provides/conflicts relationship are backed by the
 pacman catalog snapshot (`evidence:catalog:current`) via
-`claim:library:winpthreads-libwinpthread-split`. Open, and the primary
+`claim:library:winpthreads:libwinpthread-split`. Open, and the primary
 purpose of this page: what this package actually contains remains
 unresolved — the original dev/runtime-split theory and the
 stub-replaceable-implementation reading it prompted are both live,
@@ -147,6 +179,27 @@ this page's own confidence was revised downward (medium to low) when the
 new stub-package evidence complicated rather than confirmed the initial
 theory — a deliberate record of updating a claim when new evidence
 warrants it, not just adding new claims.
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["winpthreads"]
+    u0["GCC"]
+    u0 -->|requires| subject
+    d0["libwinpthread"]
+    subject -->|requires| d0
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `library:mingw-w64:winpthreads` in the composed graph: 1 dependent and 1 dependency.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->
 
 ## Related Objects
 

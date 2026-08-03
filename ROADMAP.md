@@ -44,19 +44,30 @@ The collection *pipeline* is built and tested. Its *coverage* is 2 of
 `package_payload_coverage.percent` = 0.013), so the extraction items below
 are cleared: the capability exists, the extraction has not been performed.
 
-**BLOCKED — needs a Windows host with MSYS2 installed.** The six unchecked
-items in this increment, and the three in Increment 5 that project their
-output, are not undone work in the ordinary sense. They are the only items
-on this roadmap that cannot be closed from this environment at all.
+**BLOCKED — needs a session on a Windows host with MSYS2 that runs the
+collector.** The six unchecked items in this increment, and the three in
+Increment 5 that project their output, are not undone work in the ordinary
+sense. They are the only items on this roadmap that cannot be closed from
+the environment these pages are authored in.
 `tools/Collect-AkbDeepInventory.ps1` asks `<Msys2Root>\usr\bin\pacman.exe`
 which files each installed package owns and then reads those files' PE
 headers. That needs a Windows machine with MSYS2 actually installed and the
 packages of interest present — properties of a host, not dependencies that
-could be added. Every session this knowledge base has run in has been a
-Linux container.
+could be added.
+
+**Corrected 2026-08-03.** This section previously stated that "every
+session this knowledge base has run in has been a Linux container," and
+that is no longer true. A 2026-07-31 session installed MSYS2 at
+`C:\msys64` and ran two logged pacman transactions (Volume 7); a
+2026-07-30 session reached compile, link, and execution on a real zlib
+build (Volume 14); Volumes 2, 3, 9, and 19 carry further controlled
+observations from Windows hosts. The blocker is therefore narrower than
+stated, and correspondingly more tractable: the host exists, and no
+session on it has run this collector. The authoring sessions that keep
+finding these items unchecked are Linux containers and cannot run it.
 
 [The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md) states this
-once, names the six statements elsewhere in the knowledge base that are
+once, names the statements elsewhere in the knowledge base that are
 currently qualified by it, and gives the single command that would close
 it. The nine items stay unchecked deliberately: ticking them would remove
 the largest remaining gap here from the backlog while it is entirely open.
@@ -171,7 +182,8 @@ say so.
 - [x] Carry build-time and check-time dependency edges from the PKGBUILD recipes
 
 **The three cleared items are BLOCKED behind Increment 1's extraction
-work**, which needs a Windows host with MSYS2 installed — see
+work**, which needs a session on a Windows host with MSYS2 that runs the
+collector — see
 [The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md). They are
 projections of data that collection would produce, so closing them first
 would mean generating reports over two packages and calling the ecosystem
@@ -253,7 +265,7 @@ mechanism.
 - [x] Layer, package, library, runtime, toolchain, and repository views
 - [x] Accessible SVG and textual fallbacks
 - [x] Large-graph performance tests
-- [ ] Graphical zoomable graph rendering in the explorer page
+- [x] Graphical zoomable graph rendering in the explorer page
 
 **Closed 2026-08-02.** The `layers` and `toolchains` views had resolved to
 zero objects: `toolchains` projected only by an entity `kind` the graph
@@ -266,15 +278,35 @@ diagram hyperlinks that dead-ended in `toolchains` are live.
 `tests/test_diagrams.py` now fails the build if any diagram links to a view
 that renders nothing.
 
-**Withdrawn from this branch 2026-08-02.** A zoomable `#/graph/<id>` view
-was built here, then dropped: `main` had independently gained a real
-interactive graph view in the explorer (#142) while this branch was in
-flight, and shipping two implementations of the same feature would be worse
-than shipping one. `main`'s is the one kept.
+**Zoomable graph rendering closed 2026-08-03.** Two implementations were
+built independently: one on a feature branch, one on `main` (#142). The
+branch's was withdrawn rather than merged — shipping two implementations
+of the same feature would be worse than shipping one — and #143 merged
+`main`'s into the branch, so the feature is now present here and the box
+is ticked.
 
-The box stays unticked here because this branch no longer implements it.
-It is satisfied on `main`, and merging resolves it there rather than being
-asserted from a branch that does not carry the code.
+It renders a real canvas force-directed graph from a locally vendored D3
+v7, with pan, zoom, and drag. Two bounded entry points exist rather than
+one unscoped render, because the full graph (16,514 entities, 141,518
+relationships) is far too dense for a single readable layout:
+`#/graph/<view>` renders one of the existing named views, and
+`#/graph-node/<id>` seeds on one object and its neighbors with
+client-side expansion. Both cap at 800 nodes.
+
+The claim behind this box was strengthened at the same time. It had
+asserted only that `tools/build_explorer.py` exists and that the word
+"zoomable" appears in some document — which a page describing the feature
+would satisfy without the feature existing. It now asserts the vendored
+D3 file is present and that the generator *and its rendered output* call
+`d3.forceSimulation`, `d3.zoom()`, and the graph route builder. A new
+`term_in_path` assertion type was added to make that checkable.
+
+**Still unverified:** the graph view has never been opened in a live
+browser. Tests confirm the vendored file is copied byte-identical and that
+the generated page calls the real D3 API, and the decode path was
+exercised under node with a stubbed DOM, but force-layout convergence,
+drag responsiveness, and zoom smoothness at scale rest on code inspection.
+No connected browser tooling is available in this authoring environment.
 
 ## Increment 8 — Assurance and operations
 

@@ -62,7 +62,7 @@
     },
     "13": {
       "state": "partial",
-      "rationale": "One authored page over a substantial generated base: the reverse-dependency impact report exceeds a thousand lines and the dependency edges are observed. The analysis exists; the volume interpreting it does not."
+      "rationale": "Two pages: the interpretation model, and a 2026-08-03 measurement of the graph it interprets. Build-time edges are 55.8% of 108,770 dependency edges and did not exist before 2026-08-02, so every dependency statement made here before that date described 41% of the graph. The build and runtime rankings share no member of their top tens. The graph is cyclic — the GCC bootstrap cycle is present, and 14 self-loops are genuine self-hosting declarations — so anything topologically ordering it must handle that explicitly. Every edge is declared rather than observed; binary linkage covers 2 of 15,711 packages."
     },
     "14": {
       "state": "partial",

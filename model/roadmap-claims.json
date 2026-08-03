@@ -8,6 +8,7 @@
     "term_in_path": "term appears verbatim in the file at path",
     "min_entries_in_dir": "the directory at path holds at least count entries",
     "min_docs_in_volume": "at least count docs carry frontmatter volume: volume",
+    "min_lines_each_in_volume": "every doc carrying frontmatter volume: volume has at least lines lines",
     "term_in_volume": "term appears (case-insensitive) in at least min_files docs of that volume",
     "term_in_docs": "term appears in at least min_files docs repo-wide, excluding CHARTER-DRIFT-ASSESSMENT.md",
     "min_graph_entities_of_kind": "composed graph has at least count entities of kind",
@@ -551,16 +552,21 @@
         "count": 7
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 4,
+        "lines": 40
+      },
+      {
         "type": "term_in_volume",
         "volume": 4,
         "term": "CLANGARM64",
-        "min_files": 1
+        "min_files": 4
       },
       {
         "type": "term_in_volume",
         "volume": 4,
         "term": "executable format",
-        "min_files": 2
+        "min_files": 6
       }
     ],
     "MSYS runtime initialization": [
@@ -581,19 +587,24 @@
         "count": 8
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 3,
+        "lines": 40
+      },
+      {
         "type": "term_in_docs",
         "term": "mount manager",
-        "min_files": 1
+        "min_files": 9
       },
       {
         "type": "term_in_docs",
         "term": "signal manager",
-        "min_files": 1
+        "min_files": 7
       },
       {
         "type": "term_in_docs",
         "term": "process manager",
-        "min_files": 1
+        "min_files": 8
       },
       {
         "type": "min_graph_entities_of_kind",
@@ -615,13 +626,13 @@
         "type": "term_in_volume",
         "volume": 7,
         "term": "local database",
-        "min_files": 1
+        "min_files": 4
       },
       {
         "type": "term_in_volume",
         "volume": 7,
         "term": "dependency resolution",
-        "min_files": 1
+        "min_files": 4
       }
     ],
     "repository, mirror, signing, key, cache, hook, and database models": [
@@ -631,14 +642,19 @@
         "count": 5
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 7,
+        "lines": 40
+      },
+      {
         "type": "term_in_docs",
         "term": "package signing",
-        "min_files": 1
+        "min_files": 7
       },
       {
         "type": "term_in_docs",
         "term": "repository layout",
-        "min_files": 1
+        "min_files": 5
       }
     ],
     "msys-2.0.dll subsystem architecture pages": [
@@ -646,6 +662,11 @@
         "type": "min_docs_in_volume",
         "volume": 3,
         "count": 8
+      },
+      {
+        "type": "min_lines_each_in_volume",
+        "volume": 3,
+        "lines": 40
       }
     ],
     "GCC, LLVM, Binutils, Clang, LLD, GDB, and LLDB": [
@@ -756,6 +777,11 @@
         "type": "min_docs_in_volume",
         "volume": 5,
         "count": 15
+      },
+      {
+        "type": "min_lines_each_in_volume",
+        "volume": 5,
+        "lines": 40
       }
     ],
     "generated-artifact and build-flow mappings": [
@@ -817,7 +843,7 @@
       {
         "type": "term_in_docs",
         "term": "llvm-objdump",
-        "min_files": 1
+        "min_files": 2
       },
       {
         "type": "term_in_docs",
@@ -1028,7 +1054,7 @@
         "type": "term_in_volume",
         "volume": 9,
         "term": "mintty",
-        "min_files": 1
+        "min_files": 3
       }
     ],
     "Native Git, MSYS interaction, SSH, HTTP, credentials, crypto, and DLL loading": [
@@ -1036,19 +1062,19 @@
         "type": "term_in_volume",
         "volume": 9,
         "term": "MSYS interaction",
-        "min_files": 1
+        "min_files": 4
       },
       {
         "type": "term_in_volume",
         "volume": 9,
         "term": "HTTP transport",
-        "min_files": 1
+        "min_files": 3
       },
       {
         "type": "term_in_volume",
         "volume": 9,
         "term": "credential manager",
-        "min_files": 1
+        "min_files": 4
       }
     ],
     "Package and source mappings": [
@@ -1218,7 +1244,7 @@
       {
         "type": "term_in_docs",
         "term": "zoomable",
-        "min_files": 1
+        "min_files": 3
       }
     ],
     "Threat model and supply-chain analysis": [
@@ -1331,10 +1357,15 @@
         "count": 4
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 2,
+        "lines": 40
+      },
+      {
         "type": "term_in_volume",
         "volume": 2,
         "term": "ConPTY",
-        "min_files": 1
+        "min_files": 2
       }
     ],
     "Filesystem, Registry, Security, and Networking boundaries": [
@@ -1344,10 +1375,15 @@
         "count": 8
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 2,
+        "lines": 40
+      },
+      {
         "type": "term_in_volume",
         "volume": 2,
         "term": "Registry",
-        "min_files": 1
+        "min_files": 2
       }
     ],
     "ADR recording the contextual-scope narrowing for Windows internals": [
@@ -1412,7 +1448,7 @@
       {
         "type": "term_in_docs",
         "term": "```mermaid",
-        "min_files": 100
+        "min_files": 197
       }
     ],
     "Generate mechanical object-page sections from the composed model": [
@@ -1442,7 +1478,7 @@
       {
         "type": "term_in_docs",
         "term": "Version (observed)",
-        "min_files": 100
+        "min_files": 180
       }
     ],
     "Validate documentation pages in `tools/akb.py`": [
@@ -1488,6 +1524,11 @@
         "count": 1
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 17,
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "ECOSYSTEM-PERFORMANCE-ARCHITECTURE.md"
       },
@@ -1510,6 +1551,11 @@
         "count": 5
       },
       {
+        "type": "min_lines_each_in_volume",
+        "volume": 18,
+        "lines": 40
+      },
+      {
         "type": "doc_exists",
         "doc": "DEVELOPER-GUIDE.md"
       },
@@ -1522,13 +1568,13 @@
         "type": "term_in_volume",
         "volume": 18,
         "term": "makepkg",
-        "min_files": 1
+        "min_files": 4
       },
       {
         "type": "term_in_volume",
         "volume": 18,
         "term": "__MSYS__",
-        "min_files": 1
+        "min_files": 3
       },
       {
         "type": "term_in_volume",
@@ -1585,7 +1631,7 @@
       {
         "type": "term_in_docs",
         "term": "`planned`",
-        "min_files": 1
+        "min_files": 2
       },
       {
         "type": "term_in_docs",
@@ -1629,7 +1675,7 @@
       {
         "type": "term_in_docs",
         "term": "claim:library:zlib:hub",
-        "min_files": 1
+        "min_files": 5
       }
     ],
     "Carry build-time and check-time dependency edges from the PKGBUILD recipes": [
@@ -1663,12 +1709,12 @@
       {
         "type": "term_in_docs",
         "term": "build-depends-on",
-        "min_files": 2
+        "min_files": 4
       },
       {
         "type": "term_in_docs",
         "term": "python-pytest",
-        "min_files": 1
+        "min_files": 8
       },
       {
         "type": "term_in_docs",

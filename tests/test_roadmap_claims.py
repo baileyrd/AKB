@@ -105,6 +105,20 @@ def check(assertion, graph, inventory_kinds):
         actual = len(target.read_text(encoding="utf-8").splitlines())
         return actual >= assertion["lines"], f"{assertion['path']} has {actual} lines, need {assertion['lines']}"
 
+    if kind == "min_lines_each_in_volume":
+        pages = docs_in_volume(assertion["volume"])
+        if not pages:
+            return False, f"volume {assertion['volume']} has no pages"
+        thin = sorted(
+            (path.name, len(path.read_text(encoding="utf-8").splitlines()))
+            for path in pages
+            if len(path.read_text(encoding="utf-8").splitlines()) < assertion["lines"]
+        )
+        return not thin, (
+            f"volume {assertion['volume']}: {len(thin)} of {len(pages)} pages under "
+            f"{assertion['lines']} lines{': ' + ', '.join(f'{n} ({c})' for n, c in thin[:5]) if thin else ''}"
+        )
+
     if kind == "min_entries_in_dir":
         target = ROOT / assertion["path"]
         if not target.is_dir():

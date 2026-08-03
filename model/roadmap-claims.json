@@ -5,6 +5,7 @@
     "path_exists": "path (repo-relative file or directory) exists",
     "doc_exists": "docs/<doc> exists",
     "min_lines": "path has at least lines lines",
+    "term_in_path": "term appears verbatim in the file at path",
     "min_docs_in_volume": "at least count docs carry frontmatter volume: volume",
     "term_in_volume": "term appears (case-insensitive) in at least min_files docs of that volume",
     "term_in_docs": "term appears in at least min_files docs repo-wide, excluding CHARTER-DRIFT-ASSESSMENT.md",
@@ -746,7 +747,27 @@
     "Graphical zoomable graph rendering in the explorer page": [
       {
         "type": "path_exists",
-        "path": "tools/build_explorer.py"
+        "path": "tools/vendor/d3.v7.min.js"
+      },
+      {
+        "type": "term_in_path",
+        "path": "tools/build_explorer.py",
+        "term": "d3.forceSimulation"
+      },
+      {
+        "type": "term_in_path",
+        "path": "tools/build_explorer.py",
+        "term": "d3.zoom()"
+      },
+      {
+        "type": "term_in_path",
+        "path": "tools/build_explorer.py",
+        "term": "graphViewRoute"
+      },
+      {
+        "type": "term_in_path",
+        "path": "generated/explorer/index.html",
+        "term": "d3.forceSimulation"
       },
       {
         "type": "term_in_docs",

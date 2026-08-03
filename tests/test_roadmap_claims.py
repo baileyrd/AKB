@@ -105,6 +105,13 @@ def check(assertion, graph, inventory_kinds):
         actual = len(target.read_text(encoding="utf-8").splitlines())
         return actual >= assertion["lines"], f"{assertion['path']} has {actual} lines, need {assertion['lines']}"
 
+    if kind == "term_in_path":
+        target = ROOT / assertion["path"]
+        if not target.exists():
+            return False, f"{assertion['path']} missing"
+        found = assertion["term"] in target.read_text(encoding="utf-8")
+        return found, f"{assertion['path']} contains {assertion['term']!r}={found}"
+
     if kind == "min_docs_in_volume":
         actual = len(docs_in_volume(assertion["volume"]))
         return actual >= assertion["count"], (
@@ -163,7 +170,8 @@ def check(assertion, graph, inventory_kinds):
 class RoadmapClaimTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.claims = json.loads(CLAIMS_PATH.read_text(encoding="utf-8"))["items"]
+        cls.document = json.loads(CLAIMS_PATH.read_text(encoding="utf-8"))
+        cls.claims = cls.document["items"]
         cls.items = parse_roadmap()
         cls.graph = akb.load_composed_graph()
         inventory = json.loads((ROOT / "model" / "inventory" / "current.json").read_text(encoding="utf-8"))
@@ -219,24 +227,46 @@ class RoadmapClaimTests(unittest.TestCase):
             "unchecked roadmap items with no assertions:\n  " + "\n  ".join(bare),
         )
 
+    def test_every_declared_assertion_type_is_implemented(self):
+        """A declared type with no evaluator would gate nothing.
+
+        Deriving the known-type set from the claims file means declaring a
+        type is now enough to make it accepted. Only assertions on `[x]`
+        items are ever evaluated, so an unimplemented type used solely on
+        an unchecked item would sit here silently until the day someone
+        ticked the box. Probing `check` closes that gap: a probe with the
+        wrong keys raises KeyError, which still proves the dispatch matched
+        — only the fallthrough means nothing implements it.
+        """
+        unimplemented = []
+        for name in self.document["assertion_types"]:
+            try:
+                check({"type": name}, self.graph, self.inventory_kinds)
+            except AssertionError as error:
+                if "unknown assertion type" in str(error):
+                    unimplemented.append(name)
+            except Exception:  # pylint: disable=broad-except
+                pass  # dispatch matched; missing probe keys are expected
+        self.assertEqual(
+            unimplemented,
+            [],
+            "assertion types declared in model/roadmap-claims.json but not "
+            f"implemented in check(): {unimplemented}",
+        )
+
     def test_assertion_types_are_known(self):
+        """Types are declared once, in the claims file, and used from there.
+
+        This set used to be duplicated here as a literal, so adding a type
+        meant editing it in two places and forgetting one made the failure
+        look like a bad claim rather than a stale test.
+        """
+        declared = set(self.document["assertion_types"])
         for text, assertions in self.claims.items():
             for assertion in assertions:
                 self.assertIn(
                     assertion["type"],
-                    {
-                        "path_exists",
-                        "doc_exists",
-                        "min_lines",
-                        "min_docs_in_volume",
-                        "term_in_volume",
-                        "term_in_docs",
-                        "min_graph_entities_of_kind",
-                        "min_inventory_entities_of_kind",
-                        "explorer_view_nonempty",
-                        "min_observed_packages",
-                        "no_three_segment_claim_ids",
-                    },
+                    declared,
                     f"{text}: unknown assertion type {assertion['type']}",
                 )
 

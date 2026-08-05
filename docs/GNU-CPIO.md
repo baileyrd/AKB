@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 2.15-1 |
 | License (observed) | GPLv3 |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 1008.6 KB |
+| Installed size (observed) | 1008.64 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:cpio-manual-2026-07-30` — GNU Cpio Manual (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

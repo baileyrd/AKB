@@ -32,11 +32,11 @@ last_verified: 2026-07-30
 | Version (observed) | 2.71-4 |
 | License (observed) | spdx:GPL-2.0-or-later;spdx:GPL-3.0-or-later;spdx:Autoconf-exception-3.0 |
 | Architecture (observed) | any |
-| Installed size (observed) | 1.9 MB |
+| Installed size (observed) | 1955.78 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:autoconf-manual-2026-07-30` — GNU Autoconf (official project page) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

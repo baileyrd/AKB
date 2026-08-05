@@ -32,11 +32,11 @@ last_verified: 2026-08-02
 | Version (observed) | 1.10.0-1 |
 | License (observed) | LGPL |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 965.9 KB |
+| Installed size (observed) | 965.92 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:lz4:manual-2026-07-30` — LZ4 (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

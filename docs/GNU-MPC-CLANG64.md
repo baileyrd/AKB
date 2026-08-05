@@ -32,11 +32,11 @@ last_verified: 2026-08-02
 | Version (observed) | 1.4.1-1 |
 | License (observed) | spdx:LGPL-3.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 452.9 KB |
+| Installed size (observed) | 452.89 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:multiprecision:mpc-manual-2026-07-30` — GNU MPC (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

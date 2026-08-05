@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 8.45-5 |
 | License (observed) | BSD |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 282.5 KB |
+| Installed size (observed) | 282.49 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:pcre:pcre1-manual-2026-07-30` — PCRE (legacy PCRE1, official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

@@ -185,14 +185,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://gcc.gnu.org/onlinedocs/libstdc++/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gcc-libs` |
-| Version (observed) | 16.1.0-5 |
-| License (observed) | spdx:GPL-3.0-or-later WITH GCC-exception-3.1 AND LGPL-2.1-or-later |
+| Version (observed) | 16.1.0-6 |
+| License (observed) | spdx:GPL-3.0-or-later;WITH;GCC-exception-3.1;AND;LGPL-2.1-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 3.5 MB |
+| Installed size (observed) | 3585.22 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:libstdcxx-manual-2026-07-30` — The GNU C++ Library Documentation (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

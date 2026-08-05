@@ -34,11 +34,11 @@ last_verified: 2026-07-30
 | Version (observed) | 4.4.1-3 |
 | License (observed) | GPL3 |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 1.6 MB |
+| Installed size (observed) | 1655.29 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:make-manual-2026-07-30` — GNU Make Manual (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

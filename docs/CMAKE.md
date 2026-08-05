@@ -35,14 +35,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://www.cmake.org/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-cmake` |
-| Version (observed) | 4.4.0-1 |
+| Version (observed) | 4.4.2-1 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | any |
-| Installed size (observed) | 57.1 MB |
+| Installed size (observed) | 57.18 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:cmake:documentation-2026-07-30` — CMake Documentation (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

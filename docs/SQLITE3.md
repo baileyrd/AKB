@@ -31,11 +31,11 @@ last_verified: 2026-07-30
 | Version (observed) | 3.53.4-1 |
 | License (observed) | PublicDomain |
 | Architecture (observed) | any |
-| Installed size (observed) | 20.7 MB |
+| Installed size (observed) | 20.70 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:sqlite:documentation-2026-07-30` — SQLite (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

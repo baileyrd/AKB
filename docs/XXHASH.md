@@ -29,13 +29,13 @@ last_verified: 2026-07-30
 | Upstream | <https://xxhash.com/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-xxhash` |
 | Version (observed) | 0.8.3-2 |
-| License (observed) | spdx:BSD-2-Clause AND GPL-2.0-or-later |
+| License (observed) | spdx:BSD-2-Clause;AND;GPL-2.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 758.2 KB |
+| Installed size (observed) | 758.21 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:xxhash:manual-2026-07-30` — xxHash (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

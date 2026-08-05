@@ -32,11 +32,11 @@ last_verified: 2026-08-02
 | Version (observed) | 3.24.52-1 |
 | License (observed) | spdx:LGPL-2.1-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 73.5 MB |
+| Installed size (observed) | 73.50 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gtk:project-site-2026-08-02` — GTK (official project site) (`primary`, retrieved 2026-08-02)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

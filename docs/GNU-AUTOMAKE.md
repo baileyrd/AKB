@@ -32,11 +32,11 @@ last_verified: 2026-07-30
 | Version (observed) | 20260320-1 |
 | License (observed) | spdx:GPL-2.0-only |
 | Architecture (observed) | any |
-| Installed size (observed) | 9.1 KB |
+| Installed size (observed) | 9.10 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:automake-manual-2026-07-30` — GNU Automake (official project page) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

@@ -34,14 +34,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://gcc.gnu.org> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gcc` |
-| Version (observed) | 16.1.0-5 |
+| Version (observed) | 16.1.0-6 |
 | License (observed) | spdx:GPL-3.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 184.2 MB |
+| Installed size (observed) | 254.50 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:gcc-manual-2026-07-30` — GCC Online Documentation (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

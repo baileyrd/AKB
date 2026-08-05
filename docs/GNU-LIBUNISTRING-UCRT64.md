@@ -31,13 +31,13 @@ last_verified: 2026-07-30
 | Upstream | <https://www.gnu.org/software/libunistring> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libunistring` |
 | Version (observed) | 1.4.2-1 |
-| License (observed) | spdx:LGPL-3.0-or-later OR GPL-3.0-or-later |
+| License (observed) | spdx:LGPL-3.0-or-later;OR;GPL-3.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 6.3 MB |
+| Installed size (observed) | 6488.22 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:libunistring-manual-2026-07-30` — GNU libunistring (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

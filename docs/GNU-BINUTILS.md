@@ -31,14 +31,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://www.gnu.org/software/binutils/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-binutils` |
-| Version (observed) | 2.47-1 |
-| License (observed) | spdx:GPL-3.0-or-later AND GPL-2.0-or-later AND LGPL-3.0-or-later AND LGPL-2.0-or-later |
+| Version (observed) | 2.47-3 |
+| License (observed) | spdx:GPL-3.0-or-later;AND;GPL-2.0-or-later;AND;LGPL-3.0-or-later;AND;LGPL-2.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 43.8 MB |
+| Installed size (observed) | 43.84 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:binutils-manual-2026-07-30` — GNU Binutils (official project page) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

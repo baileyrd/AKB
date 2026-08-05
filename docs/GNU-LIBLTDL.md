@@ -30,13 +30,13 @@ last_verified: 2026-07-30
 | Upstream | <https://www.gnu.org/software/libtool> |
 | Packaged as | `package:msys2:libltdl` |
 | Version (observed) | 2.5.4-5 |
-| License (observed) | spdx:LGPL-2.0-or-later WITH Libtool-exception |
+| License (observed) | spdx:LGPL-2.0-or-later;WITH;Libtool-exception |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 173.3 KB |
+| Installed size (observed) | 173.28 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:libtool-manual-2026-07-30` — GNU Libtool (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

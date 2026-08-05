@@ -29,14 +29,14 @@ last_verified: 2026-07-30
 | Environments | `msys` |
 | Upstream | <https://nghttp2.org/> |
 | Packaged as | `package:msys2:libnghttp2` |
-| Version (observed) | 1.69.0-1 |
+| Version (observed) | 1.70.0-1 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 165.6 KB |
+| Installed size (observed) | 165.65 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:nghttp2:libnghttp2-manual-2026-07-30` — nghttp2 project site (libnghttp2) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

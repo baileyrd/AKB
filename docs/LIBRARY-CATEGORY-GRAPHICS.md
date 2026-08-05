@@ -29,14 +29,14 @@ last_verified: 2026-08-02
 | Upstream | <https://www.cairographics.org/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-cairo` |
 | Version (observed) | 1.18.4-4 |
-| License (observed) | spdx:LGPL-2.1-or-later OR MPL-1.1 |
+| License (observed) | spdx:LGPL-2.1-or-later;OR;MPL-1.1 |
 | Architecture (observed) | any |
-| Installed size (observed) | 4.0 MB |
+| Installed size (observed) | 4074.62 KiB |
 
 **Evidence on this object**
 
 - `evidence:cairo:project-site-2026-08-02` — Cairo (official project site) (`primary`, retrieved 2026-08-02)
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
 Edits between the surrounding markers are overwritten on the next build.

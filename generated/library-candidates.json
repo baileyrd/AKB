@@ -1,47 +1,47 @@
 {
-  "snapshot": "20260729T113151Z-a2c48f8738b1",
+  "snapshot": "20260805T142220Z-5c8f16a3b1e4",
   "classification": "package-name candidate; not a logical library identity",
   "candidates": [
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-gcc-libs",
       "name": "mingw-w64-ucrt-x86_64-gcc-libs",
       "repository": "ucrt64",
-      "version": "16.1.0-5",
-      "declared_runtime_dependents": 167
-    },
-    {
-      "id": "package:msys2:mingw-w64-x86_64-gcc-libs",
-      "name": "mingw-w64-x86_64-gcc-libs",
-      "repository": "mingw64",
-      "version": "16.1.0-5",
-      "declared_runtime_dependents": 153
+      "version": "16.1.0-6",
+      "declared_runtime_dependents": 166
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libwinpthread",
       "name": "mingw-w64-ucrt-x86_64-libwinpthread",
       "repository": "ucrt64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
+      "declared_runtime_dependents": 153
+    },
+    {
+      "id": "package:msys2:mingw-w64-x86_64-gcc-libs",
+      "name": "mingw-w64-x86_64-gcc-libs",
+      "repository": "mingw64",
+      "version": "16.1.0-6",
       "declared_runtime_dependents": 152
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-libwinpthread",
       "name": "mingw-w64-clang-x86_64-libwinpthread",
       "repository": "clang64",
-      "version": "14.0.0.r220.gd999af622-1",
-      "declared_runtime_dependents": 139
+      "version": "14.0.0.r248.g7735a1a63-1",
+      "declared_runtime_dependents": 140
     },
     {
       "id": "package:msys2:mingw-w64-clang-aarch64-libwinpthread",
       "name": "mingw-w64-clang-aarch64-libwinpthread",
       "repository": "clangarm64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 134
     },
     {
       "id": "package:msys2:mingw-w64-x86_64-libwinpthread",
       "name": "mingw-w64-x86_64-libwinpthread",
       "repository": "mingw64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 132
     },
     {
@@ -133,7 +133,7 @@
       "name": "mingw-w64-x86_64-libiconv",
       "repository": "mingw64",
       "version": "1.19-1",
-      "declared_runtime_dependents": 71
+      "declared_runtime_dependents": 70
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-libtiff",
@@ -181,8 +181,8 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-gcc-libgfortran",
       "name": "mingw-w64-ucrt-x86_64-gcc-libgfortran",
       "repository": "ucrt64",
-      "version": "16.1.0-5",
-      "declared_runtime_dependents": 51
+      "version": "16.1.0-6",
+      "declared_runtime_dependents": 48
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-libwebp",
@@ -265,8 +265,8 @@
       "id": "package:msys2:mingw-w64-x86_64-gcc-libgfortran",
       "name": "mingw-w64-x86_64-gcc-libgfortran",
       "repository": "mingw64",
-      "version": "16.1.0-5",
-      "declared_runtime_dependents": 29
+      "version": "16.1.0-6",
+      "declared_runtime_dependents": 28
     },
     {
       "id": "package:msys2:libopenssl",
@@ -363,7 +363,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libarchive",
       "name": "mingw-w64-ucrt-x86_64-libarchive",
       "repository": "ucrt64",
-      "version": "3.8.8-2",
+      "version": "3.8.9-1",
       "declared_runtime_dependents": 22
     },
     {
@@ -374,24 +374,10 @@
       "declared_runtime_dependents": 22
     },
     {
-      "id": "package:msys2:mingw-w64-x86_64-libsndfile",
-      "name": "mingw-w64-x86_64-libsndfile",
-      "repository": "mingw64",
-      "version": "1.2.2-1",
-      "declared_runtime_dependents": 22
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libarchive",
       "name": "mingw-w64-clang-x86_64-libarchive",
       "repository": "clang64",
-      "version": "3.8.8-2",
-      "declared_runtime_dependents": 21
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libiconv",
-      "name": "mingw-w64-i686-libiconv",
-      "repository": "mingw32",
-      "version": "1.19-1",
+      "version": "3.8.9-1",
       "declared_runtime_dependents": 21
     },
     {
@@ -402,10 +388,24 @@
       "declared_runtime_dependents": 21
     },
     {
+      "id": "package:msys2:mingw-w64-x86_64-libsndfile",
+      "name": "mingw-w64-x86_64-libsndfile",
+      "repository": "mingw64",
+      "version": "1.2.2-1",
+      "declared_runtime_dependents": 21
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libarchive",
       "name": "mingw-w64-clang-aarch64-libarchive",
       "repository": "clangarm64",
-      "version": "3.8.8-2",
+      "version": "3.8.9-1",
+      "declared_runtime_dependents": 20
+    },
+    {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libgcrypt",
+      "name": "mingw-w64-clang-aarch64-libgcrypt",
+      "repository": "clangarm64",
+      "version": "1.12.2-2",
       "declared_runtime_dependents": 20
     },
     {
@@ -416,10 +416,24 @@
       "declared_runtime_dependents": 20
     },
     {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libgcrypt",
+      "name": "mingw-w64-clang-x86_64-libgcrypt",
+      "repository": "clang64",
+      "version": "1.12.2-2",
+      "declared_runtime_dependents": 20
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-x86_64-librevenge",
       "name": "mingw-w64-clang-x86_64-librevenge",
       "repository": "clang64",
       "version": "0.0.6-1",
+      "declared_runtime_dependents": 20
+    },
+    {
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libgcrypt",
+      "name": "mingw-w64-ucrt-x86_64-libgcrypt",
+      "repository": "ucrt64",
+      "version": "1.12.2-2",
       "declared_runtime_dependents": 20
     },
     {
@@ -444,13 +458,6 @@
       "declared_runtime_dependents": 19
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-libgcrypt",
-      "name": "mingw-w64-clang-aarch64-libgcrypt",
-      "repository": "clangarm64",
-      "version": "1.12.2-2",
-      "declared_runtime_dependents": 19
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libffi",
       "name": "mingw-w64-clang-x86_64-libffi",
       "repository": "clang64",
@@ -458,24 +465,10 @@
       "declared_runtime_dependents": 19
     },
     {
-      "id": "package:msys2:mingw-w64-clang-x86_64-libgcrypt",
-      "name": "mingw-w64-clang-x86_64-libgcrypt",
-      "repository": "clang64",
-      "version": "1.12.2-2",
-      "declared_runtime_dependents": 19
-    },
-    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libffi",
       "name": "mingw-w64-ucrt-x86_64-libffi",
       "repository": "ucrt64",
       "version": "3.7.1-1",
-      "declared_runtime_dependents": 19
-    },
-    {
-      "id": "package:msys2:mingw-w64-ucrt-x86_64-libgcrypt",
-      "name": "mingw-w64-ucrt-x86_64-libgcrypt",
-      "repository": "ucrt64",
-      "version": "1.12.2-2",
       "declared_runtime_dependents": 19
     },
     {
@@ -563,13 +556,6 @@
       "declared_runtime_dependents": 17
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libwinpthread",
-      "name": "mingw-w64-i686-libwinpthread",
-      "repository": "mingw32",
-      "version": "14.0.0.r220.gd999af622-1",
-      "declared_runtime_dependents": 17
-    },
-    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libgit2",
       "name": "mingw-w64-ucrt-x86_64-libgit2",
       "repository": "ucrt64",
@@ -587,7 +573,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libarchive",
       "name": "mingw-w64-x86_64-libarchive",
       "repository": "mingw64",
-      "version": "3.8.8-2",
+      "version": "3.8.9-1",
       "declared_runtime_dependents": 17
     },
     {
@@ -626,10 +612,10 @@
       "declared_runtime_dependents": 16
     },
     {
-      "id": "package:msys2:mingw-w64-i686-gcc-libs",
-      "name": "mingw-w64-i686-gcc-libs",
+      "id": "package:msys2:mingw-w64-i686-libiconv",
+      "name": "mingw-w64-i686-libiconv",
       "repository": "mingw32",
-      "version": "16.1.0-5",
+      "version": "1.19-1",
       "declared_runtime_dependents": 16
     },
     {
@@ -682,13 +668,6 @@
       "declared_runtime_dependents": 15
     },
     {
-      "id": "package:msys2:mingw-w64-x86_64-libltdl",
-      "name": "mingw-w64-x86_64-libltdl",
-      "repository": "mingw64",
-      "version": "2.6.2-1",
-      "declared_runtime_dependents": 15
-    },
-    {
       "id": "package:msys2:mingw-w64-x86_64-libssh2",
       "name": "mingw-w64-x86_64-libssh2",
       "repository": "mingw64",
@@ -703,10 +682,24 @@
       "declared_runtime_dependents": 14
     },
     {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libsoup3",
+      "name": "mingw-w64-clang-aarch64-libsoup3",
+      "repository": "clangarm64",
+      "version": "3.6.6-1",
+      "declared_runtime_dependents": 14
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-aarch64-wxwidgets3.2-msw-libs",
       "name": "mingw-w64-clang-aarch64-wxwidgets3.2-msw-libs",
       "repository": "clangarm64",
       "version": "3.2.10-2",
+      "declared_runtime_dependents": 14
+    },
+    {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libsoup3",
+      "name": "mingw-w64-clang-x86_64-libsoup3",
+      "repository": "clang64",
+      "version": "3.6.6-1",
       "declared_runtime_dependents": 14
     },
     {
@@ -717,10 +710,24 @@
       "declared_runtime_dependents": 14
     },
     {
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libsoup3",
+      "name": "mingw-w64-ucrt-x86_64-libsoup3",
+      "repository": "ucrt64",
+      "version": "3.6.6-1",
+      "declared_runtime_dependents": 14
+    },
+    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-wxwidgets3.2-msw-libs",
       "name": "mingw-w64-ucrt-x86_64-wxwidgets3.2-msw-libs",
       "repository": "ucrt64",
       "version": "3.2.10-2",
+      "declared_runtime_dependents": 14
+    },
+    {
+      "id": "package:msys2:mingw-w64-x86_64-libltdl",
+      "name": "mingw-w64-x86_64-libltdl",
+      "repository": "mingw64",
+      "version": "2.6.2-1",
       "declared_runtime_dependents": 14
     },
     {
@@ -745,13 +752,6 @@
       "declared_runtime_dependents": 13
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-libsoup3",
-      "name": "mingw-w64-clang-aarch64-libsoup3",
-      "repository": "clangarm64",
-      "version": "3.6.6-1",
-      "declared_runtime_dependents": 13
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libzip",
       "name": "mingw-w64-clang-aarch64-libzip",
       "repository": "clangarm64",
@@ -773,13 +773,6 @@
       "declared_runtime_dependents": 13
     },
     {
-      "id": "package:msys2:mingw-w64-clang-x86_64-libsoup3",
-      "name": "mingw-w64-clang-x86_64-libsoup3",
-      "repository": "clang64",
-      "version": "3.6.6-1",
-      "declared_runtime_dependents": 13
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libzip",
       "name": "mingw-w64-clang-x86_64-libzip",
       "repository": "clang64",
@@ -787,24 +780,10 @@
       "declared_runtime_dependents": 13
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libpng",
-      "name": "mingw-w64-i686-libpng",
-      "repository": "mingw32",
-      "version": "1.6.58-1",
-      "declared_runtime_dependents": 13
-    },
-    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libdeflate",
       "name": "mingw-w64-ucrt-x86_64-libdeflate",
       "repository": "ucrt64",
       "version": "1.25-1",
-      "declared_runtime_dependents": 13
-    },
-    {
-      "id": "package:msys2:mingw-w64-ucrt-x86_64-libsoup3",
-      "name": "mingw-w64-ucrt-x86_64-libsoup3",
-      "repository": "ucrt64",
-      "version": "3.6.6-1",
       "declared_runtime_dependents": 13
     },
     {
@@ -860,7 +839,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libheif",
       "name": "mingw-w64-ucrt-x86_64-libheif",
       "repository": "ucrt64",
-      "version": "1.23.1-1",
+      "version": "1.23.1-3",
       "declared_runtime_dependents": 12
     },
     {
@@ -871,6 +850,13 @@
       "declared_runtime_dependents": 12
     },
     {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libgee",
+      "name": "mingw-w64-clang-aarch64-libgee",
+      "repository": "clangarm64",
+      "version": "0.20.8-2",
+      "declared_runtime_dependents": 11
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libidn2",
       "name": "mingw-w64-clang-aarch64-libidn2",
       "repository": "clangarm64",
@@ -878,10 +864,17 @@
       "declared_runtime_dependents": 11
     },
     {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libgee",
+      "name": "mingw-w64-clang-x86_64-libgee",
+      "repository": "clang64",
+      "version": "0.20.8-2",
+      "declared_runtime_dependents": 11
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libheif",
       "name": "mingw-w64-clang-x86_64-libheif",
       "repository": "clang64",
-      "version": "1.23.1-1",
+      "version": "1.23.1-3",
       "declared_runtime_dependents": 11
     },
     {
@@ -899,10 +892,24 @@
       "declared_runtime_dependents": 11
     },
     {
+      "id": "package:msys2:mingw-w64-i686-gcc-libs",
+      "name": "mingw-w64-i686-gcc-libs",
+      "repository": "mingw32",
+      "version": "16.1.0-6",
+      "declared_runtime_dependents": 11
+    },
+    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-clang-libs",
       "name": "mingw-w64-ucrt-x86_64-clang-libs",
       "repository": "ucrt64",
       "version": "22.1.8-2",
+      "declared_runtime_dependents": 11
+    },
+    {
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libgee",
+      "name": "mingw-w64-ucrt-x86_64-libgee",
+      "repository": "ucrt64",
+      "version": "0.20.8-2",
       "declared_runtime_dependents": 11
     },
     {
@@ -962,17 +969,10 @@
       "declared_runtime_dependents": 10
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-libgee",
-      "name": "mingw-w64-clang-aarch64-libgee",
-      "repository": "clangarm64",
-      "version": "0.20.8-2",
-      "declared_runtime_dependents": 10
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libheif",
       "name": "mingw-w64-clang-aarch64-libheif",
       "repository": "clangarm64",
-      "version": "1.23.1-1",
+      "version": "1.23.1-3",
       "declared_runtime_dependents": 10
     },
     {
@@ -990,24 +990,10 @@
       "declared_runtime_dependents": 10
     },
     {
-      "id": "package:msys2:mingw-w64-clang-x86_64-libgee",
-      "name": "mingw-w64-clang-x86_64-libgee",
-      "repository": "clang64",
-      "version": "0.20.8-2",
-      "declared_runtime_dependents": 10
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libpsl",
       "name": "mingw-w64-clang-x86_64-libpsl",
       "repository": "clang64",
       "version": "0.21.5-3",
-      "declared_runtime_dependents": 10
-    },
-    {
-      "id": "package:msys2:mingw-w64-ucrt-x86_64-libgee",
-      "name": "mingw-w64-ucrt-x86_64-libgee",
-      "repository": "ucrt64",
-      "version": "0.20.8-2",
       "declared_runtime_dependents": 10
     },
     {
@@ -1057,13 +1043,6 @@
       "name": "mingw-w64-clang-x86_64-libgd",
       "repository": "clang64",
       "version": "2.3.3-1",
-      "declared_runtime_dependents": 9
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libxml2",
-      "name": "mingw-w64-i686-libxml2",
-      "repository": "mingw32",
-      "version": "2.15.3-1",
       "declared_runtime_dependents": 9
     },
     {
@@ -1291,13 +1270,6 @@
       "declared_runtime_dependents": 8
     },
     {
-      "id": "package:msys2:mingw-w64-x86_64-libgit2",
-      "name": "mingw-w64-x86_64-libgit2",
-      "repository": "mingw64",
-      "version": "1.9.6-1",
-      "declared_runtime_dependents": 8
-    },
-    {
       "id": "package:msys2:mingw-w64-x86_64-libjxl",
       "name": "mingw-w64-x86_64-libjxl",
       "repository": "mingw64",
@@ -1330,6 +1302,13 @@
       "name": "liblz4",
       "repository": "msys",
       "version": "1.10.0-1",
+      "declared_runtime_dependents": 7
+    },
+    {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libadwaita",
+      "name": "mingw-w64-clang-aarch64-libadwaita",
+      "repository": "clangarm64",
+      "version": "1.9.3-1",
       "declared_runtime_dependents": 7
     },
     {
@@ -1375,6 +1354,13 @@
       "declared_runtime_dependents": 7
     },
     {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libadwaita",
+      "name": "mingw-w64-clang-x86_64-libadwaita",
+      "repository": "clang64",
+      "version": "1.9.3-1",
+      "declared_runtime_dependents": 7
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libftdi",
       "name": "mingw-w64-clang-x86_64-libftdi",
       "repository": "clang64",
@@ -1403,17 +1389,17 @@
       "declared_runtime_dependents": 7
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libogg",
-      "name": "mingw-w64-i686-libogg",
+      "id": "package:msys2:mingw-w64-i686-libwinpthread",
+      "name": "mingw-w64-i686-libwinpthread",
       "repository": "mingw32",
-      "version": "1.3.6-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 7
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libtiff",
-      "name": "mingw-w64-i686-libtiff",
-      "repository": "mingw32",
-      "version": "4.7.2-1",
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libadwaita",
+      "name": "mingw-w64-ucrt-x86_64-libadwaita",
+      "repository": "ucrt64",
+      "version": "1.9.3-1",
       "declared_runtime_dependents": 7
     },
     {
@@ -1473,6 +1459,13 @@
       "declared_runtime_dependents": 7
     },
     {
+      "id": "package:msys2:mingw-w64-x86_64-libgit2",
+      "name": "mingw-w64-x86_64-libgit2",
+      "repository": "mingw64",
+      "version": "1.9.6-1",
+      "declared_runtime_dependents": 7
+    },
+    {
       "id": "package:msys2:mingw-w64-x86_64-libobjfw",
       "name": "mingw-w64-x86_64-libobjfw",
       "repository": "mingw64",
@@ -1504,7 +1497,7 @@
       "id": "package:msys2:libarchive",
       "name": "libarchive",
       "repository": "msys",
-      "version": "3.8.8-1",
+      "version": "3.8.9-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1529,13 +1522,6 @@
       "declared_runtime_dependents": 6
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-libadwaita",
-      "name": "mingw-w64-clang-aarch64-libadwaita",
-      "repository": "clangarm64",
-      "version": "1.9.1-1",
-      "declared_runtime_dependents": 6
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libass",
       "name": "mingw-w64-clang-aarch64-libass",
       "repository": "clangarm64",
@@ -1546,7 +1532,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libgsf",
       "name": "mingw-w64-clang-aarch64-libgsf",
       "repository": "clangarm64",
-      "version": "1.14.55-2",
+      "version": "1.14.58-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1574,7 +1560,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libssh",
       "name": "mingw-w64-clang-aarch64-libssh",
       "repository": "clangarm64",
-      "version": "0.12.1-1",
+      "version": "0.12.2-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1599,13 +1585,6 @@
       "declared_runtime_dependents": 6
     },
     {
-      "id": "package:msys2:mingw-w64-clang-x86_64-libadwaita",
-      "name": "mingw-w64-clang-x86_64-libadwaita",
-      "repository": "clang64",
-      "version": "1.9.1-1",
-      "declared_runtime_dependents": 6
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libass",
       "name": "mingw-w64-clang-x86_64-libass",
       "repository": "clang64",
@@ -1616,7 +1595,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libgsf",
       "name": "mingw-w64-clang-x86_64-libgsf",
       "repository": "clang64",
-      "version": "1.14.55-2",
+      "version": "1.14.58-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1644,7 +1623,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libssh",
       "name": "mingw-w64-clang-x86_64-libssh",
       "repository": "clang64",
-      "version": "0.12.1-1",
+      "version": "0.12.2-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1683,13 +1662,6 @@
       "declared_runtime_dependents": 6
     },
     {
-      "id": "package:msys2:mingw-w64-ucrt-x86_64-libadwaita",
-      "name": "mingw-w64-ucrt-x86_64-libadwaita",
-      "repository": "ucrt64",
-      "version": "1.9.1-1",
-      "declared_runtime_dependents": 6
-    },
-    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libass",
       "name": "mingw-w64-ucrt-x86_64-libass",
       "repository": "ucrt64",
@@ -1700,7 +1672,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libgsf",
       "name": "mingw-w64-ucrt-x86_64-libgsf",
       "repository": "ucrt64",
-      "version": "1.14.55-2",
+      "version": "1.14.58-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1735,7 +1707,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libssh",
       "name": "mingw-w64-ucrt-x86_64-libssh",
       "repository": "ucrt64",
-      "version": "0.12.1-1",
+      "version": "0.12.2-1",
       "declared_runtime_dependents": 6
     },
     {
@@ -1770,7 +1742,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libheif",
       "name": "mingw-w64-x86_64-libheif",
       "repository": "mingw64",
-      "version": "1.23.1-1",
+      "version": "1.23.1-3",
       "declared_runtime_dependents": 6
     },
     {
@@ -1875,7 +1847,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libdvdread",
       "name": "mingw-w64-clang-aarch64-libdvdread",
       "repository": "clangarm64",
-      "version": "7.1.0-1",
+      "version": "7.1.1-1",
       "declared_runtime_dependents": 5
     },
     {
@@ -1980,7 +1952,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libdvdread",
       "name": "mingw-w64-clang-x86_64-libdvdread",
       "repository": "clang64",
-      "version": "7.1.0-1",
+      "version": "7.1.1-1",
       "declared_runtime_dependents": 5
     },
     {
@@ -2068,10 +2040,10 @@
       "declared_runtime_dependents": 5
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libvorbis",
-      "name": "mingw-w64-i686-libvorbis",
+      "id": "package:msys2:mingw-w64-i686-libxml2",
+      "name": "mingw-w64-i686-libxml2",
       "repository": "mingw32",
-      "version": "1.3.7-2",
+      "version": "2.15.3-1",
       "declared_runtime_dependents": 5
     },
     {
@@ -2099,7 +2071,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libdvdread",
       "name": "mingw-w64-ucrt-x86_64-libdvdread",
       "repository": "ucrt64",
-      "version": "7.1.0-1",
+      "version": "7.1.1-1",
       "declared_runtime_dependents": 5
     },
     {
@@ -2183,7 +2155,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libadwaita",
       "name": "mingw-w64-x86_64-libadwaita",
       "repository": "mingw64",
-      "version": "1.9.1-1",
+      "version": "1.9.3-1",
       "declared_runtime_dependents": 5
     },
     {
@@ -2260,7 +2232,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libssh",
       "name": "mingw-w64-x86_64-libssh",
       "repository": "mingw64",
-      "version": "0.12.1-1",
+      "version": "0.12.2-1",
       "declared_runtime_dependents": 5
     },
     {
@@ -2337,7 +2309,7 @@
       "id": "package:msys2:libnghttp2",
       "name": "libnghttp2",
       "repository": "msys",
-      "version": "1.69.0-1",
+      "version": "1.70.0-1",
       "declared_runtime_dependents": 4
     },
     {
@@ -2372,7 +2344,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-gst-plugins-bad-libs",
       "name": "mingw-w64-clang-aarch64-gst-plugins-bad-libs",
       "repository": "clangarm64",
-      "version": "1.28.5-1",
+      "version": "1.28.5-2",
       "declared_runtime_dependents": 4
     },
     {
@@ -2477,14 +2449,14 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-wxwidgets3.3-common-libs",
       "name": "mingw-w64-clang-aarch64-wxwidgets3.3-common-libs",
       "repository": "clangarm64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 4
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-gst-plugins-bad-libs",
       "name": "mingw-w64-clang-x86_64-gst-plugins-bad-libs",
       "repository": "clang64",
-      "version": "1.28.5-1",
+      "version": "1.28.5-2",
       "declared_runtime_dependents": 4
     },
     {
@@ -2589,7 +2561,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-wxwidgets3.3-common-libs",
       "name": "mingw-w64-clang-x86_64-wxwidgets3.3-common-libs",
       "repository": "clang64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 4
     },
     {
@@ -2600,17 +2572,24 @@
       "declared_runtime_dependents": 4
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libwebp",
-      "name": "mingw-w64-i686-libwebp",
+      "id": "package:msys2:mingw-w64-i686-libogg",
+      "name": "mingw-w64-i686-libogg",
       "repository": "mingw32",
-      "version": "1.6.0-1",
+      "version": "1.3.6-1",
+      "declared_runtime_dependents": 4
+    },
+    {
+      "id": "package:msys2:mingw-w64-i686-libpng",
+      "name": "mingw-w64-i686-libpng",
+      "repository": "mingw32",
+      "version": "1.6.58-1",
       "declared_runtime_dependents": 4
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-gst-plugins-bad-libs",
       "name": "mingw-w64-ucrt-x86_64-gst-plugins-bad-libs",
       "repository": "ucrt64",
-      "version": "1.28.5-1",
+      "version": "1.28.5-2",
       "declared_runtime_dependents": 4
     },
     {
@@ -2715,14 +2694,14 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-wxwidgets3.3-common-libs",
       "name": "mingw-w64-ucrt-x86_64-wxwidgets3.3-common-libs",
       "repository": "ucrt64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 4
     },
     {
       "id": "package:msys2:mingw-w64-x86_64-gst-plugins-bad-libs",
       "name": "mingw-w64-x86_64-gst-plugins-bad-libs",
       "repository": "mingw64",
-      "version": "1.28.5-1",
+      "version": "1.28.5-2",
       "declared_runtime_dependents": 4
     },
     {
@@ -2743,7 +2722,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libdvdread",
       "name": "mingw-w64-x86_64-libdvdread",
       "repository": "mingw64",
-      "version": "7.1.0-1",
+      "version": "7.1.1-1",
       "declared_runtime_dependents": 4
     },
     {
@@ -2800,13 +2779,6 @@
       "name": "mingw-w64-x86_64-libraqm",
       "repository": "mingw64",
       "version": "0.11.0-1",
-      "declared_runtime_dependents": 4
-    },
-    {
-      "id": "package:msys2:mingw-w64-x86_64-libsoxr",
-      "name": "mingw-w64-x86_64-libsoxr",
-      "repository": "mingw64",
-      "version": "0.1.3-5",
       "declared_runtime_dependents": 4
     },
     {
@@ -2943,6 +2915,13 @@
       "declared_runtime_dependents": 3
     },
     {
+      "id": "package:msys2:mingw-w64-clang-aarch64-fc-libs",
+      "name": "mingw-w64-clang-aarch64-fc-libs",
+      "repository": "clangarm64",
+      "version": "22.1.8-2",
+      "declared_runtime_dependents": 3
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libassuan",
       "name": "mingw-w64-clang-aarch64-libassuan",
       "repository": "clangarm64",
@@ -3027,6 +3006,13 @@
       "declared_runtime_dependents": 3
     },
     {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libnice",
+      "name": "mingw-w64-clang-aarch64-libnice",
+      "repository": "clangarm64",
+      "version": "0.1.23-1",
+      "declared_runtime_dependents": 3
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libnotify",
       "name": "mingw-w64-clang-aarch64-libnotify",
       "repository": "clangarm64",
@@ -3079,7 +3065,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libultrahdr",
       "name": "mingw-w64-clang-aarch64-libultrahdr",
       "repository": "clangarm64",
-      "version": "1.4.0-4",
+      "version": "1.5.1-1",
       "declared_runtime_dependents": 3
     },
     {
@@ -3100,7 +3086,14 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-xml-libxml",
       "name": "mingw-w64-clang-aarch64-perl-xml-libxml",
       "repository": "clangarm64",
-      "version": "2.0213-1",
+      "version": "2.0213-2",
+      "declared_runtime_dependents": 3
+    },
+    {
+      "id": "package:msys2:mingw-w64-clang-x86_64-fc-libs",
+      "name": "mingw-w64-clang-x86_64-fc-libs",
+      "repository": "clang64",
+      "version": "22.1.8-2",
       "declared_runtime_dependents": 3
     },
     {
@@ -3188,6 +3181,13 @@
       "declared_runtime_dependents": 3
     },
     {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libnice",
+      "name": "mingw-w64-clang-x86_64-libnice",
+      "repository": "clang64",
+      "version": "0.1.23-1",
+      "declared_runtime_dependents": 3
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libnotify",
       "name": "mingw-w64-clang-x86_64-libnotify",
       "repository": "clang64",
@@ -3240,7 +3240,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libultrahdr",
       "name": "mingw-w64-clang-x86_64-libultrahdr",
       "repository": "clang64",
-      "version": "1.4.0-4",
+      "version": "1.5.1-1",
       "declared_runtime_dependents": 3
     },
     {
@@ -3261,14 +3261,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-xml-libxml",
       "name": "mingw-w64-clang-x86_64-perl-xml-libxml",
       "repository": "clang64",
-      "version": "2.0213-1",
-      "declared_runtime_dependents": 3
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libssh2",
-      "name": "mingw-w64-i686-libssh2",
-      "repository": "mingw32",
-      "version": "1.11.1-2",
+      "version": "2.0213-2",
       "declared_runtime_dependents": 3
     },
     {
@@ -3276,13 +3269,6 @@
       "name": "mingw-w64-i686-libunistring",
       "repository": "mingw32",
       "version": "1.4.2-1",
-      "declared_runtime_dependents": 3
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libx264",
-      "name": "mingw-w64-i686-libx264",
-      "repository": "mingw32",
-      "version": "0.165.r3222.b35605a-2",
       "declared_runtime_dependents": 3
     },
     {
@@ -3370,6 +3356,13 @@
       "declared_runtime_dependents": 3
     },
     {
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libnice",
+      "name": "mingw-w64-ucrt-x86_64-libnice",
+      "repository": "ucrt64",
+      "version": "0.1.23-1",
+      "declared_runtime_dependents": 3
+    },
+    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libnotify",
       "name": "mingw-w64-ucrt-x86_64-libnotify",
       "repository": "ucrt64",
@@ -3422,7 +3415,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libultrahdr",
       "name": "mingw-w64-ucrt-x86_64-libultrahdr",
       "repository": "ucrt64",
-      "version": "1.4.0-4",
+      "version": "1.5.1-1",
       "declared_runtime_dependents": 3
     },
     {
@@ -3450,7 +3443,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-xml-libxml",
       "name": "mingw-w64-ucrt-x86_64-perl-xml-libxml",
       "repository": "ucrt64",
-      "version": "2.0213-1",
+      "version": "2.0213-2",
       "declared_runtime_dependents": 3
     },
     {
@@ -3594,10 +3587,17 @@
       "declared_runtime_dependents": 3
     },
     {
+      "id": "package:msys2:mingw-w64-x86_64-libsoxr",
+      "name": "mingw-w64-x86_64-libsoxr",
+      "repository": "mingw64",
+      "version": "0.1.3-5",
+      "declared_runtime_dependents": 3
+    },
+    {
       "id": "package:msys2:mingw-w64-x86_64-libultrahdr",
       "name": "mingw-w64-x86_64-libultrahdr",
       "repository": "mingw64",
-      "version": "1.4.0-4",
+      "version": "1.5.1-1",
       "declared_runtime_dependents": 3
     },
     {
@@ -3776,13 +3776,6 @@
       "declared_runtime_dependents": 2
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-fc-libs",
-      "name": "mingw-w64-clang-aarch64-fc-libs",
-      "repository": "clangarm64",
-      "version": "22.1.8-2",
-      "declared_runtime_dependents": 2
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libao",
       "name": "mingw-w64-clang-aarch64-libao",
       "repository": "clangarm64",
@@ -3937,13 +3930,6 @@
       "declared_runtime_dependents": 2
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-libnice",
-      "name": "mingw-w64-clang-aarch64-libnice",
-      "repository": "clangarm64",
-      "version": "0.1.23-1",
-      "declared_runtime_dependents": 2
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libproxy",
       "name": "mingw-w64-clang-aarch64-libproxy",
       "repository": "clangarm64",
@@ -3986,6 +3972,13 @@
       "declared_runtime_dependents": 2
     },
     {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libsrtp",
+      "name": "mingw-w64-clang-aarch64-libsrtp",
+      "repository": "clangarm64",
+      "version": "2.8.0-1",
+      "declared_runtime_dependents": 2
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libthai",
       "name": "mingw-w64-clang-aarch64-libthai",
       "repository": "clangarm64",
@@ -4017,14 +4010,14 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libvirt",
       "name": "mingw-w64-clang-aarch64-libvirt",
       "repository": "clangarm64",
-      "version": "11.10.0-3",
+      "version": "11.10.0-4",
       "declared_runtime_dependents": 2
     },
     {
       "id": "package:msys2:mingw-w64-clang-aarch64-libvisio",
       "name": "mingw-w64-clang-aarch64-libvisio",
       "repository": "clangarm64",
-      "version": "0.1.11-1",
+      "version": "0.1.11-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4045,7 +4038,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libxmp",
       "name": "mingw-w64-clang-aarch64-libxmp",
       "repository": "clangarm64",
-      "version": "4.7.1-1",
+      "version": "4.7.2-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4059,7 +4052,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-devel-stacktrace",
       "name": "mingw-w64-clang-aarch64-perl-devel-stacktrace",
       "repository": "clangarm64",
-      "version": "2.05-1",
+      "version": "2.05-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4073,7 +4066,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-wxwidgets3.3-msw-libs",
       "name": "mingw-w64-clang-aarch64-wxwidgets3.3-msw-libs",
       "repository": "clangarm64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4081,13 +4074,6 @@
       "name": "mingw-w64-clang-x86_64-devil",
       "repository": "clang64",
       "version": "1.8.0-11",
-      "declared_runtime_dependents": 2
-    },
-    {
-      "id": "package:msys2:mingw-w64-clang-x86_64-fc-libs",
-      "name": "mingw-w64-clang-x86_64-fc-libs",
-      "repository": "clang64",
-      "version": "22.1.8-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4245,13 +4231,6 @@
       "declared_runtime_dependents": 2
     },
     {
-      "id": "package:msys2:mingw-w64-clang-x86_64-libnice",
-      "name": "mingw-w64-clang-x86_64-libnice",
-      "repository": "clang64",
-      "version": "0.1.23-1",
-      "declared_runtime_dependents": 2
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libproxy",
       "name": "mingw-w64-clang-x86_64-libproxy",
       "repository": "clang64",
@@ -4301,6 +4280,13 @@
       "declared_runtime_dependents": 2
     },
     {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libsrtp",
+      "name": "mingw-w64-clang-x86_64-libsrtp",
+      "repository": "clang64",
+      "version": "2.8.0-1",
+      "declared_runtime_dependents": 2
+    },
+    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libthai",
       "name": "mingw-w64-clang-x86_64-libthai",
       "repository": "clang64",
@@ -4332,14 +4318,14 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libvirt",
       "name": "mingw-w64-clang-x86_64-libvirt",
       "repository": "clang64",
-      "version": "11.10.0-3",
+      "version": "11.10.0-4",
       "declared_runtime_dependents": 2
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-libvisio",
       "name": "mingw-w64-clang-x86_64-libvisio",
       "repository": "clang64",
-      "version": "0.1.11-1",
+      "version": "0.1.11-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4367,7 +4353,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libxmp",
       "name": "mingw-w64-clang-x86_64-libxmp",
       "repository": "clang64",
-      "version": "4.7.1-1",
+      "version": "4.7.2-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4381,7 +4367,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-devel-stacktrace",
       "name": "mingw-w64-clang-x86_64-perl-devel-stacktrace",
       "repository": "clang64",
-      "version": "2.05-1",
+      "version": "2.05-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4395,7 +4381,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-wxwidgets3.3-msw-libs",
       "name": "mingw-w64-clang-x86_64-wxwidgets3.3-msw-libs",
       "repository": "clang64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4406,24 +4392,31 @@
       "declared_runtime_dependents": 2
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libdeflate",
-      "name": "mingw-w64-i686-libdeflate",
-      "repository": "mingw32",
-      "version": "1.25-1",
-      "declared_runtime_dependents": 2
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libsndfile",
-      "name": "mingw-w64-i686-libsndfile",
-      "repository": "mingw32",
-      "version": "1.2.2-1",
-      "declared_runtime_dependents": 2
-    },
-    {
       "id": "package:msys2:mingw-w64-i686-libtasn1",
       "name": "mingw-w64-i686-libtasn1",
       "repository": "mingw32",
       "version": "4.21.0-1",
+      "declared_runtime_dependents": 2
+    },
+    {
+      "id": "package:msys2:mingw-w64-i686-libtiff",
+      "name": "mingw-w64-i686-libtiff",
+      "repository": "mingw32",
+      "version": "4.7.2-1",
+      "declared_runtime_dependents": 2
+    },
+    {
+      "id": "package:msys2:mingw-w64-i686-libvorbis",
+      "name": "mingw-w64-i686-libvorbis",
+      "repository": "mingw32",
+      "version": "1.3.7-2",
+      "declared_runtime_dependents": 2
+    },
+    {
+      "id": "package:msys2:mingw-w64-i686-libwebp",
+      "name": "mingw-w64-i686-libwebp",
+      "repository": "mingw32",
+      "version": "1.6.0-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4602,13 +4595,6 @@
       "declared_runtime_dependents": 2
     },
     {
-      "id": "package:msys2:mingw-w64-ucrt-x86_64-libnice",
-      "name": "mingw-w64-ucrt-x86_64-libnice",
-      "repository": "ucrt64",
-      "version": "0.1.23-1",
-      "declared_runtime_dependents": 2
-    },
-    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libproxy",
       "name": "mingw-w64-ucrt-x86_64-libproxy",
       "repository": "ucrt64",
@@ -4658,6 +4644,13 @@
       "declared_runtime_dependents": 2
     },
     {
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libsrtp",
+      "name": "mingw-w64-ucrt-x86_64-libsrtp",
+      "repository": "ucrt64",
+      "version": "2.8.0-1",
+      "declared_runtime_dependents": 2
+    },
+    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libthai",
       "name": "mingw-w64-ucrt-x86_64-libthai",
       "repository": "ucrt64",
@@ -4689,14 +4682,14 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libvirt",
       "name": "mingw-w64-ucrt-x86_64-libvirt",
       "repository": "ucrt64",
-      "version": "11.10.0-3",
+      "version": "11.10.0-4",
       "declared_runtime_dependents": 2
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libvisio",
       "name": "mingw-w64-ucrt-x86_64-libvisio",
       "repository": "ucrt64",
-      "version": "0.1.11-1",
+      "version": "0.1.11-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4717,7 +4710,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libxmp",
       "name": "mingw-w64-ucrt-x86_64-libxmp",
       "repository": "ucrt64",
-      "version": "4.7.1-1",
+      "version": "4.7.2-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4731,7 +4724,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-devel-stacktrace",
       "name": "mingw-w64-ucrt-x86_64-perl-devel-stacktrace",
       "repository": "ucrt64",
-      "version": "2.05-1",
+      "version": "2.05-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -4745,7 +4738,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-wxwidgets3.3-msw-libs",
       "name": "mingw-w64-ucrt-x86_64-wxwidgets3.3-msw-libs",
       "repository": "ucrt64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4822,7 +4815,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libgsf",
       "name": "mingw-w64-x86_64-libgsf",
       "repository": "mingw64",
-      "version": "1.14.55-2",
+      "version": "1.14.58-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4955,7 +4948,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libvirt",
       "name": "mingw-w64-x86_64-libvirt",
       "repository": "mingw64",
-      "version": "11.10.0-3",
+      "version": "11.10.0-4",
       "declared_runtime_dependents": 2
     },
     {
@@ -4969,7 +4962,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libxmp",
       "name": "mingw-w64-x86_64-libxmp",
       "repository": "mingw64",
-      "version": "4.7.1-1",
+      "version": "4.7.2-1",
       "declared_runtime_dependents": 2
     },
     {
@@ -4983,7 +4976,7 @@
       "id": "package:msys2:msys2-runtime-devel",
       "name": "msys2-runtime-devel",
       "repository": "msys",
-      "version": "3.6.10-1",
+      "version": "3.6.10-2",
       "declared_runtime_dependents": 2
     },
     {
@@ -5165,7 +5158,7 @@
       "id": "package:msys2:libmicrohttpd",
       "name": "libmicrohttpd",
       "repository": "msys",
-      "version": "1.0.6-1",
+      "version": "1.0.9-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -5179,7 +5172,7 @@
       "id": "package:msys2:libnghttp2-devel",
       "name": "libnghttp2-devel",
       "repository": "msys",
-      "version": "1.69.0-1",
+      "version": "1.70.0-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -5228,7 +5221,7 @@
       "id": "package:msys2:libssh",
       "name": "libssh",
       "repository": "msys",
-      "version": "0.12.1-1",
+      "version": "0.12.2-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -5592,7 +5585,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libmicrohttpd",
       "name": "mingw-w64-clang-aarch64-libmicrohttpd",
       "repository": "clangarm64",
-      "version": "1.0.6-1",
+      "version": "1.0.9-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -5778,13 +5771,6 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-clang-aarch64-libsrtp",
-      "name": "mingw-w64-clang-aarch64-libsrtp",
-      "repository": "clangarm64",
-      "version": "2.8.0-1",
-      "declared_runtime_dependents": 1
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-aarch64-libsynctex",
       "name": "mingw-w64-clang-aarch64-libsynctex",
       "repository": "clangarm64",
@@ -5851,7 +5837,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libwasmtime",
       "name": "mingw-w64-clang-aarch64-libwasmtime",
       "repository": "clangarm64",
-      "version": "47.0.2-1",
+      "version": "47.0.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -5914,21 +5900,21 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-alien-libxml2",
       "name": "mingw-w64-clang-aarch64-perl-alien-libxml2",
       "repository": "clangarm64",
-      "version": "0.20-1",
+      "version": "0.20-2",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-libwww",
       "name": "mingw-w64-clang-aarch64-perl-libwww",
       "repository": "clangarm64",
-      "version": "6.83-1",
+      "version": "6.83-2",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-xml-libxslt",
       "name": "mingw-w64-clang-aarch64-perl-xml-libxslt",
       "repository": "clangarm64",
-      "version": "2.003000-1",
+      "version": "2.003000-2",
       "declared_runtime_dependents": 1
     },
     {
@@ -5949,7 +5935,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-vulkan-utility-libraries",
       "name": "mingw-w64-clang-aarch64-vulkan-utility-libraries",
       "repository": "clangarm64",
-      "version": "1.4.350.1-1",
+      "version": "1.4.357.0-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -5970,14 +5956,14 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-wxwidgets3.3-gtk3-libs",
       "name": "mingw-w64-clang-aarch64-wxwidgets3.3-gtk3-libs",
       "repository": "clangarm64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-clang-aarch64-wxwidgets3.3-qt-libs",
       "name": "mingw-w64-clang-aarch64-wxwidgets3.3-qt-libs",
       "repository": "clangarm64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6285,7 +6271,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libmicrohttpd",
       "name": "mingw-w64-clang-x86_64-libmicrohttpd",
       "repository": "clang64",
-      "version": "1.0.6-1",
+      "version": "1.0.9-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6471,13 +6457,6 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-clang-x86_64-libsrtp",
-      "name": "mingw-w64-clang-x86_64-libsrtp",
-      "repository": "clang64",
-      "version": "2.8.0-1",
-      "declared_runtime_dependents": 1
-    },
-    {
       "id": "package:msys2:mingw-w64-clang-x86_64-libsynctex",
       "name": "mingw-w64-clang-x86_64-libsynctex",
       "repository": "clang64",
@@ -6544,7 +6523,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libwasmtime",
       "name": "mingw-w64-clang-x86_64-libwasmtime",
       "repository": "clang64",
-      "version": "47.0.2-1",
+      "version": "47.0.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6600,21 +6579,21 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-alien-libxml2",
       "name": "mingw-w64-clang-x86_64-perl-alien-libxml2",
       "repository": "clang64",
-      "version": "0.20-1",
+      "version": "0.20-2",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-libwww",
       "name": "mingw-w64-clang-x86_64-perl-libwww",
       "repository": "clang64",
-      "version": "6.83-1",
+      "version": "6.83-2",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-xml-libxslt",
       "name": "mingw-w64-clang-x86_64-perl-xml-libxslt",
       "repository": "clang64",
-      "version": "2.003000-1",
+      "version": "2.003000-2",
       "declared_runtime_dependents": 1
     },
     {
@@ -6635,7 +6614,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-vulkan-utility-libraries",
       "name": "mingw-w64-clang-x86_64-vulkan-utility-libraries",
       "repository": "clang64",
-      "version": "1.4.350.1-1",
+      "version": "1.4.357.0-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6656,14 +6635,14 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-wxwidgets3.3-gtk3-libs",
       "name": "mingw-w64-clang-x86_64-wxwidgets3.3-gtk3-libs",
       "repository": "clang64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-wxwidgets3.3-qt-libs",
       "name": "mingw-w64-clang-x86_64-wxwidgets3.3-qt-libs",
       "repository": "clang64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6677,56 +6656,14 @@
       "id": "package:msys2:mingw-w64-i686-libarchive",
       "name": "mingw-w64-i686-libarchive",
       "repository": "mingw32",
-      "version": "3.8.8-2",
+      "version": "3.8.9-1",
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libass",
-      "name": "mingw-w64-i686-libass",
+      "id": "package:msys2:mingw-w64-i686-libdeflate",
+      "name": "mingw-w64-i686-libdeflate",
       "repository": "mingw32",
-      "version": "0.17.5-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libbluray",
-      "name": "mingw-w64-i686-libbluray",
-      "repository": "mingw32",
-      "version": "1.4.1-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libcaca",
-      "name": "mingw-w64-i686-libcaca",
-      "repository": "mingw32",
-      "version": "0.99.beta20-8",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libde265",
-      "name": "mingw-w64-i686-libde265",
-      "repository": "mingw32",
-      "version": "1.1.1-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libexif",
-      "name": "mingw-w64-i686-libexif",
-      "repository": "mingw32",
-      "version": "0.6.26-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libgme",
-      "name": "mingw-w64-i686-libgme",
-      "repository": "mingw32",
-      "version": "0.6.5-2",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libjxl",
-      "name": "mingw-w64-i686-libjxl",
-      "repository": "mingw32",
-      "version": "0.12.0-1",
+      "version": "1.25-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6737,27 +6674,6 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libmodplug",
-      "name": "mingw-w64-i686-libmodplug",
-      "repository": "mingw32",
-      "version": "0.8.9.0-5",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libmysofa",
-      "name": "mingw-w64-i686-libmysofa",
-      "repository": "mingw32",
-      "version": "1.3.4-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libopenmpt",
-      "name": "mingw-w64-i686-libopenmpt",
-      "repository": "mingw32",
-      "version": "0.8.7-1",
-      "declared_runtime_dependents": 1
-    },
-    {
       "id": "package:msys2:mingw-w64-i686-libpsl",
       "name": "mingw-w64-i686-libpsl",
       "repository": "mingw32",
@@ -6765,17 +6681,17 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libsoxr",
-      "name": "mingw-w64-i686-libsoxr",
+      "id": "package:msys2:mingw-w64-i686-libsndfile",
+      "name": "mingw-w64-i686-libsndfile",
       "repository": "mingw32",
-      "version": "0.1.3-5",
+      "version": "1.2.2-1",
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libssh",
-      "name": "mingw-w64-i686-libssh",
+      "id": "package:msys2:mingw-w64-i686-libssh2",
+      "name": "mingw-w64-i686-libssh2",
       "repository": "mingw32",
-      "version": "0.12.1-1",
+      "version": "1.11.1-2",
       "declared_runtime_dependents": 1
     },
     {
@@ -6783,13 +6699,6 @@
       "name": "mingw-w64-i686-libsystre",
       "repository": "mingw32",
       "version": "1.0.2-2",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libtheora",
-      "name": "mingw-w64-i686-libtheora",
-      "repository": "mingw32",
-      "version": "1.2.0-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -6807,13 +6716,6 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libunibreak",
-      "name": "mingw-w64-i686-libunibreak",
-      "repository": "mingw32",
-      "version": "7.0-1",
-      "declared_runtime_dependents": 1
-    },
-    {
       "id": "package:msys2:mingw-w64-i686-libuv",
       "name": "mingw-w64-i686-libuv",
       "repository": "mingw32",
@@ -6821,38 +6723,10 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libva",
-      "name": "mingw-w64-i686-libva",
-      "repository": "mingw32",
-      "version": "2.24.1-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libvpl",
-      "name": "mingw-w64-i686-libvpl",
-      "repository": "mingw32",
-      "version": "2.17.0-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libvpx",
-      "name": "mingw-w64-i686-libvpx",
-      "repository": "mingw32",
-      "version": "1.16.0-1",
-      "declared_runtime_dependents": 1
-    },
-    {
       "id": "package:msys2:mingw-w64-i686-libxmp",
       "name": "mingw-w64-i686-libxmp",
       "repository": "mingw32",
-      "version": "4.7.1-1",
-      "declared_runtime_dependents": 1
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libyuv",
-      "name": "mingw-w64-i686-libyuv",
-      "repository": "mingw32",
-      "version": "1924.r2921.644251f25-1",
+      "version": "4.7.2-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -7027,7 +6901,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libgccjit",
       "name": "mingw-w64-ucrt-x86_64-libgccjit",
       "repository": "ucrt64",
-      "version": "16.1.0-5",
+      "version": "16.1.0-6",
       "declared_runtime_dependents": 1
     },
     {
@@ -7181,7 +7055,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libmicrohttpd",
       "name": "mingw-w64-ucrt-x86_64-libmicrohttpd",
       "repository": "ucrt64",
-      "version": "1.0.6-1",
+      "version": "1.0.9-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -7374,13 +7248,6 @@
       "declared_runtime_dependents": 1
     },
     {
-      "id": "package:msys2:mingw-w64-ucrt-x86_64-libsrtp",
-      "name": "mingw-w64-ucrt-x86_64-libsrtp",
-      "repository": "ucrt64",
-      "version": "2.8.0-1",
-      "declared_runtime_dependents": 1
-    },
-    {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libsynctex",
       "name": "mingw-w64-ucrt-x86_64-libsynctex",
       "repository": "ucrt64",
@@ -7447,7 +7314,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libwasmtime",
       "name": "mingw-w64-ucrt-x86_64-libwasmtime",
       "repository": "ucrt64",
-      "version": "47.0.2-1",
+      "version": "47.0.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -7517,21 +7384,21 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-alien-libxml2",
       "name": "mingw-w64-ucrt-x86_64-perl-alien-libxml2",
       "repository": "ucrt64",
-      "version": "0.20-1",
+      "version": "0.20-2",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-libwww",
       "name": "mingw-w64-ucrt-x86_64-perl-libwww",
       "repository": "ucrt64",
-      "version": "6.83-1",
+      "version": "6.83-2",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-xml-libxslt",
       "name": "mingw-w64-ucrt-x86_64-perl-xml-libxslt",
       "repository": "ucrt64",
-      "version": "2.003000-1",
+      "version": "2.003000-2",
       "declared_runtime_dependents": 1
     },
     {
@@ -7552,7 +7419,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-vulkan-utility-libraries",
       "name": "mingw-w64-ucrt-x86_64-vulkan-utility-libraries",
       "repository": "ucrt64",
-      "version": "1.4.350.1-1",
+      "version": "1.4.357.0-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -7573,14 +7440,14 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-wxwidgets3.3-gtk3-libs",
       "name": "mingw-w64-ucrt-x86_64-wxwidgets3.3-gtk3-libs",
       "repository": "ucrt64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 1
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-wxwidgets3.3-qt-libs",
       "name": "mingw-w64-ucrt-x86_64-wxwidgets3.3-qt-libs",
       "repository": "ucrt64",
-      "version": "3.3.2-3",
+      "version": "3.3.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -7720,7 +7587,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libgccjit",
       "name": "mingw-w64-x86_64-libgccjit",
       "repository": "mingw64",
-      "version": "16.1.0-5",
+      "version": "16.1.0-6",
       "declared_runtime_dependents": 1
     },
     {
@@ -7825,7 +7692,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libmicrohttpd",
       "name": "mingw-w64-x86_64-libmicrohttpd",
       "repository": "mingw64",
-      "version": "1.0.6-1",
+      "version": "1.0.9-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -8028,7 +7895,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libvisio",
       "name": "mingw-w64-x86_64-libvisio",
       "repository": "mingw64",
-      "version": "0.1.11-1",
+      "version": "0.1.11-2",
       "declared_runtime_dependents": 1
     },
     {
@@ -8049,7 +7916,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libwasmtime",
       "name": "mingw-w64-x86_64-libwasmtime",
       "repository": "mingw64",
-      "version": "47.0.2-1",
+      "version": "47.0.3-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -8119,7 +7986,7 @@
       "id": "package:msys2:mingw-w64-x86_64-vulkan-utility-libraries",
       "name": "mingw-w64-x86_64-vulkan-utility-libraries",
       "repository": "mingw64",
-      "version": "1.4.350.1-1",
+      "version": "1.4.357.0-1",
       "declared_runtime_dependents": 1
     },
     {
@@ -8175,7 +8042,7 @@
       "id": "package:msys2:base-devel",
       "name": "base-devel",
       "repository": "msys",
-      "version": "2024.11-1",
+      "version": "2026.08-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -8217,7 +8084,7 @@
       "id": "package:msys2:libarchive-devel",
       "name": "libarchive-devel",
       "repository": "msys",
-      "version": "3.8.8-1",
+      "version": "3.8.9-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -8378,7 +8245,7 @@
       "id": "package:msys2:libssh-devel",
       "name": "libssh-devel",
       "repository": "msys",
-      "version": "0.12.1-1",
+      "version": "0.12.2-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -8463,6 +8330,13 @@
       "name": "mingw-w64-clang-aarch64-libabw",
       "repository": "clangarm64",
       "version": "0.1.4-1",
+      "declared_runtime_dependents": 0
+    },
+    {
+      "id": "package:msys2:mingw-w64-clang-aarch64-libadlmidi",
+      "name": "mingw-w64-clang-aarch64-libadlmidi",
+      "repository": "clangarm64",
+      "version": "1.6.1-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -8735,7 +8609,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libmangle",
       "name": "mingw-w64-clang-aarch64-libmangle",
       "repository": "clangarm64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -8903,7 +8777,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-librclone",
       "name": "mingw-w64-clang-aarch64-librclone",
       "repository": "clangarm64",
-      "version": "1.74.4-1",
+      "version": "1.75.0-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9036,7 +8910,7 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-libvips",
       "name": "mingw-w64-clang-aarch64-libvips",
       "repository": "clangarm64",
-      "version": "8.18.4-2",
+      "version": "8.18.5-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9085,14 +8959,14 @@
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-devel-cover",
       "name": "mingw-w64-clang-aarch64-perl-devel-cover",
       "repository": "clangarm64",
-      "version": "1.52-3",
+      "version": "1.52-4",
       "declared_runtime_dependents": 0
     },
     {
       "id": "package:msys2:mingw-w64-clang-aarch64-perl-extutils-libbuilder",
       "name": "mingw-w64-clang-aarch64-perl-extutils-libbuilder",
       "repository": "clangarm64",
-      "version": "0.09-1",
+      "version": "0.09-2",
       "declared_runtime_dependents": 0
     },
     {
@@ -9163,6 +9037,13 @@
       "name": "mingw-w64-clang-x86_64-libabw",
       "repository": "clang64",
       "version": "0.1.4-1",
+      "declared_runtime_dependents": 0
+    },
+    {
+      "id": "package:msys2:mingw-w64-clang-x86_64-libadlmidi",
+      "name": "mingw-w64-clang-x86_64-libadlmidi",
+      "repository": "clang64",
+      "version": "1.6.1-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9435,7 +9316,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libmangle",
       "name": "mingw-w64-clang-x86_64-libmangle",
       "repository": "clang64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9603,7 +9484,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-librclone",
       "name": "mingw-w64-clang-x86_64-librclone",
       "repository": "clang64",
-      "version": "1.74.4-1",
+      "version": "1.75.0-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9736,7 +9617,7 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-libvips",
       "name": "mingw-w64-clang-x86_64-libvips",
       "repository": "clang64",
-      "version": "8.18.4-2",
+      "version": "8.18.5-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9799,14 +9680,14 @@
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-devel-cover",
       "name": "mingw-w64-clang-x86_64-perl-devel-cover",
       "repository": "clang64",
-      "version": "1.52-3",
+      "version": "1.52-4",
       "declared_runtime_dependents": 0
     },
     {
       "id": "package:msys2:mingw-w64-clang-x86_64-perl-extutils-libbuilder",
       "name": "mingw-w64-clang-x86_64-perl-extutils-libbuilder",
       "repository": "clang64",
-      "version": "0.09-1",
+      "version": "0.09-2",
       "declared_runtime_dependents": 0
     },
     {
@@ -9845,20 +9726,6 @@
       "declared_runtime_dependents": 0
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libavif",
-      "name": "mingw-w64-i686-libavif",
-      "repository": "mingw32",
-      "version": "1.4.2-1",
-      "declared_runtime_dependents": 0
-    },
-    {
-      "id": "package:msys2:mingw-w64-i686-libgit2",
-      "name": "mingw-w64-i686-libgit2",
-      "repository": "mingw32",
-      "version": "1.9.6-1",
-      "declared_runtime_dependents": 0
-    },
-    {
       "id": "package:msys2:mingw-w64-i686-libgnurx",
       "name": "mingw-w64-i686-libgnurx",
       "repository": "mingw32",
@@ -9866,24 +9733,24 @@
       "declared_runtime_dependents": 0
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libheif",
-      "name": "mingw-w64-i686-libheif",
-      "repository": "mingw32",
-      "version": "1.23.1-1",
-      "declared_runtime_dependents": 0
-    },
-    {
       "id": "package:msys2:mingw-w64-i686-libmangle",
       "name": "mingw-w64-i686-libmangle",
       "repository": "mingw32",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 0
     },
     {
-      "id": "package:msys2:mingw-w64-i686-libwmf",
-      "name": "mingw-w64-i686-libwmf",
+      "id": "package:msys2:mingw-w64-i686-libunibreak",
+      "name": "mingw-w64-i686-libunibreak",
       "repository": "mingw32",
-      "version": "0.2.15-1",
+      "version": "7.0-1",
+      "declared_runtime_dependents": 0
+    },
+    {
+      "id": "package:msys2:mingw-w64-i686-libva",
+      "name": "mingw-w64-i686-libva",
+      "repository": "mingw32",
+      "version": "2.24.1-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -9919,6 +9786,13 @@
       "name": "mingw-w64-ucrt-x86_64-libabw",
       "repository": "ucrt64",
       "version": "0.1.4-1",
+      "declared_runtime_dependents": 0
+    },
+    {
+      "id": "package:msys2:mingw-w64-ucrt-x86_64-libadlmidi",
+      "name": "mingw-w64-ucrt-x86_64-libadlmidi",
+      "repository": "ucrt64",
+      "version": "1.6.1-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -10198,7 +10072,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libmangle",
       "name": "mingw-w64-ucrt-x86_64-libmangle",
       "repository": "ucrt64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -10359,7 +10233,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-librclone",
       "name": "mingw-w64-ucrt-x86_64-librclone",
       "repository": "ucrt64",
-      "version": "1.74.4-1",
+      "version": "1.75.0-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -10492,7 +10366,7 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-libvips",
       "name": "mingw-w64-ucrt-x86_64-libvips",
       "repository": "ucrt64",
-      "version": "8.18.4-2",
+      "version": "8.18.5-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -10555,14 +10429,14 @@
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-devel-cover",
       "name": "mingw-w64-ucrt-x86_64-perl-devel-cover",
       "repository": "ucrt64",
-      "version": "1.52-3",
+      "version": "1.52-4",
       "declared_runtime_dependents": 0
     },
     {
       "id": "package:msys2:mingw-w64-ucrt-x86_64-perl-extutils-libbuilder",
       "name": "mingw-w64-ucrt-x86_64-perl-extutils-libbuilder",
       "repository": "ucrt64",
-      "version": "0.09-1",
+      "version": "0.09-2",
       "declared_runtime_dependents": 0
     },
     {
@@ -10912,7 +10786,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libmangle",
       "name": "mingw-w64-x86_64-libmangle",
       "repository": "mingw64",
-      "version": "14.0.0.r220.gd999af622-1",
+      "version": "14.0.0.r248.g7735a1a63-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -11066,7 +10940,7 @@
       "id": "package:msys2:mingw-w64-x86_64-librclone",
       "name": "mingw-w64-x86_64-librclone",
       "repository": "mingw64",
-      "version": "1.74.4-1",
+      "version": "1.75.0-1",
       "declared_runtime_dependents": 0
     },
     {
@@ -11192,7 +11066,7 @@
       "id": "package:msys2:mingw-w64-x86_64-libvips",
       "name": "mingw-w64-x86_64-libvips",
       "repository": "mingw64",
-      "version": "8.18.4-2",
+      "version": "8.18.5-1",
       "declared_runtime_dependents": 0
     },
     {

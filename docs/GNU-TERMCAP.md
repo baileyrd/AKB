@@ -31,11 +31,11 @@ last_verified: 2026-07-30
 | Version (observed) | 1.3.1-7 |
 | License (observed) | GPL;LGPL |
 | Architecture (observed) | any |
-| Installed size (observed) | 67.7 KB |
+| Installed size (observed) | 67.67 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:termcap-manual-2026-07-30` — GNU termcap / termutils (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

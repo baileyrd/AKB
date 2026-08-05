@@ -29,13 +29,13 @@ last_verified: 2026-07-30
 | Upstream | <https://www.gnu.org/software/gettext/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gettext-runtime` |
 | Version (observed) | 1.0-1 |
-| License (observed) | spdx:GPL-3.0-or-later AND LGPL-2.1-or-later |
+| License (observed) | spdx:GPL-3.0-or-later;AND;LGPL-2.1-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 2.7 MB |
+| Installed size (observed) | 2756.51 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:gettext-manual-2026-07-30` — GNU gettext Manual (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

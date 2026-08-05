@@ -33,11 +33,11 @@ last_verified: 2026-08-02
 | Version (observed) | 2.0.1-1 |
 | License (observed) | LGPL |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 586.2 KB |
+| Installed size (observed) | 586.15 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnupg:gpgme-manual-2026-08-02` — GPGME (official project page) (`primary`, retrieved 2026-08-02)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

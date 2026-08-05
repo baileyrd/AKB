@@ -31,11 +31,11 @@ last_verified: 2026-08-02
 | Version (observed) | 1.10.0-1 |
 | License (observed) | BSD;GPL2 |
 | Architecture (observed) | any |
-| Installed size (observed) | 1.7 MB |
+| Installed size (observed) | 1710.59 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:lz4:manual-2026-07-30` — LZ4 (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

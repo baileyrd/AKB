@@ -31,12 +31,12 @@ last_verified: 2026-08-02
 | Version (observed) | 0.98.1-3 |
 | License (observed) | custom:CC0 |
 | Architecture (observed) | any |
-| Installed size (observed) | 87.8 KB |
+| Installed size (observed) | 87.79 KiB |
 
 **Evidence on this object**
 
 - `evidence:blake2:project-site-2026-08-02` — BLAKE2 (official project site) (`primary`, retrieved 2026-08-02)
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
 Edits between the surrounding markers are overwritten on the next build.

@@ -1,102 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="918" height="602" viewBox="0 0 918 602" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="918" height="528" viewBox="0 0 918 528" role="img" aria-labelledby="title description">
 <title id="title">Level 6: Executables and DLLs</title>
-<desc id="description">Binary artifacts recovered by the deep-inventory pipeline. 18 of 22 objects shown, with 14 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
+<desc id="description">Binary artifacts recovered by the deep-inventory pipeline. 18 of 557 objects shown, with 0 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
 <style>.edge{stroke:#8896ab;stroke-width:1;fill:none}.node{fill:#eef4ff;stroke:#0645ad;stroke-width:1}.label{font:12px system-ui,sans-serif;fill:#111}.kindlabel{font:11px system-ui,sans-serif;fill:#5a6478}.h1{font:bold 17px system-ui,sans-serif;fill:#111}.meta{font:12px system-ui,sans-serif;fill:#41485a}.nav{font:12px system-ui,sans-serif;fill:#0645ad}</style>
-<rect width="918" height="602" fill="#ffffff"/>
+<rect width="918" height="528" fill="#ffffff"/>
 <text class="h1" x="28" y="30">Level 6 — Executables and DLLs</text>
 <text class="meta" x="28" y="50">Binary artifacts recovered by the deep-inventory pipeline.</text>
 <a href="level-5.svg"><text class="nav" x="28" y="72">Up to L5</text></a>
 <a href="level-7.svg"><text class="nav" x="95" y="72">Down to L7</text></a>
 <a href="../docs/BINARY-DLL-DEPENDENCY-GRAPH.md"><text class="nav" x="176" y="72">Read BINARY-DLL-DEPENDENCY-GRAPH.md</text></a>
-<line class="edge" x1="126" y1="466" x2="348" y2="216"><title>wraps</title></line>
-<line class="edge" x1="126" y1="142" x2="570" y2="170"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="126" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="224" y1="193" x2="694" y2="193"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="570" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="142" x2="348" y2="392"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="142" x2="792" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="348" y2="318"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="142" x2="126" y2="392"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="792" y2="244"><title>imports-dll</title></line>
-<line class="edge" x1="224" y1="193" x2="472" y2="193"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="126" y2="244"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="570" y2="244"><title>imports-dll</title></line>
-<line class="edge" x1="126" y1="216" x2="348" y2="244"><title>imports-dll</title></line>
 <text class="kindlabel" x="28" y="90">executable</text>
-<text class="kindlabel" x="28" y="164">dll</text>
-<text class="kindlabel" x="28" y="460">import-library</text>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fmintty.exe" aria-label="/usr/bin/mintty.exe (executable:msys2:/usr/bin/mintty.exe)">
+<rect class="node" x="28" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/mintty.exe: executable:msys2:/usr/bin/mintty.exe</title></rect>
+<text class="label" x="126" y="124" text-anchor="middle">/usr/bin/mintty.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpg.exe" aria-label="/usr/bin/gpg.exe (executable:msys2:/usr/bin/gpg.exe)">
+<rect class="node" x="250" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpg.exe: executable:msys2:/usr/bin/gpg.exe</title></rect>
+<text class="label" x="348" y="124" text-anchor="middle">/usr/bin/gpg.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fwget.exe" aria-label="/usr/bin/wget.exe (executable:msys2:/usr/bin/wget.exe)">
+<rect class="node" x="472" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/wget.exe: executable:msys2:/usr/bin/wget.exe</title></rect>
+<text class="label" x="570" y="124" text-anchor="middle">/usr/bin/wget.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fbsdtar.exe" aria-label="/usr/bin/bsdtar.exe (executable:msys2:/usr/bin/bsdtar.exe)">
+<rect class="node" x="694" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/bsdtar.exe: executable:msys2:/usr/bin/bsdtar.exe</title></rect>
+<text class="label" x="792" y="124" text-anchor="middle">/usr/bin/bsdtar.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fdirmngr.exe" aria-label="/usr/bin/dirmngr.exe (executable:msys2:/usr/bin/dirmngr.exe)">
+<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/dirmngr.exe: executable:msys2:/usr/bin/dirmngr.exe</title></rect>
+<text class="label" x="126" y="198" text-anchor="middle">/usr/bin/dirmngr.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpgsm.exe" aria-label="/usr/bin/gpgsm.exe (executable:msys2:/usr/bin/gpgsm.exe)">
+<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpgsm.exe: executable:msys2:/usr/bin/gpgsm.exe</title></rect>
+<text class="label" x="348" y="198" text-anchor="middle">/usr/bin/gpgsm.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpgv.exe" aria-label="/usr/bin/gpgv.exe (executable:msys2:/usr/bin/gpgv.exe)">
+<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpgv.exe: executable:msys2:/usr/bin/gpgv.exe</title></rect>
+<text class="label" x="570" y="198" text-anchor="middle">/usr/bin/gpgv.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Flib%2Fgnupg%2Fkeyboxd.exe" aria-label="/usr/lib/gnupg/keyboxd.exe (executable:msys2:/usr/lib/gnupg/keyboxd.exe)">
+<rect class="node" x="694" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/gnupg/keyboxd.exe: executable:msys2:/usr/lib/gnupg/keyboxd.exe</title></rect>
+<text class="label" x="792" y="198" text-anchor="middle">/usr/lib/gnupg/keyboxd.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Flib%2Fgnupg%2Fscdaemon.exe" aria-label="/usr/lib/gnupg/scdaemon.exe (executable:msys2:/usr/lib/gnupg/scdaemon.exe)">
+<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/gnupg/scdaemon.exe: executable:msys2:/usr/lib/gnupg/scdaemon.exe</title></rect>
+<text class="label" x="126" y="272" text-anchor="middle">/usr/lib/gnupg/scdaemon.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fcygcheck.exe" aria-label="/usr/bin/cygcheck.exe (executable:msys2:/usr/bin/cygcheck.exe)">
+<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/cygcheck.exe: executable:msys2:/usr/bin/cygcheck.exe</title></rect>
+<text class="label" x="348" y="272" text-anchor="middle">/usr/bin/cygcheck.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpg-agent.exe" aria-label="/usr/bin/gpg-agent.exe (executable:msys2:/usr/bin/gpg-agent.exe)">
+<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpg-agent.exe: executable:msys2:/usr/bin/gpg-agent.exe</title></rect>
+<text class="label" x="570" y="272" text-anchor="middle">/usr/bin/gpg-agent.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpg-card.exe" aria-label="/usr/bin/gpg-card.exe (executable:msys2:/usr/bin/gpg-card.exe)">
+<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpg-card.exe: executable:msys2:/usr/bin/gpg-card.exe</title></rect>
+<text class="label" x="792" y="272" text-anchor="middle">/usr/bin/gpg-card.exe</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpg-connect-agent.exe" aria-label="/usr/bin/gpg-connect-agent.exe (executable:msys2:/usr/bin/gpg-connect-agent.exe)">
+<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpg-connect-agent.exe: executable:msys2:/usr/bin/gpg-connect-agent.exe</title></rect>
+<text class="label" x="126" y="346" text-anchor="middle">/usr/bin/gpg-connect-agent…</text>
+</a>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fgpgsplit.exe" aria-label="/usr/bin/gpgsplit.exe (executable:msys2:/usr/bin/gpgsplit.exe)">
+<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/gpgsplit.exe: executable:msys2:/usr/bin/gpgsplit.exe</title></rect>
+<text class="label" x="348" y="346" text-anchor="middle">/usr/bin/gpgsplit.exe</text>
+</a>
 <a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fcurl.exe" aria-label="/usr/bin/curl.exe (executable:msys2:/usr/bin/curl.exe)">
-<rect class="node" x="28" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/curl.exe: executable:msys2:/usr/bin/curl.exe</title></rect>
-<text class="label" x="126" y="124" text-anchor="middle">/usr/bin/curl.exe</text>
+<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/curl.exe: executable:msys2:/usr/bin/curl.exe</title></rect>
+<text class="label" x="570" y="346" text-anchor="middle">/usr/bin/curl.exe</text>
 </a>
-<a href="../generated/explorer/index.html#/object/dll%3Amsys2%3A%2Fucrt64%2Fbin%2Fzlib1.dll" aria-label="/ucrt64/bin/zlib1.dll (dll:msys2:/ucrt64/bin/zlib1.dll)">
-<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/bin/zlib1.dll: dll:msys2:/ucrt64/bin/zlib1.dll</title></rect>
-<text class="label" x="126" y="198" text-anchor="middle">/ucrt64/bin/zlib1.dll</text>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fdirmngr-client.exe" aria-label="/usr/bin/dirmngr-client.exe (executable:msys2:/usr/bin/dirmngr-client.exe)">
+<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/dirmngr-client.exe: executable:msys2:/usr/bin/dirmngr-client.exe</title></rect>
+<text class="label" x="792" y="346" text-anchor="middle">/usr/bin/dirmngr-client.exe</text>
 </a>
-<a href="../generated/explorer/index.html#/object/dll%3Agnu%3Azlib1.dll" aria-label="zlib1.dll (UCRT64) (dll:gnu:zlib1.dll)">
-<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>zlib1.dll (UCRT64): dll:gnu:zlib1.dll</title></rect>
-<text class="label" x="348" y="198" text-anchor="middle">zlib1.dll (UCRT64)</text>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Fdumper.exe" aria-label="/usr/bin/dumper.exe (executable:msys2:/usr/bin/dumper.exe)">
+<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/dumper.exe: executable:msys2:/usr/bin/dumper.exe</title></rect>
+<text class="label" x="126" y="420" text-anchor="middle">/usr/bin/dumper.exe</text>
 </a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Akernel32.dll" aria-label="kernel32.dll (dll:windows:kernel32.dll)">
-<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>kernel32.dll: dll:windows:kernel32.dll</title></rect>
-<text class="label" x="570" y="198" text-anchor="middle">kernel32.dll</text>
+<a href="../generated/explorer/index.html#/object/executable%3Amsys2%3A%2Fusr%2Fbin%2Ffdisk.exe" aria-label="/usr/bin/fdisk.exe (executable:msys2:/usr/bin/fdisk.exe)">
+<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/fdisk.exe: executable:msys2:/usr/bin/fdisk.exe</title></rect>
+<text class="label" x="348" y="420" text-anchor="middle">/usr/bin/fdisk.exe</text>
 </a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-convert-l1-1-0.dll" aria-label="api-ms-win-crt-convert-l1-1-0.dll (dll:windows:api-ms-win-crt-convert-l1-1-0.dll)">
-<rect class="node" x="694" y="170" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-convert-l1-1-0.dll: dll:windows:api-ms-win-crt-convert-l1-1-0.dll</title></rect>
-<text class="label" x="792" y="198" text-anchor="middle">api-ms-win-crt-convert-l1-…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-heap-l1-1-0.dll" aria-label="api-ms-win-crt-heap-l1-1-0.dll (dll:windows:api-ms-win-crt-heap-l1-1-0.dll)">
-<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-heap-l1-1-0.dll: dll:windows:api-ms-win-crt-heap-l1-1-0.dll</title></rect>
-<text class="label" x="126" y="272" text-anchor="middle">api-ms-win-crt-heap-l1-1-0…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-locale-l1-1-0.dll" aria-label="api-ms-win-crt-locale-l1-1-0.dll (dll:windows:api-ms-win-crt-locale-l1-1-0.dll)">
-<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-locale-l1-1-0.dll: dll:windows:api-ms-win-crt-locale-l1-1-0.dll</title></rect>
-<text class="label" x="348" y="272" text-anchor="middle">api-ms-win-crt-locale-l1-1…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-private-l1-1-0.dll" aria-label="api-ms-win-crt-private-l1-1-0.dll (dll:windows:api-ms-win-crt-private-l1-1-0.dll)">
-<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-private-l1-1-0.dll: dll:windows:api-ms-win-crt-private-l1-1-0.dll</title></rect>
-<text class="label" x="570" y="272" text-anchor="middle">api-ms-win-crt-private-l1-…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-runtime-l1-1-0.dll" aria-label="api-ms-win-crt-runtime-l1-1-0.dll (dll:windows:api-ms-win-crt-runtime-l1-1-0.dll)">
-<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-runtime-l1-1-0.dll: dll:windows:api-ms-win-crt-runtime-l1-1-0.dll</title></rect>
-<text class="label" x="792" y="272" text-anchor="middle">api-ms-win-crt-runtime-l1-…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-stdio-l1-1-0.dll" aria-label="api-ms-win-crt-stdio-l1-1-0.dll (dll:windows:api-ms-win-crt-stdio-l1-1-0.dll)">
-<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-stdio-l1-1-0.dll: dll:windows:api-ms-win-crt-stdio-l1-1-0.dll</title></rect>
-<text class="label" x="126" y="346" text-anchor="middle">api-ms-win-crt-stdio-l1-1-…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-string-l1-1-0.dll" aria-label="api-ms-win-crt-string-l1-1-0.dll (dll:windows:api-ms-win-crt-string-l1-1-0.dll)">
-<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-string-l1-1-0.dll: dll:windows:api-ms-win-crt-string-l1-1-0.dll</title></rect>
-<text class="label" x="348" y="346" text-anchor="middle">api-ms-win-crt-string-l1-1…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Aapi-ms-win-crt-utility-l1-1-0.dll" aria-label="api-ms-win-crt-utility-l1-1-0.dll (dll:windows:api-ms-win-crt-utility-l1-1-0.dll)">
-<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>api-ms-win-crt-utility-l1-1-0.dll: dll:windows:api-ms-win-crt-utility-l1-1-0.dll</title></rect>
-<text class="label" x="570" y="346" text-anchor="middle">api-ms-win-crt-utility-l1-…</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-2.0.dll" aria-label="msys-2.0.dll (dll:windows:msys-2.0.dll)">
-<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>msys-2.0.dll: dll:windows:msys-2.0.dll</title></rect>
-<text class="label" x="792" y="346" text-anchor="middle">msys-2.0.dll</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-curl-4.dll" aria-label="msys-curl-4.dll (dll:windows:msys-curl-4.dll)">
-<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>msys-curl-4.dll: dll:windows:msys-curl-4.dll</title></rect>
-<text class="label" x="126" y="420" text-anchor="middle">msys-curl-4.dll</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Awindows%3Amsys-z.dll" aria-label="msys-z.dll (dll:windows:msys-z.dll)">
-<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>msys-z.dll: dll:windows:msys-z.dll</title></rect>
-<text class="label" x="348" y="420" text-anchor="middle">msys-z.dll</text>
-</a>
-<a href="../generated/explorer/index.html#/object/dll%3Afacebook%3Alibzstd.dll" aria-label="libzstd.dll (UCRT64) (dll:facebook:libzstd.dll)">
-<rect class="node" x="472" y="392" width="196" height="46" rx="5" tabindex="0"><title>libzstd.dll (UCRT64): dll:facebook:libzstd.dll</title></rect>
-<text class="label" x="570" y="420" text-anchor="middle">libzstd.dll (UCRT64)</text>
-</a>
-<a href="../generated/explorer/index.html#/object/import-library%3Agnu%3Alibz.dll.a" aria-label="libz.dll.a (UCRT64) (import-library:gnu:libz.dll.a)">
-<rect class="node" x="28" y="466" width="196" height="46" rx="5" tabindex="0"><title>libz.dll.a (UCRT64): import-library:gnu:libz.dll.a</title></rect>
-<text class="label" x="126" y="494" text-anchor="middle">libz.dll.a (UCRT64)</text>
-</a>
-<a href="../generated/explorer/index.html#/object/import-library%3Amsys2%3A%2Fucrt64%2Flib%2Flibz.dll.a" aria-label="/ucrt64/lib/libz.dll.a (import-library:msys2:/ucrt64/lib/libz.dll.a)">
-<rect class="node" x="250" y="466" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/libz.dll.a: import-library:msys2:/ucrt64/lib/libz.dll.a</title></rect>
-<text class="label" x="348" y="494" text-anchor="middle">/ucrt64/lib/libz.dll.a</text>
-</a>
-<text class="meta" x="28" y="570">18 of 22 objects shown, ranked by graph degree.</text>
-<text class="meta" x="28" y="588">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
+<text class="meta" x="28" y="496">18 of 557 objects shown, ranked by graph degree.</text>
+<text class="meta" x="28" y="514">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
 </svg>

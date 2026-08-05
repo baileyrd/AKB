@@ -31,12 +31,12 @@ last_verified: 2026-08-02
 | Version (observed) | 1.34.8-1 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | any |
-| Installed size (observed) | 1.0 MB |
+| Installed size (observed) | 1075.19 KiB |
 
 **Evidence on this object**
 
 - `evidence:c-ares:project-site-2026-07-30` — c-ares (official project site) (`primary`, retrieved 2026-07-30)
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
 Edits between the surrounding markers are overwritten on the next build.

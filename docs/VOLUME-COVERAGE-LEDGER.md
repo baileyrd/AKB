@@ -76,7 +76,7 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 8 | Toolchains | `partial` | 16 | 223 | 13,484 | 843 | 22 | 66 |
 | 9 | Git for Windows | `partial` | 8 | 74 | 4,576 | 572 | 8 | 5 |
 | 10 | Interactive Architecture Explorer | `partial` | 8 | 14 | 2,190 | 274 | 1 | 4 |
-| 11 | Package Catalog | `partial` | 9 | 31 | 5,233 | 581 | 5 | 16 |
+| 11 | Package Catalog | `partial` | 9 | 32 | 5,811 | 646 | 5 | 16 |
 | 12 | Source Code Organization | `partial` | 2 | 6 | 1,063 | 532 | 2 | 3 |
 | 13 | Dependency Analysis | `partial` | 2 | 11 | 1,766 | 883 | 4 | 5 |
 | 14 | Build Systems | `partial` | 3 | 11 | 2,084 | 695 | 3 | 11 |
@@ -86,11 +86,11 @@ The coverage state is a judgment, not a measurement. It is authored in [`model/v
 | 18 | Developer Guide | `inferred` | 6 | 45 | 5,644 | 941 | 14 | 10 |
 | 19 | Operations Guide | `partial` | 4 | 23 | 2,297 | 574 | 1 | 0 |
 | 20 | Reference Appendices | `partial` | 8 | 44 | 15,557 | 1,945 | 2 | 0 |
-| | **Total** | | **305** | **3,765** | **218,627** | | | |
+| | **Total** | | **305** | **3,766** | **219,205** | | | |
 
 ### What the numbers say
 
-- Volume 6 (Libraries) holds 164 of 305 pages and 52.4% of all prose.
+- Volume 6 (Libraries) holds 164 of 305 pages and 52.2% of all prose.
 - Volume 10 (Interactive Architecture Explorer) has the lowest prose density at 274 words per page.
 - 2 of the charter's 8 coverage states are in use. Unused: `unknown`, `not-applicable`, `planned`, `verified`, `deprecated`, `superseded`.
 

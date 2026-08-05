@@ -35,11 +35,11 @@ last_verified: 2026-07-30
 | Version (observed) | 1.11.1-1 |
 | License (observed) | BSD |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 363.4 KB |
+| Installed size (observed) | 363.38 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:libssh2:manual-2026-07-30` — libssh2 (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

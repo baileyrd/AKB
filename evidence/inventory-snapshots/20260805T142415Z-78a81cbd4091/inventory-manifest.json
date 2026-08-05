@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "collector_version": "0.3.0",
+  "generated_at": "2026-08-05T14:24:15.801338+00:00",
+  "collector": "tools/deep_inventory.py",
+  "msys2_root": "C:\\tools\\lang\\msys64",
+  "scope": "installed",
+  "counts": {
+    "artifacts.jsonl": 15240,
+    "pe-imports.jsonl": 1831,
+    "pe-exports.jsonl": 53797,
+    "archive-members.jsonl": 2178,
+    "development-metadata.jsonl": 7,
+    "recipes.jsonl": 0,
+    "warnings.jsonl": 0
+  },
+  "sha256": {
+    "artifacts.jsonl": "d26c8bdbbf9bcd69785064d3cc1c0cce378be1139e39919e1fcccbcdf49d054c",
+    "pe-imports.jsonl": "f00c966303cde7dd76ec79e68138dce0c6b54e9985c785c0fcafad3fa42ca246",
+    "pe-exports.jsonl": "d19620afb44e6855c36b8df5c926d48a0c95c601e14121daed34603c96814816",
+    "archive-members.jsonl": "3714888ccc8da7c26c883f559a653a75c54d9fcd28183794b62aaaca9460acf6",
+    "development-metadata.jsonl": "0c5cf749a0b20583dba46f596c497c75a5499abc5bd5c323ffd24171f8ed690b",
+    "recipes.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "warnings.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

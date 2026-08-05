@@ -35,11 +35,11 @@ last_verified: 2026-07-30
 | Version (observed) | 2.55.0-1 |
 | License (observed) | spdx:GPL-2.0-only |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 40.5 MB |
+| Installed size (observed) | 40.51 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:git:project-site-2026-07-30` — Git (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

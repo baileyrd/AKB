@@ -32,11 +32,11 @@ last_verified: 2026-07-30
 | Version (observed) | 2.8.2-1 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 161.3 KB |
+| Installed size (observed) | 161.27 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:libexpat:manual-2026-07-30` — Expat (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

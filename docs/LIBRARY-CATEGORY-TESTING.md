@@ -27,14 +27,14 @@ last_verified: 2026-08-02
 | Environments | `ucrt64` |
 | Upstream | <https://google.github.io/googletest/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-gtest` |
-| Version (observed) | 1.17.0-1 |
+| Version (observed) | 1.17.0-2 |
 | License (observed) | spdx:BSD-3-Clause |
 | Architecture (observed) | any |
-| Installed size (observed) | 3.5 MB |
+| Installed size (observed) | 3559.81 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:googletest:project-site-2026-08-02` — GoogleTest (official documentation site) (`primary`, retrieved 2026-08-02)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

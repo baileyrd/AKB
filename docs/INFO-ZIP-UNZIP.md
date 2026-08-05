@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 6.0-3 |
 | License (observed) | custom |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 430.4 KB |
+| Installed size (observed) | 430.42 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:info-zip:unzip-manual-2026-07-30` — Info-ZIP (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

@@ -29,13 +29,13 @@ last_verified: 2026-07-30
 | Upstream | <https://tukaani.org/xz> |
 | Packaged as | `package:msys2:mingw-w64-clang-x86_64-xz` |
 | Version (observed) | 5.8.3-1 |
-| License (observed) | spdx:0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later |
+| License (observed) | spdx:0BSD;AND;LGPL-2.1-or-later;AND;GPL-2.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 4.4 MB |
+| Installed size (observed) | 4536.46 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:tukaani:xz-library-manual-2026-07-30` — XZ Utils / liblzma (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

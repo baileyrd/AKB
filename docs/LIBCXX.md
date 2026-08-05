@@ -30,13 +30,13 @@ last_verified: 2026-07-30
 | Upstream | <https://libcxx.llvm.org/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libc++` |
 | Version (observed) | 22.1.8-1 |
-| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| License (observed) | spdx:Apache-2.0;WITH;LLVM-exception |
 | Architecture (observed) | any |
-| Installed size (observed) | 19.4 MB |
+| Installed size (observed) | 19877.46 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:llvm:libcxx-manual-2026-07-30` — libc++ (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

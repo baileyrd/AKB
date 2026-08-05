@@ -38,14 +38,14 @@ last_verified: 2026-08-02
 | Environments | `ucrt64` |
 | Upstream | <https://www.libarchive.org/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libarchive` |
-| Version (observed) | 3.8.8-2 |
+| Version (observed) | 3.8.9-1 |
 | License (observed) | spdx:BSD-2-Clause |
 | Architecture (observed) | any |
-| Installed size (observed) | 5.1 MB |
+| Installed size (observed) | 5.15 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:libarchive:manual-2026-07-30` — libarchive (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

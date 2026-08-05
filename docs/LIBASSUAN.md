@@ -30,13 +30,13 @@ last_verified: 2026-07-30
 | Upstream | <https://gnupg.org/related_software/libassuan> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libassuan` |
 | Version (observed) | 2.5.7-1 |
-| License (observed) | spdx: LGPL-2.1-or-later OR GPL-3.0-or-later |
+| License (observed) | spdx:;LGPL-2.1-or-later;OR;GPL-3.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 463.4 KB |
+| Installed size (observed) | 463.35 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnupg:libassuan-manual-2026-07-30` — libassuan (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

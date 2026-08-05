@@ -32,12 +32,12 @@ last_verified: 2026-08-02
 | Version (observed) | 1.0.8-4 |
 | License (observed) | custom |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 306.6 KB |
+| Installed size (observed) | 306.63 KiB |
 
 **Evidence on this object**
 
 - `evidence:bzip2:project-site-2026-07-30` — bzip2 and libbzip2 (official project site) (`primary`, retrieved 2026-07-30)
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 
 **Claims about this object**
 

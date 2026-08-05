@@ -27,6 +27,16 @@ if ($LASTEXITCODE -ne 0) {
     throw "'$Python' is not a working Python interpreter (exit $LASTEXITCODE). On Windows, pass -Python py, or install Python and put it on PATH."
 }
 
+# Say which installation is being read before doing any work. A host with more
+# than one MSYS2 tree is the normal case here, not an edge case — Volumes 3 and
+# 7 record three distinct installations — and the default root may exist while
+# holding empty sync databases, which fails much later and much less clearly.
+$pacmanPath = Join-Path $Msys2Root "usr\bin\pacman.exe"
+if (-not (Test-Path -LiteralPath $pacmanPath -PathType Leaf)) {
+    throw "pacman.exe was not found at '$pacmanPath'. Pass -Msys2Root <path> or set MSYS2_ROOT."
+}
+Write-Host "Reading MSYS2 installation at $Msys2Root"
+
 & (Join-Path $PSScriptRoot "catalog-msys2-packages.ps1") `
     -Msys2Root $Msys2Root `
     -OutputDirectory $catalogDirectory `

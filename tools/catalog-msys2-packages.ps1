@@ -9,7 +9,17 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 function Invoke-Pacman {
-    param([Parameter(Mandatory)][string[]]$Arguments)
+    param(
+        [Parameter(Mandatory)][string[]]$Arguments,
+        # Queries that must return rows. pacman exits 0 with no output when the
+        # sync databases are empty, so an exit-code check alone lets an empty
+        # result travel until something downstream fails on a parameter that
+        # has nothing to do with the cause. A host with two MSYS2 installations
+        # hits this: the root that is found first has pacman.exe but no synced
+        # databases, and the reported error named a `Lines` parameter ninety
+        # lines away from the real problem.
+        [switch]$AllowEmpty
+    )
 
     $oldLang = $env:LANG
     $oldLcAll = $env:LC_ALL
@@ -20,7 +30,30 @@ function Invoke-Pacman {
         if ($LASTEXITCODE -ne 0) {
             throw "pacman $($Arguments -join ' ') failed with exit code $LASTEXITCODE`n$($output -join [Environment]::NewLine)"
         }
-        return @($output | ForEach-Object { "$_" })
+        $lines = @($output | ForEach-Object { "$_" })
+        # Count only non-blank lines, but return every line. ConvertFrom-PacmanInfo
+        # uses blank lines as its record separator, so filtering them here would
+        # merge every package into a single record.
+        $substantive = @($lines | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count
+        if (-not $AllowEmpty -and $substantive -eq 0) {
+            throw @"
+pacman $($Arguments -join ' ') produced no output at '$script:Pacman' and exited 0.
+
+That normally means this installation's sync databases are empty, not that the
+ecosystem has no packages. Check which installation is being read:
+
+    & '$script:Pacman' -Sl | Measure-Object -Line
+
+If that is also empty, refresh the databases:
+
+    & '$script:Pacman' -Syy --noconfirm
+
+If a different MSYS2 installation is the one you meant, pass it explicitly:
+
+    -Msys2Root <path>    (or set the MSYS2_ROOT environment variable)
+"@
+        }
+        return $lines
     }
     finally {
         $env:LANG = $oldLang
@@ -109,7 +142,7 @@ $OutputDirectory = [IO.Path]::GetFullPath($OutputDirectory)
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 
 if (-not $SkipDatabaseRefresh) {
-    Invoke-Pacman -Arguments @("-Sy", "--noconfirm") | Out-Null
+    Invoke-Pacman -Arguments @("-Sy", "--noconfirm") -AllowEmpty | Out-Null
 }
 
 $installed = @{}

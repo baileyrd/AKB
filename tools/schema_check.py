@@ -162,7 +162,14 @@ PAIRS = [
     (ROOT / "model" / "graph.json", "architecture-graph"),
     (ROOT / "model" / "catalog" / "current.json", "architecture-graph"),
     (ROOT / "model" / "inventory" / "current.json", "deep-inventory"),
-    (ROOT / "model" / "runtime" / "current.json", "runtime-observation"),
+    # import_runtime_observation.py writes an architecture-graph-shaped
+    # projection (entities/relationships/claims/evidence/snapshot) to this
+    # path, not a raw collector observation, so it is checked against that
+    # schema. "runtime-observation" describes the collector's own output
+    # (schema_version/collector_version/observed_at/environment/host/...),
+    # which is validated in-process by import_runtime_observation.load_observation
+    # before it ever reaches this file.
+    (ROOT / "model" / "runtime" / "current.json", "architecture-graph"),
 ]
 
 

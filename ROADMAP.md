@@ -39,21 +39,25 @@ costly than a missing one.
 
 ## Increment 1 — Evidence and inventory pipeline
 
-The collection *pipeline* is built and tested. Its *coverage* is 2 of
-15,711 packages (`generated/coverage-assessment.json` →
-`package_payload_coverage.percent` = 0.013), so the extraction items below
-are cleared: the capability exists, the extraction has not been performed.
+The collection *pipeline* is built and tested. Its *coverage* is 90 of
+15,728 packages (`generated/coverage-assessment.json` →
+`package_payload_coverage.percent` = 0.57), so most of the extraction items
+below stay cleared: the capability exists and now runs, but this host's
+installed package set does not yet reach the thresholds this roadmap binds
+them to.
 
-**BLOCKED — needs a session on a Windows host with MSYS2 that runs the
-collector.** The six unchecked items in this increment, and the three in
-Increment 5 that project their output, are not undone work in the ordinary
-sense. They are the only items on this roadmap that cannot be closed from
-the environment these pages are authored in.
-`tools/Collect-AkbDeepInventory.ps1` asks `<Msys2Root>\usr\bin\pacman.exe`
-which files each installed package owns and then reads those files' PE
-headers. That needs a Windows machine with MSYS2 actually installed and the
-packages of interest present — properties of a host, not dependencies that
-could be added.
+**Corrected 2026-08-05.** The Windows-host blocker described below is
+resolved: a session ran `tools/Collect-AkbDeepInventory.ps1` against MSYS2
+installed at `C:\tools\lang\msys64`, after fixing a PowerShell defect in
+`tools/catalog-msys2-packages.ps1` that had made the catalog step it depends
+on unable to complete against any real pacman database. One item below
+closes on that run's evidence. The remaining five, and three of the six in
+Increment 5 they feed, do not close because this host's 90 installed
+packages are entirely the base `msys` environment — none of the
+`ucrt64`/`clang64`/`clangarm64`/`mingw64`/`mingw32` toolchain environments
+that carry headers, static/import libraries, and pkg-config metadata are
+installed here. See [The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md)
+for the exact counts and what would close the rest.
 
 **Corrected 2026-08-03.** This section previously stated that "every
 session this knowledge base has run in has been a Linux container," and
@@ -61,16 +65,13 @@ that is no longer true. A 2026-07-31 session installed MSYS2 at
 `C:\msys64` and ran two logged pacman transactions (Volume 7); a
 2026-07-30 session reached compile, link, and execution on a real zlib
 build (Volume 14); Volumes 2, 3, 9, and 19 carry further controlled
-observations from Windows hosts. The blocker is therefore narrower than
-stated, and correspondingly more tractable: the host exists, and no
-session on it has run this collector. The authoring sessions that keep
-finding these items unchecked are Linux containers and cannot run it.
+observations from Windows hosts.
 
-[The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md) states this
-once, names the statements elsewhere in the knowledge base that are
-currently qualified by it, and gives the single command that would close
-it. The nine items stay unchecked deliberately: ticking them would remove
-the largest remaining gap here from the backlog while it is entirely open.
+[The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md) states the
+current cause once and names the statements elsewhere in the knowledge base
+that are currently qualified by it. The remaining seven items stay
+unchecked deliberately: ticking them without the package-set breadth their
+claims require would remove real, still-open gaps from the backlog.
 
 - [x] Register official upstream sources
 - [x] Discover and ingest enabled repository package metadata through pacman
@@ -82,7 +83,7 @@ the largest remaining gap here from the backlog while it is entirely open.
 - [x] Statically ingest package recipes without executing PKGBUILDs
 - [x] Build the deep-inventory collection pipeline
 - [ ] Extract installed and repository package-file manifests
-- [ ] Extract PE imports, exports, subsystem, architecture, and debug metadata
+- [x] Extract PE imports, exports, subsystem, architecture, and debug metadata
 - [ ] Extract static/import archive members
 - [ ] Index headers, pkg-config files, and CMake metadata
 - [x] Record artifact checksums, versions, retrieval dates, and licenses
@@ -174,22 +175,24 @@ say so.
 
 - [x] Repository-to-package inventory
 - [ ] Package-to-file inventory
-- [ ] Binary-to-DLL dependency graph
+- [x] Binary-to-DLL dependency graph
 - [ ] Header and metadata indexes
 - [x] Library family classification
 - [x] Reverse dependency and impact analysis
 - [x] Library coverage for the graphics, GUI, audio, video, imaging, logging, and testing categories
 - [x] Carry build-time and check-time dependency edges from the PKGBUILD recipes
 
-**The three cleared items are BLOCKED behind Increment 1's extraction
-work**, which needs a session on a Windows host with MSYS2 that runs the
-collector — see
-[The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md). They are
-projections of data that collection would produce, so closing them first
-would mean generating reports over two packages and calling the ecosystem
-covered. `generated/binary-dependency-report.md` is 22 lines and
-`generated/development-artifact-catalog.md` is 11 lines, both covering the
-same two packages.
+**Two of the three cleared items remain BLOCKED behind Increment 1's
+extraction work**, which now runs but needs a broader installed package set
+than this host has — see [The Deep-Inventory Blocker](docs/DEEP-INVENTORY-BLOCKER.md).
+
+**Binary-to-DLL dependency graph closed 2026-08-05.** A deep-inventory run
+across this host's 90 installed `msys` packages produced 1,843 real
+`imports-dll` edges — `generated/binary-dependency-report.md` grew from 22
+lines to 1,852. `generated/development-artifact-catalog.md` is still 112
+lines against the 200 the header-and-metadata-indexes item needs, and
+`Package-to-file inventory` needs 100 observed packages against this host's
+90, so both stay open.
 
 **Library categories closed 2026-08-02.** Seven pages, one per category,
 each ranked from the catalog snapshot by dependents summed across

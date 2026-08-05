@@ -1,0 +1,147 @@
+{
+  "claims": [],
+  "entities": [
+    {
+      "aliases": [],
+      "applicability": {
+        "environment_ids": [
+          "environment:msys2:msys"
+        ]
+      },
+      "authority": "local-observation",
+      "confidence": "verified",
+      "evidence_refs": [],
+      "id": "configuration:msys2:runtime-observation-msys",
+      "kind": "configuration",
+      "name": "MSYS runtime observation",
+      "properties": {
+        "collector_version": "0.5.0",
+        "environment": "msys",
+        "environment_variables": {},
+        "host": {
+          "machine": "AMD64",
+          "release": "11",
+          "system": "Windows"
+        },
+        "notes": [
+          "PATH and all variables outside the explicit allow-list are intentionally excluded.",
+          "Path and mount probes describe the MSYS shell/runtime that executed the collector; they do not establish native tool runtime behavior."
+        ],
+        "observed_at": "2026-08-05T14:24:20.789249Z",
+        "probes": {
+          "mount_table": {
+            "executed": true,
+            "found": true,
+            "output": "C:/tools/lang/git on / type ntfs (binary,noacl,auto)\nC:/tools/lang/git/usr/bin on /bin type ntfs (binary,noacl,auto)\nC:/Users/BAILEYRD/AppData/Local/Temp on /tmp type ntfs (binary,noacl,posix=0,usertemp)\nC: on /c type ntfs (binary,noacl,posix=0,user,noumount,auto)\nJ: on /j type cifs (binary,noacl,posix=0,user,noumount,auto)\nK: on /k type cifs (binary,noacl,posix=0,user,noumount,auto)\nP: on /p type cifs (binary,noacl,posix=0,user,noumount,auto)\nU: on /u type cifs (binary,noacl,posix=0,user,noumount,auto)\nX: on /x type cifs (binary,noacl,posix=0,user,noumount,auto)",
+            "returncode": 0
+          },
+          "posix_to_windows_path": {
+            "executed": true,
+            "found": true,
+            "output": "C:\\tools\\lang\\git\\usr\\bin",
+            "returncode": 0
+          },
+          "proc_self_executable": {
+            "executed": true,
+            "found": true,
+            "output": "/usr/bin/readlink",
+            "returncode": 0
+          },
+          "uname": {
+            "executed": true,
+            "found": true,
+            "output": "MSYS_NT-10.0-26100 3.6.9-b4195d69.x86_64 x86_64",
+            "returncode": 0
+          },
+          "windows_to_posix_path": {
+            "executed": true,
+            "found": true,
+            "output": "/c/Windows",
+            "returncode": 0
+          }
+        },
+        "schema_version": "1.1.0",
+        "tools": {
+          "bash": {
+            "error": "TimeoutExpired",
+            "executed": false,
+            "found": true,
+            "path": "C:\\WINDOWS\\system32\\bash.EXE"
+          },
+          "clang": {
+            "found": false
+          },
+          "cmake": {
+            "executed": true,
+            "found": true,
+            "path": "C:\\tools\\lang\\mingw64\\bin\\cmake.EXE",
+            "returncode": 0,
+            "version": "cmake version 4.3.3"
+          },
+          "gcc": {
+            "executed": true,
+            "found": true,
+            "path": "C:\\tools\\lang\\mingw64\\bin\\gcc.EXE",
+            "returncode": 0,
+            "version": "gcc.EXE (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 16.1.0"
+          },
+          "ld": {
+            "executed": true,
+            "found": true,
+            "path": "C:\\tools\\lang\\mingw64\\bin\\ld.EXE",
+            "returncode": 0,
+            "version": "GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r3) 2.46.1"
+          },
+          "make": {
+            "found": false
+          },
+          "ninja": {
+            "executed": true,
+            "found": true,
+            "path": "C:\\tools\\lang\\mingw64\\bin\\ninja.EXE",
+            "returncode": 0,
+            "version": "1.13.2"
+          },
+          "pacman": {
+            "found": false
+          },
+          "sh": {
+            "executed": true,
+            "found": true,
+            "path": "C:\\tools\\lang\\git\\bin\\sh.EXE",
+            "returncode": 0,
+            "version": "GNU bash, version 5.3.15(1)-release (x86_64-pc-cygwin)"
+          }
+        }
+      },
+      "status": "verified",
+      "tags": [
+        "generated",
+        "runtime-observation"
+      ]
+    }
+  ],
+  "evidence": [],
+  "relationships": [
+    {
+      "condition": "",
+      "confidence": "verified",
+      "evidence_refs": [],
+      "id": "relationship:runtime-observation:msys",
+      "properties": {
+        "observed_at": "2026-08-05T14:24:20.789249Z"
+      },
+      "scope": "runtime-observation",
+      "source": "configuration:msys2:runtime-observation-msys",
+      "status": "verified",
+      "target": "environment:msys2:msys",
+      "type": "belongs-to-environment"
+    }
+  ],
+  "schema_version": "0.1.0",
+  "snapshot": {
+    "description": "Generated runtime observation.",
+    "id": "runtime-msys-4a0e7de20f9d",
+    "observed_at": "2026-08-05T14:24:20.789249Z"
+  }
+}

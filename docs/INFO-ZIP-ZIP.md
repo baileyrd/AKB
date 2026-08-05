@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 3.0-5 |
 | License (observed) | BSD |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 473.0 KB |
+| Installed size (observed) | 473.04 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:info-zip:zip-manual-2026-07-30` — Info-ZIP Zip (official project page) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

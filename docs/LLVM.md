@@ -34,13 +34,13 @@ last_verified: 2026-08-02
 | Upstream | <https://llvm.org/> |
 | Packaged as | `package:msys2:llvm` |
 | Version (observed) | 21.1.8-2 |
-| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| License (observed) | spdx:Apache-2.0;WITH;LLVM-exception |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 348.7 MB |
+| Installed size (observed) | 348.65 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:llvm:codegen-2026-08-02` — The LLVM Target-Independent Code Generator (`primary`, retrieved 2026-08-02)
 - `evidence:llvm:command-guide-2026-08-02` — LLVM Command Guide (`primary`, retrieved 2026-08-02)
 - `evidence:llvm:langref-2026-08-02` — LLVM Language Reference Manual (`primary`, retrieved 2026-08-02)

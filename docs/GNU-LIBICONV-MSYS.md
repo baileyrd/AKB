@@ -37,11 +37,11 @@ last_verified: 2026-07-30
 | Version (observed) | 1.19-1 |
 | License (observed) | LGPL |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 1.3 MB |
+| Installed size (observed) | 1378.92 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:libiconv-manual-2026-07-30` — GNU libiconv (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

@@ -33,11 +33,11 @@ last_verified: 2026-08-02
 | Version (observed) | 6.1.0-25 |
 | License (observed) | spdx:GPL-2.0-or-later |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 35.4 MB |
+| Installed size (observed) | 35.40 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:pacman:pacman-8-2026-08-02` — pacman(8) manual page (`primary`, retrieved 2026-08-02)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

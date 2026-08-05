@@ -31,14 +31,14 @@ last_verified: 2026-07-30
 | Environments | `msys` |
 | Upstream | <https://www.nano-editor.org> |
 | Packaged as | `package:msys2:nano` |
-| Version (observed) | 9.1-1 |
+| Version (observed) | 9.2-1 |
 | License (observed) | spdx:GPL-3.0-or-later |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 3.3 MB |
+| Installed size (observed) | 3349.90 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:nano-manual-2026-07-30` — GNU Nano (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

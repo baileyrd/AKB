@@ -27,14 +27,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://icu.unicode.org/home/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-icu` |
-| Version (observed) | 78.3-3 |
+| Version (observed) | 78.3-4 |
 | License (observed) | spdx:ICU |
 | Architecture (observed) | any |
-| Installed size (observed) | 93.2 MB |
+| Installed size (observed) | 93.14 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:unicode:icu-manual-2026-07-30` — ICU (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

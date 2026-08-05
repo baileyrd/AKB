@@ -42,11 +42,11 @@ last_verified: 2026-08-02
 | Version (observed) | 8.21.0-2 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | any |
-| Installed size (observed) | 4.3 MB |
+| Installed size (observed) | 4406.16 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:curl:project-site-2026-07-30` — curl (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

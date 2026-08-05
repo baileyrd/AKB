@@ -54,6 +54,7 @@ def projection(observation: dict[str, Any]) -> dict[str, Any]:
     digest = hashlib.sha256(json.dumps(observation, sort_keys=True).encode()).hexdigest()
     identifier = f"configuration:msys2:runtime-observation-{environment}"
     return {
+        "schema_version": "0.1.0",
         "snapshot": {"id": f"runtime-{environment}-{digest[:12]}", "observed_at": observation["observed_at"], "description": "Generated runtime observation."},
         "entities": [{"id": identifier, "kind": "configuration", "name": f"{environment.upper()} runtime observation", "status": "verified", "confidence": "verified", "authority": "local-observation", "aliases": [], "tags": ["generated", "runtime-observation"], "applicability": {"environment_ids": [f"environment:msys2:{environment}"]}, "properties": observation, "evidence_refs": []}],
         "relationships": [{"id": f"relationship:runtime-observation:{environment}", "type": "belongs-to-environment", "source": identifier, "target": f"environment:msys2:{environment}", "status": "verified", "confidence": "verified", "scope": "runtime-observation", "condition": "", "properties": {"observed_at": observation["observed_at"]}, "evidence_refs": []}],
@@ -80,7 +81,7 @@ def merge_projection(previous: dict[str, Any], current: dict[str, Any]) -> dict[
     ]
     entities.extend(current["entities"])
     relationships.extend(current["relationships"])
-    return {"snapshot": current["snapshot"], "entities": sorted(entities, key=lambda item: item["id"]), "relationships": sorted(relationships, key=lambda item: item["id"]), "claims": [], "evidence": []}
+    return {"schema_version": current.get("schema_version", "0.1.0"), "snapshot": current["snapshot"], "entities": sorted(entities, key=lambda item: item["id"]), "relationships": sorted(relationships, key=lambda item: item["id"]), "claims": [], "evidence": []}
 
 
 def import_observation(path: Path) -> dict[str, Any]:

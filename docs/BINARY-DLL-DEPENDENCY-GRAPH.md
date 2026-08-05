@@ -3,12 +3,31 @@ id: doc:volume-11:binary-dll-dependency-graph
 title: Binary-to-DLL Dependency Graph Model
 volume: 11
 status: partial
-model_refs: []
-evidence_refs: []
-last_verified: 2026-07-28
+model_refs:
+  - runtime:msys2:msys-2.0.dll
+evidence_refs:
+  - evidence:inventory:current
+last_verified: 2026-08-05
 ---
 
 # Binary-to-DLL Dependency Graph Model
+
+<!-- BEGIN GENERATED object-facts -->
+
+| Model fact | Value |
+| --- | --- |
+| Object | `runtime:msys2:msys-2.0.dll` |
+| Kind | `runtime` |
+| Status | `partial` |
+| Confidence | `verified` |
+| Authority | MSYS2 |
+| Environments | `msys` |
+
+Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED object-facts -->
+
 
 The binary-to-DLL graph is derived from PE import descriptors in verified
 artifact observations. It models static import declarations, not a claim that
@@ -54,8 +73,57 @@ flowchart LR
 5. Use controlled runtime observation separately when the question is actual
    loader behavior rather than static dependency declaration.
 
+## Observed at This Scale
+
+A 2026-08-05 deep-inventory run across the 90 packages installed in this
+host's `msys` environment populated this graph for real: 1,843 `imports-dll`
+edges among 97 distinct imported-DLL identities, in
+[`generated/binary-dependency-report.md`](../generated/binary-dependency-report.md).
+The dominant structure is exactly what the runtime architecture predicts —
+494 distinct binaries import `/usr/bin/msys-2.0.dll` directly, the single
+highest fan-in target in the graph.
+
+This is the MSYS side of the ecosystem only. No `ucrt64`, `clang64`,
+`clangarm64`, `mingw64`, or `mingw32` package is installed on this host, so
+the graph carries no native-toolchain binaries yet; see
+[the deep-inventory blocker](DEEP-INVENTORY-BLOCKER.md) for what closing
+that gap needs.
+
 ## Related Views
 
 - [Package-to-file inventory](PACKAGE-FILE-INVENTORY.md)
 - [Deep inventory evidence contract](DEEP-INVENTORY-CONTRACT.md)
 - [Git for Windows transport boundaries](GIT-FOR-WINDOWS-TRANSPORT-BOUNDARIES.md)
+
+<!-- BEGIN GENERATED dependency-subgraph -->
+
+## Dependency Diagram
+
+```mermaid
+flowchart LR
+    subject["msys-2.0.dll"]
+    u0["bzip2"]
+    u0 -->|uses-runtime| subject
+    u1["curl"]
+    u1 -->|uses-runtime| subject
+    u2["Git (MSYS2 package)"]
+    u2 -->|uses-runtime| subject
+    u3["GNU Autoconf"]
+    u3 -->|uses-runtime| subject
+    u4["GNU Automake"]
+    u4 -->|uses-runtime| subject
+    u5["GNU Bash"]
+    u5 -->|uses-runtime| subject
+    u6["GNU Coreutils"]
+    u6 -->|uses-runtime| subject
+    u7["GNU Cpio"]
+    u7 -->|uses-runtime| subject
+    style subject stroke-width:3px
+```
+
+Dependencies and dependents of `runtime:msys2:msys-2.0.dll` in the composed graph: 72 dependents and 0 dependencies, of which 64 are omitted here for legibility.
+
+Generated from the composed model by `tools/build_object_diagrams.py`.
+Edits between the surrounding markers are overwritten on the next build.
+
+<!-- END GENERATED dependency-subgraph -->

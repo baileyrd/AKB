@@ -183,12 +183,26 @@ class ProjectionTests(unittest.TestCase):
             {"build-depends-on", "check-depends-on"},
         )
 
-    def test_every_endpoint_resolves_in_the_catalog(self):
+    def test_unresolved_endpoints_never_reach_the_composed_graph(self):
+        """The catalog refreshes independently of this projection and can
+        retire a package an edge still names -- upstream trimming
+        mingw-w64-i686-* out of the mingw32 repository is the first observed
+        case. `akb.load_composed_graph` re-checks the invariant
+        `import_recipe_dependencies.py` enforces at generation time and
+        drops any edge that no longer resolves, so nothing dangling should
+        ever leak into validation, generation, or the explorer.
+        """
+        import akb  # pylint: disable=import-outside-toplevel
+
         packages, _ = ird.catalog_index()
         known = set(packages.values())
-        for edge in self.edges:
-            self.assertIn(edge["source"], known, edge["id"])
-            self.assertIn(edge["target"], known, edge["id"])
+        composed_ids = {edge["id"] for edge in akb.load_composed_graph()["relationships"]}
+        leaked = [
+            edge for edge in self.edges
+            if (edge["source"] not in known or edge["target"] not in known)
+            and edge["id"] in composed_ids
+        ]
+        self.assertEqual(leaked, [])
 
     def test_provides_resolution_is_disclosed_per_edge(self):
         """A reader must be able to discount virtual resolution."""

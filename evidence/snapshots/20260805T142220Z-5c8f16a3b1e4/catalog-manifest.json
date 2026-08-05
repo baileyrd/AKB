@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-05T14:22:20.6349198Z",
+  "collector": "tools/catalog-msys2-packages.ps1",
+  "msys2_root": "C:/tools/lang/msys64",
+  "pacman_version": "  .--.                  Pacman v6.1.0 - libalpm v14.0.0 / _.-' .-.  .-.  .-.   Copyright (C) 2006-2024 Pacman Development Team \\  '-. '-'  '-'  '-'   Copyright (C) 2002-2006 Judd Vinet  '--'                        This program may be freely redistributed under                        the terms of the GNU General Public License. ",
+  "repositories": [
+    "clang64",
+    "clangarm64",
+    "mingw32",
+    "mingw64",
+    "msys",
+    "ucrt64"
+  ],
+  "package_count": 15728,
+  "installed_count": 90,
+  "dependency_edge_count": 46862,
+  "sha256": {
+    "all-packages.csv": "5dce6ee1e4b7cc852ca4fe338728902d45ec212083879dc90730641bc0f7baa5",
+    "dependency-edges.csv": "41e18ee9c75a87dbfe409239a852f6f230f9cd7b8bcf47c8a7e7565595af82ad",
+    "installed-packages.csv": "3daf84c94cb245c229052be326c437a61d2aa69a6dccf8bf8508d87812cc6351",
+    "package-groups.txt": "a1548d7894c88b8d7fd1e3afa4914cd11db48465a87612a75f69488694292986"
+  }
+}

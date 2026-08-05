@@ -27,14 +27,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://github.com/pkgconf/pkgconf> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-pkgconf` |
-| Version (observed) | 1~3.0.4-1 |
+| Version (observed) | 1~3.0.5-1 |
 | License (observed) | spdx:ISC |
 | Architecture (observed) | any |
-| Installed size (observed) | 878.0 KB |
+| Installed size (observed) | 890.30 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:pkgconf:project-site-2026-07-30` — pkgconf (official project repository) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

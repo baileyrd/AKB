@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 6.3.0-2 |
 | License (observed) | LGPL3 |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 748.3 KB |
+| Installed size (observed) | 748.28 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:gmp-manual-2026-07-30` — GNU MP (official project site) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

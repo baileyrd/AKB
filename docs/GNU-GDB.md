@@ -41,11 +41,11 @@ last_verified: 2026-07-30
 | Version (observed) | 17.2-1 |
 | License (observed) | spdx:GPL-3.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 15.5 MB |
+| Installed size (observed) | 15.53 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:gdb-manual-2026-07-30` — GNU Debugger (official project page) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

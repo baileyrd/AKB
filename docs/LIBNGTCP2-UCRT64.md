@@ -30,14 +30,14 @@ last_verified: 2026-07-30
 | Environments | `ucrt64` |
 | Upstream | <https://nghttp2.org/ngtcp2> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-ngtcp2` |
-| Version (observed) | 1.24.0-1 |
+| Version (observed) | 1.25.0-1 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | any |
-| Installed size (observed) | 1.6 MB |
+| Installed size (observed) | 1674.86 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:nghttp2:libngtcp2-manual-2026-07-30` — ngtcp2 project page (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

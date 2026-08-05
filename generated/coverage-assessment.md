@@ -1,16 +1,16 @@
 # Generated AKB Coverage Assessment
 
-- Snapshot: `20260729T113151Z-a2c48f8738b1`
-- Entities: **15717**
-- Relationships: **76105**
+- Snapshot: `20260805T142220Z-5c8f16a3b1e4`
+- Entities: **15734**
+- Relationships: **74718**
 - Authored documents: **305**
 - Linked SVG diagrams: **8**
 
 ## Package payload coverage
 
-- Catalog packages: **15711**
-- Packages with retained payload observations: **2**
-- Observed package coverage: **0.013%**
+- Catalog packages: **15728**
+- Packages with retained payload observations: **90**
+- Observed package coverage: **0.572%**
 
 ## Explicit gaps
 

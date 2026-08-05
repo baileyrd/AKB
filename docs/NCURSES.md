@@ -33,11 +33,11 @@ last_verified: 2026-08-02
 | Version (observed) | 6.6-2 |
 | License (observed) | spdx:MIT |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 10.8 MB |
+| Installed size (observed) | 11008.90 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:ncurses-manual-2026-07-30` — GNU Ncurses (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

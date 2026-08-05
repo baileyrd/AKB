@@ -31,13 +31,13 @@ last_verified: 2026-07-30
 | Upstream | <https://lld.llvm.org/> |
 | Packaged as | `package:msys2:mingw-w64-clang-x86_64-lld` |
 | Version (observed) | 22.1.8-2 |
-| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| License (observed) | spdx:Apache-2.0;WITH;LLVM-exception |
 | Architecture (observed) | any |
-| Installed size (observed) | 50.8 MB |
+| Installed size (observed) | 50.77 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:llvm:lld-manual-2026-07-30` — LLD (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

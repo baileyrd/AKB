@@ -30,12 +30,12 @@ last_verified: 2026-07-30
 | Version (observed) | 1.91.0-3 |
 | License (observed) | spdx:BSL-1.0 |
 | Architecture (observed) | any |
-| Installed size (observed) | 183.9 MB |
+| Installed size (observed) | 183.86 MiB |
 
 **Evidence on this object**
 
 - `evidence:boost:documentation-2026-07-30` — Boost (official project site) (`primary`, retrieved 2026-07-30)
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
 Edits between the surrounding markers are overwritten on the next build.

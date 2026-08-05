@@ -41,11 +41,11 @@ last_verified: 2026-08-02
 | Version (observed) | 1.3.2-2 |
 | License (observed) | spdx:Zlib |
 | Architecture (observed) | any |
-| Installed size (observed) | 427.8 KB |
+| Installed size (observed) | 427.78 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:zlib:manual-2026-07-30` — zlib Manual (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

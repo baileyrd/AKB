@@ -30,13 +30,13 @@ last_verified: 2026-07-30
 | Upstream | <https://clang.llvm.org/> |
 | Packaged as | `package:msys2:mingw-w64-clang-x86_64-clang` |
 | Version (observed) | 22.1.8-2 |
-| License (observed) | spdx:Apache-2.0 WITH LLVM-exception |
+| License (observed) | spdx:Apache-2.0;WITH;LLVM-exception |
 | Architecture (observed) | any |
-| Installed size (observed) | 282.0 MB |
+| Installed size (observed) | 281.99 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:llvm:clang-manual-2026-07-30` — Clang Documentation (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

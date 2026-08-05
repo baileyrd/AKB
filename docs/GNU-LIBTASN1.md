@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 4.21.0-1 |
 | License (observed) | GPL3;LGPL |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 131.8 KB |
+| Installed size (observed) | 131.81 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:libtasn1-manual-2026-07-30` — GNU Libtasn1 (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

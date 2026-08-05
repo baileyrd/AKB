@@ -33,11 +33,11 @@ last_verified: 2026-07-30
 | Version (observed) | 8.3.003-1 |
 | License (observed) | spdx:GPL-3.0-or-later |
 | Architecture (observed) | any |
-| Installed size (observed) | 2.6 MB |
+| Installed size (observed) | 2639.46 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:readline-manual-2026-07-30` — GNU Readline (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

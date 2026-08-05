@@ -29,7 +29,10 @@ function Invoke-Pacman {
 }
 
 function ConvertFrom-PacmanInfo {
-    param([Parameter(Mandatory)][string[]]$Lines)
+    # pacman -Si blank-separates records; PowerShell's Mandatory validation
+    # rejects a [string[]] argument outright if any element is an empty
+    # string, so AllowEmptyString is required for real pacman output to bind.
+    param([Parameter(Mandatory)][AllowEmptyString()][string[]]$Lines)
 
     $records = [System.Collections.Generic.List[hashtable]]::new()
     $record = [ordered]@{}

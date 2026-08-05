@@ -35,11 +35,11 @@ last_verified: 2026-07-30
 | Version (observed) | 5.4.1-1 |
 | License (observed) | spdx:GPL-3.0-or-later |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 5.1 MB |
+| Installed size (observed) | 5239.24 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:gawk-manual-2026-07-30` — GNU Awk User's Guide (gawk manual) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

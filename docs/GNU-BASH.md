@@ -32,11 +32,11 @@ last_verified: 2026-07-30
 | Version (observed) | 5.3.015-1 |
 | License (observed) | spdx:GPL-3.0-or-later |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 12.2 MB |
+| Installed size (observed) | 12.24 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:bash-manual-2026-07-30` — GNU Bash Reference Manual (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

@@ -1,15 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="918" height="602" viewBox="0 0 918 602" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="918" height="528" viewBox="0 0 918 528" role="img" aria-labelledby="title description">
 <title id="title">Level 7: Source and development artifacts</title>
-<desc id="description">Source-adjacent development artifacts: headers, pkg-config modules, and owned filesystem paths. 18 of 538 objects shown, with 0 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
+<desc id="description">Source-adjacent development artifacts: headers, pkg-config modules, and owned filesystem paths. 18 of 14736 objects shown, with 0 relationships between them. Every node links to its object page in the architecture explorer, and the diagram links to the levels above and below it. Generated from the composed model by tools/build_diagrams.py.</desc>
 <style>.edge{stroke:#8896ab;stroke-width:1;fill:none}.node{fill:#eef4ff;stroke:#0645ad;stroke-width:1}.label{font:12px system-ui,sans-serif;fill:#111}.kindlabel{font:11px system-ui,sans-serif;fill:#5a6478}.h1{font:bold 17px system-ui,sans-serif;fill:#111}.meta{font:12px system-ui,sans-serif;fill:#41485a}.nav{font:12px system-ui,sans-serif;fill:#0645ad}</style>
-<rect width="918" height="602" fill="#ffffff"/>
+<rect width="918" height="528" fill="#ffffff"/>
 <text class="h1" x="28" y="30">Level 7 — Source and development artifacts</text>
 <text class="meta" x="28" y="50">Source-adjacent development artifacts: headers, pkg-config modules, and owned filesystem paths.</text>
 <a href="level-6.svg"><text class="nav" x="28" y="72">Up to L6</text></a>
 <a href="../docs/HEADER-AND-METADATA-INDEXES.md"><text class="nav" x="95" y="72">Read HEADER-AND-METADATA-INDEXES.md</text></a>
 <text class="kindlabel" x="28" y="90">header</text>
-<text class="kindlabel" x="28" y="164">pkg-config-module</text>
-<text class="kindlabel" x="28" y="238">filesystem-path</text>
 <a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fucrt64%2Finclude%2Fzconf.h" aria-label="/ucrt64/include/zconf.h (header:msys2:/ucrt64/include/zconf.h)">
 <rect class="node" x="28" y="96" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/include/zconf.h: header:msys2:/ucrt64/include/zconf.h</title></rect>
 <text class="label" x="126" y="124" text-anchor="middle">/ucrt64/include/zconf.h</text>
@@ -18,70 +16,70 @@
 <rect class="node" x="250" y="96" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/include/zlib.h: header:msys2:/ucrt64/include/zlib.h</title></rect>
 <text class="label" x="348" y="124" text-anchor="middle">/ucrt64/include/zlib.h</text>
 </a>
-<a href="../generated/explorer/index.html#/object/pkg-config-module%3Agnu%3Azlib-pc" aria-label="zlib.pc (UCRT64) (pkg-config-module:gnu:zlib-pc)">
-<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>zlib.pc (UCRT64): pkg-config-module:gnu:zlib-pc</title></rect>
-<text class="label" x="126" y="198" text-anchor="middle">zlib.pc (UCRT64)</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Finclude%2Falpm.h" aria-label="/usr/include/alpm.h (header:msys2:/usr/include/alpm.h)">
+<rect class="node" x="472" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/include/alpm.h: header:msys2:/usr/include/alpm.h</title></rect>
+<text class="label" x="570" y="124" text-anchor="middle">/usr/include/alpm.h</text>
 </a>
-<a href="../generated/explorer/index.html#/object/pkg-config-module%3Amsys2%3A%2Fucrt64%2Flib%2Fpkgconfig%2Fzlib.pc" aria-label="/ucrt64/lib/pkgconfig/zlib.pc (pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc)">
-<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/lib/pkgconfig/zlib.pc: pkg-config-module:msys2:/ucrt64/lib/pkgconfig/zlib.pc</title></rect>
-<text class="label" x="348" y="198" text-anchor="middle">/ucrt64/lib/pkgconfig/zlib…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Finclude%2Falpm_list.h" aria-label="/usr/include/alpm_list.h (header:msys2:/usr/include/alpm_list.h)">
+<rect class="node" x="694" y="96" width="196" height="46" rx="5" tabindex="0"><title>/usr/include/alpm_list.h: header:msys2:/usr/include/alpm_list.h</title></rect>
+<text class="label" x="792" y="124" text-anchor="middle">/usr/include/alpm_list.h</text>
 </a>
-<a href="../generated/explorer/index.html#/object/pkg-config-module%3Afacebook%3Azstd-pc" aria-label="libzstd.pc (UCRT64) (pkg-config-module:facebook:zstd-pc)">
-<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>libzstd.pc (UCRT64): pkg-config-module:facebook:zstd-pc</title></rect>
-<text class="label" x="570" y="198" text-anchor="middle">libzstd.pc (UCRT64)</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Finclude%2Fgawkapi.h" aria-label="/usr/include/gawkapi.h (header:msys2:/usr/include/gawkapi.h)">
+<rect class="node" x="28" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/include/gawkapi.h: header:msys2:/usr/include/gawkapi.h</title></rect>
+<text class="label" x="126" y="198" text-anchor="middle">/usr/include/gawkapi.h</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2F.buildinfo" aria-label="/.BUILDINFO (filesystem-path:msys2:/.buildinfo)">
-<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>/.BUILDINFO: filesystem-path:msys2:/.buildinfo</title></rect>
-<text class="label" x="126" y="272" text-anchor="middle">/.BUILDINFO</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Finclude%2Fmagic.h" aria-label="/usr/include/magic.h (header:msys2:/usr/include/magic.h)">
+<rect class="node" x="250" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/include/magic.h: header:msys2:/usr/include/magic.h</title></rect>
+<text class="label" x="348" y="198" text-anchor="middle">/usr/include/magic.h</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2F.mtree" aria-label="/.MTREE (filesystem-path:msys2:/.mtree)">
-<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>/.MTREE: filesystem-path:msys2:/.mtree</title></rect>
-<text class="label" x="348" y="272" text-anchor="middle">/.MTREE</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fav.h" aria-label="/usr/lib/perl5/core_perl/CORE/av.h (header:msys2:/usr/lib/perl5/core_perl/core/av.h)">
+<rect class="node" x="472" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/av.h: header:msys2:/usr/lib/perl5/core_perl/core/av.h</title></rect>
+<text class="label" x="570" y="198" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2F.pkginfo" aria-label="/.PKGINFO (filesystem-path:msys2:/.pkginfo)">
-<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>/.PKGINFO: filesystem-path:msys2:/.pkginfo</title></rect>
-<text class="label" x="570" y="272" text-anchor="middle">/.PKGINFO</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fbitcount.h" aria-label="/usr/lib/perl5/core_perl/CORE/bitcount.h (header:msys2:/usr/lib/perl5/core_perl/core/bitcount.h)">
+<rect class="node" x="694" y="170" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/bitcount.h: header:msys2:/usr/lib/perl5/core_perl/core/bitcount.h</title></rect>
+<text class="label" x="792" y="198" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fucrt64%2Fshare%2Flicenses%2Fzlib%2Flicense" aria-label="/ucrt64/share/licenses/zlib/LICENSE (filesystem-path:msys2:/ucrt64/share/licenses/zlib/license)">
-<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/share/licenses/zlib/LICENSE: filesystem-path:msys2:/ucrt64/share/licenses/zlib/license</title></rect>
-<text class="label" x="792" y="272" text-anchor="middle">/ucrt64/share/licenses/zli…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fconfig.h" aria-label="/usr/lib/perl5/core_perl/CORE/config.h (header:msys2:/usr/lib/perl5/core_perl/core/config.h)">
+<rect class="node" x="28" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/config.h: header:msys2:/usr/lib/perl5/core_perl/core/config.h</title></rect>
+<text class="label" x="126" y="272" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fucrt64%2Fshare%2Fman%2Fman3%2Fzlib.3.gz" aria-label="/ucrt64/share/man/man3/zlib.3.gz (filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz)">
-<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>/ucrt64/share/man/man3/zlib.3.gz: filesystem-path:msys2:/ucrt64/share/man/man3/zlib.3.gz</title></rect>
-<text class="label" x="126" y="346" text-anchor="middle">/ucrt64/share/man/man3/zli…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fcop.h" aria-label="/usr/lib/perl5/core_perl/CORE/cop.h (header:msys2:/usr/lib/perl5/core_perl/core/cop.h)">
+<rect class="node" x="250" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/cop.h: header:msys2:/usr/lib/perl5/core_perl/core/cop.h</title></rect>
+<text class="label" x="348" y="272" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fbin%2Fwcurl" aria-label="/usr/bin/wcurl (filesystem-path:msys2:/usr/bin/wcurl)">
-<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/bin/wcurl: filesystem-path:msys2:/usr/bin/wcurl</title></rect>
-<text class="label" x="348" y="346" text-anchor="middle">/usr/bin/wcurl</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fcv.h" aria-label="/usr/lib/perl5/core_perl/CORE/cv.h (header:msys2:/usr/lib/perl5/core_perl/core/cv.h)">
+<rect class="node" x="472" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/cv.h: header:msys2:/usr/lib/perl5/core_perl/core/cv.h</title></rect>
+<text class="label" x="570" y="272" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Faclocal%2Flibcurl.m4" aria-label="/usr/share/aclocal/libcurl.m4 (filesystem-path:msys2:/usr/share/aclocal/libcurl.m4)">
-<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/aclocal/libcurl.m4: filesystem-path:msys2:/usr/share/aclocal/libcurl.m4</title></rect>
-<text class="label" x="570" y="346" text-anchor="middle">/usr/share/aclocal/libcurl…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fdosish.h" aria-label="/usr/lib/perl5/core_perl/CORE/dosish.h (header:msys2:/usr/lib/perl5/core_perl/core/dosish.h)">
+<rect class="node" x="694" y="244" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/dosish.h: header:msys2:/usr/lib/perl5/core_perl/core/dosish.h</title></rect>
+<text class="label" x="792" y="272" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Flicenses%2Fcurl%2Fcopying" aria-label="/usr/share/licenses/curl/COPYING (filesystem-path:msys2:/usr/share/licenses/curl/copying)">
-<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/licenses/curl/COPYING: filesystem-path:msys2:/usr/share/licenses/curl/copying</title></rect>
-<text class="label" x="792" y="346" text-anchor="middle">/usr/share/licenses/curl/C…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Febcdic_tables.h" aria-label="/usr/lib/perl5/core_perl/CORE/ebcdic_tables.h (header:msys2:/usr/lib/perl5/core_perl/core/ebcdic_tables.h)">
+<rect class="node" x="28" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/ebcdic_tables.h: header:msys2:/usr/lib/perl5/core_perl/core/ebcdic_tables.h</title></rect>
+<text class="label" x="126" y="346" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fcurl-config.1.gz" aria-label="/usr/share/man/man1/curl-config.1.gz (filesystem-path:msys2:/usr/share/man/man1/curl-config.1.gz)">
-<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man1/curl-config.1.gz: filesystem-path:msys2:/usr/share/man/man1/curl-config.1.gz</title></rect>
-<text class="label" x="126" y="420" text-anchor="middle">/usr/share/man/man1/curl-c…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fembed.h" aria-label="/usr/lib/perl5/core_perl/CORE/embed.h (header:msys2:/usr/lib/perl5/core_perl/core/embed.h)">
+<rect class="node" x="250" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/embed.h: header:msys2:/usr/lib/perl5/core_perl/core/embed.h</title></rect>
+<text class="label" x="348" y="346" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fcurl.1.gz" aria-label="/usr/share/man/man1/curl.1.gz (filesystem-path:msys2:/usr/share/man/man1/curl.1.gz)">
-<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man1/curl.1.gz: filesystem-path:msys2:/usr/share/man/man1/curl.1.gz</title></rect>
-<text class="label" x="348" y="420" text-anchor="middle">/usr/share/man/man1/curl.1…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fembedvar.h" aria-label="/usr/lib/perl5/core_perl/CORE/embedvar.h (header:msys2:/usr/lib/perl5/core_perl/core/embedvar.h)">
+<rect class="node" x="472" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/embedvar.h: header:msys2:/usr/lib/perl5/core_perl/core/embedvar.h</title></rect>
+<text class="label" x="570" y="346" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman1%2Fwcurl.1.gz" aria-label="/usr/share/man/man1/wcurl.1.gz (filesystem-path:msys2:/usr/share/man/man1/wcurl.1.gz)">
-<rect class="node" x="472" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man1/wcurl.1.gz: filesystem-path:msys2:/usr/share/man/man1/wcurl.1.gz</title></rect>
-<text class="label" x="570" y="420" text-anchor="middle">/usr/share/man/man1/wcurl.…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Fextern.h" aria-label="/usr/lib/perl5/core_perl/CORE/EXTERN.h (header:msys2:/usr/lib/perl5/core_perl/core/extern.h)">
+<rect class="node" x="694" y="318" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/EXTERN.h: header:msys2:/usr/lib/perl5/core_perl/core/extern.h</title></rect>
+<text class="label" x="792" y="346" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_cleanup.3.gz" aria-label="/usr/share/man/man3/curl_easy_cleanup.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_cleanup.3.gz)">
-<rect class="node" x="694" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man3/curl_easy_cleanup.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_cleanup.3.gz</title></rect>
-<text class="label" x="792" y="420" text-anchor="middle">/usr/share/man/man3/curl_e…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Ffakesdio.h" aria-label="/usr/lib/perl5/core_perl/CORE/fakesdio.h (header:msys2:/usr/lib/perl5/core_perl/core/fakesdio.h)">
+<rect class="node" x="28" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/fakesdio.h: header:msys2:/usr/lib/perl5/core_perl/core/fakesdio.h</title></rect>
+<text class="label" x="126" y="420" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<a href="../generated/explorer/index.html#/object/filesystem-path%3Amsys2%3A%2Fusr%2Fshare%2Fman%2Fman3%2Fcurl_easy_duphandle.3.gz" aria-label="/usr/share/man/man3/curl_easy_duphandle.3.gz (filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz)">
-<rect class="node" x="28" y="466" width="196" height="46" rx="5" tabindex="0"><title>/usr/share/man/man3/curl_easy_duphandle.3.gz: filesystem-path:msys2:/usr/share/man/man3/curl_easy_duphandle.3.gz</title></rect>
-<text class="label" x="126" y="494" text-anchor="middle">/usr/share/man/man3/curl_e…</text>
+<a href="../generated/explorer/index.html#/object/header%3Amsys2%3A%2Fusr%2Flib%2Fperl5%2Fcore_perl%2Fcore%2Ffeature.h" aria-label="/usr/lib/perl5/core_perl/CORE/feature.h (header:msys2:/usr/lib/perl5/core_perl/core/feature.h)">
+<rect class="node" x="250" y="392" width="196" height="46" rx="5" tabindex="0"><title>/usr/lib/perl5/core_perl/CORE/feature.h: header:msys2:/usr/lib/perl5/core_perl/core/feature.h</title></rect>
+<text class="label" x="348" y="420" text-anchor="middle">/usr/lib/perl5/core_perl/C…</text>
 </a>
-<text class="meta" x="28" y="570">18 of 538 objects shown, ranked by graph degree.</text>
-<text class="meta" x="28" y="588">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
+<text class="meta" x="28" y="496">18 of 14736 objects shown, ranked by graph degree.</text>
+<text class="meta" x="28" y="514">Generated from the composed model by tools/build_diagrams.py — do not edit by hand.</text>
 </svg>

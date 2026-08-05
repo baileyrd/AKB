@@ -31,11 +31,11 @@ last_verified: 2026-08-02
 | Version (observed) | 1.6.58-1 |
 | License (observed) | custom |
 | Architecture (observed) | any |
-| Installed size (observed) | 2.5 MB |
+| Installed size (observed) | 2587.45 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:libpng:project-site-2026-08-02` — libpng (official project page) (`primary`, retrieved 2026-08-02)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

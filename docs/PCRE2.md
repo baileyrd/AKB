@@ -32,11 +32,11 @@ last_verified: 2026-08-02
 | Version (observed) | 10.47-1 |
 | License (observed) | spdx:BSD-3-Clause |
 | Architecture (observed) | any |
-| Installed size (observed) | 7.1 MB |
+| Installed size (observed) | 7292.93 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:pcre:pcre2-manual-2026-07-30` — PCRE2 (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

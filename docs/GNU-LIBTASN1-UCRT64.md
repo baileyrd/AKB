@@ -30,13 +30,13 @@ last_verified: 2026-07-30
 | Upstream | <https://www.gnu.org/software/libtasn1/> |
 | Packaged as | `package:msys2:mingw-w64-ucrt-x86_64-libtasn1` |
 | Version (observed) | 4.21.0-1 |
-| License (observed) | GPL3, LGPL |
+| License (observed) | GPL3,;LGPL |
 | Architecture (observed) | any |
-| Installed size (observed) | 622.2 KB |
+| Installed size (observed) | 622.22 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:libtasn1-manual-2026-07-30` — GNU Libtasn1 (official project page) (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

@@ -33,12 +33,12 @@ last_verified: 2026-08-02
 | Version (observed) | 1.3.10-2 |
 | License (observed) | Apache |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 94.9 KB |
+| Installed size (observed) | 94.90 KiB |
 
 **Evidence on this object**
 
 - `evidence:apache:serf-manual-2026-08-02` — Serf (official project site) (`primary`, retrieved 2026-08-02)
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.
 Edits between the surrounding markers are overwritten on the next build.

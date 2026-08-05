@@ -47,11 +47,28 @@ def load_composed_graph() -> dict[str, Any]:
         "claims": list(graph.get("claims", [])),
         "evidence": list(graph.get("evidence", [])),
     }
-    for projection_path in (CATALOG, RECIPES, INVENTORY, RUNTIME, RECIPE_DEPENDENCIES):
+    for projection_path in (CATALOG, RECIPES, INVENTORY, RUNTIME):
         if projection_path.is_file():
             projection = load_json(projection_path)
             for key in composed:
                 composed[key].extend(projection.get(key, []))
+
+    # import_recipe_dependencies.py only emits an edge when both endpoints
+    # are catalog packages at generation time, but the catalog refreshes on
+    # its own schedule and can later drop a package the edge still names --
+    # upstream retiring mingw-w64-i686-* names out of the mingw32 repository
+    # is the first observed case. Re-check the invariant on every compose so
+    # a catalog refresh degrades recipe-dependency coverage instead of
+    # breaking validation or leaving a dangling edge in generated views.
+    if RECIPE_DEPENDENCIES.is_file():
+        known_ids = {item["id"] for item in composed["entities"]}
+        projection = load_json(RECIPE_DEPENDENCIES)
+        composed["entities"].extend(projection.get("entities", []))
+        composed["claims"].extend(projection.get("claims", []))
+        composed["evidence"].extend(projection.get("evidence", []))
+        for relationship in projection.get("relationships", []):
+            if relationship["source"] in known_ids and relationship["target"] in known_ids:
+                composed["relationships"].append(relationship)
     return composed
 
 
@@ -349,12 +366,41 @@ def generate() -> list[Path]:
             f"- Incoming relationships: {len(by_target[identifier])}",
         ])
 
+    kept_relationship_ids = {item["id"] for item in graph["relationships"]}
+    drift_lines = [
+        "# Generated Recipe-Dependency Drift", "",
+        "> Generated from the composed model; do not edit manually.", "",
+        "Recipe-dependency edges dropped because an endpoint is no longer a "
+        "catalog package (see `load_composed_graph` in `tools/akb.py`).", "",
+        "| Edge | Type | Source | Target |", "| --- | --- | --- | --- |",
+    ]
+    if RECIPE_DEPENDENCIES.is_file():
+        dropped = [
+            relationship
+            for relationship in load_json(RECIPE_DEPENDENCIES).get("relationships", [])
+            if relationship["id"] not in kept_relationship_ids
+        ]
+        for relationship in sorted(dropped, key=lambda item: item["id"]):
+            drift_lines.append(
+                "| {id} | {type} | {source} | {target} |".format(
+                    id=escape_cell(relationship["id"]),
+                    type=escape_cell(relationship["type"]),
+                    source=escape_cell(relationship["source"]),
+                    target=escape_cell(relationship["target"]),
+                )
+            )
+        if not dropped:
+            drift_lines.append("| _None_ |  |  |  |")
+    else:
+        drift_lines.append("| _No recipe-dependency projection present_ |  |  |  |")
+
     outputs = [
         GENERATED / "entity-index.md",
         GENERATED / "relationship-index.md",
         GENERATED / "claim-evidence-index.md",
         GENERATED / "coverage-report.md",
         GENERATED / "object-dossiers.md",
+        GENERATED / "recipe-dependency-drift.md",
     ]
     outputs[0].write_text("\n".join(entity_lines) + "\n", encoding="utf-8")
     outputs[1].write_text(
@@ -363,6 +409,7 @@ def generate() -> list[Path]:
     outputs[2].write_text("\n".join(claim_lines) + "\n", encoding="utf-8")
     outputs[3].write_text("\n".join(coverage_lines) + "\n", encoding="utf-8")
     outputs[4].write_text("\n".join(dossier_lines) + "\n", encoding="utf-8")
+    outputs[5].write_text("\n".join(drift_lines) + "\n", encoding="utf-8")
     return outputs
 
 

@@ -1,20 +1,20 @@
 {
-  "snapshot": "20260729T113151Z-a2c48f8738b1",
-  "entities": 15717,
-  "relationships": 76105,
+  "snapshot": "20260805T142220Z-5c8f16a3b1e4",
+  "entities": 15734,
+  "relationships": 74718,
   "entity_kinds": {
-    "package": 15711,
+    "package": 15728,
     "repository": 6
   },
   "entity_status": {
-    "verified": 15717
+    "verified": 15734
   },
   "authored_documents": 305,
   "diagram_files": 8,
   "package_payload_coverage": {
-    "catalog_packages": 15711,
-    "observed_packages": 2,
-    "percent": 0.013
+    "catalog_packages": 15728,
+    "observed_packages": 90,
+    "percent": 0.572
   },
   "gaps": [
     "Repository catalog evidence does not prove installed file, binary, header, export, or source-unit coverage.",

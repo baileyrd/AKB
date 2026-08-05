@@ -35,11 +35,11 @@ last_verified: 2026-07-30
 | Version (observed) | 9.2.0858-1 |
 | License (observed) | spdx:Vim |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 61.9 MB |
+| Installed size (observed) | 61.91 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:vim:documentation-2026-07-30` — Vim (official project site) (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

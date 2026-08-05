@@ -30,11 +30,11 @@ last_verified: 2026-07-30
 | Version (observed) | 1.11.2-1 |
 | License (observed) | spdx:Apache-2.0 |
 | Architecture (observed) | any |
-| Installed size (observed) | 15.8 MB |
+| Installed size (observed) | 15.80 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:mesonbuild:documentation-2026-07-30` — Meson Build System Manual (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

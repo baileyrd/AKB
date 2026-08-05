@@ -34,11 +34,11 @@ last_verified: 2026-07-30
 | Version (observed) | 1.35-3 |
 | License (observed) | GPL3 |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 2.9 MB |
+| Installed size (observed) | 2949.49 KiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:tar-manual-2026-07-30` — GNU Tar Manual (`primary`, retrieved 2026-07-30)
 
 Generated from the composed model by `tools/build_object_facts.py`. Observed values come from the catalog snapshot and change when it is refreshed.

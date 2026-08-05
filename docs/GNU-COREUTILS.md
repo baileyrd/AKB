@@ -35,11 +35,11 @@ last_verified: 2026-07-30
 | Version (observed) | 8.32-5 |
 | License (observed) | GPL3 |
 | Architecture (observed) | x86_64 |
-| Installed size (observed) | 25.8 MB |
+| Installed size (observed) | 25.78 MiB |
 
 **Evidence on this object**
 
-- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-07-29)
+- `evidence:catalog:current` — MSYS2 pacman package catalog (`observed`, retrieved 2026-08-05)
 - `evidence:gnu:coreutils-manual-2026-07-30` — GNU Coreutils Manual (`primary`, retrieved 2026-07-30)
 
 **Claims about this object**

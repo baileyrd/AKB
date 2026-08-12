@@ -142,7 +142,7 @@ const index = () => {
 };
 function bindIndex() {
   const search = document.querySelector('#search'), kind = document.querySelector('#kind'), status = document.querySelector('#status'), results = document.querySelector('#results'), count = document.querySelector('#count');
-  const update = () => { const term = search.value.toLowerCase(); const found = data.entities.filter(item => (!term || [item.id,item.name,...(item.aliases||[]),...(item.tags||[])].join(' ').toLowerCase().includes(term)) && (!kind.value || item.kind === kind.value) && (!status.value || item.status === status.value)); count.textContent = `${found.length} objects`; results.innerHTML = found.map(item => `<li><a href="${route(item.id)}">${esc(item.name)}</a> <code>${esc(item.id)}</code> — ${esc(item.kind)}, ${esc(item.status)}</li>`).join(''); }; [search,kind,status].forEach(control => control.addEventListener('input', update)); update();
+  const update = () => { const term = search.value.toLowerCase(); const found = data.entities.filter(item => (!term || [item.id,item.name,...(item.aliases||[]),...(item.tags||[])].join(' ').toLowerCase().includes(term)) && (!kind.value || item.kind === kind.value) && (!status.value || item.status === status.value)); count.textContent = `${found.length} objects`; results.innerHTML = found.map(item => `<li><a href="${route(item.id)}">${esc(item.name)}</a> <code>${esc(item.id)}</code> <span class="badge">${esc(item.kind)}</span> <span class="badge" data-status="${esc(item.status)}">${esc(item.status)}</span></li>`).join(''); }; [search,kind,status].forEach(control => control.addEventListener('input', update)); update();
 }
 // --- Graph view: real force-directed rendering (D3 v7, canvas) ---
 const KIND_COLOR = d3.scaleOrdinal(d3.schemeTableau10);
@@ -166,6 +166,11 @@ function renderGraph(root, seedIds, title, opts) {
   const status = root.querySelector('#graph-status');
   const ctx = canvas.getContext('2d');
   const width = canvas.width, height = canvas.height;
+  const themeStyle = getComputedStyle(document.documentElement);
+  const themeColor = (name, fallback) => (themeStyle.getPropertyValue(name) || '').trim() || fallback;
+  const edgeColor = themeColor('--border-strong', '#c1c7d0');
+  const labelColor = themeColor('--fg', '#111');
+  const selectedColor = themeColor('--accent', '#111');
   const idSet = new Set(nodeIds);
   const nodes = nodeIds.map(id => Object.assign({}, byId[id], {id}));
   const nodeById = new Map(nodes.map(node => [node.id, node]));
@@ -173,6 +178,7 @@ function renderGraph(root, seedIds, title, opts) {
   status.textContent = `${nodes.length} nodes, ${links.length} edges.`;
   let transform = d3.zoomIdentity;
   let selected = null;
+  let hovered = null;
   const openButton = root.querySelector('#graph-open'), expandButton = root.querySelector('#graph-expand'), selectedLabel = root.querySelector('#graph-selected');
   const simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(node => node.id).distance(50).strength(0.25))
@@ -185,7 +191,7 @@ function renderGraph(root, seedIds, title, opts) {
     ctx.clearRect(0, 0, width, height);
     ctx.translate(transform.x, transform.y);
     ctx.scale(transform.k, transform.k);
-    ctx.strokeStyle = '#c1c7d0';
+    ctx.strokeStyle = edgeColor;
     ctx.lineWidth = 1 / transform.k;
     for (const link of links) { ctx.beginPath(); ctx.moveTo(link.source.x, link.source.y); ctx.lineTo(link.target.x, link.target.y); ctx.stroke(); }
     for (const node of nodes) {
@@ -193,8 +199,8 @@ function renderGraph(root, seedIds, title, opts) {
       ctx.fillStyle = KIND_COLOR(node.kind);
       ctx.arc(node.x, node.y, node === selected ? 8 : 5, 0, 2 * Math.PI);
       ctx.fill();
-      if (node === selected) { ctx.lineWidth = 2 / transform.k; ctx.strokeStyle = '#111'; ctx.stroke(); }
-      if (node === selected || transform.k > 1.8) { ctx.fillStyle = '#111'; ctx.font = `${11 / transform.k}px system-ui`; ctx.fillText(node.name, node.x + 8, node.y + 3); }
+      if (node === selected) { ctx.lineWidth = 2 / transform.k; ctx.strokeStyle = selectedColor; ctx.stroke(); }
+      if (node === selected || node === hovered || transform.k > 1.8) { ctx.fillStyle = labelColor; ctx.font = `${11 / transform.k}px system-ui`; ctx.fillText(node.name, node.x + 8, node.y + 3); }
     }
     ctx.restore();
   }
@@ -225,6 +231,13 @@ function renderGraph(root, seedIds, title, opts) {
     const rect = canvas.getBoundingClientRect();
     selectNode(nodeAtScreenPoint(event.clientX - rect.left, event.clientY - rect.top));
   });
+  canvas.addEventListener('mousemove', event => {
+    const rect = canvas.getBoundingClientRect();
+    const next = nodeAtScreenPoint(event.clientX - rect.left, event.clientY - rect.top);
+    canvas.style.cursor = next ? 'pointer' : 'grab';
+    if (next !== hovered) { hovered = next; draw(); }
+  });
+  canvas.addEventListener('mouseleave', () => { if (hovered) { hovered = null; draw(); } canvas.style.cursor = 'grab'; });
   openButton.addEventListener('click', () => { if (selected) location.hash = route(selected.id); });
   expandButton.addEventListener('click', () => {
     if (!selected) return;
@@ -276,7 +289,7 @@ function renderObject(item, id, root) {
   const dependencies = out.filter(isDependency);
   const dependents = inc.filter(isDependency);
   const links = (edges, direction) => { const limit = 25; if (!edges.length) return '<p>None.</p>'; const rows = edges.map((edge, index) => { const other = edge.source === id ? edge.target : edge.source; return `<li${index >= limit ? ' hidden' : ''}><code>${esc(edge.type)}</code> <a href="${route(other)}">${esc(byId[other]?.name || other)}</a></li>`; }).join(''); const control = edges.length > limit ? `<button type="button" class="expand" data-direction="${direction}" aria-expanded="false">Show ${edges.length - limit} more</button>` : ''; return `<ul data-direction="${direction}">${rows}</ul>${control}`; };
-  root.innerHTML = `<nav aria-label="Breadcrumb"><a href="#/">Explorer</a> / <span>${esc(item.kind)}</span> / <span aria-current="page">${esc(item.name)}</span></nav><h1>${esc(item.name)} <a class="graph-link" href="${graphNodeRoute(id)}">View in graph</a></h1><dl><dt>ID</dt><dd><code>${esc(item.id)}</code></dd><dt>Kind</dt><dd>${esc(item.kind)}</dd><dt>Status</dt><dd>${esc(item.status)}</dd></dl>${item.summary ? `<p>${esc(item.summary)}</p>` : ''}${objectDetails(item)}<section aria-labelledby="dependencies"><h2 id="dependencies">Dependencies</h2>${links(dependencies, 'dependencies')}</section><section aria-labelledby="dependents"><h2 id="dependents">Dependents</h2>${links(dependents, 'dependents')}</section><h2>Outgoing relationships</h2>${links(out, 'outgoing')}<h2>Incoming relationships</h2>${links(inc, 'incoming')}`;
+  root.innerHTML = `<nav aria-label="Breadcrumb"><a href="#/">Explorer</a> / <span>${esc(item.kind)}</span> / <span aria-current="page">${esc(item.name)}</span></nav><h1>${esc(item.name)} <a class="graph-link" href="${graphNodeRoute(id)}">View in graph</a></h1><dl><dt>ID</dt><dd><code>${esc(item.id)}</code></dd><dt>Kind</dt><dd><span class="badge">${esc(item.kind)}</span></dd><dt>Status</dt><dd><span class="badge" data-status="${esc(item.status)}">${esc(item.status)}</span></dd></dl>${item.summary ? `<p>${esc(item.summary)}</p>` : ''}${objectDetails(item)}<section aria-labelledby="dependencies"><h2 id="dependencies">Dependencies</h2>${links(dependencies, 'dependencies')}</section><section aria-labelledby="dependents"><h2 id="dependents">Dependents</h2>${links(dependents, 'dependents')}</section><h2>Outgoing relationships</h2>${links(out, 'outgoing')}<h2>Incoming relationships</h2>${links(inc, 'incoming')}`;
   root.querySelectorAll('.expand').forEach(button => button.addEventListener('click', () => { const list = root.querySelector(`ul[data-direction="${button.dataset.direction}"]`); const expanded = button.getAttribute('aria-expanded') === 'true'; list.querySelectorAll('li[hidden]').forEach(row => row.hidden = expanded); button.setAttribute('aria-expanded', String(!expanded)); button.textContent = expanded ? `Show ${list.querySelectorAll('li[hidden]').length} more` : 'Collapse relationships'; }));
 }
 addEventListener('hashchange', render); render();
@@ -284,10 +297,101 @@ addEventListener('hashchange', render); render();
         "__DATA__",
         json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
     )
+    style = """
+:root{
+  --bg:#f7f8fa;--bg-elevated:#ffffff;--bg-muted:#eef0f3;
+  --fg:#1a1d21;--fg-muted:#5b6472;--fg-subtle:#656d79;
+  --border:#dde1e7;--border-strong:#c3c9d3;
+  --accent:#2f5fd6;--accent-fg:#ffffff;--accent-muted:#e7edfb;
+  --radius-sm:6px;--radius-md:10px;--radius-lg:14px;
+  --shadow-sm:0 1px 2px rgba(20,22,30,.06);
+  --shadow-md:0 6px 20px -4px rgba(20,22,30,.14),0 2px 6px -2px rgba(20,22,30,.08);
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,sans-serif;
+  --font-mono:ui-monospace,"Cascadia Code","SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;
+  --status-verified:#1c7c44;--status-verified-bg:#e5f6ec;
+  --status-partial:#916108;--status-partial-bg:#fbf1de;
+  --status-planned:#656d79;--status-planned-bg:#eef0f3;
+  --status-inferred:#7550c9;--status-inferred-bg:#f1ecfb;
+  --status-deprecated:#c23b3b;--status-deprecated-bg:#fbeaea;
+  --status-superseded:#656d79;--status-superseded-bg:#eef0f3;
+  --status-unknown:#656d79;--status-unknown-bg:#eef0f3;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1216;--bg-elevated:#171b21;--bg-muted:#1d222a;
+    --fg:#e7e9ec;--fg-muted:#9aa3b2;--fg-subtle:#7a818f;
+    --border:#2a3038;--border-strong:#3a414c;
+    --accent:#7aa2f7;--accent-fg:#0f1216;--accent-muted:#1c2b4d;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+    --shadow-md:0 10px 30px -8px rgba(0,0,0,.6),0 4px 10px -4px rgba(0,0,0,.5);
+    --status-verified:#3ecb7e;--status-verified-bg:#123322;
+    --status-partial:#e0ab3d;--status-partial-bg:#3a2c0d;
+    --status-planned:#9aa3b2;--status-planned-bg:#232a34;
+    --status-inferred:#a98bf0;--status-inferred-bg:#2a2140;
+    --status-deprecated:#f0716e;--status-deprecated-bg:#3a1414;
+    --status-superseded:#9aa3b2;--status-superseded-bg:#232a34;
+    --status-unknown:#9aa3b2;--status-unknown-bg:#232a34;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;font:400 15px/1.55 var(--font-sans);color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+main{max-width:76rem;margin:0 auto;padding:var(--space-6) var(--space-5) var(--space-7)}
+header{margin-bottom:var(--space-2)}
+h1{font-size:1.75rem;font-weight:650;letter-spacing:-.02em;line-height:1.2;margin:var(--space-2) 0;display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap}
+h2{font-size:1.05rem;font-weight:600;letter-spacing:-.01em;margin:var(--space-6) 0 var(--space-3);padding-top:var(--space-4);border-top:1px solid var(--border)}
+h2:first-of-type{border-top:none;padding-top:0}
+p{color:var(--fg-muted);margin:0 0 var(--space-4);max-width:65ch}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+code{font:400 .85em/1.4 var(--font-mono);background:var(--bg-muted);border:1px solid var(--border);padding:.1em .4em;border-radius:5px;overflow-wrap:anywhere;color:var(--fg)}
+nav[aria-label="Explorer views"],nav[aria-label="Graph views"]{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);font-size:.82rem;color:var(--fg-subtle);padding:var(--space-2) 0}
+nav[aria-label="Explorer views"] strong,nav[aria-label="Graph views"] strong{color:var(--fg-muted);font-weight:600;margin-right:var(--space-1)}
+nav[aria-label="Explorer views"] a,nav[aria-label="Graph views"] a{padding:3px 10px;border-radius:999px;color:var(--fg-muted);background:var(--bg-elevated);border:1px solid var(--border);transition:background .15s ease,color .15s ease,border-color .15s ease}
+nav[aria-label="Explorer views"] a:hover,nav[aria-label="Graph views"] a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+nav[aria-label="Breadcrumb"]{font-size:.85rem;color:var(--fg-subtle);margin-bottom:var(--space-2)}
+nav[aria-label="Breadcrumb"] [aria-current="page"]{color:var(--fg);font-weight:600}
+label{display:inline-flex;flex-direction:column;gap:4px;font-size:.78rem;color:var(--fg-muted);font-weight:600;margin:0 var(--space-4) var(--space-3) 0;text-transform:uppercase;letter-spacing:.03em}
+input,select{font:400 .95rem/1.3 var(--font-sans);color:var(--fg);background:var(--bg-elevated);border:1px solid var(--border-strong);border-radius:var(--radius-sm);padding:7px 10px}
+input[type=search]{min-width:16rem}
+#count{color:var(--fg-subtle);font-size:.82rem;font-variant-numeric:tabular-nums;margin:var(--space-3) 0}
+main>ul,ul[data-direction]{list-style:none;margin:0;padding:0;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:var(--bg-elevated)}
+main>ul li,ul[data-direction] li{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;padding:9px var(--space-4);border-top:1px solid var(--border);transition:background .15s ease}
+main>ul li:first-child,ul[data-direction] li:first-child{border-top:none}
+main>ul li:hover,ul[data-direction] li:hover{background:var(--bg-muted)}
+.badge{display:inline-flex;align-items:center;font:600 .72rem/1 var(--font-sans);text-transform:uppercase;letter-spacing:.04em;padding:4px 8px;border-radius:5px;color:var(--fg-muted);background:var(--bg-muted)}
+.badge[data-status=verified]{color:var(--status-verified);background:var(--status-verified-bg)}
+.badge[data-status=partial]{color:var(--status-partial);background:var(--status-partial-bg)}
+.badge[data-status=planned]{color:var(--status-planned);background:var(--status-planned-bg)}
+.badge[data-status=inferred]{color:var(--status-inferred);background:var(--status-inferred-bg)}
+.badge[data-status=deprecated]{color:var(--status-deprecated);background:var(--status-deprecated-bg)}
+.badge[data-status=superseded]{color:var(--status-superseded);background:var(--status-superseded-bg)}
+.badge[data-status=unknown]{color:var(--status-unknown);background:var(--status-unknown-bg)}
+button,.graph-link{font:600 .82rem/1 var(--font-sans);border-radius:var(--radius-sm);cursor:pointer}
+button{padding:7px 12px;border:1px solid var(--border-strong);background:var(--bg-elevated);color:var(--fg);transition:background .15s ease,transform .1s ease,border-color .15s ease}
+button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+button:active:not(:disabled){transform:translateY(1px)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.graph-link{display:inline-flex;align-items:center;padding:3px 10px;margin-left:var(--space-2);border:1px solid var(--border);background:var(--accent-muted);color:var(--accent)}
+.graph-link:hover{text-decoration:none;border-color:var(--accent)}
+.expand{display:block;margin-top:var(--space-2)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:var(--space-2) var(--space-4);margin:var(--space-4) 0;align-items:center}
+dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--fg-subtle);font-weight:600}
+dd{margin:0}
+#graph-toolbar{display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;margin:var(--space-3) 0}
+#graph-selected{font-size:.82rem;color:var(--fg-muted)}
+#graph-status{color:var(--fg-subtle);font-size:.85rem}
+#graph-canvas{display:block;width:100%;max-width:900px;height:auto;aspect-ratio:900/600;background:var(--bg-elevated);border:1px solid var(--border) !important;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+#graph-canvas:active{cursor:grabbing}
+@media (max-width:640px){main{padding:var(--space-4)}h1{font-size:1.4rem}input[type=search]{min-width:0;width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+"""
     page = f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AKB Explorer</title>
-<style>body{{font:16px system-ui,sans-serif;max-width:70rem;margin:auto;padding:1rem}}code{{overflow-wrap:anywhere}}a{{color:#0645ad}}dt{{font-weight:bold}}dd{{margin:0 0 1rem}}</style></head>
-<body><main><h1>Architecture Explorer</h1><p>Use stable object links or the textual index.</p><ul>{rows}</ul></main><script src="d3.v7.min.js"></script><script>{script}</script></body></html>"""
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="description" content="Deep-linkable explorer for the MSYS2 Architecture Knowledge Base graph: layers, packages, artifacts, libraries, runtimes, toolchains, and repositories, with textual search and force-directed graph views."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5fd6'/%3E%3Ctext x='16' y='22' font-family='ui-sans-serif,system-ui' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"><title>AKB Explorer</title>
+<style>{style}</style></head>
+<body><main><header><h1>Architecture Explorer</h1><p>Search the composed graph, browse typed views, or open an object by its stable ID.</p></header><ul>{rows}</ul></main><script src="d3.v7.min.js"></script><script>{script}</script></body></html>"""
     index = output / "index.html"
     index.write_text(page, encoding="utf-8")
     d3_output = output / "d3.v7.min.js"
